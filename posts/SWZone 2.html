@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch">
+<meta name="dcterms.date" content="2024-05-06">
+
+<title>Go West, Southwest that is – ITK Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ITK_logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Go West, Southwest that is – ITK Research">
+<meta property="og:description" content="Electricity markets analysis">
+<meta property="og:image" content="https://itkservices3.com/media/image-20240505123424727.png">
+<meta property="og:site_name" content="ITK Research">
+<meta property="og:image:height" content="1216">
+<meta property="og:image:width" content="2978">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../ITK_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ITK Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../forecast.html"> 
+<span class="menu-text">AEMO demand fcst</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../nem-dash.html"> 
+<span class="menu-text">NEM-dash</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../IEA.html"> 
+<span class="menu-text">IEA-electricity</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../posts.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../presentations.html"> 
+<span class="menu-text">Presentations</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../posts.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../mailchimp.html"> 
+<span class="menu-text">Signup</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Go West, Southwest that is</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">Asia</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>David Leitch </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 6, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#humelink-needs-two-lines-not-one-now-that-the-sw-rez-is-its-raison-detre" id="toc-humelink-needs-two-lines-not-one-now-that-the-sw-rez-is-its-raison-detre" class="nav-link active" data-scroll-target="#humelink-needs-two-lines-not-one-now-that-the-sw-rez-is-its-raison-detre">Humelink needs two lines not one now that the SW REZ is its raison d’etre</a></li>
+  <li><a href="#following-the-path-of-least-resistance" id="toc-following-the-path-of-least-resistance" class="nav-link" data-scroll-target="#following-the-path-of-least-resistance">Following the path of least resistance</a></li>
+  <li><a href="#the-south-west-rez-and-victorias-v2-rez-are-in-the-transmission-junction" id="toc-the-south-west-rez-and-victorias-v2-rez-are-in-the-transmission-junction" class="nav-link" data-scroll-target="#the-south-west-rez-and-victorias-v2-rez-are-in-the-transmission-junction">The South West REZ and Victoria’s V2 REZ are in the transmission junction</a>
+  <ul class="collapse">
+  <li><a href="#clearly-the-transmission-links-need-to-be-upsized-if-the-rez-is-to-reach-potential" id="toc-clearly-the-transmission-links-need-to-be-upsized-if-the-rez-is-to-reach-potential" class="nav-link" data-scroll-target="#clearly-the-transmission-links-need-to-be-upsized-if-the-rez-is-to-reach-potential">Clearly the transmission links need to be upsized if the REZ is to reach potential</a>
+  <ul class="collapse">
+  <li><a href="#debits-and-credits-hearts-and-minds" id="toc-debits-and-credits-hearts-and-minds" class="nav-link" data-scroll-target="#debits-and-credits-hearts-and-minds">Debits and Credits, Hearts and minds</a></li>
+  </ul></li>
+  <li><a href="#humelink-state-of-play" id="toc-humelink-state-of-play" class="nav-link" data-scroll-target="#humelink-state-of-play">Humelink state of play</a>
+  <ul class="collapse">
+  <li><a href="#humelink-is-resisted-by-the-community-but-will-be-built-anyway" id="toc-humelink-is-resisted-by-the-community-but-will-be-built-anyway" class="nav-link" data-scroll-target="#humelink-is-resisted-by-the-community-but-will-be-built-anyway">Humelink is resisted by the community but will be built anyway</a></li>
+  <li><a href="#snowy-is-not-as-relevant-anymore-and-humelink-is-not-about-snowy-anymore" id="toc-snowy-is-not-as-relevant-anymore-and-humelink-is-not-about-snowy-anymore" class="nav-link" data-scroll-target="#snowy-is-not-as-relevant-anymore-and-humelink-is-not-about-snowy-anymore">Snowy is not as relevant anymore and Humelink is not about Snowy anymore</a></li>
+  </ul></li>
+  <li><a href="#dc-lines-are-more-relevant-with-rezs-than-without-rezs" id="toc-dc-lines-are-more-relevant-with-rezs-than-without-rezs" class="nav-link" data-scroll-target="#dc-lines-are-more-relevant-with-rezs-than-without-rezs">DC lines are more relevant with REZs than without REZs</a></li>
+  <li><a href="#a-financial-analysts-concept-of-transmission-capacity" id="toc-a-financial-analysts-concept-of-transmission-capacity" class="nav-link" data-scroll-target="#a-financial-analysts-concept-of-transmission-capacity">A financial analyst’s concept of transmission capacity</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="SWZone.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="humelink-needs-two-lines-not-one-now-that-the-sw-rez-is-its-raison-detre" class="level1">
+<h1>Humelink needs two lines not one now that the SW REZ is its raison d’etre</h1>
+<p>The SW REZ (N5 in AEMO terms) in NSW (Balranald to Wagga region) together with the neigbourhing V2 REZ are emerging as the most economic area to build renewable energy South of QLD. That’s because the community welcomes the development opportunity, because its located at the junction of the new 500 kv transmission links between Sydney, Melbourne and Adelaide and because there is a very large area of land with a fair wind resource. The region could support 20 GW or more of wind and solar and produce 40-50 TWh of VRE or a quarter of 2023 NEM wide demand.</p>
+<p>Its not good from a portfolio persepective to have too much wind in one REZ but other than that the only real problem is that even though the transmission distances are relatively short, Humelink is just 360 km, opposition is strong. To realise the region potential upwards of 10 GW of transmission to both Victoria and NSW is required.</p>
+<p>In my opinion it would be far more economic to build 10 GW of wind in the SW and V2 than to build 10 GW of offshore wind. Probably only half the cost. Offshore certainly has better performance both in capacity factors and from a portfolio point of view but, in my opinion, its not enough. However again the ability to supply Victoria is an even newer idea than using the SW REZ to supply NSW and the implications for Humelink.</p>
+</section>
+<section id="following-the-path-of-least-resistance" class="level1">
+<h1>Following the path of least resistance</h1>
+<p>Whether its Kurt Lewin’s Forcefield theory, or electicity flowing, or water flowing generally the action moves to the area of least resistance.</p>
+<p>In the Central West support for renewable energy seems lack lustre.</p>
+<p>In New England, perhaps better called Very Old England where the National party hosts some of the most rabid anti renewable people outside of QLD, any kind of development seems to meet stiff resistance. No matter the hosipitals are inadquate, airfares are sky high, crime is rampant. The region comes across as against economic development. And that’s despite the fact there were just as many supporters as opponents of the Winterbourne wind farm.</p>
+<p>So developers look to where the going is easier and where they are more likely to be welcomed.</p>
+<p>In the Soutwest the economic opportunity appears to be better received. This was brought home by the lack of objection to the Delta/Yanco wind farm, 1500 MW and now sold to Origin Energy for potentially up to $300 m($0.2m/MW).</p>
+</section>
+<section id="the-south-west-rez-and-victorias-v2-rez-are-in-the-transmission-junction" class="level1">
+<h1>The South West REZ and Victoria’s V2 REZ are in the transmission junction</h1>
+<p>My hat goes off to Spark Renewables who a few years ago were amongst the first to see the potential of the SW REZ.</p>
+<p>The West of Wagga and around Kerang in Victoria has tremdous potential to be the main hub for electricity production South of Queensland. This area has three main attractions:</p>
+<ul>
+<li>It has access to Project Energy Connect from South Australia, to Humelink and to VNI West</li>
+<li>The wind resource, particularly in NSW is adequate, 7 M/S or better at 100 metre hub height</li>
+<li>At the moment there is good community acceptance. And why wouldn’t there be.</li>
+</ul>
+<div id="fig-zone" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-zone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20240503144624821.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: SW REZ and V2 wind speeds. Source:www.renewmap.com.au"><img src="../media/image-20240503144624821.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-zone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: SW REZ and V2 wind speeds. Source:www.renewmap.com.au
+</figcaption>
+</figure>
+</div>
+<p>Its important to understand that the power and energy from this area can go to Victoria, or less likely South Australia as well as to NSW depending on conditions. Why build all this offshore wind in Victoria when you have this fantastic much cheaper resource to the North? All that is required is enough transmission?</p>
+<p>Ignoring transmission constraints and the related marginal loss factors the over 15 GW of wind plus say 3 GW of solar, representing projects presently under development could produce say 40 TWh or that is 40% of the combined 2023 NSW &amp; Victorian operational consumption, 20% of NEM wide operational consumption.</p>
+<p>Clearly developers worked this out long ago. I’m so slow. Not just any developers either. The following table shows projects under development in those two zones over 500 MW.</p>
+<div id="fig-projects" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-projects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20240503145742055.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Big projects in SW/V2. Source: www.renewmap.com.au"><img src="../media/image-20240503145742055.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-projects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Big projects in SW/V2. Source: www.renewmap.com.au
+</figcaption>
+</figure>
+</div>
+<p>Spark, Vriya/ORG, RES, Engie and Goldwind have over 11 GW of projects combined. These are significant developers with money and credibility. Not that most of the others in the above figure don’t, this REZ is littered with what in the tennis world one might term contenders.</p>
+<section id="clearly-the-transmission-links-need-to-be-upsized-if-the-rez-is-to-reach-potential" class="level2">
+<h2 class="anchored" data-anchor-id="clearly-the-transmission-links-need-to-be-upsized-if-the-rez-is-to-reach-potential">Clearly the transmission links need to be upsized if the REZ is to reach potential</h2>
+<p>As currently configured and budgetted Humelink’s power capacity of 2.2 GW is far too low for its new role. In my opinion Humelink was designed and sized basically to move Snowy 2.0 power to Sydney, and the connection to PEC (PEC’s capacity of 800 MW) was only a minor consideration and could be handled within the 2.2 GW.</p>
+<p>However, if I’m right, and the true purpose of Humelink is to connect the SW REZ and that the SW REZ/ V2 combo can potentially be the biggest REZ South of QLD then Humelink’s 2.2 GW needs to be more like 9 GW.</p>
+<p>There are various ways that Humelink capacity can be increased. The most obvious and if we go there the way it would likely be done is adding extra circuits. The “traditional” options have been discussed in the AEMO 2023 <a href="https://aemo.com.au/-/media/files/major-publications/isp/2023/2023-transmission-expansion-options-report.pdf">Transmission_expansion_options</a> at section 3.8 . These options appear to include a 2000 MW, overhead DC line, or more relevantly “Option 3” an additonal double circuit 500 kV line which would add 6 GW capacity in both directions and at AEMO’s most recent published estimate of $3bn only 60% of the cost of Humelink. Similarly option 4 an additional single circuit would add 3 GW.</p>
+<section id="debits-and-credits-hearts-and-minds" class="level3">
+<h3 class="anchored" data-anchor-id="debits-and-credits-hearts-and-minds">Debits and Credits, Hearts and minds</h3>
+<p>There are two basic attractions of the South West and V2 zones. (1) So far, and its early days, the community sees the benefits, to them, as outweighing the costs. (2) The Humelink transmission distance at 350 km is low and so the cost in $ terms ought to be relatively low. In fact adding 6 GW of transmission for $3 bn (or more likely $4.5 bn) is really a no brainer in today’s terms.</p>
+<p>There are also two disadvantages. (1) The SW REZ is not the ideal place to locate wind from a portfolio point of view and (2) although the transmission distances are relatively short the residents don’t love it.</p>
+<p>Regarding the correlations ITK’s prior work has unsurprisingly found that putting wind round the edges of the NEM gets you the portfolio with the overall most predictable output. Predictable means the average output/standad deviation. Putting wind in the centre of NSW, VIC, SA which is kind of where the SE REZ is means that the wind tends to be blowing or not blowing at the same time as all the other nearby zones in NSW, QLD and South Australia. On that score there are few worse places to put the wind generation.</p>
+<div id="fig-correlations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20240504171033303.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: wind zone correlations. Source:ISP"><img src="../media/image-20240504171033303.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: wind zone correlations. Source:ISP
+</figcaption>
+</figure>
+</div>
+<p>Equally although there is a lot of land, the actual capacity factor is only moderate in fact the 3rd worst in the selected States, although in truth the differences between most of them aren’t that big.</p>
+<div id="fig-capfactors" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-capfactors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20240504181052745.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Wind capacity factors. Source:ISP"><img src="../media/image-20240504181052745.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-capfactors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Wind capacity factors. Source:ISP
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="humelink-state-of-play" class="level2">
+<h2 class="anchored" data-anchor-id="humelink-state-of-play">Humelink state of play</h2>
+<p>Humelink is a a 2.2 GW, 500 Kv double circuit 360 km overhead transmission line that runs from Wagga to Bannaby (100 km south of Sydney) with a branch to Snowy. Humelink is officially due to be complete in late 2026. That date was again probably set in the context of Snowy 2. The NSW section of PEC is also due in 2026. If Delta/Yanco is the most ready to go project in the South West zone there is no chance it will be operating in 2026.</p>
+<p>As well as the SW REZ and Snowy 2, Humelink is also relevant to the broader issue of improving capacity between NSW and Victoria, particularly when considered with the Southern part of the Sydney reinforcement ring. In my opinion its one of the most important transmisison links required in the transition. Equally confirmation that its going ahead will be a signal of sorts to the community that perhaps transmission wont be quite the problem the popular media play it as. If it is overly delayed or the cost increases further electricity price differentials between Victoria and NSW will probably stay larger for longer, and NSW prices will stay higher. Development of wind and solar in NSW will be put back in a significant way. That’s how I see it, others have other views.</p>
+<section id="humelink-is-resisted-by-the-community-but-will-be-built-anyway" class="level3">
+<h3 class="anchored" data-anchor-id="humelink-is-resisted-by-the-community-but-will-be-built-anyway">Humelink is resisted by the community but will be built anyway</h3>
+<div id="fig-humelinkmap" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-humelinkmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20240505123155950.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: map source:Transgrid"><img src="../media/image-20240505123155950.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-humelinkmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: map source:Transgrid
+</figcaption>
+</figure>
+</div>
+<div id="fig-timeline" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20240505123424727.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Timeline. Source:Transgrid"><img src="../media/image-20240505123424727.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Timeline. Source:Transgrid
+</figcaption>
+</figure>
+</div>
+<p>For the $5 bn Humelink project to be built, hopefully starting in 2024 three things have to happen. It has to get the planning approvals, it has to get the easement consents and it has to get the AER to approve the cost. I think all three will be achieved but some easements will almost certainly end up in court so lets start that process.</p>
+<section id="planning-approval" class="level4">
+<h4 class="anchored" data-anchor-id="planning-approval">Planning approval</h4>
+<p>According to the Transgrid factsheet Humelink is expeted to start construction in 2024 subject to planning approvals. I don’t think the planning approvals are in any real doubt The NSW Planning Portal shows that Transgrid was asked for a response to EIS objections on 11 October 2023. But Transgrid’s response is not shown so the ball is in their court. The route goes through rare orchid and smokey mouse habitats. Of course mice are an endangered species in NSW. Further studies must be done even though the Dept does not actually know itself whether the flora and fauna are actually in the area and the easement is only 70 metres. I might add that like many others I love orchids, we have some that I estimate are 50 years old. I only write this to show just how difficult it is to get something done in NSW. I would hope if another double circuit is added that these studies wont have to be repeated.</p>
+<p>In regard to the Federal EPBC Act approval the requirement seems to have been made in 2021 and Transgrid submitted its response in March 2022 and the project will be assessed under the bilateral agreement with the NSW Govt. I don’t know what that means, only that two years later there is no approval I’m aware of.</p>
+</section>
+<section id="aer-cost-approval" class="level4">
+<h4 class="anchored" data-anchor-id="aer-cost-approval">AER cost approval</h4>
+<p>In regard to the rate setting process which is done via the AER and was initially under the RIT-T test Humelink has had approval for $620 m of early works funding. Now it is now seeking approval to spend the remainder of the budget. The AER required Transgrid to submit an updated NPV analysis which Transgrid did on 29 February 2024. Naturally Transgrid confirmed that the market benefits have increased more than the cost of the project and the NPV according to Transgrid has increased. The revision is technically done under a Contingent Project Application(CPA 2) and no longer part of the RIT-T if that matters. Transgrid requested AER approval for CPA 2 in December, and in the application, requested it be approved by the end of March.</p>
+<div id="fig-capex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-capex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20240505124333171.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Humelink capex. Source: Transgrid"><img src="../media/image-20240505124333171.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-capex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Humelink capex. Source: Transgrid
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="easements" class="level4">
+<h4 class="anchored" data-anchor-id="easements">Easements</h4>
+<p>In theory, and in this case I think in reality, landowner opposition, within the law, can only delay construction. Ultimately when the objector arbitration/court process is concluded Transgrid will have the legal right to its easement. Some landowners have the money and determination to drag it out but ultimately they can’t stop it. In Humelink’s case opposition seems so entrenched that likely despite the compensation, despite two NSW Govt upper house enquires, despite the national and NSW need, they will continue to argue that either it not be built or argue for undergrounding.</p>
+<p>In October 2023 after reading a transcript of evidence at the first Upper house enquiry I wrote:</p>
+<blockquote class="blockquote">
+<p>Currently Transgrid has Consents to Enter for approximately 249.9km of the total alignment of 328km or 76% of the line. Approximately 40.747km of this is public land or approximately 16% of the 249.9km where we have Consents to Enter.</p>
+</blockquote>
+<p>The 328 km mentioned by Transgrid is less than the total line length quoted of 360 km</p>
+<p>Given the legal right to an easement I think that alone is enough for Transgrid to proceed. No further information is available other that in total 270 easments are required. Rereading the enquiry evidence landowners along 30% of the route hadn’t at that stage, allowed Transgrid access to their property. That would be something like 90 land owners and 100 km give or take. So 90 arbitration processes. Hopefully at some point Transgrid can provide some actual numbers.</p>
+</section>
+</section>
+<section id="snowy-is-not-as-relevant-anymore-and-humelink-is-not-about-snowy-anymore" class="level3">
+<h3 class="anchored" data-anchor-id="snowy-is-not-as-relevant-anymore-and-humelink-is-not-about-snowy-anymore">Snowy is not as relevant anymore and Humelink is not about Snowy anymore</h3>
+<p>In my view Snowy 2.0 has faded from being a big deal to just another thing. The project is hopelessly late, about as over budget as a nuclear plant, and progress contines to be measureable in metres rather than 100s of metres. No doubt it will eventually be built and operate.</p>
+<p>However, the market hasn’t stood around waiting. Batteries have come rushing into the void. Moreover, and again in my opinion, thinking about the need for long duration storage is evolving. In particular the fact that X GWh of batteries can be configured to give any amount of power of varying duration has come to dominate my thinking. For instance Borumba, the otherwise admirable QLD Govt’s answer to Snowy 2.0, has 2 GW of powwer for 24 hours (48 GWh) . I proved to my satisfaction that 6 GW of 8 hour batteries (48 GWh) would do a far better job than Borumba. The reason is that power is more valuable than duration. Something that policymakers should write on their forheads. 6GW of 8 hour batteries can be recharged far more quicly than 2 GW of 24 hour batteries. And if you want to you can operated the 6 GW as a 2 GW 48 hour system but you cant operate 2 GW of pumped hydro at 6 GW. The batteries are more expensive, but they are needed anyway because basically Borumba can’t do the job.</p>
+<p>The market understands this, or at least they can see that batteries are needed, and so 5 GW of batteries are under construction and there will be more.</p>
+<p>And as a result of all those batteries the fact is that Snowy, whether its needed or not needed, will likely not operate as often as originally designed.</p>
+</section>
+</section>
+<section id="dc-lines-are-more-relevant-with-rezs-than-without-rezs" class="level2">
+<h2 class="anchored" data-anchor-id="dc-lines-are-more-relevant-with-rezs-than-without-rezs">DC lines are more relevant with REZs than without REZs</h2>
+<p>By and large, AEMO, Transgrid, Powerlink have argued for AC connections over DC. There are probably a number of reasons for this, but one of them has been that most of the cost in a DC transmission line is the large, expensive and noisy converter stations at each end. The need for a conversion station means that DC is a point to point system, it doesn’t generally allow for random generators to connect along the way.</p>
+<p>A second disadvantage is that the circuit breakers for very high capacity DC lines are not that available, at least that is what I read. And underground DC lines are hard to repair. Admittedly older style and under water but we have all seen how long it took to repair a problem with Basslink. Tasmania lost the connection for months.</p>
+<p>Still I am not the person to talk about the technical side of things. What I can say is that:</p>
+<ul>
+<li>Most future renewable generation will be built in REZs</li>
+<li>New transmission is largely being built to carry power from REZs to load.</li>
+</ul>
+<p>Consequently, few new generators will be built outside of the REZs and hence there is no need to have the interconnection capacity along the way. To that extent the argument that AC lines are a better choice than DC lines is less valid than before REZs came along.</p>
+</section>
+<section id="a-financial-analysts-concept-of-transmission-capacity" class="level2">
+<h2 class="anchored" data-anchor-id="a-financial-analysts-concept-of-transmission-capacity">A financial analyst’s concept of transmission capacity</h2>
+<p>Google is of only limited assistance in understanding transmission capacity. Not only that, the questions, ie how much power can a 500 KV line carry may remain the same but the answers slowly change.</p>
+<p>The best “old school” answer I could find was from the Baylor University website <a href="https://web.ecs.baylor.edu/faculty/grady/_13_EE392J_2_Spring11_AEP_Transmission_Facts.pdf">AEP_Transmission_facts</a></p>
+<p>What I read is that AC transmission power capacity increases with voltage. More volts more power. However AC transmission is limited by heat, by reactive power impacts caused by its capacitance and inductance and AC transmission also has a “skin effect” which means that only the outer part of the cable carries power. The longer the cable the greater some of these effects. As discussed in prior article new conductor materials can increase the capacity of AC transmission</p>
+<p>Transmission lines also have a number of circuits. Typically, at least in Australia, either 1 or 2. Generally the maximum permitted power capacity on a transmission line is calculated with reference to allow for a “circuit or line loss” over at least part of the transmission line length.</p>
+<p>The upside to this calculation is that as the number of circuits increases the maximum amount of power that can be carried goes up more. So 4 circuits can carry more than 2X the power of 2 circuits. AEP explains SIL of 1 as</p>
+<blockquote class="blockquote">
+<p>a loading level at which the line attains self-sufficiency in reactive power.</p>
+<p>Using the SIL concept, three 500 kV or six 345 kV circuits would be required to achieve the loadability of a single 765 kV line. Specifically, a 765 kV line can reliably transmit 2200-2400 MW (i.e., 1.0 SIL) for distances up to 300 miles, whereas the similarly situated 500 kV and 345 kV lines with bundled conductors can deliver only about 900 MW and 400 MW, respectively. For short distances, these relationships can differ to some extent reflecting thermal capacities established primarily by the number/size of line conductors and station equipment ratings.</p>
+</blockquote>
+<p>Alternatively a 500 KV line can carry 1500 MW for 225 km assuming both ends of the line are “well developed”.</p>
+<p>An example of combination overhead AC and DC line is <a href="https://patternenergy.com/projects/sunzia/">SunZia</a> connecting wind in New Mexico to Arizona originally conceived as twin circuit AC its now effectively a DC and parallel AC line with combined capacity over 4 GW.</p>
+<p>Worldwide the AC transmission votage record is apparently the <a href="https://en.wikipedia.org/wiki/Ekibastuz–Kokshetau_high-voltage_line">Ekbastuz-Kokshetau</a> 1150 kV, 432 km line which can carry 5.5 GW on 45 metre transmission towers. There are a dozen existing AC and DC lines in China that carry 5 GW or more, typically at 800 kV - 1000 kV and sometimes double circuits.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/itkservices3\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 ITK admin@itkservices.com.au</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script data-isso="//comentario3.itkservices2.com/" data-isso-css="true" data-isso-css-url="null" data-isso-lang="en" data-isso-max-comments-top="10" data-isso-max-comments-nested="5" data-isso-reveal-on-click="5" data-isso-avatar="false" data-isso-avatar-bg="#f0f0f0" data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6 ..." data-isso-vote="true" data-isso-vote-levels="" data-isso-page-author-hashes="f124cf6b2f01,7831fe17a8cd" data-isso-reply-notifications-default-enabled="false" src="https://comentario3.itkservices2.com/js/embed.min.js"></script>
+        <section id="isso-thread" data-title="Test tag"></section>
+   
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

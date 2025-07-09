@@ -1,0 +1,14 @@
+_site/
+_freeze/
+venv/
+node_modules/
+.quarto/
+*.log
+.DS_Store
+__pycache__/
+*.pyc
+nohup.out
+.Rproj.user
+.Rhistory
+quarto-*.deb
+quarto-*.tar.gz

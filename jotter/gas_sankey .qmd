@@ -1,0 +1,21 @@
+---
+title: "Gas sankey"
+author: "David Leitch"
+date: "2024-03-19"
+categories: [jot,gas]
+image: "../../media/image-20240319105129889.png"
+lightbox: true
+draft: false
+---
+
+
+
+# Gas use
+DCCEEW produce some great Sankey diagrams and today I highlight gas supply and demand. Data relates to 2022.
+The figure makes it very obvious that most gas goes to LNG, and is not easily diverted from that to domestic use thanks to reserves being heavily contracted. Another somewhat remarkable observation is that over 450 PJ of gas is used in the manufacture of LNG. That's despite the fact that in QLD, where around 1000 PJ of end production is based on electrified CSG wells.
+Gas also goes to power generation. That usage will drop off or at least AEMO forecasts it to drop off later in the decade even though the power capacity is retained.
+The next highest use is residential and small business gas demand and that will decline over time
+Industrial gas demand, for process heat, has as its largest customer alumina refining but its also used for brick manufacturing, cement kilns and various other processes. 
+New uses of gas will likely have to come at the expense of one of the existing uses as gas development in Australia is likely to be expensive and difficult
+
+![Gas supply & demand. Source: DCCEEW](../../media/image-20240319105129889.png)

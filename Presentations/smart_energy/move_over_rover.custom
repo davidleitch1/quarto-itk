@@ -1,0 +1,69 @@
+---
+title: "Move over once, move over twice"
+subtitle: "Transforming the grid"
+format:
+  revealjs: 
+    theme: d
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: 
+    
+    footer: <www.itkservices.com>
+
+---
+
+
+
+## We are here to make a difference
+
+![ocean_heat](./media/image-20240226204542960.png)
+
+```{.markdown}
+::: {.notes}
+Ask audience about solar on rooftop, household battereies, cars. Emphasize they are the ones that make the difference
+:::
+```
+
+##  Over 50% is certain by 2025/2026
+
+![thermal_v_renewables](./media/image-20240226164750878.png)
+
+## 7 GW under construction + 3 years of rooftop growth = 25 TWh
+
+![over_50_please](./media/image-20240226164820901.png)
+
+## What we've built
+
+![Existing. Source:www.renewmap.com](./media/image-20240227141721032.png)
+
+## What we building right now
+
+![Under_construction. Source: www.renewmap.com](./media/image-20240227141944880.png)
+
+## Waiting for the gun
+
+![Develpment www.renewmap.com](./media/image-20240227142218453.png)
+
+## Ideal portfolio
+
+
+
+## Transmission plans
+
+![Transmission_build](./media/image-20240226205145540.png)
+
+
+
+## Widely varying cost estimates
+
+![transmission_unit_cost](./media/image-20240226205313236.png)
+
+## Best (highest Sharpe ratio) VRE portfolio no regard to transmission
+
+
+
+## Lowest capital cost portfolio
+
+- Has significantly more solar and therefore more gas

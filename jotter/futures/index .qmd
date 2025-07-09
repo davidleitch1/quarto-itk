@@ -1,0 +1,17 @@
+---
+title: "Futures"
+author: "David Leitch"
+date: "2024-02-13"
+categories: [jot,nem,futures]
+image: "/media/image-20240213150038450.png"
+lightbox: true
+draft: false
+---
+
+
+
+# Chart of the day - Flat load futures are falling
+
+!["NSW annd QLD"](/media/image-20240213150038450.png)
+
+!["Vic and SA"](/media/image-20240213150237365.png)

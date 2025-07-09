@@ -1,0 +1,110 @@
+---
+title: "Move over once, move over twice"
+subtitle: "Transforming the grid"
+
+format:
+  revealjs:  
+    embed-resources: true
+    theme: black
+    slide-number: true
+    preview-links: auto
+    logo: "ITK_logo.png"
+    author: "David Leitch & Paul Bandarian"
+    footer: <www.itkservices.com>qua
+
+---
+
+
+
+## 
+
+![Acknowledgment to futures generations](./media/image-20240226204542960.png)
+
+
+::: {.notes}
+Ask audience about solar on rooftop, household battereies, cars. Emphasize they are the ones that make the difference be quick ddd
+:::
+## Takehome
+
+::: {.fragment .fade-in-then-semi-out}
+Tasmania and QLD are essential to an efficient decarbonised NEM
+:::
+::: {.fragment .fade-in-then-semi-out}
+More solar probably means more firming and more gas
+:::
+
+
+## Three portfolios for a renewable NEM
+::: {.fragment .fade-in-then-semi-out}
+Best wind and solar portfolio.
+
+- Best = maximise (average output/variability of output) 
+:::
+::: {.fragment .fade-in-then-semi-out}
+Lowest cost portfolio
+
+ - Much more solar and gas
+::: 
+::: {.fragment .fade-in-then-semi-out}
+ITK's preferred portfolio, 
+
+- minimises gas (ie carbon), 
+- cost is still low, Sharpe ratio high
+::: 
+
+
+
+## 
+
+![Compared. source:ITK](./media/image-20240229203727856.png)
+
+
+
+## 
+
+![source: ITK, leaflet](./media/image-20240229202230254.png)
+
+
+
+## 
+
+![Average day. Source:ITK](./media/image-20240229142351150.png)
+
+
+
+
+
+## 
+
+![Existing. Source:www.renewmap.com.au](./media/Operating_Narrow.png)
+
+## 
+
+![Under_construction. Source: www.renewmap.com.au](./media/Construction_Narrow.png)
+
+## 
+
+![Waiting for the gun. www.renewmap.com.au](./media/Development_Narrow.png)
+
+
+## 
+
+![Transmission_build](./media/image-20240226205145540.png)
+
+
+
+## 
+
+![transmission_unit_cost](./media/image-20240226205313236.png)
+
+
+##  
+
+![thermal_v_renewables](./media/image-20240226164750878.png)
+
+## 7 GW under construction + CIS
+![75% by 2030 Source:ITK](./media/image-20240304084810028-9502494.png)
+
+
+
+ 

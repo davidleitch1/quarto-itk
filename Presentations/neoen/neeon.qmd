@@ -1,0 +1,179 @@
+---
+title: "Markets and structures"
+subtitle: "Transform and grow"
+draft: true
+format:
+  revealjs:  
+    embed-resources: true
+    theme: black
+    slide-number: true
+    preview-links: auto
+    logo: "ITK_logo.png"
+    author: "David.Leitch@itkservices.com.au"
+    footer: "[www.itkservices.com](www.itkservices3.com)"
+---
+
+
+
+## 
+
+![Acknowledgment to futures generations](./media/image-20240226204542960.png)
+
+::: {.notes}
+
+:::
+
+# Questions 
+
+::: {.fragment .fade-in-then-semi-out}
+
+Will the CIS work?
+
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+
+What does it take to be a long term player?
+
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+
+Is Neoen Australia outgrowing NEOEN?
+
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+
+Would NEOEN be better structured as a trust in Australia?
+
+:::
+
+## Projects are getting bigger
+
+![Approved wind farms. Source: Renewmap.com.au](../../media/image-20240307115540914.png)
+
+## Still plenty of  wind developers, even only counting approved
+
+![Developoers with approved wind. Source: Renewmap](../../media/image-20240312161347839.png)
+
+## And even more with solar
+
+![Solar Developers with approved projects. Source:Renew map](../../media/image-20240312161501714.png)
+
+## 
+
+![VRE under development. Source: Renewmap](../../media/image-20240313141034840.png){.r-stretch}
+
+# Capacity Investment Scheme
+
+![CIS timetable. Source: Dept, ITK](../../media/image-20240313153138493.png)
+
+# Where to build - System design perspective
+::: {.fragment .fade-in-then-semi-out}
+1	REZ weights for highest Sharpe Ratio portfolio
+:::
+::: {.fragment .fade-in-then-semi-out}
+2	REZ weights for lowest cost portfolio including transmission and firming
+:::
+::: {.fragment .fade-in-then-semi-out}
+3	REZ weights for ITK preferred (lowest cost subject to Sharpe Ratio of 4)
+:::
+# Results
+
+![Source:ITK](../../media/image-20240313093631987.png)
+
+# Average day
+
+![ITK preferred](../../media/image-20240313095918131.png)
+
+
+
+# "Costs"
+
+![Source: ITK](../../media/image-20240313100814711.png)
+
+## 
+
+![Transmission_build](../../media/image-20240226205145540-9523068.png)
+
+## Transmission costs 
+
+![Transmission cost. Source:various](../../media/image-20240313164443815.png)
+
+## 
+
+![Thermal v renewables. Source: NEM Review](../../media/image-20240313164249454.png)
+
+# 7GW under construction
+
+![Source: Renewmap.com.au](../../media/image-20240313132733387.png)
+
+## + CIS
+
+![75% by 2030 Source:ITK](../../media/image-20240304084810028-9502494-0295682.png)
+
+# Lots of batteries under construction
+
+![Under construcion. Source:Renewmap, AEMO](../../media/image-20240313135317802.png)
+
+# challenges for a listed renewable developer {.scrollable}
+::: {.fragment .fade-in-then-semi-out}
+- infrastructure owner wants a steady predictable return
+:::
+::: {.fragment .fade-in-then-semi-out}
+  - capital commitments are large and ongoing
+:::
+::: {.fragment .fade-in-then-semi-out}
+- developer wants a higher because riskier return on capital
+
+:::
+::: {.fragment .fade-in-then-semi-out}
+
+  - lower capital requirement higher people skills
+
+:::
+
+## Company
+
+
+::: {.fragment .fade-in-then-semi-out}
+
+  - Return on capital never obvious 
+  - So yield is the signal to investors but needs to be pre tax
+  - constant issue of capital dilutes control
+
+:::
+::: {.fragment .fade-in-then-semi-out}
+- Trust and developer or stapled security
+
+:::
+
+
+
+
+## Trust 
+
+::: {.fragment .fade-in-then-semi-out}
+
+- distributes cash, doesn't worry about profit for distribution
+- pre tax basis
+
+:::
+::: {.fragment .fade-in-then-semi-out}
+  - Trust managed by holding company
+    - develops and sells into trust
+
+:::
+::: {.fragment .fade-in-then-semi-out}
+  - Stapled security
+    - trust and holding company indivisibly stapled together
+
+:::
+
+## Examples
+
+::: {.fragment .fade-in-then-semi-out}
+
+  Property trusts, Transurban, Spark Infrastructure, Ausnet 
+:::

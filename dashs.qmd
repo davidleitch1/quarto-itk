@@ -1,0 +1,23 @@
+---
+title: ""
+comments: false
+format:
+  html:
+    page-layout: custom
+
+---
+::: {.panel-tabset}
+
+## Live NEM Demand and supply source:NEM Review
+ <div style="height:88vh">
+ <iframe src='https://embed.global-roam.com/containers/86092638-fd6d-41d9-aa92-eb6c1dbb4e47'  title="live supply" height=800 px  width=800 px style = 'background:white' ></iframe>
+</div>
+
+
+## Live prices source:AEMO
+<div  style="height:88vh">
+<iframe src="https://aemo.com.au/en/energy-systems/electricity/national-electricity-market-nem/data-nem/data-dashboard-nem" title="nem-dash" height=90% width=90% ></iframe> 
+</div>
+
+
+:::

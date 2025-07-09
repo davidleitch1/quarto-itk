@@ -1,0 +1,38 @@
+## Three portfolios for a renewable NEM
+
+- Best wind and solar portfolio.
+  - Best = maximise (average output/variability of output) = Professor Bill Sharpe's ratio regardless of transmission cost
+  - Lots of wind in North Qld, Tasmania and Sth Aust, some offshore wind
+- Lowest cost portfolio
+  - Includes wind, solar, batteries, gas(capaital and fuel), transmission and existing hydro costs
+  - Much more solar and gas
+- ITK's preferred portfolio, (perfect is the enemy of the good)
+  - minimises gas (ie carbon), cost is still low, Sharpe ratio high
+  - Lots of wind but closer to load to reduce transmission
+
+
+
+## Compared
+
+![Renewable NEM choices. Source:ITK](./media/image-20240229121343671.png)
+
+
+
+## ITK preferred location map
+
+![ITK Preferred location. Source: ITK](./media/image-20240229140618136.png)
+
+
+
+## Lowest cost average day
+
+![Source:ITK](./media/image-20240229142351150.png)
+
+
+
+## Takehome
+
+- Rooftop can't do it all
+- Tasmania and QLD are essential to an efficient decarbonised NEM
+- More solar probably means more firming and more gas
+

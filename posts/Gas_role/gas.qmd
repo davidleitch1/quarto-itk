@@ -1,0 +1,36 @@
+---
+title: "Gas generation doesnt set prices all that often"
+author: "David Leitch"
+date: "2024-02-17"
+categories: [analysis,nem,gas]
+image: "../../media/image-20240215210520010.png"
+lightbox: true
+draft: false
+---
+
+
+
+# Gas generation's role in electricity prices is misunderstood
+
+Its a common perception that gas generation tends to be the price setter for electricity. From this it is easy jump to the idea that electricity prices will go up and down with gas prices. The fact is though its hydro which sets the price in Winter and its coal and renewables that have a big price setting role in Spring. Gas has an important but only modest role in price setting. Batteries already have an observable role in price setting and its certain that the quantity of battery available to dispatch will increase sharply over the next couple of years. Therefore I maintain my view that more supply in evening peaks will likely help to drive overall spot electricity prices down, perhaps by about 10% on a time weighted average basis. Lower peak prices in turn will tend accelerate the departure of coal fired generation.
+
+Its easy to see how a misunderstanding developed. Generally gas generation takes place at least in NSW and QLD in the evening peak when prices are far higher than during the day. Also if you draw a chart showing spot gas prices and spot electricity prices you can see they have tended to move together.
+
+![South Aust. Gas v spot price, 90 day average. Source: NEM Review, AEMO](../../media/image-20240217113437415.png)
+
+Looking at it statisically though via a 90 day rolling correlation, most of the time gas is only moderately correlated with price:
+
+![Sth Aust, gas price and electricity price correlation over time. Source: NEM Review, AEMO](../../media/image-20240217113817432.png)
+
+But in any event AEMO's own Quarterly Energy Dynamics (QED) explicityly shows that through out the NEM gas plays only a moderate role in price setting. We need to look at two quarters at least, Spring when solar is very strong, and Q3 or Q2 when there is less solar. 
+
+![Price setting fuel Dec qtr 2023. Source: AEMO](../../media/image-20240217114331614.png)
+
+In Winter hydro comes to the fore, and indeed batteries are also moving in.
+
+![Price setting fuel Jun qtr 2023 and 2022. Source: AEMO](../../media/image-20240217115036679.png)
+
+
+
+
+

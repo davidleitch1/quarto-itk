@@ -1,0 +1,34 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+  
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/david-leitch-b18a7624/
+    
+
+---
+
+# Electricity and energy analysis with a focus on decarbonisation
+Mostly written and presented by David Leitch with assistance as required.
+
+Since 2016 David is the owner of ITK a consultancy providing project and market evaluation.
+
+Previously David had 33 experience in research at leading Australian Investment Firms leading teams that rated No 1 in the main market survey in Utilities, Infrastructure and Building materials at one time or another.
+
+David is also the cohost of  "Energy Insiders". The podcast features interviews from a wide range of leading stakeholders in the Australian Energy industry as well as international experts.
+
+## Consulting
+ITK provides consulting services consisting of industry and project analysis. 
+
+We maintain supply and demand tables, merit order calculations and merit order pricing estimates
+
+We do NPV project analysis, business analysis and general outlook consulting.
+
+ITK has undertaken assignments for a range of major corporates, not for profits and other organisations.
+
+Contact us at
+admin@itkservices.com.au

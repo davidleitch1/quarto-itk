@@ -1,0 +1,53 @@
+---
+title: "Coal Gen Sensitivity"
+author: "David Leitch"
+date: "2024-02-15"
+categories: [analysis,nem,coal]
+image: "../../media/image-20240215210520010.png"
+lightbox: true
+draft: false
+---
+# Sauce for the goose
+
+# Price matters more than volume to coal generators
+
+Coal generators will certainly lose volume over the next few years as a group. Perhaps this will hurt the brown coal generators more because of their high level of fixed costs. But as far as I can see its price that matters a lot more than volume. Indeed its a sure sign of age that I have work out again what I already knew 30 years ago.
+
+The other message of this piece is that it pays to announce you are going to close. Its a wonder the owners of LYB, Vales Point, Mt Piper and Bayswater haven't already announced their closure. It seems to be the sure way to Govt funded capacity payment. Perhaps they are waiting to see what Eraring gets before quickly following suit. Might be a case of first in best dresse though.
+
+# Coal generation sensitivity to falling price and volume
+
+Coal generators in Australia are expected to mostly all close over the next 11 years. That's a short time frame and may or may not be achieved.
+
+State Governments particularly in Victoria and NSW have become concerned that coal generators may close before there is enough new supply to replace them. 
+
+The coal generators will close because revenues will fall as lower variable cost supply from wind and solar comes on line, and becaause of increased competing supply, from batteries,  at peak price times.
+
+A coal generator has both fixed and variable costs and is an almost text book example to show the impact of the contribution margin on profitability. We can compare Eraring and Loy Yang A as follows:
+
+![Coal gen parameters, Source:AEMO,ITK](../media/image-20240215163904269.png)
+
+These numbers show Eraring to be a better proposition than LYA, it breaks even at lower volumes and has more cashflow, but the cash flow depends on both the price and volume. 
+
+For instance Eraring cash flow after capex is quite sensitive to both price and volume but its clearly more sensitivity to price.  At $80 MWh, entirely within the range of possibities and if coal prices are at current spot rates then Eraring has negative cash flow at any volume. At $100/MWh it can wash its face even if it loses 1/3 of volumes. Still 5TWh is less than the output of 2 GW of wind and that in due course is a certain outcome.
+
+![Eraring net cash flow. Source:ITK](../media/image-20240215173752981.png)
+
+The good news for consumers, if therre is any, is that there will be more need for a Govt funded capacity payment in the event of lower prices than lower volumes. In the case of Eraring that using the subsidised coal cost of A$125/t improves ORG cash flow by as much as $100 m.
+
+Its much the same at LYA despite the lower fuel cost and the higher fixed costs. Its still price that is more important than volume.
+
+![LYA price/vol sensitivity. Source:ITK](../media/image-20240215180737463.png)
+
+# Renewables are subsidised but the subsidy amount is generally known
+
+At least the REC price is public. Even in the case of PPAs there is generally some information about the price.
+
+So far though, at least in Victoria, the capacity arrangements with Energy Australia in regard to Yallourn and with AGL in regard to LYA are completely unknown.
+
+It may be that LYB enjoys a similar pro rata agreement to LYA, who knows? Nothing has been announced. However what if LYA is getting paid for capacity but still free to sell its output and LYB is not getting paid for capacity. Clearly LYB will need a higher price than LYA to stay open.
+
+Its likely that ORG will also get a capacity payment.
+
+![Sauce for the gander.Sauce: internet](../../media/image-20240215210520010.png)
+

@@ -1,0 +1,11 @@
+---
+title: ""
+comments: false
+format:
+  html:
+    page-layout: custom
+
+---
+<div class="page-layout-custom" style="height:88vh">
+<iframe src="https://nem_dash.itkservices2.com" title="nem-dash" height=100% width=100% ></iframe> 
+</div>

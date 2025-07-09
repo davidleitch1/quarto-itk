@@ -1,0 +1,19 @@
+---
+title: "Move over once, move over twice"
+author: "David Leitch"
+date: "2024-02-26"
+categories: [analysis,nem,gas]
+image: "../../media/image-20240226152519459.png"
+lightbox: true
+draft: false
+---
+
+
+
+# Crossing over in 2025  the way to 2030
+
+![Under construction,Source:wwww.renewmap.com](../../media/image-20240226150501686.png)
+
+![Progress,source: NEM review ](../../media/image-20240226152359296.png)
+
+![Over 50% in late 2025, source: ITK estimates](../../media/image-20240226152519459.png)

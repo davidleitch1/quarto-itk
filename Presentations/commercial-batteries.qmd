@@ -1,0 +1,88 @@
+---
+title: "Batteries"
+title-slide-attributes:
+    data-background-image: ..media/image-20250318163015463-2275824.png
+    data-background-size: contain
+    data-background-opacity: "1"
+draft: true
+format:
+  revealjs:  
+    embed-resources: true
+    theme: black
+    slide-number: true
+    preview-links: auto
+    logo: "ITK_logo.png"
+    author: "David.Leitch@itkservices.com.au"
+    footer: "[www.itkservices.com](www.itkservices3.com)"
+    
+---
+
+
+## Batteries are a growth business but commoditising
+
+Massive growth since 2022 when the lightbulb went on. 
+![Source:BNEF](../media/image-20250317125658822.png)
+
+## Falling prices 
+![Source:RMI](../media/image-20250318142428091-2268275-2268281-2268283.png)
+
+## Drive new markets
+![source:RMI](../media/image-20250318161746946-2275073.png)
+
+## Australia '24 was much bigger
+![Source:Sunwhiz](../media/image-20250317125921647.png)
+
+## Battery Capacity in Australia's NEM
+
+<div id="battery-visualization"></div>
+
+<style>
+/* Custom Dracula theme styling that works with black reveal.js theme */
+#battery-visualization {
+  background-color: #282a36;
+  color: #f8f8f2;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Fira Code', monospace;
+  margin: 0 auto;
+  max-width: 100%;
+  height: 550px;
+}
+</style>
+<script src="battery-viz.js"></script>
+
+
+
+![Source:www.renewmap.com.au](../media/image-20250311104211762.png)
+
+## Huge USA penetration
+
+![Source:Mooney](../media/image-20250311104544395.png)
+
+## ITK's spread forecasts
+
+![Source:ITK](../media/image-20250311142512020-1670395.png)
+
+## Volatility likely to continue
+
+![Source:ITK](../media/image-20250318145450802-2270095.png)
+
+## FCAS history
+
+![Source:Global Roam](../media/image-20250318153525109-2272529.png)
+
+## Batteries take share
+
+![Source:Global Roam](../media/image-20250318154621210-2273187.png)
+
+## And will benefit from rule changes
+Frequency Performance Payments (FPP) represents the most significant shift in how Regulation FCAS costs are recovered since the creation of the competitive markets for FCAS in September 2001.
+
+This new framework fundamentally changes who pays and how much they pay for regulation FCAS. It also introduces both:
+
+an incentive payment for the provision of primary frequency response (PFR), and
+a penalty payment for deviations which contribute to frequency fluctuations.
+
+## Trading starts to dominate
+
+![Source:Global Roam](../media/image-20250318154848903-2273335.png)

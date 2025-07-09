@@ -1,0 +1,235 @@
+---
+title: "Looking Forward"
+author: "David Leitch"
+date: "2024-01-16"
+categories: [analysis,nem]
+image: "media/image1.png"
+lightbox: true
+draft: false
+---
+# Transmission, supply chain, GPS are not issues. Willingness is the issue
+
+Price signals are unambiguously positive at least in NSW and QLD and
+even a renewable developer can work out prices in Victoria will rise
+post the Yallourn closure.
+
+Yet over the past year we've all had to stand around and hear a long
+list of complaints from wind and solar developers. No transmission,
+supply chain, costs, GPS, uncertainty (God forbid returns are not
+guaranteed).
+
+The only thing anyone talks about is batteries even though batteries are
+net consumers of energy.
+
+The groups that have most disappointed me are the big renewable
+developers Iberadrola, CWP (or whatever its called these days), Tilt and
+their ilk. These guys don't have the legitimacy of running coal
+generators to maximise end of life cash flows, they have large balance
+sheets and are completely capable of taking on some risk should they
+choose to do so.
+
+Then of course there are the Gentailers. At least their lack of
+commitment is normal. I laugh to see 70% of shareholders that voted in
+favour of the ORG scheme but now have to put up with a company that
+remains neither fish nor fowl and where uncertainty remains the day.
+Aussie Super "we'll save ya" attitude and why don't you buy some Santos
+or Woodside comes really as no surprise. For sure they are big and
+proved size does matter. Poor old EnergyAustralia must wonder how
+Brookfield can talk to AGL and Origin but EA and its owner CLP are left
+as wall flowers, continuously passed over, despite showing all the leg
+they can get away with.
+
+As usual, and I speak as someone who passionately believes in markets,
+its Government, and in this case the QLD Govt that has stepped into the
+breach.
+
+Nevertheless the point of this note is to observe that:
+
+-   Transmission will be available in NSW from 2026 and plenty by 2028.
+    It takes that long to build new wind farms so these guys should be
+    committing now.
+
+-   Supply chain issues, at least in terms of wind turbines, are not an
+    issue. If you order a turbine from Vestas you can get it at the same
+    euro price as last year. You can possibly get a Goldwind turbine for
+    less than last year.
+
+-   Price signals remain strong and there is even more financial
+    support.
+
+-   AEMO is, from what I can see, increasingly [ready to rock and
+    roll](https://aemo.com.au/-/media/files/electricity/nem/network_connections/connections-scorecard/connections-scorecard---october-2023.pdf?la=en).
+
+I guess its still legitimate to say that Humelink is not certain and the
+Orana contract has not actually been announced, but as Irving Fisher so
+poetically observed in the preface to "Theory of Interest", "coming
+events cast their shadows before". If I can see the transmission is
+coming with my fading eyesight it must be crystal clear to renewable
+developers.
+
+# Two big events left this year
+
+Results from AEMO services tender 2 for renewable energy in NSW are
+expected to be released in the next couple of weeks. That should cover
+around 1 GW of projects, a drop in the ocean but still very welcome
+news. Hopefully at least some new wind.
+
+Energyco (AEMO Services partner in NSW) will also release a year end
+update Monday 11 December. It would not surprise me to find that the
+Orana transmission contract is also announced then.
+
+Then, of course, the first draft of the 2024 ISP will also be released
+in the next couple of weeks. Although ostensibly a transmission planning
+exercise, the reality is that the 2022 ISP was the document that
+convinced stakeholders that we all in reality expected a decarbonised
+NEM and sooner rather than later. Not so much price discovery as belief
+discovery.
+
+In any event the ISP 2024 will embody State Govt policies such as
+Victoria's offshore wind target, misguided as it may be, the Queensland
+plan, misguided though Borumba may be and changes to the NSW outlook
+including delays to Snowy 2. Personally I could not give a rats about
+the delay to Snowy 2 or its cost. For me the world has moved on. Still
+lets leave ISP 2024 until its released. Speculation is pointless.
+
+# Transmission outlook is improving
+
+For years commentators have focussed on transmission as the key enabler
+of a strong renewable electricity system. The earliest article I wrote
+about this here at Reneweconomy was on July 5 2017 [\"Transmission we
+need to start building
+now\"](https://reneweconomy.com.au/transmission-we-need-to-start-building-now-to-deal-with-wind-and-solar-boom-13411/).
+That was only a year after I left UBS. At that time the then AEMC Chair
+John Peirce oversaw a rigid approach embodied in the logical and
+seemingly rational but ultimately utterly misguided view of new
+transmission embedded in the RIT-T test.
+
+It was clear even then, using the best practice Texas example, it would
+take seven years to build new transmission, just as it was clear even
+then that the existing transmission network in the NEM would likely be
+in the wrong place for wind and solar. However at that time it wasn't
+clear just how congested the existing network actually was.
+
+Despite the blackout in South Australia by 2023 the only new
+transmission actually being built other than some minor augmentations in
+the QLD-NSW link is the SA-NSW link and that not due for completion
+until 2026. Indeed building new transmission has taken every bit as long
+as feared back in 2017.
+
+During this period, stoked by rabble rousers, fear and doubt (FUD) about
+the ability of Australia to build something as simple as some wires and
+poles has grown and grown. Transmission and wind farms are now portrayed
+as ruining the Australian way of life, a source of endless depression
+and creating environmental destruction.
+
+My view of reality is that renewable energy and the associated
+transmission will preserve the Australian way of life, bring more
+prosperity to regional Australia, is the best thing that can be done to
+preserve the environment and will lead to lower and more certain
+electricity prices. Color me a hippy.
+
+Today a wide range of "experts" and advisors contend that the lack of
+access to transmission is the No 1 problem preventing new renewable
+energy projects from starting.
+
+Personally I not fully convinced that transmission is necessarily
+holding back projects right now. I think wind and solar developers lack
+a willingness to commit, perhaps hoping to move the dial in their
+favour. For instance the 400 MW Uunguala wind farm in Northern NSW could
+have started construction 12 months ago but Twiggy Forrest seems too
+busy posturing on the world stage to sign the contract.
+
+# \$40 bn of transmission under development \$12 bn ready by 2028
+
+There is over \$40 bn of transmission under development.
+
+![](media/image1.png){width="5.125in" height="3.8055555555555554in"}
+
+Figure 1 Transmission development in the NEM.
+
+But if I focus on NSW as the State with the highest forward prices and
+the largest consumer of electricity and look at when significant new
+transmission will be available I see:
+
+![A table with numbers and text Description automatically
+generated](media/image2.png){width="6.268055555555556in"
+height="1.6506944444444445in"}
+
+Figure 2 Transmission development in NSW by 2028. Source: AEMO, TSPs,
+EnergyCo
+
+# Humelink, Orana will make a difference in NSW
+
+In my opinion Humelink is roughly on target to be built by December
+2026. That's despite ongoing opposition to building it above ground,
+despite not all easements agreed, despite a recent 22 km route length
+increase, despite not one but two upper house enquiries and despite the
+fact it has yet to get final approval from the AER or a final investment
+decision.
+
+My confidence comes from the up to \$600 m of pre commitment spending
+that has already and will continue to take place ahead of the AER
+decision next year and because the above ground line is lower cost and
+faster to build than competing underground proposals.
+
+Secondly My guess is that the independent consortium developing the
+Orana REZ transmission link will be able to confirm that link in the
+near future. Confirmation of that should enable the pricing to be
+available to projects in that general area such as Liverpool Ranges Wind
+farm and Valley of the Winds wind farm.
+
+Between those two projects alone and with the 800 MW capacity of Project
+Interconnect now well underway NSW will have removed one of the many
+excuses developers from Origin Energy to Tilt provide as to why they
+aren't building projects.
+
+## Humelink could enable the South West of NSW to leap ahead of the North
+
+Few transmission lines can have been discussed as much as Humelink.
+Although some folk see it for better or worse as being built to
+facilitate Snowy 2, in my mind that is largely irrelevant. Basically I
+see Humelink as doing two main jobs. Firstly its basically the second
+half of the South Australia -- NSW link (Project Energyconnect).
+Secondly it facilitates the increasingly attractive South West REZ. Why
+is the Southwest REZ attractive? Well basically there are less people
+than in the North of State. One wind farm I looked at has only 32
+affected residents. No people, no problem.
+
+There are various large wind and solar farms planned for say the East of
+Balranald area that will have difficulty getting energy to NSW load
+without more capacity between Wagga and Sydney.
+
+EG the Yanco Delta project 10 km north-west of Jerilderie (where I fly
+model planes every year and where Ned Kelly gave the bankers an early
+scare) is a 1.5 GW wind project, quite well progressed in its EIS that
+hopes to connect to Dinawan substation. Dinawin is as substation built
+as a result of Project Energyconnect just to the West of Wagga. Equally
+Spark Energy's "Dinawin Wind Farm" is another 1500 MW project at the
+scoping report stage. Dinawin is also where VNI West is scheduled to
+connect
+
+![](media/image3.png){width="6.268055555555556in"
+height="2.6569444444444446in"}
+
+Figure 3 Dinawin substation, a new hub. Source: Energyco
+
+The 750 MW Burrawong Wind Farm is close to Balranald, is a Windlab
+project at the SEARs stage.
+
+The scoping report for Engie's proposed 1800 MW "Plains Windfarm" near
+Hay has a map showing these developments. Engie is doing the job the NSW
+Department of Planning seems incapable of in providing a regional map.
+
+![](media/image4.png){width="7.260017497812774in"
+height="4.200288713910761in"}
+
+Figure 4 Wind and solar development Balranald to Jerilderie along
+project Interconnect. Source: Engie
+
+Already the Wagga to Sydney transmission is so congested during the day
+that electricity flows almost every day but particularly in high solar
+days from higher priced NSW to lower or negatively priced Victoria (see
+[Whats happening round
+Wagga](https://wattclarity.com.au/articles/2023/11/whats-happening-around-wagga/))
+
+Basically this entire precinct needs Humelink or something like it.

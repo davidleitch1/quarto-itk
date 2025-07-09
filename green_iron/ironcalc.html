@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Iron Cost Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2596be 0%, #1e88e5 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .tab {
+            padding: 15px 30px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #495057;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab.active {
+            color: #2596be;
+            border-bottom-color: #2596be;
+            background: white;
+        }
+        
+        .tab:hover {
+            background: #e9ecef;
+        }
+        
+        .tab.active:hover {
+            background: white;
+        }
+        
+        .tab-content {
+            display: none;
+            min-height: 600px;
+        }
+        
+        .tab-content.active {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 0;
+        }
+        
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-right: 1px solid #e9ecef;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        .input-group h3 {
+            color: #2596be;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+            font-size: 1.1rem;
+        }
+        
+        .input-row {
+            margin-bottom: 12px;
+        }
+        
+        .input-row label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 500;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+        
+        .input-row input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .input-row input:focus {
+            outline: none;
+            border-color: #2596be;
+            box-shadow: 0 0 0 3px rgba(37, 150, 190, 0.1);
+        }
+        
+        .results {
+            padding: 30px;
+        }
+        
+        .results h2 {
+            color: #2596be;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+        
+        .results-table th {
+            background: linear-gradient(135deg, #2596be 0%, #1e88e5 100%);
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .results-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 0.9rem;
+        }
+        
+        .results-table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .results-table .total-row {
+            background-color: #f1f3f4;
+            font-weight: 600;
+        }
+        
+        .cost-highlight {
+            font-weight: 600;
+            color: #2596be;
+        }
+        
+        .summary-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .summary-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .summary-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .hydrogen-summary {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .hydrogen-summary h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .hydrogen-summary .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 1024px) {
+            .tab-content.active {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Green Iron Cost Calculator</h1>
+            <p>Hydrogen Cost Analysis & Technology Comparison</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('hydrogen')">Hydrogen Cost Calculator</button>
+            <button class="tab" onclick="showTab('comparison')">DRI-Smelt v Blast Furnace</button>
+        </div>
+        
+        <!-- Hydrogen Cost Calculator Tab -->
+        <div id="hydrogen-tab" class="tab-content active">
+            <div class="sidebar">
+                <div class="input-group">
+                    <h3>Electrolyser Assumptions</h3>
+                    <div class="input-row">
+                        <label>Electrolyser CAPEX (US$m/GW)</label>
+                        <input type="number" id="electrolyser_capex" value="2000" step="100">
+                    </div>
+                    <div class="input-row">
+                        <label>Electrolyser capacity (GW)</label>
+                        <input type="number" id="electrolyser_capacity" value="1" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>Operating hours per year</label>
+                        <input type="number" id="operating_hours" value="8000" step="100">
+                    </div>
+                    <div class="input-row">
+                        <label>Electricity consumption (kWh/kg H2)</label>
+                        <input type="number" id="electricity_consumption" value="50" step="1">
+                    </div>
+                    <div class="input-row">
+                        <label>Electricity cost (A$/MWh)</label>
+                        <input type="number" id="electricity_cost" value="50" step="5">
+                    </div>
+                    <div class="input-row">
+                        <label>Exchange rate (AUD:USD)</label>
+                        <input type="number" id="exchange_rate" value="0.65" step="0.01">
+                    </div>
+                    <div class="input-row">
+                        <label>Amortization period (years)</label>
+                        <input type="number" id="amortization_period" value="20" step="1">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results">
+                <h2>Hydrogen Cost Breakdown</h2>
+                
+                <div class="hydrogen-summary">
+                    <h3>Total Hydrogen Cost</h3>
+                    <div class="value" id="hydrogen_cost_total_display">A$3.93/kg</div>
+                </div>
+                
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>USD/kg H2</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Electricity Cost</td>
+                            <td class="cost-highlight" id="h2_electricity_cost">1.63</td>
+                            <td>Based on electricity price and consumption</td>
+                        </tr>
+                        <tr>
+                            <td>Other costs</td>
+                            <td class="cost-highlight">0.30</td>
+                            <td>O&M, water, misc operating costs</td>
+                        </tr>
+                        <tr>
+                            <td>CAPEX Amortized</td>
+                            <td class="cost-highlight" id="h2_capex_cost">0.63</td>
+                            <td>Electrolyser capital cost over 20 years</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total Hydrogen Cost (USD)</strong></td>
+                            <td class="cost-highlight" id="h2_total_usd">2.56</td>
+                            <td>Sum of all components</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total Hydrogen Cost (AUD)</strong></td>
+                            <td class="cost-highlight" id="h2_total_aud">3.93</td>
+                            <td>Converted to Australian dollars</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Technology Comparison Tab -->
+        <div id="comparison-tab" class="tab-content">
+            <div class="sidebar">
+                <div class="input-group">
+                    <h3>Technology Parameters</h3>
+                    <div class="input-row">
+                        <label>Capacity (mt)</label>
+                        <input type="number" id="capacity" value="2" step="0.5">
+                    </div>
+                    <div class="input-row">
+                        <label>Ore grade (% Fe)</label>
+                        <input type="number" id="ore_grade" value="62" min="56" max="68" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>Hydrogen cost (A$/kg)</label>
+                        <input type="number" id="hydrogen_cost_input" value="4" step="0.1">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <h3>ESF Parameters</h3>
+                    <div class="input-row">
+                        <label>ESF Electricity price (A$/MWh)</label>
+                        <input type="number" id="esf_electricity_price" value="80" step="5">
+                    </div>
+                    <div class="input-row">
+                        <label>ESF Electricity use (MWh/t) - Base: 0.8 @ 62% Fe</label>
+                        <input type="number" id="esf_electricity_use_display" value="0.8" step="0.1" readonly style="background-color: #f8f9fa; color: #6c757d;">
+                    </div>
+                    <div class="input-row">
+                        <label>ESF CAPEX (A$/t)</label>
+                        <input type="number" id="esf_capex" value="500" step="50">
+                    </div>
+                    <div class="input-row">
+                        <label>ESF O&M (% CAPEX)</label>
+                        <input type="number" id="esf_om_rate" value="0.04" step="0.01">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <h3>Blast Furnace Parameters</h3>
+                    <div class="input-row">
+                        <label>Coal price (A$/GJ)</label>
+                        <input type="number" id="coal_price" value="10" step="1">
+                    </div>
+                    <div class="input-row">
+                        <label>Coal use per tonne (GJ/t) - Base: 20 @ 62% Fe</label>
+                        <input type="number" id="coal_use_display" value="20" step="1" readonly style="background-color: #f8f9fa; color: #6c757d;">
+                    </div>
+                    <div class="input-row">
+                        <label>BF CAPEX (A$/t)</label>
+                        <input type="number" id="bf_capex" value="1000" step="50">
+                    </div>
+                    <div class="input-row">
+                        <label>BF O&M (% CAPEX)</label>
+                        <input type="number" id="bf_om_rate" value="0.05" step="0.01">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results">
+                <h2>DRI-Smelt v Blast Furnace Cost Comparison</h2>
+                
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h3>ESF + Hydrogen</h3>
+                        <div class="value" id="esf_total_display">A$309/t</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Blast Furnace</h3>
+                        <div class="value" id="bf_total_display">A$300/t</div>
+                    </div>
+                </div>
+                
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Component (A$/t iron)</th>
+                            <th style="text-align: right;">ESF + H₂</th>
+                            <th style="text-align: right;">Blast Furnace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hydrogen</td>
+                            <td class="cost-highlight" id="esf_hydrogen" style="text-align: right;">200</td>
+                            <td style="text-align: right;">-</td>
+                        </tr>
+                        <tr>
+                            <td>Coal</td>
+                            <td style="text-align: right;">-</td>
+                            <td class="cost-highlight" id="bf_coal" style="text-align: right;">200</td>
+                        </tr>
+                        <tr>
+                            <td>Electricity</td>
+                            <td class="cost-highlight" id="esf_electricity" style="text-align: right;">64</td>
+                            <td style="text-align: right;">-</td>
+                        </tr>
+                        <tr>
+                            <td>Pelletisation opex</td>
+                            <td class="cost-highlight" id="esf_pellets" style="text-align: right;">38</td>
+                            <td style="text-align: right;">-</td>
+                        </tr>
+                        <tr>
+                            <td>O&M</td>
+                            <td class="cost-highlight" id="esf_om" style="text-align: right;">20</td>
+                            <td class="cost-highlight" id="bf_om" style="text-align: right;">50</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cash cost</strong></td>
+                            <td class="cost-highlight" id="esf_cash" style="text-align: right;">322</td>
+                            <td class="cost-highlight" id="bf_cash" style="text-align: right;">250</td>
+                        </tr>
+                        <tr>
+                            <td>Depreciation</td>
+                            <td class="cost-highlight" id="esf_depreciation" style="text-align: right;">25</td>
+                            <td class="cost-highlight" id="bf_depreciation" style="text-align: right;">50</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total cost</strong></td>
+                            <td class="cost-highlight" id="esf_total" style="text-align: right;">347</td>
+                            <td class="cost-highlight" id="bf_total" style="text-align: right;">300</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let hydrogenCostAUD = 3.93; // Global variable to pass between tabs
+        
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content and activate tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+            
+            // If switching to comparison tab, update the hydrogen cost input
+            if (tabName === 'comparison') {
+                document.getElementById('hydrogen_cost_input').value = hydrogenCostAUD.toFixed(2);
+                calculateComparison();
+            }
+        }
+        
+        function calculateHydrogenCost() {
+            try {
+                // Get input values
+                const electrolyser_capex = parseFloat(document.getElementById('electrolyser_capex').value);
+                const electrolyser_capacity = parseFloat(document.getElementById('electrolyser_capacity').value);
+                const operating_hours = parseFloat(document.getElementById('operating_hours').value);
+                const electricity_consumption = parseFloat(document.getElementById('electricity_consumption').value);
+                const electricity_cost = parseFloat(document.getElementById('electricity_cost').value);
+                const exchange_rate = parseFloat(document.getElementById('exchange_rate').value);
+                const amortization_period = parseFloat(document.getElementById('amortization_period').value);
+                
+                // Calculate hydrogen cost components (matching your Excel formulas)
+                
+                // Electricity cost: (A$/MWh * AUD:USD * kWh/kg) / 1000
+                const electricity_cost_h2 = (electricity_cost * exchange_rate * electricity_consumption) / 1000;
+                
+                // Other costs (fixed)
+                const other_costs = 0.3;
+                
+                // CAPEX calculation: Electrolyser capex / (Operating hours per year * amortisation period) * 100
+                const capex_per_kg = (electrolyser_capex) / (operating_hours * amortization_period) * 100;
+                
+                // Total costs
+                const total_h2_cost_usd = electricity_cost_h2 + other_costs + capex_per_kg;
+                hydrogenCostAUD = total_h2_cost_usd / exchange_rate;
+                
+                // Update display
+                document.getElementById('h2_electricity_cost').textContent = electricity_cost_h2.toFixed(2);
+                document.getElementById('h2_capex_cost').textContent = capex_per_kg.toFixed(2);
+                document.getElementById('h2_total_usd').textContent = total_h2_cost_usd.toFixed(2);
+                document.getElementById('h2_total_aud').textContent = hydrogenCostAUD.toFixed(2);
+                document.getElementById('hydrogen_cost_total_display').textContent = `A$${hydrogenCostAUD.toFixed(2)}/kg`;
+            } catch (error) {
+                console.error('Error in calculateHydrogenCost:', error);
+            }
+        }
+        
+        function calculateComparison() {
+            try {
+                // Get input values
+                const hydrogen_cost = parseFloat(document.getElementById('hydrogen_cost_input').value);
+                const ore_grade = parseFloat(document.getElementById('ore_grade').value);
+                const esf_electricity_price = parseFloat(document.getElementById('esf_electricity_price').value);
+                const esf_capex = parseFloat(document.getElementById('esf_capex').value);
+                const esf_om_rate = parseFloat(document.getElementById('esf_om_rate').value);
+                const exchange_rate = parseFloat(document.getElementById('exchange_rate').value);
+                
+                const coal_price = parseFloat(document.getElementById('coal_price').value);
+                const bf_capex = parseFloat(document.getElementById('bf_capex').value);
+                const bf_om_rate = parseFloat(document.getElementById('bf_om_rate').value);
+                
+                // Base values at 62% Fe
+                const base_fe = 62;
+                const base_hydrogen_use = 50; // kg per tonne
+                const base_electricity_use = 0.8; // MWh/t
+                const base_coal_use = 20; // GJ/t pig iron
+                
+                // Calculate Fe% difference from baseline (62%)
+                const fe_difference = base_fe - ore_grade; // Difference in percentage points
+                
+                // Adjust energy consumption linearly based on Fe%
+                // For every 0.01 reduction in Fe:
+                // - Hydrogen use increases by 1.5% (0.015)
+                // - Electricity use increases by 2.0% (0.02)  
+                // - Coal use increases by 1.8% (0.018)
+                const hydrogen_use_per_tonne = base_hydrogen_use * (1 + (fe_difference * 0.015));
+                const electricity_use_calculated = base_electricity_use * (1 + (fe_difference * 0.02));
+                const coal_use_calculated = base_coal_use * (1 + (fe_difference * 0.018));
+                
+                // Pelletisation opex: US$25/t converted to A$
+                const pellets_opex_aud = 25 / exchange_rate;
+                
+                // ESF + Hydrogen costs
+                const esf_hydrogen_cost = hydrogen_cost * hydrogen_use_per_tonne;
+                const esf_electricity_cost = esf_electricity_price * electricity_use_calculated;
+                const esf_pellets_cost = pellets_opex_aud;
+                const esf_om_cost = esf_capex * esf_om_rate;
+                const esf_cash_cost = esf_hydrogen_cost + esf_electricity_cost + esf_pellets_cost + esf_om_cost;
+                const esf_depreciation = esf_capex / 20; // Fixed 20 years
+                const esf_total_cost = esf_cash_cost + esf_depreciation;
+                
+                // Blast furnace costs
+                const bf_coal_cost = coal_price * coal_use_calculated;
+                const bf_om_cost = bf_capex * bf_om_rate;
+                const bf_cash_cost = bf_coal_cost + bf_om_cost;
+                const bf_depreciation = bf_capex / 20; // Fixed 20 years
+                const bf_total_cost = bf_cash_cost + bf_depreciation;
+                
+                // Update display of calculated values
+                document.getElementById('esf_electricity_use_display').value = electricity_use_calculated.toFixed(3);
+                document.getElementById('coal_use_display').value = coal_use_calculated.toFixed(1);
+                
+                // Update display
+                document.getElementById('esf_hydrogen').textContent = Math.round(esf_hydrogen_cost);
+                document.getElementById('bf_coal').textContent = Math.round(bf_coal_cost);
+                document.getElementById('esf_electricity').textContent = Math.round(esf_electricity_cost);
+                document.getElementById('esf_pellets').textContent = Math.round(esf_pellets_cost);
+                document.getElementById('esf_om').textContent = Math.round(esf_om_cost);
+                document.getElementById('bf_om').textContent = Math.round(bf_om_cost);
+                document.getElementById('esf_cash').textContent = Math.round(esf_cash_cost);
+                document.getElementById('bf_cash').textContent = Math.round(bf_cash_cost);
+                document.getElementById('esf_depreciation').textContent = Math.round(esf_depreciation);
+                document.getElementById('bf_depreciation').textContent = Math.round(bf_depreciation);
+                document.getElementById('esf_total').textContent = Math.round(esf_total_cost);
+                document.getElementById('bf_total').textContent = Math.round(bf_total_cost);
+                
+                // Update summary cards
+                document.getElementById('esf_total_display').textContent = `A$${Math.round(esf_total_cost)}/t`;
+                document.getElementById('bf_total_display').textContent = `A$${Math.round(bf_total_cost)}/t`;
+            } catch (error) {
+                console.error('Error in calculateComparison:', error);
+            }
+        }
+        
+        // Wait for DOM to be fully loaded before adding event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners to hydrogen cost inputs
+            document.querySelectorAll('#hydrogen-tab input').forEach(input => {
+                input.addEventListener('input', calculateHydrogenCost);
+            });
+            
+            // Add event listeners to comparison inputs (excluding read-only fields)
+            document.querySelectorAll('#comparison-tab input:not([readonly])').forEach(input => {
+                input.addEventListener('input', calculateComparison);
+            });
+            
+            // Calculate initial values
+            calculateHydrogenCost();
+            calculateComparison();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>ITK Research</title>
+<link>https://itkservices3.com/presentations.html</link>
+<atom:link href="https://itkservices3.com/presentations.xml" rel="self" type="application/rss+xml"/>
+<description>Electricity markets analysis</description>
+<generator>quarto-1.6.39</generator>
+<lastBuildDate>Fri, 27 Dec 2024 06:35:07 GMT</lastBuildDate>
+<item>
+  <title>{B4F502887207:/Presentations/smart_energy/move_over_rover copy.html}</title>
+  <link>https://itkservices3.com/Presentations/smart_energy/move_over_rover copy.html</link>
+  <description>{B4F502887207:/Presentations/smart_energy/move_over_rover copy.html}</description>
+  <guid>https://itkservices3.com/Presentations/smart_energy/move_over_rover copy.html</guid>
+  <pubDate>Fri, 27 Dec 2024 06:35:07 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/Presentations/smart_energy_syd.html}</title>
+  <link>https://itkservices3.com/Presentations/smart_energy_syd.html</link>
+  <description>{B4F502887207:/Presentations/smart_energy_syd.html}</description>
+  <guid>https://itkservices3.com/Presentations/smart_energy_syd.html</guid>
+  <pubDate>Fri, 27 Dec 2024 06:35:07 GMT</pubDate>
+</item>
+</channel>
+</rss>

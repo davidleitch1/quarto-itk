@@ -1,0 +1,104 @@
+---
+title: "Green Iron Cost Calculator"
+format:
+  html:
+    page-layout: full
+---
+
+<style>
+.calculator-launch {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.calculator-launch h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.calculator-launch p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.launch-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: white;
+  color: #2596be;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.launch-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  color: #1e88e5;
+  text-decoration: none;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.feature-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #2596be;
+}
+
+.feature-card h3 {
+  color: #2596be;
+  margin-bottom: 10px;
+}
+</style>
+
+<div class="calculator-launch">
+  <h2>🔬 Green Iron Cost Calculator</h2>
+  <p>Interactive tool for hydrogen cost analysis & technology comparison</p>
+  <a href="#" onclick="openCalculator()" class="launch-button">
+    🚀 Launch Calculator
+  </a>
+</div>
+
+
+<script>
+function openCalculator() {
+  // Open in a popup window that keeps the parent site
+  const popup = window.open(
+    'ironcalc.html',
+    'calculator',
+    'width=1400,height=900,scrollbars=yes,resizable=yes,menubar=no,toolbar=no,location=no'
+  );
+  
+  // Focus the popup
+  if (popup) {
+    popup.focus();
+  }
+  
+  return false;
+}
+</script>
+
+## How to Use
+
+1. **Click "Launch Calculator"** above to open the interactive tool
+2. **Adjust parameters** in the left sidebar to explore different scenarios  
+3. **Switch between tabs** to compare hydrogen costs vs technology comparisons
+4. **Modify iron ore grade** to see how ore quality affects economics
+
+The calculator opens in a popup window, allowing you to keep this site open for reference while exploring different cost scenarios.

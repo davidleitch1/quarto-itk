@@ -1,0 +1,88 @@
+project:
+  type: website
+  resources: 
+    - "sub_thanks.html"
+    - "green_iron/ironcalc.html"
+
+website:
+  title: "ITK Research" 
+  description: "Electricity markets analysis"
+  site-url: https://itkservices3.com
+  search: True
+  open-graph: true
+  favicon: "ITK_logo.png"
+  navbar:
+    logo: "ITK_logo.png"
+    background: teal
+  
+    left: 
+      - text: "electricity visuals"
+        menu:
+        - text: "IEA-electricity"
+          href: IEA.html
+        - text: "rolling operational generation"
+          href: nemgen.html
+        - text: "NEM-dash"
+          href: nem-dash.html
+        - text: "AEMO demand fcst"
+          href: forecast.html
+        
+      - text: "Articles"
+        file: posts.qmd
+      - text: "Green Iron"
+        href: green_iron/index.md
+      - text: "Presentations"
+        file: presentations.qmd
+      - text: "Background notes"
+        file: background.qmd
+      - text: "Energy Insiders"
+        file: energyinsiders.html
+     
+
+
+    right:
+      - icon: rss
+        href: posts.xml
+      - about.qmd
+      - text: "Signup"
+        file: mailchimp.html
+    
+  sidebar:
+  - id: green_iron
+    title: "Green Iron topics"
+    contents:
+      - green_iron/index.md
+      - green_iron/Basicsteel.md
+      - green_iron/Stegra.md
+      - green_iron/Neosmelt.md
+      - green_iron/ironore.md
+      - green_iron/ElectricSmeltFurnace.md
+      - green_iron/pellets.md
+      - green_iron/hydrogen.md
+      - green_iron/dri.md
+      - green_iron/energy_carbon.md
+      - green_iron/electric_arc.md
+      - green_iron/ironcalc2.qmd
+  margin-header: ""
+  page-footer:
+    left: "Copyright 2024 ITK admin@itkservices.com.au "
+
+format:
+  html:
+    theme: 
+      dark: darkly
+      light: cosmo
+    mainfont: verdana
+    fontsize: 1.1em
+    linestretch: 1.7
+    css: styles.css
+    toc: true
+    grid:
+      sidebar-width: 500px
+      body-width: 700px
+    include-in-header: 
+      - text: |
+         <script defer data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
+
+
+

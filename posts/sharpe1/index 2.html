@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.542">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch">
+<meta name="dcterms.date" content="2023-05-24">
+
+<title>ITK Research - Sharpe ratio and renewables - part 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../ITK_logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../ITK_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ITK Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../nem-dash.html"> 
+<span class="menu-text">NEM-dash</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../jotter.html"> 
+<span class="menu-text">Daily-jot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../presentations.html"> 
+<span class="menu-text">Presentations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://soundcloud.com/reneweconomy-646697966"> 
+<span class="menu-text">Energy Insiders Podcast</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../posts.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Sharpe ratio and renewables - part 1</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">nem</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>David Leitch </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 24, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<div id="mc_embed_shell">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+     
+      /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+  <form action="https://itkservices.us20.list-manage.com/subscribe/post?u=12833f5117af80753136459c3&amp;id=7745127a22&amp;f_id=00fc1feaf0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+      <!-- <div id="mc_embed_signup_scroll"><h2></h2>  -->
+         <!-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> 
+           <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label> -->
+            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" style="color:inherit;"><span id="mce-EMAIL-HELPERTEXT" class="helper_text">
+            </span></form></div>
+      <div id="mce-responses" class="clear foot">
+          <div class="response" id="mce-error-response" style="display: none;"></div>
+          <div class="response" id="mce-success-response" style="display: none;"></div>
+      </div>
+  <div aria-hidden="true" style="position: absolute; left: -5000px;">
+      /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+      <input type="text" name="b_12833f5117af80753136459c3_7745127a22" tabindex="-1" value="">
+  </div>
+      <div class="optionalParent">
+          <div class="clear foot">
+              <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe" style="color:inherit; background-color:rgb(188, 180, 180);">
+              <p style="margin: 0px auto;"><a href="http://eepurl.com/iNpvME" title="Mailchimp - email marketing made easy and fun">
+                <span style="display: inline-block; background-color: transparent; border-radius: 4px;">
+                    </span></a></p>
+          </div>
+      </div>
+  </div>
+
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link active" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#wind-and-solar-farms-as-a-portfolio-the-lessons-from-finance" id="toc-wind-and-solar-farms-as-a-portfolio-the-lessons-from-finance" class="nav-link" data-scroll-target="#wind-and-solar-farms-as-a-portfolio-the-lessons-from-finance">Wind and solar farms as a portfolio – the lessons from finance</a></li>
+  <li><a href="#rezs-two-fuels-40-million-data-points" id="toc-rezs-two-fuels-40-million-data-points" class="nav-link" data-scroll-target="#rezs-two-fuels-40-million-data-points">40 REZs, two fuels, 40 million data points</a></li>
+  <li><a href="#the-optimisation-process" id="toc-the-optimisation-process" class="nav-link" data-scroll-target="#the-optimisation-process">The optimisation process</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<p>Despite its pseudo academic nature and many limitations what I personally take from this analysis is</p>
+<p>(1) that Queensland should have a huge role to play in the NEM, it should be getting lots of $ for transmission both within the State and for connections South.</p>
+<p>(2) Equally Marinuslink is likely to be just as useful as building offshore wind.</p>
+<p>(3) There is a role for offshore wind, although not as big as the Victorians want you to believe</p>
+<p>(4) the existing NEM utility scale renewable portfolio has too much solar and nowhere near enough wind. The only way that that wouldn’t be true is if storage were far cheaper than it currently appears to be. If that was true then the lower cost of solar might make it suitable for charging storage. As it stands though my view is that wind plus transmission is cheaper than solar plus storage. I am sure others will have other views.</p>
+<p>These conclusions may change as other factors are thrown into the optimisation algo.</p>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>This note borrows from the “theory of finance”, to build a maximum Sharpe ratio portfolio of wind and solar farms in the NEM. The average daily output of the portfolio and its variability can be compared with the average daily output of utility VRE (that is excluding rooftop) in the NEM over the past 12 months. I set the “optimised” portfolio to have the same total output per day as the existing NEM portfolio of wind and solar farms.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Chart, line chart Description automatically generated"><img src="media/media/image1.png" style="width:6.26389in;height:3.25694in" alt="Chart, line chart Description automatically generated" class="figure-img"></a></p>
+<figcaption>Chart, line chart Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 1 Daily average output optimised portfolio and NEM existing portfolio.Source: ITK, NEM Review</p>
+<p>You can see that the “best” portfolio has a much more constant output through the day (and is much less seasonal) and for every half hour has a much lower volatility as compared to the existing, installed wind and solar farms. Put another way the mean is more stationary with respect to time of day and season of year and the variance is lower. The Sharpe ratio (mean/standard deviation) is nearly twice as good as the existing NEM wide portfolio of wind and solar farms.</p>
+<p>I might add that although I have yet to prove it I think it would have a better capacity factor and likely be lower capital cost. Obviously this “best” or optimised portfolio would require much less firming.</p>
+<p>The optimised portfolio would be heavily concentrated in Queensland (see fig 3) but the function maximisation algorithm didn’t result in much VRE in Victoria overall by State where O = offshore and numbers are in %</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image2.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Table Description automatically generated"><img src="media/media/image2.png" style="width:1.02898in;height:1.53914in" alt="Table Description automatically generated" class="figure-img"></a></p>
+<figcaption>Table Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 2 Optimised portfolio, weighting by State, O = offshore. Source: ITK</p>
+<p>and would have about 77% wind and 23% solar.</p>
+<p>I realise the following colour scheme is worse than tasteless but it shows as a percentage of the total portfolio how much would be allocated to each zone that the “optimiser” chooses. Most of the results are generally what I would have expected but I was truly astonished to see that the algorithm results in a little bit of Tasmanian solar going into the portfolio. Its interesting that the results have more offshore wind off the Illawarra than in Gippsland, probably because of the Tasmanian wind included. These results would likely change quite a bit if levelized cost of the energy was included, an extension I plan to do for next time.</p>
+<p><a href="media/media/image3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="media/media/image3.png" style="width:6.26389in;height:3.80278in"></a></p>
+<p>Figure 3 Optimised portfolio percentage held by fuel and REZ. Source: ITK</p>
+<p>The portfolio built by the optimisation algorithm only takes account of the forecast capacity factors for each half hour for each fuel for each REZ. It doesn’t account for cost, correlation with demand, transmission, social license, rooftop solar. Some of these things (rooftop solar and capital cost) can easily be accommodated and I may do so in a future note. Others are more difficult. Also we aren’t dealing in the real world with a fresh sheet of paper.</p>
+<p>However what I personally take from this analysis is that Queensland should have a huge role to play in the NEM, it should be getting lots of $ for transmission both within the State and for connections South. Equally Marinuslink is likely to be just as useful as building offshore wind.</p>
+<p>These conclusions may change as other factors are thrown into the optimisation algo.</p>
+<p>The following map taken from the ISP shows where the REZs are located with the notation first letter = State and then the number is the zone within the State.</p>
+<p><a href="media/media/image4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="media/media/image4.png" style="width:6.26389in;height:8.68125in"></a></p>
+<p>Figure 4 REZ locations, source: AEMO</p>
+</section>
+<section id="wind-and-solar-farms-as-a-portfolio-the-lessons-from-finance" class="level1">
+<h1>Wind and solar farms as a portfolio – the lessons from finance</h1>
+<p>I wrote about the idea of seeing wind and solar farms through the lens of finance theory ’s “efficient frontier” last <a href="https://reneweconomy.com.au/how-offshore-wind-could-influence-aemos-20-year-green-energy-blueprint/">June</a>. In this note I continue that journey by employing the Sharpe Ratio to build an “optimal” portfolio of wind and solar in the NEM.</p>
+<p>The Sharpe ratio in finance is the ratio of the expected return on a security divided by its standard deviation. It’s a measure of the return you get relative to the risk of getting that return.</p>
+<p>The idea is that by building a portfolio of securities you can improve your overall Sharpe ratio, that is a portfolio will give you a higher return for a given level of risk than you can get from owning individual securities. This happens mainly because the standard deviation of a portfolio is less than the standard deviation of the individual securities. They don’t all go up the same amount at the same time and vice versa.</p>
+<p>To demonstrate that, you need to calculate the mean expected return of the portfolio and its standard deviation. I want to avoid the maths as far as possible, mainly because I’m not very good at it, but its important to appreciate that the variability of the portfolio return depends not only on the variability of each stock considered on its own but also their “covariance” or the extent to which stock returns tend to move together.</p>
+<p>The other important thing that the portfolio return and standard deviation depend on, is how much you put into each stock. That is the relative weight of the stock in the portfolio. Its finding those weights that is the point of this note.</p>
+</section>
+<section id="rezs-two-fuels-40-million-data-points" class="level1">
+<h1>40 REZs, two fuels, 40 million data points</h1>
+<p>Translating these ideas into the world of Australian renewable energy our portfolio consists of the 40 REZs that AEMO provided data for in the 2022 ISP. In each REZ AEMO provided the expected half hourly output between July 2022 and June 2052 of a 1 MW wind farm, and a 1 MW solar farm. In fact for wind they provided a high and low series. So that is basically 120 series of roughly 0.5 million half hourly forecasts each or roughly 60 million data points.</p>
+<p>For the wind data I took a simple average of the high and low series for each zone.</p>
+<p>In renewable energy we care about (1) the capacity factor = actual output per year/(24/7 output) (2) the variability of the output or how likely it is to be running at any given time, like dinner time and (3) other factors like cost and location.</p>
+<p>Solar is more predictable in output than wind but nevertheless has a higher variability because it doesn’t run at night.</p>
+<p>The following chart attempsts to illustrate the concept of the Sharpe ratio. It shows the best 15 <strong>wind</strong> zones sorted in order of Sharpe ratio best to worst. The chart shows the capacity factors and the volatility. You can see that Queensland in general and North Queensland in particular has both a good capacity factor and a relatively low volatility of output.</p>
+<p><a href="media/media/image5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="media/media/image5.png" style="width:5.875in;height:2.59722in"></a></p>
+<p>Figure 5 Best wind farm locations. Source: ITK,AEMO ISP</p>
+<p>The offshore wind zones (in blue) have good capacity factors but are, like the Tasmanian ones typically more volatile than the Queensland ones. The six best zones as measured by the Sharpe ratio are all in Queensland and Tasmania. No NSW wind farm makes the “best” Sharpe ratio list and only one in South Australia. Again this list doesn’t pay any attention to cost, or demand correlation or access to transmission, or social license.</p>
+<p>Repeating the same exercise for solar shows that the capacity factors, and the not shown here Sharpe ratios are much closer together and that Queensland, NSW and South Australia are the best regions for solar.</p>
+<p>Also if you compare the scales for the wind and solar charts you will see, as expected, that wind capacity factors are higher than solar and the standard deviation of wind is lower. The latter result is because the wind does blow at night.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image6.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6" title="A picture containing chart Description automatically generated"><img src="media/media/image6.png" style="width:5.93056in;height:2.59722in" alt="A picture containing chart Description automatically generated" class="figure-img"></a></p>
+<figcaption>A picture containing chart Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 6 Best solar farms.Source: ITK, AEMO ISP</p>
+<p>For some colour relief and a more pleasing to the eye but generally abstract figure shows the correlation of each of the 80 wind and solar zones with each other. Perhaps as someone suggested it would make a good corporate symbol</p>
+<p><a href="media/media/image7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="media/media/image7.png" style="width:6.26389in;height:3.89375in"></a></p>
+<p>Figure 7 Renewable energy correlation. Source: ITK , AEMO ISP</p>
+</section>
+<section id="the-optimisation-process" class="level1">
+<h1>The optimisation process</h1>
+<p>The problem is to find the weights for each zone in the portfolio of wind and solar zones that maximises the sharpe ratio of the portfolio. There are at least two ways of doing this that I know of. The first way is just to run a loop that throws random weights at the portfolio and then choose the one with the best Sharpe ratio. There is nothing inherently wrong with this method. The second way and what I did is to use some kind of “solver” engine. I used a solver available as part of the scipi python package . It took 20 minutes and 3000 iterations to find its “best” set of weights which were constrained to be between 0 and 1 and to sum to 1.</p>
+<p>The following figure shows the Sharpe ratio for every REZ wind/solar combo as well as for the existing utility wind and solar farms and finally the “Optimised” portfolio. You can see that the Optimised portfolio performs about twice as well as the exising NEM portfolio and the existing NEM portfolio beats any existing individual REZ. As it turns out the yellow bars are the solar farms and the blue bars the wind farms. Again you can see the uniformity of the solar farms on this scale.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image8.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8" title="Chart, histogram Description automatically generated"><img src="media/media/image8.png" style="width:7.1832in;height:3.28739in" alt="Chart, histogram Description automatically generated" class="figure-img"></a></p>
+<figcaption>Chart, histogram Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 8 Sharpe ratios for REZs and for existing NEM portfolio and Optimised. Source: ITK, AEMO ISP</p>
+
+</section></main></div>
+
+
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Chart, line chart Description automatically generated</span>
+<span class="glightbox-desc lightbox-desc-2">Table Description automatically generated</span>
+<span class="glightbox-desc lightbox-desc-6">A picture containing chart Description automatically generated</span>
+<span class="glightbox-desc lightbox-desc-8">Chart, histogram Description automatically generated</span>
+</div>
+
+
+ <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+ <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 ITK admin@itkservices.com.au</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
+
+
+
+
+</body></html>

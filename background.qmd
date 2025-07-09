@@ -1,0 +1,17 @@
+---
+title: "Backkground"
+listing:
+  contents: background
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: article
+title-block-banner: false
+---
+## Largely AI generated research
+Notes here I collected as generally preliminary background for topics I write about. Use ChatGPT, Claude and then check out some of the references. Read at your own risk, not verified and could easily include hallucinations and over or under cueing.
+
+
+

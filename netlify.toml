@@ -1,0 +1,9 @@
+[build]
+  command = "./build.sh"
+  publish = "_site"
+
+[[redirects]]
+  from = "https://www.itkservices3.com/*"
+  to = "https://itkservices3.com/:splat"
+  status = 301
+  force = true

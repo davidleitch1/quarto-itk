@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch">
+<meta name="dcterms.date" content="2024-01-16">
+
+<title>Looking Forward – ITK Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../ITK_logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Looking Forward – ITK Research">
+<meta property="og:description" content="Electricity markets analysis">
+<meta property="og:image" content="https://itk.quarto.pub/itk_articles/posts/Looking_forward/media/image1.png">
+<meta property="og:site_name" content="ITK Research">
+<meta property="og:image:height" content="548">
+<meta property="og:image:width" content="738">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../ITK_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ITK Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../forecast.html"> 
+<span class="menu-text">AEMO demand fcst</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../nem-dash.html"> 
+<span class="menu-text">NEM-dash</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../IEA.html"> 
+<span class="menu-text">IEA-electricity</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../presentations.html"> 
+<span class="menu-text">Presentations</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../posts.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../mailchimp.html"> 
+<span class="menu-text">Signup</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Looking Forward</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">nem</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>David Leitch </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 16, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#transmission-supply-chain-gps-are-not-issues.-willingness-is-the-issue" id="toc-transmission-supply-chain-gps-are-not-issues.-willingness-is-the-issue" class="nav-link active" data-scroll-target="#transmission-supply-chain-gps-are-not-issues.-willingness-is-the-issue">Transmission, supply chain, GPS are not issues. Willingness is the issue</a></li>
+  <li><a href="#two-big-events-left-this-year" id="toc-two-big-events-left-this-year" class="nav-link" data-scroll-target="#two-big-events-left-this-year">Two big events left this year</a></li>
+  <li><a href="#transmission-outlook-is-improving" id="toc-transmission-outlook-is-improving" class="nav-link" data-scroll-target="#transmission-outlook-is-improving">Transmission outlook is improving</a></li>
+  <li><a href="#bn-of-transmission-under-development-12-bn-ready-by-2028" id="toc-bn-of-transmission-under-development-12-bn-ready-by-2028" class="nav-link" data-scroll-target="#bn-of-transmission-under-development-12-bn-ready-by-2028">$40 bn of transmission under development $12 bn ready by 2028</a></li>
+  <li><a href="#humelink-orana-will-make-a-difference-in-nsw" id="toc-humelink-orana-will-make-a-difference-in-nsw" class="nav-link" data-scroll-target="#humelink-orana-will-make-a-difference-in-nsw">Humelink, Orana will make a difference in NSW</a>
+  <ul class="collapse">
+  <li><a href="#humelink-could-enable-the-south-west-of-nsw-to-leap-ahead-of-the-north" id="toc-humelink-could-enable-the-south-west-of-nsw-to-leap-ahead-of-the-north" class="nav-link" data-scroll-target="#humelink-could-enable-the-south-west-of-nsw-to-leap-ahead-of-the-north">Humelink could enable the South West of NSW to leap ahead of the North</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="transmission-supply-chain-gps-are-not-issues.-willingness-is-the-issue" class="level1">
+<h1>Transmission, supply chain, GPS are not issues. Willingness is the issue</h1>
+<p>Price signals are unambiguously positive at least in NSW and QLD and even a renewable developer can work out prices in Victoria will rise post the Yallourn closure.</p>
+<p>Yet over the past year we’ve all had to stand around and hear a long list of complaints from wind and solar developers. No transmission, supply chain, costs, GPS, uncertainty (God forbid returns are not guaranteed).</p>
+<p>The only thing anyone talks about is batteries even though batteries are net consumers of energy.</p>
+<p>The groups that have most disappointed me are the big renewable developers Iberadrola, CWP (or whatever its called these days), Tilt and their ilk. These guys don’t have the legitimacy of running coal generators to maximise end of life cash flows, they have large balance sheets and are completely capable of taking on some risk should they choose to do so.</p>
+<p>Then of course there are the Gentailers. At least their lack of commitment is normal. I laugh to see 70% of shareholders that voted in favour of the ORG scheme but now have to put up with a company that remains neither fish nor fowl and where uncertainty remains the day. Aussie Super “we’ll save ya” attitude and why don’t you buy some Santos or Woodside comes really as no surprise. For sure they are big and proved size does matter. Poor old EnergyAustralia must wonder how Brookfield can talk to AGL and Origin but EA and its owner CLP are left as wall flowers, continuously passed over, despite showing all the leg they can get away with.</p>
+<p>As usual, and I speak as someone who passionately believes in markets, its Government, and in this case the QLD Govt that has stepped into the breach.</p>
+<p>Nevertheless the point of this note is to observe that:</p>
+<ul>
+<li><p>Transmission will be available in NSW from 2026 and plenty by 2028. It takes that long to build new wind farms so these guys should be committing now.</p></li>
+<li><p>Supply chain issues, at least in terms of wind turbines, are not an issue. If you order a turbine from Vestas you can get it at the same euro price as last year. You can possibly get a Goldwind turbine for less than last year.</p></li>
+<li><p>Price signals remain strong and there is even more financial support.</p></li>
+<li><p>AEMO is, from what I can see, increasingly <a href="https://aemo.com.au/-/media/files/electricity/nem/network_connections/connections-scorecard/connections-scorecard---october-2023.pdf?la=en">ready to rock and roll</a>.</p></li>
+</ul>
+<p>I guess its still legitimate to say that Humelink is not certain and the Orana contract has not actually been announced, but as Irving Fisher so poetically observed in the preface to “Theory of Interest”, “coming events cast their shadows before”. If I can see the transmission is coming with my fading eyesight it must be crystal clear to renewable developers.</p>
+</section>
+<section id="two-big-events-left-this-year" class="level1">
+<h1>Two big events left this year</h1>
+<p>Results from AEMO services tender 2 for renewable energy in NSW are expected to be released in the next couple of weeks. That should cover around 1 GW of projects, a drop in the ocean but still very welcome news. Hopefully at least some new wind.</p>
+<p>Energyco (AEMO Services partner in NSW) will also release a year end update Monday 11 December. It would not surprise me to find that the Orana transmission contract is also announced then.</p>
+<p>Then, of course, the first draft of the 2024 ISP will also be released in the next couple of weeks. Although ostensibly a transmission planning exercise, the reality is that the 2022 ISP was the document that convinced stakeholders that we all in reality expected a decarbonised NEM and sooner rather than later. Not so much price discovery as belief discovery.</p>
+<p>In any event the ISP 2024 will embody State Govt policies such as Victoria’s offshore wind target, misguided as it may be, the Queensland plan, misguided though Borumba may be and changes to the NSW outlook including delays to Snowy 2. Personally I could not give a rats about the delay to Snowy 2 or its cost. For me the world has moved on. Still lets leave ISP 2024 until its released. Speculation is pointless.</p>
+</section>
+<section id="transmission-outlook-is-improving" class="level1">
+<h1>Transmission outlook is improving</h1>
+<p>For years commentators have focussed on transmission as the key enabler of a strong renewable electricity system. The earliest article I wrote about this here at Reneweconomy was on July 5 2017 <a href="https://reneweconomy.com.au/transmission-we-need-to-start-building-now-to-deal-with-wind-and-solar-boom-13411/">"Transmission we need to start building now"</a>. That was only a year after I left UBS. At that time the then AEMC Chair John Peirce oversaw a rigid approach embodied in the logical and seemingly rational but ultimately utterly misguided view of new transmission embedded in the RIT-T test.</p>
+<p>It was clear even then, using the best practice Texas example, it would take seven years to build new transmission, just as it was clear even then that the existing transmission network in the NEM would likely be in the wrong place for wind and solar. However at that time it wasn’t clear just how congested the existing network actually was.</p>
+<p>Despite the blackout in South Australia by 2023 the only new transmission actually being built other than some minor augmentations in the QLD-NSW link is the SA-NSW link and that not due for completion until 2026. Indeed building new transmission has taken every bit as long as feared back in 2017.</p>
+<p>During this period, stoked by rabble rousers, fear and doubt (FUD) about the ability of Australia to build something as simple as some wires and poles has grown and grown. Transmission and wind farms are now portrayed as ruining the Australian way of life, a source of endless depression and creating environmental destruction.</p>
+<p>My view of reality is that renewable energy and the associated transmission will preserve the Australian way of life, bring more prosperity to regional Australia, is the best thing that can be done to preserve the environment and will lead to lower and more certain electricity prices. Color me a hippy.</p>
+<p>Today a wide range of “experts” and advisors contend that the lack of access to transmission is the No 1 problem preventing new renewable energy projects from starting.</p>
+<p>Personally I not fully convinced that transmission is necessarily holding back projects right now. I think wind and solar developers lack a willingness to commit, perhaps hoping to move the dial in their favour. For instance the 400 MW Uunguala wind farm in Northern NSW could have started construction 12 months ago but Twiggy Forrest seems too busy posturing on the world stage to sign the contract.</p>
+</section>
+<section id="bn-of-transmission-under-development-12-bn-ready-by-2028" class="level1">
+<h1>$40 bn of transmission under development $12 bn ready by 2028</h1>
+<p>There is over $40 bn of transmission under development.</p>
+<p><a href="media/image1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="media/image1.png" style="width:5.125in;height:3.80556in"></a></p>
+<p>Figure 1 Transmission development in the NEM.</p>
+<p>But if I focus on NSW as the State with the highest forward prices and the largest consumer of electricity and look at when significant new transmission will be available I see:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/image2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A table with numbers and text Description automatically generated"><img src="media/image2.png" style="width:6.26806in;height:1.65069in" alt="A table with numbers and text Description automatically generated" class="figure-img"></a></p>
+<figcaption>A table with numbers and text Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 2 Transmission development in NSW by 2028. Source: AEMO, TSPs, EnergyCo</p>
+</section>
+<section id="humelink-orana-will-make-a-difference-in-nsw" class="level1">
+<h1>Humelink, Orana will make a difference in NSW</h1>
+<p>In my opinion Humelink is roughly on target to be built by December 2026. That’s despite ongoing opposition to building it above ground, despite not all easements agreed, despite a recent 22 km route length increase, despite not one but two upper house enquiries and despite the fact it has yet to get final approval from the AER or a final investment decision.</p>
+<p>My confidence comes from the up to $600 m of pre commitment spending that has already and will continue to take place ahead of the AER decision next year and because the above ground line is lower cost and faster to build than competing underground proposals.</p>
+<p>Secondly My guess is that the independent consortium developing the Orana REZ transmission link will be able to confirm that link in the near future. Confirmation of that should enable the pricing to be available to projects in that general area such as Liverpool Ranges Wind farm and Valley of the Winds wind farm.</p>
+<p>Between those two projects alone and with the 800 MW capacity of Project Interconnect now well underway NSW will have removed one of the many excuses developers from Origin Energy to Tilt provide as to why they aren’t building projects.</p>
+<section id="humelink-could-enable-the-south-west-of-nsw-to-leap-ahead-of-the-north" class="level2">
+<h2 class="anchored" data-anchor-id="humelink-could-enable-the-south-west-of-nsw-to-leap-ahead-of-the-north">Humelink could enable the South West of NSW to leap ahead of the North</h2>
+<p>Few transmission lines can have been discussed as much as Humelink. Although some folk see it for better or worse as being built to facilitate Snowy 2, in my mind that is largely irrelevant. Basically I see Humelink as doing two main jobs. Firstly its basically the second half of the South Australia – NSW link (Project Energyconnect). Secondly it facilitates the increasingly attractive South West REZ. Why is the Southwest REZ attractive? Well basically there are less people than in the North of State. One wind farm I looked at has only 32 affected residents. No people, no problem.</p>
+<p>There are various large wind and solar farms planned for say the East of Balranald area that will have difficulty getting energy to NSW load without more capacity between Wagga and Sydney.</p>
+<p>EG the Yanco Delta project 10 km north-west of Jerilderie (where I fly model planes every year and where Ned Kelly gave the bankers an early scare) is a 1.5 GW wind project, quite well progressed in its EIS that hopes to connect to Dinawan substation. Dinawin is as substation built as a result of Project Energyconnect just to the West of Wagga. Equally Spark Energy’s “Dinawin Wind Farm” is another 1500 MW project at the scoping report stage. Dinawin is also where VNI West is scheduled to connect</p>
+<p><a href="media/image3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="media/image3.png" style="width:6.26806in;height:2.65694in"></a></p>
+<p>Figure 3 Dinawin substation, a new hub. Source: Energyco</p>
+<p>The 750 MW Burrawong Wind Farm is close to Balranald, is a Windlab project at the SEARs stage.</p>
+<p>The scoping report for Engie’s proposed 1800 MW “Plains Windfarm” near Hay has a map showing these developments. Engie is doing the job the NSW Department of Planning seems incapable of in providing a regional map.</p>
+<p><a href="media/image4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="media/image4.png" style="width:7.26002in;height:4.20029in"></a></p>
+<p>Figure 4 Wind and solar development Balranald to Jerilderie along project Interconnect. Source: Engie</p>
+<p>Already the Wagga to Sydney transmission is so congested during the day that electricity flows almost every day but particularly in high solar days from higher priced NSW to lower or negatively priced Victoria (see <a href="https://wattclarity.com.au/articles/2023/11/whats-happening-around-wagga/">Whats happening round Wagga</a>)</p>
+<p>Basically this entire precinct needs Humelink or something like it.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/itk\.quarto\.pub\/itk_articles");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 ITK admin@itkservices.com.au</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>
