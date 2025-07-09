@@ -9,8 +9,12 @@ Presentations/**/*.html filter=lfs diff=lfs merge=lfs -text
 posts/**/*.png filter=lfs diff=lfs merge=lfs -text
 Presentations/**/*.jpg filter=lfs diff=lfs merge=lfs -text
 Presentations/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+Presentations/**/*.gif filter=lfs diff=lfs merge=lfs -text
 posts/**/*.jpg filter=lfs diff=lfs merge=lfs -text
 posts/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+posts/**/*.gif filter=lfs diff=lfs merge=lfs -text
+posts/**/*.docx filter=lfs diff=lfs merge=lfs -text
 *.pptx filter=lfs diff=lfs merge=lfs -text
+**/*.pdf filter=lfs diff=lfs merge=lfs -text
 *.ipynb filter=lfs diff=lfs merge=lfs -text
 *.log filter=lfs diff=lfs merge=lfs -text
