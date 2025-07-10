@@ -26,6 +26,10 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 10 July
+
+Late night, long morning moved site deployment to GitHub for speedier updating of the site using the Netlify actions.
+
 ###  9 July
 
 Wrote a [note](https://itkservices3.com/posts/data_centre_location.html) looking at locating a datacentre in the Riverina next to say Dinawan substation, was pleased to make quite a nice waterfall chart building up the weighted average cost of power.
