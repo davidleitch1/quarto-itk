@@ -16,7 +16,7 @@ website:
     background: teal
   
     left: 
-      - text: "electricity visuals"
+      - text: "Dashboards"
         menu:
         - text: "IEA-electricity"
           href: IEA.html
@@ -25,18 +25,19 @@ website:
         - text: "NEM-dash"
           href: nem-dash.html
         - text: "AEMO demand fcst"
-          href: forecast.html
-        
+          href: forecast.html 
       - text: "Articles"
         file: posts.qmd
-      - text: "Green Iron"
-        href: green_iron/index.md
-      - text: "Presentations"
-        file: presentations.qmd
-      - text: "Background notes"
-        file: background.qmd
-      - text: "Energy Insiders"
-        file: energyinsiders.html
+      - text: "more"
+        menu:
+        - text: "Green Iron"
+          href: green_iron/index.md
+        - text: "Presentations"
+          file: presentations.qmd
+        - text: "Background notes"
+          file: background.qmd
+        - text: "Energy Insiders"
+          file: energyinsiders.html
      
 
 

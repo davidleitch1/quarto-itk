@@ -28,7 +28,7 @@ format:
 
 ### 10 July
 
-Late night, long morning moved site deployment to GitHub for speedier updating of the site using the Netlify actions.
+Late night, long morning moved site deployment to GitHub for speedier updating of the site using the Netlify actions. And reorganised main menus to better suit phones etc.
 
 ###  9 July
 
