@@ -13,3 +13,5 @@ nohup.out
 quarto-*.deb
 quarto-*.tar.gz
 *.log
+
+/.quarto/

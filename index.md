@@ -26,6 +26,19 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 15 July
+
+Some very long days and nights for an old fella build an el cheapo dashboard to review nem generation and prices by fuel, by region even by generator or duid. At the moment the dashboard only uses 5 minute data from the middle of June, but for something built in just a few days it will have to do.  No doubt the design and functionality will change with time. Despite lots of misunderstandings and some unresolved issues Claude Code sped up the work enormously.  Checkit out at https://itkservices3.com/nemgen 
+
+A couple of screen shots.
+![](./media/image-20250715180310997.png)
+
+
+
+![](./media/image-20250715180443889.png)
+
+![](./media/image-20250715180655194.png)
+
 ### 10 July
 
 Late night, long morning moved site deployment to GitHub for speedier updating of the site using the Netlify actions. And reorganised main menus to better suit phones etc.
