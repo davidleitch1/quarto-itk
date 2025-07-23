@@ -20,10 +20,8 @@ website:
         menu:
         - text: "IEA-electricity"
           href: IEA.html
-        - text: "rolling operational generation"
+        - text: "NEM-ITK"
           href: nemgen.html
-        - text: "NEM-dash"
-          href: nem-dash.html
         - text: "AEMO demand fcst"
           href: forecast.html 
       - text: "Articles"
