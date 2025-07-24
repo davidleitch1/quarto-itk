@@ -22,9 +22,17 @@ format:
         title="Spot Prices Display"
         style="height: 600px; width: 100%; background:#282a36; border:none;">
 </iframe>
+<iframe src='http://gauge.itkservices2.com' width='500' height='350' frameborder='0'></iframe>
+
 <!-- Ocean Heat Image -->
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
+
+### 23 July
+
+Prices tab now operational. Pleased with a few features including the different ways to view prices and adding a smoothing option. I've also realised that this dashboard is designed for desktop sized screens. at least 15". May i'll try a make it more responsive going forward. 
+
+
 
 ### 15 July
 
