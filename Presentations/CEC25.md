@@ -2,16 +2,15 @@
 title: "CEC"
 draft: false
 format:
-  revealjs:  
-    embed-resources: true
-    smaller: true
-    theme: black
-    slide-number: true
-    preview-links: auto
-    logo: "ITK_logo.png"
-    author: "David.Leitch@itkservices.com.au"
-    footer: "[www.itkservices.com](www.itkservices3.com)"
+  pptx: 
+    reference-doc: template.pptx
 ---
+
+#
+
+
+
+#
 
 
 
@@ -23,9 +22,13 @@ format:
 
 ![image-20250724211146557](../media/image-20250724211146557.png)
 
+
+
 #
 
 ![](../media/image-20250404121117520.png)
+
+
 
 #
 
@@ -41,10 +44,14 @@ When demand picks up in the morning  prices rise but not to dramatic levels wind
 
 :::
 
+
+
 # 
 
 ![image-20250725081235830](../media/image-20250725081235830.png)
 
-  #
+ 
+
+ #
 
 ![image-20250725081408123](../media/image-20250725081408123.png)
