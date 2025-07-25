@@ -28,6 +28,10 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 25 July
+
+Adde renewable gauge, shows NEM wind the renewable (solar + wind + rooftop + hydro) share of total generation in the past five minutes as well as record markers for the hour of the day and all time. Records based on 5.5 years of data from Jan 1 2020.
+
 ### 23 July
 
 Prices tab now operational. Pleased with a few features including the different ways to view prices and adding a smoothing option. I've also realised that this dashboard is designed for desktop sized screens. at least 15". May i'll try a make it more responsive going forward. 
