@@ -28,6 +28,16 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 31 July
+
+Battery prices have dropped like a stone this year. AGL's 500 MW/4 hour battery at A\$800m all up or \$400k/MWh is about 60% of the number I was using earlier this year. Other background comments suggest even better deals can be had. Even so solar + 16 hour battery is still going to be expensive, just less so.
+
+Secondly a few CEC reflections. 
+
+- Not a fan of the new Chair, Ross Rolfe. Iberadrola of which he is the Australian CEO has done little of consequence in Australia since he became CEO when it was still Infigen back in about 2015
+- It's interesting to compare panel discussions and solo presentations. For me the great benefit of a solo presentation is you can use slides to keep the audience engaged. There is some academic evidence that visual aids improve audience engagement and information recall.  Still I guess there is a place for panel discussion.
+- My other observation is that despite the battery price fall and despite the cost of transmission there are sill significant wind project getting read to go in NSW and in QLD. Valley of the Winds, Liverpool Range, Winterbourne, Tarong West and another in QLD probably about 4 GW of which I expect 3 GW to hit FID in the next 12 months.,
+
 ### 25 July
 
 Adde renewable gauge, shows NEM wind the renewable (solar + wind + rooftop + hydro) share of total generation in the past five minutes as well as record markers for the hour of the day and all time. Records based on 5.5 years of data from Jan 1 2020.
