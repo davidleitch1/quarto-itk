@@ -20,7 +20,14 @@
       "Bash(PYTHONPATH=/Volumes/Documents/mini_code/nem_dashboard python3 -c \"\nfrom nem_dashboard.app import create_dashboard\ndashboard = create_dashboard()\nprint(''Dashboard created successfully with'', len(dashboard.objects), ''components'')\nprint(''Available tabs:'')\ntry:\n    tabs = dashboard.objects[1]  # Should be the tabs component\n    for i, tab in enumerate(tabs.objects):\n        if hasattr(tab, ''__iter__'') and len(tab) > 0:\n            print(f''  {i+1}. {tab[0]}'')\n        else:\n            print(f''  {i+1}. Tab {i+1}'')\nexcept Exception as e:\n    print(''Error listing tabs:'', e)\n    print(''Dashboard structure:'', type(dashboard.objects[1]))\n\")",
       "Bash(PYTHONPATH=/Volumes/Documents/mini_code/nem_dashboard python3 -c \"\nfrom nem_dashboard.data import load_volumes\nfrom nem_dashboard.app import prices, gen_data\n\nprint(''prices data shape:'', prices.shape if not prices.empty else ''EMPTY'')\nprint(''prices columns:'', list(prices.columns) if not prices.empty else ''NO COLUMNS'')\nprint(''gen_data shape:'', gen_data.shape if not gen_data.empty else ''EMPTY'') \nprint(''gen_data columns:'', list(gen_data.columns)[:10] if not gen_data.empty else ''NO COLUMNS'')\n\n# Test time of day function\nif not prices.empty:\n    from nem_dashboard.data import last\n    plot_data = last(prices[[''nsw'', ''qld'']], ''30D'')\n    print(''plot_data shape:'', plot_data.shape)\n    tod_data = plot_data.groupby(plot_data.index.time).mean()\n    print(''tod_data shape:'', tod_data.shape)\n\")",
       "Bash(PYTHONPATH=/Volumes/Documents/mini_code/nem_dashboard python3:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(ssh-add:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(security find-generic-password:*)",
+      "Bash(grep:*)",
+      "Bash(ssh-keygen:*)",
+      "Bash(cat:*)"
     ],
     "deny": []
   }
