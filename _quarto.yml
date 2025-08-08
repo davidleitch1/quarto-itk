@@ -16,7 +16,7 @@ website:
     background: teal
   
     left: 
-      - text: "Dashboards"
+      - text: "Dashboards (load slow)"
         menu:
         - text: "IEA-electricity"
           href: IEA.html
