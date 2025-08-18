@@ -28,6 +28,10 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+## Lots of news re Nelson review and AGL/ORG results and Vic transmisison
+
+In a nutshell the big gentailers are on strike. No new wind or solar PPAs in years. Nelson review may fix the problem but misidiagnosed the cause, and Victoria is getting itself in a mess.
+
 ### AGL Tomago is basically same cost as Borumba pumped hydro
 
 Even before  allowing for any additional cost saving to batteries from increasing duration AGL's just announced Tomago battery at \$800 m for a 0.5 GW/4 hour battery is comparable in price to the most recent  estimate of Borumba. I am sure that pumped hydro enthusiasts will argue that the Borumba cost is both exceptional and overstated but at \$18 bn for 2 GW of 24 hour storage it sets a um high water benchmark. AGL's just announced 500 MW/4 hour battery has a cost of \$800 m. Scaled up to  24 hours and 2 GW that's just at touch over \$19 bn. Both are still more expensive than Snowy 2. 
