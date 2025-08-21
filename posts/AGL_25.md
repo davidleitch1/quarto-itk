@@ -25,3 +25,4 @@ AGL is a company which at present offers investors next to nothing unless you wa
 
 AGL has next to no announced plans to replace the more than 30 TWh it gets from its coal fired generation. It has a first right of refusal over Tilt's Liverpool Range station and also will likely fund the Pottinger wind farm in the Riverina.
 
+tests

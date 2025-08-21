@@ -7,6 +7,6 @@ tar -xzf quarto-1.6.39-linux-amd64.tar.gz
 # Move Quarto out of the project directory to avoid scanning it
 mv quarto-1.6.39 /tmp/
 
-# Add Quarto to PATH and render
+# Add Quarto to PATH and render (excluding drafts)
 export PATH="/tmp/quarto-1.6.39/bin:$PATH"
-quarto render
+quarto render --no-render-drafts
