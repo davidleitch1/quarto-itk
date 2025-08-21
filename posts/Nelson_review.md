@@ -1,3 +1,20 @@
+---
+title: "Nelson Review"
+author: "David Leitch"
+date: "2025-08-03"
+categories: [analysis, prices]
+image: "../media/image-20250805180118537.png"
+lightbox: true
+format:
+  html:
+    include-after-body:
+       - "../comment_load.html"
+  docx: default
+draft: true
+---
+
+
+
 ## Dr Nelson prescribes a prophylactic
 
 The Nelson review has made a number of sensible and welcomed recommendations particularly as they go to disclosure and liquidity.

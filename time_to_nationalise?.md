@@ -1,3 +1,24 @@
+---
+title: "Eyes open"
+author: "David Leitch"
+date: "2025-01-24"
+categories: [analysis, LLM]
+image: "../media/image1.png"
+lightbox: true
+format:
+  html:
+    include-after-body:
+       - "../comment_load.html"
+  docx: default
+draft: true
+---
+
+
+
+![image-20250821115741801](./media/image-20250821115741801.png)
+
+
+
 ## Either force Gentailers to fund wind and solar via PPAs or cut them out permanently
 
 It's been clear for years and years that the major gentailers dont want to either own, finance or write PPAs for wind and solar.  The gentailers will nickel and dime any CIS or Nelson style contracts until the private sector's role is meaningless.

@@ -27,7 +27,8 @@
       "Bash(security find-generic-password:*)",
       "Bash(grep:*)",
       "Bash(ssh-keygen:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(pandoc:*)"
     ],
     "deny": []
   }

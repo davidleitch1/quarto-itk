@@ -1,3 +1,22 @@
+---
+title: "AGL 25 "
+author: "David Leitch"
+date: "2025-08-03"
+categories: [analysis, prices]
+image: "../media/image-20250805180118537.png"
+lightbox: true
+format:
+  html:
+    include-after-body:
+       - "../comment_load.html"
+  docx: default
+draft: true
+---
+
+
+
+
+
 
 
 # Like big emitters? AGL's your company
