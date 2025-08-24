@@ -23,9 +23,29 @@ draft: true
 
 It's been clear for years and years that the major gentailers dont want to either own, finance or write PPAs for wind and solar.  The gentailers will nickel and dime any CIS or Nelson style contracts until the private sector's role is meaningless.
 
-The only way to get to Gentailers to write wind or solar PPAs is by some form of mandatory share of renewable energy, REC certificates are the most market like way,  Since the Nelson Committee has been given the word that certificates are out this leaves only one choice. Get rid of any pretence about the Gentailers. The Goverment is going to be on the hook so it might as well do the job properly. And the, to me, obvious way to do that is via vanilla CFDs with say a 20 year term. If done on a regular schedule the Government will end up paying on average the correct price. Developers still take financing, construction and operational risk. Once built the assets can be resold into an infrastructure fund offering infrastructure style returns. 
+Although its easy to be negative about Gentailer motives for not writing PPAs I have come to the conclusion its because gentailers have formed a collective expectation that average spot prices for wind and solar (prices received from the pool market) will be lower than LCOE (prices required to recover investment, and therefore the PPA price a developer will require)
+
+The only way to get to Gentailers to write wind or solar PPAs is by some form of mandatory share of renewable energy. This could but wont be a simply mandate, but historically was done the LRET scheme REC certificates are the most market like way,  Since the Nelson Committee has been given the word that certificates are out this leaves only one choice. Get rid of any pretence about the Gentailers. The Goverment is going to be on the hook so it might as well do the job properly. And the, to me, obvious way to do that is via vanilla CFDs with say a 20 year term. If done on a regular schedule the Government will end up paying on average the correct price. Developers still take financing, construction and operational risk. Once built the assets can be resold into an infrastructure fund offering infrastructure style returns. 
 
 In this scenario the Government's problem is it will pay LCOE but receive spot and that is exactly what Gentailers have been seeking to avoid. However if the Goverment has PP
+
+## Will solar and wind farms earn LCOE?
+
+The following plot is perhaps overly simple. It takes the calendar^[Incomplete 2020 and 2025 data] annual average fuel weight price^[revenue for fuel for year divided by volume] and shows that compared to a single LCOE. The LCOE is ridiculously simple. It's just set at \$100 flat for wind and \$60 for solar. Who cares about costs and interest rates etc.
+
+![image-20250822165712231](./media/image-20250822165712231.png)
+
+So the question is, if you are a gentailer do you think you will recover LCOE? In answering the question your CFO would firstly observe that:
+
+- Historically you would also get an REC. Your answer as CEO is yes but RECs are expiring, price depends on voluntary surrender and thats risky;
+- By and large regions where spot averages exceed my arbitrary LCOE either have low supply relative to demand eg NSW, or the wind and fuel penetration is relatively low eg wind in QLD.
+- I don't show the data but as you might expect solar price relative to the average price have been declining consistently over the past five years. The percentage of the average flat load load price that a fuel receives is the capture rate. Solar was capturing 60%-90% of the flat load price in 2020 but now its pretty much at or below 50%.
+
+My conclusion is that based on history you could justify a wind farm PPA but you'd have to be lucky with solar, or at the least be dependent on RECS. Or to put it the other way, if you were a large retailer you wouldn't pay much to hedge wind bought from the spot market and you'd rather buy solar out of spot than be paying some developer.
+
+However it's the far trickier prospects for average solar and wind achieved prices over the next 25 years that are where the investment decisions will be won and lost. 
+
+I look look and hard at the forecasts from ITK's price forecasting model and I think its quite reasonable to think wind and solar capture rates can fall going forward. As the share of wind in the total energy system increases it's likely that when the wind blows the price will be low and vice versa. You can change that by putting more storage in but the more storage then the lower the return on that asset. 
 
 ## Gentailers have been on a buyer's strike for years
 
