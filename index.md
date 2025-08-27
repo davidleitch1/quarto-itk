@@ -28,7 +28,11 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
-## Lots of news re Nelson review and AGL/ORG results and Vic transmisison
+### 27 August
+
+Interesting interview with Damien Nicks, CEO AGL today. I don't think he gives a great answer as to what is going to replace 30 TWh, \$1.3 bn of EBITA,\$900 m of operating cash flow as the coal generation plants close but he's going to give it a good shot. More to the point there will be another 900 MW of Batteries expected to hit financial close over the next 12-18 months and there was a "watch this space" for a wind PPA with the 850 MW Potinger wind farm expected to hit FID in 2026. Worth listening to the podcast
+
+### 19 August Lots of news re Nelson review and AGL/ORG results and Vic transmisison
 
 In a nutshell the big gentailers are on strike. No new wind or solar PPAs in years. Nelson review may fix the problem but misidiagnosed the cause, and Victoria is getting itself in a mess.
 
