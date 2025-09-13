@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch">
+<meta name="dcterms.date" content="2024-08-01">
+
+<title>Reviewing wind economics – ITK Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ITK_logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Reviewing wind economics – ITK Research">
+<meta property="og:description" content="Electricity markets analysis">
+<meta property="og:image" content="https://itkservices3.com/media/image-20240731131459260.png">
+<meta property="og:site_name" content="ITK Research">
+<meta property="og:image:height" content="544">
+<meta property="og:image:width" content="432">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../ITK_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ITK Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dashboards-(load-slow" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dashboards (load slow)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dashboards-(load-slow">    
+        <li>
+    <a class="dropdown-item" href="../IEA.html">
+ <span class="dropdown-text">IEA-electricity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../nemgen.html">
+ <span class="dropdown-text">NEM-ITK</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../forecast.html">
+ <span class="dropdown-text">AEMO demand fcst</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../posts.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">more</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../green_iron/index.html">
+ <span class="dropdown-text">Green Iron</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../presentations.html">
+ <span class="dropdown-text">Presentations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../background.html">
+ <span class="dropdown-text">Background notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../energyinsiders.html">
+ <span class="dropdown-text">Energy Insiders</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../posts.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../mailchimp.html"> 
+<span class="menu-text">Signup</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Reviewing wind economics</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Renewable Technology</div>
+                <div class="quarto-category">Economics &amp; Investment</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>David Leitch </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 1, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#landowners-forego-50-million-to-keep-a-wind-farm-away" id="toc-landowners-forego-50-million-to-keep-a-wind-farm-away" class="nav-link" data-scroll-target="#landowners-forego-50-million-to-keep-a-wind-farm-away">Landowners forego $50 million to keep a wind farm away</a></li>
+  <li><a href="#despite-protestations-the-nsw-planning-dept-has-not-so-far-been-up-to-the-job" id="toc-despite-protestations-the-nsw-planning-dept-has-not-so-far-been-up-to-the-job" class="nav-link" data-scroll-target="#despite-protestations-the-nsw-planning-dept-has-not-so-far-been-up-to-the-job">Despite protestations, the NSW Planning Dept has not so far been up to the job</a></li>
+  <li><a href="#paradoxes-in-wind-lcoe" id="toc-paradoxes-in-wind-lcoe" class="nav-link" data-scroll-target="#paradoxes-in-wind-lcoe">Paradoxes in wind LCOE</a></li>
+  <li><a href="#nsw-independent-planning-commission-ipc-review-of-hills-of-gold" id="toc-nsw-independent-planning-commission-ipc-review-of-hills-of-gold" class="nav-link" data-scroll-target="#nsw-independent-planning-commission-ipc-review-of-hills-of-gold">NSW Independent Planning Commission (IPC) review of Hills of Gold</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="wind_plans_lcoe.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>It’s likely that wind farms need $85/MWh or more to earn cost of capital. At $95/MWh a 10% equity IRR is in sight. Most participants say a higher price is needed but I am not so sure. The cost increases reflect underlying turbine costs, an increase in the WACC, increases in connection costs and the cost of pre FID development, that is actual planning costs and planning related delays. These cost increases have been partly offset by larger turbines and a reduction in underlying operating costs. Nevertheless participants insisting on excess returns will end up taking riskier projects. A 7.5% achieved geared equity return is what the text book suggests is appropriate and reflects that a wind farm with a PPA constructed on time and budget</p>
+<p>The true cost of the biodiversity rules is never actually observed. The true cost is the opportunity cost. That is most big wind projects in recent years have their initial turbine plans cut down. For instance Hills of Gold had their turbine numbers reduced by 1/3. That means 1/3 of the revenue is never earned and fixed costs have to be split over less output. This occurs in project after project. In saying that, the other side is that the true cost of development on the environment isn’t always easy to observe either. Finally the cost to the environment of not building renewable energy is also ignored. All of these costs need to be estimated if the impact of the project and the impact of planning are to be properly assessed.</p>
+<p>Offering residents in impacted areas lower electricity prices is rapidly emerging as an effective way to help impacted communities to see wind and solar more positively. It creates a connection between the project and the resident and all residents benefit, not just those where the project is located.</p>
+<p>REZ wide cumulative impacts are the Dept Responsibility and need to be planned for and messaged at the beginning. There will be a big wave of development with opportunities and costs for the local community but that will be followed by a construction and hospitality bust. The long term jobs are only modest and this needs to be made clear up front.</p>
+<p>There is a lot more to be said about the broader concept of planning, that is looking at the binary nature of prices in renewable heavy markets, the increasing need for capacity rather than energy driven returns, the need to build transmission flexibly enough so it can be scaled up and down without redoing 7 years of community approvals and so on. An example is the SW REZ in NSW where arguably 3X as much transmission could be used as is likely to be there.</p>
+</section>
+<section id="landowners-forego-50-million-to-keep-a-wind-farm-away" class="level2">
+<h2 class="anchored" data-anchor-id="landowners-forego-50-million-to-keep-a-wind-farm-away">Landowners forego $50 million to keep a wind farm away</h2>
+<p>The increasingly open and hostile approach to wind and solar development by the Federal Opposition makes life difficult for many. Even residents who want to do the right thing find them selves at odds with their political party of choice. Still it now seems that the only way for this to change is for some of the QLD LNP members to lose their seats, and as things stand that seems unlikely. Barnaby Joyce enjoys one of the highest two party vote shares in Australia. This gives me pause, only 15 years ago Tony Windsor, an entirely sensible politician, held the seat, but as Bob Dylan sang “things have changed”. Now it looks like the anti wind and solar lobby has dug in.</p>
+<p>It’s interesting to read that 9 farmers around Wongwibinda, that is west of Ebor by about 10-15 km, have knocked back the Doughboy wind farm after apparently having earlier been onboard. You can never be sure of the exact reasons why a project is abandoned, maybe the economics didn’t work for the developer.</p>
+<p>The project had a proposed 54 turbines. In my opinion a landowner could earn around $35k per turbine per year. Although the wind farm life is 30 years the likelihood is the turbines would be replaced with newer ones, like tractors I guess, at the end of the life. So for 54 turbines the landowners have turned down $1.9 m a year, which over the first 30 years is over $55 m (before converting to present value).</p>
+<p>If the 54 turbines were spread evenly between the 9 landowners each of them has turned down $190k per year. Cattle prices must be great. That is not to underestimate what a lovely area that part of New England is. I have cycled and trout fished around Ebor many times. Some wind turbines, in my opinion and I don’t live there, would do no harm. At the risk of boring readers my brother, a school chum and I cycled there from Armidale (80km) as school kids on a ride to the coast. The Ebor pub was then a basic tin shack, it later burnt down, and as we arrived late afternoon a young guy literally crawled out of the pub on hands and knees, pulled himself into the ute and fishtailed down the dirt road. 55 years later its still a memory. Anyhow….</p>
+</section>
+<section id="despite-protestations-the-nsw-planning-dept-has-not-so-far-been-up-to-the-job" class="level2">
+<h2 class="anchored" data-anchor-id="despite-protestations-the-nsw-planning-dept-has-not-so-far-been-up-to-the-job">Despite protestations, the NSW Planning Dept has not so far been up to the job</h2>
+<p>Last week The Smart Energy Council ran an interesting seminar discussing large scale renewables and storage. I was lucky enough to be on a panel talking about the Planning System for 82% renewables. Much of the discussion was rightly focussed on the NSW EIS process and the related Federal planning regime. Naturally the many shortcomings of the EIS process were discussed and various solutions proposed. There can be absolutely no question that the NSW planning process is deficient when it comes to REZs. Obvious time takers are two years of Bird and bat studies for every project often with revisions, a lack of statutory time tables for reaching decisions, no concept of the bigger picture, by which I mean cumulative impacts across an REZ, the ineffectiveness of Biodiversity and its potential replacement Nature Positive and the fact that without a bilateral agreement projects can be approved in QLD and then still have to go through a separate Federal process. Many studies such as opinions from fire services or civil aviation have to be sought for every project. In NSW anything over 50 objections, even if the objectors are remote from the project, is by Statute referred to the IPC, involving a further six months. Nevertheless Wind developers increasingly prefer their projects to be referred to the IPC because in contrast to the Dept they find it to be both reasonable and efficient.</p>
+<p>On top of the outmoded Act the Federal Coalition has weaponised the EIS process discovering a love for nature that in my many years of following their machinations has never previously been in evidence, and which seems at odds with their even greater love for coal and gas extraction. I don’t mind BS or hypocrisy in politics, it’s par for the course. Equally its open to us analysts to note that the National Party fully supports coal seam gas in NSW and in QLD and gas extraction from the Betaloo Basin in the Northern Territory at the same time as it opposes wind farms on agricultural land or any land in Eastern Australia.</p>
+<p>The same regional residents that show increasing support for McIntyre wind farm 70 km North of Stanthorpe and who will likely will not object to stage 2 will nevertheless happily vote for David Littleproud who represents Maranoa where the wind farm is located and who says ” no room for more wind farms in QLD”. I mention this only to note that politics and projects exist in different universes.</p>
+<p>In NSW it’s also the case that there appears to be a ready made solution to hands. The NSW Govt could adopt a rule that projects of a certain size within an REZ could be designated Critical State Significant Infrastructure (CSSI), and they most certainly are that, and basically get more control of the planning process. Projects that get CSSI status end up being approved. I don’t the legal position but following a suggestion from Warwick Ghiblin I kind of think the entire REZ might be declared CSSI which would require the Department to assume more responsibility for the process and the outcomes. That could be either good or bad. Professor John Stone, with long experience in what works for regional development, particularly in QLD, argues that the planning system works best when communities take the lead, embrace the opportunity, and then get more control over the process.</p>
+<p>An excellent, if long article on this part of the planning topic and its relation to impacted communities was by <a href="https://www.smh.com.au/national/we-have-to-live-with-this-the-renewable-energy-blitz-dividing-regional-communities-20240617-p5jmc4.html">James Button-SMH</a>. For those that don’t have time, the policy that developers can adopt that will appeal to the most people is to <strong>offer residents cheaper electricity. This provides a pavlovian connection between cheaper and renewable electricity and all residents get an immediate reward.</strong></p>
+</section>
+<section id="paradoxes-in-wind-lcoe" class="level2">
+<h2 class="anchored" data-anchor-id="paradoxes-in-wind-lcoe">Paradoxes in wind LCOE</h2>
+<p>It’s forever humbling to be an analyst or forecaster or to make comments about planning. If you have a need to be right all the time or don’t like being wrong then analysis is not for you. Bob McNamara, certainly a lot brighter than most of us, talked about the “fog of war” meaning:</p>
+<blockquote class="blockquote">
+<p>War is the realm of uncertainty; three quarters of the factors on which action in war is based are wrapped in a fog of greater or lesser uncertainty.’</p>
+</blockquote>
+<p>A couple of years ago it seemed obvious that the drivers for the LCOE of wind were for lower required prices, specifically turbine sizes were growing from 3.5 MW to 6 MW. Issues around gear boxes had largely been worked out. Projects were moving from 200 MW to 500 - 1000 MW and this would spread fixed costs over a bigger bundle of revenue. The bigger turbines would capture more wind and so spread wind generation into lower wind areas. Wind opex was expected to decline from say $22/MWh down to $10 MWh as a result of whole of field output warranties provided by turbine suppliers.</p>
+<p>Wind PPA prices, not the same but closely related to LCOE, had in fact declined from $100/MWh for projects such as those AGL and Infigen put together in South Australia, down to maybe $50for Goldwind’s Stockyard Hill project subsequently sold to Origin. In retrospect that was pretty much the low.</p>
+<p>Today despite the bigger turbines and larger sizes wind LCOEs are almost certainly over $80and you can find industry participants talking over $100.</p>
+<p>Starting at the fundamentals, European (Vestas) turbine prices have barely changed in the past few years ex the factory although they are up 20% on the 2018 lows. Given the bigger turbine sizes which should have lowered Vestas unit costs there is an implicit price rise at the turbine level.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240731142944255.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Vestas turbine cost. Source:Vestas"><img src="../media/image-20240731142944255.png" class="img-fluid figure-img" style="width:85.0%" alt="Vestas turbine cost. Source:Vestas"></a></p>
+<figcaption>Vestas turbine cost. Source:Vestas</figcaption>
+</figure>
+</div>
+</section>
+<section id="nsw-independent-planning-commission-ipc-review-of-hills-of-gold" class="level2">
+<h2 class="anchored" data-anchor-id="nsw-independent-planning-commission-ipc-review-of-hills-of-gold">NSW Independent Planning Commission (IPC) review of Hills of Gold</h2>
+<p>The Dept Planning telling Engie, developer of the proposed Hills of Gold wind farm to sharply cut the number of turbines because of bio diversity issues. Subsequently the project was referred to the IPC which conducted an LCOE review of Hills of Gold. The purpose of the review was to estimate the impact of the proposed turbine number cut on the financial viability of the project. However what was of interest to many was the conclusion that even at the 370 MW level the LCOE of the project was in the range of $90 - $114/MWh. The IPC report provides some details on how this had been arrived at. Not enough detail mind you but still a lot more than one normally sees. A summary of some of the numbers is shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240730103714196.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="HOG LCOE inputs. Source:IPC"><img src="../media/image-20240730103714196.png" class="img-fluid figure-img" alt="HOG LCOE inputs. Source:IPC"></a></p>
+<figcaption>HOG LCOE inputs. Source:IPC</figcaption>
+</figure>
+</div>
+<p>My observations are:</p>
+<ul>
+<li>The turbine supply <strong>and</strong> install capex of A$1.8 m/MW is indeed comparable to the Vestas quoted achieved price in A$ of 1.6 m/MW and on that basis installation costs are not that expensive even considering crane operator costs.</li>
+<li>Other capex excluding turbines is about 1/3 of the total and that excludes the grid fee.</li>
+<li>Opex costs, if the budget is correct are indeed low working out to under A$10/MWh of estimated gross energy production. So this is an area of cost reduction for new wind farms compared to old.</li>
+<li>MLFs for wind farms in NSW average under 0.9 according to Aurora. MLF’s are a complex subject but like the RIT-T test represent another essentially regulatory barrier to getting wind and solar into the system. Essentially consumers have to pay a premium over coal and gas for wind or solar energy due to MLF methodologies.</li>
+<li>Connection costs @ $124 m NPV are expensive. There is no data to estimate how much connection costs have increased but $124 m seems like a big number. The reason that virtually all developers are variabilising the cost is likely to be that the transmission providers cost of capital is lower than the developers cost of capital. So essentially the developer is borrowing from the transmission company instead of a bank. This is another area where the Developer may overpay by “leasing” the connection. If the $10 m per year has no expiry date….</li>
+<li>The cost of biodiversity for this project is not the offsets, they are trivial. The cost of biodiversity was the over 30 turbines that the Dept required to be eliminated from the project or about 1/3 of the original project. I have no comment on the merits of how this was approached other than to observe that 30 x 6MW turbines would produce around 0.5 TWh per year and earn $45 m revenue a year and probably well over $30m of ebitda, so in fact its a huge investment in biodiversity when considered from an opportunity cost point of view. I do wonder if the Dept actually calculates the opportunity cost when it does its reviews.</li>
+</ul>
+<p>My conclusion from these numbers is that despite the bigger turbines and bigger project total capacities unit capital costs have increased about 25% more or less mirroring the increase in European turbine costs.</p>
+<p>Another significant factor driving up LCOE is the discount rate or weighted average cost of capital (WACC). For the wind industry and as reviewed by AEMO it’s a 7% real rate. Personally I always have a conceptual problem with “real” WACCs because the observable inputs to a WACC that is mainly the cost of debt are stated in nominal terms. So my approach is to grow price and costs with inflation and discount the resulting cashflows at the nominal cost of capital. Everything is nominal. This does require an estimate of the inflation rate.</p>
+<p>In my opinion a real WACC of 7% is quite high. I estimate the post construction, post PPA, nominal WACC for any old wind farm as being about 5.6% and the real WACC at less than 4%. If there is an aggressive assumption it’s in the Beta of 0.85 but APA’s Beta is as low as 0.5 and AGL is reported to be down around 0.34. Using those numbers would provide a still lower WACC. To get 60% debt funding does require a reasonable PPA. Equally one might argue that the measured return on equity for a listed company benefits from liquidity and that unlisted assets need a liquidity premium.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240731131459260.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Generic wind farm WACC. Source:ITK"><img src="../media/image-20240731131459260.png" class="img-fluid figure-img" alt="Generic wind farm WACC. Source:ITK"></a></p>
+<figcaption>Generic wind farm WACC. Source:ITK</figcaption>
+</figure>
+</div>
+<p>Using a 30 year life inflation of 2.4% (difference between rate on inflation linked bond and ordinary 10 year bond) incorporating some tax losses and a constant debt to remaining life NPV ratio then I can get an LCOE of say <strong>$85/MWh</strong>.</p>
+<p>In my opinion it’s about the right number but basically every developer wants more than 7.3% equity return. The $85/MWh if the project was online today could still get RECs for six years or perhaps even longer. In turn the REC revenue means that the average electricity price required can be a bit lower and that can be sculpted towards the front or backend as desired. Still I don’t do project finance and if I did I would probably find all the ways I am wrong.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/itkservices3\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 ITK admin@itkservices.com.au</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

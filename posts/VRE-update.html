@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch">
+<meta name="dcterms.date" content="2024-07-03">
+
+<title>VRE update – ITK Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ITK_logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="VRE update – ITK Research">
+<meta property="og:description" content="Electricity markets analysis">
+<meta property="og:image" content="https://itkservices3.com/media/image-20240703124312669.png">
+<meta property="og:site_name" content="ITK Research">
+<meta property="og:image:height" content="392">
+<meta property="og:image:width" content="710">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../ITK_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ITK Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dashboards-(load-slow" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dashboards (load slow)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dashboards-(load-slow">    
+        <li>
+    <a class="dropdown-item" href="../IEA.html">
+ <span class="dropdown-text">IEA-electricity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../nemgen.html">
+ <span class="dropdown-text">NEM-ITK</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../forecast.html">
+ <span class="dropdown-text">AEMO demand fcst</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../posts.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">more</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../green_iron/index.html">
+ <span class="dropdown-text">Green Iron</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../presentations.html">
+ <span class="dropdown-text">Presentations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../background.html">
+ <span class="dropdown-text">Background notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../energyinsiders.html">
+ <span class="dropdown-text">Energy Insiders</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../posts.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../mailchimp.html"> 
+<span class="menu-text">Signup</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">VRE update</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Renewable Technology</div>
+                <div class="quarto-category">Market Analysis</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>David Leitch </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 3, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#new-projects-are-needed-but-the-vre-total-is-going-up-and-the-batteries-will-make-a-big-difference" id="toc-new-projects-are-needed-but-the-vre-total-is-going-up-and-the-batteries-will-make-a-big-difference" class="nav-link active" data-scroll-target="#new-projects-are-needed-but-the-vre-total-is-going-up-and-the-batteries-will-make-a-big-difference">New projects are needed but the VRE total is going up and the batteries will make a big difference</a>
+  <ul class="collapse">
+  <li><a href="#where-we-are-and-the-road-out-to-the-next-bend" id="toc-where-we-are-and-the-road-out-to-the-next-bend" class="nav-link" data-scroll-target="#where-we-are-and-the-road-out-to-the-next-bend">Where we are and the road out to the next bend</a>
+  <ul class="collapse">
+  <li><a href="#turning-to-under-construction" id="toc-turning-to-under-construction" class="nav-link" data-scroll-target="#turning-to-under-construction">Turning to under construction</a></li>
+  </ul></li>
+  <li><a href="#heading-close-to-50-renewables-in-two-years." id="toc-heading-close-to-50-renewables-in-two-years." class="nav-link" data-scroll-target="#heading-close-to-50-renewables-in-two-years.">Heading close to 50% renewables in two years.</a></li>
+  <li><a href="#batteries" id="toc-batteries" class="nav-link" data-scroll-target="#batteries">Batteries</a>
+  <ul class="collapse">
+  <li><a href="#batteries-are-moving-from-a-sideshow-to-centre-stage-for-setting-peak-prices" id="toc-batteries-are-moving-from-a-sideshow-to-centre-stage-for-setting-peak-prices" class="nav-link" data-scroll-target="#batteries-are-moving-from-a-sideshow-to-centre-stage-for-setting-peak-prices">Batteries are moving from a sideshow to centre stage for setting peak prices</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="VRE-update.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="new-projects-are-needed-but-the-vre-total-is-going-up-and-the-batteries-will-make-a-big-difference" class="level1">
+<h1>New projects are needed but the VRE total is going up and the batteries will make a big difference</h1>
+<p>Renewable generation should be around 50% of NEM supply by 1 July 2026 probably a little less given that Golden Plains stage 2 is very early in the construction cycle. To get to 80% by 2030 will partly depend on what happens to demand. If Demand is flat capacity capable of supplying about 67 TWh a year will be needed. After allowing for rooftop solar I reckon about 25 GW will be needed, maybe a bit more. That’s a heck of an ask but in my opinion still possible and broadly in line with the objectives and scale of the CIS. I’ll have more to say on the role of the CIS once I get round to talking about ITK’s price forecasts, but that can wait. Talking capacity and output here.</p>
+<p>I hadn’t updated the VRE capacity details for about 3 months. Using a summary from www.renewmap.com.au possibly the most interesting new web site for us energy nerds to be developed in the past year I’ve updated the under construction and operating tables for wind, solar and batteries in the NEM. I rely on the renewmap team’s definitions of operating and under construction. As an example last time I did the update back in March Rye Park was shown as under construction even though 50% of the capacity was producing.</p>
+<p>For this exercise the exact definitions don’t matter. I’m interested in understanding how much VRE (variable renewable energy) the NEM is capable of producing and a different question how much it’s likely to actually produce. Actual production depends not just on the weather, and this early Winter has been a strong reminder of not just wind drought but also how important QLD is going to be to the Southern States as the VRE roll out continues, but also on MLFs (marginal loss factors) and economic curtailment. Economic curtailment can itself occur for two reasons. Reason 1 is that prices go negative and despite the value of RECs various PPA agreements require a producer to shut down when prices are negative. Reason 2, not so common yet but will become more so is that the total of wind and solar production exceeds demand.</p>
+<p>As long as there is “must run” thermal generation in the system we will get more curtailment than is needed in a highly renewable system. At the moment there are 1000s of MW of coal and gas that have to run 24/7. That generation is loss making typically in the middle of the day and results in excess production and some curtailment.</p>
+<p>For instance in QLD even in Winter, even without the 1.6 GW of wind nearing operations prices are still going negative at lunch time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703111658801.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Qld supply and price. Source: NEM Review"><img src="../media/image-20240703111658801.png" class="img-fluid figure-img" alt="Qld supply and price. Source: NEM Review"></a></p>
+<figcaption>Qld supply and price. Source: NEM Review</figcaption>
+</figure>
+</div>
+<p>QLD can export most of its surplus to NSW but clearly if prices are negative it’s not getting rid of all of it. The other option for a surplus of lunchtime power is to charge it up for storage because the spreads are still excellent over $300/MWh in all States except Victoria.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703112128199.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Battery spreads. Source: NEM Review"><img src="../media/image-20240703112128199.png" class="img-fluid figure-img" alt="Battery spreads. Source: NEM Review"></a></p>
+<figcaption>Battery spreads. Source: NEM Review</figcaption>
+</figure>
+</div>
+<p>Lots of margin, based on looking backwards, for battery developers if you consider the rapidly falling cost of batteries. Speaking of battery cost my understanding is that a 2 hour battery cost say A$650/KWh a year ago but my understanding is the quotes now start with a $4 and still falling. The reduction is due to a, long expected by ITK and everyone else, reduction in cell costs. So because balance of system costs haven’t changed, the reduction is in the cell costs, there is basically a strong incentive to increase duration. In turn with more duration less of the battery’s revenue will come from frequency control and more from trading the daily market. Over the next three years this will play out as a flattening of evening price peak, reducing gas opportunity, at least outside of wind droughts, and maybe taking some stress off midday prices.</p>
+<p>No matter how many utility batteries are built unless there are lots of household and network batteries it’s likely that rooftop solar will still make life very tough for utility generators at lunch time. That’s because a rooftop solar system has a capacity factor of at least 14% which works out to say 3.5 MWh per day on average. So if we are installing over 2 GW of rooftop solar a year, you need 2 GW of 4 hour batteries just to deal with the incremental supply. Never mind all the utility solar as well. Much better to have 1 GW of 8 hour residential and community batteries installed each year.</p>
+<p>And if the reason utility battery costs are falling strongly is because of falling cell costs, then it’s likely that household battery costs can also fall quite a lot. I’ve only been waiting a decade for that to happen.</p>
+<p>Anyhow all that is a bit off today’s topic which is existing and new supply. I’m only going to show the broad totals.</p>
+<section id="where-we-are-and-the-road-out-to-the-next-bend" class="level2">
+<h2 class="anchored" data-anchor-id="where-we-are-and-the-road-out-to-the-next-bend">Where we are and the road out to the next bend</h2>
+<p>First existing installed utility VRE capacity has increased from 19.9 GW in March to 20.7 GW since I last did the numbers. Of course there is a similar quantity of rooftop solar</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703120846872.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Wind and solar capacity. Source: wwww.renewmap.com.au"><img src="../media/image-20240703120846872.png" class="img-fluid figure-img" alt="Wind and solar capacity. Source: wwww.renewmap.com.au"></a></p>
+<figcaption>Wind and solar capacity. Source: wwww.renewmap.com.au</figcaption>
+</figure>
+</div>
+<p>Wind is up by about 300 MW and utility solar by about 500 MW. However output is well down due to the wind drought. No surprise there. Where the surprise will be is when the wind picks up again.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703120219174.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="VRE production. Source: NEM Review"><img src="../media/image-20240703120219174.png" class="img-fluid figure-img" alt="VRE production. Source: NEM Review"></a></p>
+<figcaption>VRE production. Source: NEM Review</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703120253346.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="VRE by fuel. Source: NEM Review"><img src="../media/image-20240703120253346.png" class="img-fluid figure-img" alt="VRE by fuel. Source: NEM Review"></a></p>
+<figcaption>VRE by fuel. Source: NEM Review</figcaption>
+</figure>
+</div>
+<section id="turning-to-under-construction" class="level3">
+<h3 class="anchored" data-anchor-id="turning-to-under-construction">Turning to under construction</h3>
+<p>The total remains about 6.9 GW, boosted by Golden Plains stage 2 in Victoria.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703121224044.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Under construction VRE. Source: www.renewmap.com.au"><img src="../media/image-20240703121224044.png" class="img-fluid figure-img" alt="Under construction VRE. Source: www.renewmap.com.au"></a></p>
+<figcaption>Under construction VRE. Source: www.renewmap.com.au</figcaption>
+</figure>
+</div>
+<p>Pleasingly wind capacity is going to increase 40% and even more pleasingly more than 1/3 of that is in QLD.</p>
+</section>
+</section>
+<section id="heading-close-to-50-renewables-in-two-years." class="level2">
+<h2 class="anchored" data-anchor-id="heading-close-to-50-renewables-in-two-years.">Heading close to 50% renewables in two years.</h2>
+<p>Wind actual output over the past year is 27 TWh, on 10.8 GW of capacity that works to a capacity factor of 28%. Really even allowing for older technology comfortably over 30% should be expected. I guess the difference is the wind drought, that there is always some capacity undergoing maintenance, and MLFs. Generally I do do my forward forecasts on a rosier basis.</p>
+<p>Even allowing for this year’s worst I’ve seen in a decade and presumably unusual wind drought the 365 day total for VRE is around 31% of total energy supplied in the NEM. That’s after curtailment and MLF stuff.</p>
+<p>And by the way since we are counting, NSW solar share is down on PCP even though capacity is up.</p>
+<p>Putting it together and assuming all new capacity is operating within two years I get a 49% renewable share by this time in 2026. Essentially that’s close to a bankable share, leaving aside only construction and connection risks.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703124312669.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="July ‘26 VRE and share. Source:ITK’"><img src="../media/image-20240703124312669.png" class="img-fluid figure-img" alt="July ‘26 VRE and share. Source:ITK’"></a></p>
+<figcaption>July ‘26 VRE and share. Source:ITK’</figcaption>
+</figure>
+</div>
+</section>
+<section id="batteries" class="level2">
+<h2 class="anchored" data-anchor-id="batteries">Batteries</h2>
+<p>Battery GW are increasing 400% from an operating 1.4 GW to 6.7 GW total counting the 5.5 GW under construction. The Capital battery in the ACT is now counted as operating, although some may wonder.</p>
+<p>As impressive as that is the GWh of capacity is going from 1.8 to 13.6 a 650% increase. Batteries under construction have an average of 2.1 hours of duration up from the 1.3 hours of the existing fleet. I’ve already talked about my expectations that this will increase a lot further.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703141221858.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Operating batteries. Source:www.renewmap.com.au"><img src="../media/image-20240703141221858.png" class="img-fluid figure-img" alt="Operating batteries. Source:www.renewmap.com.au"></a></p>
+<figcaption>Operating batteries. Source:www.renewmap.com.au</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703141240863.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Under construction batteries. Source:www.renewmap.com.au"><img src="../media/image-20240703141240863.png" class="img-fluid figure-img" alt="Under construction batteries. Source:www.renewmap.com.au"></a></p>
+<figcaption>Under construction batteries. Source:www.renewmap.com.au</figcaption>
+</figure>
+</div>
+<p>People can talk about pumped hydro till the cows come home. If Battery costs have fallen 23% in 18 months and are still falling as global capacity ramps up, I would need a crystal clear business case to compete with them. Don’t forget the generally much better round trip efficiency of batteries.</p>
+<section id="batteries-are-moving-from-a-sideshow-to-centre-stage-for-setting-peak-prices" class="level3">
+<h3 class="anchored" data-anchor-id="batteries-are-moving-from-a-sideshow-to-centre-stage-for-setting-peak-prices">Batteries are moving from a sideshow to centre stage for setting peak prices</h3>
+<p>Right now batteries pretty much shadow price gas, in some cases demanding a premium. That’s possibly because the existing battery fleet gets more than half its revenue from ancilliary services etc. Even though some of the new batteries will be used for transmission reliability and other system services there is clearly going to be way more capacity available for day trading. I am reminded of the old stockbroking joke about Q: “how do become a small daytrader”, A: “Start as a big daytrader” nevertheless.</p>
+<p>The figure below shows that gas and hydro supply a median 6 GW (23%) of dinner time demand. Even if only 3 GW of the batteries under construction start trading in that dinnertime space they will probably end up dropping those peak prices significantly, at least that is my expectation.</p>
+<p>Equally they will represent an even bigger share of midday demand and so have the potential to lift midday prices quite a bit as well.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20240703144504289.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Peak demand fuel supply. Source: NEM Review, ITK"><img src="../media/image-20240703144504289.png" class="img-fluid figure-img" alt="Peak demand fuel supply. Source: NEM Review, ITK"></a></p>
+<figcaption>Peak demand fuel supply. Source: NEM Review, ITK</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/itkservices3\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 ITK admin@itkservices.com.au</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

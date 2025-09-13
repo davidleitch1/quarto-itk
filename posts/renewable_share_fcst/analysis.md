@@ -2,7 +2,7 @@
 title: "Supply and demand forecast"
 author: "David Leitch"
 date: "2024-03-03"
-categories: [analysis,nem,renewables, cis]
+categories: ["Renewable Technology", "Market Analysis", "Energy Transition"]
 image: "../../media/image-20240303114540630.png"
 lightbox: true
 draft: false

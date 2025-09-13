@@ -2,7 +2,7 @@
 title: "Global renewables by country"
 author: "David Leitch"
 date: "2024-01-24"
-categories: [analysis,global]
+categories: ["International", "Renewable Technology", "Energy Transition"]
 image: "media/media/image1.png"
 lightbox: true
 draft: false

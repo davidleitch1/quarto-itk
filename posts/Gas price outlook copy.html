@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch">
+<meta name="dcterms.date" content="2025-05-29">
+
+<title>Gas supply and demand – ITK Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ITK_logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Gas supply and demand – ITK Research">
+<meta property="og:description" content="Electricity markets analysis">
+<meta property="og:image" content="https://itkservices3.com/media/image-20250512211952865.png">
+<meta property="og:site_name" content="ITK Research">
+<meta property="og:image:height" content="1666">
+<meta property="og:image:width" content="2808">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../ITK_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ITK Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dashboards-(load-slow" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dashboards (load slow)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dashboards-(load-slow">    
+        <li>
+    <a class="dropdown-item" href="../IEA.html">
+ <span class="dropdown-text">IEA-electricity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../nemgen.html">
+ <span class="dropdown-text">NEM-ITK</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../forecast.html">
+ <span class="dropdown-text">AEMO demand fcst</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../posts.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">more</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../green_iron/index.html">
+ <span class="dropdown-text">Green Iron</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../presentations.html">
+ <span class="dropdown-text">Presentations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../background.html">
+ <span class="dropdown-text">Background notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../energyinsiders.html">
+ <span class="dropdown-text">Energy Insiders</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../posts.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../mailchimp.html"> 
+<span class="menu-text">Signup</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Gas supply and demand</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">gas</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>David Leitch </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 29, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#wholesale-gas-prices-have-risen-far-more-than-electricity" id="toc-wholesale-gas-prices-have-risen-far-more-than-electricity" class="nav-link active" data-scroll-target="#wholesale-gas-prices-have-risen-far-more-than-electricity">Wholesale gas prices have risen far more than electricity</a>
+  <ul class="collapse">
+  <li><a href="#demand-has-fallen-from-700-pj-to-500-pj-and-will-fall-further" id="toc-demand-has-fallen-from-700-pj-to-500-pj-and-will-fall-further" class="nav-link" data-scroll-target="#demand-has-fallen-from-700-pj-to-500-pj-and-will-fall-further">Demand has fallen from 700 PJ to 500 PJ and will fall further</a></li>
+  <li><a href="#new-supply-is-limited-and-problematic" id="toc-new-supply-is-limited-and-problematic" class="nav-link" data-scroll-target="#new-supply-is-limited-and-problematic">New supply is limited and problematic</a></li>
+  <li><a href="#imported-lng---who-bears-the-volatility-risk" id="toc-imported-lng---who-bears-the-volatility-risk" class="nav-link" data-scroll-target="#imported-lng---who-bears-the-volatility-risk">Imported LNG - who bears the volatility risk?</a></li>
+  <li><a href="#domestic-gas" id="toc-domestic-gas" class="nav-link" data-scroll-target="#domestic-gas">Domestic gas</a>
+  <ul class="collapse">
+  <li><a href="#uncontracted-2p-reserves-in-queensland" id="toc-uncontracted-2p-reserves-in-queensland" class="nav-link" data-scroll-target="#uncontracted-2p-reserves-in-queensland">Uncontracted 2P reserves in Queensland</a></li>
+  </ul></li>
+  <li><a href="#process-heat-gas-substitution" id="toc-process-heat-gas-substitution" class="nav-link" data-scroll-target="#process-heat-gas-substitution">Process heat gas substitution</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Gas price outlook copy.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="wholesale-gas-prices-have-risen-far-more-than-electricity" class="level1">
+<h1>Wholesale gas prices have risen far more than electricity</h1>
+<p>Wellhead gas supply prices have pretty much trebled, since Santos talked its consortium partners into building more LNG capacity than there was gas available to supply. As export prices were way higher than domestic prices this meant that all producers, particularly of course Santos, were incentivised to supply the export rather than the domestic market. That situation still exists today. Frankly high prices means that in Eastern Australia decarbonisation or substitution of gas is happening quite quickly with Eastern Australian demand having already fallen 2/7 since 2010 see <a href="#fig-domesticdemand" class="quarto-xref">Figure&nbsp;2</a> So I’m all for current prices for the domestic gas industry. However domestic decarbonisation only goes so far. Australian gas and coal exports are responsible for 2% of global emissions when burnt in the destination country. Not until something is done about that will our domestic efforts count.</p>
+<p>There are two camps in regard to future gas supply in Eastern Australia. One group says there is plenty of gas and particularly once existing export contracts have expired in the mid ’30s cheap gas will be available to all. Perhaps I gild the lily. The other group, to which my analysis leads me is that yes there is more gas, but it’s expensive or the locals don’t want to produce it.</p>
+<p>Many point to the Qld so called ‘2C’ resources as evidence of plenty, but the countervailing point is that there are 6 LNG trains in QLD, international prices are reasonably strong, but the trains are not running at anywhere near full capacity. This leads to a strong view it’s not economic to exploit the 2C resources for LNG processing at the export price, say $17 -$20/GJ. If that’s not profitable why on earth will it be produced for the domestic market at say $9-$10GJ?</p>
+<div id="fig-sttmprice" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sttmprice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20250518205635514.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: STTM price history. Data, AEMO"><img src="../media/image-20250518205635514.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sttmprice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: STTM price history. Data, AEMO
+</figcaption>
+</figure>
+</div>
+<section id="demand-has-fallen-from-700-pj-to-500-pj-and-will-fall-further" class="level2">
+<h2 class="anchored" data-anchor-id="demand-has-fallen-from-700-pj-to-500-pj-and-will-fall-further">Demand has fallen from 700 PJ to 500 PJ and will fall further</h2>
+<p>I am indebted to Bruce Robertson for supplying the historic data against which AEMO’s Step change forecast can be assessed. The essential point, in my view, is that historically Australia had extremely low gas prices by world standards and this lead various gas intensive producers to set up here. There was no link to international prices and so domestic demand set the price. Its the same with electricity and its why wholesale electricity prices vary round the world but there is a global oil price. In any event once LNG plants were built there was a link to international prices plus a giant increase in demand which in the end has turned out to be bigger than the increase in supply that CSG provided.</p>
+<p>Electrification and price are expected to reduce demand. Overall excluding LNG AEMO’s step change forecast, and it is just a model forecast for planning purposes shows a 10% or greater non LNG decllne followed by a partial recovery as gas for generation demand increases in the out years.</p>
+<p>When I compare AEMO’s demand forecasts with the history I think it possible that industrial demand may decline more than forecast as prices increase and that residential and commercial decline will likely depend on Govt policy.</p>
+<div id="fig-domesticdemand" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-domesticdemand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20250512211952865.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Domestic gas consumption in NEM.Source:AEMO, Robertson"><img src="../media/image-20250512211952865.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-domesticdemand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Domestic gas consumption in NEM.Source:AEMO, Robertson
+</figcaption>
+</figure>
+</div>
+<div id="fig-demandsegments" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-demandsegments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20250512214029909.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Gas consumption by segment. Source:AEMO,Robertson"><img src="../media/image-20250512214029909.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-demandsegments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Gas consumption by segment. Source:AEMO,Robertson
+</figcaption>
+</figure>
+</div>
+<p>In total AEMO assumes about 100 PJ of annual gas consumption will be lost from the residential and commercial sector over the next 20 years due to substitution, that is electrification.</p>
+<p>This might or might not be ambitious depending on gas, electricity prices and policy support. Equally it’s well known that there are large electrification policies in the industrial sector, particularly Alumina that probably incentivised by Govt. policy could reduce gas consumption by another 50 PJ.</p>
+</section>
+<section id="new-supply-is-limited-and-problematic" class="level2">
+<h2 class="anchored" data-anchor-id="new-supply-is-limited-and-problematic">New supply is limited and problematic</h2>
+<p>TL:DR There is not that much domestic gas to be had. CSG reserves in QLD are limited, Narrabri gas is controversial and expensive and Northern Territory isn’t sufficiently proved up, has high costs and is controversial. LNG imports are entirely feasible and will happen but the gas will be at typical LNG levels, that is more expensive than domestic gas used to be in Australia.</p>
+<p>New supply will probably be cobbled together from various sources and this is what makes me think that in the very end the NSW Govt is more likely than not to end up permitting the Narrabri resource.</p>
+<p>New gas can come from:</p>
+<ul>
+<li>Imported LNG via Squadron Energy’s close to complete but as yet uncontracted Pt Kembla LNG import terminal capable of landing 130 PJ of gas per year. Despite various presentations Squadron has been a bit shy in updating the market on this terminal’s status and particularly whether a floating regasification unit has been leased and whether the terminal has customers. Despite that, and despite other issues including higher aggregate CO2 emissions as compared to domestic production I personally favour imported LNG. The main reason is its flexibility as compared to the longer term implications were there to be extensive development at say Beetaloo in the Northern Territory or even at Narrabri. However industry consensus is that imported LNG on its own will not provide the gas required at current consumption levels.</li>
+<li>Narrabri CSG; Narrabri is excluded from most analysis. Santos doesn’t talk about it much. It’s not really considered in AEMO or APAs gas development plans. In addition like some WA fields there is a high CO2 content that has to be stripped out so it needs say 25% more wells than a low CO2 resource such as in most QLD fields.</li>
+<li>Incremental Qld gas fields development most likely from Shell’s “Arrrow” reserves in the Eastern Surat . Shell is currently developing the Ironbark field. Other Queensland gas resources around Moranbah and in the aptly named Galilee Basin haven’t had great records last time I looked which was 10 years ago.</li>
+<li>Gas from the Beetaloo Basin in the Northern Territory. Beetaloo was a ah ha pipe dream of the gas industry a decade ago, at least for domestic gas production but the industry is nothing if not determined.</li>
+</ul>
+<p>Just like electricity all of the gas would require extra transmission, mainly because the QLD to NSW transmission is full when gas demand is high. However gas transmission is generally lower cost than electricity transmission.</p>
+</section>
+<section id="imported-lng---who-bears-the-volatility-risk" class="level2">
+<h2 class="anchored" data-anchor-id="imported-lng---who-bears-the-volatility-risk">Imported LNG - who bears the volatility risk?</h2>
+<p>ITK’s estimated cost of gas imported to Pt Kembla where a terminal capable of regasifying 130 PJ per year is close to completion varies widely.</p>
+<p>Historically LNG was priced either on a slope to oil, that is the LNG price was some percentage of the oil price with adjustments for both high and low oil prices or it could be priced off the natural gas price in the USA, where the standard is “Henry Hub”. In both cases there needs to be a currency translation transport to Australia and a regasifcation cost allowance. Finally since gas in Australia is on a per gigajoule basis there has to be a conversion from mmbtu to GJ.</p>
+<p>Even a casual look at the history of oil prices shows wide swings. The currency also varies. Even shipping costs go up and down like petticoats on a wedding night.</p>
+<p>Most industrial consumers of gas in Australia are not really set up to manage that degree of risk. Most are used to buying gas on a 3 year contract or in some cases much longer where typically there is an inflation indexed or fixed price.</p>
+<p>On the other hand the gas gentailers, primarily Origin but also AGL and EnergyAustralia would be prepared to manage that risk but even they would prefer to sign a long term fixed price contract.</p>
+<p>The point is that there is a cost to cover against risk and ultimately that cost is borne by the consumer. Imported LNG if it is converted to a fixed price contract to supply a customer will have a risk component added in or the risk will be passed on to the consumer.</p>
+<p>It’s hard to see carbon conscious gentailers making significant medium term commitments to new gas, no matter what they say in the annual report. ESG may be on half rations but progress on reducing emissions remains an undiminished imperative. So for Pt Kembla, to my mind, the missing piece is not so much the FSRU (floating storage and regasification unit) as the Gentailer wanting to take an expensive source relative to history.</p>
+<div id="fig-importprice" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-importprice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20250419164412026.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: LNG import volatility. Source:ITK"><img src="../media/image-20250419164412026.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-importprice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: LNG import volatility. Source:ITK
+</figcaption>
+</figure>
+</div>
+<p>Despite the cost and the risk from a policy point of view I like the option of imported LNG. The reason is it’s flexible and from Australia’s point of view it’s environmentally friendly. There are likely more carbon emissions related to transport but the gas is extracted off shore or in the USA and no new gas field in Australia needs to be developed.</p>
+<p>As compared to the environmental impacts of developing gas in the Beetaloo basin in the Northern Territory and then transporting it eventually to Melbourne imported LNG, to me, looks environmentally attractive. If the Beetaloo development starts seriously and pipelines are built and if the economics are as consultants esteimate then we’d be stuck with it for at least 25 years.</p>
+</section>
+<section id="domestic-gas" class="level2">
+<h2 class="anchored" data-anchor-id="domestic-gas">Domestic gas</h2>
+<p>Domestic gas from new developments in Australia can be sub $10/Gj if its sourced from essentially brown field production in the Surat but a lot more from the Beetaloo should that ever be developed.</p>
+<div id="fig-basincost" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-basincost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20250422140251628.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: New gas production. Source:Rystad"><img src="../media/image-20250422140251628.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-basincost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: New gas production. Source:Rystad
+</figcaption>
+</figure>
+</div>
+<p>Notwithstanding that in theory there is lots of gas resource in Australia, in my view, there is not that much that is that easy to develop over and beyond incremental 2C development in the Surat/Bowen. Even there my feeling is that not all of the 2C resource will be that economic at sub $10/Gj. And most of that resource is controlled by LNG consortia who will price the gas at export parity or in this industry exported netback.</p>
+<p>Rystad has estimated production costs as follows:</p>
+<div id="fig-prdncosts" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prdncosts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20250421143501646.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Gas production costs. Source Rystad"><img src="../media/image-20250421143501646.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prdncosts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Gas production costs. Source Rystad
+</figcaption>
+</figure>
+</div>
+<p>However I cannot think much gas is likely to come from The Amadeus or Galilee basin or the Otway, nor do I think Australia’s gas needs such as they are can be substantially met from the Bass Basin. Some gas will come from the Cooper but so far not enough to make much of a difference.</p>
+<p>If you read Santos or APA presentations you might assume that the Beetaloo Basin 600 km South of Darwin was to be Eastern Australia’s next big gas development. However the New York headquartered ASX Junior most associated with the area, Tamborah Resources has a market cap of around A$350 m and the share price hasn’t moved much in years.</p>
+<p>It’s certain that there would be major opposition to large scale shale gas development in the Beetaloo Basin, at a minimum raising costs and leading to delays. I am on record as having written a commissioned report suggesting that Origin would do better to divest its at the time Beetaloo interests and indeed sell out of APLNG. They did get out of the Beetaloo and did a partial sell down in APLNG. Next thing the Sydney FC coach will be taking my advice, after all I sit right behind him and offer plenty of suggestions.</p>
+<section id="uncontracted-2p-reserves-in-queensland" class="level3">
+<h3 class="anchored" data-anchor-id="uncontracted-2p-reserves-in-queensland">Uncontracted 2P reserves in Queensland</h3>
+<p>One of the major factors to drive gas prices in the 2030s is what happens to the uncontracted 2P reserves of the three LNG producers in QLD. The thought is that that a domestic reservation scheme will be applied to those reserves which I interpret to mean that 15-25% of the gas would be required to be sold into the domestic market. 15% is the number used in WA. The Govt might require all the gas to be sold domestically but if it did the producers might first fight the idea in Court and equally would just shut up shop and sit on the gas.</p>
+<p>For the sake of argument let’s assume 20%. The ACCC does a good job, arguably better in some ways than AEMO, in keeping an eye on the supply and demand basics. This figure shows that really only APLNG has meaningful uncontracted 2P reserves , GLNG and QCLNG have 2C contingent resources which almost definitionally are sufficiently economic to be converted to reserves and produced at current prices. That argument might be weaker if the LNG processing capacity was fully used but it’s not. There is spare processing capacity but no attempt to produce it. This suggests the economics are not that favourable.</p>
+<div id="fig-qldlngreserves" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qldlngreserves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20250501121303237.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: LNG producers remaining reserves. Source:ACCC"><img src="../media/image-20250501121303237.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qldlngreserves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: LNG producers remaining reserves. Source:ACCC
+</figcaption>
+</figure>
+</div>
+<p>The vast majority of these uncontracted reserves are held by APLNG so a domestic reservation policy impacts them more than anyone else. Although it’s not the only interpretation another hint about the challenging economics of reserves and resources is that both GLNG and particularly QCLNG are net buyers from outside of their reserves. They sell some gas to the domestic market but also buy and purchases exceed sales. This could be for tactical reasons but points a finger at reserve quality.</p>
+<p>In any event 20% reservation of 4,700 PJ comes to 940 PJ for the domestic market or less than 100 PJ per year. That is certainly not going to have a dramatic impact on East Coast pricing.</p>
+<p>In addition to the outright transmission costs the fact is that transmission from North to South is constrained when gas demand is at a maximum in Winter.</p>
+<div id="fig-seasonality" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-seasonality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20250421142801952.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Gas demand seasonality. Source:AEMO"><img src="../media/image-20250421142801952.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seasonality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Gas demand seasonality. Source:AEMO
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="process-heat-gas-substitution" class="level2">
+<h2 class="anchored" data-anchor-id="process-heat-gas-substitution">Process heat gas substitution</h2>
+<p>Rather than develop new gas reserves at what clearly is going to be an expensive price. Why not take the plunge and free ups some existing gas by hastening the process of gas substitution. Looking at this great chart from Keith Lovegrove and ITP we can see that over 400 PJ of Australian gas consumption annually, and that includes West Australia go to process head (842 PJ * 53% gas)</p>
+<div id="fig-processheat" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-processheat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../media/image-20250421165317540.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: Process heat gas use and final consumption. Source: ITP Renewables, Lovegrove et Alia"><img src="../media/image-20250421165317540.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-processheat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Process heat gas use and final consumption. Source: ITP Renewables, Lovegrove et Alia
+</figcaption>
+</figure>
+</div>
+<p>You can see that the process heat is subdivided by temperature and the lower temperature the easier it is to use an electric heat pump to replace the gas. Across the entirety of Australia gas consumption used in low temperature process heat is around 200 PJ. Then there is using less gas for generation and replacing gas with electricity at the residential level a process already underway.</p>
+<p>Something seemingly as simple as replacing gas with electricity or bioenergy could free up 37 PJ per year of gas consumption.</p>
+<p>The pulp and paper sector consumes 29 PJ per year of gas.</p>
+<p>I cant do better than show a quote from Keith’s report.</p>
+<blockquote class="blockquote">
+<p>The total combined short and medium-term opportunity, estimated at 217PJ/year, corresponds to around 36% of industrial gas use for heat, which is significant in light of tight supply concerns. This short – medium term opportunity is largely for process heat applications less than 250°C for which the economics are most favourable.</p>
+<p>It is estimated that 128 PJ/year of industrial process heat applications in the 150°C to 250°C range could be provided through renewable energy over the next 10 years. The heat use for digestion processes in the Alumina refineries (80 PJ) is the biggest contributor to this total. The next largest contributor is food and beverage (48 PJ/year).</p>
+<p>….the investment required is of the order of $20b. This investment would likely include a high proportion of local engineering and construction content (40%), and this could translate to thousands of new jobs. Initiatives in this direction align well with the new ‘’Australia’s Future Made in Australia’’ policy</p>
+</blockquote>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script data-isso="//comentario3.itkservices2.com/" data-isso-css="true" data-isso-css-url="null" data-isso-lang="en" data-isso-max-comments-top="10" data-isso-max-comments-nested="5" data-isso-reveal-on-click="5" data-isso-avatar="false" data-isso-avatar-bg="#f0f0f0" data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6 ..." data-isso-vote="true" data-isso-vote-levels="" data-isso-page-author-hashes="f124cf6b2f01,7831fe17a8cd" data-isso-reply-notifications-default-enabled="false" src="https://comentario3.itkservices2.com/js/embed.min.js"></script>
+        <section id="isso-thread" data-title="Test tag"></section>
+   
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/itkservices3\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 ITK admin@itkservices.com.au</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

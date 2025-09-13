@@ -2,7 +2,7 @@
 title: "QLD new renewables"
 author: "David Leitch"
 date: "2023-07-24"
-categories: [analysis,qld]
+categories: ["Regional/State", "Renewable Technology", "Infrastructure"]
 image: "media/media/image1.png"
 lightbox: true
 draft: false

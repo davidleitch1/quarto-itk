@@ -2,7 +2,7 @@
 title: "Pumped Hydro and batteries"
 author: "David Leitch"
 date: "2023-06-01"
-categories: [analysis,qld,storage]
+categories: ["Renewable Technology", "Infrastructure", "Regional/State"]
 image: "media/media/image1.png"
 lightbox: true
 draft: false

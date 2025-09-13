@@ -2,7 +2,7 @@
 title: "People policy"
 author: "David Leitch"
 date: "2024-03-14"
-categories: [analysis,nem,social_lic]
+categories: ["Social & Community", "Policy & Regulation", "Renewable Technology"]
 image: "../../media/image-20240314101807489.png"
 lightbox: true
 draft: false
