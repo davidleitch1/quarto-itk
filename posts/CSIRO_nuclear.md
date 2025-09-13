@@ -2,7 +2,7 @@
 title: "Gencost"
 author: "David Leitch"
 date: "2024-06-13"
-categories: [analysis,nem]
+categories: ["Emerging Tech", "Economics & Investment", "Policy & Regulation"]
 image: "../media/image-20240613111756278.png"
 lightbox: true
 format:

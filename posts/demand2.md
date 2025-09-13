@@ -2,7 +2,7 @@
 title: "ITK demand model"
 author: "David Leitch"
 date: "2024-10-14"
-categories: [analysis, demand]
+categories: ["Market Analysis", "Energy Transition"]
 image: "../media/image-20241013130839540.png"
 lightbox: true
 format:

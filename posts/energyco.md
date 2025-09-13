@@ -2,7 +2,7 @@
 title: "Energyco update"
 author: "David Leitch"
 date: "2024-12-10"
-categories: [analysis,transmission,nsw]
+categories: ["Regional/State", "Infrastructure", "Renewable Technology"]
 image: ""
 lightbox: true
 format:

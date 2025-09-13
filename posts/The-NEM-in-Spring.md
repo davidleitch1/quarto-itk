@@ -2,7 +2,7 @@
 title: "The NEM in Spring"
 author: "David Leitch"
 date: "2024-09-2"
-categories: [analysis,prices]
+categories: ["Market Analysis", "Renewable Technology"]
 image: "../media/image-20240902105348721.png"
 lightbox: true
 format:

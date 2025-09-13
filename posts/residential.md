@@ -2,7 +2,7 @@
 title: "CER amd networks"
 author: "David Leitch"
 date: "2024-11-26"
-categories: [analysis, CER,networks]
+categories: ["Social & Community", "Renewable Technology", "Economics & Investment"]
 image: "../media/image-20241105161719005.png"
 lightbox: true
 format:

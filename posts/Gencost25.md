@@ -2,7 +2,7 @@
 title: "Gencost_25"
 author: "David Leitch"
 date: "2024-12-9"
-categories: [analysis, LCOE]
+categories: ["Economics & Investment", "Renewable Technology", "Policy & Regulation"]
 image: "../media/image-20241013130839540.png"
 lightbox: true
 format:

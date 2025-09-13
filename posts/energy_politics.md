@@ -2,7 +2,7 @@
 title: "Politics corner"
 author: "David Leitch"
 date: "2024-09-17"
-categories: [analysis]
+categories: ["Policy & Regulation", "Energy Transition"]
 image: "../media/image-20240917093051410.png"
 lightbox: true
 format:

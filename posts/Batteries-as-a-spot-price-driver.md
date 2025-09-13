@@ -2,7 +2,7 @@
 title: "Batteries as a spot price driver"
 author: "David Leitch"
 date: "2024-04-16"
-categories: [analysis,nem,sa,gas,batteries]
+categories: ["Renewable Technology", "Market Analysis", "Infrastructure"]
 image: "../media/image-20240416175044397.png"
 lightbox: true
 format:

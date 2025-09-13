@@ -2,7 +2,7 @@
 title: "If the chooks quack"
 author: "David Leitch"
 date: "2024-10-17"
-categories: [analysis, policy]
+categories: ["Policy & Regulation", "Energy Transition"]
 image: "../media/image-20241017134835121.png"
 lightbox: true
 format:

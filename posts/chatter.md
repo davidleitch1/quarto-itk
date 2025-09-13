@@ -2,7 +2,7 @@
 title: "Chatter"
 author: "David Leitch"
 date: "2024-12-9"
-categories: [analysis, LCOE]
+categories: ["Market Analysis"]
 image: "../media/image-20241013130839540.png"
 lightbox: true
 format:

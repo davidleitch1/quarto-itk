@@ -2,7 +2,7 @@
 title: "IRR models"
 author: "David Leitch"
 date: "2024-11-15"
-categories: [analysis, wind]
+categories: ["Renewable Technology", "Economics & Investment"]
 image: "../media/image-20241105161719005.png"
 lightbox: true
 format:

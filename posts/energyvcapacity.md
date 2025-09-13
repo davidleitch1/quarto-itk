@@ -2,7 +2,7 @@
 title: "Market design"
 author: "David Leitch"
 date: "2024-08-08"
-categories: [analysis,nem,wind]
+categories: ["Market Analysis", "Policy & Regulation"]
 image: "(../media/image-20240613111756278.png)"
 lightbox: true
 format:

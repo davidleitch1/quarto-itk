@@ -2,7 +2,7 @@
 title: "ERCOT update"
 author: "David Leitch"
 date: "2024-07-24"
-categories: [analysis,ERCOT]
+categories: ["International", "Market Analysis"]
 image: "../media/image-20240723201745328.png"
 lightbox: true
 format:

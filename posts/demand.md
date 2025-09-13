@@ -2,7 +2,7 @@
 title: "Demand"
 author: "David Leitch"
 date: "2024-09-30"
-categories: [demand, analysis]
+categories: ["Market Analysis", "Energy Transition"]
 image: "../media/image-20240926105544857.png"
 lightbox: true
 format:

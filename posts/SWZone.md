@@ -2,7 +2,7 @@
 title: "Go West, Southwest that is"
 author: "David Leitch"
 date: "2024-05-06"
-categories: [analysis,Asia]
+categories: ["Infrastructure", "Renewable Technology", "Regional/State"]
 image: "../media/image-20240505123424727.png"
 lightbox: true
 format:

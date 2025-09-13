@@ -2,7 +2,7 @@
 title: "Wasting time talking nuclear"
 author: "David Leitch"
 date: "2024-12-27"
-categories: [analysis, transmision]
+categories: ["Market Analysis", "Policy & Regulation", "Economics & Investment"]
 image: "../media/image-20241224100328091.png"
 lightbox: true
 format:
