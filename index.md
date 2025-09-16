@@ -28,6 +28,32 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 16 Sep
+
+“We have to have stable, reliable and affordable energy on the path to net zero. The reality is right now **Australia has electricity costs that are two to three times higher than countries that we are competing with and 50 to 100 per cent higher than the US**,” Mr Henry told a shareholder forum on Monday (quoted in the Australian) My views is that the facts don't support Mr Henry's contention.
+
+#### China electricity cost about A\$150/MWh
+
+In China, on-grid electricity costs for December 2024 were approximately CNY 0.532 per kWh (USD 0.075) for residential users and CNY 0.702 per kWh (USD 0.099) for businesses, including transmission, distribution, and taxes. 
+
+These prices are part of a new, more transparent pricing system that aims for "[cost plus reasonable profit](https://www.google.com/search?client=safari&cs=0&sca_esv=8fb985a9e177f272&sxsrf=AE3TifPQBfx0pISKANzndNPN9A5F5aeo0A%3A1758017062906&q=cost+plus+reasonable+profit&sa=X&ved=2ahUKEwjH64z0g92PAxUHRWcHHZIqDCUQxccNegQIBBAB&mstk=AUtExfA5wpkv8o_Zur-KGsy8M5jHp04Z1MwaKXzM8WBI7XYs20VJI7C63HxXhzhayapyiL5fLll7s4VIR7MDQCa15KhDfdoLWfnUTampJlUNwsl1ffUYj1Kek-9_T0jc27O6kLJGkCLaYccrEal3Uu8LrM3BkcDoJRjKMCi0PymEvVtbrePapAhOEZ4R2Io5oojVXqkfvuoRtKN3BJiI8s29k4hAluF0iMu18viw3mGWdPlsNC53YNORM6YFghx_Vw-KYV1sorlmsOCEJyxExvuLbcbsHkdFvWEmkgmzqq2zIwBb9A&csui=3)" and offers lower rates for businesses using higher voltages. Source:Global Petrol Prices.com
+
+I should add that these numbers can be confirmed by looking at the ongrid prices obtained by the big state owned Generators. I have been doing these sums for 10 years. Huadian achieved 505 RMB/kWh in Q1 2025 about A$\113/MWh
+
+
+
+USD 0.099/kWh converts to about AUD \$157/MWh
+
+#### USA TX is cheap PJM comparable to Victoria, CAISO NSW
+
+USA prices vary from region to region.
+
+| **Grid / Region** | **Estimate Wholesale Price (2025) in** **USD/MWh**           | **Converted to** **AUD/MWh** |
+| ----------------- | ------------------------------------------------------------ | ---------------------------- |
+| **PJM**           | **US$52.20/MWh** — load-weighted average LMP for first 3 months of 2025 | **$83**                      |
+| **ERCOT**         | ~ **US$30/MWh** forecast or lower in many parts of ERCOT for 2025, per EIA. | **$48**                      |
+| **CAISO**         | ~ **US$65/MWh** — average wholesale cost for CAISO footprint in 2023, with forecasts for 2025 showing upward pressure in California wholesale markets. | **\$104**                    |
+
 ### 27 August
 
 Interesting interview with Damien Nicks, CEO AGL today. I don't think he gives a great answer as to what is going to replace 30 TWh, \$1.3 bn of EBITA,\$900 m of operating cash flow as the coal generation plants close but he's going to give it a good shot. More to the point there will be another 900 MW of Batteries expected to hit financial close over the next 12-18 months and there was a "watch this space" for a wind PPA with the 850 MW Potinger wind farm expected to hit FID in 2026. Worth listening to the podcast
