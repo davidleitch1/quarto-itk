@@ -25,3 +25,10 @@ When asked to proofread a .md file:
 - Duplicate words like "by by", "as as", "be either be"
 - Misspelled words: "accomodation", "Neverthe less"
 - Broken markdown links with missing characters
+
+## Editing Guidelines
+
+When asked to edit for readability, clarity, or other improvements:
+- ALWAYS present proposed changes first before making them
+- Wait for user approval before applying any edits
+- Don't make changes without checking with the user first
