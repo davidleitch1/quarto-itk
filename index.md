@@ -28,6 +28,11 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 26 Sep
+
+Updated renewable share gauge for bugs and reset records. Will still need to watch the gauge for a wile to see how accurate it is.
+Also  updated IEA-Electricity visualisation to show better trend visualisation, a comparative renewable share plot and a stacked area plot so shares can be compared with the overall growth of a country or region's electricity. Although I only update the data here probably once a quarter I still find this visualisation very useful.
+
 ### 16 Sep
 
 “We have to have stable, reliable and affordable energy on the path to net zero. The reality is right now **Australia has electricity costs that are two to three times higher than countries that we are competing with and 50 to 100 per cent higher than the US**,” Mr Henry told a shareholder forum on Monday (quoted in the Australian) My views is that the facts don't support Mr Henry's contention.
