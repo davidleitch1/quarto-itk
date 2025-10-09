@@ -28,6 +28,11 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 9 October
+
+CIS tender awards not amount to 30 GWh of storage, enough to run the NEM for an hour but probably still not enough even with all non CIS storage to make lunchtime prices positive in Spring
+![](./media/image-20251009115632922.png)
+
 ### 26 Sep
 
 Updated renewable share gauge for bugs and reset records. Will still need to watch the gauge for a wile to see how accurate it is.
