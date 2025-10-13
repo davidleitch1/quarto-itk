@@ -1,3 +1,26 @@
+---
+title: "Logistics"
+author: "David Leitch"
+date: "2025-10-22"
+categories: [ "Technology"]
+image: "../media/image-20250924201827652.png"
+lightbox: true
+format:
+  html:
+    include-after-body:
+       - "../comment_load.html"
+  docx: default
+draft: true
+---
+
+
+
+
+
+## Time to convoy
+
+About 4 or 5 concrete foundations for a wind farm turbine can be poured in a week. I suspect that cranes can put up 2-3 turbines a week once the team is up to speed and with enough equipment and in the right conditions
+
 # Logistics
 
 This article draws very heavily on a piece by [icecubed](https://icubed.com.au/wp-content/uploads/2023/02/Port-to-Project-Logistics-for-Wind-Farms.-A-Practical-assessment-of-Impacts-on-Transport-Infrastructure-1.pdf?utm_source=chatgpt.com)
@@ -8,11 +31,11 @@ I start with an extended quote:
 >
 > The balance of plant elements for a wind farm refers to the roads, footings, crane hardstands and electrical infrastructure needed to connect generating units to the power grid. Electrical infrastructure comprises approximately 10% of the freight task. The vast majority of this is the thermal bedding sand needed for underground cables. Pavement materials for the construction of roads and hardstands is the largest contributor to offsite road impacts at 35% of loads and the remaining 30% is associated with concrete and reinforcement for foundations. Construction water is the most significant variable, approximately 5% of the freight task is used for supply needed for the processing of earthworks, dust suppression and concrete production. Despite their significant size and weight, the primary impact on road infrastructure is not due to the transportation of turbine components. They only occupy a small proportion of the overall freight task.
 
-So for 1000 MW about 1 million tonnes of materials.
+So for 1000 MW about 1 million tonnes of materials. And 20 mt for 20 GW across the NEM moving say on average 300 km (wild guess). Reading the Icecubed piece alerts me to the water requirement something I've not previously thought about, and talking around the industry alerts me to the hard stands required for crane pads.
 
 # Problem - Wind turbines are hard to move from port to site.
 
-Modern 6 MW windturbines are over size and over weight (OSOW) arguably much like most of us. This presents significant logistical challenges.
+Modern 6 MW windturbines are over size and over weight (OSOW) arguably much like most of us. This presents significant logistical challenges. So the wind turbines and blades are only  a minor amount of the freight task in terms of tonnage but they are a big part in terms of the permitting and road management. Not the only one though, movement of the crane and other heavy machinery also requires OSOW transport arrangements.
 
 ### **Rotor & Blades**
 
@@ -56,3 +79,15 @@ And in fact I believe the one time a turbine blade got stuck under a bridge was 
 So this is a standard form of official racket, no different to any other union. 
 
 Without wanting to rant about it, on that basis it takes over 3 years to deliver the turbines for the Bungapan wind farm alone. In my view this is entirely unacceptable. It's like the Goverment forcing the industry to be unproductive, thereby forcing costs up for consumers. Cut off the nose to spite the face.
+
+## Flat land v slope construction
+
+In Queensland wind farms are typically errected on ridge lines, and although not germane to this piece, the ridge lines do have conservation values to be accounted for.
+
+Many existing wind farms in NSW are also built on slopes, perhaps the most recent of which is Rye Park 
+
+![image-20251010091549945](../media/image-20251010091549945.png)
+
+Apparently "Lattice-boom crawler cranes" are the go for the heavy work and these need 1. levelling via crane pads and 2. assembly, disassembly to be moved. I read, but have no knowledge that tower cranes working with say a lattice crane might be used. Tower cranes require smaller "hard pads" apparently. A brief video of the sort of equipment I believe was used at Rye Park can be found at https://www.facebook.com/watch/?v=717366028922630 
+
+Building on flat ground is said to have two  advantages (1) much less of a pad is required if the ground is already level (2) less disassembly and reassembly is required. Note that I am just reporting here what I have been told, I have no actual knowledge. 
