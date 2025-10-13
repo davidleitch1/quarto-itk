@@ -78,7 +78,7 @@ You can see that more clearly here
 
 And as with other States it's the 1% of times that price is over \$1000/MWh that keep generators going for much of the year, far outweighing the negative impact of the 18% of time where the price is below zero.
 
-![QLD price bands last 12 months. Data:AEMO](../media/image-20251013143634943.png)
+![QLD price bands last 12 months. Source: ITK analysis, AEMO data](../media/image-20251013205838179.png)
 
 So really for QLD coal generators in terms of economics, the returns will be driven by the ongoing existence of price spikes and the evening peaks. Without lots more batteries and with the closure of Gladstone there will be lots more price spikes. 
 
