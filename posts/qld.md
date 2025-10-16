@@ -1,7 +1,7 @@
 ---
 title: "QLD"
 author: "David Leitch"
-date: "2025-10-22"
+date: "2025-10-13"
 categories: [ "Technology"]
 image: "../media/image-20251013160758905.png"
 lightbox: true
