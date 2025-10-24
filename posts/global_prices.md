@@ -3,7 +3,7 @@ title: "Global-Electricity prices"
 author: "David Leitch"
 date: "2025-10-24"
 categories: [ "Prices"]
-image: "/Users/davidleitch/Library/Mobile Documents/com~apple~CloudDocs/snakeplay/itk_articles/media/image-20251024133223626.png"
+image: "../media/image-20251024133223626.png"
 lightbox: true
 format:
   html:
@@ -46,7 +46,7 @@ If it's correct then perhaps Australians may need to think again, if it's incorr
 
 The following plot shows my comparison of 2024 or 2025 prices generators receive or in some cases it's the ex-tax industrial price. The primary data source is from the [UK Government website](https://www.gov.uk/government/statistical-data-sets/international-industrial-energy-prices) but for non IEA data and including USA regions I have used other sources. It is true that the other sources are mostly related to prices generators receive rather than the prices industrial consumers (steel works, aluminium smelters etc) pay and that's because industrial power price data is even harder to find than generator prices received. So to that extent the European prices are upwardly biased. That said for electricity at least in Australia industrial consumers tend to pay a price close to the price generators receive. Transmission costs are small, there are rarely taxes to pay etc. 
 
-![Selected international generation and industrial electricity prices. Source:Various](/Users/davidleitch/Library/Mobile Documents/com~apple~CloudDocs/snakeplay/itk_articles/media/image-20251024133223626.png)
+![Selected international generation and industrial electricity prices. Source:Various](../media/image-20251024133223626.png)
 
 I should add that I don't really see that much difference in this context between say \$90/MWh and say \$110-120/MWh that's just year to year variation. Readers could pay particular attention to Indonesia, a country with very cheap coal that has been capturing market share and one that does lots of mineral processing. If it's not an Australian competitor I don't know what is. The price its generators receive is almost identical to Australia's.
 
