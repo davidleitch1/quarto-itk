@@ -13,10 +13,6 @@ format:
 draft: false
 ---
 
-
-
-
-
 ## Summary
 
 Electricity price rises are less than the price rises in other goods and services, not even rating in the top ten according to the ABS CPI data for the period 2020 to today.
