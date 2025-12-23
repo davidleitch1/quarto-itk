@@ -1,7 +1,7 @@
 ---
 title: "Post coal spot prices"
 author: "David Leitch"
-date: "2025-12-22"
+date: "2025-12-23"
 categories: [ "NEM"]
 image: "../../media/Table 1.png"
 lightbox: true
