@@ -28,6 +28,42 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 9 January 2026
+
+Too long updating this front page. Faster and more effective readership on reneweconomy and linkedin mean that's where the short posts have gone. All articles still published here and generally in a better format than Reneweconomy can achieve. Nevertheless will be endeavouring to update this page regularly.
+
+Starting with a look back at somethings from 2025 and noting of course that in the Dec quarter renewables were over 50%.
+
+All data sourced from AEMO newweb and collected via my data collectors also used on the big dashboard. As far as I can tell the data downloading is pretty good and I do personally rely on the data and analysis drawn from it.
+
+![image-20260109104611234](./media/image-20260109104611234.png)
+
+![image-20260109104648800](./media/image-20260109104648800.png)
+
+SA shows gas now in third place, excluding imports, a very promising sign for lower average prices in my opinion..
+
+![image-20260109104751832](./media/image-20260109104751832.png)
+
+
+
+Some big drops in coal station spot revenue during the year. Spot revenue is only one indicator but, in my opinion, still of interest. I
+
+![image-20260109104925918](./media/image-20260109104925918.png)
+
+I picked a bigger and generally better performing coal generator from each of NSW, QLD and Victoria .
+
+![image-20260109105059197](./media/image-20260109105059197.png)
+
+Bayswater capacity utilisation overnight and at peak has actually gone up, likely reflecting the close of Liddell as much as anything.
+
+![image-20260109105210177](./media/image-20260109105210177.png)
+
+
+
+The vulnerability of coal generator spot revenue to batteries competing for peak evening and morning market share should be clear from this graph. Its in index form, so the average revenue for 2020 is 100 and so is 2025 which each half hour for the relevant year expressed relative to that.
+
+![image-20260109105405874](./media/image-20260109105405874.png)
+
 ### 9 October
 
 CIS tender awards not amount to 30 GWh of storage, enough to run the NEM for an hour but probably still not enough even with all non CIS storage to make lunchtime prices positive in Spring
