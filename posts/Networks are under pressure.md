@@ -51,7 +51,7 @@ As regulated monopolies, networks are entitled to a fixed amount of revenue each
 
 As the chart below shows, the vast majority of the network asset base is made up of overhead and underground wires and poles. The real value of wires and poles (the chart shows nominal value) grows with population and is driven by dwelling density. Because Australians still want space, there is more growth in suburbs and regions where detached houses remain the norm.
 
-![image-20260114084013735](../media/image-20260114084013735.png)
+![Rab categories: SourceAER](../media/image-20260114084013735.png)
 
 The whole electricity system is full of duplication. Two entire customer care systems are needed, one for the retailer and another for the network. The network's commercial interests are generally not related to retailer interests. Ring fencing, embedded networks, community batteries, EV charging ownership etc are all issues. 
 
@@ -79,25 +79,25 @@ My idea for lowering electricity prices, and reducing the friction, bureaucracy 
 
 That decline in grid supply has happened despite steady growth in customer numbers.
 
-![image-20260113203123188](../media/image-20260113203123188.png) 
+![Aggregates. Source:AER](../media/image-20260113203123188.png) 
 
 And the reality of it can be seen in total revenue which is flat in nominal terms, although an optimist would point to the post FY21 growth. Lower or higher interest rates drive revenue as does inflation.
-![image-20260113203625666](../media/image-20260113203625666.png)
+![Revenue by charge type. Source:AER](../media/image-20260113203625666.png)
 
 Broadly similar trends can be seen in most States although each is dependent on the timing of regulatory reviews.
-![image-20260113204416735](../media/image-20260113204416735.png)
+![Revenue by region. Source:AER](../media/image-20260113204416735.png)
 
 Non-residential revenue is more important than I would have thought, lots of volume at half the price.
 
-![image-20260113203340529](../media/image-20260113203340529.png)
+![Revenue by customer class. Source:AER ](../media/image-20260113203340529.png)
 
 Volumes are well split and Non-TOU appears to be in decline:
 
-![image-20260113204013583](../media/image-20260113204013583.png)
+![Transmission received by time of receipt.Source:AER](../media/image-20260113204013583.png)
 
 Sometimes my more ginger group country chums tell me to put a wind farm in Lindfield if they are such good ideas, but I don't point out it's Ausgrid and Energex that do some of the heaviest rooftop lifting.
 
-![image-20260113204213228](../media/image-20260113204213228.png)
+![Rooftop stats. Source:AER](../media/image-20260113204213228.png)
 
 ## Conclusion
 
