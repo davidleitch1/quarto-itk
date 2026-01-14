@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(sed:*)",
-      "Bash(quarto:*)"
+      "Bash(quarto:*)",
+      "WebFetch(domain:www.bloomberg.com)",
+      "WebFetch(domain:www.nature.com)",
+      "WebFetch(domain:link.springer.com)",
+      "WebFetch(domain:www.unsw.edu.au)",
+      "WebSearch",
+      "WebFetch(domain:www.cpc.ncep.noaa.gov)"
     ],
     "deny": [],
     "ask": []

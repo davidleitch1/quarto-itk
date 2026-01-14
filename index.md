@@ -28,6 +28,12 @@ format:
 ![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 14 January
+
+Most interesting chart from my aggregated RAB article.
+
+![image-20260114171302458](./media/image-20260114171302458.png)
+
 ### 12 January 2026
 
 This plot shows that peak evening prices have on average fallen across the NEM in the past 30 days compared to the same period last year, and also that batteries have taken a significant share of that evening production. Wind is also up with the net result that coal and particularly gas are down. My hypothesis is that greater competition in that evening peak supply is the driver of lower prices, and that total supply in this key window will be volatile as lower prices push coal generation out of the system and this causes a fall in supply and a rise in prices, in turn stimulating more batteries and a repeat of the process.

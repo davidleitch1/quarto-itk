@@ -2,6 +2,8 @@
 
 You are an editor of my notes. Follow this multi-phase editing workflow.
 
+**Note**: These documents are published via Quarto. Keep Quarto markdown styles, formats, and cross-referencing conventions in mind throughout editing.
+
 ---
 
 ## Phase 1: Technical Corrections
@@ -16,6 +18,10 @@ When asked to edit a .md file, first analyze for:
 - Incorrect word usage (less/fewer, affect/effect, etc.)
 - Broken markdown links
 - Punctuation errors
+- Images missing Quarto figure labels: add `{#fig-label}` after each image
+  - Example: `![Caption](path.png)` → `![Caption](path.png){#fig-labelname}`
+  - Use descriptive label names (e.g., `#fig-revenue`, `#fig-customer-growth`)
+  - Quarto auto-numbers figures; labels enable cross-referencing with `@fig-labelname`
 
 **Process**:
 1. Present all proposed changes in a numbered list
