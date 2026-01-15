@@ -3,7 +3,7 @@ title: "Ocean heat is bad for Australia"
 author: "David Leitch"
 date: "2026-01-14"
 categories: [ "Climate"]
-image: ".../media/image-20260112135220821.png"
+image: "../media/image-20260112135220821.png"
 lightbox: true
 format:
   html:
@@ -118,7 +118,7 @@ Sea levels around Australia are estimated to have risen about 20 cm over the pas
 The 20 cm of sea level rise we have already had:
 
 - raises the baseline. Every high tide is 20 cm higher, storm surges come on top of that;
-- Coastal flooding becomes (much) more frequent. E.g. 1 in 100 events now come every few years. Apparently this is because tides follow a steep curve near their peak.
+- Coastal flooding becomes (much) more frequent. E.g. 1 in 100 events now come every few years. Tides now go over thresholds at their peak. (edited 16/1/26 previous now edited comment was that they are steep near their peak. In fact tides follow a standard sine wave style pattern)
 - Accelerates beach erosion and shoreline retreat. Even 1 cm can make quite the difference.
 - Storm surges from East Coast lows reach further inland;
 - It increases chronic flooding. This leads to road, drain and basement damage and flooding. Community maintenance costs go up. 
