@@ -2,9 +2,9 @@
 title: "Australian Safeguard Mechanism"
 author: "David Leitch"
 date: 2026-01-19
-bibliography: references.bib
+bibliography: '/Users/davidleitch/Library/Mobile Documents/com~apple~CloudDocs/Utilities/policy/references.bib'
 categories: [ "Networks"]
-image: "../media/image-20260119183822680.png"
+image: "../media/image-20260119183822680.png T"
 lightbox: true
 format:
   html:
