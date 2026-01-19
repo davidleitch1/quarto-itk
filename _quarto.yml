@@ -80,9 +80,13 @@ format:
     grid:
       sidebar-width: 500px
       body-width: 700px
-    include-in-header: 
+    include-in-header:
       - text: |
          <script defer data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
+  docx:
+    reference-doc: reference.docx
+    tbl-cap-location: bottom
+    prefer-html: false
 
 
 

@@ -1,8 +1,21 @@
 /* css styles */
 
-/* Table caption - match figure caption style (small, light) */
+/* Table captions - bottom, left-aligned, smaller font */
+table caption,
+caption {
+  caption-side: bottom;
+  text-align: left !important;
+  font-size: 0.85em;
+  padding-top: 0.5em;
+  color: inherit;
+}
+
+/* Figure captions - left aligned */
 figcaption.quarto-float-caption-tbl,
-.quarto-float-tbl figcaption {
+figcaption.quarto-float-caption-fig,
+.quarto-float-tbl figcaption,
+.quarto-float-fig figcaption,
+figcaption {
   text-align: left !important;
 }
 
@@ -11,19 +24,18 @@ figcaption.quarto-float-caption-tbl,
   text-align: left;
 }
 
-/* Table title row (first row in thead) */
-table th {
+/* Table column headers - bold, no border (border is on title above) */
+table th,
+.table th,
+.table > thead > tr > th {
   font-size: 0.95em;
   font-weight: 700;
-  border-bottom: 2px solid currentColor;
+  border-bottom: none !important;
+  border-top: none !important;
   padding: 0.4em 0.6em;
 }
 
-/* Column header row (second row, now in tbody) - bold, no border */
-.table tbody tr:first-child td {
-  font-weight: 700;
-  font-size: 0.85em;
-}
+/* Data cells should NOT be bold - headers are styled via th elements */
 
 /* Table data cells - dense, smaller font */
 table td {
@@ -41,4 +53,18 @@ table th:first-child {
 /* Remove border from last row */
 table tr:last-child td {
   border-bottom: none;
+}
+
+/* Table title (bold paragraph before table) - with underline */
+p:has(+ table) {
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+/* Table source (italic paragraph after table) - same color as body, smaller, italic */
+table + p {
+  font-size: 0.85em;
+  font-style: italic;
+  margin-top: 0.5em;
 }

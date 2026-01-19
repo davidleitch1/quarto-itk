@@ -9,7 +9,9 @@
       "WebFetch(domain:www.unsw.edu.au)",
       "WebSearch",
       "WebFetch(domain:www.cpc.ncep.noaa.gov)",
-      "WebFetch(domain:dribbble.com)"
+      "WebFetch(domain:dribbble.com)",
+      "Bash(pandoc:*)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": [],
     "ask": []
