@@ -82,6 +82,41 @@ Read the entire note again as a critical reviewer would, looking for:
 - "accomodation" → "accommodation"
 - "Neverthe less" → "Nevertheless"
 
+---
+
+## Table Formatting
+
+**Important**: Do NOT use Quarto's native table caption syntax (`: Caption` after table) as it has bugs with Word output (caption appears above table, combined title/source, italic styling).
+
+**Use this structure for all tables:**
+
+```markdown
+**Table Title**
+
+| Header1 | Header2 |
+|:--------|--------:|
+| Label   |     123 |
+| Label   |     456 |
+
+*Source: Attribution*
+```
+
+**Format details:**
+- **Title**: Bold paragraph (`**...**`) directly above table
+- **Table**: Standard markdown with alignment markers (`:` for left, `-:` for right)
+- **Source**: Italic paragraph (`*...*`) directly below table
+
+**Alignment markers:**
+- `|:------|` = left-aligned
+- `|------:|` = right-aligned
+- `|:-----:|` = centered
+
+**Why this works:**
+- Avoids Quarto/Pandoc table caption bugs in Word
+- CSS in `styles.css` handles HTML styling (underline below title, proper formatting)
+- Word respects bold/italic markdown natively
+- Consistent output in both HTML and Word formats
+
 ## Core Principle
 
 **ALWAYS present proposed changes first and wait for approval before making any edits.**

@@ -71,6 +71,8 @@ Facilities exceeding their baseline must manage excess emissions through:
 
 ### Cost Containment
 
+
+
 **Cost Containment Settings**
 
 | Setting | Value |
@@ -84,9 +86,11 @@ Facilities exceeding their baseline must manage excess emissions through:
 
 Facilities surrendering ACCUs equal to or exceeding 30% of their baseline must publicly explain why on-site abatement wasn't undertaken.
 
----
+
 
 ## Targets
+
+
 
 **Emissions Targets**
 
@@ -98,7 +102,9 @@ Facilities surrendering ACCUs equal to or exceeding 30% of their baseline must p
 
 *Source: DCCEEW*
 
----
+
+
+
 
 ## Emissions Performance Data
 
@@ -132,7 +138,7 @@ Government projections (DCCEEW):
 
 Independent analysis (Climate Analytics) suggests LNG and coal emissions could exceed these projections, potentially reaching 83-112 Mt from fossil fuel projects alone by 2030 (Climate Analytics).
 
----
+
 
 ## Key Questions for 2026-27 Statutory Review
 
@@ -143,6 +149,8 @@ Independent analysis (Climate Analytics) suggests LNG and coal emissions could e
 **Current settings:** The 4.9% annual decline rate applies only through 2030. For 2030-31 to 2049-50, an indicative rate of **3.285%** is set in the Safeguard Rules. However, actual post-2030 rates will be determined through the 5-year baseline setting process.
 
 **2035 NDC implications:** The Climate Change Authority's analysis indicates that meeting the 2035 NDC target range (62-70% below 2005 levels) requires higher decline rates:
+
+
 
 **Implied Baseline Decline Rates for 2035 NDC Targets**
 
@@ -156,7 +164,7 @@ Independent analysis (Climate Analytics) suggests LNG and coal emissions could e
 
 **Key finding:** The indicative 3.285% post-2030 rate is inconsistent with even the minimum 2035 target. The 2026-27 review will need to set rates for 2030-35 by July 2027, incorporating advice from the Climate Change Authority and the government's final position on 2035 ambition level.
 
----
+
 
 ### Should the threshold be lowered from 100,000 tonnes?
 
@@ -172,7 +180,7 @@ Independent analysis (Climate Analytics) suggests LNG and coal emissions could e
 
 **Status:** No government proposal to lower the threshold has been announced. The 2026-27 review may examine threshold adjustment as one option for broadening scheme coverage.
 
----
+
 
 ### Are offset arrangements (ACCUs/SMCs) appropriate? (in a word: NO)
 
@@ -190,7 +198,7 @@ Independent analysis (Climate Analytics) suggests LNG and coal emissions could e
 
 **Parallel reviews:** The 2026-27 Safeguard review will coincide with the Climate Change Authority's review of the ACCU Scheme, which will assess whether Australia's carbon credit supply can meet demands of a tightening compliance market (CORE Markets).
 
----
+
 
 ### How should new entrant fossil fuel projects be treated?
 
@@ -209,7 +217,7 @@ Independent analysis (Climate Analytics) suggests LNG and coal emissions could e
 
 **Key tension:** The entry of major new LNG projects risks consuming a substantial portion of the scheme's remaining emissions budget, potentially forcing deeper cuts on other facilities or reliance on offsets to maintain budget integrity.
 
----
+
 
 ### What is the pathway to net zero by 2049-50?
 
@@ -223,7 +231,7 @@ Independent analysis (Climate Analytics) suggests LNG and coal emissions could e
 
 **Real vs offset reductions:** Climate Action Tracker analysis notes that currently "less than a third of the 'reductions' achieved were from real emission reductions and two thirds due to the use of offsets" (Climate Action Tracker). The pathway to genuine net zero requires this ratio to shift substantially toward on-site abatement.
 
----
+
 
 ### How does the scheme interact with the 2035 NDC (62-70%)?
 
@@ -237,7 +245,7 @@ Independent analysis (Climate Analytics) suggests LNG and coal emissions could e
 
 **Other review items expected:** TEBA determinations, multi-year monitoring periods, and banking/borrowing settings (whether banked ACCUs and SMCs can be used after 2030) will all be revisited alongside the core decline rate question (CORE Markets).
 
----
+
 
 ### Are TEBA provisions working effectively?
 
