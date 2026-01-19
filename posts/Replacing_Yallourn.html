@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch">
+<meta name="dcterms.date" content="2025-05-09">
+
+<title>Replacing Yallourn – ITK Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ITK_logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Replacing Yallourn – ITK Research">
+<meta property="og:description" content="Electricity markets analysis">
+<meta property="og:image" content="https://itkservices3.com/media/image-20250511135138607.png">
+<meta property="og:site_name" content="ITK Research">
+<meta property="og:image:height" content="2190">
+<meta property="og:image:width" content="2020">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../ITK_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ITK Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dashboards-(load-slow" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dashboards (load slow)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dashboards-(load-slow">    
+        <li>
+    <a class="dropdown-item" href="../IEA.html">
+ <span class="dropdown-text">IEA-electricity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../nemgen.html">
+ <span class="dropdown-text">NEM-ITK</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../forecast.html">
+ <span class="dropdown-text">AEMO demand fcst</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../posts.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">more</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../green_iron/index.html">
+ <span class="dropdown-text">Green Iron</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../presentations.html">
+ <span class="dropdown-text">Presentations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../background.html">
+ <span class="dropdown-text">Background notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../energyinsiders.html">
+ <span class="dropdown-text">Energy Insiders</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../posts.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../mailchimp.html"> 
+<span class="menu-text">Signup</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Replacing Yallourn</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">gas</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>David Leitch </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 9, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#riverina-wind-transmission-is-60-of-the-price-of-offshore-wind-delivered-to-melbourne" id="toc-riverina-wind-transmission-is-60-of-the-price-of-offshore-wind-delivered-to-melbourne" class="nav-link active" data-scroll-target="#riverina-wind-transmission-is-60-of-the-price-of-offshore-wind-delivered-to-melbourne">Riverina wind + transmission is 60% of the price of Offshore wind delivered to Melbourne</a></li>
+  <li><a href="#project-energyconnect-and-humelink-are-undersized-vni-west-can-still-be-right-sized" id="toc-project-energyconnect-and-humelink-are-undersized-vni-west-can-still-be-right-sized" class="nav-link" data-scroll-target="#project-energyconnect-and-humelink-are-undersized-vni-west-can-still-be-right-sized">Project EnergyConnect and Humelink are undersized, VNI West can still be right sized</a></li>
+  <li><a href="#victoria-can-do-better-than-offshore-wind" id="toc-victoria-can-do-better-than-offshore-wind" class="nav-link" data-scroll-target="#victoria-can-do-better-than-offshore-wind">Victoria can do better than offshore wind</a>
+  <ul class="collapse">
+  <li><a href="#concept-onshore-wind-more-transmission-is-lower-cost-than-offshore-wind-and-less-transmission" id="toc-concept-onshore-wind-more-transmission-is-lower-cost-than-offshore-wind-and-less-transmission" class="nav-link" data-scroll-target="#concept-onshore-wind-more-transmission-is-lower-cost-than-offshore-wind-and-less-transmission">Concept: Onshore wind + more transmission is lower cost than offshore wind and less transmission</a>
+  <ul class="collapse">
+  <li><a href="#e-mc2-but-im-certainly-not-albert-einstein" id="toc-e-mc2-but-im-certainly-not-albert-einstein" class="nav-link" data-scroll-target="#e-mc2-but-im-certainly-not-albert-einstein">E =MC^2 but I’m certainly not Albert Einstein</a></li>
+  </ul></li>
+  <li><a href="#victoria-offshore-wind-costs-200-mwh" id="toc-victoria-offshore-wind-costs-200-mwh" class="nav-link" data-scroll-target="#victoria-offshore-wind-costs-200-mwh">Victoria offshore wind costs $200 /MWh</a></li>
+  <li><a href="#riverina-n5-rez-wind-cost-maybe-85-mwh" id="toc-riverina-n5-rez-wind-cost-maybe-85-mwh" class="nav-link" data-scroll-target="#riverina-n5-rez-wind-cost-maybe-85-mwh">Riverina (N5 REZ) wind cost maybe $85 /MWh</a></li>
+  <li><a href="#results-onshore-wind-is-way-cheaper-despite-transmission" id="toc-results-onshore-wind-is-way-cheaper-despite-transmission" class="nav-link" data-scroll-target="#results-onshore-wind-is-way-cheaper-despite-transmission">Results: onshore wind is way cheaper despite transmission</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Replacing_Yallourn.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="riverina-wind-transmission-is-60-of-the-price-of-offshore-wind-delivered-to-melbourne" class="level2">
+<h2 class="anchored" data-anchor-id="riverina-wind-transmission-is-60-of-the-price-of-offshore-wind-delivered-to-melbourne">Riverina wind + transmission is 60% of the price of Offshore wind delivered to Melbourne</h2>
+<p>Even with a $35/MWh transmission cost Riverina wind is about 60% of the LCOE of offshore wind. And I would argue it’s less risky in its construction. Indeed if by a miracle so far never achieved in Australia it could built using mostly the one class of turbine and properly coordinated there could be good cost savings and efficiencies, huge economic benefits for the region and significant benefits for Australian electricity consumers. Or so I argue in this thought bubble piece. Perhaps a small amount of offshore wind might be appropriate, it diversifies risk and provides a portfolio benefit although I think onshore Tasmania does the same thing.</p>
+</section>
+<section id="project-energyconnect-and-humelink-are-undersized-vni-west-can-still-be-right-sized" class="level2">
+<h2 class="anchored" data-anchor-id="project-energyconnect-and-humelink-are-undersized-vni-west-can-still-be-right-sized">Project EnergyConnect and Humelink are undersized, VNI West can still be right sized</h2>
+<p>With the benefit of hindsight, Project EnergyConnect and Humelink are undersized relative to the demand for transmission from high quality projects in the Riverina and nearby areas. There is a rapidly closing window of opportunity to build VNI West and the associated Western Renewables Link, 675 km of transmission, to a much larger size than presently planned. The economic case for doing that seems clear. Use onshore rather than offshore to replace Victoria’s brown coal generators. Onshore wind is much cheaper, has more routes to market , and is more central to the NEM.</p>
+<p>Not addressed in this article is my second point which is to the extent that Southern offshore wind blows when onshore doesn’t and offshore has high capacity factors, then onshore wind in Tasmania has similar characteristics to offshore. When connected via Marinus Link, it also frees up the firming potential of Tasmania’s hydro so it can also be added to the mix.</p>
+<p>I have no ideological attachment to one form of wind over another but I do think that the transition’s best chance of success comes by keeping the cost to consumers as low as can be managed. It’s well understood in general terms that in contrast to Japan, the UK, and New York, Australia has a good onshore wind resource and plenty of relatively low value land on which to site it. That might be inland Queensland or in this particular case it’s the Riverina where there are over 10 GW of projects with high quality developers just looking to get the nod.</p>
+<p>Soon we will be locked into the sizing of VNI West and the Western Renewables Link. Now is the time to carefully consider whether it should be built larger than proposed.</p>
+<p>In my view AEMO has been guilty of thinking too small in the ISP. Transmission developers are capital limited and hampered by the AER’s mandated focus on ISP generally minimum case transmission builds. A focus on what you can build under the RIT-T or its replacement process misses the forest for the trees.</p>
+<p>Snowy 2 haters just see Humelink and VNI West as being built to benefit Snowy, but in my mind Snowy is only a minor player in the new transmission case.</p>
+<p>Finally I note that the Federal Goverment has allocated $20 bn to transmission and while some may be notionally be for Marinus Link. Equally there is the concessional $1.7 bn loan to Humelink . Still there is plenty more in the kitty. Plenty. However the transmission investment case doesn’t require subsidised funding, it’s really a case of sizing. The transmission will earn a return on its meritis.</p>
+<p>Whether regulated returns provide adequate compensation for construction risk is another matter also worth considering. Privately owned infrastructure developers generally require higher returns during construction and then add more debt when the project is derisked post construction. That concept is entirely foreign to the regulated world where everything is assumed to be derisked on an overnight basis and there is zero construction risk or delay. Still that’s another story, this one is about seizing the opportunity.</p>
+</section>
+<section id="victoria-can-do-better-than-offshore-wind" class="level1">
+<h1>Victoria can do better than offshore wind</h1>
+<p>The problem with offshore wind is it’s very expensive compared to almost any alternative short of nuclear. In Victoria quite a bit of industrial load was built around cheap brown coal generation. That generation absolutely has to go away, the emissions factor is about 1.15 to 1.3 tCo2/MWh. These are some of the worst electricity generation emission factors in the world.</p>
+<p>Yallourn, one of three lignite generators left in Victoria only runs thanks to Victorian Govt support and its 2028 closure was recently reconfirmed by EnergyAustralia and the Victorian Govt.</p>
+<p>Victoria’s plan, although never couched in exactly these terms, was/is to replace that brown coal generation with offshore wind. But, in my opinion, basic economics are against it.</p>
+<p>The Victorian Govt already also subsidises the Portland aluminium smelter and the size of that subsidy would be far, far higher if the fuel source was offshore wind. Aluminium producers, each and every one of which wants a subsidy, will tell you with an entirely straight face that they need a price starting with a $4 to be globally competitive. Offshore wind starts with a $2 but then has two digits following. Although Govts can and do subsidise things for many reasons trying to turn a sow’s ear into a silk purse isn’t the way to do it.</p>
+<p>Nor is it likely that either gas or nuclear represent the way forward for Victoria. And nor should they.</p>
+<p>The reasons for Victoria opting for offshore wind are somewhat obscure. They seem to have just woken up one morning and said lets go offshore wind. Probably though they stem from early recognition of community opposition to onshore wind and transmission in Victoria. Equally there was always a timing mismatch with Yallourn. Nevermind.</p>
+<section id="concept-onshore-wind-more-transmission-is-lower-cost-than-offshore-wind-and-less-transmission" class="level2">
+<h2 class="anchored" data-anchor-id="concept-onshore-wind-more-transmission-is-lower-cost-than-offshore-wind-and-less-transmission">Concept: Onshore wind + more transmission is lower cost than offshore wind and less transmission</h2>
+<p>As far as I know Humelink and Project Energyconnect are built using virtually standard technology. .</p>
+<p>This doesn’t mean that onshore transmission is cheap. Humelink is nearly $14m/km and the combined Western Renewables Link and VNI West is 675 km, close to double Humelink’s length. The one advantage of the offshore wind resource in Victoria is its relatively close to load and make some advantage of existing La Trobe valley transmission. On my numbers though this nowhere near makes up the difference.</p>
+<section id="e-mc2-but-im-certainly-not-albert-einstein" class="level3">
+<h3 class="anchored" data-anchor-id="e-mc2-but-im-certainly-not-albert-einstein">E =MC^2 but I’m certainly not Albert Einstein</h3>
+<p>Quoting formulae when I have no background in electrical engineering is basically being almost as dumb as Colin Boyce. Still the defining characteristic of a generalist investment banking research analyst is to assume you can know enough about the topic to analyse the industry. So……</p>
+<p>A simple formula for the capacity of an AC transmission line is :</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20250510102756947.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="source:industry knowledge"><img src="../media/image-20250510102756947.png" class="img-fluid figure-img" style="width:80.0%" alt="source:industry knowledge"></a></p>
+<figcaption>source:industry knowledge</figcaption>
+</figure>
+</div>
+<p>Even I know the basic formula for the power of something in Watts is Volts x Amps and the above is just a variation of that. Apparently for DC lines you can omit the cube root so it is just VI. But then you need the converter stations.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Transmission lines are generally quoted in kV eg 500 or 325 kV or 275 kV down to say 66 kV.</p>
+<p>However when you delve into the topic you find that there is heaps of variation around power capacity for various lines of the same kV. For instance in Queensland they still do a lot of work on 275 kV lines and believe that double circuit 275 kV with high temperature conductor can get to 2.6 GW enough to host approximately 4 GW of renewable generation. Whereas the double circuit Humelink 500 kV line only ends up with 2.2 GW for no doubt good but unexplained reasons. It should be noted that longer transmission lines tend to be transient stability limited rather than thermally limited which may account from some of the differences.</p>
+<p>If a transmission line is thermally limited, maximum current is the Conductor temperature limit and that in turn is partly related to the conductor material.</p>
+<p>The idea of dynamic line ratings as applied to a renewable energy grid is that when the wind blows it has a cooling effect on the conductor so the line can carry more power. This is excellent for Australia with lots of roof top solar, as you need the capacity of the renewable energy grid to transport wind generation when it is windy. As I’m fond of repeating solar and particularly distributed solar has lots of benefits one of which is to take the strain off the transmission and thermal generators during the day by reducing the afternoon electricity demand making them more reliable in the evening.</p>
+<p>If a transmission line is limited by a transient limit, different options are available to improve its capacity. These include adding intermediary switching stations (makes the line shorter); statcoms and SVCs (BESS can also perform this function); and virtual transmission lines where BESS are used to balance generation in the event of a transmission line trip.</p>
+<p>One reason just to talk about transmission is that I and, I think many stakeholders know little about it. We all talk about wind technology and capacity factors, and hub heights and that power is related to the cube of the wind speed and we talk about hybrid battery and solar EPC costs, Inverter Load Ratios as if we all understand what we are talking about, but when it comes to transmission we don’t even talk, let alone understand the topic. And yet at $8-$11 m/km the 675 KM combined length of VNI West and Western Renewables Link is maybe $7 bn of investment. And so its worth knowing which conductor is going to be used, what is limiting its capacity and how the capacity could be improved.</p>
+</section>
+</section>
+<section id="victoria-offshore-wind-costs-200-mwh" class="level2">
+<h2 class="anchored" data-anchor-id="victoria-offshore-wind-costs-200-mwh">Victoria offshore wind costs $200 /MWh</h2>
+<p>Up to date estimate of Bass Strait offshore wind costs plus the associated 66 km transmission system are not available, although Gencost does have some information. My preferred provider of generic global cost information is NREL, although following recent head count cull, I may need to look around.</p>
+<p>Last year NREL estimated USA offshore wind LCOE including decommissioning costs at around US$117 /MWh or A$180 /MWh. Personally given the history of Bass Strait oil drilling cost blow outs plus a generic Australian premium I doubt that even $200 /MWh would cover it. That’s broadly double the price that onshore wind requires in Australia.</p>
+<p>It’s never that clear but I am assuming $200 covers the cost of transmission from the site to the Victorian coast. A 500 kV 150 km line is proposed from Gifford in Victoria to LYA about 66 km. There are likely to be some biodiversity costs with that line but at $10 m /km maybe around $700 m but some estimates are higher.</p>
+<p>However one double circuit 500 kV line wont carry 6 GW never mind 10, so really we need at least 2 double circuits(4 circuits in total)</p>
+<p>From a Victorian consumer point of view and offshore wind buildout seems to result in the highest electricity costs in Australia, whereas brown coal, before considering carbon and before we had solar, had some of the lowest costs. To be absolutely crystal clear the brown coal has to go away and the sooner the better, but that does not mean that offshore wind is the best way forward.</p>
+<p>I also appreciate the arguments, and have myself modelled, capacity factors of offshore wind and its portfolio benefit (that is that offshore wind blows when onshore doesnt). I still think the number is very high.</p>
+</section>
+<section id="riverina-n5-rez-wind-cost-maybe-85-mwh" class="level2">
+<h2 class="anchored" data-anchor-id="riverina-n5-rez-wind-cost-maybe-85-mwh">Riverina (N5 REZ) wind cost maybe $85 /MWh</h2>
+<p>Onshore wind is commonly cited as having a capital cost in 2025 up around $3 m/MW. However there is a fair argument that the cost in the Riverina, or any other flat area with a good wind resource and low population density will have a lower capital cost. The reasons are basically less labour is required for cranes on flat ground. Maybe that over eggs it but never the less building on the flat in less populated areas has to have cost advantages even with a remoter location.</p>
+<p>There are other things to consider that I don’t really know about the Riverina for instance the diurnal and seasonal variation in the wind. There is some feeling that the wind traces AEMO provides for the ISP don’t necessarily reflect the region’s potential.</p>
+<p>As with offshore wind another advantage of flat land is that the wind is likely to be more evenly spread over the terrain. Even the fact that there are less trees will improve the uniformity.</p>
+<p>Lets assume that my $85 /MWh is a reasonable assumption and lets use $10m/km for the transmission and lets assume we want 9 GW of wind. Conceptually 4 ACSS Drake<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> circuits can support 9 GW and 3 circuits can support 6 GW. Of course I haven’t really the faintest idea what I’m talking about but this just a financial analyst doing a very, very desktop doodle. Who knows might even have Australian aluminium.</p>
+<p>Let’s assume that 4 circuits can be build for $18 m /km. There must be some savings building 4 circuits rather than 2.</p>
+<p>According to AEMO draft 2025 ISP the Riverina REZ can support 19 GW of wind and 5 GW of solar. If you look at www.renewmap.com.au you can see over 10 GW of wind actively in development, some with connection agreements and another project with a CIS draft. A CIS draft is connection dependent but carries a kind of quality badge. Most of these projects have been designed to connect to the hopeless undersized project EnergyConnect but with a bit of care in VNI West siting could be directly hooked up to Melbourne, or to the Portland aluminium smelter.</p>
+</section>
+<section id="results-onshore-wind-is-way-cheaper-despite-transmission" class="level2">
+<h2 class="anchored" data-anchor-id="results-onshore-wind-is-way-cheaper-despite-transmission">Results: onshore wind is way cheaper despite transmission</h2>
+<ul>
+<li>For both offshore and Riverina systems the transmission capex is amortised over 30 years.</li>
+<li>Even though the LCOE is higher the capacity factor of offshore wind is better than the Riverina, I’m going to assume 44% for offshore and 39% for the Riverina. If you don’t like those numbers send me a postcard.</li>
+<li>I’m not going to account for diurnal, seasonal or portfolio covariance in this first pass.</li>
+<li>Building in the Riverina does have one portfolio benefit which I don’t explicitly allow for and that is some of the energy can go to South Australia and some to NSW via EnergyConnect and Humelink and there is built in firming from Snowy 2.</li>
+</ul>
+<p>If you do some quick sums on Transgrid’s annual regulated revenue of about $970 m and RAB about $9.8 bn you can see it earns about $0.1/$1 of RAB or a revenue to RAB ratio of say 9.9%. This happens to translate to about $15/MWh but I’ll use the revenue:rab ratio to allow for changes in capacity factors.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20250513093002289.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Victorian solutions compared. Source:ITK"><img src="../media/image-20250513093002289.png" class="img-fluid figure-img" alt="Victorian solutions compared. Source:ITK"></a></p>
+<figcaption>Victorian solutions compared. Source:ITK</figcaption>
+</figure>
+</div>
+<p>If 6 GW rather than 9 GW is chosen then the advantage to the Riverina becomes larger because the transmission cost falls.</p>
+<p>Of course there enough variations on this them to keep an RIT modeller in work for a year. Equally some folk probably think solar just outside Melbourne with 9 GW of 18 hour batteries would be cheaper. To be clear 9 GW of 18 hour batteries is 9x18*$0.65 m/MWh = a big number.</p>
+<p>Equally why pick the Riverina, why not just Western Victoria? For me the answer is:</p>
+<ol type="1">
+<li><p>There are multiple GW of projects in the Riverina with high quality proponents, and some form of VNI West is going to be built regardless. Now is the time to think about how big it should be. Although more circuits can be added later, we have already seen with Project Energy Connect it’s far better to build some excess capacity in at the beginning. It’s not gold plating its appropriate value planning. As with anything in life lowest cost is the wrong metric. The correct metric is greatest value.</p></li>
+<li><p>Equally there are limited projects at a good stage of development along the Western Renewables link.</p></li>
+<li><p>Projects in the Western Victoria region are relatively small by the standards of the Riverina. Western Victoria REZ and the Murray River REZ have higher value land than further North and West as you can see from the following map. You really have to have www.renewmap.com.au to fully appreciate the possibilities and where we are. It’s amazing what a difference being able to see the projects, their size and the quality of developer makes, never mind the landscape. The following image sets out the game board, or should that be battle field for this theatre of operations. Only stuff that hasn’t been built yet is shown.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20250511135138607.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Source:www.renewemap.com.au"><img src="../media/image-20250511135138607.png" class="img-fluid figure-img" alt="Source:www.renewemap.com.au"></a></p>
+<figcaption>Source:www.renewemap.com.au</figcaption>
+</figure>
+</div></li>
+</ol>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>It might seem like connecting wind and solar DC to DC transmission would be a big cost saver but it turns out you still need DC:DC converters and stuff. And protection systems. So its not done even for offshore wind right now<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p> ACSS (Aluminum Conductor Steel Supported) Drake is a high-capacity overhead transmission conductor with a cross-sectional area of approximately 430 mm². It is similar in size to the commonly used ACSR Drake but is constructed from fully annealed aluminum, allowing it to operate safely at much higher temperatures (up to 200–250 °C) without significant loss of strength or increased sag. This makes it ideal for high-ampacity applications, particularly when combined with dynamic line rating systems.*<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script data-isso="//comentario3.itkservices2.com/" data-isso-css="true" data-isso-css-url="null" data-isso-lang="en" data-isso-max-comments-top="10" data-isso-max-comments-nested="5" data-isso-reveal-on-click="5" data-isso-avatar="false" data-isso-avatar-bg="#f0f0f0" data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6 ..." data-isso-vote="true" data-isso-vote-levels="" data-isso-page-author-hashes="f124cf6b2f01,7831fe17a8cd" data-isso-reply-notifications-default-enabled="false" src="https://comentario3.itkservices2.com/js/embed.min.js"></script>
+        <section id="isso-thread" data-title="Test tag"></section>
+   
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/itkservices3\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 ITK admin@itkservices.com.au</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

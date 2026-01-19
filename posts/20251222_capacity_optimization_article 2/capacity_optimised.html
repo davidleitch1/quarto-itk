@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Paul Bandarian (principal), David Leitch">
+<meta name="dcterms.date" content="2025-12-23">
+
+<title>Post coal spot prices – ITK Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../ITK_logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Post coal spot prices – ITK Research">
+<meta property="og:description" content="Electricity markets analysis">
+<meta property="og:image" content="https://itkservices3.com/media/Table 1.png">
+<meta property="og:site_name" content="ITK Research">
+<meta property="og:image:height" content="154">
+<meta property="og:image:width" content="239">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../ITK_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ITK Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dashboards-(load-slow" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dashboards (load slow)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dashboards-(load-slow">    
+        <li>
+    <a class="dropdown-item" href="../../IEA.html">
+ <span class="dropdown-text">IEA-electricity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../nemgen.html">
+ <span class="dropdown-text">NEM-ITK</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../forecast.html">
+ <span class="dropdown-text">AEMO demand fcst</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">more</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../../green_iron/index.html">
+ <span class="dropdown-text">Green Iron</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../presentations.html">
+ <span class="dropdown-text">Presentations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../background.html">
+ <span class="dropdown-text">Background notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../energyinsiders.html">
+ <span class="dropdown-text">Energy Insiders</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../posts.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../mailchimp.html"> 
+<span class="menu-text">Signup</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Post coal spot prices</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">NEM</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Paul Bandarian (principal), David Leitch </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 23, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#modelling-spot-prices-in-a-post-coal-nem" id="toc-modelling-spot-prices-in-a-post-coal-nem" class="nav-link active" data-scroll-target="#modelling-spot-prices-in-a-post-coal-nem">Modelling spot prices in a post-coal NEM</a>
+  <ul class="collapse">
+  <li><a href="#optimised-capacity-mix" id="toc-optimised-capacity-mix" class="nav-link" data-scroll-target="#optimised-capacity-mix">Optimised capacity mix</a></li>
+  <li><a href="#solar-requires-external-support" id="toc-solar-requires-external-support" class="nav-link" data-scroll-target="#solar-requires-external-support">Solar requires external support</a></li>
+  <li><a href="#thanks-to-batteries-and-wind-intraday-prices-are-flatter-post-coal" id="toc-thanks-to-batteries-and-wind-intraday-prices-are-flatter-post-coal" class="nav-link" data-scroll-target="#thanks-to-batteries-and-wind-intraday-prices-are-flatter-post-coal">Thanks to batteries and wind, intraday prices are flatter post-coal</a></li>
+  <li><a href="#price-spike-mechanism-during-wind-drought" id="toc-price-spike-mechanism-during-wind-drought" class="nav-link" data-scroll-target="#price-spike-mechanism-during-wind-drought">Price spike mechanism during wind drought</a></li>
+  <li><a href="#prices-become-more-seasonal" id="toc-prices-become-more-seasonal" class="nav-link" data-scroll-target="#prices-become-more-seasonal">Prices become more seasonal</a></li>
+  <li><a href="#scarcity-pricing-in-context-frequent-low-prices-episodic-extremes" id="toc-scarcity-pricing-in-context-frequent-low-prices-episodic-extremes" class="nav-link" data-scroll-target="#scarcity-pricing-in-context-frequent-low-prices-episodic-extremes">Scarcity pricing in context: frequent low prices, episodic extremes</a></li>
+  <li><a href="#modelling-approach-optional-technical-detail" id="toc-modelling-approach-optional-technical-detail" class="nav-link" data-scroll-target="#modelling-approach-optional-technical-detail">Modelling approach (optional technical detail)</a>
+  <ul class="collapse">
+  <li><a href="#dispatch-engine" id="toc-dispatch-engine" class="nav-link" data-scroll-target="#dispatch-engine">Dispatch Engine</a></li>
+  <li><a href="#capacity-mix-optimisation" id="toc-capacity-mix-optimisation" class="nav-link" data-scroll-target="#capacity-mix-optimisation">Capacity Mix optimisation</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="capacity_optimised.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="modelling-spot-prices-in-a-post-coal-nem" class="level1">
+<h1>Modelling spot prices in a post-coal NEM</h1>
+<blockquote class="blockquote">
+<p>Our analysis finds that electricity prices can be kept near today’s levels in a post-coal NEM under the current, energy-only market design, but require a system in which solar is structurally supported and batteries become the dominant price-forming technology. Alternatively, more gas might do the same job.</p>
+</blockquote>
+<p>We test this by modelling the calendar year 2040, under the assumption that all NEM coal-fired generation (including Queensland) has exited the system. An optimiser is used in conjunction with ITK’s half-hourly spot price dispatch engine <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: to determine the lowest-cost capacity mix of utility-scale solar, onshore wind and battery storage (2-hour and 8-hour durations modelled), subject to those technologies earning a return on capital and the volume-weighted average electricity price remaining below a defined ceiling.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../media/Table 1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Modelled 2040 flat load electricity prices by region (mean across weather reference years, $/MWh)"><img src="../../media/Table 1.png" class="img-fluid figure-img" alt="Modelled 2040 flat load electricity prices by region (mean across weather reference years, $/MWh)"></a></p>
+<figcaption>Modelled 2040 flat load electricity prices by region (mean across weather reference years, $/MWh)</figcaption>
+</figure>
+</div>
+<section id="optimised-capacity-mix" class="level2">
+<h2 class="anchored" data-anchor-id="optimised-capacity-mix">Optimised capacity mix</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../media/Table 2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="** Optimum 2040 capacity mix by region and technology (GW)"><img src="../../media/Table 2.png" class="img-fluid figure-img" alt="** Optimum 2040 capacity mix by region and technology (GW)"></a></p>
+<figcaption>** Optimum 2040 capacity mix by region and technology (GW)</figcaption>
+</figure>
+</div>
+<p>Capital cost assumptions come from CSIRO’s latest GenCost draft. More detail included in methods.</p>
+<p>Due in part to continued capital cost reductions for BESS and also its dispatch flexibillity compared to wind, the optimiser favoured a much more solar/BESS heavy mix than AEMO’s 2024 ISP Step Change scenario. In particular, QLD, VIC and SA solar capacities were far higher than Step Change. The optimiser results also indicated sufficient investment incentive for additional gas capacity - we assumed Step Change capacities for mid-merit and flexible gas - but this will be discussed in future analyses.</p>
+<p>The charts below compare our optimum capacity mix to Step Change.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../media/cap_bar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Modelled 2040 VRE capacity by region: AEMO ISP 2024 Step Change versus ITK capacity optimisation. Source: ITK modelling, AEMO ISP 2024"><img src="../../media/cap_bar.png" class="img-fluid figure-img" alt="Modelled 2040 VRE capacity by region: AEMO ISP 2024 Step Change versus ITK capacity optimisation. Source: ITK modelling, AEMO ISP 2024"></a></p>
+<figcaption>Modelled 2040 VRE capacity by region: AEMO ISP 2024 Step Change versus ITK capacity optimisation. Source: ITK modelling, AEMO ISP 2024</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../media/storage_energy_bar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Modelled 2040 storage energy capacity by region: AEMO ISP 2024 Step Change versus ITK capacity optimisation. Source: ITK modelling, AEMO ISP 2024"><img src="../../media/storage_energy_bar.png" class="img-fluid figure-img" alt="Modelled 2040 storage energy capacity by region: AEMO ISP 2024 Step Change versus ITK capacity optimisation. Source: ITK modelling, AEMO ISP 2024"></a></p>
+<figcaption>Modelled 2040 storage energy capacity by region: AEMO ISP 2024 Step Change versus ITK capacity optimisation. Source: ITK modelling, AEMO ISP 2024</figcaption>
+</figure>
+</div>
+</section>
+<section id="solar-requires-external-support" class="level2">
+<h2 class="anchored" data-anchor-id="solar-requires-external-support">Solar requires external support</h2>
+<p>Significant buildout of solar and BESS is required to support coal exit by 2040 and maintain reasonable prices for consumers. The indicated requirement of substantially higher total VRE capacity by 2040 compared to step change is reflective of the nature of the two analyses: namely, the ISP focusses on system reliability, but we are modelling electricity prices with an optimisation that requires them to be <em>below a reasonable threshold</em>.</p>
+<p>Utility solar is essential to the system, but in aggregate won’t pay for itself through merchant revenues alone. In every scenario we tested, merchant solar returned poor ROI. When we forced the optimiser to hit solar ROI floors, it broke something else: either electricity prices rose beyond reasonable levels, or returns from wind and storage were cannibalized to compensate. This reflects the reality that solar’s value is increasingly systemic rather than merchant.</p>
+</section>
+<section id="thanks-to-batteries-and-wind-intraday-prices-are-flatter-post-coal" class="level2">
+<h2 class="anchored" data-anchor-id="thanks-to-batteries-and-wind-intraday-prices-are-flatter-post-coal">Thanks to batteries and wind, intraday prices are flatter post-coal</h2>
+<p>Based on current VRE project pipeline, policy knowledge, industry outreach, and modelling we construct a base case capacity buildout regime from 2026 towards the optimized 2040 capacities. We then use our dispatch engine to forecast half-hourly generation mix, interconnector flows and electricity prices for that horizon.</p>
+<p><em>The intraday price curve flattens as price formation shifts</em>. Sharp morning and evening spikes - forming the “duck curve” characteristic of the NEM, particularly over the past 3-4 years - are replaced by lower-amplitude, broader price profiles, and extreme daytime price collapse is largely avoided. This reflects a large expansion of evening-available capacity (wind and BESS) and substantial daytime battery charging demand that absorbs surplus solar. At the system level, aggregate battery state of charge becomes a dominant price driver: high fleet-wide state of charge increases dispatch willingness and suppresses prices, while lower state of charge during periods of mid-to-high demand tightens effective supply. <em>Examples of</em> this SoC-Price relationship already exist, and this <a href="https://wattclarity.com.au/articles/2024/08/30july-with-the-benefit-of-hindsight-or-whod-be-an-auto-bidder/">WattClarity Article</a> by <em>Allan O’Neill</em> goes through a specific one. The result is a subdued traditional evening peak, but prices that remain elevated for longer into the evening as batteries progressively discharge.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../media/tod_price_nsw.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="NSW average intraday price profile: recent outcomes versus modelled 2040 post-coal prices. Source: ITK modelling, NEMWEB historical data"><img src="../../media/tod_price_nsw.png" class="img-fluid figure-img" alt="NSW average intraday price profile: recent outcomes versus modelled 2040 post-coal prices. Source: ITK modelling, NEMWEB historical data"></a></p>
+<figcaption>NSW average intraday price profile: recent outcomes versus modelled 2040 post-coal prices. Source: ITK modelling, NEMWEB historical data</figcaption>
+</figure>
+</div>
+</section>
+<section id="price-spike-mechanism-during-wind-drought" class="level2">
+<h2 class="anchored" data-anchor-id="price-spike-mechanism-during-wind-drought">Price spike mechanism during wind drought</h2>
+<p>The chart below illustrates a common price-spike mechanism in our post-coal modelled NEM. A sustained drop in wind output initially widens intraday spreads, encouraging higher BESS cycling. As the wind shortfall persists, deep storage and pumped hydro are progressively dispatched and the aggregate battery fleet is materially depleted. Once stored energy is exhausted, peaking and reserve gas sets the marginal price, resulting in sharp scarcity-driven price spikes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../media/hh_gen_price_drought.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="How sustained low wind output triggers price spikes in a modelled post-coal NSW system. Source: ITK modelling"><img src="../../media/hh_gen_price_drought.png" class="img-fluid figure-img" alt="How sustained low wind output triggers price spikes in a modelled post-coal NSW system. Source: ITK modelling"></a></p>
+<figcaption>How sustained low wind output triggers price spikes in a modelled post-coal NSW system. Source: ITK modelling</figcaption>
+</figure>
+</div>
+</section>
+<section id="prices-become-more-seasonal" class="level2">
+<h2 class="anchored" data-anchor-id="prices-become-more-seasonal">Prices become more seasonal</h2>
+<p>In periods of low residential demand and strong wind output, prices remain persistently low for extended stretches. Most volatility and high-price outcomes are concentrated in winter, when residential demand rises, solar output falls, and periods of weaker regional wind place greater pressure on dispatchable supply, activating reserve gas, pumped hydro and other deep storage far more frequently. <img src="../../media/price_seasonality.png" class="img-fluid" alt="NSW monthly average electricity prices: recent outcomes versus modelled 2040 post-coal prices. Source: ITK modelling, NEMWEB historical data"></p>
+</section>
+<section id="scarcity-pricing-in-context-frequent-low-prices-episodic-extremes" class="level2">
+<h2 class="anchored" data-anchor-id="scarcity-pricing-in-context-frequent-low-prices-episodic-extremes">Scarcity pricing in context: frequent low prices, episodic extremes</h2>
+<p>Figure 6 places the modelled post-coal price outcomes in context by decomposing average prices into contributions from different price bands, alongside 2024 outcomes and the past twelve months. While low-to-mid price intervals continue to account for the majority of the average price, the results also show that post-coal prices are strongly influenced by scarcity events, particularly during periods of sustained low wind output. These higher-priced intervals play a material role in setting average prices, but do not dominate them, even in a more weather-driven, VRE-heavy system. This provides context that the price outcomes implied by the capacity optimisation reflect a structurally different market, yet remain anchored by frequent low- and mid-priced periods, with average prices broadly similar to today’s levels despite a greater role for scarcity events. <img src="../../media/price_bands.png" class="img-fluid" alt="Contributions of price bands to average electricity prices: recent outcomes versus modelled post-coal prices. Source: ITK modelling, NEMWEB historical data"></p>
+</section>
+<section id="modelling-approach-optional-technical-detail" class="level2">
+<h2 class="anchored" data-anchor-id="modelling-approach-optional-technical-detail">Modelling approach (optional technical detail)</h2>
+<section id="dispatch-engine" class="level3">
+<h3 class="anchored" data-anchor-id="dispatch-engine">Dispatch Engine</h3>
+<p>Electricity prices and generation outcomes are produced using ITK’s half-hourly dispatch and capacity optimisation framework, designed to model price formation under the existing energy-only market design and focussed on a highly renewable, post-coal NEM.</p>
+<p>At the core of the price analysis is a linear-programming–based half-hourly dispatch engine. For each interval, generation from utility-scale solar, wind, storage (including batteries of multiple durations and pumped hydro such as Borumba and Snowy 2.0), conventional hydro, coal (in pre-retirement years), and gas (mid-merit and flexible) is represented through technology-specific bid stacks and dispatched to meet regional demand, subject to interconnector limits and a selected set of network constraints. Spot prices are derived from the marginal cost of supplying an additional unit of energy in each region, as implied by the optimisation solution, and aren’t <em>necessarily</em> tied to a single marginal generating unit.</p>
+<p>Battery storage is modelled explicitly and treated as an active market participant rather than a passive price taker. In most publicly documented long-term NEM planning models, batteries are represented as price-taking assets dispatched through system cost minimisation. This simplification was relatively benign when storage penetration was low, but becomes increasingly consequential as batteries move to the margin and begin to shape prices.</p>
+<p>In our framework, battery state of charge is tracked through time, and charge and discharge volumes are determined endogenously via a proprietary bidding framework embedded directly within the dispatch optimisation. Rather than assuming batteries arbitrage a fixed price shape or applying volatility adjustments after the fact, we explicitly model battery bidding behaviour. Battery operators are assumed to act on information available in the real world - including weather and demand forecasts, and observable bid stacks from other participants - and dynamically position their charge and discharge bids accordingly, subject to physical energy constraints. Prices and volatility therefore emerge endogenously from the interaction of strategic bidding, intertemporal energy limits, network conditions and demand, rather than being imposed through calibration. As a result, battery behaviour materially influences both intraday price shape and system-level price formation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../media/battery_scehmatic.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Comparison of price-taking and strategic battery representations in long-term electricity market modelling. Source: ITK modelling"><img src="../../media/battery_scehmatic.png" class="img-fluid figure-img" alt="Comparison of price-taking and strategic battery representations in long-term electricity market modelling. Source: ITK modelling"></a></p>
+<figcaption>Comparison of price-taking and strategic battery representations in long-term electricity market modelling. Source: ITK modelling</figcaption>
+</figure>
+</div>
+<p>While this analysis is forward-looking, the pricing framework has been exercised extensively across historical conditions and futures scenarios, and is designed to capture the dominant drivers of spot price formation under an energy-only market.</p>
+</section>
+<section id="capacity-mix-optimisation" class="level3">
+<h3 class="anchored" data-anchor-id="capacity-mix-optimisation">Capacity Mix optimisation</h3>
+<p>Capacity optimisation is performed for a target post-coal system year (2040) across nameplate capacities for utility-scale solar, onshore wind, and battery storage of 2- and 8-hour duration. To reflect investment realism, we impose technology-specific ROI floors and ceilings: the floor signalling returns insufficient to justify further investment, and the ceiling indicating that additional capacity would be economically attractive. A ceiling is also applied to the NEM-wide volume-weighted average spot price in 2040. Breaches of any of these constraints incur a penalty within the optimisation.</p>
+<p>Each simulation is evaluated across 13 historical weather reference years, with reported prices and returns expressed as averages across those outcomes to ensure robustness to interannual variability in wind and solar output. The optimiser then seeks the capacity mix that minimises total system cost, with additional penalties applied where the above investment and price constraints are violated.</p>
+<p>This approach differs from traditional reliability-focused planning models. The optimisation is not designed to meet a prescribed reliability standard; instead, it solves for capacity mixes that are economically viable under an energy-only market while keeping prices within a reasonable range for consumers. Simplifying assumptions are made deliberately: FCAS markets are not modelled explicitly, unit commitment dynamics are abstracted, and thermal plant - we delineate coal, mid-merit gas and flexible gas - is represented as flexible reserve capacity per region rather than as individual units. The objective is to capture the dominant drivers of price formation and investment incentives in a post-coal system, rather than to reproduce full operational detail.</p>
+<p>For this analysis we select a CMA-ES (covariance adapataion matrix evolution strategy) optimiser because the capacity mix problem involves multiple interacting technologies and regions, and each internal evaluation leverages our model’s full dispatch simulation. Such an optimisation does not lend itself to simple or reliable gradients.</p>
+</section>
+</section>
+</section>
+<section id="appendix" class="level1">
+<h1>Appendix</h1>
+<p>See merchant returns by technology and region below.</p>
+<p><strong>Table.</strong> Mean Modelled ROI (%) by region and technology for optimised capacity mix</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../media/Table 3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Mean Modelled ROI (%) by region and technology for optimised capacity mix. Source: ITK modelling"><img src="../../media/Table 3.png" class="img-fluid figure-img" alt="Mean Modelled ROI (%) by region and technology for optimised capacity mix. Source: ITK modelling"></a></p>
+<figcaption>Mean Modelled ROI (%) by region and technology for optimised capacity mix. Source: ITK modelling</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Each internal optimiser run is evaluated using ITK’s half-hourly dispatch engine, which simulates generation dispatch, interconnector flows, select network constraints and spot prices across the NEM.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/itkservices3\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 ITK admin@itkservices.com.au</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

@@ -71,14 +71,13 @@ Facilities exceeding their baseline must manage excess emissions through:
 
 ### Cost Containment
 
-: Safeguard Mechanism Cost Containment Settings {#tbl-sm-costs}
-
-| Setting | Value |
+| **Cost Containment Settings** ||
 |---------|-------|
+| Setting | Value |
 | Government ACCU price cap | \$75/tonne (FY2024), indexed to CPI + 2% annually |
 | Default prescribed unit price (FY2024-25) | \$36.05 |
 
-: Source: Clean Energy Regulator
+: Source: Clean Energy Regulator {#tbl-sm-costs}
 
 ### 30% ACCU Disclosure Rule
 
@@ -88,24 +87,22 @@ Facilities surrendering ACCUs equal to or exceeding 30% of their baseline must p
 
 ## Targets
 
-: Safeguard Mechanism Emissions Targets {#tbl-sm-targets}
-
-| Milestone | Target |
+| **Emissions Targets** ||
 |-----------|--------|
+| Milestone | Target |
 | FY2029-30 | Net emissions ≤100 Mt CO2-e |
 | FY2049-50 | Net zero emissions |
 | Cumulative budget (FY2020-30) | ≤1,233 Mt CO2-e |
 
-: Source: DCCEEW
+: Source: DCCEEW {#tbl-sm-targets}
 
 ---
 
 ## Emissions Performance Data
 
-: Safeguard Mechanism Performance Summary {#tbl-sm-performance}
-
-| Metric | FY2022-23 | FY2023-24 | FY2024-25^p^ |
+| **Performance Summary** ||||
 |--------|----------:|----------:|-------------:|
+| Metric | FY2022-23 | FY2023-24 | FY2024-25^p^ |
 | Covered facilities | 218 | 219 | ~215 |
 | Covered emissions (Mt) | 139 | 136 | 133 |
 | Facilities in exceedance | — | 142 | 143 |
@@ -114,7 +111,7 @@ Facilities surrendering ACCUs equal to or exceeding 30% of their baseline must p
 | ACCUs surrendered (million) | 1.2 | 7.1 | ~14^e^ |
 | SMCs surrendered (million) | — | 1.4 | TBD |
 
-: Source: Clean Energy Regulator. ^p^Preliminary. ^e^Estimate based on exceedance volume.
+: Source: Clean Energy Regulator. ^p^Preliminary. ^e^Estimate based on exceedance volume. {#tbl-sm-performance}
 
 **Key observations:**
 
@@ -144,15 +141,14 @@ Independent analysis (Climate Analytics) suggests LNG and coal emissions could e
 
 **2035 NDC implications:** The Climate Change Authority's analysis indicates that meeting the 2035 NDC target range (62-70% below 2005 levels) requires higher decline rates:
 
-: Implied Baseline Decline Rates for 2035 NDC Targets {#tbl-decline-rates}
-
-| 2035 Target | Implied Annual Decline Rate |
+| **Implied Baseline Decline Rates for 2035 NDC Targets** ||
 |-------------|----------------------------:|
+| 2035 Target | Implied Annual Decline Rate |
 | 62% (minimum) | 4.82% |
 | 65% (middle) | 5.50% |
 | 70% (ambitious) | 6.85% |
 
-: Source: CORE Markets analysis
+: Source: CORE Markets analysis {#tbl-decline-rates}
 
 **Key finding:** The indicative 3.285% post-2030 rate is inconsistent with even the minimum 2035 target. The 2026-27 review will need to set rates for 2030-35 by July 2027, incorporating advice from the Climate Change Authority and the government's final position on 2035 ambition level.
 
@@ -245,14 +241,13 @@ Independent analysis (Climate Analytics) suggests LNG and coal emissions could e
 
 **Eligibility and rates:**
 
-: TEBA Reduced Decline Rates {#tbl-teba-rates}
-
-| Sector | Minimum Decline Rate | Scheme Impact Trigger |
+| **TEBA Reduced Decline Rates** |||
 |--------|---------------------:|----------------------:|
+| Sector | Minimum Decline Rate | Scheme Impact Trigger |
 | Manufacturing | 1.0% | Scheme cost >3% of EBIT |
 | Non-manufacturing | 2.0% | Scheme cost as % of revenue |
 
-: Source: Clean Energy Regulator
+: Source: Clean Energy Regulator {#tbl-teba-rates}
 
 **FY2023-24 uptake:** In the first reformed year, **17 facilities received site-specific baseline decline rates set at a heavily discounted 1%** (ICAP). This represents significant use of the concession.
 

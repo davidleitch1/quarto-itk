@@ -1,1 +1,44 @@
 /* css styles */
+
+/* Table caption - match figure caption style (small, light) */
+figcaption.quarto-float-caption-tbl,
+.quarto-float-tbl figcaption {
+  text-align: left !important;
+}
+
+/* Override Quarto's centered figure container for tables */
+.quarto-float-tbl {
+  text-align: left;
+}
+
+/* Table title row (first row in thead) */
+table th {
+  font-size: 0.95em;
+  font-weight: 700;
+  border-bottom: 2px solid currentColor;
+  padding: 0.4em 0.6em;
+}
+
+/* Column header row (second row, now in tbody) - bold, no border */
+.table tbody tr:first-child td {
+  font-weight: 700;
+  font-size: 0.85em;
+}
+
+/* Table data cells - dense, smaller font */
+table td {
+  font-size: 0.85em;
+  padding: 0.3em 0.6em;
+  border-bottom: 1px dotted rgba(128, 128, 128, 0.4);
+}
+
+/* First column (labels) always left-justified */
+table td:first-child,
+table th:first-child {
+  text-align: left;
+}
+
+/* Remove border from last row */
+table tr:last-child td {
+  border-bottom: none;
+}

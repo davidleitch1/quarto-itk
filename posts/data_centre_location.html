@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="David Leitch">
-<meta name="dcterms.date" content="2023-05-24">
+<meta name="dcterms.date" content="2025-07-09">
 
-<title>Sharpe ratio and renewables - part 1 – ITK Research</title>
+<title>Data centre in Riverina – ITK Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,28 +25,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../ITK_logo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ITK_logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,15 +74,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script defer="" data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Sharpe ratio and renewables - part 1 – ITK Research">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Data centre in Riverina – ITK Research">
 <meta property="og:description" content="Electricity markets analysis">
-<meta property="og:image" content="https://itkservices3.com/posts/sharpe1/media/media/image1.png">
+<meta property="og:image" content="https://itkservices3.com/media/image-20250709174704767.png">
 <meta property="og:site_name" content="ITK Research">
-<meta property="og:image:height" content="496">
-<meta property="og:image:width" content="955">
+<meta property="og:image:height" content="1570">
+<meta property="og:image:width" content="2154">
 </head>
 
 <body class="nav-fixed">
@@ -92,10 +93,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../ITK_logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../ITK_logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">ITK Research</span>
     </a>
   </div>
@@ -105,43 +106,65 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../forecast.html"> 
-<span class="menu-text">AEMO demand fcst</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dashboards-(load-slow" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dashboards (load slow)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dashboards-(load-slow">    
+        <li>
+    <a class="dropdown-item" href="../IEA.html">
+ <span class="dropdown-text">IEA-electricity</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../nem-dash.html"> 
-<span class="menu-text">NEM-dash</span></a>
+        <li>
+    <a class="dropdown-item" href="../nemgen.html">
+ <span class="dropdown-text">NEM-ITK</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../IEA.html"> 
-<span class="menu-text">IEA-electricity</span></a>
+        <li>
+    <a class="dropdown-item" href="../forecast.html">
+ <span class="dropdown-text">AEMO demand fcst</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html"> 
+    <a class="nav-link" href="../posts.html"> 
 <span class="menu-text">Articles</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../presentations.html"> 
-<span class="menu-text">Presentations</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">more</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../green_iron/index.html">
+ <span class="dropdown-text">Green Iron</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../energyinsiders.html"> 
-<span class="menu-text">Energy Insiders</span></a>
+        <li>
+    <a class="dropdown-item" href="../presentations.html">
+ <span class="dropdown-text">Presentations</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../background.html">
+ <span class="dropdown-text">Background notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../energyinsiders.html">
+ <span class="dropdown-text">Energy Insiders</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../../posts.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../posts.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../mailchimp.html"> 
+    <a class="nav-link" href="../mailchimp.html"> 
 <span class="menu-text">Signup</span></a>
   </li>  
 </ul>
@@ -156,10 +179,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Sharpe ratio and renewables - part 1</h1>
+      <h1 class="title">Data centre in Riverina</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">analysis</div>
-                <div class="quarto-category">nem</div>
+                <div class="quarto-category">data_centres</div>
               </div>
                   </div>
   </div>
@@ -177,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 24, 2023</p>
+        <p class="date">July 9, 2025</p>
       </div>
     </div>
     
@@ -193,13 +216,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link active" data-scroll-target="#conclusions">Conclusions</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#wind-and-solar-farms-as-a-portfolio-the-lessons-from-finance" id="toc-wind-and-solar-farms-as-a-portfolio-the-lessons-from-finance" class="nav-link" data-scroll-target="#wind-and-solar-farms-as-a-portfolio-the-lessons-from-finance">Wind and solar farms as a portfolio – the lessons from finance</a></li>
-  <li><a href="#rezs-two-fuels-40-million-data-points" id="toc-rezs-two-fuels-40-million-data-points" class="nav-link" data-scroll-target="#rezs-two-fuels-40-million-data-points">40 REZs, two fuels, 40 million data points</a></li>
-  <li><a href="#the-optimisation-process" id="toc-the-optimisation-process" class="nav-link" data-scroll-target="#the-optimisation-process">The optimisation process</a></li>
+  <li><a href="#if-datacentres-are-built-in-canberra-why-not-the-riverina" id="toc-if-datacentres-are-built-in-canberra-why-not-the-riverina" class="nav-link active" data-scroll-target="#if-datacentres-are-built-in-canberra-why-not-the-riverina">If datacentres are built in Canberra why not the Riverina</a>
+  <ul class="collapse">
+  <li><a href="#australian-cost-and-location-factors" id="toc-australian-cost-and-location-factors" class="nav-link" data-scroll-target="#australian-cost-and-location-factors">Australian cost and location factors</a></li>
+  <li><a href="#existing-data-centres-are-mostly-in-capital-cities-but-also-in-canberra" id="toc-existing-data-centres-are-mostly-in-capital-cities-but-also-in-canberra" class="nav-link" data-scroll-target="#existing-data-centres-are-mostly-in-capital-cities-but-also-in-canberra">Existing data centres are mostly in Capital Cities but also in Canberra</a></li>
+  <li><a href="#its-a-sin-to-waste-the-riverina-potential" id="toc-its-a-sin-to-waste-the-riverina-potential" class="nav-link" data-scroll-target="#its-a-sin-to-waste-the-riverina-potential">It’s a sin to waste the Riverina potential</a></li>
+  <li><a href="#delivered-power-cost-maybe-a107mwh" id="toc-delivered-power-cost-maybe-a107mwh" class="nav-link" data-scroll-target="#delivered-power-cost-maybe-a107mwh">Delivered power cost maybe A$107/MWh</a></li>
+  <li><a href="#llm-research" id="toc-llm-research" class="nav-link" data-scroll-target="#llm-research">LLM research</a></li>
+  </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="data_centre_location.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -208,93 +234,111 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="conclusions" class="level1">
-<h1>Conclusions</h1>
-<p>Despite its pseudo academic nature and many limitations what I personally take from this analysis is</p>
-<p>(1) that Queensland should have a huge role to play in the NEM, it should be getting lots of $ for transmission both within the State and for connections South.</p>
-<p>(2) Equally Marinuslink is likely to be just as useful as building offshore wind.</p>
-<p>(3) There is a role for offshore wind, although not as big as the Victorians want you to believe</p>
-<p>(4) the existing NEM utility scale renewable portfolio has too much solar and nowhere near enough wind. The only way that that wouldn’t be true is if storage were far cheaper than it currently appears to be. If that was true then the lower cost of solar might make it suitable for charging storage. As it stands though my view is that wind plus transmission is cheaper than solar plus storage. I am sure others will have other views.</p>
-<p>These conclusions may change as other factors are thrown into the optimisation algo.</p>
+<section id="if-datacentres-are-built-in-canberra-why-not-the-riverina" class="level1">
+<h1>If datacentres are built in Canberra why not the Riverina</h1>
+<p>Recent discussions have indicated two problems which put together may represent an opportunity.</p>
+<ol type="1">
+<li><p>There is not enough transmission to utilise all the potential supply of VRE in the Riverina. ITK has several times over the past two years pointed out that credible developers have upwards of 10 GW of projects that can be built in an area centred on say Balranald. That energy could go either to Victoria via VNI West or to Sydney via Humelink but neither transmission line has enough capacity. Moreover Victoria doesn’t have the stomach to build onshore and would rather build offshore wind no matter how expensive it is.</p></li>
+<li><p>Datacentre developers, particularly NextDC, are just starting to build 100 MW and larger Datacentres in Australia. Naturally like everything else datacentres are built in Capital cities. Naturally like everything else primarily Sydney with Melbourne and Brisbane fighting for second place and Melbourne usually winning. However the point here is that the cost of power is a big deal for megascale datacentres. In the USA it’s lead to development near the generation.</p>
+<p>In this note I do a thought experiment of looking at the potential power cost for a datacentre located adjacent to a renewable project in the Riverina. Because I am a humble desktop warrior I am in my element doing desktop studies. Because we can use LLMs as coding and research assistants it’s possible for a very small team (me) to be seemingly productive. In addition although I am not a datacentre expert I am a follower of trends and have been writing computer code since attending a course at Armidale tech while in high school. Again at university I remember doing an extra curricula course on “basic” via the UNSW radio channel and how thrilling it was to realise I could actually do the work. And then there was the port of 6502 assembler code from the Apple 2E to the Commodore Pet. I digress as usual.</p>
+<p>Finally in terms of motivation and credentials growing up in regional NSW in the 60s I was often hearing about the benefits of decentralisation. However for a variety of reasons it mostly hasn’t happened. The share of Australia’s population in the 8 major capitals is now 68% up from 65% 30 years ago. Most electricity demand is in those same capital cities. According to infrastructure Australia about 70% of Australian GDP is earned in the big cities with 45%-50% coming from Melbourne and Sydney combined.</p>
+<p>I would argue that the fact that the regions are the smaller group is a problem for decarbonisation. Smaller groups may have a stronger identity to protect, may see differentiation as more important and in the case of regional Australia will tend to be older and face other challenges. Decentralisation cannot be forced, we have learned that, but nevertheless opportunities to diversify and grow the regions should be welcomed.</p>
+<p>All that said outsiders rarely understand what’s going from the insider perspective. We are like spectators at a football game full of advice for the manager and the players but not charged with delivering a result on the field.</p></li>
+</ol>
+<section id="australian-cost-and-location-factors" class="level2">
+<h2 class="anchored" data-anchor-id="australian-cost-and-location-factors">Australian cost and location factors</h2>
+<p>Data centres in Australia are relatively small by global standards and are all located in Capital cities or areas of heavy population. Location is driven by proximity to cable infrastructure, good quality power connection capacity and the availability of skilled labour. Property rental cost is a disadvantage but so far has not been the major driver.</p>
+<p>For a mega (100 MW and bigger) datacentre the power cost and the availability of cable infrastructure and the land and facility cost become more important. Also cooling becomes a bigger deal.</p>
+<p>In the USA some large data centres are located regionally. This appears to be for access to power and cheap land as much as for any other reason. ChatGPT summarised it thus:</p>
+<blockquote class="blockquote">
+<p>“These massive facilities (20-100+ MW) prioritize low operating costs and scalability. Cheap power is paramount, making remote locations near renewable energy sources attractive. AI training workloads can be located”where people are scarce but energy is plentiful” since latency isn’t critical. Companies like Meta and Google built in rural Pacific Northwest for cheap hydro power and cool climate.”</p>
+</blockquote>
+<p>This to my mind suggests that if an entity wanted to build a mega centre in Australia that there may be reasons to locate it close to cheap power. It’s much easier to bring the fibre optic cable to the datacentre than power transmission.</p>
 </section>
-<section id="summary" class="level1">
-<h1>Summary</h1>
-<p>This note borrows from the “theory of finance”, to build a maximum Sharpe ratio portfolio of wind and solar farms in the NEM. The average daily output of the portfolio and its variability can be compared with the average daily output of utility VRE (that is excluding rooftop) in the NEM over the past 12 months. I set the “optimised” portfolio to have the same total output per day as the existing NEM portfolio of wind and solar farms.</p>
+<section id="existing-data-centres-are-mostly-in-capital-cities-but-also-in-canberra" class="level2">
+<h2 class="anchored" data-anchor-id="existing-data-centres-are-mostly-in-capital-cities-but-also-in-canberra">Existing data centres are mostly in Capital Cities but also in Canberra</h2>
+<p>My point is if you can make a data centre in Canberra work surely you can also make one work in the Riverina. I put a little dashboard together based on digging round but as usual I’d not guarantee the accuracy. I am not a data centre expert by any means.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="media/media/image1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Chart, line chart Description automatically generated"><img src="media/media/image1.png" style="width:6.26389in;height:3.25694in" alt="Chart, line chart Description automatically generated" class="figure-img"></a></p>
-<figcaption>Chart, line chart Description automatically generated</figcaption>
+<p><a href="../media/image-20250709154849387.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="data centre locations. Source:web"><img src="../media/image-20250709154849387.png" class="img-fluid figure-img" alt="data centre locations. Source:web"></a></p>
+<figcaption>data centre locations. Source:web</figcaption>
 </figure>
 </div>
-<p>Figure 1 Daily average output optimised portfolio and NEM existing portfolio.Source: ITK, NEM Review</p>
-<p>You can see that the “best” portfolio has a much more constant output through the day (and is much less seasonal) and for every half hour has a much lower volatility as compared to the existing, installed wind and solar farms. Put another way the mean is more stationary with respect to time of day and season of year and the variance is lower. The Sharpe ratio (mean/standard deviation) is nearly twice as good as the existing NEM wide portfolio of wind and solar farms.</p>
-<p>I might add that although I have yet to prove it I think it would have a better capacity factor and likely be lower capital cost. Obviously this “best” or optimised portfolio would require much less firming.</p>
-<p>The optimised portfolio would be heavily concentrated in Queensland (see fig 3) but the function maximisation algorithm didn’t result in much VRE in Victoria overall by State where O = offshore and numbers are in %</p>
+<p>Looking at the detailed tables NextDC plans a 300 MW site in Sydney and is building a 150 MW site in <a href="https://www.nextdc.com/news/nextdc-announces-2-billion-ai-factory-and-technology-campus-at-fishermans-bend">Melbourne</a>. The Melbourne site will be using Nvidia Blackwell chips and water cooling. All I can say is good luck with the power cost when Yallourn closes and someone is picking up the offshore wind tab. Why not build it in the Riverina right next to the generation?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="media/media/image2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Table Description automatically generated"><img src="media/media/image2.png" style="width:1.02898in;height:1.53914in" alt="Table Description automatically generated" class="figure-img"></a></p>
-<figcaption>Table Description automatically generated</figcaption>
+<p><a href="../media/image-20250709155215426.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Tier IV centres. Source:web"><img src="../media/image-20250709155215426.png" class="img-fluid figure-img" alt="Tier IV centres. Source:web"></a></p>
+<figcaption>Tier IV centres. Source:web</figcaption>
 </figure>
 </div>
-<p>Figure 2 Optimised portfolio, weighting by State, O = offshore. Source: ITK</p>
-<p>and would have about 77% wind and 23% solar.</p>
-<p>I realise the following colour scheme is worse than tasteless but it shows as a percentage of the total portfolio how much would be allocated to each zone that the “optimiser” chooses. Most of the results are generally what I would have expected but I was truly astonished to see that the algorithm results in a little bit of Tasmanian solar going into the portfolio. Its interesting that the results have more offshore wind off the Illawarra than in Gippsland, probably because of the Tasmanian wind included. These results would likely change quite a bit if levelized cost of the energy was included, an extension I plan to do for next time.</p>
-<p><a href="media/media/image3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="media/media/image3.png" style="width:6.26389in;height:3.80278in"></a></p>
-<p>Figure 3 Optimised portfolio percentage held by fuel and REZ. Source: ITK</p>
-<p>The portfolio built by the optimisation algorithm only takes account of the forecast capacity factors for each half hour for each fuel for each REZ. It doesn’t account for cost, correlation with demand, transmission, social license, rooftop solar. Some of these things (rooftop solar and capital cost) can easily be accommodated and I may do so in a future note. Others are more difficult. Also we aren’t dealing in the real world with a fresh sheet of paper.</p>
-<p>However what I personally take from this analysis is that Queensland should have a huge role to play in the NEM, it should be getting lots of $ for transmission both within the State and for connections South. Equally Marinuslink is likely to be just as useful as building offshore wind.</p>
-<p>These conclusions may change as other factors are thrown into the optimisation algo.</p>
-<p>The following map taken from the ISP shows where the REZs are located with the notation first letter = State and then the number is the zone within the State.</p>
-<p><a href="media/media/image4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="media/media/image4.png" style="width:6.26389in;height:8.68125in"></a></p>
-<p>Figure 4 REZ locations, source: AEMO</p>
 </section>
-<section id="wind-and-solar-farms-as-a-portfolio-the-lessons-from-finance" class="level1">
-<h1>Wind and solar farms as a portfolio – the lessons from finance</h1>
-<p>I wrote about the idea of seeing wind and solar farms through the lens of finance theory ’s “efficient frontier” last <a href="https://reneweconomy.com.au/how-offshore-wind-could-influence-aemos-20-year-green-energy-blueprint/">June</a>. In this note I continue that journey by employing the Sharpe Ratio to build an “optimal” portfolio of wind and solar in the NEM.</p>
-<p>The Sharpe ratio in finance is the ratio of the expected return on a security divided by its standard deviation. It’s a measure of the return you get relative to the risk of getting that return.</p>
-<p>The idea is that by building a portfolio of securities you can improve your overall Sharpe ratio, that is a portfolio will give you a higher return for a given level of risk than you can get from owning individual securities. This happens mainly because the standard deviation of a portfolio is less than the standard deviation of the individual securities. They don’t all go up the same amount at the same time and vice versa.</p>
-<p>To demonstrate that, you need to calculate the mean expected return of the portfolio and its standard deviation. I want to avoid the maths as far as possible, mainly because I’m not very good at it, but its important to appreciate that the variability of the portfolio return depends not only on the variability of each stock considered on its own but also their “covariance” or the extent to which stock returns tend to move together.</p>
-<p>The other important thing that the portfolio return and standard deviation depend on, is how much you put into each stock. That is the relative weight of the stock in the portfolio. Its finding those weights that is the point of this note.</p>
-</section>
-<section id="rezs-two-fuels-40-million-data-points" class="level1">
-<h1>40 REZs, two fuels, 40 million data points</h1>
-<p>Translating these ideas into the world of Australian renewable energy our portfolio consists of the 40 REZs that AEMO provided data for in the 2022 ISP. In each REZ AEMO provided the expected half hourly output between July 2022 and June 2052 of a 1 MW wind farm, and a 1 MW solar farm. In fact for wind they provided a high and low series. So that is basically 120 series of roughly 0.5 million half hourly forecasts each or roughly 60 million data points.</p>
-<p>For the wind data I took a simple average of the high and low series for each zone.</p>
-<p>In renewable energy we care about (1) the capacity factor = actual output per year/(24/7 output) (2) the variability of the output or how likely it is to be running at any given time, like dinner time and (3) other factors like cost and location.</p>
-<p>Solar is more predictable in output than wind but nevertheless has a higher variability because it doesn’t run at night.</p>
-<p>The following chart attempsts to illustrate the concept of the Sharpe ratio. It shows the best 15 <strong>wind</strong> zones sorted in order of Sharpe ratio best to worst. The chart shows the capacity factors and the volatility. You can see that Queensland in general and North Queensland in particular has both a good capacity factor and a relatively low volatility of output.</p>
-<p><a href="media/media/image5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="media/media/image5.png" style="width:5.875in;height:2.59722in"></a></p>
-<p>Figure 5 Best wind farm locations. Source: ITK,AEMO ISP</p>
-<p>The offshore wind zones (in blue) have good capacity factors but are, like the Tasmanian ones typically more volatile than the Queensland ones. The six best zones as measured by the Sharpe ratio are all in Queensland and Tasmania. No NSW wind farm makes the “best” Sharpe ratio list and only one in South Australia. Again this list doesn’t pay any attention to cost, or demand correlation or access to transmission, or social license.</p>
-<p>Repeating the same exercise for solar shows that the capacity factors, and the not shown here Sharpe ratios are much closer together and that Queensland, NSW and South Australia are the best regions for solar.</p>
-<p>Also if you compare the scales for the wind and solar charts you will see, as expected, that wind capacity factors are higher than solar and the standard deviation of wind is lower. The latter result is because the wind does blow at night.</p>
+<section id="its-a-sin-to-waste-the-riverina-potential" class="level2">
+<h2 class="anchored" data-anchor-id="its-a-sin-to-waste-the-riverina-potential">It’s a sin to waste the Riverina potential</h2>
+<p>Equally the Riverina has a potential ability to generate far more power and energy than there is transmission to move it.</p>
+<p>To get a sense of the geography I of course turn to www.renewmap.com.au a tool as transformative in its way in this sector as AI. Well perhaps that gilds the lily but it’s pretty useful.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="media/media/image6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="A picture containing chart Description automatically generated"><img src="media/media/image6.png" style="width:5.93056in;height:2.59722in" alt="A picture containing chart Description automatically generated" class="figure-img"></a></p>
-<figcaption>A picture containing chart Description automatically generated</figcaption>
+<p><a href="../media/image-20250708105245192.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="SW REZ. Source:www.renewmap.com.au"><img src="../media/image-20250708105245192.png" class="img-fluid figure-img" alt="SW REZ. Source:www.renewmap.com.au"></a></p>
+<figcaption>SW REZ. Source:www.renewmap.com.au</figcaption>
 </figure>
 </div>
-<p>Figure 6 Best solar farms.Source: ITK, AEMO ISP</p>
-<p>For some colour relief and a more pleasing to the eye but generally abstract figure shows the correlation of each of the 80 wind and solar zones with each other. Perhaps as someone suggested it would make a good corporate symbol</p>
-<p><a href="media/media/image7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="media/media/image7.png" style="width:6.26389in;height:3.89375in"></a></p>
-<p>Figure 7 Renewable energy correlation. Source: ITK , AEMO ISP</p>
+<p>In the map there are about 10 GW of mostly wind projects, mostly with high quality developers and owners capable of financing the projects and to date with a community that can see the benefits as well as the cost.</p>
+<p>Despite having Project Energy Connect (PEC), eventually VNI West and the PEC to Humelink connection there isn’t nearly enough transmission capacity to move even half that power. I’ve already written that in my view it’s not too late to make the Western Renewables Link and VNI West larger and to use the Riverina as a cheaper source of power for Victorians than the likely excessively expensive offshore wind, but Victoria is not for changing.</p>
+<p>So it seems to me the only way to get more use of the relatively cheap wind resource is to bring the load to the power.</p>
+<p>A data centre located around say the Dinawan wind farm site (near the Dinawan substation) would be about 2 hours from Wagga airport.</p>
 </section>
-<section id="the-optimisation-process" class="level1">
-<h1>The optimisation process</h1>
-<p>The problem is to find the weights for each zone in the portfolio of wind and solar zones that maximises the sharpe ratio of the portfolio. There are at least two ways of doing this that I know of. The first way is just to run a loop that throws random weights at the portfolio and then choose the one with the best Sharpe ratio. There is nothing inherently wrong with this method. The second way and what I did is to use some kind of “solver” engine. I used a solver available as part of the scipi python package . It took 20 minutes and 3000 iterations to find its “best” set of weights which were constrained to be between 0 and 1 and to sum to 1.</p>
-<p>The following figure shows the Sharpe ratio for every REZ wind/solar combo as well as for the existing utility wind and solar farms and finally the “Optimised” portfolio. You can see that the Optimised portfolio performs about twice as well as the exising NEM portfolio and the existing NEM portfolio beats any existing individual REZ. As it turns out the yellow bars are the solar farms and the blue bars the wind farms. Again you can see the uniformity of the solar farms on this scale.</p>
+<section id="delivered-power-cost-maybe-a107mwh" class="level2">
+<h2 class="anchored" data-anchor-id="delivered-power-cost-maybe-a107mwh">Delivered power cost maybe A$107/MWh</h2>
+<p>Wind in the region likely costs around A$100/MWh at the wind site with a capacity factor of say 40%. Solar capacity factors are also likely to be good maybe 25%. Firming power would be taken from the grid. Maybe you need a battery to act as a buffer.</p>
+<p>Experience is showing that LLMs doing training can suddenly stop even if only briefly basically because their information input needs to be coordinated and there is a coordination issue. So the grid can experience an immediate, no warning, loss of load. As in examples, like transmission failure or a coal generator tripping, a battery acts as a shock absorber. Such a battery may be necessary no matter where a datacentre of 100 MW or larger is located.</p>
+<p>In this exercise I took the wind and solar traces from the 2024 ISP. However the Riverina wind trace comes to a capacity factor of 28%. It’s widely believed that this is an underestimate given higher hub heights and the flat terrain, which means few wind obstructions. So I gross up the wind capacity factor to 39% by multiplying the half hourly traces by a scaling factor. This retains all the variability but lifts the mean. 39% is high by the standards of operating wind farms but they are impacted by economic and network curtailment. The whole idea of taking load to generation is to minimise curtailment and transmission costs.</p>
+<p>Given the wind and solar output I did an optimisation to find the combination of wind and solar which would deliver on average 100 MW. <strong>That turned out to require 280 MW (198 MW wind and 83 MW solar)</strong> for a minimum variance portfolio if it was coming from the one REZ</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="media/media/image8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Chart, histogram Description automatically generated"><img src="media/media/image8.png" style="width:7.1832in;height:3.28739in" alt="Chart, histogram Description automatically generated" class="figure-img"></a></p>
-<figcaption>Chart, histogram Description automatically generated</figcaption>
+<p><a href="../media/image-20250709125711025.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="solar wind trade. Source:ITK"><img src="../media/image-20250709125711025.png" class="img-fluid figure-img" alt="solar wind trade. Source:ITK"></a></p>
+<figcaption>solar wind trade. Source:ITK</figcaption>
 </figure>
 </div>
-<p>Figure 8 Sharpe ratios for REZs and for existing NEM portfolio and Optimised. Source: ITK, AEMO ISP</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20250709125907945.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="100MW average production. Source:ITK"><img src="../media/image-20250709125907945.png" class="img-fluid figure-img" alt="100MW average production. Source:ITK"></a></p>
+<figcaption>100MW average production. Source:ITK</figcaption>
+</figure>
+</div>
+<p>The next step was to look at the actual half hourly traces of wind and solar using the ISP 11 reference years and assigning LCOEs to wind and solar, the cost of purchased electricity when there is a short fall and the price received for excess generation when there is a surplus. In this limited desktop study I came up with about $107/MWh as shown in the following waterfall chart.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20250709130123407.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="weighted average cost electricity in Riverina, 100 MW flat load. Source:ITK"><img src="../media/image-20250709130123407.png" class="img-fluid figure-img" alt="weighted average cost electricity in Riverina, 100 MW flat load. Source:ITK"></a></p>
+<figcaption>weighted average cost electricity in Riverina, 100 MW flat load. Source:ITK</figcaption>
+</figure>
+</div>
+<p>In this exercise no allowance is made for transmission other than the transmission cost implied in buying power from the grid for $140/MWh. If you look at the over the day average output you can see that the short fall tends to occur in the evening peak and so the cost of buying power then may well be over $140/MWh and therefore you might have a case for adding a battery into the mix. The battery would earn a return by storing excess power to minimise grid purchases and maybe getting a better price than $70 for sales to the grid. I haven’t done that analysis. Additionally the battery provides some insurance capability and acts as discussed earlier as a buffer. Because of this secondary role I might prefer a 100 MW /1 hour battery rather than a 25 MW/4 hour battery. Again that’s separate analysis.</p>
+<p>I don’t really know that much about exactly how all these factors work together in determining where to build a data centre but I do think you could get a relatively cheap by global standards price. After all that’s about US$70 /MWh. New combined cycle gas generation in the USA has a capital cost of US$2-$2.5 m/MW and the gas isn’t free and the capacity factor isn’t 100% and you still have to back it up.</p>
+<p>You would have to factor in the cost of getting the fibre optical cable there, but according to the research I read, latency in a data centre particularly an LLM style one is not a deal breaker.</p>
+</section>
+<section id="llm-research" class="level2">
+<h2 class="anchored" data-anchor-id="llm-research">LLM research</h2>
+<p>ITK used ChatGPT’s research tools to prepare</p>
+<ol type="1">
+<li><a href="https://itkservices3.com/background/subsea_cables.html">report</a> on subsea optical cable connections and capacity</li>
+<li><a href="https://itkservices3.com/background/datacentre_locationfactors.html">report</a> on data centre location factors in particular why some mega centres are located remotely but most centres are located around or in capital cities</li>
+</ol>
+<p>I am no expert on data centres so these reports should be treated with caution. However I did verify some content from the references provided and I’m satisfied that for a brief on the topics they are ok</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../media/image-20250709174704767.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Illustration"><img src="../media/image-20250709174704767.png" class="img-fluid figure-img" alt="Illustration"></a></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
+<script data-isso="//comentario3.itkservices2.com/" data-isso-css="true" data-isso-css-url="null" data-isso-lang="en" data-isso-max-comments-top="10" data-isso-max-comments-nested="5" data-isso-reveal-on-click="5" data-isso-avatar="false" data-isso-avatar-bg="#f0f0f0" data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6 ..." data-isso-vote="true" data-isso-vote-levels="" data-isso-page-author-hashes="f124cf6b2f01,7831fe17a8cd" data-isso-reply-notifications-default-enabled="false" src="https://comentario3.itkservices2.com/js/embed.min.js"></script>
+        <section id="isso-thread" data-title="Test tag"></section>
+   
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
