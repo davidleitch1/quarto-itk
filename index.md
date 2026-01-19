@@ -25,8 +25,12 @@ format:
  <iframe src='https://gauge.itkservices2.com' width='500' height='350' frameborder='0'></iframe>
 
 <!-- Ocean Heat Image -->
-![Ocean heat content compared to energy production](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
+![Hmm](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
+
+### 19 January
+
+There are number of areas where I think Australia could sharpen up its data reporting. These include comparative global electricity prices, RIN statements for electricity distributors and even carbon emissions, today's gripe, where we still only have preliminary data to September 2025.
 
 ### 14 January
 
