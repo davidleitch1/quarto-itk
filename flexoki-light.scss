@@ -1,0 +1,233 @@
+/*-- scss:defaults --*/
+
+// Flexoki Light color palette
+$paper: #FFFCF0;
+$paper-dark: #F2F0E5;
+$paper-darker: #E8E4D9;
+$text: #100F0F;
+$text-muted: #6F6E69;
+$text-faint: #B7B5AC;
+
+// Accent colors
+$cyan: #24837B;
+$cyan-light: #3AA99F;
+$orange: #BC5215;
+$green: #66800B;
+$purple: #5E409D;
+$blue: #205EA6;
+$yellow: #AD8301;
+$red: #AF3029;
+$magenta: #A02F6F;
+
+// Bootstrap variable overrides
+$body-bg: $paper;
+$body-color: $text;
+$link-color: $cyan;
+$link-hover-color: $cyan-light;
+
+// Typography - using Inter for body, system fallbacks
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, Consolas, monospace;
+
+$headings-color: $text;
+$headings-font-weight: 600;
+
+// Code styling
+$code-color: $orange;
+$code-bg: $paper-dark;
+
+// Table styling
+$table-bg: transparent;
+$table-border-color: $paper-darker;
+$table-striped-bg: $paper-dark;
+
+// Navbar
+$navbar-bg: $cyan;
+$navbar-fg: $paper;
+
+/*-- scss:rules --*/
+
+// Font face declarations for local fonts
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Warm paper background throughout
+body {
+  background-color: $paper;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  color: $text;
+  font-weight: 600;
+}
+
+// Links with cyan accent
+a {
+  color: $cyan;
+  text-decoration: none;
+
+  &:hover {
+    color: $cyan-light;
+    text-decoration: underline;
+  }
+}
+
+// Blockquotes with cyan left border
+blockquote {
+  border-left: 4px solid $cyan;
+  padding-left: 1em;
+  color: $text-muted;
+  background-color: $paper-dark;
+  padding: 0.75em 1em;
+  margin: 1em 0;
+}
+
+// Code blocks
+pre {
+  background-color: $paper-dark;
+  border: 1px solid $paper-darker;
+  border-radius: 4px;
+}
+
+code {
+  color: $orange;
+  background-color: $paper-dark;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+pre code {
+  color: $text;
+  background-color: transparent;
+  padding: 0;
+}
+
+// Tables - clean styling
+table {
+  background-color: transparent;
+
+  th {
+    background-color: $paper-dark;
+    color: $text;
+    font-weight: 600;
+  }
+
+  td {
+    border-bottom: 1px dotted $paper-darker;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+// Horizontal rules
+hr {
+  border-color: $paper-darker;
+}
+
+// Selection highlighting
+::selection {
+  background-color: rgba($cyan, 0.2);
+}
+
+// Sidebar and TOC
+.sidebar {
+  background-color: $paper-dark;
+}
+
+.sidebar-navigation a {
+  color: $text;
+
+  &:hover, &.active {
+    color: $cyan;
+  }
+}
+
+// Navbar override for warm accent
+.navbar {
+  background-color: $cyan !important;
+}
+
+// Callouts
+.callout {
+  border-left-color: $cyan;
+}
+
+.callout-note {
+  border-left-color: $blue;
+}
+
+.callout-warning {
+  border-left-color: $yellow;
+}
+
+.callout-important {
+  border-left-color: $red;
+}
+
+.callout-tip {
+  border-left-color: $green;
+}

@@ -1,8 +1,9 @@
 project:
   type: website
-  resources: 
+  resources:
     - "sub_thanks.html"
     - "green_iron/ironcalc.html"
+    - "fonts/*"
 
 website:
   title: "ITK Research" 
@@ -68,10 +69,7 @@ website:
 
 format:
   html:
-    theme:
-      dark: darkly
-      light: cosmo
-    mainfont: verdana
+    theme: flexoki-light.scss
     fontsize: 1.1em
     linestretch: 1.7
     css: styles.css
