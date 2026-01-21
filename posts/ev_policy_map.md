@@ -23,6 +23,8 @@ In this note we cover what policy works and the sequencing that Australia's EV s
 
 China has provided arguably between US\$200 bn and US\$300 bn of subsidies to its EV car manufacturers. The ethics of this are one thing but Australia should take advantage of those subsidies to accelerate EV adoption in Australia. Effectively, China pays for our cars. We shouldn't look this gift horse in the mouth—just use Australian policy to accelerate adoption.
 
+One policy option that emerges from this research is to exempt EVs from GST.
+
 ![Oil imports value](../media/image-20260121091748742.png){#fig-oil-imports}
 
 ## No carbon price but lots of Federal Policy
@@ -142,9 +144,11 @@ Looking at the TV you might think the USA is the only country in the world, but 
 | Vietnam | — | ~\$4,000 (consumption tax diff) | Registration ~\$6,000 | **~\$10,000** |
 | Thailand | ~\$4,000 | ~\$2,000 (excise differential) | Import duty reduction | **~\$6,000** |
 | Netherlands | — | High (BPM tax differential) | LEZ access, parking | **~\$15,000+** |
-| Australia | — | ~\$9,000 (FBT, if eligible) | — | **\$0–9,000** |
+| Australia | — | ~\$9,000 (FBT, if eligible) | No GST or rego exemption | **\$0–9,000** |
 
 *Source: Author compilation from country sources. Values are indicative and vary by vehicle price and buyer circumstances.*
+
+**Note on Australia**: Unlike Norway (25% VAT exemption) and Denmark (registration tax exemption), Australia offers no exemption from GST (10%) or registration fees for EVs. A GST exemption would save ~\$4,500 on a \$50,000 EV and align with the tax-exemption approach that has driven high adoption elsewhere.
 
 ### Key Research Conclusions
 
@@ -166,13 +170,17 @@ Looking at the TV you might think the USA is the only country in the world, but 
 
 ### The Key Lesson
 
-The high-adoption markets share a common feature: **they make ICE vehicles expensive, not just EVs cheap**. Norway's 70% tax on ICE vehicles, Denmark's 150%+ registration tax, and China's license plate restrictions all create sustained price signals that direct subsidies cannot match.
+The high-adoption markets share a common feature: **they exempted EVs from pre-existing high taxes on vehicles**. Norway's 25% VAT and 45% registration tax, Denmark's 150%+ registration tax, and China's license plate restrictions all predated EV policy—some by decades. Norway taxed cars as "luxury goods" from the 1960s; Denmark's registration tax dates to 1924. These countries didn't introduce new punitive taxes on ICE vehicles—they leveraged existing ones by exempting EVs.
+
+This distinction matters for Australia. Behavioural research shows punishments have 2-3x the impact of rewards, but political research shows the opposite for acceptability: subsidies are seen as "giving money" while taxes are seen as "taking money." Australia's carbon tax experience confirms this asymmetry. The politically feasible path is exemption from existing taxes, not new taxes on ICE.
+
+**Australia's opportunity**: A GST exemption for EVs would mirror the VAT exemptions that drove adoption in Norway and the EU. At 10%, it's smaller than Norway's 25% VAT, but on a \$50,000 EV it would save ~$4,500—a meaningful incentive.
 
 ### Country-by-Country Insights
 
-**Norway (92%)** — Thirty years of policy consistency with no domestic car industry to protect. The key is *high ICE taxation* (70%+ of vehicle price), not just EV incentives. Removing tax exemptions would drop EV share from 66% to 25%. Bus lane access and toll exemptions provide daily reinforcement of EV benefits.
+**Norway (92%)** — Thirty years of policy consistency with no domestic car industry to protect. The key is exemption from *pre-existing high taxes* (25% VAT + 45% registration tax dating from the 1960s). Removing tax exemptions would drop EV share from 66% to 25%. Bus lane access and toll exemptions provide daily reinforcement.
 
-**Denmark/Netherlands (55-67%)** — Tax differential approach: making ICE expensive through registration taxes rather than making EVs cheap through subsidies. No direct subsidies required—the tax system does the work. Netherlands has Europe's highest charging density.
+**Denmark/Netherlands (55-67%)** — Tax differential through exemption: EVs avoid registration taxes that have applied to vehicles since 1924 (Denmark) and high BPM taxes (Netherlands). No direct subsidies required—exemption from pre-existing taxes does the work. Netherlands has Europe's highest charging density.
 
 **China (51%)** — Scale plus mandate. The Dual Credit System forces manufacturers to produce EVs or buy credits from competitors—they cannot simply pay a fine. License plate restrictions in major cities (Shanghai plate costs ~\$20,000 at auction, NEV plates are free) provide powerful city-level incentives. Per-vehicle subsidies have *declined* from \$13,860 (2018) to under \$4,600 (2023) as the market matured.
 
