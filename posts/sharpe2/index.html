@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Paul Bandarian, David Leitch">
+<meta name="dcterms.date" content="2024-02-08">
+
+<title>Sharpe Ratio capital cost with firming – ITK Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../ITK_logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-485e50d28d76f17c9a54ab231639fb97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-f9f99e9f92a7e94224d7c17645ae6320.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Sharpe Ratio capital cost with firming – ITK Research">
+<meta property="og:description" content="Electricity markets analysis">
+<meta property="og:image" content="https://itkservices3.com/posts/sharpe2/media/media/image9.png">
+<meta property="og:site_name" content="ITK Research">
+<meta property="og:image:height" content="1019">
+<meta property="og:image:width" content="669">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../ITK_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ITK Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dashboards-(load-slow" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dashboards (load slow)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dashboards-(load-slow">    
+        <li>
+    <a class="dropdown-item" href="../../IEA.html">
+ <span class="dropdown-text">IEA-electricity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../nemgen.html">
+ <span class="dropdown-text">NEM-ITK</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../forecast.html">
+ <span class="dropdown-text">AEMO demand fcst</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">more</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../../green_iron/index.html">
+ <span class="dropdown-text">Green Iron</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../presentations.html">
+ <span class="dropdown-text">Presentations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../background.html">
+ <span class="dropdown-text">Background notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../energyinsiders.html">
+ <span class="dropdown-text">Energy Insiders</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../posts.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../mailchimp.html"> 
+<span class="menu-text">Signup</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Sharpe Ratio capital cost with firming</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Market Analysis</div>
+                <div class="quarto-category">Renewable Technology</div>
+                <div class="quarto-category">Economics &amp; Investment</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Paul Bandarian, David Leitch </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 8, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#isp-vs.-2024-isp" id="toc-isp-vs.-2024-isp" class="nav-link" data-scroll-target="#isp-vs.-2024-isp">2022 ISP vs.&nbsp;2024 ISP</a></li>
+  <li><a href="#sharpe-ratio-optimized-vre-portfolio" id="toc-sharpe-ratio-optimized-vre-portfolio" class="nav-link" data-scroll-target="#sharpe-ratio-optimized-vre-portfolio">Sharpe-Ratio-Optimized VRE Portfolio</a>
+  <ul class="collapse">
+  <li><a href="#sharpe-ratio-and-portfolio-diversification" id="toc-sharpe-ratio-and-portfolio-diversification" class="nav-link" data-scroll-target="#sharpe-ratio-and-portfolio-diversification">Sharpe Ratio and Portfolio Diversification</a></li>
+  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result</a></li>
+  </ul></li>
+  <li><a href="#state-demand-vs.-generation" id="toc-state-demand-vs.-generation" class="nav-link" data-scroll-target="#state-demand-vs.-generation">State Demand vs.&nbsp;Generation</a></li>
+  <li><a href="#sub-regional-demand" id="toc-sub-regional-demand" class="nav-link" data-scroll-target="#sub-regional-demand">Sub-Regional Demand</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
+  <li><a href="#sensitivity-analysis" id="toc-sensitivity-analysis" class="nav-link" data-scroll-target="#sensitivity-analysis">Sensitivity Analysis</a></li>
+  <li><a href="#vre-portfolio-capacity" id="toc-vre-portfolio-capacity" class="nav-link" data-scroll-target="#vre-portfolio-capacity">VRE Portfolio Capacity</a></li>
+  <li><a href="#wind-to-solar-ratio" id="toc-wind-to-solar-ratio" class="nav-link" data-scroll-target="#wind-to-solar-ratio">Wind to Solar Ratio</a></li>
+  <li><a href="#optimized-system" id="toc-optimized-system" class="nav-link" data-scroll-target="#optimized-system">Optimized System</a></li>
+  <li><a href="#key-assumptions-limitations" id="toc-key-assumptions-limitations" class="nav-link" data-scroll-target="#key-assumptions-limitations">Key Assumptions / Limitations</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>As we were reminded (several times) in AEMO’s 2024 Draft Integrated System Plan (ISP), <em>“Renewable energy connected by transmission, firmed with storage and backed up by gas is the lowest cost way to supply electricity to homes and businesses throughout Australia’s transition to a net zero economy</em>”.</p>
+<p>In light of AEMO’s assertion, starting with a fresh sheet of paper we built a maximum Sharpe ratio wind and solar portfolio, added in existing behind the meter and firmed it with batteries, hydro and gas to meet NEM-wide operational demand for the calendar year 2025. Professor William Sharpe won a Nobel prize in 1990 for his contributions to the Capital Asset Pricing Model (CAPM) in finance and also developed the so-called Sharpe Ratio. The key insights of Sharpe and his colleagues was to show that a portfolio of shares would have a lower variability for a given return than any individual stock. A corollary is that it’s the contribution of the stock to the portfolio that matters rather than the merits of the stock in isolation. It seemed to us that these concepts were applicable to wind and solar. A portfolio of wind and solar farms will have a lower variation for a given capacity factor than individual projects. The Sharpe ratio for wind and solar projects is operationalised as the expected capacity factor/divided by standard deviation.</p>
+<p>Using Python and an optimiser and AEMO half hourly REZ traces for wind and solar we built a 1 MW maximum Sharpe ratio portfolio and then using AEMO half hourly demand forecasts scaled the portfolio so that total demand equalled total supply. Then we calculated sequential half hourly demand and supply balance resulting in either energy available for storage or firming required. Enough firming was provided so that demand was met in every half hour for CY 2025. We then applied capital costs, and in the case of gas fuel costs, to build up the total cost of the system and then ran sensitivity tests with the objective of minimising total system cost. Our work remains at an early stage, even though in Leitch’s case he’s been developing this concept for more than four years. A glaring, but soon to be remedied element of this thought experiment is that transmission costs are not yet included. Once they are we expect the optimal solution to change. To the extent this work has any value it’s in comparing what a theoretical new system might look like with the existing system. Above all the exercise shows the benefit of diversification of renewable resource but, because of transmission, the cost of achieving it. Another epiphany is that optimisation in the use of storage assets can greatly reduce the overall cost.</p>
+<p>As part of the work, we take advantage of new data provided with the ISP 2024 data set such as sub regional demand and also briefly compared the 2024 ISP demand forecast with that of 2022.</p>
+</section>
+<section id="key-takeaways" class="level1">
+<h1>Key Takeaways</h1>
+<ul>
+<li><p>Industry lore of 75% wind / 25% solar holds (almost) true in our VRE portfolio optimization exercise. We incentivised a model to generate a solar/wind portfolio from AEMO’s Renewable Energy Zones (REZ’s) that maximizes its return relative to risk (Sharpe ratio), and no constraints were placed on the proportion of wind and solar, nor the geographical distribution of the generation. The generated portfolio came to 77% wind, 23% solar. Indeed, in subsequent sensitivity analyses, varying the wind to solar ratio either side of this optimum increased the long-term costs of the system (capital + fuel + firming dispatch). Increasing solar % of the portfolio decreases the upfront costs, but significantly increases firming capacity requirements and expenditure on fuel for firming gas generation over time.</p></li>
+<li><p>Generation in this Sharpe-ratio optimized portfolio is very heavily weighted to Far North Queensland. This portfolio sees Qld, SA, and Tas being net exporters, NSW and Vic net importers of energy. Given the location of the demand centres, it is highly likely that an optimized system which accounts for transmission costs will shift generation further South.</p></li>
+<li><p>The optimized VRE + Firming Capacity system modelled in this analysis requires:</p>
+<ul>
+<li><p><strong><em>56 GW</em></strong> of <em>Variable Renewable Energy capacity</em> supplying <strong><em>160 TWh</em></strong> of energy in 2025,</p></li>
+<li><p><strong><em>15 GW</em></strong> / <strong><em>4 hours</em></strong> of <em>storage capacity</em> supplying <strong><em>3 TWh</em></strong> of energy in 2025,</p></li>
+<li><p><strong><em>7.5 GW</em></strong> / <strong><em>14TWh</em></strong> of (existing) <em>Hydro</em>, and</p></li>
+<li><p><strong><em>8 GW</em></strong> of <em>open cycle gas</em> supplying <strong><em>4 TWh</em></strong> of energy in 2025.</p></li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>The total capital (excluding Hydro) is <strong><em>$169 billion</em></strong>. The VRE cost is <strong><em>$123 billion</em></strong>, and gas firming capacity cost <strong><em>$46 billion</em></strong>.</p>
+</blockquote>
+<ul>
+<li>The amount of battery storage required is dependent on the order in which firming resources are used. If Batteries are dispatched first the seasonal nature of VRE production means that there will be large surpluses at times but also very large deficits. If dispatched last the batteries spend too much time at full capacity with surplus VRE wasted. Realistically there is a large incentive to discharge full batteries when sunlight is abundant. By dispatching batteries first in Summer but last in winter, an additional <strong><em>2.6 TWh</em></strong> of additional energy can be supplied by batteries instead of gas. Refining the dispatch algorithm seems to offer the promise of further reducing the overall theoretical cost.</li>
+</ul>
+</section>
+<section id="isp-vs.-2024-isp" class="level1">
+<h1>2022 ISP vs.&nbsp;2024 ISP</h1>
+<p>The 2024 ISP generally forecasts higher rooftop PV compared with the 2022 ISP. This gap starts relatively small (around 2023-2025) and significantly widens over time. According to the AEMO 2024 Draft ISP <em>“Consumer Energy Sources are forecasted to be taken up even faster than before, with 18GW more rooftop solar by 2050 under Step Change compared to the 2022 ISP”</em>. Increased EV uptake also significantly bumps daytime total demand, as consumers leverage increased rooftop solar to charge their cars.</p>
+<p><img src="media/media/image1.png" style="width:7.20833in;height:2.79097in"><img src="media/media/image2.png" style="width:7.20833in;height:2.79097in"></p>
+<p>Figure 1 – 2024 ISP demand forecast compared to 2022 forecast by time of day in 2050 (Source: <em>AEMO 2022 ISP and 2024 Draft ISP)</em></p>
+</section>
+<section id="sharpe-ratio-optimized-vre-portfolio" class="level1">
+<h1>Sharpe-Ratio-Optimized VRE Portfolio</h1>
+<section id="sharpe-ratio-and-portfolio-diversification" class="level2">
+<h2 class="anchored" data-anchor-id="sharpe-ratio-and-portfolio-diversification">Sharpe Ratio and Portfolio Diversification</h2>
+<p>Using 2022 ISP wind and solar half hourly traces from 2023/07/01 – 2052/06/30 (508464 datapoints) we generated a VRE portfolio that maximizes return (mean REZ capacity factor) relative to risk (standard deviation of REZ capacity factors). In other words, weights are distributed across the REZ’s in order to maximize the portfolio’s Sharpe ratio. While our optimizer doesn't impose geographical distribution constraints, the Sharpe ratio inherently encourages diversification across REZ's by forcing it to reduce portfolio volatility. For instance, when wind is subdued in Far North Queensland (Q1), it may be blowing a gale in Tasmania, but probably not in the North Qld Clean Energy Hub (Q2). Indeed, a 50% Q1 wind / 50% Q2 wind portfolio has a lower Sharpe ratio than 50% Q1 wind / 50% T1 wind (0.95 compared to 1.03), to provide a very simple example. For the same reason, the Sharpe ratio incentivises a mix of solar and wind – the wind still blows while the sun doesn’t shine – even though wind on average has a much higher average capacity factor than solar.</p>
+</section>
+<section id="result" class="level2">
+<h2 class="anchored" data-anchor-id="result">Result</h2>
+<p>Figure 2 shows how the Sharpe-ratio optimized portfolio is distributed across the states and between solar and wind. It is heavily weighted to Far North Queensland (REZ Q1), with 12.2% of the entire portfolio in Q1 wind and 5.4% in Q1 solar. Figure 7 illustrates how the weights are distributed across the REZ’s. Conceptually, the optimization algorithm has sought out a high capacity-factor wind REZ and heavily weighted towards that, while still allocating the rest of its weight <em>relatively</em> evenly across the country. Also note that the Queensland REZ’s are spread over a wider range of latitudes than the REZ’s in other states. The portfolio sees Queensland as by far the biggest generator and has a wind to solar ratio that is line with industry lore, 77% wind, 23% solar (lore ~ 75, 25).</p>
+<p>It’s worth noting that during a quick VRE portfolio cost minimization exercise – algorithm was incentivised to minimize total capital cost of VRE portfolio – with the constraints (1) NEM OPSO demand is met and (2) a minimum Sharpe ratio was exceeded: Q1 was weighted even more heavily (&gt; 30% of total portfolio). Again, this makes sense conceptually. As we reduce the incentive of the optimizer to increase the Sharpe ratio, its incentive to diversify the portfolio diminishes, leading to a greater emphasis on high-capacity-factor REZ’s. In this case, the algorithm cares more about maximizing capacity factors and minimizing cost / MW of generation than it does maximizing the stability of the system.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A screen shot of a graph Description automatically generated"><img src="media/media/image5.png" style="width:6.88056in;height:4.27361in" alt="A screen shot of a graph Description automatically generated" class="figure-img"></a></p>
+<figcaption>A screen shot of a graph Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 2 – Tree map of Sharpe-Ratio Optimized Portfolio Distribution</p>
+<p><strong><u><br>
+</u></strong></p>
+</section>
+</section>
+<section id="state-demand-vs.-generation" class="level1">
+<h1>State Demand vs.&nbsp;Generation</h1>
+<p>Queensland, SA, and Tasmania will be net exporters and Victoria and New South Wales net importers of energy based on our VRE portfolio and 2025 operational demand. The net importers happen to be the states with densest population, by a significant margin, see Figure 3. Logically, this net import/export status is <em>partially</em> explained by having less land available for high quality renewable energy generation per (energy-consuming)-capita in the densely populated states.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A graph of numbers and lines Description automatically generated with medium confidence"><img src="media/media/image6.png" style="width:5.00694in;height:3.01389in" alt="A graph of numbers and lines Description automatically generated with medium confidence" class="figure-img"></a></p>
+<figcaption>A graph of numbers and lines Description automatically generated with medium confidence</figcaption>
+</figure>
+</div>
+<p>Figure 3 – Net Energy Balance and Population Density by State 2025 (Source: <em>AEMO 2022 ISP</em>)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="A graph of different colored bars Description automatically generated"><img src="media/media/image7.png" style="width:4.66042in;height:3.38056in" alt="A graph of different colored bars Description automatically generated" class="figure-img"></a></p>
+<figcaption>A graph of different colored bars Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 4 – Demand and Generation by State 2025 (Source: <em>AEMO 2022 ISP</em>)</p>
+<p>It is also explained by the quality of renewable energy in each of the states. Vic and NSW’s REZ’s have the lowest mean capacity factors, highest CFs are in Tasmania and Queensland. Figure 5.</p>
+<table class="table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>State</strong></th>
+<th style="text-align: left;"><strong>Mean Capacity Factor</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Tasmania</td>
+<td style="text-align: left;">0.333</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Queensland</td>
+<td style="text-align: left;">0.327</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">South Australia</td>
+<td style="text-align: left;">0.313</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New South Wales</td>
+<td style="text-align: left;">0.304</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Victoria</td>
+<td style="text-align: left;">0.294</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 5 – State average Renewable Energy Capacity Factors (Source: <em>AEMO 2022 ISP</em>)</p>
+</section>
+<section id="sub-regional-demand" class="level1">
+<h1>Sub-Regional Demand</h1>
+<p>Figure 6 shows how heavily NEM demand is weighted towards the NEM’s lower latitudes (Sydney-Newcastle-Wollongong and Victoria subregions alone make up &gt; 50% of NEM demand in 2025).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="A graph of a number of people Description automatically generated with medium confidence"><img src="media/media/image8.png" style="width:5.02708in;height:3.36667in" alt="A graph of a number of people Description automatically generated with medium confidence" class="figure-img"></a></p>
+<figcaption>A graph of a number of people Description automatically generated with medium confidence</figcaption>
+</figure>
+</div>
+<p>Figure 6 – 2025 OPSO Demand by NEM Subregion (Source: <em>AEMO 2024 Draft ISP</em>)</p>
+<p>To contextualize the distance between our VRE portfolio generation and demand centres, Figure 7 illustrates demand by sub-region alongside VRE portfolio generation on an Australian map. The significant distance between the highest generating REZ's and the highest-demand sub-regions underscores the need to incorporate associated transmission costs in future iterations of portfolio optimization. Given the considerable distance of the Far North Queensland REZ from major demand centres, transmission costs are likely to redirect a lot of this energy generation further South.</p>
+<p><strong><u><br>
+</u></strong></p>
+<p><a href="media/media/image9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="media/media/image9.png" style="width:5.41641in;height:8.25in"></a></p>
+<p>Figure 7 – Sharpe-Optimized Portfolio Generation (Source: <em>AEMO 2022 ISP</em>) and AMEO Sub-Regional Demand (Source: <em>AEMO 2024 Draft ISP</em>)</p>
+</section>
+<section id="method" class="level1">
+<h1>Method</h1>
+<p>A system was then designed to meet the NEM operational (OPSO) demand for every half-hour period of the 2025 calendar year. ISP 2022 half hourly demand traces for CY 2025 were used, 17520 datapoints. We have assumed that energy flows freely from the REZ’s through to the demand centres as required and assumed no transmission losses. A transmission network will be modelled, and the cost of this transmission incorporated in <em>future iterations</em> of this analysis. We then firm renewable energy generation with storage capacity, pumped hydro, and open cycle gas, per the following dispatch order.</p>
+<ul>
+<li><p>Solar/wind energy is dispatched first. Where combined solar/wind generation exceeds NEM demand, the energy is used to charge up storage, or spilt when storage capacity is exceeded. For simplicity, we have assumed a round trip efficiency of 100%.</p></li>
+<li><p>For any half-hour period where NEM demand cannot be met by solar/wind:</p></li>
+</ul>
+<ol type="1">
+<li><p>In the months September through February, draw energy from storage if state of charge (SOC) greater than 80% capacity. Discharge as required until capacity &lt; 10%. Figure 8 shows the impact of dispatching battery first in the summer months.</p></li>
+<li><p>Dispatch Hydro. We’ve assumed 7.5 GW and capacity of 14 TWh that can be drawn down at a cost of $5 / MWh.</p></li>
+<li><p>Dispatch open cycle gas. We increase modelled gas capacity to ensure that demand is met in every period.</p></li>
+<li><p>Dispatch storage, if not already dispatched in step 1, above. March through August we save storage until last in the dispatch order to firm hydro/gas in the case of renewable energy “droughts”. This ensures that battery capacity isn’t low when the NEM experiences long “negative runs” where demand exceeds VRE generation. Storage capacity is set to 4 hours at 15.4 GW<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Further optimization of storage capacity is planned in future analysis work.</p></li>
+</ol>
+<table class="table">
+<colgroup>
+<col style="width: 46%">
+<col style="width: 24%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Battery dispatch position</th>
+<th style="text-align: left;">Last</th>
+<th style="text-align: left;">First in Summer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gas Energy Supplied (TWh)</td>
+<td style="text-align: left;">6.647</td>
+<td style="text-align: left;">4.002</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Storage Energy Supplied (TWh)</td>
+<td style="text-align: left;">0.352</td>
+<td style="text-align: left;">2.997</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Time Storage spends full</td>
+<td style="text-align: left;">86.2%</td>
+<td style="text-align: left;">65.0%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gas Fuel Cost (millions p.a.)</td>
+<td style="text-align: left;">$ 665</td>
+<td style="text-align: left;">$ 400</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 8 – Effect of Firming Dispatch Order on Storage Supply and Gas Fuel Costs</p>
+</section>
+<section id="sensitivity-analysis" class="level1">
+<h1>Sensitivity Analysis</h1>
+<p>After modelling the above system, we conducted a sensitivity analysis to examine the impact of varying the VRE portfolio capacity and the percentage of solar in the portfolio on both the capital cost and the combined (capital + fuel) costs over 5, 10, 15, and 30 years. Note, as this is a sensitivity analysis rather than a detailed costing exercise, 2025 fuel costs were simply extrapolated out over the specified time periods rather than adjusting annual fuel costs in line with demand. Future iterations of this work will model more accurate combined costs.</p>
+<p>We assumed the following prices when calculating the capital and long-term costs of our system.</p>
+<table class="table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 31%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Price</th>
+<th style="text-align: left;">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gas Capital</td>
+<td style="text-align: left;">$ 1,200,000</td>
+<td style="text-align: left;">/MW</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Solar Capital</td>
+<td style="text-align: left;">$ 1,200,000</td>
+<td style="text-align: left;">/MW</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wind Capital</td>
+<td style="text-align: left;">$ 2,500,000</td>
+<td style="text-align: left;">/MW</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Storage Capital</td>
+<td style="text-align: left;">$ 600,000</td>
+<td style="text-align: left;">/MWh</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gas</td>
+<td style="text-align: left;">$ 100</td>
+<td style="text-align: left;">/MWh</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Storage Dispatch</td>
+<td style="text-align: left;">$ -</td>
+<td style="text-align: left;">/MWh</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hydro Dispatch</td>
+<td style="text-align: left;">$ 5</td>
+<td style="text-align: left;">/MWh</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 9 – Assumed Capital and Consumption Costs</p>
+</section>
+<section id="vre-portfolio-capacity" class="level1">
+<h1>VRE Portfolio Capacity</h1>
+<p>NEM OPSO demand in the 2025 calendar year was 181 TWh. The VRE portfolio was scaled such that generation would meet a certain percentage of this demand (i.e., 100% indicates that the VRE portfolio generates 181 TWh during the 2025 calendar year). In the case of the Sharpe-ratio optimized portfolio, VRE capacity of 56 GW was required to generate 181 TWh (20.7 GW average) over the 2025 calendar year. Generally, as the VRE portfolio capacity increases, less firming capacity is required, reducing fuel costs but increasing capital costs (1GW of wind farms cost more than 1GW of gas plants). See Figure 10. However, the ratio appears optimized when VRE is set to generate around 100% - 110% of NEM OPSO demand, i.e., at a certain point the additional fuel costs become negligible compared to the increased capital cost of more VRE. See Figure 11.</p>
+<p>A contributor is hydro capacity. With lower VRE capacity, the hydro capacity (14TWh) is exhausted at some point during the reference year; the lower the VRE capacity, the earlier hydro runs out. At 100% VRE : NEM, hydro runs out on the 5<sup>th</sup> of December, after we’ve ridden out the high-demand/low-solar of winter; gas and storage pick up the slack for the remainder of December. See Figure 16. At 110% VER : NEM we end the year with some hydro capacity remaining (3.4TWh). Further increasing the VRE portfolio beyond the 110% ratio essentially “wastes” the cheap hydro capacity in the eyes of the model/system.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="A graph of different colored lines Description automatically generated"><img src="media/media/image11.png" style="width:5.7875in;height:3.84028in" alt="A graph of different colored lines Description automatically generated" class="figure-img"></a></p>
+<figcaption>A graph of different colored lines Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 10 – VRE Portfolio Capacity: Sensitivity Analysis</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="A graph of cost of fuel and gas prices Description automatically generated"><img src="media/media/image12.png" style="width:5.00694in;height:3.01389in" alt="A graph of cost of fuel and gas prices Description automatically generated" class="figure-img"></a></p>
+<figcaption>A graph of cost of fuel and gas prices Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 11 – 5-year Cost of Hydro and Fuel for Gas Gen (Billions)</p>
+</section>
+<section id="wind-to-solar-ratio" class="level1">
+<h1>Wind to Solar Ratio</h1>
+<p>The total output of each modelled portfolio was set to NEM OPSO demand + 10% for the wind to solar ratio sensitivity analysis. The system was modelled with 0%, 23.3%, 50%, 75%, and 100% solar. This was done by scaling the solar and wind portions of the Sharpe-ratio optimized portfolio accordingly. Notably, the Sharpe-Optimized portfolio (i.e., 23.3% solar) exhibited the lowest cost over any period greater than 5 years. The effects of increasing solar were:</p>
+<ol type="1">
+<li><p>Slightly reduced capital. Capital reduction tempered by the fact that solar has lower capacity factors, so the required portfolio capacity to meet demand increases with increasing solar % of portfolio.</p></li>
+<li><p>Increased reliance on hydro/gas/storage to supply power during significant shortfall overnight and decreased daylight hours in winter, and therefore:</p></li>
+<li><p>Significantly higher gas demand and long-term fuel costs.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="A graph of different colored lines Description automatically generated"><img src="media/media/image13.png" style="width:5.55556in;height:3.72462in" alt="A graph of different colored lines Description automatically generated" class="figure-img"></a></p>
+<figcaption>A graph of different colored lines Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 12 – Solar % of VRE Portfolio: Sensitivity Analysis</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image14.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="A graph of gas required Description automatically generated"><img src="media/media/image14.png" style="width:4.76852in;height:2.92462in" alt="A graph of gas required Description automatically generated" class="figure-img"></a></p>
+<figcaption>A graph of gas required Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 13 – Open Cycle Gas Capacity Required with Increasing Solar % of VRE Portfolio</p>
+</section>
+<section id="optimized-system" class="level1">
+<h1>Optimized System</h1>
+<p>Based on the sensitivity analysis, a system with VRE portfolio scaled to meet 100% NEM OPSO demand over the 2025 calendar year was selected for further analysis. Due to Hydro running out in December in this scenario, the December dispatch order was varied, leaving storage until last (same as March-August). This ensured sufficient capacity for handling longer negative runs in December, minimizing the gas power requirements in those instances.</p>
+<p>Figure 14 summarizes the properties and performance of the optimized system over the 2025 calendar year. We have a 56 GW capacity VRE portfolio with a capital cost of $123 billion. Capital cost of firming capacity required to support this VRE portfolio is $46 billion (hydro excluded). As discussed in the sensitivity analysis, there were systems available with lower upfront cost, but once fuel costs were incorporated over 10+ years, this system was the cheapest.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image15.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="A screenshot of a computer Description automatically generated"><img src="media/media/image15.png" style="width:7.26806in;height:3.79444in" alt="A screenshot of a computer Description automatically generated" class="figure-img"></a></p>
+<figcaption>A screenshot of a computer Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 14 – Summary of Optimized System (Costs, Capacities, Energy Supplied)</p>
+<p>Figure 15 illustrates the energy supply for a 2025 average day, with firming capacity generally kicking in for the evening peak demand period and then (mostly hydro) continuing to supply overnight while solar is at zero. All pretty stock standard. Figure 16 and Figure 17 illustrate the supply seasonality. Hydro supply is highest March through August, when hydro is first (and storage last) in the firming dispatch order. Storage is highest in the months where it is at the front of the firming dispatch order.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image16.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="A graph of a diagram Description automatically generated with medium confidence"><img src="media/media/image16.png" style="width:7.0875in;height:4.99375in" alt="A graph of a diagram Description automatically generated with medium confidence" class="figure-img"></a></p>
+<figcaption>A graph of a diagram Description automatically generated with medium confidence</figcaption>
+</figure>
+</div>
+<p>Figure 15 – "Optimized" System, Average Day Supply by Source - 2025</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image17.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="A graph of a supply line Description automatically generated with medium confidence"><img src="media/media/image17.png" style="width:4.675in;height:4.47202in" alt="A graph of a supply line Description automatically generated with medium confidence" class="figure-img"></a></p>
+<figcaption>A graph of a supply line Description automatically generated with medium confidence</figcaption>
+</figure>
+</div>
+<p>Figure 16 – "Optimized" System, Total Monthly Supply by Source - 2025</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/media/image18.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="A screenshot of a graph Description automatically generated"><img src="media/media/image18.png" style="width:9.35in;height:6.67247in" alt="A screenshot of a graph Description automatically generated" class="figure-img"></a></p>
+<figcaption>A screenshot of a graph Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Figure 17 – "Optimized" System, Average Day Supply for Calendar Year 2025 by Quarter</p>
+</section>
+<section id="key-assumptions-limitations" class="level1">
+<h1>Key Assumptions / Limitations</h1>
+<ul>
+<li><p>2022 ISP demand, solar, wind trace data is used. Future iterations of this work will update all underlying data to reflect changes in the 2024 Draft ISP.</p></li>
+<li><p>Transmission costs and losses need to be incorporated in a future iteration of this work. We understand that this will prove a pivotal piece in portfolio optimization, particularly given the (potentially unrealistic) geographical distribution of our hypothetical VRE generation network in relation to the demand centres.</p></li>
+<li><p>Recommend further optimization of firming capacity dispatch order, which is currently relatively static, aside from moving storage up the order during months of increased sunlight. Once a more realistic firming capacity dispatch order algorithm is in place, storage capacity needs to be further optimized.</p></li>
+<li><p>Storage round trip efficiency needs to be incorporated.</p></li>
+</ul>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>15.4 GW of storage meets 99% of shortfall, post-VRE.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/itkservices3\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 ITK admin@itkservices.com.au</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>
