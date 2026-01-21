@@ -28,6 +28,16 @@ format:
 ![Hmm](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 21 January
+
+Australia has a massive opportunity esssentially paid for by US\$250bn of Chinese subsidies to develop a \$40 bn new export industry at zero cost. Well actually not exports but import replacement. Eliminate oil imports by electrifying transport. The policies to do it are first, build lots of high quality charging infrastructure and second eliminate GST on EVs
+
+![](./media/image-20260121174828888.png)
+
+Look how ICE cars have fallen from peak, not just due to EVs to be sure but certainly a factor. Look in Articles for a discussion.
+
+![](./media/image-20260121174950439.png)
+
 ### 19 January
 
 There are number of areas where I think Australia could sharpen up its data reporting. These include comparative global electricity prices, RIN statements for electricity distributors and even carbon emissions, today's gripe, where we still only have preliminary data to September 2025.
