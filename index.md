@@ -17,16 +17,20 @@ format:
 
 <!-- Iframe in the Right Margin -->
 
-::: {.column-margin}
-<iframe src="https://spot_prices.itkservices2.com/display_spot" 
+::: {.column-margin style="background-color: #FFFCF0;"}
+<iframe src="https://spot_prices.itkservices2.com/display_spot"
         title="Spot Prices Display"
-        style="height: 600px; width: 100%; border:none;">
+        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
 </iframe>
- <iframe src='https://gauge.itkservices2.com' width='500' height='350' frameborder='0'></iframe>
+<iframe src='https://gauge.itkservices2.com' width='500' height='350' frameborder='0' style='background-color: #FFFCF0;'></iframe>
 
 <!-- Ocean Heat Image -->
 ![Hmm](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
+
+### 25 January
+
+Transitioning to a light them "Flexloki" Might be easier on the eye, I dont think it works quite as well for dashboards and plots but the overall look may be easier on the eye.
 
 ### 21 January
 
