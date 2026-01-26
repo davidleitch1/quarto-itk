@@ -20,7 +20,7 @@ format:
 ::: {.column-margin}
 <iframe src="https://spot_prices.itkservices2.com/display_spot" 
         title="Spot Prices Display"
-        style="height: 600px; width: 100%; background:#282a36; border:none;">
+        style="height: 600px; width: 100%; border:none;">
 </iframe>
  <iframe src='https://gauge.itkservices2.com' width='500' height='350' frameborder='0'></iframe>
 
