@@ -27,7 +27,7 @@ window.onload = function() {
         title="Spot Prices Display"
         style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
 </iframe>
-<iframe src='https://gauge.itkservices2.com' width='500' height='350' frameborder='0' style='background-color: #FFFCF0;'></iframe>
+<iframe src='https://gauge.itkservices2.com' width='520' height='390' frameborder='0' scrolling='no' style='background-color: #FFFCF0; overflow: hidden;'></iframe>
 
 <!-- Ocean Heat Image -->
 ![Hmm](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
