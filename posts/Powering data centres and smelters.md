@@ -3,7 +3,7 @@ title: "Powering Data Centres and Smelters - A Government Monopoly May Be the Fu
 author: "David Leitch"
 date: 2026-01-29
 categories: ["Energy Markets"]
-image: "../media/image-20260128101504624.png"
+image: "../media/image-20260128132427898.png"
 lightbox: true
 format:
   html:
@@ -98,7 +98,7 @@ For those interested.
 
 When we add solar into the mix the optimal portfolio Sharpe Ratio increases to 4.3. However the most important outcome is that the actual NEM wide portfolio, that is all the currently operating wind and solar farms have a combined output with a relatively good Sharpe ratio, although still 50% more volatile than the best designed portfolio.
 
-![image-20260128132427898](../media/image-20260128132427898.png){#fig-solar-portfolio}
+![wind and solar frontier](../media/image-20260128132427898.png){#fig-solar-portfolio}
 
 ## In finance as in life the correct question is "who is best placed to carry the risk"
 
@@ -111,12 +111,12 @@ The wind and solar MW simply used the installed capacity in each region and in t
 There were no charging losses and for the NEM transmission was perfect, zero MLF. 
 
 Despite all these unrealistic assumptions the results, which are summarised in the figure below interested me.
-![image-20260129160655810](../media/image-20260129160655810.png){#fig-firming-summary}
+![Energy by portfolio](../media/image-20260129160655810.png){#fig-firming-summary}
 
 
 
 1. The NEM wide portfolio does require less firming energy than any region, but the Sharpe optimised portfolio can still beat that by a long way. Remember we are not working with theoretical wind and solar farms, it's a portfolio built from what's in existence today. However the measured capacity factors are net of MLF and curtailment so very hard on South Australian solar. Overall the result I expected.
-2. The lowest firming cost was the Sharpe optimised portfolio but generally the more wind and the less diversified the wind the higher the firming cost.  That's  because wind droughts are more catastrophic than solar droughts. That is wind output can drop  very low, so lots of power in MW can be required for a few days but because the wind normally blows at night as well as in the day the battery capacity utilisation is low. By contrast in a solar heavy system like QLD the battery is used every night and on average for say 18 hours a day but the total output rarely drops as low as in a wind heavy system. The Sharpe optimised portfolio avoids the wind issue because it has enough solar and the wind in Qld and in Tasmania are over weighted compared to the actual NEM totals. So again this is constructing a portfolio to supply 1 GW of flat load demand.
+2. The lowest firming cost was the Sharpe optimised portfolio but generally the more wind and the less diversified the wind the higher the firming cost.  That's  because wind droughts are more catastrophic than solar droughts. That is wind output can drop  very low, so lots of power in MW can be required for a few days but because the wind normally blows at night as well as in the day the battery capacity utilisation is low. By contrast in a solar heavy system like QLD the battery is used every day but the solar means that the droughts are less extensive. You get the  Sun virtually every day. The Sharpe optimised portfolio avoids the wind issue because it has enough solar and the wind in Qld and in Tasmania are over weighted compared to the actual NEM totals. So again this is constructing a portfolio to supply 1 GW of flat load demand.
 
 You can see the different systems and consequences in the following visualisation. Note the Victorian 43 hour battery doesn't empty in this situation because I limit the drought to 3 days. There's a fair bit to take in, in the visualisation.
 
