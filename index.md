@@ -33,6 +33,24 @@ window.onload = function() {
 ![Hmm](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
+### 30 January Few plots to finish the week. 
+
+These graphs are about futures and inflation. I'll let them speak for themselves. I also added an article on Sharpe ratios and what it means, along with the ESEM to Goverment involvement in the sector.
+
+Electricity prices are up about the same as inflation over the past decade.
+
+![](./media/image-20260130222306087.png)
+
+
+
+Futures have fallen 
+
+![](./media/image-20260130222406675.png)
+
+And arguably the market's expectations are shaped in part by spot prices. Theory basically suggests that futures should sell at a premium to spot (contango)
+
+![](./media/image-20260130222532413.png)
+
 ### 25 January
 
 Transitioning to a light them "Flexloki" Might be easier on the eye, I dont think it works quite as well for dashboards and plots but the overall look may be easier on the eye.
