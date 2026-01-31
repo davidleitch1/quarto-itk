@@ -15,11 +15,9 @@ window.onload = function() {
 };
 </script>
 
-::: {.column-screen-inset}
+:::: {.homepage-layout}
 
-<div class="homepage-layout">
-<div class="homepage-content">
-
+::: {.homepage-content}
 ### 30 January Few plots to finish the week.
 
 These graphs are about futures and inflation. I'll let them speak for themselves. I also added an article on Sharpe ratios and what it means, along with the ESEM to Goverment involvement in the sector.
@@ -35,9 +33,9 @@ Futures have fallen
 And arguably the market's expectations are shaped in part by spot prices. Theory basically suggests that futures should sell at a premium to spot (contango)
 
 ![](./media/image-20260130222532413.png)
+:::
 
-</div>
-<div class="homepage-widgets">
+::: {.homepage-widgets}
 <iframe src="https://spot_prices.itkservices2.com/display_spot"
         title="Spot Prices Display"
         style="height: 500px; width: 100%; border:none; background-color: #FFFCF0;">
@@ -47,10 +45,9 @@ And arguably the market's expectations are shaped in part by spot prices. Theory
 </iframe>
 
 ![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
-</div>
-</div>
-
 :::
+
+::::
 
 ### 25 January
 
