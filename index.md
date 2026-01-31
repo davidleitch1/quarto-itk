@@ -5,6 +5,7 @@ image: "../media/image-20241013130839540.png"
 lightbox: true
 format:
   html:
+    page-layout: full
     toc: false
 
 ---
@@ -38,10 +39,10 @@ And arguably the market's expectations are shaped in part by spot prices. Theory
 ::: {.homepage-widgets}
 <iframe src="https://spot_prices.itkservices2.com/display_spot"
         title="Spot Prices Display"
-        style="height: 500px; width: 100%; border:none; background-color: #FFFCF0;">
+        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
 </iframe>
 <iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
-        style='height: 350px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
+        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
 </iframe>
 
 ![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
