@@ -13,16 +13,22 @@
   min-width: 300px;
 }
 
-.homepage-widgets {
-  flex: 0 0 500px;
-  width: 500px;
+/* Constrain images within content column */
+.homepage-content img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Tablet: reduce widget width */
+.homepage-widgets {
+  flex: 0 0 580px;
+  width: 580px;
+}
+
+/* Tablet: keep widget width sufficient for gauge */
 @media (max-width: 1200px) {
   .homepage-widgets {
-    flex: 0 0 400px;
-    width: 400px;
+    flex: 0 0 520px;
+    width: 520px;
   }
 }
 
@@ -39,7 +45,7 @@
   .homepage-widgets {
     flex: none;
     width: 100%;
-    max-width: 500px;
+    max-width: 580px;
     margin: 0 auto 1rem auto;
   }
 }
