@@ -19,21 +19,13 @@ window.onload = function() {
 :::: {.homepage-layout}
 
 ::: {.homepage-content}
-### 30 January Few plots to finish the week.
 
-These graphs are about futures and inflation. I'll let them speak for themselves. I also added an article on Sharpe ratios and what it means, along with the ESEM to Goverment involvement in the sector.
+### 1 Feb
 
-Electricity prices are up about the same as inflation over the past decade.
+Just updated peak pricing comparison of this year and next year. Demand is up about 3% this January, prices were nevertheless well down until demand in South Australia pushed them up to the peak. Even so average prices were still below last January and the plots show the increasing impact of batteries very clearly
 
-![](./media/image-20260130222306087.png)
+![](./media/image-20260201001503845.png)
 
-Futures have fallen
-
-![](./media/image-20260130222406675.png)
-
-And arguably the market's expectations are shaped in part by spot prices. Theory basically suggests that futures should sell at a premium to spot (contango)
-
-![](./media/image-20260130222532413.png)
 :::
 
 ::: {.homepage-widgets}
@@ -49,6 +41,23 @@ And arguably the market's expectations are shaped in part by spot prices. Theory
 :::
 
 ::::
+
+### 30 January Few plots to finish the week.
+
+These graphs are about futures and inflation. I'll let them speak for themselves. I also added an article on Sharpe ratios and what it means, along with the ESEM to Goverment involvement in the sector.
+
+Electricity prices are up about the same as inflation over the past decade.
+
+![](./media/image-20260130222306087.png)
+
+Futures have fallen
+
+![](./media/image-20260130222406675.png)
+
+And arguably the market's expectations are shaped in part by spot prices. Theory basically suggests that futures should sell at a premium to spot (contango)
+
+![](./media/image-20260130222532413.png)
+
 
 ### 25 January
 
