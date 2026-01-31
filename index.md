@@ -4,9 +4,7 @@ author: "David Leitch"
 image: "../media/image-20241013130839540.png"
 lightbox: true
 format:
-  html:
-    grid:
-      margin-width: 600px
+  html: default
   docx: default
 
 ---
@@ -18,19 +16,9 @@ window.onload = function() {
 };
 </script>
 
-<!-- Iframe in the Right Margin -->
+::: {.grid}
 
-::: {.column-margin style="background-color: #FFFCF0;"}
-<iframe src="https://spot_prices.itkservices2.com/display_spot"
-        title="Spot Prices Display"
-        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
-</iframe>
-<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no' style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'></iframe>
-
-<!-- Ocean Heat Image -->
-![Hmm](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
-:::
-
+::: {.g-col-12 .g-col-md-6 .g-start-md-2}
 ### 30 January Few plots to finish the week. 
 
 These graphs are about futures and inflation. I'll let them speak for themselves. I also added an article on Sharpe ratios and what it means, along with the ESEM to Goverment involvement in the sector.
@@ -48,6 +36,22 @@ Futures have fallen
 And arguably the market's expectations are shaped in part by spot prices. Theory basically suggests that futures should sell at a premium to spot (contango)
 
 ![](./media/image-20260130222532413.png)
+
+:::
+
+::: {.g-col-12 .g-col-md-5}
+<iframe src="https://spot_prices.itkservices2.com/display_spot"
+        title="Spot Prices Display"
+        style="height: 500px; width: 100%; border:none; background-color: #FFFCF0;">
+</iframe>
+<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
+        style='height: 350px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
+</iframe>
+
+![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
+:::
+
+:::
 
 ### 25 January
 
