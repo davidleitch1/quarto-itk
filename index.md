@@ -1,8 +1,6 @@
 ---
 title: "CHATTER"
 author: "David Leitch"
-date: "2024-12-9"
-categories: [analysis, LCOE]
 image: "../media/image-20241013130839540.png"
 lightbox: true
 format:
