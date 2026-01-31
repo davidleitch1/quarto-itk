@@ -1,5 +1,44 @@
 /* css styles */
 
+/* Homepage two-column layout */
+.homepage-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.homepage-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 800px;
+}
+
+.homepage-widgets {
+  flex: 0 0 420px;
+  max-width: 100%;
+}
+
+/* Mobile: stack with widgets on top */
+@media (max-width: 991px) {
+  .homepage-layout {
+    flex-direction: column-reverse;
+  }
+
+  .homepage-content {
+    max-width: 100%;
+  }
+
+  .homepage-widgets {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
 /* Table captions - bottom, left-aligned, smaller font */
 table caption,
 caption {

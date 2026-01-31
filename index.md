@@ -4,7 +4,9 @@ author: "David Leitch"
 image: "../media/image-20241013130839540.png"
 lightbox: true
 format:
-  html: default
+  html:
+    page-layout: full
+    toc: false
   docx: default
 
 ---
@@ -16,10 +18,10 @@ window.onload = function() {
 };
 </script>
 
-::: {.grid}
+:::: {.homepage-layout}
 
-::: {.g-col-12 .g-col-md-6 .g-start-md-2}
-### 30 January Few plots to finish the week. 
+::: {.homepage-content}
+### 30 January Few plots to finish the week.
 
 These graphs are about futures and inflation. I'll let them speak for themselves. I also added an article on Sharpe ratios and what it means, along with the ESEM to Goverment involvement in the sector.
 
@@ -27,19 +29,16 @@ Electricity prices are up about the same as inflation over the past decade.
 
 ![](./media/image-20260130222306087.png)
 
-
-
-Futures have fallen 
+Futures have fallen
 
 ![](./media/image-20260130222406675.png)
 
 And arguably the market's expectations are shaped in part by spot prices. Theory basically suggests that futures should sell at a premium to spot (contango)
 
 ![](./media/image-20260130222532413.png)
-
 :::
 
-::: {.g-col-12 .g-col-md-5}
+::: {.homepage-widgets}
 <iframe src="https://spot_prices.itkservices2.com/display_spot"
         title="Spot Prices Display"
         style="height: 500px; width: 100%; border:none; background-color: #FFFCF0;">
@@ -51,7 +50,7 @@ And arguably the market's expectations are shaped in part by spot prices. Theory
 ![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
 :::
 
-:::
+::::
 
 ### 25 January
 
