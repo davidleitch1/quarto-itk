@@ -20,11 +20,15 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-### 1 Feb
+### 3 Feb
 
-Just updated peak pricing comparison of this year and next year. Demand is up about 3% this January, prices were nevertheless well down until demand in South Australia pushed them up to the peak. Even so average prices were still below last January and the plots show the increasing impact of batteries very clearly
+Ever since being introduced to behavioural finance while sitting next to a fundie on a trip back from the USA I've become more and more interested.
 
-![](./media/image-20260201001503845.png)
+The first podcast we did on the topic covered Kurt Lewin's force field theory, but I've become more and more interested in identity and groups and much influenced by Aspro Bec Colvin at ANU. Prof Colvin wrote the [seminal wor](https://espace.library.uq.edu.au/view/UQ:404281)k on how  good intentions can go wrong when planning renewable energy projects.
+
+Books I'm reading or have recently read on the topic are "Change How to make big things happen"  by Damon Centola and "Responding to Community Outrage " by Peter Sandman
+
+There is a lot to learn
 
 :::
 
@@ -41,6 +45,12 @@ Just updated peak pricing comparison of this year and next year. Demand is up ab
 :::
 
 ::::
+
+### 1 Feb
+
+Just updated peak pricing comparison of this year and next year. Demand is up about 3% this January, prices were nevertheless well down until demand in South Australia pushed them up to the peak. Even so average prices were still below last January and the plots show the increasing impact of batteries very clearly
+
+![](./media/image-20260201001503845.png)
 
 ### 30 January Few plots to finish the week.
 
