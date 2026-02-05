@@ -20,15 +20,19 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-### 3 Feb
+### 5 Feb
 
-Ever since being introduced to behavioural finance while sitting next to a fundie on a trip back from the USA I've become more and more interested.
+The ITK data downloading and analysis service got a workout today. On the positive side I received a text from the server telling me the NSW spot price had hit \$20k/MWh. Good that system is working. After the interview with Malcolm Turnbull had finished Claude and I analysed what had happened. Claude produced some excellent graphs but in the end I think it got the explanation wrong. I think what happened was a trip in the Marulan line just as demand was increasing. This lead to some power flowing South to Victoria and prices in Victoria were very low even as they were high in NSW.
 
-The first podcast we did on the topic covered Kurt Lewin's force field theory, but I've become more and more interested in identity and groups and much influenced by Aspro Bec Colvin at ANU. Prof Colvin wrote the [seminal wor](https://espace.library.uq.edu.au/view/UQ:404281)k on how  good intentions can go wrong when planning renewable energy projects.
+There were more but smaller spikes this evening as both solar and demand decline but this shows NSW around the first one. Claude did a great job really.
 
-Books I'm reading or have recently read on the topic are "Change How to make big things happen"  by Damon Centola and "Responding to Community Outrage " by Peter Sandman
+![image-20260205213215440](./media/image-20260205213215440.png)
 
-There is a lot to learn
+Where Claude went wrong was when I asked it to explain the surge in exports to Victoria. It saw a decline in Victorian generation and concluded there was a problem there. The reality was that the problem was in NSW and southern NSW generation was forced into Victoria, forcing prices down there. After I posted the wrong story on LinkedIn Ben Cerini corrected me and I now believe that this second panel tells it more or less correctly.
+
+![image-20260205213819401](./media/image-20260205213819401.png)
+
+On balance I'm far ahead of what I could have done even a year ago, and I believe any readers will also be better off because the visualisation is very effective.
 
 :::
 
@@ -45,6 +49,16 @@ There is a lot to learn
 :::
 
 ::::
+
+### 3 Feb
+
+Ever since being introduced to behavioural finance while sitting next to a fundie on a trip back from the USA I've become more and more interested.
+
+The first podcast we did on the topic covered Kurt Lewin's force field theory, but I've become more and more interested in identity and groups and much influenced by Aspro Bec Colvin at ANU. Prof Colvin wrote the [seminal wor](https://espace.library.uq.edu.au/view/UQ:404281)k on how  good intentions can go wrong when planning renewable energy projects.
+
+Books I'm reading or have recently read on the topic are "Change How to make big things happen"  by Damon Centola and "Responding to Community Outrage " by Peter Sandman
+
+There is a lot to learn
 
 ### 1 Feb
 
