@@ -10,7 +10,7 @@ format:
     include-after-body:
        - "../comment_load.html"
   docx: default
-draft: true
+draft: false
 ---
 
 # Australian Safeguard Mechanism
