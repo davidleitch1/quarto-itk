@@ -2,7 +2,7 @@
 title: "Renewables share outlook"
 author: "David Leitch"
 date: "2025-03-10"
-categories: [analysis, der]
+categories: ["Generation"]
 image: "../media/image-20250310134746164.png"
 lightbox: true
 format:

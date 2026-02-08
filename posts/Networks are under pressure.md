@@ -2,7 +2,7 @@
 title: "Networks lose 10% of volumes"
 author: "David Leitch"
 date: "2026-01-14"
-categories: [ "Networks"]
+categories: ["Networks"]
 image: "../media/image-20260113202130304.png"
 lightbox: true
 format:

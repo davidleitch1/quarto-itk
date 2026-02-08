@@ -2,7 +2,7 @@
 title: "Non coal dispatchibles"
 author: "David Leitch"
 date: "2025-04-15"
-categories: [analysis, gas]
+categories: ["Generation"]
 image: "../media/image-20250415111959114.png"
 lightbox: true
 format:

@@ -2,7 +2,7 @@
 title: "Eyes wide open"
 author: "David Leitch"
 date: "2025-08-25"
-categories: [analysis, policy]
+categories: ["Policy"]
 image: "../media/image-20250821115741801.png"
 lightbox: true
 format:

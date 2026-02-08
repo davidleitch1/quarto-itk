@@ -2,7 +2,7 @@
 title: "CIS"
 author: "David Leitch"
 date: "2025-11-21"
-categories: [ "NEM"]
+categories: ["Policy"]
 image: "../media/image-20251013160758905.png"
 lightbox: true
 format:

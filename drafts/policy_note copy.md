@@ -1,6 +1,7 @@
 ---
 title: "Australian Federal Government Energy Policy Reviews - 2026"
 date: 2026-01-17
+categories: ["Policy"]
 bibliography: references.bib
 ---
 

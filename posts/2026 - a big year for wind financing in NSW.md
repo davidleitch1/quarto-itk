@@ -2,7 +2,7 @@
 title: "NSW wind race to FID"
 author: "David Leitch"
 date: "2025-12-22"
-categories: [ "NEM"]
+categories: ["Generation", "Investment"]
 image: "../media/image-20251209202637924.png"
 lightbox: true
 format:

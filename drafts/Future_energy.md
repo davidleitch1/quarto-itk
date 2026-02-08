@@ -1,3 +1,9 @@
+---
+title: "Electricity prices will likely be less volatile than expected post coal closures under a plausible storage buildout"
+categories: ["Markets", "Storage"]
+draft: true
+---
+
 ## Electricity prices will likely be less volatile than expected post coal closures  under a plausible storage buildout
 
 Future Energy^[Disclosure: I am a Director of Future Energy] has developed software to forecast spot market electricity prices on a half hourly basis 2026-2040. We built a dispatch engine complete with major constraints and taking a set of supply inputs by fuel class and year and then  runs a linear program to solve for half hourly prices across the NEM.

@@ -2,7 +2,7 @@
 title: "Global renewables share"
 author: "David Leitch"
 date: "2025-09-22"
-categories: ["Economics & Investment", "Market Analysis"]
+categories: ["International", "Generation"]
 image: "../media/image-20250924201827652.png"
 lightbox: true
 format:

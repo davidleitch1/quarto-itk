@@ -2,7 +2,7 @@
 title: "Networks need customers"
 author: "David Leitch"
 date: "2024-09-17"
-categories: ["Infrastructure", "Policy & Regulation", "Economics & Investment"]
+categories: ["Networks", "Markets"]
 image: "../media/image-20240917093051410.png"
 lightbox: true
 format:

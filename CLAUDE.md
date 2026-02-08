@@ -117,6 +117,31 @@ Read the entire note again as a critical reviewer would, looking for:
 - Word respects bold/italic markdown natively
 - Consistent output in both HTML and Word formats
 
+## Categories
+
+When adding or editing YAML front matter, use ONLY these approved categories:
+
+| Category | Use for content about |
+|:---------|:----------------------|
+| **Generation** | Coal, gas, wind, solar, nuclear, thermal, VRE, power stations |
+| **Storage** | Batteries, pumped hydro, Snowy |
+| **Networks** | Transmission, distribution, infrastructure, poles and wires |
+| **Markets** | Prices, futures, competition, market design, spot market |
+| **Policy** | Safeguards, regulation, CIS, reviews, government policy |
+| **EVs** | Electric vehicles, transport electrification |
+| **Demand** | Data centres, residential, industrial load, consumption |
+| **Climate** | Emissions, climate science, decarbonisation |
+| **Investment** | Economics, funding, costs, LCOE, financing, valuation |
+| **International** | Global comparisons, ASEAN, other countries |
+
+**Rules:**
+- Use 1-2 categories per post (rarely 3)
+- Always use the exact capitalisation shown above
+- Format in YAML as: `categories: ["Generation"]` or `categories: ["Markets", "Policy"]`
+- Flag any existing posts using non-standard categories during editing
+
+---
+
 ## Core Principle
 
 **ALWAYS present proposed changes first and wait for approval before making any edits.**

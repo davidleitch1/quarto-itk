@@ -2,7 +2,7 @@
 title: "ASEAN and Asia"
 author: "David Leitch"
 date: "2024-05-03"
-categories: ["International", "Energy Transition"]
+categories: ["International"]
 image: "../media/image-20240501120156429.png"
 lightbox: true
 format:

@@ -2,7 +2,7 @@
 title: "Replacing Yallourn"
 author: "David Leitch"
 date: "2025-05-9"
-categories: [analysis, gas]
+categories: ["Generation"]
 image: "../media/image-20250511135138607.png"
 lightbox: true
 format:

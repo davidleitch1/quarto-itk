@@ -2,7 +2,7 @@
 title: "Carbon"
 author: "David Leitch"
 date: "2025-03-3"
-categories: [analysis, der]
+categories: ["Climate"]
 image: "../media/image-20250303134039034.png"
 lightbox: true
 format:

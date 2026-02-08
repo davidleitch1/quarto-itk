@@ -2,7 +2,7 @@
 title: "CIS Dash"
 author: "David Leitch"
 date: "2025-07-8"
-categories: [analysis, cis]
+categories: ["Policy"]
 image: "../media/image-20250708075919251.png"
 lightbox: true
 format:

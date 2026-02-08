@@ -2,7 +2,7 @@
 title: "Solar houses subsides everyone else"
 author: "David Leitch"
 date: "2025-03-24"
-categories: [analysis, networks]
+categories: ["Generation", "Networks"]
 image: "./media/image-20250327134841157.png"
 lightbox: true
 format:

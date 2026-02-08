@@ -2,7 +2,7 @@
 title: "Snowy 2.0 - not so terrible business wise"
 author: "David Leitch"
 date: "2024-05-24"
-categories: ["Renewable Technology", "Economics & Investment", "Infrastructure"]
+categories: ["Storage", "Investment"]
 image: "../media/image-20240524121256906.png"
 lightbox: true
 format:

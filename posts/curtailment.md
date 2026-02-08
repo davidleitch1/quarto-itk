@@ -2,7 +2,7 @@
 title: "GSD curtailment"
 author: "David Leitch"
 date: "2025-02-17"
-categories: [analysis, curtailment]
+categories: ["Generation"]
 image: "../media/image-20250213083237647.png"
 lightbox: true
 format:

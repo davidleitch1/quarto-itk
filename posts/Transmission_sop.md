@@ -2,7 +2,7 @@
 title: "Transmission_25"
 author: "David Leitch"
 date: "2024-12-20"
-categories: ["Infrastructure", "Policy & Regulation"]
+categories: ["Networks", "Policy"]
 image: "../media/image-20241220105005174.png"
 lightbox: true
 format:

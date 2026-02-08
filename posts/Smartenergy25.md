@@ -2,7 +2,7 @@
 title: "Smart Energy 2025"
 author: "David Leitch"
 date: "2025-04-01"
-categories: [analysis, gas]
+categories: ["Generation", "Markets"]
 image: "../media/97B67B62-1804-431F-96FF-CC7D41245A97_1_105_c.jpeg"
 lightbox: true
 format:

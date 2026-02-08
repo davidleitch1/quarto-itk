@@ -2,7 +2,7 @@
 title: "Funding"
 author: "David Leitch"
 date: "2025-06-27"
-categories: [analysis, gas]
+categories: ["Investment"]
 image: "../media/image-20250627102203789.png"
 lightbox: true
 format:

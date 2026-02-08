@@ -2,7 +2,7 @@
 title: "ITK news"
 author: "David Leitch and Paul Bandarian"
 date: "2024-04-12"
-categories: ["Market Analysis"]
+categories: ["Markets"]
 image: "../media/06DED34E-58E5-4EED-8DD3-4D0442260C36_1_105_c-2891843.jpeg"
 lightbox: true
 format:

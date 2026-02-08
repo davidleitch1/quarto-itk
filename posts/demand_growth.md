@@ -2,7 +2,7 @@
 title: "Demand Growth"
 author: "David Leitch"
 date: "2025-10-27"
-categories: [ "Demand"]
+categories: ["Demand"]
 image: ""
 lightbox: true
 format:

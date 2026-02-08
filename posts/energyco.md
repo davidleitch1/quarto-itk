@@ -2,7 +2,7 @@
 title: "Energyco update"
 author: "David Leitch"
 date: "2024-12-10"
-categories: ["Regional/State", "Infrastructure", "Renewable Technology"]
+categories: ["Networks", "Policy"]
 image: ""
 lightbox: true
 format:

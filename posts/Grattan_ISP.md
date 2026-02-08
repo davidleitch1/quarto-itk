@@ -2,7 +2,7 @@
 title: "Grattan and ISP"
 author: "David Leitch"
 date: "2024-05-03"
-categories: ["Policy & Regulation", "Infrastructure", "Market Analysis"]
+categories: ["Policy", "Networks"]
 image: "../media/image-20240429204150623.png"
 lightbox: true
 format:

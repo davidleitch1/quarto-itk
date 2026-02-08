@@ -2,7 +2,7 @@
 title: "Powering Data Centres and Smelters - A Government Monopoly May Be the Future of the NEM"
 author: "David Leitch"
 date: 2026-01-29
-categories: ["Energy Markets"]
+categories: ["Demand", "Markets"]
 image: "../media/image-20260128132427898.png"
 lightbox: true
 format:

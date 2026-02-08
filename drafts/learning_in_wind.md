@@ -2,7 +2,7 @@
 title: "Logistics"
 author: "David Leitch"
 date: "2025-10-22"
-categories: [ "Technology"]
+categories: ["Generation"]
 image: "../media/image-20250924201827652.png"
 lightbox: true
 format:

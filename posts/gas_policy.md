@@ -2,7 +2,7 @@
 title: "Social hour at the gas rodeo"
 author: "David Leitch"
 date: "2025-04-01"
-categories: [analysis, gas]
+categories: ["Generation", "Policy"]
 image: "../media/image-20250330105622152.png"
 lightbox: true
 format:

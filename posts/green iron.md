@@ -2,7 +2,7 @@
 title: "Electric Iron Smelter"
 author: "David Leitch"
 date: "2025-05-12"
-categories: [analysis, gas]
+categories: ["Demand", "Climate"]
 image: "../media/image-20250511135138607.png"
 lightbox: true
 format:

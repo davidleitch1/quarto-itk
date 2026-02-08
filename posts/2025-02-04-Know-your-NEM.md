@@ -2,7 +2,7 @@
 title: "Know your NEM"
 author: "David Leitch"
 date: "2025-02-04"
-categories: [analysis, der]
+categories: ["Markets"]
 image: "../media/image-20250203115449364.png"
 lightbox: true
 format:

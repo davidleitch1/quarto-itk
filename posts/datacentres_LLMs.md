@@ -2,7 +2,7 @@
 title: "LLM intro "
 author: "David Leitch"
 date: "2025-01-24"
-categories: [analysis, LLM]
+categories: ["Demand"]
 image: "../media/image1.png"
 lightbox: true
 format:

@@ -2,7 +2,7 @@
 title: "Wind LCOE"
 author: "David Leitch"
 date: "2024-07-28"
-categories: ["Renewable Technology", "Economics & Investment"]
+categories: ["Generation", "Investment"]
 image: "(../media/image-20240613111756278.png)"
 lightbox: true
 format:

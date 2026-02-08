@@ -2,7 +2,7 @@
 title: "Code testing"
 author: "David Leitch"
 date: "2024-08-25"
-categories: [analysis,nem,wind]
+categories: ["Generation"]
 image: "../media/image-20240828205204106.png"
 lightbox: true
 format:

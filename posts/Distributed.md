@@ -2,7 +2,7 @@
 title: "A marriage of equals"
 author: "David Leitch"
 date: "2025-02-13"
-categories: [analysis, der]
+categories: ["Generation"]
 image: "../media/image-20250213083237647.png"
 lightbox: true
 format:

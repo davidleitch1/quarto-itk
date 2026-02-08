@@ -2,7 +2,7 @@
 title: "Reviewing wind economics"
 author: "David Leitch"
 date: "2024-08-01"
-categories: ["Renewable Technology", "Economics & Investment"]
+categories: ["Generation", "Investment"]
 image: "/media/image-20240731131459260.png"
 lightbox: true
 format:

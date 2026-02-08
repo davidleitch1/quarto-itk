@@ -2,7 +2,7 @@
 title: "Gladstone - "
 author: "David Leitch"
 date: "2025-07-18"
-categories: [analysis, data_centres]
+categories: ["Networks", "Demand"]
 image: "../media/image-20250709174704767.png"
 lightbox: true
 format:

@@ -2,7 +2,7 @@
 title: "Retail bills"
 author: "David Leitch"
 date: "2025-02-26"
-categories: [analysis, der]
+categories: ["Markets", "Demand"]
 image: "../media/image-20250226114420027.png"
 lightbox: true
 format:

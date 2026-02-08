@@ -2,7 +2,7 @@
 title: "Price analysis "
 author: "David Leitch"
 date: "2025-07-27"
-categories: [analysis, prices]
+categories: ["Markets"]
 image: "../media/image-20250727165917326.png"
 lightbox: true
 format:

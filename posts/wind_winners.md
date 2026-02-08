@@ -2,7 +2,7 @@
 title: "Energy only markets may not do the job"
 author: "David Leitch"
 date: "2024-08-20"
-categories: ["Renewable Technology", "Market Analysis", "Economics & Investment"]
+categories: ["Markets", "Investment"]
 image: "../media/image-20240628210122147.png"
 lightbox: true
 format:

@@ -2,7 +2,7 @@
 title: "Gas supply and demand"
 author: "David Leitch"
 date: "2025-05-29"
-categories: [analysis, gas]
+categories: ["Generation", "Markets"]
 image: "../media/image-20250512211952865.png"
 lightbox: true
 format:

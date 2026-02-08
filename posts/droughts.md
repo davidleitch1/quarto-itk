@@ -2,7 +2,7 @@
 title: "Droughts "
 author: "David Leitch"
 date: "2025-08-03"
-categories: [analysis, prices]
+categories: ["Generation", "Climate"]
 image: "../media/image-20250805180118537.png"
 lightbox: true
 format:

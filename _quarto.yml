@@ -67,6 +67,9 @@ website:
   page-footer:
     left: "Copyright 2024 ITK admin@itkservices.com.au "
 
+bibliography: references.bib
+csl: apa.csl
+
 format:
   html:
     theme: flexoki-light.scss

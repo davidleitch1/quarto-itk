@@ -2,7 +2,7 @@
 title: "Global generation fuel trends"
 author: "David Leitch"
 date: "2024-09-17"
-categories: ["International", "Renewable Technology", "Energy Transition"]
+categories: ["International", "Generation"]
 image: "../media/image-20240917093051410.png"
 lightbox: true
 format:

@@ -2,7 +2,7 @@
 title: "Golidlocks and the three fears"
 author: "David Leitch"
 date: "2024-06-10"
-categories: ["Social & Community", "Renewable Technology"]
+categories: ["Markets", "Generation"]
 image: "../media/image-20240610103648753.png"
 lightbox: true
 format:

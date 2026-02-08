@@ -2,7 +2,7 @@
 title: "VRE supply "
 author: "David Leitch"
 date: "2024-11-28"
-categories: ["Market Analysis", "Renewable Technology", "Energy Transition"]
+categories: ["Generation", "Markets"]
 image: "../media/image-20241128115709479.png"
 lightbox: true
 format:

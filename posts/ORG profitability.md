@@ -2,7 +2,7 @@
 title: "Eraring GEPA"
 author: "David Leitch"
 date: "2024-05-28"
-categories: ["Market Analysis", "Energy Transition", "Economics & Investment"]
+categories: ["Markets", "Investment"]
 image: "../media/image-20240528142412563.png"
 lightbox: true
 format:

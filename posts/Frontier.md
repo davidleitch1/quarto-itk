@@ -2,7 +2,7 @@
 title: "Frontier"
 author: "David Leitch"
 date: "2024-12-13"
-categories: [analysis,nem,nuclear]
+categories: ["Generation", "Policy"]
 image: "../media/image-20241213125020260.png"
 lightbox: true
 format:

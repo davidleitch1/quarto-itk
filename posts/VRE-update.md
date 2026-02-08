@@ -2,7 +2,7 @@
 title: "VRE update"
 author: "David Leitch"
 date: "2024-07-03"
-categories: ["Renewable Technology", "Market Analysis"]
+categories: ["Generation", "Markets"]
 image: "../media/image-20240703124312669.png"
 lightbox: true
 format:

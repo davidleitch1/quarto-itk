@@ -2,7 +2,7 @@
 title: "Wires and  poles"
 author: "David Leitch"
 date: "2024-04-22"
-categories: ["Infrastructure", "Economics & Investment"]
+categories: ["Networks", "Investment"]
 image: "../media/image-20240421152818869.png"
 lightbox: true
 format:

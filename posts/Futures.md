@@ -2,7 +2,7 @@
 title: "Futures"
 author: "David Leitch"
 date: "2025-09-19"
-categories: ["Economics & Investment", "Market Analysis"]
+categories: ["Markets"]
 image: "../media/image-20250911131213446-7565591.png"
 lightbox: true
 format:

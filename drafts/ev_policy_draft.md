@@ -2,7 +2,7 @@
 title: "Australian Electric Vehicle Policy Reviews - 2026"
 author: "David Leitch"
 date: 2026-01-21
-categories: [ "Networks"]
+categories: ["EVs", "Policy"]
 image: "../media/image-20260119183822680.png"
 lightbox: true
 format:

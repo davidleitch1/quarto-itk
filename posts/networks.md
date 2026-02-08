@@ -2,7 +2,7 @@
 title: "It is still wires and poles"
 author: "David Leitch"
 date: "2025-03-24"
-categories: [analysis, networks]
+categories: ["Networks"]
 image: "../media/image-20250322151955794.png"
 lightbox: true
 format:

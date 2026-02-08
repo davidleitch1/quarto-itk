@@ -2,7 +2,7 @@
 title: "Market design"
 author: "David Leitch"
 date: "2025-01-28"
-categories: [analysis, climate]
+categories: ["Markets", "Policy"]
 image: "../media/image-20250129172746999.png"
 lightbox: true
 format:

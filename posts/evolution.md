@@ -2,7 +2,7 @@
 title: "Evolution"
 author: "David Leitch"
 date: "2025-10-21"
-categories: [ "NEM"]
+categories: ["Markets"]
 image: "../media/image-20251013160758905.png"
 lightbox: true
 format:

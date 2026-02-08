@@ -2,7 +2,7 @@
 title: "Data centre in Riverina"
 author: "David Leitch"
 date: "2025-07-9"
-categories: [analysis, data_centres]
+categories: ["Demand"]
 image: "../media/image-20250709174704767.png"
 lightbox: true
 format:

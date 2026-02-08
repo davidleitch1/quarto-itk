@@ -2,7 +2,7 @@
 title: "Global-Electricity prices"
 author: "David Leitch"
 date: "2025-10-24"
-categories: [ "Prices"]
+categories: ["International", "Markets"]
 image: "../media/image-20251024133223626.png"
 lightbox: true
 format:

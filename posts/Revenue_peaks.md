@@ -2,7 +2,7 @@
 title: "Revenue and new supply"
 author: "David Leitch"
 date: "2024-11-01"
-categories: ["Market Analysis", "Economics & Investment"]
+categories: ["Markets", "Investment"]
 image: "../media/image-20241029120912062.pngqua"
 lightbox: true
 format:

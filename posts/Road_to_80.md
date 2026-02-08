@@ -2,7 +2,7 @@
 title: "The road to 80"
 author: "David Leitch"
 date: "2025-09-08"
-categories: ["Policy & Regulation", "Renewable Technology", "Energy Transition"]
+categories: ["Policy", "Generation"]
 image: "../media/image-20250909165500184.png"
 lightbox: true
 format:

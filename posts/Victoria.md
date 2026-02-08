@@ -2,7 +2,7 @@
 title: "Victoria"
 author: "David Leitch"
 date: "2025-05-26"
-categories: [analysis, gas]
+categories: ["Generation", "Markets"]
 image: "../media/image-20250525164856808.png"
 lightbox: true
 format:

@@ -2,7 +2,7 @@
 title: "futures up VRE down-nothing to see"
 author: "David Leitch"
 date: "2024-04-29"
-categories: ["Market Analysis"]
+categories: ["Markets", "Generation"]
 image: "../media/image-20240429204150623.png"
 lightbox: true
 format:

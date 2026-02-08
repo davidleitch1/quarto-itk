@@ -2,7 +2,7 @@
 title: "Australian Safeguard Mechanism"
 author: "David Leitch"
 date: 2026-01-19
-categories: [ "Networks"]
+categories: ["Policy"]
 image: "../media/image-20260119183822680.png"
 lightbox: true
 format:

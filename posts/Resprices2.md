@@ -2,7 +2,7 @@
 title: "Residential prices again"
 author: "David Leitch"
 date: "2025-12-08"
-categories: [ "NEM"]
+categories: ["Markets"]
 image: "../media/image-20251208145802941.png"
 lightbox: true
 format:

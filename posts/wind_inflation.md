@@ -2,7 +2,7 @@
 title: "Wind cost inflation"
 author: "David Leitch"
 date: "2025-09-08"
-categories: ["Renewable Technology", "Economics & Investment", "Market Analysis"]
+categories: ["Generation", "Investment"]
 image: "../media/image-20250911131213446-7565591.png"
 lightbox: true
 format:
