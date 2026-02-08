@@ -164,23 +164,47 @@ pre code {
   padding: 0;
 }
 
-// Tables - clean styling
+// Tables - Flexoki clean styling (Tufte principles)
 table {
   background-color: transparent;
+  border-collapse: collapse;
 
   th {
-    background-color: $paper-dark;
     color: $text;
     font-weight: 600;
+    text-align: left;
+    padding: 0.5em 0.75em;
+    border-bottom: 1.5px solid $text-faint;  // Header divider line, no background
   }
 
   td {
-    border-bottom: 1px dotted $paper-darker;
+    padding: 0.5em 0.75em;
+    border-bottom: 1px dotted $paper-darker;  // Keep existing row dividers
   }
 
   tr:last-child td {
-    border-bottom: none;
+    border-bottom: 1px solid $text-faint;  // Footer divider
   }
+
+  // Alignment utilities - use markdown column alignment syntax
+  // :--- left, :---: center, ---: right
+  // These respect the alignment markers in markdown tables
+}
+
+// Utility classes for explicit alignment control
+.table-numeric td:nth-child(n+2),
+.table-numeric th:nth-child(n+2) {
+  text-align: right;
+}
+
+// Table captions and sources
+caption {
+  caption-side: bottom;
+  font-size: 0.85em;
+  font-style: italic;
+  color: $text-muted;
+  text-align: left;
+  padding-top: 0.5em;
 }
 
 // Horizontal rules
