@@ -22,7 +22,7 @@ window.onload = function() {
 
 ### 8 Feb
 
-Reconfigured with Claude the main dashboard, particularly the today tab to now additionally show AEMO's forecast prices and key notices if any. Other components were reconfigured to improved the look and the functionality of figures, typically by using html formatted tables, and switching some complex plots from Panel to Plotly. Here's an some examples from the prices tab that focus on price spikes and ongoing area of interest.
+Reconfigured with Claude the main dashboard, particularly the today tab to now additionally show AEMO's forecast prices and key notices if any. Other components were reconfigured to improved the look and the functionality of figures, typically by using html formatted tables, and switching some complex plots from Panel to Plotly. Here's a some examples from the prices tab that focus on price spikes and ongoing area of interest. Also detail fixes.
 
 The plot shows that in for instance NSW about 20% of the average annual price comes from spikes that occurred in only 0.3% of the half hours. Some spikes should be expected but when they are driving 20% of the annual price, and that feeds into next  year's price its an indication that either the market is too tight/not resilient to shocks or there is not enough competion.
 ![](./media/image-20260208110113976.png)
