@@ -20,19 +20,18 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-### 5 Feb
+### 8 Feb
 
-The ITK data downloading and analysis service got a workout today. On the positive side I received a text from the server telling me the NSW spot price had hit \$20k/MWh. Good that system is working. After the interview with Malcolm Turnbull had finished Claude and I analysed what had happened. Claude produced some excellent graphs but in the end I think it got the explanation wrong. I think what happened was a trip in the Marulan line just as demand was increasing. This lead to some power flowing South to Victoria and prices in Victoria were very low even as they were high in NSW.
+Reconfigured with Claude the main dashboard, particularly the today tab to now additionally show AEMO's forecast prices and key notices if any. Other components were reconfigured to improved the look and the functionality of figures, typically by using html formatted tables, and switching some complex plots from Panel to Plotly. Here's an some examples from the prices tab that focus on price spikes and ongoing area of interest.
 
-There were more but smaller spikes this evening as both solar and demand decline but this shows NSW around the first one. Claude did a great job really.
+The plot shows that in for instance NSW about 20% of the average annual price comes from spikes that occurred in only 0.3% of the half hours. Some spikes should be expected but when they are driving 20% of the annual price, and that feeds into next  year's price its an indication that either the market is too tight/not resilient to shocks or there is not enough competion.
+![](./media/image-20260208110113976.png)
 
-![image-20260205213215440](./media/image-20260205213215440.png)
+Equally we can look at the contribution of spikes to average prices on a longer term basis. The following figure uses a 90 day moving average of the contribution to average price caused by each price band. It misses the point about frequency but shows how important high prices can be to average prices and if we looked at different States we would see the spikes tend to occur in Winter. In NSW there have been more spikes since the closure of Liddell.
 
-Where Claude went wrong was when I asked it to explain the surge in exports to Victoria. It saw a decline in Victorian generation and concluded there was a problem there. The reality was that the problem was in NSW and southern NSW generation was forced into Victoria, forcing prices down there. After I posted the wrong story on LinkedIn Ben Cerini corrected me and I now believe that this second panel tells it more or less correctly.
+![](./media/image-20260208110656754.png)
 
-![image-20260205213819401](./media/image-20260205213819401.png)
 
-On balance I'm far ahead of what I could have done even a year ago, and I believe any readers will also be better off because the visualisation is very effective.
 
 :::
 
@@ -49,6 +48,20 @@ On balance I'm far ahead of what I could have done even a year ago, and I believ
 :::
 
 ::::
+
+### 5 Feb
+
+The ITK data downloading and analysis service got a workout today. On the positive side I received a text from the server telling me the NSW spot price had hit \$20k/MWh. Good that system is working. After the interview with Malcolm Turnbull had finished Claude and I analysed what had happened. Claude produced some excellent graphs but in the end I think it got the explanation wrong. I think what happened was a trip in the Marulan line just as demand was increasing. This lead to some power flowing South to Victoria and prices in Victoria were very low even as they were high in NSW.
+
+There were more but smaller spikes this evening as both solar and demand decline but this shows NSW around the first one. Claude did a great job really.
+
+![image-20260205213215440](./media/image-20260205213215440.png)
+
+Where Claude went wrong was when I asked it to explain the surge in exports to Victoria. It saw a decline in Victorian generation and concluded there was a problem there. The reality was that the problem was in NSW and southern NSW generation was forced into Victoria, forcing prices down there. After I posted the wrong story on LinkedIn Ben Cerini corrected me and I now believe that this second panel tells it more or less correctly.
+
+![image-20260205213819401](./media/image-20260205213819401.png)
+
+On balance I'm far ahead of what I could have done even a year ago, and I believe any readers will also be better off because the visualisation is very effective.
 
 ### 3 Feb
 
