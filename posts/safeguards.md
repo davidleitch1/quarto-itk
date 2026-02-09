@@ -154,7 +154,7 @@ The following questions are specified for the scheduled review (source: policy_r
 | 65% (middle)  |                       5.50% |
 | 70% (ambitious) |                     6.85% |
 
-*Source: CORE Markets analysis*
+*Source: CORE Markets analysis [@coremarkets-ndc-2025]*
 
 **Key finding:** The indicative 3.285% post-2030 rate is inconsistent with even the minimum 2035 target. The 2026-27 review will need to set rates for 2030-35 by July 2027, incorporating advice from the Climate Change Authority and the government's final position on 2035 ambition level [@dcceew-safeguard-overview].
 

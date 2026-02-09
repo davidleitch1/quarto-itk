@@ -142,6 +142,46 @@ When adding or editing YAML front matter, use ONLY these approved categories:
 
 ---
 
+## Citations and Bibliography
+
+The site uses Quarto's citation system with:
+- **Bibliography file**: `references.bib` (BibTeX format)
+- **Citation style**: `apa.csl` (APA 7th edition)
+
+**Using citations in documents:**
+```markdown
+According to recent analysis [@cer-safeguard-2025], emissions have increased.
+Multiple sources support this [@source-one; @source-two].
+```
+
+**Before using a citation:**
+1. Check if the key exists in `references.bib`
+2. If not, add the entry before using the citation
+3. Use descriptive keys: `@org-topic-year` format (e.g., `@aemo-isp-2024`)
+
+**Common entry types:**
+```bibtex
+@report{key,
+  author = {{Organisation Name}},
+  title = {Report Title},
+  year = {2025},
+  institution = {Publisher},
+  url = {https://...}
+}
+
+@online{key,
+  author = {{Organisation Name}},
+  title = {Page Title},
+  year = {2025},
+  url = {https://...},
+  urldate = {2025-01-01}
+}
+```
+
+**During editing:** If you encounter `[@citation-key]` references, verify they exist in `references.bib`. Flag missing entries to the user.
+
+---
+
 ## Core Principle
 
 **ALWAYS present proposed changes first and wait for approval before making any edits.**
