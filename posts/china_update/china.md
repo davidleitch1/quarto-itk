@@ -2,7 +2,7 @@
 title: "Cost deflation in China"
 author: "David Leitch"
 date: "2024-04-03"
-categories: ["International", "Economics & Investment", "Renewable Technology"]
+categories: ["International", "Investment"]
 image: "../../media/image4.png"
 lightbox: true
 format:

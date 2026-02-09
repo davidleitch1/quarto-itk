@@ -2,7 +2,7 @@
 title: "Above ground transmission"
 author: "David Leitch"
 date: "2024-03-20"
-categories: [analysis,nem,transmission]
+categories: ["Networks"]
 image: "../../media/image-20240320111406134.png"
 lightbox: true
 draft: false

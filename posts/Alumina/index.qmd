@@ -2,7 +2,7 @@
 title: "Alumina electrification would be a big win"
 author: "David Leitch"
 date: "2023-07-30"
-categories: [analysis,QLD,aluminium]
+categories: ["Demand"]
 image: "media/media/image9.png"
 lightbox: true
 draft: false

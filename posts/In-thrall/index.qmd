@@ -2,7 +2,7 @@
 title: "Liberals in thrall to the Nationals"
 author: "David Leitch"
 date: "2024-02-14"
-categories: [analysis,politics]
+categories: ["Policy"]
 image: "../../media/image-20240214150612124.png"
 lightbox: true
 draft: false

@@ -2,7 +2,7 @@
 title: "AGL as an investment"
 author: "David Leitch"
 date: "2024-02-06"
-categories: ["Market Analysis", "Energy Transition", "Economics & Investment"]
+categories: ["Markets", "Investment"]
 image: "media/image1.png"
 lightbox: true
 draft: false

@@ -2,7 +2,7 @@
 title: "Sharpe ratio and renewables - part 1"
 author: "David Leitch"
 date: "2023-05-24"
-categories: ["Market Analysis", "Renewable Technology", "Economics & Investment"]
+categories: ["Investment", "Generation"]
 image: "media/media/image1.png"
 lightbox: true
 draft: false

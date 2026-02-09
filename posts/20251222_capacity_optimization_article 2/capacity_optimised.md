@@ -2,7 +2,7 @@
 title: "Post coal spot prices"
 author: "Paul Bandarian (principal), David Leitch"
 date: "2025-12-23"
-categories: [ "NEM"]
+categories: ["Markets", "Generation"]
 image: "../../media/Table 1.png"
 lightbox: true
 format:

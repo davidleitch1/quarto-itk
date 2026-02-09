@@ -2,7 +2,7 @@
 title: "Sharpe Ratio capital cost with firming"
 author: "Paul Bandarian, David Leitch"
 date: "2024-02-08"
-categories: ["Market Analysis", "Renewable Technology", "Economics & Investment"]
+categories: ["Investment", "Generation"]
 image: "media/media/image9.png"
 lightbox: true
 draft: false

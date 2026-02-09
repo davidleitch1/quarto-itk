@@ -2,7 +2,7 @@
 title: "Australia Primary Energy"
 author: "David Leitch"
 date: "2022-09-24"
-categories: ["Energy Transition", "Policy & Regulation", "Market Analysis"]
+categories: ["Demand", "Policy"]
 image: "media/media/image1.png"
 lightbox: true
 draft: false

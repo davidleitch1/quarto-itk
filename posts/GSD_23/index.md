@@ -2,7 +2,7 @@
 title: "Generator Statistical Digest, Global-Roam"
 author: "David Leitch"
 date: "2024-02-11"
-categories: ["Renewable Technology", "Market Analysis", "Economics & Investment"]
+categories: ["Generation", "Markets"]
 image: "media/media/image1.png"
 lightbox: true
 draft: false

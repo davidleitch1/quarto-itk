@@ -2,7 +2,7 @@
 title: "Looking Forward"
 author: "David Leitch"
 date: "2024-01-16"
-categories: [analysis,nem]
+categories: ["Markets"]
 image: "media/image1.png"
 lightbox: true
 draft: false

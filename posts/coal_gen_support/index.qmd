@@ -2,7 +2,7 @@
 title: "Coal Gen Sensitivity"
 author: "David Leitch"
 date: "2024-02-15"
-categories: [analysis,nem,coal]
+categories: ["Generation", "Markets"]
 image: "../../media/Me too!.jpg"
 lightbox: true
 draft: false

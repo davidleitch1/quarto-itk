@@ -2,7 +2,8 @@
 title: "Yesterdays note a draft sent in error"
 author: "David Leitch"
 date: "2024-07-03"
-categories: [apologies]
+categories: ["Policy"]
+draft: true
 image: "../media/image-20240703175216396.png"
 lightbox: true
 format:

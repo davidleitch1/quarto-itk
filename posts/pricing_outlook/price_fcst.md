@@ -2,7 +2,7 @@
 title: "Spot Price drivers"
 author: "David Leitch"
 date: "2024-03-25"
-categories: ["Market Analysis", "Economics & Investment"]
+categories: ["Markets"]
 image: "../../media/image-20240325110739984.png"
 lightbox: true
 draft: false

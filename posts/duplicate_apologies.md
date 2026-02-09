@@ -2,7 +2,8 @@
 title: "Apologies"
 author: "David Leitch"
 date: "2025-10-16"
-categories: [ "Errors"]
+categories: ["Policy"]
+draft: true
 image: "../media/image-20251016155146897.png"
 lightbox: true
 format:

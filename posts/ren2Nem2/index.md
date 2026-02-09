@@ -2,7 +2,7 @@
 title: "Renewable NEM 2 - with transmission"
 author: "David Leitch and Paul Bandarian"
 date: "2024-04-12"
-categories: ["Renewable Technology", "Infrastructure", "Market Analysis"]
+categories: ["Networks", "Generation"]
 image: "./media/media/image1.png"
 lightbox: true
 format:

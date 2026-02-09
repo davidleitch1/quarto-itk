@@ -2,7 +2,7 @@
 title: "Ocean heat is bad for Australia"
 author: "David Leitch"
 date: "2026-01-14"
-categories: [ "Climate"]
+categories: ["Climate"]
 image: "../media/image-20260112135220821.png"
 lightbox: true
 format:
