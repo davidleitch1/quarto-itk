@@ -20,6 +20,14 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 10 Feb
+
+Added in PASA analysis to the dashboard. PASA = Projected Analysis of System Adequacy. This is another area, like the AEMO notices where a little knowledge is a dangerous thing. As I write there are over 1000 MW of coal generation down for maintenance, 2 units of Yallourn, and 450 MW combined of Callide B and Callide C. So it is nice to be able to see this information on the dashboard. No doubt next week I'll see whats wrong with it, but at the moment the Dashboard is looking good. I also worked on speeding it up again. Somehow in the recent changes the speedup functions for initial loading, that is lazy display, caching and using DuckDB persistence had been lost. It could still be faster but the lag is now acceptable and the spinning wheel makes it clear things are happening.
+
+Additionally I added via the main menu a link to Windy.com for the weather. I tried putting this on the Today tab but its better as its own link.
+
+
+
 ### 8 Feb
 
 Reconfigured with Claude the main dashboard, particularly the today tab to now additionally show AEMO's forecast prices and key notices if any. Other components were reconfigured to improved the look and the functionality of figures, typically by using html formatted tables, and switching some complex plots from Panel to Plotly. Here's a some examples from the prices tab that focus on price spikes and ongoing area of interest. Also detail fixes.

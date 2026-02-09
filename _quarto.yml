@@ -29,6 +29,8 @@ website:
         file: posts.qmd
       - text: "more"
         menu:
+        - text: "Temperature Forecast"
+          file: windy.qmd
         - text: "Green Iron"
           href: green_iron/index.md
         - text: "Presentations"
