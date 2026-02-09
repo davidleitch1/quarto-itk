@@ -9,7 +9,6 @@ lightbox: true
 format:
   html: default
   docx: default
-draft: false
 ---
 
 
