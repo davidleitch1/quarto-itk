@@ -20,6 +20,8 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+
+
 ### 10 Feb
 
 Added in PASA analysis to the dashboard. PASA = Projected Analysis of System Adequacy. This is another area, like the AEMO notices where a little knowledge is a dangerous thing. As I write there are over 1000 MW of coal generation down for maintenance, 2 units of Yallourn, and 450 MW combined of Callide B and Callide C. So it is nice to be able to see this information on the dashboard. No doubt next week I'll see whats wrong with it, but at the moment the Dashboard is looking good. I also worked on speeding it up again. Somehow in the recent changes the speedup functions for initial loading, that is lazy display, caching and using DuckDB persistence had been lost. It could still be faster but the lag is now acceptable and the spinning wheel makes it clear things are happening.
