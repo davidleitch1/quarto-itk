@@ -22,6 +22,14 @@ window.onload = function() {
 
 
 
+### 12 Feb
+
+Started working with demand which although as important as supply is derived from supply so I thought I already understood it. Turns out there was a lot to learn. So I wrote a [note](https://itkservices3.com/posts/changing_shape) which is the Articles list.
+
+![](./media/image-20260211144602497.png){#fig-demand-timeofday}
+
+Also reconfigured the dashboard, thanks Claude so that the collectors and the Dashboard now work with one unified DuckDB file rather than the separate parquet files of the earlier version. It turns out that the data downloader is the most important part of the system because I do a lot of ad hoc analysis and often what's on the dashboard is not what I want. 
+
 ### 10 Feb
 
 Added in PASA analysis to the dashboard. PASA = Projected Analysis of System Adequacy. This is another area, like the AEMO notices where a little knowledge is a dangerous thing. As I write there are over 1000 MW of coal generation down for maintenance, 2 units of Yallourn, and 450 MW combined of Callide B and Callide C. So it is nice to be able to see this information on the dashboard. No doubt next week I'll see whats wrong with it, but at the moment the Dashboard is looking good. I also worked on speeding it up again. Somehow in the recent changes the speedup functions for initial loading, that is lazy display, caching and using DuckDB persistence had been lost. It could still be faster but the lag is now acceptable and the spinning wheel makes it clear things are happening.
@@ -29,17 +37,6 @@ Added in PASA analysis to the dashboard. PASA = Projected Analysis of System Ade
 Additionally I added via the main menu a link to Windy.com for the weather. I tried putting this on the Today tab but its better as its own link.
 
 
-
-### 8 Feb
-
-Reconfigured with Claude the main dashboard, particularly the today tab to now additionally show AEMO's forecast prices and key notices if any. Other components were reconfigured to improved the look and the functionality of figures, typically by using html formatted tables, and switching some complex plots from Panel to Plotly. Here's a some examples from the prices tab that focus on price spikes and ongoing area of interest. Also detail fixes.
-
-The plot shows that in for instance NSW about 20% of the average annual price comes from spikes that occurred in only 0.3% of the half hours. Some spikes should be expected but when they are driving 20% of the annual price, and that feeds into next  year's price its an indication that either the market is too tight/not resilient to shocks or there is not enough competion.
-![](./media/image-20260208110113976.png)
-
-Equally we can look at the contribution of spikes to average prices on a longer term basis. The following figure uses a 90 day moving average of the contribution to average price caused by each price band. It misses the point about frequency but shows how important high prices can be to average prices and if we looked at different States we would see the spikes tend to occur in Winter. In NSW there have been more spikes since the closure of Liddell.
-
-![](./media/image-20260208110656754.png)
 
 
 
@@ -58,6 +55,19 @@ Equally we can look at the contribution of spikes to average prices on a longer 
 :::
 
 ::::
+
+### 8 Feb
+
+Reconfigured with Claude the main dashboard, particularly the today tab to now additionally show AEMO's forecast prices and key notices if any. Other components were reconfigured to improved the look and the functionality of figures, typically by using html formatted tables, and switching some complex plots from Panel to Plotly. Here's a some examples from the prices tab that focus on price spikes and ongoing area of interest. Also detail fixes.
+
+The plot shows that in for instance NSW about 20% of the average annual price comes from spikes that occurred in only 0.3% of the half hours. Some spikes should be expected but when they are driving 20% of the annual price, and that feeds into next  year's price its an indication that either the market is too tight/not resilient to shocks or there is not enough competion.
+![](./media/image-20260208110113976.png)
+
+Equally we can look at the contribution of spikes to average prices on a longer term basis. The following figure uses a 90 day moving average of the contribution to average price caused by each price band. It misses the point about frequency but shows how important high prices can be to average prices and if we looked at different States we would see the spikes tend to occur in Winter. In NSW there have been more spikes since the closure of Liddell.
+
+![](./media/image-20260208110656754.png)
+
+
 
 ### 5 Feb
 
