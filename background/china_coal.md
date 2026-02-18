@@ -4,7 +4,7 @@ date: 2026-02-18
 author: "ITK - Claude assisted Research"
 format: html
 draft: false
-category: "coal"
+categories: ["Global"]
 lightbox: true
 bibliography: china_coal_references.bib
 ---

@@ -3,7 +3,6 @@ title: "China Coal Economics: Quality, Costs, Prices and Generator Profitability
 date: 2026-02-18
 author: "ITK Research"
 bibliography: china_coal_references.bib
-csl: apa.csl
 format:
   html:
     toc: true

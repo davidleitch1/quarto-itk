@@ -133,6 +133,7 @@ When adding or editing YAML front matter, use ONLY these approved categories:
 | **Climate** | Emissions, climate science, decarbonisation |
 | **Investment** | Economics, funding, costs, LCOE, financing, valuation |
 | **International** | Global comparisons, ASEAN, other countries |
+| **Global** | Country-specific deep dives, global commodity markets, international energy economics |
 
 **Rules:**
 - Use 1-2 categories per post (rarely 3)
