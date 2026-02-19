@@ -20,21 +20,18 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 19 Feb
+
+Busy week with the handover to me of our competitive dispatch engine and half hourly price forecasts to 2050.
 
 
-### 12 Feb
 
-Started working with demand which although as important as supply is derived from supply so I thought I already understood it. Turns out there was a lot to learn. So I wrote a [note](https://itkservices3.com/posts/changing_shape) which is the Articles list.
+Also found time to convert the IEA data i reprocess from the Dracula to the new lighter theme. I guess the point to be made is that wind and solar are in most every country.
+![](./media/image-20260219163722642.png)
 
-![](./media/image-20260211144602497.png){#fig-demand-timeofday}
+I have a big interview with Lauri Mylliverta so will talk about China next week, but even India is slowly progressing
 
-Also reconfigured the dashboard, thanks Claude so that the collectors and the Dashboard now work with one unified DuckDB file rather than the separate parquet files of the earlier version. It turns out that the data downloader is the most important part of the system because I do a lot of ad hoc analysis and often what's on the dashboard is not what I want. 
-
-### 10 Feb
-
-Added in PASA analysis to the dashboard. PASA = Projected Analysis of System Adequacy. This is another area, like the AEMO notices where a little knowledge is a dangerous thing. As I write there are over 1000 MW of coal generation down for maintenance, 2 units of Yallourn, and 450 MW combined of Callide B and Callide C. So it is nice to be able to see this information on the dashboard. No doubt next week I'll see whats wrong with it, but at the moment the Dashboard is looking good. I also worked on speeding it up again. Somehow in the recent changes the speedup functions for initial loading, that is lazy display, caching and using DuckDB persistence had been lost. It could still be faster but the lag is now acceptable and the spinning wheel makes it clear things are happening.
-
-Additionally I added via the main menu a link to Windy.com for the weather. I tried putting this on the Today tab but its better as its own link.
+![](./media/image-20260219164107376.png)
 
 
 
@@ -55,6 +52,20 @@ Additionally I added via the main menu a link to Windy.com for the weather. I tr
 :::
 
 ::::
+
+### 12 Feb
+
+Started working with demand which although as important as supply is derived from supply so I thought I already understood it. Turns out there was a lot to learn. So I wrote a [note](https://itkservices3.com/posts/changing_shape) which is the Articles list.
+
+![](./media/image-20260211144602497.png){#fig-demand-timeofday}
+
+Also reconfigured the dashboard, thanks Claude so that the collectors and the Dashboard now work with one unified DuckDB file rather than the separate parquet files of the earlier version. It turns out that the data downloader is the most important part of the system because I do a lot of ad hoc analysis and often what's on the dashboard is not what I want. 
+
+### 10 Feb
+
+Added in PASA analysis to the dashboard. PASA = Projected Analysis of System Adequacy. This is another area, like the AEMO notices where a little knowledge is a dangerous thing. As I write there are over 1000 MW of coal generation down for maintenance, 2 units of Yallourn, and 450 MW combined of Callide B and Callide C. So it is nice to be able to see this information on the dashboard. No doubt next week I'll see whats wrong with it, but at the moment the Dashboard is looking good. I also worked on speeding it up again. Somehow in the recent changes the speedup functions for initial loading, that is lazy display, caching and using DuckDB persistence had been lost. It could still be faster but the lag is now acceptable and the spinning wheel makes it clear things are happening.
+
+Additionally I added via the main menu a link to Windy.com for the weather. I tried putting this on the Today tab but its better as its own link.
 
 ### 8 Feb
 
