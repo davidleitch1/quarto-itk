@@ -20,18 +20,22 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-### 19 Feb
+## 25 Feb
 
-Busy week with the handover to me of our competitive dispatch engine and half hourly price forecasts to 2050.
+I've taken sole control of the ITK pricing forecasts. This is a major piece of software built by Paul Bandarian that I now have to obtain. So far:
 
+1. Updated to the 2026 ISP, this involved remapping for new REZs updating for new capacity factors for every weather year.
 
+2. Added four hour batteries as a dispatchible fuel class to go with 2 and 8 hour batteries.
 
-Also found time to convert the IEA data i reprocess from the Dracula to the new lighter theme. I guess the point to be made is that wind and solar are in most every country.
-![](./media/image-20260219163722642.png)
+3. Developing a LRMC solution at 5 year intervals for capacity between 2030 and 2050. The LRMC solution runs through the competitive pricing model. The competitive pricing model uses a liner program HIGHS to solve for price every 30 minutes. The LRMC capacity solution is better than our previous approach because it ensures fuels earn returns.
 
-I have a big interview with Lauri Mylliverta so will talk about China next week, but even India is slowly progressing
+4. Adding a new unit NPV model downloadable to Excel
 
-![](./media/image-20260219164107376.png)
+5. Building new scenarios using CSIROs Gencost as the basis but allowing variations.
+   Find it at https://spot_fcst.itkservices2.com/app/app
+
+   
 
 
 
@@ -52,6 +56,21 @@ I have a big interview with Lauri Mylliverta so will talk about China next week,
 :::
 
 ::::
+
+### 19 Feb
+
+Busy week with the handover to me of our competitive dispatch engine and half hourly price forecasts to 2050.
+
+
+
+Also found time to convert the IEA data i reprocess from the Dracula to the new lighter theme. I guess the point to be made is that wind and solar are in most every country.
+![](./media/image-20260219163722642.png)
+
+I have a big interview with Lauri Mylliverta so will talk about China next week, but even India is slowly progressing
+
+![](./media/image-20260219164107376.png)
+
+
 
 ### 12 Feb
 
