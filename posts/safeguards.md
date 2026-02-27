@@ -9,7 +9,7 @@ format:
   html:
     include-after-body:
        - "../comment_load.html"
-  docx: default
+    docx: default
 draft: false
 ---
 
