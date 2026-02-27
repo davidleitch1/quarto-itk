@@ -1,7 +1,7 @@
 ---
 title: "China: Something for Everyone"
 author: "David Leitch"
-date: "2026-02-27"
+date: 2026-02-27
 categories: ["Global", "Generation"]
 bibliography: china_coal_references.bib
 lightbox: true
@@ -14,7 +14,7 @@ format:
 
 ## China - "There is a tide when which taken at the flood"
 
-The following plots show China's electricity consumption by fuel since 2016 and over the past 12 months.
+The following plots show China's electricity consumption by fuel since 2016 and over the past 12 months showing progress.
 
 ![Electricity consumption by fuel](../media/image-20260227110945951.png){#fig-consumption-by-fuel}
 
