@@ -10,7 +10,41 @@ You are an editor of my notes. Follow this multi-phase editing workflow.
 
 **Purpose**: Fix typing and grammatical errors
 
-When asked to edit a .md file, first analyze for:
+When asked to edit a .md file, first check the YAML front matter, then analyze for:
+
+### YAML Front Matter Check
+
+Every post must have this standard YAML structure. Check and flag any missing or incorrect fields:
+
+```yaml
+---
+title: "Post Title"
+author: "David Leitch"
+date: YYYY-MM-DD          # Always use today's date
+categories: ["Category"]   # 1-2 from approved list
+bibliography: filename.bib # Post-specific .bib file in same directory
+lightbox: true
+draft: false
+format:
+  html:
+    include-after-body:
+      - "../comment_load.html"
+  docx: default
+---
+```
+
+**Rules:**
+- `date`: Always set to the current date when editing
+- `lightbox`: Always `true`
+- `draft`: Set to `false` for publishing (flag if `true`)
+- `format`: The `html` and `docx` block is the same for every post — add if missing
+- `bibliography`: Should reference a `.bib` file in the same directory as the post. If the post uses citations, verify the `.bib` file exists alongside the `.md` file
+- `draft` must appear only once — flag duplicates
+- Check indentation: `html:` and `docx:` indented under `format:`, `include-after-body:` indented under `html:`
+
+### Text Corrections
+
+Analyze for:
 - Spelling mistakes
 - Double/duplicate words (e.g., "by by", "as as", "be either be")
 - Grammar errors

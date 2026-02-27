@@ -16,7 +16,7 @@ draft:false
 
 ## China - "There is a tide when which taken at the flood"
 
-The following plots show China's electricity consumption by fuel since 2016 and over the past 12 months showing progress.
+The following plots show China's electricity consumption by fuel since 2016 and over the past 12 months 
 
 ![Electricity consumption by fuel](../media/image-20260227110945951.png){#fig-consumption-by-fuel}
 
