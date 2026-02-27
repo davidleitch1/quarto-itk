@@ -62,7 +62,8 @@ ITK's view is that coal generation operating hours, already at pretty much all-t
 and that extends to trains.  Look at the buses, semis and trucks.
 
 However, on the apparent figures it's not really showing up in oil consumption. The reason is that petrochemical consumption, itself a big consumer of electricity, is still growing well in China.
-![Oil consumption](media/image-20260227121355727.png){#fig-oil-consumption}
+
+![Oil consumption](../media/image-20260227121355727.png){#fig-oil-consumption}
 
 But for the electricity sector, coal remains the central story.
 
