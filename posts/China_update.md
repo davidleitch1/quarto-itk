@@ -5,7 +5,7 @@ date: 2026-02-27
 categories: ["Global", "Generation"]
 bibliography: china_coal_references.bib
 lightbox: true
-draft: true
+draft: false
 format:
   html:
     toc: true
