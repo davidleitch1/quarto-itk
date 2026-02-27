@@ -7,9 +7,11 @@ bibliography: china_coal_references.bib
 lightbox: true
 draft: false
 format:
-  html:
-    toc: true
-    toc-depth: 3
+html:
+    include-after-body:
+       - "../comment_load.html"
+  docx: default
+draft:false
 ---
 
 ## China - "There is a tide when which taken at the flood"
