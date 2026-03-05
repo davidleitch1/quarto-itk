@@ -17,7 +17,7 @@ format:
 
 The following plots show China's electricity consumption by fuel since 2016 and over the past 12 months 
 
-![Electricity consumption by fuel](../media/image-20260227110945951.png){#fig-consumption-by-fuel}
+![media](../media/image-20260227110945951.png){#fig-consumption-by-fuel}
 
 Over the past 9 years China's coal-fuelled electricity generation has INCREASED by about 6X Australia's total electricity consumption. Wind and solar have increased by about 9X.
 
