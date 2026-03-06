@@ -172,3 +172,11 @@ To that we can add:
 The Double B configuration is common. Of course, there are many different semi configurations doing Sydney to Melbourne.
 
 ![Double B, original Getty](../media/bdouble_front_trailer_outline-2670384.jpg){#fig-double-b}
+
+## Tonnes and cubic volume
+
+Transport like any topic has its own traps for space cadets. I was thinking about the maybe 24 mt of Melbourne to Sydney freight and how many trucks and truck km are really needed. Probably a better way to think about it is 20 ft containers. A B double takes 2. A 20 ft container can carry around 24 t of payload but it's really the cubic volume that drives it. If you think about groceries with beverages, canned goods, packaged dry food and so on it averages about 300 kg/cubic metre and a 20 ft container has a volume of about 33 cubic metres. So the typical payload is more like 10 t than 24 t.
+
+### Battery weight
+
+A 700 kWh battery adds about 4 t to the tare weight of a semi compared to a diesel. Much better to spread that weight over a B double.
