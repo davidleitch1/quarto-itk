@@ -20,26 +20,15 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-## 25 Feb
+### 9 Mar
 
-I've taken sole control of the ITK pricing forecasts. This is a major piece of software built by Paul Bandarian that I now have to obtain. So far:
+I wrote about using electric trucks between Sydney and Melbourne, one of the most interesting and achievable opportunities I've seen recently. This coincides with a SmartEnergy conference in Canberra on the 31st.
 
-1. Updated to the 2026 ISP, this involved remapping for new REZs updating for new capacity factors for every weather year.
+In a sense that was easy. The hard work has been in building price forecasting capacity scenarios or at least working with Claude on them. The latest process is establish LRMC at 2045 from first principles. That is the capacity mix with no coal that meets forecast demand but whereby there is no technology eg wind battery that can earn above ROI. Then that technology mix is run through the price forecasting model and adjusted because in the simulated real world there is curtailment and bidding strategies. Once the 2045 mix is established we move to 2040 and repeat and then build the intervening years using enforcement of monotonicity. And then back to 2035. The question is what capital costs and fuel costs to use in establishing LRMC as well as the appropriate WACC. CSIRO's Gencost is the starting point. When looking at the Gencost projections there are two things to consider. (1) Do they have good starting point numbers for 2026 and (2) Do you believe the learning rate, real cost down projections? Different scenarios can be built to accommodate different 2045 views.
 
-2. Added four hour batteries as a dispatchible fuel class to go with 2 and 8 hour batteries.
+Once the year by year capacity mix has been built it can be run through the price forecasting engine half hour by half hour, weather year by weather year and then if desired the scenario results can be pushed to the dashboard.
 
-3. Developing a LRMC solution at 5 year intervals for capacity between 2030 and 2050. The LRMC solution runs through the competitive pricing model. The competitive pricing model uses a liner program HIGHS to solve for price every 30 minutes. The LRMC capacity solution is better than our previous approach because it ensures fuels earn returns.
-
-4. Adding a new unit NPV model downloadable to Excel
-
-5. Building new scenarios using CSIROs Gencost as the basis but allowing variations.
-   Find it at https://spot_fcst.itkservices2.com/app/app
-
-   
-
-
-
-
+This scenario process is designed to provide credible results in the sense that demand is met, curtailment is allowed for, technologies earn the define ROI, not quite the same as having an IRR of zero and the price falls out. However its proved very difficult to achieve. No matter how hard I try batteries often under earn ROI when all the sums are done.
 
 :::
 
@@ -56,6 +45,25 @@ I've taken sole control of the ITK pricing forecasts. This is a major piece of s
 :::
 
 ::::
+
+
+
+### 25 Feb
+
+I've taken sole control of the ITK pricing forecasts. This is a major piece of software built by Paul Bandarian that I now have to obtain. So far:
+
+1. Updated to the 2026 ISP, this involved remapping for new REZs updating for new capacity factors for every weather year.
+
+2. Added four hour batteries as a dispatchible fuel class to go with 2 and 8 hour batteries.
+
+3. Developing a LRMC solution at 5 year intervals for capacity between 2030 and 2050. The LRMC solution runs through the competitive pricing model. The competitive pricing model uses a liner program HIGHS to solve for price every 30 minutes. The LRMC capacity solution is better than our previous approach because it ensures fuels earn returns.
+
+4. Adding a new unit NPV model downloadable to Excel
+
+5. Building new scenarios using CSIROs Gencost as the basis but allowing variations.
+   Find it at https://spot_fcst.itkservices2.com/app/app
+
+   
 
 ### 19 Feb
 
