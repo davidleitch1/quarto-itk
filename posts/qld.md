@@ -145,7 +145,9 @@ Climate projections explain why costs are accelerating and are expected to conti
 
 ### What is changing
 
-![Queensland's climate trajectory](../background/qld_climate_trajectory.png){#fig-climate-trajectory}
+![Queensland's climate trajectory](../media/qld_climate_trajectory.png){#fig-climate-trajectory}
+
+
 
 ### The drought-flood cycle: quantified
 
