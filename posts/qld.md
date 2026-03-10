@@ -1,102 +1,215 @@
 ---
-title: "QLD"
+title: "Buy Stocks Exposed to Disaster Recovery in QLD"
 author: "David Leitch"
-date: "2025-10-13"
-categories: ["Generation"]
-image: "../media/image-20251013160758905.png"
+date: 2026-03-10
+categories: ["Climate", "Investment"]
+bibliography: references.bib
 lightbox: true
+draft: false
 format:
   html:
     include-after-body:
-       - "../comment_load.html"
+      - "../comment_load.html"
   docx: default
-draft: false
 ---
 
-## QLD Govt v QLD People - Govt wins, people lose
+# Buy stocks exposed to disaster recovery in QLD
 
-Having reviewed the QLD Govt Energy Plan it seems to me that:
+![image-20260310114306615](../media/image-20260310114306615.png){#fig-qld-header}
 
-1. Wholesale prices will stay the same maybe even rise over the next few years, this is as much to do with price spikes as with the overall supply demand balance even though the latter is not great either;
-2. There will be enough supply for existing demand but no support for new energy intensive demand. The Qld Govt can make it look as though supply is increasing sharply by adding batteries and generation together but few analysts would agree with that presentation;
-3. Coal generation is going to decline or alternatively it will take a lot of capital to keep Callide B and Tarong going but there is no clear statement of how replacement generation other than gas peakers will be supported.
-4. The QLD Govt is backing new gas. Everyone else is backing new batteries not just in QLD but across the NEM. Why? Gas is expensive and hard to get, gas turbines are in short supply and expensive  and long construction times (see eg Kurri Kurri) and operationally gas takes time to start up, is carbon emitting and part operation efficiency is poor. As a reserve fuel supply owned by Govt maybe fine, but for day to day operations not so much.
-5. Renewable developers get the message: they're not welcome. 
-6. And this is arguably the most important but also most controversial point. So long as the QLD Govt owns most of the generation and all of the distribution it will control what happens. And if incoming Govts have different views then policy will back flip and the overall outcome will be garbage. No matter how often Governments try to support coal and ignore climate change the economics and the science will just grind away. QLD can carry on in a no change, no growth environment but looking backwards instead of forwards is pretty dumb.
+Queensland is the most disaster-prone state in Australia. It experiences about 60% of the nation's natural disasters, its \$95 billion reef asset faces accelerating bleaching, and a significant share of its economy is in industries directly vulnerable to extreme weather. The economic evidence shows these costs are rising, both in absolute terms and as a share of economic output. Queensland is more or less actively encouraging more disasters in Queensland via coal and gas investment and this along with what the rest of the world is doing means that "prepare and repair" will continue to offer investment opportunities.
 
-Just replacing Gladstone will take an effort by renewable suppliers and will have to be done in the face of a QLD Govt that is clearly anti renewables. This can be seen most clearly in the battery market. Everywhere else in Australia batteries under construction are booming but much less so in QLD.
+![Queensland's drought-flood cycle in numbers](../media/qld_drought_flood_cycle.png){#fig-drought-flood-cycle}
 
-The complete investment environment is up the creek. State owned generators turn taps off and on depending on the Govt of the day, competition and the private sector seem to be dirty words in QLD. Without State support it's hard getting utility scale generation projects going in Queensland. To be sure it's hard in every State but in NSW and Victoria and South Australia the State and Federal Governments at least welcome you. In Queensland the message is "you have to compete with coal, we won't support renewables but we will pour money into coal generators". But really there is no clear policy, lot of talk about coal decline trajectories but no real end game other than somehow ending up at net zero by 2050.
+Mining in total represents about 13% of GSP and coal mining is probably half that. Even at the new royalty rates it's 6% of government revenue. But sectors exposed to increasing disaster costs represent about 20% of GSP. There are about 50,000 jobs in coal mining compared to about 300,000 jobs in agriculture, tourism and accommodation alone that are negatively exposed to disasters in QLD.
 
-But the real point is growth, something QLD used to be good at, and wholesale prices. QLD coal production is being hurt by Indonesian competition. Coal generation is going to decline over time. Without clear plans to increase electricity supply relative to demand and thus lower prices and thus stimulate demand QLD is going to stagnate. The coal mining community, the coal generation employees are going to get resentful. Why? Because over time there will be fewer jobs and now there are no alternative jobs. 
+Overall employment might increase due to construction and rebuilding — call it the permanent tradies effect. This is the "broken window fallacy". Disasters are good for some sectors of the economy but destroy wealth and the overall impact is negative.
 
-Mentioning decarbonisation only in the vague never never dream time of 2050 is another example of wishful thinking by a QLD Govt too attracted to the siren of the Federal LNP. Queenslanders deserve leadership but what they get is the sugar hit that comes from looking backwards instead of forwards.  Rain bombs, fires and droughts, road damage, flood insurance, coral bleaching are on the menu, while the State tries to contain costs building for the 2032 Olympics. And when the international tourists come, Queenslanders will be able to proudly say "we are a coal state".
+To emphasise the point look at the CPI increases over the past 10 years. Electricity doesn't appear, but petrol and gas do. More to the point Insurance is the biggest increase outside of tobacco. Disasters are becoming more expensive and protecting against them is also becoming more expensive.
 
-All that said one suspects developers will continue background work in QLD and just wait for better times.
+![CPI top categories](../media/image-20260310141825011.png){#fig-CPI}
 
-## Capacity under the plan
+## Where to invest?
 
-One new gas plant 400 MW Brigalow plant is under construction.Others are mooted although why I don't know. The private sector wants to built batteries. Governments want to build gas generation. Who is right?  Other than gas the plan notes by 2030 2.4 GW of new wind and 4.4 GW of large scale solar.  I've ignored the new gas in this table because the Govt correctly says it will at best be used for firming.
+Based on the Bloomberg Prepare and Repair Index — an index of eight US sectors that have outperformed the S&P 500 by 6.5% a year over the decade to October 2025 — the best likely investment areas in Queensland are:
 
-![Capcity in QLD. Source:ITK](../media/image-20251013190211683.png)
+- Industrial services. In QLD, likely general contractors, tradies, infrastructure rebuilders;
+- Stormwater construction, e.g. whoever owns concrete and plastic pipes and their installers, e.g. James Hardie;
+- Insurance brokers, premium growth from rising risk;
+- Equipment rental, e.g. portable accommodation, mobile homes;
+- Restoration — road contractors, fencing rebuilders;
+- Infrastructure engineering, flood defences, toughening up electricity transmission etc.
+- I'd also add marine ecology, reef repair, although exactly how you repair a reef I haven't worked out. But there has to be a way to make money out of it. Maybe an aqua  museum/resort?
 
-Equally there will be considerable new rooftop supply over the next 5 years in QLD even though penetration rates are already quite high. All of that will act to depress prices in the middle of the day which does provide a storage incentive. Low middle of the day prices don't impact coal generators profitability much, or so it seems, because they make all their money when solar is not operating. What could impact coal generation profits is more batteries and or more wind. Since there wont be much more wind that leaves batteries.
+## No reliable disaster cost data
 
-It's not clear to me what wind or solar projects are being referred to by the Govt  other than Bungabpan (1.4 GW but bound to be two stages)  Upper Calliope (1.1 GW solar) and Edify's 600 MW solar Smoky Creek. Each of these  projects has a PPA with RIO.  None of those project have yet hit FID.
+The ABS has [acknowledged](https://www.abs.gov.au/statistics/research/measuring-natural-disasters-australian-economy) the lack of a good national disaster cost database. There is no regularly updated, comprehensive measure of Australia's total natural disaster costs. The Insurance Council of Australia reports that average annual insured catastrophe losses have more than doubled, from \$2.1 billion over the past 30 years to \$4.5 billion over the past five. Total economic costs — including uninsured losses, government infrastructure, and social impacts — are estimated at several multiples of insured losses, but the most widely cited national estimate (Deloitte Access Economics) has not been fully updated since 2021.
 
-## Hate renewables? Forget demand growth, forget AI
+It is surprising how poorly the economic costs of disasters are reported. There is endless climate change analysis but little about its day-to-day economic impacts. This note draws on the Deloitte/IAG estimates and the ICA Catastrophe Database (which only captures 20--50% of total economic cost). Since disaster costs are likely to increase, and QLD provides the greatest exposure, it would seem sensible for governments to maintain a trusted and reliable source of truth on the costs.
 
-Even in QLD there is no real appetite for new coal generation. There is appetite for new gas generation but it's not much easier building gas than wind. There isn't much gas, turbines have at least doubled in price, and availability is low. The following figure is in \$US
+### Queensland's economic growth: about 3%, moderating
 
-![Gas turbine costs. Source:Gridlab](../media/image-20251013103247380.png)
+Queensland's long-run average real GSP growth is approximately 3.0--3.5 per cent per annum, moderating to 2.5--2.75 per cent through 2028--29 (QLD Budget 2025--26). In 2010-11, floods and Cyclone Yasi reduced growth to 0.2 per cent — approximately 2--3 percentage points below trend, implying \$5--8 billion in foregone output on top of direct damage costs.
 
-It's well known that turbine availability is a minimum of four years. So no new gas fired generation is likely before 2030 in QLD in my opinion.
+### 13% of Queensland's economy is directly exposed to climate disasters
 
-The QLD Govt modelled several scenarios of coal closures.
+GSP equals total GVA plus net taxes on products; in Queensland the two measures are close.
 
-![QLD coal generation. Source:Govt](../media/image-20251013103523569.png)
+| Sector                            | GVA (\$B) | % of GSP | Key Climate Risks                               |
+| :-------------------------------- | --------: | -------: | :---------------------------------------------- |
+| Agriculture, Forestry and Fishing |     ~16.7 |     ~3.5 | Drought, flood, heat stress, cyclones           |
+| Tourism (direct GVA)              |      15.7 |      3.1 | Coral bleaching, cyclones, heatwaves            |
+| Transport and Warehousing         |     ~22.0 |     ~4.6 | Road/rail flood damage, cyclone closures        |
+| Accommodation and Food Services   |     ~11.0 |     ~2.3 | Cyclones, floods, bushfires, also a beneficiary |
+| **Total (high exposure)**         |   **~66** |  **~13** |                                                 |
 
-The somewhat amusing thing, from my point of view is that in each of these scenarios demand was set at the step change level from the ISP.
+*Source: QLD Treasury, ABS State Accounts, Tourism Research Australia. Including mining (12.9% of GVA, moderate exposure) brings the total to ~26% of GVA.*
 
-I'm never quite sure whether I've done the sums right but my read on the 2024 ISP step change demand forecast for QLD is
-![QLD ISP demand. Source:AEMO arranged by ITK](../media/image-20251013104533523.png)
+These are not marginal sectors. Queensland agriculture produces almost one-quarter of Australia's total agricultural output (cattle \$6B, sugarcane \$2B). Tourism contributes \$32 billion to GSP when indirect effects are included (6.3% of total GSP). The Great Barrier Reef alone supports 77,000 FTE jobs.
 
-Let's be conservative and assume zero hydrogen demand, even so overall QLD demand grows from say 58 TWh to 71 TWh a 22% increase in demand over 10 years. 
+## Historical Disaster Costs: \$50--70 Billion
 
-In a zero hydrogen world, and backing out growth in rooftop solar, only moderate growth in utility supply might be required but it's still growth in the face of coal closures.
+The total economic cost of major flood, cyclone, and drought events in Queensland since 2010 is conservatively estimated at **\$50--70 billion**:
 
-Over the past year coal generation in QLD has achieved average prices typically up around \$108 despite often operating when lunchtime prices are low. So far as I am aware, the QLD generators have not shown the ability to two shift (switch off in middle of day then restart) in the way that Bayswater has just started to do in NSW. Some generators like the super critical Millmeran  and Kogan Creek power stations would, in my opinion, arguably not be suited to two shifting. No doubt if the QLD Govt spends enough money it will be able to keep Tarong and Callide B running, but really is that how Queenslanders see the future? Running clapped out last century technology just to keep a few QLD seats in the Gladstone region?
+| Category                                            |  Estimated Cost | Basis                                  |
+| :-------------------------------------------------- | --------------: | :------------------------------------- |
+| Road and public infrastructure (QRA managed)        |    \$29 billion | Cumulative 2011--2025                  |
+| Emergency water infrastructure (Millennium Drought) |   \$6.9 billion | SEQ Water Grid, desalination           |
+| Livestock losses (2019 + 2025 floods)               |    \$6+ billion | Deloitte \$5.68B for 2019 alone        |
+| Uninsured property and business losses              | \$5--10 billion | 30--50% insured-to-total cost ratio    |
+| Agricultural production losses                      |  \$3--4 billion | QLD share of \$1.1B/year national loss |
+| Government drought assistance                       |   \$670 million | Since 2013                             |
 
-![QLD coal generators summary. Source:AEMO, web search](../media/image-20251013142801406.png)
+*Source: QRA, Deloitte Access Economics, ABARES, ICA, QLD Government. Categories overlap.*
 
-Regarding average price it's not news to see how much of the average price is received during the peak hours.
+### The trend: accelerating
 
-![Qld generation by time of day. Data AEMO](../media/image-20251013142133674.png)
+| Metric                                        |                           Value |
+| :-------------------------------------------- | ------------------------------: |
+| QRA active program, first 5 years (2011--16)  |                   ~\$15 billion |
+| QRA active program, latest 5 years (2020--25) | \$14.2 billion across 58 events |
+| Events activated 2024--25                     |          17 (highest on record) |
+| LGAs activated 2024--25                       | 73 of 77 (most widespread ever) |
 
-You can see that more clearly here
-![QLD prices by time of day. Data:AEMO](../media/image-20251013143341627.png)
+National disaster costs have risen from an estimated \$18 billion in 2017 to \$38 billion in 2024. Queensland experiences roughly 60 per cent of the nation's disaster events and bears a disproportionate share of the cost [@deloitte-resilience-2024; @IAG-deloitte-2024; @climate-council-disaster-ground-zero-2024].
 
-And as with other States it's the 1% of times that price is over \$1000/MWh that keep generators going for much of the year, far outweighing the negative impact of the 18% of time where the price is below zero.
+### Major events since 2010
 
-![QLD price bands last 12 months. Source: ITK analysis, AEMO data](../media/image-20251013205838179.png)
+| Event                | Year     | Total Economic Cost (\$B) | Insured Losses (\$B) |
+| :------------------- | :------- | ------------------------: | -------------------: |
+| QLD Floods + TC Yasi | 2010--11 |                     ~14.1 |                  3.5 |
+| TC Debbie            | 2017     |                      ~3.5 |                 1.74 |
+| NQ Monsoon Trough    | 2019     |                     ~5.68 |                 1.24 |
+| SE QLD Floods        | 2022     |                      ~7.7 |                 5.56 |
+| TC Jasper            | 2023     |                      ~1.0 |                 0.74 |
+| Ex-TC Alfred         | 2025     |                 ~1.8--2.7 |                  1.5 |
 
-So really for QLD coal generators in terms of economics, the returns will be driven by the ongoing existence of price spikes and the evening peaks. Without lots more batteries and with the closure of Gladstone there will be lots more price spikes. 
+*Source: ICA, Deloitte Access Economics, QRA, World Bank.*
 
-For years here at ITK we have been saying that when batteries hit their straps gas and coal generators will have less pricing power. But is that really true? We don't know because the battery surge is still in its early days, but it has started. First lets look at the existing and forthcoming battery supply.
+The gap between insured and total economic costs falls on individual property owners, businesses, and taxpayers through government recovery programs.
 
-To say the least if all the batteries with CIS awards but not yet in FID are built we are still only about 1/3 of the way to what's needed. 
+## Disaster costs are about 1% of GSP and probably rising
 
-![Batteries in the NEM. Source:www.renewmap.com.au](../media/image-20251013155208587.png)
+### Historical ratio
 
-but even in batteries the **dead hand of QLD conservatism** is evident when we look at what is under construction.
+| Period / Event                            | Disaster Cost (\$B) | QLD GSP (\$B) | Cost as % of GSP |
+| :---------------------------------------- | ------------------: | ------------: | ---------------: |
+| 2010--11 (floods + Yasi)                  |                 ~16 |          ~275 |            ~5.8% |
+| Annual average (total economic, 2011--25) |               ~4--5 |    ~400 (avg) |       ~1.0--1.3% |
+| 2022 (SE QLD floods)                      |                 ~5+ |          ~425 |            ~1.2% |
+| Annual average (QRA program only)         |                ~2.1 |    ~400 (avg) |            ~0.5% |
 
-![Batteries by stage. Source:www.renewmap.com.au](../media/image-20251013155324023.png)
+*Source: Author calculations from Deloitte, QRA, ICA, World Bank, ABS.*
 
-The best we can say for long suffering South East Queensland consumers is that the surge in batteries in NSW may end up limiting high priced QLD coal exports in the early evening.
+The ongoing burden of approximately 1.0--1.3 per cent of GSP is substantial.  In the extreme year of 2010--11, disaster costs consumed the equivalent of almost 6 per cent of GSP.
 
-Although it will be investors that determine what happens, unless there is a strong price signal in QLD , you can expect under investment to continue. Right now there is only another 1 GW of batteries (4.5 GWh) under construction. I don't think that's enough to really take the edge off prices.
+### The forward projection
 
-Across the NEN and allowing for the closure of Gladstone, Eraring and Yallourn it's likely that every MW of the 10 GW of CIS awarded batteries and the 6 GW under construction will be needed. Still 70 GWh of battery  storage is an awesome number enough to run the NEM for about 3 hours all on its own.
+Rather than rely on the Deloitte model, which has not been fully updated since 2021, we can build a projection from the more current ICA data. National insured disaster losses have more than doubled in recent years, from a 30-year average of \$2.1 billion to \$4.5 billion over the past five years (ICA). Applying Queensland's share (~40--50% of national insured losses) and standard multipliers for uninsured and indirect costs (2--3x), current total economic disaster costs for Queensland are approximately \$5 billion per year — roughly 1 per cent of GSP. If insured losses continue growing at the observed rate of approximately 6 %  per annum, Queensland's total disaster costs would reach \$20--25 billion per year by mid-century, or about 1.3 per cent of projected GSP.
 
+| Year           | Projected Disaster Cost (\$B/yr) | Projected Nominal GSP (\$B) | Cost as % of GSP |
+| :------------- | -------------------------------: | --------------------------: | ---------------: |
+| 2025 (current) |                               ~5 |                        ~531 |            ~0.9% |
+| 2035           |                            ~9-10 |                        ~824 |            ~1.1% |
+| 2050           |                           ~21-25 |                       ~1500 |            ~1.3% |
 
+*Source: Derived from Deloitte and ICA data.*
 
+The ratio increases by about 40 per cent by mid-century. This means disaster costs will grow faster than the economy — an increasing drag on prosperity. And these are average annual figures; individual extreme years would be substantially worse.
+
+## The Climate Trajectory Driving These Costs
+
+Including scope 3 (exported coal and gas burned overseas), QLD's carbon emissions are about 660 Mt CO2 or about 1.75% of global total fossil fuel emissions — 117 tonnes per capita, surely one of the world's highest numbers. QLD is contributing measurably to the climate change driving its own disasters, and coal and gas production continues to receive policy support.
+
+Climate projections explain why costs are accelerating and are expected to continue doing so.
+
+### What is changing
+
+![Queensland's climate trajectory](../background/qld_climate_trajectory.png){#fig-climate-trajectory}
+
+### The drought-flood cycle: quantified
+
+This is Queensland's defining climate risk. The cycle operates across multiple sectors simultaneously:
+
+**Roads**: 40 per cent of Queensland's roads (70,000 km) are on black clay soils that shrink in drought and swell when wet. Drought-weakened pavements suffer accelerated deterioration when subsequently flooded — documented in peer-reviewed pavement engineering research.
+
+**Cattle**: The 2013--2019 drought forced destocking at ~\$68 per head; by 2021, restocking cost \$1,500+ per head — a 20--25x price swing. The 457,000 cattle killed in the February 2019 monsoon had been weakened by six years of preceding drought.
+
+**Fencing**: Exclusion fencing costs have tripled in a decade (\$5--7k/km to \$15--20k/km). The 2025 floods destroyed 8,500 km of exclusion fencing and 12,000 km of internal fencing — an estimated \$150--250 million to replace. The government has committed \$105 million for exclusion fencing alone.
+
+**Water**: The Millennium Drought drove \$6.9 billion in emergency water infrastructure. A further \$4--8 billion new desalination plant is planned for 2035.
+
+The climate projections confirm this cycle will intensify: drier winters, more intense rainfall events when they occur, warmer temperatures accelerating evapotranspiration. The net effect is wider swings between extremes.
+
+Queensland's disaster costs are rising, the climate trajectory ensures they will continue to rise, and the state's own fossil fuel exports are contributing to the problem. For investors, this creates a structural growth opportunity in the sectors that prepare for and repair the damage.
+
+## References
+
+**Disaster cost data**
+
+- Deloitte Access Economics, *Building Australia's Natural Disaster Resilience* (2017, updated 2021, 2024). Commissioned by the Australian Business Roundtable for Disaster Resilience and Safer Communities.
+- Insurance Australia Group / Deloitte, "Natural disasters estimated to cost Australia \$73 billion per year by 2060" (2024).
+- Insurance Council of Australia, *Insurance Catastrophe Resilience Reports* (annual) and ICA Catastrophe Database (1967--present).
+- Climate Council, *State of Queensland: Disaster Ground Zero* (2024).
+- Queensland Reconstruction Authority, *Annual Report 2024--25*.
+- World Bank, *Queensland Recovery and Reconstruction in the Aftermath of the 2010/2011 Flood Events and Cyclone Yasi* (2011).
+
+**Economic data**
+
+- ABS, *Australian National Accounts: State Accounts, 2024--25* (Cat. 5220.0).
+- DFAT, *Queensland Country Economic Fact Sheet, 2024--25*.
+- QLD Budget 2025--26, *Budget Paper No. 2: Budget Strategy and Outlook*.
+- Tourism Research Australia, *State Tourism Satellite Account*.
+
+**Climate science**
+
+- CSIRO/BoM, *State of the Climate 2024*.
+- IPCC AR6, *WGI Chapter 11: Weather and Climate Extreme Events*.
+- QLD Future Climate Science Program (CMIP6 projections).
+- ABARES, *Effects of Drought and Climate Variability on Australian Farms*.
+
+**Great Barrier Reef**
+
+- GBRMPA, *Outlook Report 2024*.
+- Deloitte Access Economics, *At What Cost?* (2024) and *At What Price?* (2017).
+
+**Scope 3 emissions**
+
+- Climate Analytics, *Australia's Global Fossil Fuel Carbon Footprint* (August 2024).
+- QLD Department of Natural Resources, Coal Industry data.
+- QLD State of the Environment Report 2024, Greenhouse Gas Emissions.
+
+**Insurance**
+
+- ACCC, *Northern Australia Insurance Inquiry Final Report* (2020).
+- CHOICE, Home Insurance Premiums (2025).
+- Actuaries Institute, *The Climate Change Adaptation Gap* (2024).
+
+**Investment**
+
+- Bloomberg, "Disaster Recovery Is an \$8 Trillion Driver of US Growth" (2025). Bloomberg Prepare and Repair Index.
+
+**Data quality**
+
+- ABS, [Measuring Natural Disasters in the Australian Economy](https://www.abs.gov.au/statistics/research/measuring-natural-disasters-australian-economy).
+- Handmer, J. et al., "How much do disasters cost? A comparison of disaster cost estimates in Australia," *International Journal of Disaster Risk Reduction* (2016).
