@@ -6,6 +6,7 @@ categories: ["Climate", "Investment"]
 bibliography: references.bib
 lightbox: true
 draft: false
+feed: false
 format:
   html:
     include-after-body:
