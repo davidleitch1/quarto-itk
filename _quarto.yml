@@ -1,5 +1,7 @@
 project:
   type: website
+  post-render:
+    - scripts/clean_feed.py
   resources:
     - "sub_thanks.html"
     - "green_iron/ironcalc.html"

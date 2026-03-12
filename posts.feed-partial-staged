@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>ITK Research</title>
+<link>https://itkservices3.com/posts.html</link>
+<atom:link href="https://itkservices3.com/posts.xml" rel="self" type="application/rss+xml"/>
+<description>Electricity markets analysis</description>
+<generator>quarto-1.6.39</generator>
+<lastBuildDate>Mon, 09 Mar 2026 14:00:00 GMT</lastBuildDate>
+<item>
+  <title>{B4F502887207:/posts/qld.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/qld.html</link>
+  <description>{B4F502887207:/posts/qld.html}</description>
+  <category>Climate</category>
+  <category>Investment</category>
+  <guid>https://itkservices3.com/posts/qld.html</guid>
+  <pubDate>Mon, 09 Mar 2026 14:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Longhaul.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/Longhaul.html</link>
+  <description>{B4F502887207:/posts/Longhaul.html}</description>
+  <category>EVs</category>
+  <guid>https://itkservices3.com/posts/Longhaul.html</guid>
+  <pubDate>Thu, 05 Mar 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/bdouble_front_trailer_outline-2670384.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/China_update.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/China_update.html</link>
+  <description>{B4F502887207:/posts/China_update.html}</description>
+  <category>Global</category>
+  <category>Generation</category>
+  <guid>https://itkservices3.com/posts/China_update.html</guid>
+  <pubDate>Thu, 26 Feb 2026 14:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/global_electricity.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/global_electricity.html</link>
+  <description>{B4F502887207:/posts/global_electricity.html}</description>
+  <category>Global</category>
+  <guid>https://itkservices3.com/posts/global_electricity.html</guid>
+  <pubDate>Thu, 19 Feb 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260220100141797.png" medium="image" type="image/png" height="91" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Changing_shape.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/Changing_shape.html</link>
+  <description>{B4F502887207:/posts/Changing_shape.html}</description>
+  <category>Storage</category>
+  <category>Generation</category>
+  <guid>https://itkservices3.com/posts/Changing_shape.html</guid>
+  <pubDate>Tue, 10 Feb 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260211144602497.png" medium="image" type="image/png" height="62" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/safeguards.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/safeguards.html</link>
+  <description>{B4F502887207:/posts/safeguards.html}</description>
+  <category>Policy</category>
+  <guid>https://itkservices3.com/posts/safeguards.html</guid>
+  <pubDate>Sun, 08 Feb 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260209081527258.png" medium="image" type="image/png" height="123" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/battery_coal.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/battery_coal.html</link>
+  <description>{B4F502887207:/posts/battery_coal.html}</description>
+  <category>Generation</category>
+  <guid>https://itkservices3.com/posts/battery_coal.html</guid>
+  <pubDate>Tue, 03 Feb 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260204162601590.png" medium="image" type="image/png" height="82" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Battery_coal 2.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/Battery_coal 2.html</link>
+  <description>{B4F502887207:/posts/Battery_coal 2.html}</description>
+  <category>Generation</category>
+  <guid>https://itkservices3.com/posts/Battery_coal 2.html</guid>
+  <pubDate>Tue, 03 Feb 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260204162601590.png" medium="image" type="image/png" height="82" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Coal_gen.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/Coal_gen.html</link>
+  <description>{B4F502887207:/posts/Coal_gen.html}</description>
+  <category>Generation</category>
+  <guid>https://itkservices3.com/posts/Coal_gen.html</guid>
+  <pubDate>Mon, 02 Feb 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260202164515745.png" medium="image" type="image/png" height="102" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Powering data centres and smelters.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/Powering data centres and smelters.html</link>
+  <description>{B4F502887207:/posts/Powering data centres and smelters.html}</description>
+  <category>Demand</category>
+  <category>Markets</category>
+  <guid>https://itkservices3.com/posts/Powering data centres and smelters.html</guid>
+  <pubDate>Wed, 28 Jan 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260128132427898.png" medium="image" type="image/png" height="102" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/ev_policy_map.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/ev_policy_map.html</link>
+  <description>{B4F502887207:/posts/ev_policy_map.html}</description>
+  <category>EVs</category>
+  <category>Policy</category>
+  <guid>https://itkservices3.com/posts/ev_policy_map.html</guid>
+  <pubDate>Tue, 20 Jan 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260121091748742.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/safeguards  review.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/safeguards  review.html</link>
+  <description>{B4F502887207:/posts/safeguards  review.html}</description>
+  <category>Policy</category>
+  <guid>https://itkservices3.com/posts/safeguards  review.html</guid>
+  <pubDate>Sun, 18 Jan 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260119183822680.png" medium="image" type="image/png" height="82" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Networks are under pressure.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/Networks are under pressure.html</link>
+  <description>{B4F502887207:/posts/Networks are under pressure.html}</description>
+  <category>Networks</category>
+  <guid>https://itkservices3.com/posts/Networks are under pressure.html</guid>
+  <pubDate>Tue, 13 Jan 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260113202130304.png" medium="image" type="image/png" height="63" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Ocean heat change update.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/Ocean heat change update.html</link>
+  <description>{B4F502887207:/posts/Ocean heat change update.html}</description>
+  <category>Climate</category>
+  <guid>https://itkservices3.com/posts/Ocean heat change update.html</guid>
+  <pubDate>Tue, 13 Jan 2026 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20260112135220821.png" medium="image" type="image/png" height="184" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/20251222_capacity_optimization_article 2/capacity_optimised.html}</title>
+  <dc:creator>Paul Bandarian (principal), David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/20251222_capacity_optimization_article 2/capacity_optimised.html</link>
+  <description>{B4F502887207:/posts/20251222_capacity_optimization_article 2/capacity_optimised.html}</description>
+  <category>Markets</category>
+  <category>Generation</category>
+  <guid>https://itkservices3.com/posts/20251222_capacity_optimization_article 2/capacity_optimised.html</guid>
+  <pubDate>Mon, 22 Dec 2025 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/Table 1.png" medium="image" type="image/png" height="93" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/2026 - a big year for wind financing in NSW.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/2026 - a big year for wind financing in NSW.html</link>
+  <description>{B4F502887207:/posts/2026 - a big year for wind financing in NSW.html}</description>
+  <category>Generation</category>
+  <category>Investment</category>
+  <guid>https://itkservices3.com/posts/2026 - a big year for wind financing in NSW.html</guid>
+  <pubDate>Sun, 21 Dec 2025 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20251209202637924.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/2026_ISP.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/2026_ISP.html</link>
+  <description>{B4F502887207:/posts/2026_ISP.html}</description>
+  <category>Networks</category>
+  <category>Policy</category>
+  <guid>https://itkservices3.com/posts/2026_ISP.html</guid>
+  <pubDate>Mon, 08 Dec 2025 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20251209202637924.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Resprices2.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/Resprices2.html</link>
+  <description>{B4F502887207:/posts/Resprices2.html}</description>
+  <category>Markets</category>
+  <guid>https://itkservices3.com/posts/Resprices2.html</guid>
+  <pubDate>Sun, 07 Dec 2025 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20251208145802941.png" medium="image" type="image/png" height="86" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/CIS.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/CIS.html</link>
+  <description>{B4F502887207:/posts/CIS.html}</description>
+  <category>Policy</category>
+  <guid>https://itkservices3.com/posts/CIS.html</guid>
+  <pubDate>Thu, 20 Nov 2025 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/media/image-20251013160758905.png" medium="image" type="image/png" height="71" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/demand_growth.html}</title>
+  <dc:creator>David Leitch</dc:creator>
+  <link>https://itkservices3.com/posts/demand_growth.html</link>
+  <description>{B4F502887207:/posts/demand_growth.html}</description>
+  <category>Demand</category>
+  <guid>https://itkservices3.com/posts/demand_growth.html</guid>
+  <pubDate>Sun, 26 Oct 2025 14:00:00 GMT</pubDate>
+  <media:content url="https://itkservices3.com/posts" medium="image"/>
+</item>
+</channel>
+</rss>

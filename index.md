@@ -20,15 +20,13 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-### 9 Mar
+### 12 Mar
 
-I wrote about using electric trucks between Sydney and Melbourne, one of the most interesting and achievable opportunities I've seen recently. This coincides with a SmartEnergy conference in Canberra on the 31st.
+Prompted by Linkedin comments about the rising price of June futures (up 15% in a week) I added a STTM gas and a futures tab to the dashboard. I get you need a big monitor to take advantage of the dashboard but if you have one, the ITK dashboard is as good as it gets here in the NEM.
 
-In a sense that was easy. The hard work has been in building price forecasting capacity scenarios or at least working with Claude on them. The latest process is establish LRMC at 2045 from first principles. That is the capacity mix with no coal that meets forecast demand but whereby there is no technology eg wind battery that can earn above ROI. Then that technology mix is run through the price forecasting model and adjusted because in the simulated real world there is curtailment and bidding strategies. Once the 2045 mix is established we move to 2040 and repeat and then build the intervening years using enforcement of monotonicity. And then back to 2035. The question is what capital costs and fuel costs to use in establishing LRMC as well as the appropriate WACC. CSIRO's Gencost is the starting point. When looking at the Gencost projections there are two things to consider. (1) Do they have good starting point numbers for 2026 and (2) Do you believe the learning rate, real cost down projections? Different scenarios can be built to accommodate different 2045 views.
+https://itkservices3.com/nemgen
 
-Once the year by year capacity mix has been built it can be run through the price forecasting engine half hour by half hour, weather year by weather year and then if desired the scenario results can be pushed to the dashboard.
 
-This scenario process is designed to provide credible results in the sense that demand is met, curtailment is allowed for, technologies earn the define ROI, not quite the same as having an IRR of zero and the price falls out. However its proved very difficult to achieve. No matter how hard I try batteries often under earn ROI when all the sums are done.
 
 :::
 
@@ -47,6 +45,16 @@ This scenario process is designed to provide credible results in the sense that 
 ::::
 
 
+
+### 9 Mar
+
+I wrote about using electric trucks between Sydney and Melbourne, one of the most interesting and achievable opportunities I've seen recently. This coincides with a SmartEnergy conference in Canberra on the 31st.
+
+In a sense that was easy. The hard work has been in building price forecasting capacity scenarios or at least working with Claude on them. The latest process is establish LRMC at 2045 from first principles. That is the capacity mix with no coal that meets forecast demand but whereby there is no technology eg wind battery that can earn above ROI. Then that technology mix is run through the price forecasting model and adjusted because in the simulated real world there is curtailment and bidding strategies. Once the 2045 mix is established we move to 2040 and repeat and then build the intervening years using enforcement of monotonicity. And then back to 2035. The question is what capital costs and fuel costs to use in establishing LRMC as well as the appropriate WACC. CSIRO's Gencost is the starting point. When looking at the Gencost projections there are two things to consider. (1) Do they have good starting point numbers for 2026 and (2) Do you believe the learning rate, real cost down projections? Different scenarios can be built to accommodate different 2045 views.
+
+Once the year by year capacity mix has been built it can be run through the price forecasting engine half hour by half hour, weather year by weather year and then if desired the scenario results can be pushed to the dashboard.
+
+This scenario process is designed to provide credible results in the sense that demand is met, curtailment is allowed for, technologies earn the define ROI, not quite the same as having an IRR of zero and the price falls out. However its proved very difficult to achieve. No matter how hard I try batteries often under earn ROI when all the sums are done.
 
 ### 25 Feb
 

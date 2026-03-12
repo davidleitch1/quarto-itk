@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>ITK Research</title>
+<link>https://itkservices3.com/presentations.html</link>
+<atom:link href="https://itkservices3.com/presentations.xml" rel="self" type="application/rss+xml"/>
+<description>Electricity markets analysis</description>
+<generator>quarto-1.6.39</generator>
+<lastBuildDate>Wed, 11 Mar 2026 03:02:58 GMT</lastBuildDate>
+<item>
+  <title>{B4F502887207:/Presentations/Process-heat-electrification.html}</title>
+  <link>https://itkservices3.com/Presentations/Process-heat-electrification.html</link>
+  <description>{B4F502887207:/Presentations/Process-heat-electrification.html}</description>
+  <guid>https://itkservices3.com/Presentations/Process-heat-electrification.html</guid>
+  <pubDate>Wed, 11 Mar 2026 03:02:58 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/Presentations/Further on down the  road.html}</title>
+  <link>https://itkservices3.com/Presentations/Further on down the  road.html</link>
+  <description>{B4F502887207:/Presentations/Further on down the  road.html}</description>
+  <guid>https://itkservices3.com/Presentations/Further on down the  road.html</guid>
+  <pubDate>Wed, 11 Mar 2026 03:02:58 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/Presentations/smart_energy/move_over_rover copy.html}</title>
+  <link>https://itkservices3.com/Presentations/smart_energy/move_over_rover copy.html</link>
+  <description>{B4F502887207:/Presentations/smart_energy/move_over_rover copy.html}</description>
+  <guid>https://itkservices3.com/Presentations/smart_energy/move_over_rover copy.html</guid>
+  <pubDate>Wed, 11 Mar 2026 03:02:58 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/Presentations/smart_energy_syd.html}</title>
+  <link>https://itkservices3.com/Presentations/smart_energy_syd.html</link>
+  <description>{B4F502887207:/Presentations/smart_energy_syd.html}</description>
+  <guid>https://itkservices3.com/Presentations/smart_energy_syd.html</guid>
+  <pubDate>Wed, 11 Mar 2026 03:02:58 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/Presentations/enhar.html}</title>
+  <link>https://itkservices3.com/Presentations/enhar.html</link>
+  <description>{B4F502887207:/Presentations/enhar.html}</description>
+  <guid>https://itkservices3.com/Presentations/enhar.html</guid>
+  <pubDate>Wed, 11 Mar 2026 03:02:58 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/Presentations/CEC25.pptx}</title>
+  <link>https://itkservices3.com/Presentations/CEC25.pptx</link>
+  <description>{B4F502887207:/Presentations/CEC25.pptx}</description>
+  <guid>https://itkservices3.com/Presentations/CEC25.pptx</guid>
+  <pubDate>Wed, 11 Mar 2026 03:02:58 GMT</pubDate>
+</item>
+</channel>
+</rss>
