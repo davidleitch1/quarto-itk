@@ -20,11 +20,13 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-### 12 Mar
+### 19 Mar
 
-Prompted by Linkedin comments about the rising price of June futures (up 15% in a week) I added a STTM gas and a futures tab to the dashboard. I get you need a big monitor to take advantage of the dashboard but if you have one, the ITK dashboard is as good as it gets here in the NEM.
+The batteries tab on the dashboard has been changed to allow any collection of batteries to be aggregated and performace, eg average price plotted. Likewise added in a familiar time of day plot to the batteries tab. Other bugs were fixed. One disadvantage of Claude is it tends to leave old code lying around instead of deleting it. On the positive side a battery daemon now runs that checks for new battery records by region and the overall state of charge and records if the state of charge falls below 5%
 
-https://itkservices3.com/nemgen
+I'm increasingly happy with the Dashboard. It's designed to reboot if the computer goes down. I get alerts for high prices and so on.
+
+![](./media/image-20260319200100206.png)
 
 
 
@@ -43,6 +45,12 @@ https://itkservices3.com/nemgen
 :::
 
 ::::
+
+### 12 Mar
+
+Prompted by Linkedin comments about the rising price of June futures (up 15% in a week) I added a STTM gas and a futures tab to the dashboard. I get you need a big monitor to take advantage of the dashboard but if you have one, the ITK dashboard is as good as it gets here in the NEM.
+
+https://itkservices3.com/nemgen
 
 
 
