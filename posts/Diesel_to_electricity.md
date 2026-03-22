@@ -45,6 +45,7 @@ The scorecard ranks segments by diesel volume, electrification economics, and ve
 Note: *Artic* in the scorecard above refers to articulated vehicles.
 
 A breakdown of road diesel consumption is:
+
 ![Road diesel breakdown](../media/diesel_drilldown_2_road_trucks_lcv.png){#fig-road-diesel-breakdown}
 
 
@@ -153,6 +154,8 @@ Agriculture, forestry, and fishing together consume approximately 2.5 billion li
 
 The agricultural fleet is dominated by tractors (John Deere 6R series, Case IH Maxxum/Puma, New Holland) operating on broadacre grain, cotton, and livestock properties. Unlike road vehicles, agricultural equipment is measured in operating hours rather than kilometres. A mid-range tractor (150--250 hp) consumes 20--40 litres per hour and typically operates 1,000--2,000 hours per year, with seasonal peaks during planting and harvest.
 
+**Electrification economics.** Fuel is a significant cost: a 200 hp tractor at 30 L/hr and 1,500 hours/yr burns 45,000 litres (\$74,000/yr at bulk rates). But electric alternatives are embryonic. The Monarch MK-V autonomous electric tractor is in limited production in the US; John Deere has demonstrated a battery-electric prototype but has no production timeline. Solar-plus-battery systems for irrigation pumps and sheds are commercially proven and already deployed on Australian farms, but they address stationary loads, not mobile equipment. The agricultural fleet turns over very slowly (average age ~15 years) and operates in remote areas far from grid infrastructure, making depot charging impractical for most properties. China has limited electric tractor deployment and offers no useful signal for this segment. Agriculture scored 11/20 on the policy scorecard --- a large diesel budget (4/5) undermined by near-zero vehicle availability (1/5).
+
 | Parameter                                | Value                         | Source                        |
 | ---------------------------------------- | ----------------------------- | ----------------------------- |
 | Diesel consumption                       | ~2.5 BL/yr                    | Author estimate from FTC data |
@@ -161,13 +164,13 @@ The agricultural fleet is dominated by tractors (John Deere 6R series, Case IH M
 | Annual utilisation                       | ~1,500 operating hours        | Industry estimate             |
 | Typical fuel consumption                 | 20--40 L/hr                   | OEM specifications            |
 
-**Electrification economics.** Fuel is a significant cost: a 200 hp tractor at 30 L/hr and 1,500 hours/yr burns 45,000 litres (\$74,000/yr at bulk rates). But electric alternatives are embryonic. The Monarch MK-V autonomous electric tractor is in limited production in the US; John Deere has demonstrated a battery-electric prototype but has no production timeline. Solar-plus-battery systems for irrigation pumps and sheds are commercially proven and already deployed on Australian farms, but they address stationary loads, not mobile equipment. The agricultural fleet turns over very slowly (average age ~15 years) and operates in remote areas far from grid infrastructure, making depot charging impractical for most properties. China has limited electric tractor deployment and offers no useful signal for this segment. Agriculture scored 11/20 on the policy scorecard --- a large diesel budget (4/5) undermined by near-zero vehicle availability (1/5).
-
 ### 7. Vans — 1.8 BL/yr
 
 Vans are the delivery and trade workhorses of urban Australia: Toyota HiAce, Ford Transit and Transit Custom, Mercedes Sprinter, Renault Master, and LDV Deliver. They serve couriers, parcel delivery fleets, tradies, and service operators. An estimated 35% of light commercial vehicle diesel goes to vans, giving approximately 1.8 billion litres per year.
 
 Van operations suit electrification better than most segments: routes are predictable, daily distances are typically 100--200 km, and vehicles return to a depot for overnight charging. However, the absolute fuel bill is modest --- at 9--12 L/100 km and 20,000 km/year, annual diesel cost is only ~\$4,000 --- making it difficult to recover the \$20,000--35,000 electric premium purely from fuel savings.
+
+**Electrification economics.** Fuel is a small share of van operating costs: at 11 L/100 km and 25,000 km/yr, annual diesel spend is ~\$4,500. A 54% fuel saving yields only \$2,500/yr, and the BEV premium is substantial --- the Ford E-Transit starts at \$69,990 (vs ~\$55,000 diesel), while the Mercedes eSprinter commands a \$39,000 premium over its diesel equivalent. Payback ranges from 6 years (E-Transit) to 16 years (eSprinter). The structural problem is that vans travel modest distances with light fuel consumption, so the annual saving is too small to justify the capital gap. In China, electric van and light truck penetration reached 45--59% in urban logistics in 2025, far ahead of what Australian economics would predict. The divergence is explained by Chinese EV prices 40--60% lower than in Australia and urban diesel access restrictions absent here. If Chinese-priced vans (from ~\$15,000) entered Australia, the economics would shift rapidly. Vans scored 11/20 on the policy scorecard.
 
 | Parameter                | Value                                         | Source                                |
 | ------------------------ | --------------------------------------------- | ------------------------------------- |
@@ -179,13 +182,13 @@ Van operations suit electrification better than most segments: routes are predic
 
 [^d]: The ABS SMVU reports 5,014 ML for all LCVs. Vans account for approximately 35% of the LCV fleet, giving ~1,750--1,800 ML.
 
-**Electrification economics.** Fuel is a small share of van operating costs: at 11 L/100 km and 25,000 km/yr, annual diesel spend is ~\$4,500. A 54% fuel saving yields only \$2,500/yr, and the BEV premium is substantial --- the Ford E-Transit starts at \$69,990 (vs ~\$55,000 diesel), while the Mercedes eSprinter commands a \$39,000 premium over its diesel equivalent. Payback ranges from 6 years (E-Transit) to 16 years (eSprinter). The structural problem is that vans travel modest distances with light fuel consumption, so the annual saving is too small to justify the capital gap. In China, electric van and light truck penetration reached 45--59% in urban logistics in 2025, far ahead of what Australian economics would predict. The divergence is explained by Chinese EV prices 40--60% lower than in Australia and urban diesel access restrictions absent here. If Chinese-priced vans (from ~\$15,000) entered Australia, the economics would shift rapidly. Vans scored 11/20 on the policy scorecard.
-
 ### 8. Rigid trucks >20 t — 1.6 BL/yr
 
 Heavy rigid trucks (three or more axles, over 20 tonnes GVM) are used for construction haulage, waste collection, fuel tankers, and short-haul distribution. They consumed 1,564 ML of diesel in 2020 [@abs-smvu-2020]. These trucks are almost exclusively urban and suburban: 70% of rigid truck kilometres are in capital cities or other urban areas.
 
 Waste collection is a particularly strong electrification candidate within this segment --- stop-start urban routes with heavy braking (ideal for regenerative braking), predictable depot-based operations, and growing council commitments to zero-emission fleets. Volvo FE Electric and Mercedes eActros 300 address this market.
+
+**Electrification economics.** Fuel is a moderate operating cost: at 32 L/100 km and 25,000 km/yr, annual diesel spend is ~\$13,000. A 36% fuel saving yields ~\$4,800/yr, but with BEV premiums estimated at \$70,000--100,000 for heavy rigids, payback exceeds 15 years. Waste collection is the exception --- stop-start urban routes maximise regenerative braking, and depot-based overnight charging is straightforward. Several Australian councils have trialled Volvo FE Electric and Mercedes eActros 300 refuse trucks, finding total cost of ownership competitive when maintenance savings (30--50% lower) are included. In China, heavy truck electrification reached 28.9% in 2025, though much of this is in long-haul and port drayage rather than rigid truck applications. The segment scored 11/20 on the policy scorecard; policy should target waste collection and port drayage as beachhead applications.
 
 | Parameter                | Value                        | Source                               |
 | ------------------------ | ---------------------------- | ------------------------------------ |
@@ -195,13 +198,13 @@ Waste collection is a particularly strong electrification candidate within this 
 | Average km/year          | ~30,000                      | ABS SMVU 2020 (heavy rigid estimate) |
 | Typical fuel consumption | 30--35 L/100 km              | ATAP, fleet data                     |
 
-**Electrification economics.** Fuel is a moderate operating cost: at 32 L/100 km and 25,000 km/yr, annual diesel spend is ~\$13,000. A 36% fuel saving yields ~\$4,800/yr, but with BEV premiums estimated at \$70,000--100,000 for heavy rigids, payback exceeds 15 years. Waste collection is the exception --- stop-start urban routes maximise regenerative braking, and depot-based overnight charging is straightforward. Several Australian councils have trialled Volvo FE Electric and Mercedes eActros 300 refuse trucks, finding total cost of ownership competitive when maintenance savings (30--50% lower) are included. In China, heavy truck electrification reached 28.9% in 2025, though much of this is in long-haul and port drayage rather than rigid truck applications. The segment scored 11/20 on the policy scorecard; policy should target waste collection and port drayage as beachhead applications.
-
 ### 9. Rigid trucks 8--20 t — 0.8 BL/yr
 
 Medium rigids are the workhorse of urban delivery --- furniture, beverages, parcels, and building materials. At 813 ML of diesel per year, this is a modest segment in diesel terms [@abs-smvu-2020]. Typical vehicles are the Hino 500 series and Isuzu FV/FVR, two-axle trucks with 8--20 tonnes GVM.
 
 The electrification economics are the weakest of any on-road segment, as detailed below.
+
+**Electrification economics.** This is the weakest on-road segment for electrification. At 22 L/100 km and 23,000 km/yr, annual diesel spend is ~\$8,000, but the fuel saving is only 22% (\$1,800/yr) --- the lowest of any truck class. With a BEV premium of \$50,000--80,000, payback exceeds 15 years on fuel savings alone. The Volvo FL Electric addresses this segment and DHL has reported positive total cost of ownership at high utilisation rates, but only when maintenance savings are included. Medium rigids scored just 8/20 on the policy scorecard --- the lowest of any truck class. In China, light and medium truck electrification reached ~27% in 2025 (~300,000 units), driven by prices 40--60% below Australian levels and urban diesel access restrictions. No near-term policy action is warranted; economics will improve as battery prices fall.
 
 | Parameter                | Value               | Source                        |
 | ------------------------ | ------------------- | ----------------------------- |
@@ -211,13 +214,13 @@ The electrification economics are the weakest of any on-road segment, as detaile
 | Average km/year          | ~23,000             | ABS SMVU 2020 (rigid average) |
 | Typical fuel consumption | 20--25 L/100 km     | ATAP, fleet data              |
 
-**Electrification economics.** This is the weakest on-road segment for electrification. At 22 L/100 km and 23,000 km/yr, annual diesel spend is ~\$8,000, but the fuel saving is only 22% (\$1,800/yr) --- the lowest of any truck class. With a BEV premium of \$50,000--80,000, payback exceeds 15 years on fuel savings alone. The Volvo FL Electric addresses this segment and DHL has reported positive total cost of ownership at high utilisation rates, but only when maintenance savings are included. Medium rigids scored just 8/20 on the policy scorecard --- the lowest of any truck class. In China, light and medium truck electrification reached ~27% in 2025 (~300,000 units), driven by prices 40--60% below Australian levels and urban diesel access restrictions. No near-term policy action is warranted; economics will improve as battery prices fall.
-
 ### 10. Rigid trucks \u22648 t — 0.7 BL/yr
 
 Light rigids (under 8 tonnes GVM) are the smallest trucks on the road --- Fuso Canter, Isuzu NLR/NPR, and Hino 300 series. They consumed 746 ML of diesel in 2020 [@abs-smvu-2020]. Many can be driven on a standard car licence (up to 4.5 tonnes GVM in most states), making them accessible to small businesses and sole traders.
 
 This is the segment where electric trucks first became commercially viable. The Fuso eCanter (second generation, from 4.5t GVM) offers 14 variants with up to 300 km range at \$68,900--125,000. The small battery and light weight mean charging from a standard depot outlet is practical overnight.
+
+**Electrification economics.** Fuel is a modest cost: at 16 L/100 km and 18,000 km/yr, annual diesel spend is ~\$4,700. A 42% fuel saving yields ~\$2,000/yr. The Fuso eCanter (from \$68,900) commands a premium of ~\$14,000--30,000 over diesel equivalents, giving a payback of ~10 years on fuel savings alone. When maintenance savings are included (electric drivetrains have 30--50% lower servicing costs), payback drops to 6--8 years. This is the most accessible electric truck segment: small batteries can charge overnight from a standard 15A depot outlet, and the weight class means no special licence is needed. The eCanter is in production and several Australian fleets (including Australia Post) are trialling it. In China, light truck electrification is well advanced (~27% penetration), confirming the technology is mature. The segment scored 10/20 on the policy scorecard --- limited by the small diesel budget (0.7 BL).
 
 | Parameter                | Value                            | Source                                |
 | ------------------------ | -------------------------------- | ------------------------------------- |
@@ -227,13 +230,13 @@ This is the segment where electric trucks first became commercially viable. The 
 | Average km/year          | ~18,000                          | ABS SMVU 2020 (rigid, light estimate) |
 | Typical fuel consumption | 15--18 L/100 km                  | Fleet data                            |
 
-**Electrification economics.** Fuel is a modest cost: at 16 L/100 km and 18,000 km/yr, annual diesel spend is ~\$4,700. A 42% fuel saving yields ~\$2,000/yr. The Fuso eCanter (from \$68,900) commands a premium of ~\$14,000--30,000 over diesel equivalents, giving a payback of ~10 years on fuel savings alone. When maintenance savings are included (electric drivetrains have 30--50% lower servicing costs), payback drops to 6--8 years. This is the most accessible electric truck segment: small batteries can charge overnight from a standard 15A depot outlet, and the weight class means no special licence is needed. The eCanter is in production and several Australian fleets (including Australia Post) are trialling it. In China, light truck electrification is well advanced (~27% penetration), confirming the technology is mature. The segment scored 10/20 on the policy scorecard --- limited by the small diesel budget (0.7 BL).
-
 ### 11. Buses — 0.5 BL/yr
 
 Buses consumed 530 ML of diesel in 2020 --- just 3.3% of road diesel and 1.6% of total national diesel [@abs-smvu-2020]. The fleet comprises approximately 100,000 registered buses, of which roughly 20,000 are transit route buses operated by state transport authorities, ~35,000 are school buses, and ~45,000 are coaches and charter vehicles.
 
 Despite the small volume of diesel consumed, buses have the strongest electrification economics of any segment. Fixed routes, depot-based overnight charging, high utilisation (metro buses do 60,000--80,000 km/year), and government procurement control make this the most tractable segment. Every state has announced or begun zero-emission bus procurement. NSW has the largest bus diesel consumption at 177 ML, followed by QLD (107 ML) and VIC (102 ML) [@abs-smvu-2020].
+
+**Electrification economics.** Fuel is a large share of bus operating costs: a metro transit bus at 42 L/100 km and 60,000 km/yr burns 25,200 litres (\$42,000/yr). A 64% fuel saving yields ~\$26,600/yr --- the best of any on-road segment except B-double trucks. The BEV premium is \$300,000--400,000, giving a payback of 4--6 years (faster when maintenance savings are included). The BYD K9 and Yutong E12 are in production and deployed across Australian cities; Transport for NSW has ordered 120 electric buses and every state has zero-emission bus procurement targets. In China, electric bus penetration reached ~95% of new sales (Shenzhen has been 100% electric since 2018), confirming this as the most mature commercial vehicle electrification segment globally. Buses scored 12/20 on the policy scorecard --- excellent economics (5/5) and vehicle availability (5/5) are limited only by the small diesel budget (1/5). Government controls procurement directly, so this is the fastest-moving segment: the policy challenge is simply to accelerate existing procurement timelines.
 
 | Parameter                            | Value                                      | Source                       |
 | ------------------------------------ | ------------------------------------------ | ---------------------------- |
@@ -242,8 +245,6 @@ Despite the small volume of diesel consumed, buses have the strongest electrific
 | New vehicle cost (12.7m transit bus) | \$400,000--700,000                         | Industry estimate            |
 | Average km/year (metro transit)      | ~27,000 (all buses); ~65,000 (metro route) | ABS SMVU 2020; operator data |
 | Typical fuel consumption             | 40--45 L/100 km                            | Transit fleet data           |
-
-**Electrification economics.** Fuel is a large share of bus operating costs: a metro transit bus at 42 L/100 km and 60,000 km/yr burns 25,200 litres (\$42,000/yr). A 64% fuel saving yields ~\$26,600/yr --- the best of any on-road segment except B-double trucks. The BEV premium is \$300,000--400,000, giving a payback of 4--6 years (faster when maintenance savings are included). The BYD K9 and Yutong E12 are in production and deployed across Australian cities; Transport for NSW has ordered 120 electric buses and every state has zero-emission bus procurement targets. In China, electric bus penetration reached ~95% of new sales (Shenzhen has been 100% electric since 2018), confirming this as the most mature commercial vehicle electrification segment globally. Buses scored 12/20 on the policy scorecard --- excellent economics (5/5) and vehicle availability (5/5) are limited only by the small diesel budget (1/5). Government controls procurement directly, so this is the fastest-moving segment: the policy challenge is simply to accelerate existing procurement timelines.
 
 ### 12. Articulated trucks 30--40 t — 0.3 BL/yr
 
@@ -435,7 +436,7 @@ The critical question is whether Chinese truck manufacturers bring battery swap 
 
 #### Implications for Australia
 
-For Australia, the relevant technology pathway is MCS conductive charging. The critical gap is not vehicle availability but **charging infrastructure on key freight corridors**. As of March 2026, Australia has no publicly accessible heavy-vehicle megawatt charging station. NET's Wilton depot will be the first significant installation.
+For Australia, the relevant technology pathway is MCS conductive charging. The critical gap is not vehicle availability but **charging infrastructure on key freight corridors**. As of March 2026, Australia has no publicly accessible heavy-vehicle megawatt charging station. 
 
 The priority actions are:
 
@@ -475,7 +476,7 @@ The current credit rate for off-road diesel is 48.8 c/L — effectively the full
 
 ### Scale
 
-In FY 2022--23 the scheme cost \$7.8 billion in revenue forgone [@australia-institute-ftc-2024]. This makes it one of the largest single items of Commonwealth expenditure that doesn't appear in the budget papers as a spending line — it is classified as a tax expenditure (revenue not collected).
+In FY 2022--23 the scheme cost \$7.8 billion in revenue forgone [@australia-institute-ftc-2024]. 
 
 For context, \$7.8 billion is larger than the entire Commonwealth spend on public hospitals.
 
@@ -498,12 +499,8 @@ Mining dominates. Within mining, coal accounts for approximately 48% of sector d
 
 The FTCS is the single largest structural barrier to off-road diesel electrification in Australia:
 
-1. **It halves the fuel cost advantage.** A mine operator paying \$2.00/L retail diesel effectively pays \$1.51/L after credits. The saving from switching to electricity drops from ~\$1.63/L to ~\$1.14/L — a 30% reduction in the incentive to electrify.
-
+1. **It reduces the fuel cost advantage.** A mine operator paying \$2.00/L retail diesel effectively pays \$1.51/L after credits. The saving from switching to electricity drops from ~\$1.63/L to ~\$1.14/L — a 30% reduction in the incentive to electrify.
 2. **It is regressive by sector.** The largest beneficiaries (coal and iron ore miners) are among the most profitable and capital-rich companies in the economy. Small farms receive the same rate but claim far less in absolute terms.
-
-3. **It is invisible.** Because it is a tax expenditure rather than a budget appropriation, it receives far less scrutiny than a direct subsidy of equivalent size would attract.
-
 4. **Reform is politically difficult.** Any reduction would be characterised as a "tax on farmers" despite agriculture receiving only 17% of the total. The mining lobby is well-resourced.
 
 ### What reform might look like
