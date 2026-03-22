@@ -20,6 +20,10 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 20 March
+
+![](./media/image-20260320115241159.png)
+
 ### 19 Mar
 
 The batteries tab on the dashboard has been changed to allow any collection of batteries to be aggregated and performace, eg average price plotted. Likewise added in a familiar time of day plot to the batteries tab. Other bugs were fixed. One disadvantage of Claude is it tends to leave old code lying around instead of deleting it. On the positive side a battery daemon now runs that checks for new battery records by region and the overall state of charge and records if the state of charge falls below 5%
