@@ -20,17 +20,21 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 25 March
+
+Put together a presentation of the major visualisations of two pieces of research, the second but should have been first on the general process of diesel replacement and the first specifically on electrifying the Sydney to Melbourne corridor most likely using MW charging B doubles.
+
+Havent done a presentation for a while now, but I quite like how this one turned out.
+
+https://itkservices3.com/presentations/diesel_electric_trucks#/title-slide
+
+Also noted that the NEM went under 50% for coal generation on a rolling 365 day basis on Dec 3 2025. 
+
+![coal_share_supply_comparison](./media/coal_share_supply_comparison.png)
+
 ### 20 March
 
 ![](./media/image-20260320115241159.png)
-
-### 19 Mar
-
-The batteries tab on the dashboard has been changed to allow any collection of batteries to be aggregated and performace, eg average price plotted. Likewise added in a familiar time of day plot to the batteries tab. Other bugs were fixed. One disadvantage of Claude is it tends to leave old code lying around instead of deleting it. On the positive side a battery daemon now runs that checks for new battery records by region and the overall state of charge and records if the state of charge falls below 5%
-
-I'm increasingly happy with the Dashboard. It's designed to reboot if the computer goes down. I get alerts for high prices and so on.
-
-![](./media/image-20260319200100206.png)
 
 
 
@@ -49,6 +53,16 @@ I'm increasingly happy with the Dashboard. It's designed to reboot if the comput
 :::
 
 ::::
+
+### 19 Mar
+
+The batteries tab on the dashboard has been changed to allow any collection of batteries to be aggregated and performace, eg average price plotted. Likewise added in a familiar time of day plot to the batteries tab. Other bugs were fixed. One disadvantage of Claude is it tends to leave old code lying around instead of deleting it. On the positive side a battery daemon now runs that checks for new battery records by region and the overall state of charge and records if the state of charge falls below 5%
+
+I'm increasingly happy with the Dashboard. It's designed to reboot if the computer goes down. I get alerts for high prices and so on.
+
+![](./media/image-20260319200100206.png)
+
+
 
 ### 12 Mar
 
