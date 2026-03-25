@@ -135,6 +135,22 @@ At retail prices, 100% diesel replacement saves ~$54 bn/yr. Import substitution 
 3. **Standards alignment** — MCS connectors and 1,250V DC systems
 4. **Policy nudge** — the economics are compelling, but capital needs to be mobilised
 
+## Windrose E1400 vs Tesla Semi
+
+| | Windrose E1400 | Tesla Semi (LR) |
+|:--|:--|:--|
+| Power | 1,400 hp / 4 motors | 1,073 hp / 3 motors |
+| Battery | 729 kWh LFP (860 opt.) | ~850–900 kWh (est.) |
+| Range (loaded) | 670 km at 49t | 805 km at 37t |
+| Max GCW | **68t B-double** | 37t (US Class 8) |
+| Drag coeff. (CdA) | **~2.7 m²** | ~3.1 m² |
+| Charging | MCS + dual CCS2 (open) | Proprietary megacharger |
+| Price | Not disclosed | US$290,000 |
+
+**Tesla production**: Target 50,000/yr from Nevada factory — but every prior deadline missed by years (promised 2019, first units Dec 2022; promised 50k in 2024, delivered ~200)
+
+**Australian relevance**: Tesla Semi is rated at 37t — below even a standard AU semi (42.5t), let alone a 68t B-double. No AU plans announced. Windrose has completed a 480 km delivery at 36t via NET, but full 68t B-double payload + range not yet publicly validated.
+
 ## {background-color="#2c3e50" style="color: white;"}
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 15%;"}
