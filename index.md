@@ -20,13 +20,17 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 27 March
+
+Infrastructure home office build out. Just about finished switching the home  network from a mesh system to Omada. Access points about 20% for the price, far easier to manage. Router very cheap, most expensive part \$300 is the POE switch. The access points are cheaper than mesh units for a number of reasons but they get their power from Ethernet cable so no power unit and less radio gear because the access point doesn't need to do back hall or mesh calculation. CPU is lower spec but still excellent speed. Once you have NBN to the premises and ethernet cable. To me the managed switch is the key infrastructure, shows all the devices and where connected. The software is also excellent showing the topology and configuration. Not necessary unless you are into it, but a project that I'm enjoying 
+
 ### 25 March
 
 Put together a presentation of the major visualisations of two pieces of research, the second but should have been first on the general process of diesel replacement and the first specifically on electrifying the Sydney to Melbourne corridor most likely using MW charging B doubles.
 
-Havent done a presentation for a while now, but I quite like how this one turned out.
+Havent done a presentation for a while now, but I quite like how [this one](https://itkservices3.com/presentations/diesel_electric_trucks#/title-slide) turned out.
 
-https://itkservices3.com/presentations/diesel_electric_trucks#/title-slide
+
 
 Also noted that the NEM went under 50% for coal generation on a rolling 365 day basis on Dec 3 2025. 
 
