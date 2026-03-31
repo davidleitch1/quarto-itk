@@ -48,11 +48,13 @@ For the industry to act it needs to get a return. For the Government, and consid
 
 In the table below focus first on the size of the bubbles, that is the sub segments that actually consume a lot of fuel. Then look at the tradeoff between EV price premium and annual fuel savings.
 
-![image-20260331125100507](../media/image-20260331125100507.png){#fig-ev-segments}
+
+
+![Paybackratios](../media/image-20260331125100507.png){#fig-payback-ratios}
 
 That plot is partly based on the following table. Whereas only so many people have any real knowledge of what a wind or solar farm or utility battery costs, nearly everyone has a view on what a car or truck is worth and so will be able to correct my estimates quickly.
 
-![image-20260331125220125](../media/image-20260331125220125.png){#fig-ev-costs}
+![truck costs](../media/image-20260331125220125.png){#fig-truck-costs}
 
 The event was very light on this kind of background.  I'm sure there were lots of people at the conference who know the chapter and verse on this much more. But the presenters, with honourable exceptions, basically didn't respect the audience. That was not intentional — the presenters just assumed the audience didn't know much and therefore they didn't have to try too hard.
 
@@ -66,7 +68,7 @@ Then you have to get the power supply. Imagine 20 prime movers all wanting 1 MW.
 
 There are dots on maps representing charging hubs that someone might build sometime. Energy Futures' Bruce Hardy presented at Freight Forwarders and showed a map similar to the one below on 7:30 report but none of it exists today.
 
-![image-20260331133846481](../media/image-20260331133846481.png){#fig-charging-map}
+![charging stations](../media/image-20260331133846481.png){#fig-charging-map}
 
 Nor is it clear to me that such a plan is really thought through and prioritised in the way I would expect a competent large business, Government or army to operationalise a plan. 
 
@@ -92,16 +94,17 @@ I chased a rat up a drainpipe on coal because some of these numbers are not that
 
 Look at the overburden move in Australian coal every year.
 
-![image-20260331153849333](../media/image-20260331153849333.png){#fig-overburden}
+
+
+![overburden energy](../media/image-20260331153849333.png){#fig-overburden}
 
 In Australia most of the energy consumed to produce coal is shifting about 6.0 BT of overburden out of the way so that 500 MT of run of the mine (ROM) coal can be produced which is then washed down to about 420 -460 MT of saleable coal. That includes Victoria's brown coal.
 
 Of the overburden in tonnes a fraction over 50% is moved by maybe 55 large walking draglines. These are electrically powered and the estimate is they consume maybe 200-250 MW of power. The draglines are very efficient, but because it's getting harder to extract coal in Australia, and as Gorringe points out, we're getting rid of the draglines and using diesel trucks. 
 
-Here's the thing. 
 ::: {.callout-important}
 
-It takes 7 times as much energy to move a tonne of overburden using diesel as it does by dragline. And it has all the other disadvantages of diesel over electric. Not only is the coal industry responsible for coal emissions, thanks to the diesel fuel rebate it's making Australia less secure, more polluting and making the coal industry less economic. It's completely and utterly dumb.
+Here's the thing. It takes 7 times as much energy to move a tonne of overburden using diesel as it does by dragline. And it has all the other disadvantages of diesel over electric. Not only is the coal industry responsible for coal emissions, thanks to the diesel fuel rebate it's making Australia less secure, more polluting and making the coal industry less economic. It's completely and utterly dumb.
 
 :::
 
