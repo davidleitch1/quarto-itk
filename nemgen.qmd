@@ -1,30 +1,16 @@
 ---
-title: ""
+title: "NEM Generation Dashboard"
 comments: false
 format:
   html:
     page-layout: custom
-
 ---
-<div class="page-layout-custom" style="height:88vh">
-<iframe src="https://nemgen.itkservices2.com" title="rolling-5minute-opgeneration" height=100% width=100% ></iframe> 
-</div>
-  <script>
-  (function() {
-      var lastRefresh = Date.now();
 
-      setInterval(function() {
-          var now = new Date();
-          if (now.getHours() === 0 && now.getMinutes() === 1) {
-              if (Date.now() - lastRefresh > 300000) {
-                  var iframe = document.querySelector('iframe');
-                  if (iframe) {
-                      iframe.src = iframe.src.split('?')[0] + '?t=' + Date.now();
-                      lastRefresh = Date.now();
-                      console.log('Dashboard refreshed at midnight');
-                  }
-              }
-          }
-      }, 60000);
-  })();
-  </script>
+<script>
+  // Redirect to the Panel dashboard served via Cloudflare reverse proxy
+  window.location.href = "https://nemgen.itkservices2.com";
+</script>
+
+<noscript>
+  <p>Redirecting to the <a href="https://nemgen.itkservices2.com">NEM Generation Dashboard</a>...</p>
+</noscript>
