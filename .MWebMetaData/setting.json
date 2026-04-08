@@ -1,0 +1,9 @@
+{
+  "name" : "itk_articles",
+  "fileExtension" : ".md",
+  "autoUploadInsertedImage" : false,
+  "folderType" : 10,
+  "mediaFloder" : "media",
+  "orderBy" : 3,
+  "newlinesToBR" : 0
+}

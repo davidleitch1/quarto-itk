@@ -20,9 +20,39 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 8 April
+
+Peak electricity prices in the NEM continue to be subdued compared to PCP. I attribute that to more batteries and a little bit to more wind.
+
+![](./media/Image 7-4-2026 at 12.11 pm.png)
+
+I won't show it here but its really QLD where the change wrought by batteries is most obvious.
+
+Either because of that, or for other reasons, spot gas prices are subdued. At the moment energy prices, other than for petrol and diesel are not an issue. If we could only get some of these big wind projects going, and some diesel replacement our energy future would be locked in.
+
+![](./media/sttm_vs_lng_7yr.png)
+
+Finally on the dashboard build yesterday I worked on making the plots more "responsive" that is making viewing the dashboard on a phone more reasonable. Its improved but another effort  will be required.
+
 ### 27 March
 
 Infrastructure home office build out. Just about finished switching the home  network from a mesh system to Omada. Access points about 20% for the price, far easier to manage. Router very cheap, most expensive part \$300 is the POE switch. The access points are cheaper than mesh units for a number of reasons but they get their power from Ethernet cable so no power unit and less radio gear because the access point doesn't need to do back hall or mesh calculation. CPU is lower spec but still excellent speed. Once you have NBN to the premises and ethernet cable. To me the managed switch is the key infrastructure, shows all the devices and where connected. The software is also excellent showing the topology and configuration. Not necessary unless you are into it, but a project that I'm enjoying 
+
+:::
+
+::: {.homepage-widgets}
+<iframe src="https://spot_prices.itkservices2.com/display_spot"
+        title="Spot Prices Display"
+        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
+</iframe>
+<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
+        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
+</iframe>
+
+![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
+:::
+
+::::
 
 ### 25 March
 
@@ -41,22 +71,6 @@ Also noted that the NEM went under 50% for coal generation on a rolling 365 day 
 ![](./media/image-20260320115241159.png)
 
 
-
-:::
-
-::: {.homepage-widgets}
-<iframe src="https://spot_prices.itkservices2.com/display_spot"
-        title="Spot Prices Display"
-        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
-</iframe>
-<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
-        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
-</iframe>
-
-![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
-:::
-
-::::
 
 ### 19 Mar
 
