@@ -24,7 +24,7 @@ window.onload = function() {
 
 Peak electricity prices in the NEM continue to be subdued compared to PCP. I attribute that to more batteries and a little bit to more wind.
 
-![](./media/Image 7-4-2026 at 12.11 pm.png)
+![](./media/image-20260408123457925.png)
 
 I won't show it here but its really QLD where the change wrought by batteries is most obvious.
 
