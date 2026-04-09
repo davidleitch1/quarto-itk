@@ -56,6 +56,18 @@ def clean_feed(project_dir):
     # Build suffix patterns like "posts/qld.html"
     patterns = {f"posts/{slug}.html" for slug in excluded}
 
+    # Read and sanitise: strip anything after closing </rss> tag
+    with open(feed_path, "r", encoding="utf-8") as f:
+        raw = f.read()
+    close_tag = "</rss>"
+    idx = raw.rfind(close_tag)
+    if idx != -1:
+        cleaned = raw[: idx + len(close_tag)].strip()
+        if cleaned != raw.strip():
+            print("clean_feed: trimmed junk after </rss>")
+            with open(feed_path, "w", encoding="utf-8") as f:
+                f.write(cleaned)
+
     tree = ET.parse(feed_path)
     root = tree.getroot()
 

@@ -2,6 +2,7 @@
 title: "In the Year 2026"
 author: "David Leitch"
 date: 2026-04-09
+description: "Coal generation share has fallen below 50% and evening peak prices are well down, but without new wind FIDs in NSW the machine will grind to a halt."
 categories: ["Markets", "Generation"]
 lightbox: true
 draft: false
