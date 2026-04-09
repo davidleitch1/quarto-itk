@@ -67,8 +67,24 @@ def clean_feed(project_dir):
             print("clean_feed: trimmed junk after </rss>")
             with open(feed_path, "w", encoding="utf-8") as f:
                 f.write(cleaned)
+            raw = cleaned
 
-    tree = ET.parse(feed_path)
+    try:
+        tree = ET.parse(feed_path)
+    except ET.ParseError as e:
+        # Dump context around the error for diagnosis
+        lines = raw.splitlines()
+        lineno = getattr(e, 'position', (0,))[0] if hasattr(e, 'position') else 0
+        print(f"clean_feed: XML parse error: {e}")
+        print(f"clean_feed: feed has {len(lines)} lines")
+        start = max(0, lineno - 5)
+        end = min(len(lines), lineno + 5)
+        for i in range(start, end):
+            marker = ">>>" if i + 1 == lineno else "   "
+            print(f"  {marker} {i+1}: {lines[i][:200]}")
+        # Skip feed cleaning rather than failing the build
+        print("clean_feed: skipping feed cleaning due to parse error")
+        return 0
     root = tree.getroot()
 
     # Find the <channel> element (direct child of <rss>)
