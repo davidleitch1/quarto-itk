@@ -23,8 +23,8 @@ website:
         menu:
         - text: "IEA-electricity"
           href: IEA.html
-        - text: "NEM-ITK"
-          href: nemgen.html
+        - text: "NEM-ITK ↗"
+          href: https://nemgen.itkservices2.com
         - text: "AEMO demand fcst"
           href: forecast.html 
       - text: "Articles"
@@ -88,6 +88,14 @@ format:
     include-in-header:
       - text: |
          <script defer data-domain="itkservices3.com" src="https://plausible.io/js/script.js"></script>
+         <script>
+         document.addEventListener('DOMContentLoaded', function() {
+           document.querySelectorAll('.navbar a[href^="https://"]').forEach(function(a) {
+             a.setAttribute('target', '_blank');
+             a.setAttribute('rel', 'noopener');
+           });
+         });
+         </script>
   docx:
     reference-doc: reference.docx
     tbl-cap-location: bottom

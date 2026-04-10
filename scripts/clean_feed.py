@@ -60,7 +60,7 @@ def clean_feed(project_dir):
     with open(feed_path, "r", encoding="utf-8") as f:
         raw = f.read()
     close_tag = "</rss>"
-    idx = raw.rfind(close_tag)
+    idx = raw.find(close_tag)
     if idx != -1:
         cleaned = raw[: idx + len(close_tag)].strip()
         if cleaned != raw.strip():
