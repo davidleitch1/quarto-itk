@@ -22,7 +22,7 @@ window.onload = function() {
 
 ### 10 April Internal changes to rendering
 
-Changed site back to internal render then push rather than have Netlify manage the render.
+Changed site back to internal render then push rather than have Netlify manage the render. And this appears to be working much faster at least for this page.
 
 ### 8 April
 

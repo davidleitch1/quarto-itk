@@ -16,3 +16,6 @@ quarto-*.tar.gz
 *.log
 
 /.quarto/
+
+# Local Netlify folder
+.netlify

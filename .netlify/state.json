@@ -1,5 +1,4 @@
 {
-	"siteId": "202ae73b-3daf-47e1-a59a-bcc443556876",
 	"geolocation": {
 		"data": {
 			"city": "Sydney",
@@ -17,5 +16,6 @@
 			"postalCode": "2067"
 		},
 		"timestamp": 1734570262377
-	}
+	},
+	"siteId": "ca3e0abe-63f9-43e8-8075-3e8c6cbda68c"
 }
