@@ -20,6 +20,10 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 10 April Internal changes to rendering
+
+Changed site back to internal render then push rather than have Netlify manage the render.
+
 ### 8 April
 
 Peak electricity prices in the NEM continue to be subdued compared to PCP. I attribute that to more batteries and a little bit to more wind.

@@ -1,6 +1,7 @@
 [build]
-  command = "./build.sh"
+  command = "echo 'Site deployed via CLI — skipping build'"
   publish = "_site"
+  ignore = "exit 0"
 
 [[redirects]]
   from = "https://www.itkservices3.com/*"
