@@ -11,6 +11,10 @@ format:
     include-after-body:
       - "../comment_load.html"
   docx: default
+  pdf:
+   geometry:                                                                                                                                                                                                                                               
+      - margin=2.5cm                                                                                                                                                                                                                                        
+   mainfont: "Inter"
 ---
 
 # Job done except.....
