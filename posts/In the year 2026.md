@@ -14,7 +14,6 @@ format:
   pdf:
     geometry:
       - margin=2.5cm
-    mainfont: "Inter"
 ---
 
 # Job done except.....
