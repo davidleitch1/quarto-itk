@@ -1,7 +1,7 @@
 ---
 title: "Diesel in Mining: Consumption, Electrification, and the Fortescue Model"
 author: "David Leitch"
-date: 2026-04-10
+date: 2026-04-13
 categories: ["EVs", "Climate"]
 bibliography: diesel_electrification_references.bib
 lightbox: true
@@ -23,7 +23,7 @@ The commodity split is:
 - **Iron ore**: 26% (~2.5 BL)
 - **Other mining** (gold, copper, lithium, bauxite): 26% (~2.5 BL)
 
-These shares are broadly confirmed by independent government data. The Australian Energy Statistics Table F (2025 edition) records mining diesel consumption of 299.6 PJ in FY2023-24, equivalent to approximately 7.8 BL using the standard conversion of 38.6 MJ/litre. The discrepancy with IEEFA's 9.6 BL likely reflects differences in scope — IEEFA may include contracted mining support services classified under other ANZSIC divisions, or use NGER reporting which captures a broader boundary than the energy statistics framework.
+These shares are broadly confirmed by independent government data. The Australian Energy Statistics Table F [@aes-table-f-2025] records mining diesel consumption of 299.6 PJ in FY2023-24, equivalent to approximately 7.8 BL using the standard conversion of 38.6 MJ/litre. The discrepancy with IEEFA's 9.6 BL likely reflects differences in scope — IEEFA may include contracted mining support services classified under other ANZSIC divisions, or use NGER reporting which captures a broader boundary than the energy statistics framework.
 
 Crucially, the **coal share is consistent across both sources**: AES Table F shows coal mining at 151.4 PJ out of 299.6 PJ total (50.5%), closely matching IEEFA's 48%. The AES data also confirms the growth trend: coal mining diesel consumption rose from 97.4 PJ in FY2014-15 to 151.4 PJ in FY2023-24 — a **55% increase in 10 years**. This is driven by deeper pits, rising strip ratios (~20:1 average in open-cut coal), and the progressive replacement of efficient electric draglines with diesel haul trucks as mines move to truck-and-shovel operations.
 
@@ -39,7 +39,7 @@ On a typical open-cut mine, diesel is consumed by:
 
 ## The Fuel Tax Credits subsidy
 
-The Fuel Tax Credits Scheme provides a $0.48/litre rebate on off-road diesel. Mining claims approximately $4.6 billion per year in FTC, with coal mining alone receiving ~$1.7 billion [@australia-institute-ftc-2024]. This subsidy blunts the economic incentive to electrify — it reduces the fuel-cost advantage of electric equipment by approximately 30%.
+The Fuel Tax Credits Scheme provides a \$0.48/litre rebate on off-road diesel. Mining claims approximately \$4.6 billion per year in FTC, with coal mining alone receiving ~\$1.7 billion [@australia-institute-ftc-2024]. This subsidy blunts the economic incentive to electrify — it reduces the fuel-cost advantage of electric equipment by approximately 30%.
 
 ---
 
@@ -49,7 +49,7 @@ Fortescue is the first major miner to commit to fleet-scale replacement of diese
 
 ## The Liebherr partnership
 
-In September 2024, Fortescue signed a **US$2.8 billion** partnership with Liebherr for 475 zero-emission machines, including:
+In September 2024, Fortescue signed a **US\$2.8 billion** partnership with Liebherr [@fortescue-liebherr-2024] for 475 zero-emission machines, including:
 
 - **360 autonomous battery-electric T264 haul trucks** (240-tonne class)
 - Electric excavators
@@ -116,7 +116,7 @@ Key observations:
 - The Liebherr's **6 MW MCS charger** with robotic connection enables ~30 minute charges. It also supports dynamic power transfer (trolley/pantograph) for in-pit charging while hauling.
 - The XCMG uses **BYD Blade LFP cells** and supports **battery swap**, matching the approach proven at the Yimin mine fleet.
 - **Regenerative braking** on the Liebherr recovers up to 3,300 kW on loaded downhill hauls — significant on deep pit ramp cycles.
-- At ~US$1M/yr diesel cost per truck vs ~US$150k/yr electricity, the **annual saving is ~US$850k per truck**. Against a BEV premium of ~US$2M, payback is **under 2.5 years**.
+- At ~US\$1M/yr diesel cost per truck vs ~US\$150k/yr electricity, the **annual saving is ~US\$850k per truck**. Against a BEV premium of ~US\$2M, payback is **under 2.5 years**.
 
 ## Other electric truck programs
 
@@ -205,7 +205,7 @@ Fortescue's approach to battery technology has undergone a significant strategic
 
 ## Williams Advanced Engineering acquisition
 
-In March 2022, Fortescue acquired **Williams Advanced Engineering** (WAE) — the technology spinoff of the Williams F1 team — for A$310 million. WAE brought deep expertise in high-performance battery pack design, thermal management, and power electronics developed for Formula E and Extreme E racing. The rationale was compelling: no OEM had a production-ready multi-MWh battery pack for 240-tonne haul trucks, and Fortescue wanted to control the IP.
+In March 2022, Fortescue acquired **Williams Advanced Engineering** (WAE) — the technology spinoff of the Williams F1 team — for A\$310 million. WAE brought deep expertise in high-performance battery pack design, thermal management, and power electronics developed for Formula E and Extreme E racing. The rationale was compelling: no OEM had a production-ready multi-MWh battery pack for 240-tonne haul trucks, and Fortescue wanted to control the IP.
 
 WAE's proprietary **Scalable Battery Module (SBM)** technology could independently scale voltage and capacity from a single building block, enabling custom-configured packs for different mining vehicles. The 3.2 MWh pack for the T264 comprises eight sub-packs, with module-level energy density >240 Wh/kg — almost certainly NMC chemistry rather than LFP.
 
@@ -215,7 +215,7 @@ The battery program has been **three years behind schedule**. When Fortescue unv
 
 The manufacturing scale-up proved far harder than anticipated:
 
-- **January 2024**: Fortescue announced a US$210 million Advanced Manufacturing Centre in Detroit to produce SBM-based battery packs (600 jobs)
+- **January 2024**: Fortescue announced a US\$210 million Advanced Manufacturing Centre in Detroit to produce SBM-based battery packs (600 jobs)
 - **September 2025**: Detroit plant **scrapped**, citing US policy changes (IRA tax credit uncertainty under the Trump administration)
 - **October 2025**: UK manufacturing at WAE's Kidlington and Banbury facilities **wound down** — hundreds of the ~1,000 UK staff affected. Sites pivoting to R&D only
 
@@ -230,7 +230,7 @@ Fortescue Zero is becoming an **integrator, not a manufacturer**:
 - The XCMG trucks arriving from February 2026 will use Chinese battery systems with Fortescue Zero integration
 - Liebherr and Fortescue's ecosystem will be offered to other miners — but the battery manufacturing is Chinese
 
-This pivot has broader implications. If the world's most committed mining electrification company — with A$310 million invested in battery expertise and a A$3+ billion equipment order — concluded it cannot compete with Chinese battery manufacturing, it is unlikely that any mining-specific Western battery venture can either. The supply chain for electric mining trucks will be Chinese, whether the chassis comes from Liebherr, XCMG, or eventually Caterpillar.
+This pivot has broader implications. If the world's most committed mining electrification company — with A\$310 million invested in battery expertise and a A\$3+ billion equipment order — concluded it cannot compete with Chinese battery manufacturing, it is unlikely that any mining-specific Western battery venture can either. The supply chain for electric mining trucks will be Chinese, whether the chassis comes from Liebherr, XCMG, or eventually Caterpillar.
 
 *Sources: The Driven (Oct 2023, "three year wait for WAE battery"); electrive.com (Fortescue acquires WAE, Jan 2022); International Mining (WAE rebrands, Jan 2023; Fortescue diversifying supply chain, Dec 2025); Automotive News / Crain's Detroit (Detroit plant scrapped, Sep 2025); Fortescue.com (Detroit manufacturing centre announcement, Jan 2024); Liebherr T264 BEV product page (Bauma 2025).*
 
@@ -258,7 +258,7 @@ There is no single authoritative count. Aggregating from multiple industry sourc
 
 *Sources: International Mining (Zijin Mining, Jan 2026; Zhundong, Mar 2026; Yimin, Nov 2025); electrive.com (Yimin, May 2025); EACON press releases.*
 
-**Zijin Mining** alone has expanded from 13 electric vehicles in 2020 to **1,183 EVs** across all its mines. It has begun manufacturing its own electric mining trucks in partnership with Longking.
+**Zijin Mining** alone has expanded from 13 electric vehicles in 2020 to **1,183 EVs** across all its mines [@im-zijin-ev-2026]. It has begun manufacturing its own electric mining trucks in partnership with Longking.
 
 ## Manufacturer market positions
 
@@ -281,7 +281,7 @@ EACON, a Chinese autonomous mining technology company, operates **800+ trucks ac
 
 ## Government policy
 
-- **April 2024 joint policy** (7 departments including Ministry of Natural Resources): targets **90% of large mines and 80% of medium mines** to meet "green mine" standards by **2028**
+- **April 2024 joint policy** (7 departments including Ministry of Natural Resources): targets **90% of large mines and 80% of medium mines** to meet "green mine" standards by **2028** [@us-commercial-china-mining-2024]
 - 1,200+ mines nationally certified as "Green Mines"; 3,000+ at provincial level
 - Green mine certification promotes electrification as one pathway to compliance (not a strict mandate)
 - Operating cost economics are doing as much as policy: electric trucks run at roughly **13% of the diesel running cost**, with payback periods of ~3 years
@@ -296,40 +296,234 @@ China's total new energy heavy truck sales (all types, not just mining) reached 
 
 ---
 
-# Sources
+# Fortescue Pilbara Renewable Energy Program
 
-- IEEFA, "Cutting Australian mining's diesel emissions", Andrew Gorringe, January 2026
-- Australian Energy Statistics Table F, DCCEEW, 2025 edition (FY2023-24 data)
-- Australia Institute, Fuel Tax Credit analysis, 2024
-- Fortescue ASX announcements (September 2024, September 2025)
-- Fortescue US$400M XCMG contract announcement (November 2024)
-- International Mining: Liebherr-Fortescue partnership (Sep 2024); Fortescue-XCMG agreements (Sep 2025); XCMG Yimin battery swaps (Nov 2025); XCMG global mining truck push (Sep 2024); Exxaro delivery (Feb 2026); Zijin Mining electric fleet (Jan 2026); Zhundong autonomous fleet (Mar 2026); Fortescue diversifying supply chain (Dec 2025)
-- Liebherr T264 BEV product page and Bauma 2025 data
-- Cat 793F OEM specifications; Cat 793 XE Early Learner program (MinExpo 2024)
-- Komatsu 930E Power Agnostic announcements (2024–2025)
-- LECTURA specs database (XCMG XDE240)
-- KHL Yellow Table 2025 (global equipment manufacturer rankings)
-- SRK Consulting, "Decarbonizing Mining: Diesel vs Electric Haul Trucks"
-- electrive.com: "China launches world's largest fleet of autonomous electric mining trucks" (May 2025); "Fortescue acquires WAE" (Jan 2022)
-- The Driven: "Fortescue signs $350M deal to switch diesel drill rigs for electric" (Apr 2025); "Three year wait for WAE battery" (Oct 2023); "Fortescue to take delivery of first BEV trucks from China" (Feb 2026)
-- Automotive News / Crain's Detroit: "Fortescue scraps $210M battery plant in Detroit" (Sep 2025)
-- EACON press releases (fleet milestone, 2024)
-- chinatrucks.org (2024 new energy heavy truck sales statistics)
-- US Commercial Service, "China Green Mining Sector" (2024)
-- TNR International, "2025 Mining Wide-Body Dump Truck Market Review" (China & global)
-- Plant & Equipment, "Heavy Haulers: Ranking the Best Dump Truck Brands"
+Fortescue's electric fleet cannot run on diesel-generated electricity — the "Real Zero" strategy requires a parallel build-out of renewable generation and transmission across the Pilbara. The original Uaroo mega-project (5.4 GW, primarily for hydrogen export) was abandoned in October 2023, replaced by a distributed, mine-proximate approach.
 
-- IEEFA, "Cutting Australian mining's diesel emissions", Andrew Gorringe, January 2026
-- Australian Energy Statistics Table F, DCCEEW, 2025 edition (FY2023-24 data)
-- Australia Institute, Fuel Tax Credit analysis, 2024
-- Fortescue ASX announcements (September 2024, September 2025)
-- Fortescue US$400M XCMG contract announcement (November 2024)
-- International Mining: Liebherr-Fortescue partnership (Sep 2024); Fortescue-XCMG agreements (Sep 2025); XCMG Yimin battery swaps (Nov 2025); XCMG global mining truck push (Sep 2024); Exxaro delivery (Feb 2026)
-- Liebherr T264 BEV product page and Bauma 2025 data
-- Cat 793F OEM specifications; Cat 793 XE Early Learner program (MinExpo 2024)
-- Komatsu 930E Power Agnostic announcements (2024–2025)
-- LECTURA specs database (XCMG XDE240)
-- KHL Yellow Table 2025 (global equipment manufacturer rankings)
-- SRK Consulting, "Decarbonizing Mining: Diesel vs Electric Haul Trucks"
-- electrive.com, "China launches world's largest fleet of autonomous electric mining trucks" (May 2025)
-- The Driven, "Fortescue signs $350M deal to switch diesel drill rigs for electric" (Apr 2025)
+Fortescue's ASX release of 10 April 2026 [@fortescue-green-grid-2026] confirms a two-phase approach:
+
+- **Phase 1** (deployment underway, within existing decarbonisation budget): ~2 GW generation (1.2 GW solar + >600 MW wind) + 4–5 GWh battery storage. Full completion by **end 2028** (accelerated from original 2030 target). 290 MW installed by early 2027 for daytime "green processing"; 24-hour renewable power later in 2027.
+- **Phase 2** (subject to FID): a further ~2 GW generation + 4 GWh batteries, deliverable in ~18 months, for **less than US\$2.5 billion**. Enabled by proprietary AI optimisation, patented technologies, and deployment experience from Phase 1.
+
+The system is fully standalone, islanded, and off-grid — no connection to any external power system. It supports processing facilities, rail, ports, logistics, mobile fleet charging, and accommodation for ~10,000 personnel. At completion, the scale is equivalent to powering a full metropolitan residential area.
+
+## Solar projects
+
+| Project | Capacity | Status | Expected completion |
+|:---|---:|:---|:---|
+| North Star Junction | 100 MW | Operational | H2 2024 |
+| Cloudbreak | 190 MW | Under construction (Apr 2025 start) | 2027 |
+| Solomon Airport | 440 MW | Construction started Mar 2026 | 2028 |
+| Turner River | 644 MW | Federal EPBC approval Jan 2026 | TBD |
+| **Solar total** | **~1,374 MW** | | |
+
+All solar projects use single-axis tracker technology. The **Pilbara Solar Innovation Hub** (co-funded by ARENA, \$45M) is testing autonomous piling, 5B Maverick rapid-deployment, and robotic installation across three sites.
+
+*Sources: Fortescue.com (Solomon Airport announcement, Mar 2026); PV Magazine (Turner River approval, Jan 2026; Cloudbreak construction, Apr 2025); Mining Weekly (1.3 GW solar target, Mar 2026); ARENA (\$45M Solar Innovation Hub).*
+
+## Wind projects
+
+**Nullagine Wind Farm** (under construction):
+
+- **133 MW**: 17 × Envision Energy 7.8 MW turbines
+- **Nabrawind "Nabralift" self-erecting towers**: 188 m hub height — tallest onshore wind towers globally
+- Construction commenced January 2026; prototype turbine at Envision test facility in China, relocating to Pilbara by June 2026
+
+**East Pilbara Generation Hub** (EPA assessment stage):
+
+- Up to **2.1 GW**: ~200 wind turbines (Envision + Nabrawind towers)
+- Location: ~40 km SE of Marble Bar, ~90 km E of Iron Bridge mine
+- Development envelope: 98,773 hectares (2,319 ha disturbance)
+- EPA referral May 2025; approval expected late 2026; 32-month construction → operational ~mid 2029
+
+*Sources: RenewEconomy (Nullagine wind farm, Jan 2026); Fortescue.com (wind construction start); EPA WA (East Pilbara Generation Hub referral); Boiling Cold (2.1 GW wind plans).*
+
+## Battery storage
+
+| System | Capacity | Chemistry / Supplier | Status |
+|:---|---:|:---|:---|
+| Solomon BESS | 16 MW | Not disclosed | Operational (2023) |
+| Iron Bridge BESS | 26 MW | Not disclosed | Operational (2023) |
+| North Star Junction | 50 MW / 250 MWh | BYD Blade LFP, liquid cooled | Installed Dec 2025 |
+| Eliwana | 20 MW / 120 MWh | Not disclosed | Early 2026 |
+
+Target: **4–5 GWh** total across the Pilbara network.
+
+*Sources: PV Magazine (North Star battery delivery, Dec 2025); Fortescue.com.*
+
+## Transmission: Pilbara Energy Connect
+
+- **620+ km** of 220 kV transmission lines planned (480+ km already built)
+- Investment: **US\$700 million**
+- Connects North Star, Iron Bridge, Cloudbreak, Solomon, Eliwana, and rail network
+
+## Electricity demand
+
+- Current consumption: ~700 ML diesel/yr + 15 million GJ gas → ~3 Mt CO2-e/yr (88% of company emissions)
+- North Star 100 MW solar generates ~250 GWh/yr ≈ 30% of Iron Bridge mine demand
+- Full 2–3 GW renewable system targets 100% of stationary electricity plus mobile fleet charging
+- Target: "full days of renewable power" across all ore processing by late 2027; Real Zero by 2030
+
+### Iron Bridge magnetite: the dominant electrical load
+
+Iron Bridge is a **225 MW** magnetite processing operation — by far the single largest electricity consumer in Fortescue's Pilbara system [@mining-tech-iron-bridge-2024]. It produces 22 Mtpa of 67% Fe magnetite concentrate from ~62.5 Mtpa of raw ore feed [@fortescue-iron-bridge-2023]. First production July 2023; ramp to nameplate expected FY2028 (delayed from original mid-2023 target).
+
+![Iron Bridge OPF process flow. Tonnage numbers refer to LOM average.](../media/iron_bridge_opf_process_flow.png){#fig-opf-process-flow}
+
+*Source: Fortescue Iron Bridge project approval [@fortescue-iron-bridge-approval-2019].*
+
+The OPF (Ore Processing Facility) takes in 67 dmt of ore plus 39 dmt of waste (106 Mtpa total material movement). After dry crushing, HPGR grinding, and dry magnetic separation, 34 dmt is rejected to tailings. Only 13 dmt passes to the wet circuit (rougher and re-cleaner magnetic separation), producing 20 dmt of concentrate (22 wmmt) which is pumped via a 135 km slurry pipeline to Port Hedland.
+
+The processing chain and its approximate power breakdown:
+
+| Stage | Equipment | Installed MW | Share | Notes |
+|:---|:---|---:|---:|:---|
+| Primary & secondary crushing | Jaw + cone crushers | ~10–15 | ~5% | Rock from ~1m to ~50mm |
+| **HPGR grinding** | **12 High Pressure Grinding Rolls** | **93** | **41%** | Fortescue patent; dry grinding to 80µm |
+| Dry magnetic separation | 20 drum separators | ~10–15 | ~5% | First-stage rejection of ~65% of mass |
+| Secondary grinding + cleaning | Fine mills + wet mag sep | ~40–60 | ~22% | Upgrade from ~50% to 67% Fe |
+| Conveyors, pumps, water, services | Various | ~30–40 | ~15% | Water recovery, dewatering, stockpiling |
+| **Total processing plant** | | **~225** | **100%** | |
+
+*Sources: [@mining-tech-iron-bridge-2024] (225 MW, 12 HPGR at 93 MW installed, 20 magnetic drums); [@fortescue-iron-bridge-2023]; [@fortescue-iron-bridge-approval-2019] (OPF process flow).*
+
+**Key insight:** grinding consumes ~60–65% of processing plant power. The 93 MW HPGR installation alone is larger than most wind farms. Conventional SAG + ball mill circuits for the same throughput would need ~120–140 MW for grinding — Fortescue's dry HPGR process saves ~30% of comminution energy and ~75% of water versus conventional wet processing.
+
+The **mining fleet** (haul trucks, excavators, drill rigs) is separate — this is the diesel demand that the truck electrification program targets. At Iron Bridge specifically, the mining fleet is relatively small (shorter haul distances than Solomon or Eliwana), but across all Fortescue sites the fleet consumes ~700 ML diesel/yr.
+
+## Total investment
+
+- Pilbara Energy Connect transmission: US\$700M
+- 2 GW generation + 4 GWh storage: US\$2.5B
+- Total decarbonisation budget: ~A\$6.2B
+- US\$2B loan secured August 2025
+- Expected savings: >US\$100M/yr in fossil fuel costs; US\$2–4/wmt operating cost reduction
+
+*Sources: Fortescue ASX announcements; Energy News (US\$2B loan, Aug 2025); ESG News; ICN Gateway (Pilbara Generation Project).*
+
+## LCOE estimate (Phase 1 including transmission)
+
+Using the ASX release split (1.2 GW solar + 600 MW wind) and including transmission:
+
+| Component | Value |
+|:---|---:|
+| Generation + battery capex | A$3.2B (aggressive est.) |
+| Transmission (620 km 220 kV) | A$1.1B (US$700M) |
+| **Total capex** | **A$4.3B** |
+| Solar generation (28% CF) | 2,943 GWh/yr |
+| Wind generation (36% CF) | 1,892 GWh/yr |
+| **Total generation** | **4,836 GWh/yr** |
+| Blended CF | 30.7% |
+| Annualised capex (25yr, 6% real WACC) | A$334M/yr |
+| Blended O&M | A$22/MWh |
+| Annual O&M | A$108M/yr |
+| **LCOE** | **A$91/MWh** |
+
+*Note: The US\$2.5B in the 10 April ASX release is Phase 2 (expansion, subject to FID), not Phase 1. Phase 1 is within the existing decarbonisation budget.*
+
+**Capital cost reconciliation:** The budget only works at Chinese-adjacent pricing — solar ~A\$0.8M/MW, wind ~A\$1.8M/MW, battery ~A\$250/MWh. At standard Australian benchmarks (solar A\$1.3M/MW, wind A\$2.5M/MW, battery A\$500/MWh) the budget blows by ~50%. Battery cost is the key swing: 4.5 GWh at A\$500/MWh = A\$2.25B vs A\$250/MWh = A\$1.13B. Fortescue is using Envision turbines, BYD batteries, and Chinese solar panels — buying at the China price.
+
+**Diesel comparison:**
+
+| Scenario | Annual diesel (net of FTC) | Annual electricity | Saving | Payback on A$4.3B |
+|:---|---:|---:|---:|---:|
+| Normal market ($1.50/L net) | A$1,050M | ~A$350M | A$700M | 6.1 yr |
+| Current crisis ($2.80/L net) | A$1,960M | ~A$350M | A$1,610M | 2.7 yr |
+
+Fortescue's diesel is delivered by ship from Singapore to Port Hedland, then road-tankered 145–450 km to mine sites. Every 10 cpl movement = ~\$70M impact on operating costs.
+
+---
+
+# Charging Infrastructure Costs
+
+The electric fleet requires substantial charging infrastructure whose cost must be added to the truck and generation economics.
+
+## MCS (Megawatt Charging System) — Liebherr/ABB approach
+
+**Per charger (6 MW, robotic connection):**
+
+| Component | Cost (US$M) |
+|:---|---:|
+| Power electronics + rectifier | 1.5–2.5 |
+| Transformer (33 kV to DC) | 0.3–0.5 |
+| Robotic connection system | 0.2–0.5 |
+| Controls, enclosure, cooling | 0.2–0.4 |
+| **Charger unit subtotal** | **2.5–4.0** |
+| Civil works (reinforced pad) | 0.2–0.4 |
+| Cable trenching, grid connection | 0.2–0.5 |
+| Commissioning | 0.1–0.2 |
+| **Total installed per charger** | **3.0–5.0** |
+
+At scale (50+ units) this likely drops to US$2–3.5M per charger.
+
+**Charger-to-truck ratio:** ~1 charger per 6–8 trucks (at 75% utilisation, 3.5 charges/day × 30 min, with redundancy). A 360-truck fleet needs ~50–60 chargers.
+
+**Grid connection:** A 10–20 MW block at a remote mine site costs US$5–10M (substation, switchgear, HV cable). The full fleet needs 200–400 MW of charging capacity, requiring US$60–120M in substations and distribution.
+
+**Total MCS infrastructure for a 360-truck fleet:** ~US$250–350M, or **~US$700–1,000k per truck**.
+
+*Sources: ABB eMine MCS charger specifications; McKinsey mining electrification report 2024 (US$500k–1M per truck infrastructure); ICMM/Mining3 (charging = 15–25% of total BEV fleet CAPEX); CharIN MCS standard.*
+
+## Battery swap stations — XCMG approach
+
+| Component | Cost |
+|:---|---:|
+| Swap station structure + robotics | US$5–10M per station |
+| Spare battery packs (1.3–1.5× float) | US$250–400k per pack |
+| Grid connection | US$1–3M per station |
+| **Total infrastructure per truck** | **US$1.0–1.8M** |
+
+Swap time: 5–8 minutes (vs 30 min MCS charge). Throughput: 5–7 swaps/hour per bay. A 20-truck fleet needs a 2-bay station.
+
+**Key advantage for reliability:** extra battery packs at swap stations act as **distributed storage** during low-wind/cloudy periods — the user's observation that "the easy solution if there is enough transmission capacity is to have extra batteries for low wind days" is precisely the benefit of the swap model.
+
+*Sources: XCMG product data; Chinese mining industry reports (Yimin mine operations, 2024–2025).*
+
+## Trolley assist / dynamic power transfer
+
+**Traditional overhead catenary:**
+
+| Component | Cost (US$M/km) |
+|:---|---:|
+| Poles & overhead contact line | 1.0–1.5 |
+| Substations (prorated, every 1.5–3 km) | 1.5–2.5 |
+| Civil works & road preparation | 0.5–1.5 |
+| Signalling, controls | 0.2–0.5 |
+| **Total per km** | **3–6** |
+
+Typical installation: 1.5–4 km (main pit ramp only). A 3 km system for 20 trucks costs US$43–80M total including truck retrofits (pantograph + electrical: US$1–2M per truck).
+
+**Liebherr Power Rail** (side-mounted rail, not overhead): estimated 20–40% cheaper at US$2–3.5M/km. Easier to relocate. Demonstrated at MINExpo 2024 and Bauma 2025, no full-scale mine installation yet.
+
+**Critical practical issue:** pit ramps advance every 2–5 years. Relocation costs 30–60% of initial installation (US$5–10M per event for a 3 km system). Over a 20-year mine life with 4–6 moves, lifecycle relocation costs can equal the original investment.
+
+**Energy note:** trolley assist does not reduce total energy consumed — it shifts energy delivery from battery (charged at a pad) to direct grid supply (via catenary during haul). It eliminates ~10% battery charge/discharge losses and enables faster truck speeds on grade (1.8× on 10% grade with Power Rail). The grid still needs to supply the same total energy.
+
+**Operating mines with trolley:** Aitik (Boliden, Sweden, 2018+); Collahuasi (Anglo American/Glencore, Chile, 2023+). Komatsu achieved the first autonomous trolley operation in May 2025.
+
+*Sources: ABB/Hitachi Energy mining electrification publications 2022–2024; Komatsu MINExpo 2024 and autonomous trolley milestone (May 2025); Liebherr Power Rail technical spotlight (Bauma 2025); SME Mining Engineering Handbook.*
+
+## Total mine-site electricity demand (Fortescue Pilbara)
+
+Beyond truck charging, the renewable grid must power the entire operation:
+
+| Load | Continuous (MW) | Notes |
+|:---|---:|:---|
+| Truck charging (360 trucks, avg) | ~190 | Peak 290–380 MW at shift changes |
+| Iron ore processing (DSO, ~190 Mtpa) | ~25–50 | Crush & screen only; low intensity |
+| Iron Bridge magnetite (22 Mtpa) | **225** | 12 HPGR (93 MW) + secondary grinding + mag sep (Fortescue/Mining Technology) |
+| Rail (if electrified, ~200 Mtpa) | ~120 | Currently diesel locos; BEV locos in trial |
+| Port operations (Port Hedland) | ~20–30 | Ship loaders, reclaimers, conveyors |
+| Accommodation (10,000 personnel) | ~25–35 | A/C dominated in Pilbara heat |
+| **Total** | **~535–660** | **Excl. rail electrification** |
+
+Annual demand at ~600 MW continuous: ~5,256 GWh/yr — **exceeds** Phase 1 generation of ~4,836 GWh/yr. This confirms the need for Phase 2 expansion (~2 GW additional). This explains the Phase 2 expansion (additional ~2 GW) and the need for the East Pilbara 2.1 GW wind hub.
+
+*Sources: ABB mining electrification publications; ARENA mine energy audits; Fortescue ASX release 10 April 2026; Pilbara processing plant energy benchmarks from DISER.*
+
+---
+
+# References
+
+::: {#refs}
+:::
