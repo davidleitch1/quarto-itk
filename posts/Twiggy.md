@@ -17,9 +17,9 @@ format:
 
 Fortescue has taken a number of expensive "space cadet" wrong directions in its decarbonisation journey, principally around hydrogen. But on a reasonable set of numbers Pilbara electrification and in particular electrification of diesel trucks looks like it could deliver a close to 16% pretax IRR. ITK expects the Chinese suppliers will price well below normal — it's a big market and Fortescue can serve as the showcase project. So I've used two sets of capex numbers. Some very, very low numbers implied from the most recent Fortescue press release and some more, but not necessarily sufficiently, conservative numbers. It's the conservative numbers in the headline table. Our estimated savings are at the top end of the range mentioned by FMG but essentially consistent. For a desktop study it's a reasonable result. More due diligence would no doubt result in more conservative estimates. 
 
+![fortescue_irr_headline](../media/fortescue_irr_headline-6112091.png){#fig-irr-headline}
 
 
-![fortescue_irr_headline](../media/fortescue_irr_headline-6083144.png){#fig-irr-headline}
 
 
 
@@ -249,7 +249,7 @@ The payback calculation also excludes the \$90 m of additional capex for surplus
 
 ## Detailed summary of costs and benefits
 
-![fortescue_electrification_irr](../media/fortescue_electrification_irr-6083189.png){#fig-electrification-irr}
+![fortescue_electrification_irr](../media/fortescue_electrification_irr-6112141.png){#fig-electrification-irr}
 
 
 
