@@ -29,10 +29,10 @@ More detail on these numbers is provided below. For me the two key risks are the
 
 ## $4 bn of wind, solar, battery and transmission capex
 
-Fortescue is building 1.2 GW of solar and 0.6 GW of wind, about 700 km of transmission and some batteries at a total cost of at least  A\$4 bn to:
+Fortescue is building 1.2 GW of solar and 0.6 GW of wind, and maybe another 190 km of transmission and some batteries at a total cost of at least  A\$4 bn to:
 
 1. Replace about 13 PJ of gas consumed in Hematite processing, magnetite processing, Port, and other operations. In total that's between 300 and 350 MW of demand on my estimates. This is a relatively low IRR project in the absence of a carbon cost and will eventually strand a gas pipeline and the Solomon power station. Or at least reduce them to standby.
-2. A much higher IRR truck electrification program. ITK estimates that if the electric trucks cost roughly the same as diesel trucks, until recently a laughable assumption, but no longer, then given an electricity cost of maybe A\$95/MWh and diesel delivered cost net of rebate at around A\$157/l then the cash savings are in the order of \$0.5 bn per year. Those electricity prices depend on a few optimistic assumptions.
+2. A much higher IRR truck electrification program. ITK estimates that if the electric trucks cost roughly the same as diesel trucks (I used higher capex than that), until recently a laughable assumption, but no longer, then given an electricity cost of maybe A\$95/MWh and diesel delivered cost net of rebate at around A\$157/l then the cash savings are in the order of \$0.5 bn per year. Those electricity prices depend on a few optimistic assumptions.
 3. In the process of electrification Fortescue will have the chance to improve the economics of its troubled Magnetite plant, plagued by water pipeline leaks and more worrying air separation opex issues. The Magnetite plant  (Iron Bridge) uses novel dry rolling instead of wet crushing. As with many a new process it hasn't gone smoothly (particularly the dry ore has been highly abrasive on the air separation circuit media) and so capital costs increased from US\$1.9 bn to over US\$4 bn requiring a book value write-down, and output for a plant announced in 2019 remains far below capacity and is not currently scheduled to hit full capacity until 2028.
 
 The map below shows the scale of the Pilbara operations and the distances involved.
