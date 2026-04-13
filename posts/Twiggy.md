@@ -48,7 +48,8 @@ All of the electricity demand already  exists other than the truck charging. The
 ## The new generation system
 
 A summary of the generation system is:
-![image-20260413162936213](../media/image-20260413162936213.png){#fig-generation-system}
+
+![generation](../media/image-20260413162936213.png){#fig-generation-system}
 
 Most of the existing supply comes from the 315 MW Solomon Power Station, which consists of gas reciprocating engines supplied by the 270 km Fortescue River Gas Pipeline. The pipeline delivers around 15 PJ per year, which at \$8/GJ costs say A\$130 m a year. The gas cost might be less. In addition from 2025 there is the fully commissioned 100 MW North Star Junction solar farm. I used the renewables-ninja system synthetic wind profiles with standard 6 MW turbines to get a wind profile. Only one year of weather data was provided, but should do for this purpose. The gas system will no doubt remain for backup.
 
@@ -176,21 +177,7 @@ Fortescue will operate two charging approaches, matching the two truck suppliers
 
 ### Why not trolley assist?
 
-Trolley assist — a tram line powering trucks up the pit ramp via overhead catenary or Liebherr Power Rail — was studied. In this case I don't think it makes sense, and there is no mention of it in the releases.
-
-1. **Cost vs battery swap:** A 3 km trolley system for 20 trucks costs US\$43–80M. Swap stations for the same fleet cost roughly the same, but the spare packs double as distributed energy storage (see below). Trolley infrastructure is single-purpose.
-
-2. **Relocation:** Fortescue operates ~5 pits across the Pilbara. Pit ramp geometry changes every 2–5 years as mining advances. Relocating catenary costs 30–60% of initial installation each time (US\$5–10M per event for a 3 km system). Over a 20-year mine life with 4–6 moves, lifecycle relocation costs can equal the original investment. Swap stations are fixed infrastructure.
-
-3. **Energy saving is minimal:** Trolley eliminates ~10% battery charge/discharge losses. At fleet scale that's ~US\$10–15M/yr — not enough to justify the capex and relocation costs.
-
-4. **Speed benefit is narrow:** 1.8× faster on the ramp sounds compelling, but the ramp is only 15–20% of the total haul cycle. Net cycle time improvement is 5–10%.
-
-5. **Fortescue has already chosen:** they ordered XCMG trucks with battery swap and Liebherr trucks with MCS charging. No trolley infrastructure has been announced for any Pilbara site. The 10 April 2026 ASX release mentions battery storage repeatedly but never trolley.
-
-6. **Complexity:** MCS + swap is two charging systems. Adding trolley makes three systems to maintain in a dust/heat environment.
-
-*Sources: Komatsu trolley assist specifications; Liebherr Power Rail technical spotlight (Bauma 2025); Boliden Aitik operating experience.*
+Trolley assist — a tram line powering trucks up the pit ramp via overhead catenary or Liebherr Power Rail — was considered. In this case I don't think it makes sense, and there is no mention of it in the releases.
 
 ### Swap Packs as Distributed Energy Storage
 
