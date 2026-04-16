@@ -30,7 +30,7 @@ How time flys. Several notes on this year's theme transport electrification, and
 
 ![](./media/diesel_consumption_by_sector_timeseries.png)
 
-![](./media/diesel_consumption_by_sector.png)
+![](./media/diesel_consumption_by_sector_corrected.png)
 
 ![](./media/diesel_by_vehicle_type.png)
 
