@@ -20,6 +20,40 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 16 April
+
+How time flys. Several notes on this year's theme transport electrification, and how timely. One thing I never realised until I started looking at the data is how enshitified our transport system is with a massive shift to diesel.  Diesel is a way worse fuel than petrol in nearly every way. I'll just put some plots up and leave it at that. The increase in mining consumption is not matched by any increase in mine output. Just represents more overburden/deepere pits. The increase in trucks and light commercial is probably influenced by online shopping and consequential distribution to the home by diesel truck.
+
+
+
+![](./media/petrol_vs_diesel_consumption.png)
+
+![](./media/diesel_consumption_by_sector_timeseries.png)
+
+![](./media/diesel_consumption_by_sector.png)
+
+![](./media/diesel_by_vehicle_type.png)
+
+
+
+
+
+:::
+
+::: {.homepage-widgets}
+<iframe src="https://spot_prices.itkservices2.com/display_spot"
+        title="Spot Prices Display"
+        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
+</iframe>
+<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
+        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
+</iframe>
+
+![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
+:::
+
+::::
+
 ### 8 April
 
 Peak electricity prices in the NEM continue to be subdued compared to PCP. I attribute that to more batteries and a little bit to more wind.
@@ -37,22 +71,6 @@ Finally on the dashboard build yesterday I worked on making the plots more "resp
 ### 27 March
 
 Infrastructure home office build out. Just about finished switching the home  network from a mesh system to Omada. Access points about 20% for the price, far easier to manage. Router very cheap, most expensive part \$300 is the POE switch. The access points are cheaper than mesh units for a number of reasons but they get their power from Ethernet cable so no power unit and less radio gear because the access point doesn't need to do back hall or mesh calculation. CPU is lower spec but still excellent speed. Once you have NBN to the premises and ethernet cable. To me the managed switch is the key infrastructure, shows all the devices and where connected. The software is also excellent showing the topology and configuration. Not necessary unless you are into it, but a project that I'm enjoying 
-
-:::
-
-::: {.homepage-widgets}
-<iframe src="https://spot_prices.itkservices2.com/display_spot"
-        title="Spot Prices Display"
-        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
-</iframe>
-<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
-        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
-</iframe>
-
-![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
-:::
-
-::::
 
 ### 25 March
 
