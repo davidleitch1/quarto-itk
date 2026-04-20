@@ -91,6 +91,33 @@ The allocation across sites is not publicly disclosed. The following estimates a
 
 **Simple payback:** 1.5–2 years per truck at normal diesel prices. Under 1 year at crisis prices.
 
+## Basis for the 500 kWh/hr energy consumption assumption
+
+The 500 kWh/hr figure used above is anchored to the only published real-world measurement for an ultra-class battery-electric haul truck. No operator running 240 t-class BEVs has yet published per-cycle consumption data — Fortescue's Liebherr T264 trials at Eliwana started early 2026 and BHP/Rio's Cat 793 XE Early Learner trials at Jimblebar began December 2025.
+
+**Verifiable BEV haul truck energy data**
+
+| Source | Truck | Measurement |
+|:---|:---|---:|
+| Boliden Aitik retrofit (peer-reviewed, Energies 2022) | Cat 795F AC, 313 t payload | 361 kWh/cycle measured |
+| Vale operational pilot (Brazil/Indonesia) | 72 t electric truck | 525 kWh ÷ 36 cycles ≈ 14.6 kWh/cycle |
+| Liebherr T264 BEV (manufacturer spec) | 240 t payload | 3.2 MWh battery, no consumption disclosed |
+| XCMG XDE240 BEV | 230 t payload | Not disclosed |
+
+*Sources: [@cyrus-aitik-energies-2022]; [@vale-electric-truck-2022]; Liebherr T 264 BEV product data.*
+
+**Scaling Aitik to the 240 t class:** Cat 795F AC GVW is ~468 t (155 t empty + 313 t payload); the T264/XDE240 GVW is ~385 t. Linear GVW scaling gives ~300 kWh/cycle for a 240 t-class BEV. At typical Pilbara cycle times this becomes:
+
+| Cycle time | Cycles/hr | kWh/hr |
+|:---|---:|---:|
+| 30 min (short haul) | 2.0 | 600 |
+| 35 min (typical) | 1.71 | 510 |
+| 40 min (longer/deeper pit) | 1.5 | 450 |
+
+**Cross-check via diesel equivalence:** Cat 793F at 160 L/hr × 10 kWh/L × ~40% engine efficiency = 640 kWh/hr at the wheels; ÷ 90% BEV drivetrain efficiency = 720 kWh/hr battery draw, less ~25% regen on empty descent ≈ 540 kWh/hr.
+
+**Defensible range: 450–600 kWh/hr.** The 500 kWh/hr point estimate sits near the low-middle of this range. It may be slightly conservative for Pilbara iron ore: the orebody is below the ROM pad (loaded uphill, empty downhill — the worst geometry for regen recovery), and Pilbara hauls are typically shorter than Aitik's. A 600 kWh/hr upper-bound case raises fleet electricity cost from ~A\$330M to ~A\$395M — meaningful but does not change the payback conclusion.
+
 ## Fleet-wide economics
 
 | Metric | Value |
