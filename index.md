@@ -20,19 +20,13 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-### 16 April
+### 23 April
 
-How time flys. Several notes on this year's theme transport electrification, and how timely. One thing I never realised until I started looking at the data is how enshitified our transport system is with a massive shift to diesel.  Diesel is a way worse fuel than petrol in nearly every way. I'll just put some plots up and leave it at that. The increase in mining consumption is not matched by any increase in mine output. Just represents more overburden/deepere pits. The increase in trucks and light commercial is probably influenced by online shopping and consequential distribution to the home by diesel truck.
+One of the main things I've learned from the oil crisis is how poorly Australia's coal industry is doing. Brown coal only needs mentioning to say it has no future once the LYA, B and Yallourn close in Victoria.  But for me it was finding out that Black coal production is essentially flat over the past decade at around 320 mt that was the biggest suprise. Previously I'd noted that for thermal coal Indonesia was getting all the marginal volumes carried by the sea trade but a combination of recovering from the China ban and rising costs has left the industry facing a declining future.
 
+As far as diesel goes, you can see in the following visualisation that diesel consumption in coal mining is up 45% even while production is flat. Diesel consumption in the iron ore industry is also up but there production is up nearly as much.
 
-
-![](./media/petrol_vs_diesel_consumption.png)
-
-![](./media/diesel_consumption_by_sector_timeseries.png)
-
-![](./media/diesel_consumption_by_sector_corrected.png)
-
-![](./media/diesel_by_vehicle_type.png)
+![](./media/diesel_intensity_and_cost.png)
 
 
 
@@ -53,6 +47,22 @@ How time flys. Several notes on this year's theme transport electrification, and
 :::
 
 ::::
+
+### 16 April
+
+How time flys. Several notes on this year's theme transport electrification, and how timely. One thing I never realised until I started looking at the data is how enshitified our transport system is with a massive shift to diesel.  Diesel is a way worse fuel than petrol in nearly every way. I'll just put some plots up and leave it at that. The increase in mining consumption is not matched by any increase in mine output. Just represents more overburden/deepere pits. The increase in trucks and light commercial is probably influenced by online shopping and consequential distribution to the home by diesel truck.
+
+
+
+![](./media/petrol_vs_diesel_consumption.png)
+
+![](./media/diesel_consumption_by_sector_timeseries.png)
+
+![](./media/diesel_consumption_by_sector_corrected.png)
+
+![](./media/diesel_by_vehicle_type.png)
+
+
 
 ### 8 April
 

@@ -53,16 +53,3 @@ The asymmetry is stark: the single largest line is the diesel rebate, flowing to
 
 Bowen has genuine, durable achievements: NVES is the first fuel-efficiency standard in Australian history; the Capacity Investment Scheme has unlocked ~16 GW of contracted renewables; the Nelson Review provides a credible post-2030 market architecture; the Cheaper Home Batteries Program is deploying distributed storage faster than the ISP modelled. Direction is right, execution is real. The analytical critique is not direction but proportionality: the policy mix is concentrated on consumer-facing clean-energy subsidies (FBT, CHBP) while leaving the largest, fastest-growing fossil-fuel subsidy (diesel FTCS to mining) untouched, and the industrial emissions lever (Safeguard Mechanism) is delivering compliance-via-offsets rather than real abatement. The 2035 NDC of 62-70% cannot be met without (a) a tighter Safeguard decline rate post-2030, (b) reform of the diesel rebate for at least the largest mining claimants, and (c) the ESEM actually working as designed rather than collapsing into CIS-with-extra-steps. The interview should focus on the second-order consistency of the architecture rather than whether direction is correct — Bowen will defend direction comfortably, but the portfolio sums to less than the sum of its parts.
 
-
-
- Headline numbers:
-
-  ┌───────────────────┬──────────────────────────────────────┬────────────────────────┐
-  │      Metric       │         Latest (April 2026)          │ As of early March 2026 │
-  ├───────────────────┼──────────────────────────────────────┼────────────────────────┤
-  │ Systems installed │ >250,000                             │ 254,800                │
-  ├───────────────────┼──────────────────────────────────────┼────────────────────────┤
-  │ Storage capacity  │ 7.7 GWh                              │ 6.3 GWh                │
-  ├───────────────────┼──────────────────────────────────────┼────────────────────────┤
-  │ Install rate      │ ~1,500/day (vs ~200/day pre-program) │ same                   │
-  └───────────────────┴──────────────────────────────────────┴────────────────────────┘
