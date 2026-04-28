@@ -34,10 +34,11 @@ typeset -A LISTING_PAGES=(
 # --- Global files that trigger a full render ---
 GLOBAL_PATTERN='_quarto\.yml|styles\.css|flexoki-light\.scss|_metadata\.yml|apa\.csl|references\.bib'
 
-# --- Detect changes (staged + unstaged vs last commit) ---
+# --- Detect changes (staged + unstaged + untracked vs last commit) ---
 CHANGED=$(git diff --name-only HEAD 2>/dev/null)
 STAGED=$(git diff --name-only --cached 2>/dev/null)
-ALL_CHANGED=$(echo -e "$CHANGED\n$STAGED" | sort -u | grep -v '^$')
+UNTRACKED=$(git ls-files --others --exclude-standard 2>/dev/null)
+ALL_CHANGED=$(echo -e "$CHANGED\n$STAGED\n$UNTRACKED" | sort -u | grep -v '^$')
 
 if [ -z "$ALL_CHANGED" ]; then
     echo "No changes detected. Nothing to render or deploy."
