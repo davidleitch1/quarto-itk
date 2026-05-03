@@ -1,0 +1,55 @@
+---
+title: "Privacy Policy — Nem Analyst"
+description: "Privacy policy for the Nem Analyst iOS app."
+date: 2026-05-02
+toc: false
+---
+
+**Effective: 2 May 2026**
+
+Nem Analyst ("the App") is an iOS application developed by **ITK Services** ("we", "our") that displays Australian National Electricity Market (NEM) data. This policy describes the information the App handles.
+
+## 1. Information we do not collect
+
+The App does not require an account or sign-in. We do not ask for, collect, or store:
+
+- your name, email address, or contact details
+- your location
+- your contacts, photos, calendars, or device identifiers used for tracking
+- any data from your device beyond what is needed to render charts on screen
+
+The App is read-only. It fetches Australian electricity market data from our API and displays it. It does not transmit any personal data.
+
+## 2. Information transmitted when you use the App
+
+When the App fetches data, your iPhone sends HTTPS requests to our API at `nemgenapi.itkservices2.com`. As with any internet request, our infrastructure records standard server logs containing:
+
+- the IP address of the request
+- the request path (for example `/v1/prices/spot`)
+- the timestamp
+- a shared API access token issued for the TestFlight build
+
+These logs are retained for up to 30 days and are used solely to diagnose service issues and prevent abuse. They are not combined with any other dataset and are not shared with third parties for marketing.
+
+## 3. Third-party services
+
+- **Apple TestFlight.** While the App is distributed through TestFlight, Apple may collect crash reports and aggregated diagnostic data in accordance with the [Apple Privacy Policy](https://www.apple.com/legal/privacy/). You can opt in or out of sharing diagnostic data in the TestFlight app's settings on your device.
+- **Cloudflare.** Our API runs behind the Cloudflare network for transit security and access control. Cloudflare's handling of network metadata is governed by the [Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/).
+
+The App does not embed analytics or advertising SDKs and does not use cross-app tracking.
+
+## 4. Market data displayed in the App
+
+Electricity prices, generation, demand, and related figures shown in the App are sourced from the Australian Energy Market Operator (AEMO) public market datasets. AEMO data is operational market data and contains no personal information.
+
+## 5. Children
+
+The App is intended for professionals interested in Australian electricity markets and is not directed at children under 13.
+
+## 6. Changes to this policy
+
+If this policy changes, the updated version will be posted at the same URL with a new "Effective" date.
+
+## 7. Contact
+
+For privacy enquiries, email **[david.leitch@itkservices.com.au](mailto:david.leitch@itkservices.com.au)**.
