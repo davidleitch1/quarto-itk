@@ -1,8 +1,8 @@
 ---
 title: "The spot mirage"
-subtitle: "A responsible transition should and will have transitional oversupply — that means Govt support"
 author: "David Leitch"
 date: 2026-05-07
+image: "../media/renewmap_fid_rolling12_by_state.png"
 categories: ["Markets", "Policy"]
 lightbox: true
 draft: false
