@@ -20,6 +20,10 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 5 May
+
+Iphone version of dashboard is written and submitted to apple for review but 3 days later still no sign of the review actually happening.
+
 ### 23 April
 
 One of the main things I've learned from the oil crisis is how poorly Australia's coal industry is doing. Brown coal only needs mentioning to say it has no future once the LYA, B and Yallourn close in Victoria.  But for me it was finding out that Black coal production is essentially flat over the past decade at around 320 mt that was the biggest suprise. Previously I'd noted that for thermal coal Indonesia was getting all the marginal volumes carried by the sea trade but a combination of recovering from the China ban and rising costs has left the industry facing a declining future.
