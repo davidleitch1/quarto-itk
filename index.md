@@ -20,19 +20,31 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-### 5 May
+### 8 May
 
-Iphone version of dashboard is written and submitted to apple for review but 3 days later still no sign of the review actually happening.
+Iphone dashboard app and running. Feedback has been positive from the beta testers. Could not have been done by me without Claude Code, equally it's about the 5 th iteration of a dashboard I started five years ago. In anyevent very happy with it.
 
-### 23 April
+QLD gas reservation scheme was announced
 
-One of the main things I've learned from the oil crisis is how poorly Australia's coal industry is doing. Brown coal only needs mentioning to say it has no future once the LYA, B and Yallourn close in Victoria.  But for me it was finding out that Black coal production is essentially flat over the past decade at around 320 mt that was the biggest suprise. Previously I'd noted that for thermal coal Indonesia was getting all the marginal volumes carried by the sea trade but a combination of recovering from the China ban and rising costs has left the industry facing a declining future.
+It's hard to take much interest in gas. The underlying reality is gas is major contributor to global warming. There is plenty of debate still to be had about the costs of climate change but plenty of evidence that Governments and policy is, not in a straight line, trending tighter.
 
-As far as diesel goes, you can see in the following visualisation that diesel consumption in coal mining is up 45% even while production is flat. Diesel consumption in the iron ore industry is also up but there production is up nearly as much.
+I have long believed the cheapest new gas is from electrification of gas in both industrial and domestic heat, and by replacing gas in electricity production.
 
-![](./media/diesel_intensity_and_cost.png)
+Gas consumption in the NEM has already declined from 700 PJ to 500 PJ as the gas price has moved to export parity.
 
+Now the Government is introducing what is in effect a gas tariff, a tariff makes imports more expensive, gas reservation makes domestic consumption cheaper, in effect the same end result.
 
+This is yet another contradictory policy but if you spend time taking about the inevitable contradictions of policy you might as well tilt at windmills.
+
+Today's announcement was vague. Nevertheless I've had a go at looking at the obligation. As far as resources like Beetaloo I hope it makes them even higher cost. 
+
+In Queensland only APLNG has 2P reserves in excess of contracted production. So even though APLNG is a good citizen it's the only one that I think the policy is likely to apply to. If GLNG had any economic resources capable of being contracted it would already be producing them. GLNG capacity utilisation is only 77% and only some of that comes from field production.
+
+### ![](./media/qld_lng_reservation_net_obligation.png)
+
+Also its not that clear that gas companies are making so much money.
+
+![](./media/aplng_reserves_production_wells_costs.png)
 
 
 
@@ -51,6 +63,22 @@ As far as diesel goes, you can see in the following visualisation that diesel co
 :::
 
 ::::
+
+### 5 May
+
+Iphone version of dashboard is written and submitted to apple for review but 3 days later still no sign of the review actually happening.
+
+### 23 April
+
+One of the main things I've learned from the oil crisis is how poorly Australia's coal industry is doing. Brown coal only needs mentioning to say it has no future once the LYA, B and Yallourn close in Victoria.  But for me it was finding out that Black coal production is essentially flat over the past decade at around 320 mt that was the biggest suprise. Previously I'd noted that for thermal coal Indonesia was getting all the marginal volumes carried by the sea trade but a combination of recovering from the China ban and rising costs has left the industry facing a declining future.
+
+As far as diesel goes, you can see in the following visualisation that diesel consumption in coal mining is up 45% even while production is flat. Diesel consumption in the iron ore industry is also up but there production is up nearly as much.
+
+![](./media/diesel_intensity_and_cost.png)
+
+
+
+
 
 ### 16 April
 
