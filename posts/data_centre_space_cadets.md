@@ -15,7 +15,7 @@ format:
   docx: default
 ---
 
-# Data centre space cadets
+# Deus ex machina  
 
 Opposition to data centres in the USA has increased, spreading out from specific community level concerns to a broader argument about the impact on electricity prices. These concerns could harden into a widespread movement opposing AI and data centres, matched by a counter-movement insisting "AI and data centres are wonderful".
 
@@ -27,7 +27,7 @@ Although data centre size is typically expressed in MW, in reality the power cos
 
 As far as power goes, in the USA new data centres are dominated by gas; renewables rarely get a mention. Whether in the USA or Australia backup is done with diesel gensets. The USA industry argues, to the extent they have any interest, that gas is the only technology available near-term. I'd argue that renewables can be built far more quickly than gas generation. And that using gas actually undermines the industry's ability to earn society's trust.
 
-However the more general concern is the idea that data centres have to bring their own generation. Since when? Does every house have to bring its own generation, every shop, where do we draw the line?
+However the more general concern is the idea that data centres have to bring their own generation. Since when? Does every house have to bring its own generation, does every shop, where do we draw the line?
 
 Higher prices provide the signal to build new supply. If data centres increase demand, but also provide firming, then new supply gets built anyway. That's how the market is supposed to work.
 
@@ -140,9 +140,9 @@ The PJM Independent Market Monitor (Monitoring Analytics) attributed the 2025/26
 
 Public service commissions across the partisan spectrum moved through 2025-26 to put data centres into separate rate classes with minimum-bill provisions and stranded-cost protection. The structural shift is the most consequential element of the entire backlash because rate-design changes operate for decades.
 
-Legislators across both parties introduced more than 238 data centre bills across all 50 states in 2025; over 40 were enacted in 21 states. MultiState tracked over 300 bills across 2025, rising further in 2026. The three dominant categories are rate-structure reform, tax-incentive rollback, and construction moratoriums [@powerpolicy-makebreak; @multistate-2026].
+Legislators across both parties introduced more than 238 data centre bills across all 50 states in 2025; over 40 were enacted in 21 states. 
 
-Microsoft committed in 2024 to "next-generation" zero-water-cooling data centre designs and matched 100% of its global electricity consumption with renewables in 2025 [@msft-sustainability]. However, Microsoft is reported to be reconsidering its 24/7 carbon-free energy matching^[**24/7 CFE (Carbon-Free Energy matching)** — commitment to match every hour of consumption with carbon-free generation in real time, rather than just matching annual volumes; Google's 2030 moonshot.] pledge in light of AI demand growth [@geekwire-msft-cfe; @dcd-msft-cfe]. Google maintains its 24/7 CFE moonshot for 2030 but its operational emissions have risen sharply with AI [@google-sustainability]. The political read is that voluntary corporate commitments are losing credibility with regulators because the underlying load-growth trajectory is making them harder to deliver on.
+Microsoft committed in 2024 to "next-generation" zero-water-cooling data centre designs and matched 100% of its global electricity consumption with renewables in 2025 [@msft-sustainability]. However, Microsoft is reported to be reconsidering its 24/7 carbon-free energy matching^[**24/7 CFE (Carbon-Free Energy matching)** — commitment to match every hour of consumption with carbon-free generation in real time, rather than just matching annual volumes; Google's 2030 moonshot.] pledge in light of AI demand growth [@geekwire-msft-cfe; @dcd-msft-cfe]. Google maintains its 24/7 CFE moonshot for 2030 but its operational emissions have risen sharply with AI [@google-sustainability]. 
 
 ## What polling shows
 
@@ -168,7 +168,7 @@ Yes. The evidence is consistent across three independent measures:
 
 2. **Political behaviour.** Data Center Watch's \$98 billion of blocked or delayed projects by mid-2025; the Warrenton Virginia council being voted out and replaced by a council unanimously opposed to Amazon's local data centre; Virginia's flagship cost-shift bills passing the General Assembly twice in 2026; state legislatures passing more than 40 substantive bills in 21 states in 2025; the AEP Ohio tariff and PPL settlement creating new precedents for separate large-load rate classes.
 
-3. **Regulatory behaviour.** FERC's November 2024 rejection of the Talen-Amazon ISA, its February 2025 show-cause order, and its December 2025 PJM co-location order together represent the most consequential federal regulatory pivot on large-load arrangements in a generation. State PSCs (Virginia SCC, Louisiana PSC dissent, Ohio PUCO, Pennsylvania PUC, Wisconsin PSC) are all moving in the same direction.
+3. **Regulatory behaviour.** FERC's November 2024 rejection of the Talen-Amazon ISA^[**Talen-Amazon ISA** — In March 2024 AWS bought Talen's Cumulus data centre campus next to Talen's 2.5 GW Susquehanna nuclear plant in Pennsylvania for US\$650 m, planning to draw power direct from the reactor "behind the meter" and bypass the PJM grid. PJM filed an amended Interconnection Service Agreement raising permitted co-located load from 300 MW to 480 MW. FERC rejected it 2-1 in November 2024, accepting Exelon and AEP's argument that the arrangement would shift transmission costs onto other ratepayers. The landmark precedent on whether hyperscalers can co-locate behind existing generation and bypass the grid.], its February 2025 show-cause order, and its December 2025 PJM co-location order together represent the most consequential federal regulatory pivot on large-load arrangements in a generation.
 
 
 ## Australia
