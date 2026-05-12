@@ -19,8 +19,6 @@ format:
 
 Opposition to data centres in the USA has increased, spreading out from specific community level concerns to a broader argument about the impact on electricity prices. These concerns could harden into a widespread movement opposing AI and data centres, matched by a counter-movement insisting "AI and data centres are wonderful".
 
-In this note I focus mostly on the USA and then try to understand where Australia sits as a place to build hyperscale data centres.
-
 Demand for data centres in Australia is growing strongly. Renewmap identifies close to 1800 MW under construction [@renewmap-2026]. Despite limited disclosure, what is being built in Australia is nothing like what Amazon, OpenAI and Meta are building in the USA.
 
 Although data centre size is typically expressed in MW, in reality the power cost and power supply is at most the second most important cost item. USA AI data centre costs are dominated by depreciation on the GPUs and the associated "racks" and clusters.
