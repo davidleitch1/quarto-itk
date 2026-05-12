@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>industry_response_australia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="industry_response_australia_files/libs/clipboard/clipboard.min.js"></script>
+<script src="industry_response_australia_files/libs/quarto-html/quarto.js"></script>
+<script src="industry_response_australia_files/libs/quarto-html/popper.min.js"></script>
+<script src="industry_response_australia_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="industry_response_australia_files/libs/quarto-html/anchor.min.js"></script>
+<link href="industry_response_australia_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="industry_response_australia_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="industry_response_australia_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="industry_response_australia_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="industry_response_australia_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="australian-data-centre-industry-flexibility-demand-response-btm-batteries-and-grid-cost-positioning" class="level1">
+<h1>Australian data centre industry — flexibility, demand response, BTM batteries and grid-cost positioning</h1>
+<p><strong>Date prepared:</strong> 11 May 2026 <strong>Prepared for:</strong> ITK research note on Australian data centre industry response <strong>Scope:</strong> Operating fleet, industry positions on grid services and demand flexibility, AEMO/AEMC engagement, behind-the-meter assets, federal and state policy, and how Australia’s debate diverges from the US.</p>
+<hr>
+<section id="headline-picture" class="level2">
+<h2 class="anchored" data-anchor-id="headline-picture">1. Headline picture</h2>
+<p>Australia’s data centre fleet is small in absolute terms — about <strong>1.35 GW operating IT load at end-2025</strong> [Source: https://www.cefc.com.au/insights/market-reports/data-centre-growth-and-the-energy-transition/] versus roughly <strong>50 GW</strong> in the United States [Source: https://www.utilitydive.com/news/data-centers-miso-ferc-market-report/815831/] — but the pipeline is the political story. AEMO received <strong>44 GW of data centre connection requests</strong> from network service providers in the 2025 IASR process, against only ~6 GW required to meet Step Change demand [Source: https://www.aemo.com.au/-/media/files/stakeholder_consultation/consultations/nem-consultations/2024/2025-iasr-scenarios/final-docs/oxford-economics-australia-data-centre-energy-consumption-report.pdf]. The CEFC/Baringa central forecast has Australian data centre capacity reaching <strong>4.7-7.4 GW by 2035</strong>, with electricity consumption rising from ~2% of NEM-supplied energy today to as much as <strong>11% of national consumption</strong> [Source: https://www.cefc.com.au/media/media-release/data-centre-boom-to-reshape-australia-s-energy-future-cefc-baringa-report/].</p>
+<p>Three things make the Australian conversation different from the US one:</p>
+<ul>
+<li><p><strong>An organised industry voice has only just formed.</strong> Data Centres Australia (DCA) was launched on 28 November 2025 by AirTrunk, AWS, CDC, Microsoft and NEXTDC, with NEXTDC CEO Craig Scroggie as inaugural chair and former Microsoft government affairs head Belinda Dennett as CEO. STACK, Equinix, Goodman, Schneider Electric and TikTok joined at launch [Source: https://www.cyberdaily.au/security/12953-thinking-machines-data-centre-giants-launch-new-aussie-peak-body-data-centres-australia ; Source: https://thetechcapital.com/data-centres-australia-names-nextdc-ceo-chair-of-new-peak-industry-body/]. There is no Australian equivalent of Tyler Norris’s Duke/EPRI DCFlex line of work.</p></li>
+<li><p><strong>The political coalition has converged remarkably fast around “data centres should pay their own way.”</strong> A February 2026 statement by the Clean Energy Council, Electrical Trades Union, ACF, WWF-Australia, Smart Energy Council, RE-Alliance, Climate Energy Finance, Nature Conservation Council NSW, Environment Victoria, Queensland Conservation Council, Sunrise Project Australia and Carbon Zero Initiative — an unusual industry/union/environment alliance — demanded operators “build the renewables and water recycling to power” their facilities [Source: https://cleanenergycouncil.org.au/news-resources/data-centre-rush-must-power-itself-says-industry,-unions-and-environment-groups]. The Albanese Government’s December 2025 <em>National AI Plan</em> and accompanying <em>expectations of data centres and AI infrastructure developers</em> explicitly require operators to “underwrite new renewable power supply, pay their full share of new grid connectivity so costs are not passed to consumers or businesses, and support Australia’s energy transition through demand flexibility mechanisms” [Source: https://news.microsoft.com/source/asia/features/investing-in-australias-ai-future/ ; Source: https://www.industry.gov.au/news/australia-launches-national-ai-plan-capture-opportunities-share-benefits-and-keep-australians-safe].</p></li>
+<li><p><strong>Behind-the-meter response patterns are different.</strong> There is no Australian equivalent of the US BTM gas turbine surge (Voltagrid, Bloom, Enchanted Rock, Solar Group at Memphis). NSW/VIC pipeline gas economics, the lack of cheap stranded gas in the urban load centres, and Australia’s planning culture all point operators towards <strong>on-site BESS plus utility-scale solar/wind PPAs</strong>, not on-site reciprocating gas. Diesel remains the only sanctioned BTM generation, and the Mamre Road 1.2 GW proposal — with <strong>852 diesel back-up generators</strong> and 7,488 lithium-ion battery cabinets — gives a sense of the scale [Source: https://urbandigest.com.au/ssd-92743706-mamre-road-data-centre-campus/].</p></li>
+</ul>
+<p>The thinness of Australian published material on data centre flexibility, particularly compared to the US DCFlex / EPRI / PJM literature, is itself a finding and is flagged throughout.</p>
+<hr>
+</section>
+<section id="the-operating-fleet" class="level2">
+<h2 class="anchored" data-anchor-id="the-operating-fleet">2. The operating fleet</h2>
+<section id="headline-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="headline-numbers">Headline numbers</h3>
+<p><strong>Table 1: Australian data centre operating IT load — end-2025 best estimates</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 55%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Source</th>
+<th style="text-align: right;">Operating IT load</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CEFC/Baringa (Dec 2025)</td>
+<td style="text-align: right;">~1,350 MW</td>
+<td style="text-align: left;">“Today” baseline against 4.7-7.4 GW 2035 forecast</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US Studies Centre (Mar 2026)</td>
+<td style="text-align: right;">~1,400 MW across ~250 facilities</td>
+<td style="text-align: left;">NSW 80%, VIC ~15%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oxford Economics for AEMO (Jul 2025)</td>
+<td style="text-align: right;">3.9 TWh consumption FY25; ~98% in NEM; ~2% of NEM-supplied</td>
+<td style="text-align: left;">Implies ~600-800 MW average load — consistent with 1.3-1.4 GW peak</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">M3 Property (Nov 2025)</td>
+<td style="text-align: right;">“1.3 GW live; 0.7-1.7 GW supply gap by 2028”</td>
+<td style="text-align: left;">Forecast 1.8 GW live by 2028</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: ITK compilation. CEFC: https://www.cefc.com.au/media/hs5ner3s/getting-the-balance-right-data-centres-and-the-energy-transition-full-report.pdf ; USSC: https://www.ussc.edu.au/powering-the-cloud-data-centres-and-the-future-of-australias-grid ; Oxford Economics: https://www.aemo.com.au/-/media/files/stakeholder_consultation/consultations/nem-consultations/2024/2025-iasr-scenarios/final-docs/oxford-economics-australia-data-centre-energy-consumption-report.pdf ; M3 Property: https://m3property.com.au/static/88f0d39061ca9072f2bf0a5b61dc5c3f/M3-Property-Report-Data-Centre-Growth-in-Australia-November-25.pdf</em></p>
+<p>The 1.3-1.4 GW figure should be treated as the <strong>best single point estimate for operating IT load</strong>. The often-quoted “2 GW” headline appears to confuse operating IT load with gross site MW or with announced/contracted but not commissioned capacity.</p>
+</section>
+<section id="operators" class="level3">
+<h3 class="anchored" data-anchor-id="operators">Operators</h3>
+<p><strong>Table 2: Major Australian data centre operators — operating IT capacity (best estimates, end-2025/early 2026)</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 44%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operator</th>
+<th style="text-align: left;">Ownership</th>
+<th style="text-align: right;">Operating IT load (Australia)</th>
+<th style="text-align: left;">Notable campuses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">AirTrunk</td>
+<td style="text-align: left;">Blackstone + CPP Investments (acquired Sep 2024 for A$24 bn)</td>
+<td style="text-align: right;">&gt;1,200 MW across 5 campuses</td>
+<td style="text-align: left;">SYD1 (121+ MW), SYD2 (158+ MW), SYD3 (330+ MW), MEL1 (276+ MW), MEL2 (354+ MW; opening 2H27)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NEXTDC</td>
+<td style="text-align: left;">ASX-listed</td>
+<td style="text-align: right;">~316 MW contracted utilisation as of Sep 2025; pro-forma 416.6 MW after 1H26 wins</td>
+<td style="text-align: left;">M1-M4 Melbourne, S1-S6 Sydney, P1-P2 Perth, B1-B2 Brisbane, C1 Canberra, A1 Adelaide, plus PH1 Pilbara</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CDC Data Centres</td>
+<td style="text-align: left;">Infratil 48% / Future Fund</td>
+<td style="text-align: right;">~281 MW operating Eastern Creek campus + Canberra campuses</td>
+<td style="text-align: left;">Marsden Park 504 MW campus approved Nov 2025 (under construction)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Microsoft</td>
+<td style="text-align: left;">Microsoft</td>
+<td style="text-align: right;">“29 sites” announced; from ~3 operating in late 2025 with three more in build</td>
+<td style="text-align: left;">Sydney + Melbourne + Canberra</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AWS</td>
+<td style="text-align: left;">Amazon</td>
+<td style="text-align: right;">Asia Pacific (Sydney) + Asia Pacific (Melbourne) Regions; specific MW not disclosed</td>
+<td style="text-align: left;">Multiple sites Sydney + Melbourne</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Equinix</td>
+<td style="text-align: left;">Equinix</td>
+<td style="text-align: right;">Multiple smaller IBX facilities</td>
+<td style="text-align: left;">SY-series Sydney, ME-series Melbourne</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Macquarie Data Centres</td>
+<td style="text-align: left;">ASX-listed Macquarie Technology Group</td>
+<td style="text-align: right;">IC3 Super West Macquarie Park + Canberra</td>
+<td style="text-align: left;">~80 MW announced expansion</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DCI</td>
+<td style="text-align: left;">Brookfield (via 2024 acquisition from Northern Data)</td>
+<td style="text-align: right;">Multiple cities</td>
+<td style="text-align: left;">Eastern Creek, Adelaide, Darwin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Global Switch</td>
+<td style="text-align: left;">CK Hutchison Holdings</td>
+<td style="text-align: right;">SYD-1 Pyrmont + SYD-2 Ultimo</td>
+<td style="text-align: left;">~110 MW</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Quinbrook (Supernode)</td>
+<td style="text-align: left;">Quinbrook Infrastructure</td>
+<td style="text-align: right;">New build at Brendale QLD</td>
+<td style="text-align: left;">Co-located with 780 MW / 3,074 MWh BESS</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: ITK compilation from operator websites, ASX disclosures, ResearchAndMarkets/Arizton portfolio reports. AirTrunk: https://airtrunk.com/airtrunk-expands-australian-platform-with-a-second-hyperscale-data-centre-campus-in-melbourne/ ; NEXTDC: https://announcements.asx.com.au/asxpdf/20251201/pdf/06sr3ff6f4q4vv.pdf ; CDC: https://www.nsw.gov.au/ministerial-releases/data-centre-investment-sustainable-development ; AirTrunk Blackstone: https://airtrunk.com/completion-of-airtrunk-acquisition-by-blackstone-marking-new-era-of-growth/ ; Quinbrook: https://www.quinbrook.com/news-insights/quinbrooks-supernode-battery-completes-construction/</em></p>
+</section>
+<section id="geographic-concentration" class="level3">
+<h3 class="anchored" data-anchor-id="geographic-concentration">Geographic concentration</h3>
+<p>NSW hosts roughly 80% of Australian data centre capacity, Victoria most of the remainder, with Canberra (mainly federal-government colocation), Brisbane, Perth and Adelaide accounting for the residual [Source: https://www.ussc.edu.au/powering-the-cloud-data-centres-and-the-future-of-australias-grid]. Western Sydney (Eastern Creek, Marsden Park, Kemps Creek/Mamre Road) and Macquarie Park are the two NSW clusters; Melbourne capacity concentrates in the western and northern suburbs. Per the existing background note <code>datacentre_locationfactors.md</code>, Australia’s pattern is markedly more capital-city-clustered than the US, driven by cable landings, fibre exchanges, the colocation-heavy customer mix and the absence of cheap stranded power equivalent to PJM/ERCOT-adjacent rural sites.</p>
+<p><strong>Regional / power-anchored projects</strong> are a small but real category:</p>
+<ul>
+<li><strong>NEXTDC Pilbara edge:</strong> PH1 (Port Hedland, operating) and NE1 (Newman, in construction). These are small modular edge facilities for mining customers — no hyperscale build [Source: https://www.nextdc.com/data-centres/port-hedland-data-centre-colocation].</li>
+<li><strong>Quinbrook Supernode (Brendale, QLD):</strong> US$2.5 bn data centre adjacent to the South Pine substation, co-located with a 780 MW/3,074 MWh BESS contracted to Origin (stages 1-2) and Stanwell (stage 3). Stage 1 BESS energised September 2025 [Source: https://www.quinbrook.com/news-insights/quinbrooks-supernode-battery-completes-construction/ ; Source: https://www.datacenterdynamics.com/en/news/quinbrook-to-build-17-billion-data-center-2gwh-battery-storage-in-queensland-australia/].</li>
+<li><strong>Hunter Valley / coal-region speculation:</strong> AGL has confirmed it is in discussions with data centre operators for “integrated energy hubs” on its Hunter sites; nothing publicly committed [Source: https://www.gloucesteradvocate.com.au/story/9168623/how-data-centres-could-impact-the-upper-hunters-post-mining-era/]. <strong>No Macquarie Mortlake hyperscale data centre has been publicly announced</strong> — the Mortlake activity is the existing 566 MW Origin gas plant plus the Origin 650 MWh BESS expected online late 2025. The Macquarie name in the brief appears to confuse the unrelated Macquarie Data Centres operator.</li>
+<li><strong>Tasmania:</strong> Mostly small enterprise/colocation (DC3, TasmaNet). Firmus has approval for a 90 MW St Leonards facility near Launceston; Viridis has planning approval for a 1 MW Tasmanian site [Source: https://www.datacenterdynamics.com/en/news/australias-viridis-gets-approval-for-1mw-tasmania-data-center/]. Hydropower-anchored hyperscale remains a concept rather than a project.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="pipeline-projects-worth-flagging" class="level2">
+<h2 class="anchored" data-anchor-id="pipeline-projects-worth-flagging">3. Pipeline projects worth flagging</h2>
+<p><strong>Table 3: Major announced Australian projects — capex / capacity / status</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Project</th>
+<th style="text-align: left;">Operator</th>
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Capacity</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mamre Road / SYD4</td>
+<td style="text-align: left;">AirTrunk (site IFM)</td>
+<td style="text-align: left;">Kemps Creek, NSW</td>
+<td style="text-align: left;">1.2 GW; 6 buildings; 852 diesel gensets</td>
+<td style="text-align: left;">SSDA on public exhibition; SEARs issued 30 Sep 2025; construction targeted early 2026</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Marsden Park</td>
+<td style="text-align: left;">CDC</td>
+<td style="text-align: left;">Marsden Park, NSW</td>
+<td style="text-align: left;">504 MW (scalable to 1 GW)</td>
+<td style="text-align: left;">NSW approval 28 Nov 2025; A$3.1 bn</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S7 Eastern Creek</td>
+<td style="text-align: left;">NEXTDC + OpenAI</td>
+<td style="text-align: left;">Eastern Creek, NSW</td>
+<td style="text-align: left;">550 MW; A$7 bn</td>
+<td style="text-align: left;">MoU Dec 2025; first phase target 2H 2027</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MEL2</td>
+<td style="text-align: left;">AirTrunk</td>
+<td style="text-align: left;">Melbourne, VIC</td>
+<td style="text-align: left;">354+ MW; A$5 bn</td>
+<td style="text-align: left;">Multi-phase; target 2H 2027</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Microsoft Australia A$25 bn</td>
+<td style="text-align: left;">Microsoft</td>
+<td style="text-align: left;">Sydney + Melbourne + Canberra</td>
+<td style="text-align: left;">29 total sites announced (vs 20 in 2023); 3 operating + 3 in build as of Oct 2025</td>
+<td style="text-align: left;">A$5 bn 2023 → A$25 bn (US$18 bn) by 2029 announced Apr 2026; MoU with federal government on the National AI Plan expectations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AWS A$20 bn</td>
+<td style="text-align: left;">AWS</td>
+<td style="text-align: left;">Sydney + Melbourne; new sites SW Sydney + outside Melbourne</td>
+<td style="text-align: left;">Specific MW not disclosed</td>
+<td style="text-align: left;">Apr 2025 announcement; supersedes earlier A$13.2 bn 2023-27 plan</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Supernode</td>
+<td style="text-align: left;">Quinbrook</td>
+<td style="text-align: left;">Brendale, QLD</td>
+<td style="text-align: left;">Stage 1 BESS energised Sep 2025; data hall to follow</td>
+<td style="text-align: left;">A$2.5 bn total</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Macquarie Park multi-site</td>
+<td style="text-align: left;">Macquarie Data Centres + others</td>
+<td style="text-align: left;">Macquarie Park, NSW</td>
+<td style="text-align: left;">4 new data centres seeking Ausgrid connection; new substation being built</td>
+<td style="text-align: left;">Third Macquarie Park transformer commissioned Dec 2025; new Wallumatta STS contingent project filed Oct 2025</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: ITK compilation. AirTrunk Mamre: https://urbandigest.com.au/ssd-92743706-mamre-road-data-centre-campus/ and https://ia.acs.org.au/article/2026/concern-over-australia-s-most-power-hungry-data-centre.html ; CDC Marsden: https://www.nsw.gov.au/ministerial-releases/southern-hemispheres-biggest-data-centre-gets-green-light ; NEXTDC S7: https://www.theurbandeveloper.com/articles/eastern-creek-data-centre-550mw-openai-nextdc and https://www.nextdc.com/news/building-the-next-generation-of-sovereign-ai-infrastructure-in-australia ; AirTrunk MEL2: https://airtrunk.com/airtrunk-expands-australian-platform-with-a-second-hyperscale-data-centre-campus-in-melbourne/ ; Microsoft A$25 bn: https://news.microsoft.com/source/asia/features/investing-in-australias-ai-future/ ; AWS A$20 bn: https://www.aboutamazon.com/news/aws/amazon-data-center-investment-in-australia ; Macquarie Park substation: https://www.aer.gov.au/system/files/2025-11/Ausgrid%20-%20Contingent%20Project%20Application%20-%20New%20Wallumatta%20STS%20-%2031%20October%202025.pdf</em></p>
+<p>The gap between <strong>announced</strong> capex and <strong>delivered</strong> MW is large and matters. Microsoft’s 2023 A$5 bn commitment was upgraded to A$25 bn by April 2026 [Source: https://news.microsoft.com/source/asia/features/investing-in-australias-ai-future/], but as of October 2025 Microsoft itself acknowledged only three operating Australian sites with three more under construction. AWS’s earlier A$13.2 bn (2023-27) commitment has been superseded by an A$20 bn (US$13.3 bn) 2025-2029 announcement [Source: https://www.aboutamazon.com/news/aws/amazon-data-center-investment-in-australia]. Treat hyperscaler dollar pledges as forward intent, not as in-service load.</p>
+<hr>
+</section>
+<section id="industry-positions-on-flexibility-demand-response-and-btm-batteries" class="level2">
+<h2 class="anchored" data-anchor-id="industry-positions-on-flexibility-demand-response-and-btm-batteries">4. Industry positions on flexibility, demand response and BTM batteries</h2>
+<section id="data-centres-australia-the-new-peak-body" class="level3">
+<h3 class="anchored" data-anchor-id="data-centres-australia-the-new-peak-body">Data Centres Australia (the new peak body)</h3>
+<p>DCA’s first major substantive output is the November 2025 Mandala Partners report <strong>“Data Centres as Enabling Infrastructure”</strong>, commissioned by AirTrunk, AWS, CDC and NEXTDC [Source: https://datacentres.org.au/wp-content/uploads/2025/11/2025-11_DCA-Mandala-Data-Centres-as-Enabling-Infrastructure.pdf ; Source: https://datacentres.org.au/data-centres-as-enabling-infrastructure/]. The framing is that data centres:</p>
+<ul>
+<li>Have invested A$3.1 bn in grid infrastructure since 2020 with another A$7.2 bn forecast by 2030, “including A$1.1 bn of excess capacity for communities and other industries”;</li>
+<li>Underwrite renewable PPAs sufficient to power “over 200,000 homes a year”;</li>
+<li>Have “around 70 per cent of energy consumption offset by renewables”;</li>
+<li>Will invest A$500 m to A$1.1 bn in recycled water infrastructure by 2030.</li>
+</ul>
+<p>The DCA framing is <strong>explicitly positive-spillover</strong>: data centres as catalysts for grid and renewables investment. There is no published DCA position paper specifically endorsing demand response or load flexibility commitments. The submission to the NSW Legislative Council inquiry (Submission No 30) reiterates the enabling-infrastructure framing rather than offering specific flexibility commitments [Source: https://www.parliament.nsw.gov.au/lcdocs/submissions/94922/0030%20Data%20Centres%20Australia.pdf]. DCA’s response to the federal <em>expectations</em> document accepts the demand-flexibility expectation in principle [Source: https://datacentres.org.au/response-to-the-australian-governments-expectations-for-data-centres-and-ai-infrastructure-developers/], but operationalisation is left vague.</p>
+</section>
+<section id="operator-specific-positions" class="level3">
+<h3 class="anchored" data-anchor-id="operator-specific-positions">Operator-specific positions</h3>
+<ul>
+<li><strong>AirTrunk</strong> publishes annual sustainability reports; signed the OX2 Riverina solar PPA (~25 MW into Australian grid via OX2) jointly with Google [Source: https://airtrunk.com/google-airtrunk-and-ox2-to-add-renewable-energy-capacity-in-australia/ ; Source: https://airtrunk.com/wp-content/uploads/2024/10/FY24-Sustainability-Report-by-AirTrunk.pdf]. The brief’s reference to <strong>“AirTrunk WA Akaysha BESS”</strong> could not be verified — searches for an AirTrunk-Akaysha WA project returned no result. Operating co-located BESS at AirTrunk SYD/MEL campuses is part of the standard cooling/UPS design but is not configured as a grid-export resource.</li>
+<li><strong>NEXTDC</strong> focuses sustainability messaging on PUE, NABERS 5-star, the M1 solar array (700 t CO2/yr offset) and the “NEXTneutral” carbon-offset add-on rather than on demand flexibility or grid services [Source: https://www.nextdc.com/about-us/environmental-sustainability]. Does not appear in the Energy Charter signatory list as of the December 2025 disclosure.</li>
+<li><strong>CDC</strong> emphasises Marsden Park’s “99% renewable energy by 2030” target and a 27 MW on-site solar component in announcements, with no demand-response commitment [Source: https://cdc.com/resources/news/cdc-data-centres-breaks-ground-on-new-state-of-the-art-data-centre-development-in-marsden-park-industrial-precinct/].</li>
+<li><strong>Microsoft Australia</strong> signed a 15-year PPA for 100% offtake of FRV’s 300 MW Walla Walla Solar Farm (NSW), commissioned October 2025 — its largest Australian renewable PPA [Source: https://www.pv-tech.org/frv-australia-brings-300mw-solar-pv-power-plant-with-microsoft-ppa-to-full-operation/ ; Source: https://reneweconomy.com.au/nsw-solar-farm-to-supply-microsoft-data-centres-now-fully-operational/]. The April 2026 A$25 bn announcement reaffirms 100% renewable matching by 2030 but does not commit to demand response.</li>
+<li><strong>AWS</strong> announced <strong>9 new Australian PPAs in April 2026 totalling 430 MW</strong> (1 wind: Golden Plains 2 201.8 MW; 3 utility-scale solar+storage; 4 distributed solar+storage; 1 standalone battery) — eight of nine include co-located BESS. This is the most material Australian co-location of BESS by a hyperscaler customer to date [Source: https://www.energy-storage.news/amazon-australia-puts-battery-storage-centre-stage-as-it-inks-nine-ppas-for-data-centre-expansion/].</li>
+<li><strong>Anthropic</strong> signed a non-binding government MoU on 1 April 2026 (the first under the National AI Plan) committing to renewable energy investment and alignment with the <em>expectations</em> — and met separately with NEXTDC, AirTrunk and CDC. A US$4.5 bn Sydney NEXTDC offtake has been reported [Source: https://www.anthropic.com/news/australia-MOU ; Source: https://certifiedstrategic.com/insights/anthropic-australia-mou-data-centre-operators].</li>
+</ul>
+</section>
+<section id="the-data-centres-can-support-the-grid-argument-in-the-australian-context" class="level3">
+<h3 class="anchored" data-anchor-id="the-data-centres-can-support-the-grid-argument-in-the-australian-context">The “data centres can support the grid” argument in the Australian context</h3>
+<p>The Australian iteration of this argument is being made primarily by <strong>battery vendors and renewable developers</strong>, not by the hyperscalers themselves. Fluence’s Jeff Monday (April 2026) is the clearest articulation: BESS allows data centres to “present a predictable, grid-compliant electrical profile”, provide power-quality support, accelerate energisation versus waiting for transmission upgrades, and shift roles between load-management and grid participation over time [Source: https://www.energy-storage.news/how-australia-can-turn-the-data-centre-boom-into-a-grid-growth-story/]. This is closer to the US “site-level firming” framing than to actual workload-flexibility demand response.</p>
+</section>
+<section id="what-the-operators-are-not-saying" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-operators-are-not-saying">What the operators are not saying</h3>
+<p>There is no Australian operator equivalent of Microsoft’s Tyler Norris-style commitment to AI workload time-shifting; no Australian publication of the EPRI DCFlex playbook; no hyperscaler offer of inference-shedding or training-pause grid services. The Property Council and DCA framing is consistently that data centres should be treated as critical infrastructure whose load is <strong>not</strong> materially flexible, with site-level batteries as the firming mechanism. This matches the US Studies Centre’s March 2026 read that Australian data centres “operate continuously and cannot easily reduce or interrupt demand without disrupting critical services” [Source: https://www.ussc.edu.au/powering-the-cloud-data-centres-and-the-future-of-australias-grid].</p>
+<hr>
+</section>
+</section>
+<section id="aemo-and-aemc-engagement" class="level2">
+<h2 class="anchored" data-anchor-id="aemo-and-aemc-engagement">5. AEMO and AEMC engagement</h2>
+<section id="aemo" class="level3">
+<h3 class="anchored" data-anchor-id="aemo">AEMO</h3>
+<p>The 2024 ESOO was the first to break out data centres as a discrete category. Central case: ~3 TWh at 2024 → 5 TWh by 2033-34; accelerated growth sensitivity ~10 TWh by 2033-34 (~5% of NEM consumption) [Source: https://wattclarity.com.au/articles/2024/08/29aug-esoo-datacentre/].</p>
+<p>The <strong>2025 ESOO</strong> (published August 2025) and the underlying <strong>Oxford Economics Australia data centre demand report</strong> prepared for AEMO (July 2025) are the current authoritative numbers:</p>
+<ul>
+<li>FY25 actual: ~3.9 TWh (98% in NEM), ~2% of NEM-supplied energy.</li>
+<li>Step Change: 25.1% CAGR to 12.0 TWh by FY30, 34.5 TWh by FY50 [Source: https://www.aemo.com.au/-/media/files/stakeholder_consultation/consultations/nem-consultations/2024/2025-iasr-scenarios/final-docs/oxford-economics-australia-data-centre-energy-consumption-report.pdf].</li>
+<li>44 GW of NSP-reported connection requests received against the 6 GW required under Step Change — the explicit “phantom demand” finding.</li>
+<li>AEMO assumes data centres exhibit “relatively stable demand shape” not materially temperature-sensitive; flexibility from cooling load (~40% of total) is acknowledged as a possible mitigant for peak demand, but <strong>is not relied on quantitatively</strong> [Source: https://flowpower.com.au/aemo-2025-esoo-recap/ ; Source: https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/nem_esoo/2025/2025-electricity-statement-of-opportunities.pdf].</li>
+</ul>
+<p>The 2026 ISP IASR (currently in consultation) will use the standalone data centre forecast methodology for the first time [Source: https://www.aemo.com.au/newsroom/news-updates/aemos-updated-forecasting-methodology-targets-rapidly-growing-electricity-loads]. AEMO submitted to the AEMC’s package 2 consultation on access standards (June 2025).</p>
+</section>
+<section id="aemc" class="level3">
+<h3 class="anchored" data-anchor-id="aemc">AEMC</h3>
+<p>The most active AEMC workstream is the <strong>“Improving the NEM access standards — Package 2”</strong> rule change. The draft determination (12 March 2026) responds to three consolidated rule change requests with five proposals [Source: https://www.aemc.gov.au/rule-changes/improving-nem-access-standards-package-2 ; Source: https://wattclarity.com.au/articles/2026/04/05april-aemc-draft-datacentre/ ; Source: https://www.aemc.gov.au/news-centre/media-releases/aemc-modernises-grid-connection-rules-accelerate-energy-transition-manage-ai-boom]:</p>
+<ol type="1">
+<li><strong>Raise the large-load threshold from 5 MW to 30 MW</strong> for inverter-based loads on distribution networks, codified in the National Electricity Rules.</li>
+<li><strong>Disturbance ride-through</strong> requirements: data centres must remain connected during defined voltage and frequency events and recover within set timeframes.</li>
+<li><strong>International alignment</strong> with Texas (PUCT), Ireland (EirGrid) and Finland (Fingrid) standards.</li>
+<li><strong>Visibility</strong> for AEMO and NSPs into data centre disturbance response.</li>
+<li><strong>Compliance via connection agreements</strong> for non-registered data centres.</li>
+</ol>
+<p>The draft was prompted in part by a US incident in which 60 data centres totalling ~1,500 MW disconnected simultaneously during a system disturbance (the July 2024 ERCOT/Houston event). Submissions closed 7 May 2026; final rule expected mid-2026.</p>
+<p>The other substantive workstream is the <strong>“Improving consideration of demand-side factors in the ISP”</strong> rule change, which broadens AEMO’s ISP demand-side analysis [Source: https://www.aemc.gov.au/rule-changes/improving-consideration-demand-side-factors-isp]. The <strong>Integrating Price-Responsive Resources (IPRR)</strong> rule change, scheduled for May 2027 implementation, will allow CER and flexible loads to participate in energy and FCAS markets through dispatch mode — relevant to any future data centre demand response participation [Source: https://flowpower.com.au/aemo-2025-esoo-recap/].</p>
+</section>
+<section id="energy-charter-and-ecmc" class="level3">
+<h3 class="anchored" data-anchor-id="energy-charter-and-ecmc">Energy Charter and ECMC</h3>
+<p>The Energy Charter’s December 2025 disclosure runs to 70+ Customer Code signatories; <strong>no major data centre operator</strong> appears as a signatory [Source: https://www.theenergycharter.com.au/]. The Energy and Climate Change Ministerial Council has committed to “developing a framework to facilitate demand flexibility” for new data centre loads and “ensuring new firmed generation enters the market as data centre demand increases”, and is reviewing cost-recovery arrangements to ensure data centres cover network upgrades [Source: https://cleanenergycouncil.org.au/news-resources/energy-market-reforms-on-the-horizon-from-ministers-final-meeting-for-2025]. The framework itself has not yet been published as of May 2026.</p>
+<hr>
+</section>
+</section>
+<section id="behind-the-meter-batteries-and-on-site-generation" class="level2">
+<h2 class="anchored" data-anchor-id="behind-the-meter-batteries-and-on-site-generation">6. Behind-the-meter batteries and on-site generation</h2>
+<section id="what-australian-operators-are-doing" class="level3">
+<h3 class="anchored" data-anchor-id="what-australian-operators-are-doing">What Australian operators are doing</h3>
+<p>The pattern is <strong>on-site UPS/cooling-grade BESS plus utility-scale renewable PPAs</strong> (often co-located with grid-scale BESS off-site), not BTM gas turbines. Specific examples:</p>
+<ul>
+<li><strong>AirTrunk Mamre Road (proposed):</strong> 7,488 lithium-ion battery cabinets on the SSDA documents, 936 cooling units, 852 diesel back-up generators [Source: https://urbandigest.com.au/ssd-92743706-mamre-road-data-centre-campus/]. The lithium battery cabinets are UPS-grade rather than configured for grid-export firming.</li>
+<li><strong>Quinbrook Supernode (Brendale, QLD):</strong> the only Australian project where a meaningful grid-scale BESS is <strong>explicitly co-located with a hyperscale data centre site</strong>. 780 MW / 3,074 MWh total, with offtake to Origin (stages 1-2: 520 MW / 1,856 MWh) and Stanwell (stage 3: 250 MW / 1,010 MWh). Stage 1 backfeed-energised September 2025 [Source: https://www.quinbrook.com/news-insights/quinbrook-closes-first-250mw-stage-of-the-supernode-storage-project-at-south-pine-substation-signs-offtake-with-origin-energy/ ; Source: https://www.pv-magazine-australia.com/2024/09/23/quinbrook-picks-ge-vernona-for-1-gwh-supernode-battery-stage/]. The BESS is third-party owned/operated under a tolling model, making it more of a <strong>co-located grid asset</strong> than true BTM firming for the data centre.</li>
+<li><strong>AWS:</strong> 8 of 9 April 2026 PPAs include co-located BESS at the renewable site (off-site relative to the data centre, on-site relative to the renewables) — the first Australian solar-plus-storage PPAs by AWS and the first outside the US [Source: https://www.energy-storage.news/amazon-australia-puts-battery-storage-centre-stage-as-it-inks-nine-ppas-for-data-centre-expansion/].</li>
+<li><strong>NEXTDC:</strong> has on-site solar arrays at M1 (Melbourne) and small rooftop installations elsewhere but has not announced site-scale BESS or BTM gas.</li>
+</ul>
+</section>
+<section id="why-no-btm-gas" class="level3">
+<h3 class="anchored" data-anchor-id="why-no-btm-gas">Why no BTM gas</h3>
+<p>Three structural reasons:</p>
+<ol type="1">
+<li><strong>Pipeline gas economics.</strong> Wholesale gas in NSW/VIC has been A$10-18/GJ for most of 2024-25, well above the US Henry Hub equivalent. Cogen and reciprocating-engine LCOE are uncompetitive against grid + PPA, even with current grid congestion [implicit from AEMO gas market reports — not separately cited here].</li>
+<li><strong>No stranded gas in load centres.</strong> US BTM gas thrives on Permian flare gas and PJM-area Marcellus tailgate. Australia has no equivalent in the Sydney/Melbourne basins.</li>
+<li><strong>Planning culture.</strong> Diesel back-up generation is sanctioned through standard EPA/EIS processes and tightly capped on operating hours; new reciprocating gas would face a much harder approval path. Loudoun-County-style permit creep is unlikely.</li>
+</ol>
+<p>The result is that Australian data centres rely on <strong>diesel for back-up only</strong> (and Mamre Road’s 852 gensets is the headline number for what that means at scale), and look to <strong>utility-scale BESS</strong> rather than on-site gas for firming.</p>
+<hr>
+</section>
+</section>
+<section id="government-and-political-context" class="level2">
+<h2 class="anchored" data-anchor-id="government-and-political-context">7. Government and political context</h2>
+<section id="federal-national-ai-plan-and-expectations" class="level3">
+<h3 class="anchored" data-anchor-id="federal-national-ai-plan-and-expectations">Federal — National AI Plan and <em>Expectations</em></h3>
+<p>The Albanese Government’s <strong>National AI Plan</strong> was released 11 December 2025 [Source: https://www.industry.gov.au/news/australia-launches-national-ai-plan-capture-opportunities-share-benefits-and-keep-australians-safe]. The accompanying <em>Australian Government’s expectations of data centres and AI infrastructure developers</em> sets five expectations [Source: https://www.minister.industry.gov.au/ministers/timayres/media-releases/australian-approach-ai-expectations-data-centres-deliver-australians ; Source: https://minister.dcceew.gov.au/bowen/media-releases/joint-media-release-australian-approach-ai-expectations-data-centres-deliver-australians]:</p>
+<ol type="1">
+<li>Prioritise Australia’s national interest;</li>
+<li><strong>Support Australia’s energy transition</strong> — including underwriting new renewable supply, paying full grid-connection costs, and supporting demand flexibility;</li>
+<li>Use water sustainably and responsibly;</li>
+<li>Invest in Australian skills and jobs;</li>
+<li>Strengthen research, innovation and local capability.</li>
+</ol>
+<p>This is an <strong>expectations</strong> framework, not binding rules. Microsoft (April 2026, A$25 bn) and Anthropic (April 2026, MoU) have publicly bound themselves to it. The MoU mechanism is the political enforcement device.</p>
+<p>The <strong>Treasury</strong> extended the Clean Building Managed Investment Trust (MIT) withholding tax concession (10% rate) to data centres and warehouses in the 2025-26 Budget, conditional on meeting NABERS energy efficiency standards [Source: https://www.wfw.com/articles/data-centres-an-international-legal-and-regulatory-perspective-spotlight-on-australia/]. This is the principal tax-incentive tool. There is no Virginia-style sales-tax exemption.</p>
+<p>The federal government also requires data centre service providers to government to achieve a 5-star NABERS rating [Source: https://www.energycouncil.com.au/analysis/data-centres-and-energy-demand-what-s-needed/].</p>
+</section>
+<section id="state" class="level3">
+<h3 class="anchored" data-anchor-id="state">State</h3>
+<ul>
+<li><strong>NSW:</strong> Released a Data Centre Strategy consultation paper in March 2026 [Source: https://www.infrastructure.nsw.gov.au/media/qwwpt03m/nsw-data-centre-consultation-paper_wcag.pdf]. The NSW Investment Delivery Authority has received 23 data-centre/technology proposals worth a portion of A$136 bn in declared investment [Source: https://ia.acs.org.au/article/2025/nsw-approves-southern-hemisphere-s-largest-data-centre.html]. The NSW Legislative Council Public Accountability and Works Committee opened an inquiry on 29 January 2026 (Chair: Abigail Boyd / Greens), with submissions closing 27 March 2026, hearings 1, 8 and 22 May 2026, and a report due 30 September 2026 [Source: https://www.parliament.nsw.gov.au/committees/inquiries/Pages/inquiry-details.aspx?pk=3169]. Macquarie Park substation congestion is being addressed through a contingent project (third transformer commissioned Dec 2025; new Wallumatta STS application Oct 2025), with cost-reflective tariffs charged to the four data centre developers seeking connection [Source: https://www.aer.gov.au/system/files/2025-11/Ausgrid%20-%20Contingent%20Project%20Application%20-%20New%20Wallumatta%20STS%20-%2031%20October%202025.pdf]. Individual data-centre parcels are capped at 10 hectares in Macquarie Park and Eastern Creek to preserve industrial-precinct manufacturing land [Source: https://www.ussc.edu.au/powering-the-cloud-data-centres-and-the-future-of-australias-grid].</li>
+<li><strong>Victoria:</strong> No standalone data centre strategy as of May 2026; sector engages through Department of Energy, Environment and Climate Action and the Victorian Planning Authority. SEC’s role is on retail and storage rather than data centres.</li>
+<li><strong>Queensland:</strong> Energy and Jobs Plan 2022/2024 envisages large-load growth but does not specifically address data centres; Quinbrook’s Supernode has been the highest-profile QLD project.</li>
+<li><strong>Western Australia:</strong> The September 2025 WA transmission plan unlocks 2.6 GW of renewables but data centres are a small share of large-load demand at this point; Pilbara edge facilities are mining-customer driven.</li>
+<li><strong>Tasmania:</strong> Hydropower-anchored hyperscale remains a concept (Firmus 90 MW St Leonards has approval; Viridis 1 MW), no major operator has committed.</li>
+</ul>
+</section>
+<section id="aemo-2024-isp-and-2026-draft" class="level3">
+<h3 class="anchored" data-anchor-id="aemo-2024-isp-and-2026-draft">AEMO 2024 ISP and 2026 Draft</h3>
+<ul>
+<li>The 2024 ISP did <strong>not</strong> treat data centres as a separate category; they were folded into commercial loads.</li>
+<li>The 2026 ISP IASR (consultation 2025-26) introduces standalone data centre forecasting using the Oxford Economics methodology described above. AEMO’s flexibility assumption remains <strong>conservative</strong>: operating-load flexibility is acknowledged but not relied on for system-adequacy purposes.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="australia-vs-the-us-synthesis-points" class="level2">
+<h2 class="anchored" data-anchor-id="australia-vs-the-us-synthesis-points">8. Australia vs the US — synthesis points</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 44%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">United States (May 2026)</th>
+<th style="text-align: left;">Australia (May 2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Operating IT load</td>
+<td style="text-align: left;">~50 GW (FERC); ~580 hyperscale facilities</td>
+<td style="text-align: left;">~1.35 GW; ~250 facilities</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Largest single campus operating</td>
+<td style="text-align: left;">~1,400 MW (Meta Altoona, multi-building)</td>
+<td style="text-align: left;">~330 MW (AirTrunk SYD3)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pipeline</td>
+<td style="text-align: left;">Trillions in announced AI capex; 35 GW “energy gap” by 2030</td>
+<td style="text-align: left;">A$85-135 bn investment to 2035; up to 7.4 GW by 2035</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Largest BTM trend</td>
+<td style="text-align: left;">Gas turbines (Stargate Abilene 360 MW; xAI Memphis 35+ turbines)</td>
+<td style="text-align: left;">None equivalent — diesel back-up only</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Co-located BESS at hyperscale site</td>
+<td style="text-align: left;">Switch Tahoe Reno 179 MW BTM solar; modest</td>
+<td style="text-align: left;">Quinbrook Supernode 780 MW / 3 GWh — stand-out single project</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Industry voice on grid services</td>
+<td style="text-align: left;">EPRI DCFlex; Microsoft (Tyler Norris); AEP/PJM data centre tariffs</td>
+<td style="text-align: left;">Data Centres Australia (Nov 2025 launch); no operator demand-response commitments</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Political driver</td>
+<td style="text-align: left;">PJM capacity auction 833% spike; ratepayer-protection PSC actions; bipartisan rate-shift backlash</td>
+<td style="text-align: left;">National AI Plan / <em>Expectations</em> — government-led; no voter rate-shift backlash yet</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cross-cutting opposition coalition</td>
+<td style="text-align: left;">Republican + Democrat, county-level, 142 activist groups</td>
+<td style="text-align: left;">Industry + ETU + ACF + WWF + Smart Energy Council “must power itself” letter (Feb 2026)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Connection standards</td>
+<td style="text-align: left;">FERC + state PUCs + ad-hoc tariffs</td>
+<td style="text-align: left;">AEMC Package 2 draft 30 MW threshold + ride-through (March 2026)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tax / incentive</td>
+<td style="text-align: left;">Virginia-style sales-tax exemptions running A$1.6-3.2 bn/yr</td>
+<td style="text-align: left;">Clean Building MIT extension; NABERS-conditional; small absolute scale</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Workload time-shifting offer</td>
+<td style="text-align: left;">Microsoft, Google have begun publishing</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>biggest single divergence</strong> is the political economy. In the US, the politics of data centres has crystallised around <strong>residential bills going up because of capacity-auction stress and rate cases</strong>, with cross-cutting Republican-Democrat coalitions at the state PSC level. In Australia the politics has crystallised around <strong>the National AI Plan / energy-transition framing</strong>: data centres should pay their own way and underwrite renewables, but as enabling infrastructure for AI sovereignty rather than as parasites on retail customers. Australian residential bills are rising independently of data centres (state-set network charges, wholesale tightness), and there is no equivalent of the PJM capacity-auction shock pinned on data centres.</p>
+<p>Two more secondary divergences worth noting:</p>
+<ul>
+<li><strong>Australia has comparatively abundant residential VPP and battery resources per capita</strong> (CER deployment is among the highest in the world); the demand-flexibility supply curve is not the binding constraint that it is in PJM. This may explain why data centre flexibility has attracted less policy attention.</li>
+<li><strong>Australia’s planning culture is much less permissive of BTM gas generation</strong> than US states like Texas or Tennessee. The Loudoun-County-style relaxation of emergency-engine running hours that US Virginia DEQ began consulting on in late 2025 has no Australian analogue, and the Mamre Road EIS process will be a critical test.</li>
+</ul>
+<hr>
+</section>
+<section id="caveats-gaps-and-pitfalls" class="level2">
+<h2 class="anchored" data-anchor-id="caveats-gaps-and-pitfalls">9. Caveats, gaps and pitfalls</h2>
+<ol type="1">
+<li><strong>The “~2 GW operating” headline is not supported by the most recent published data.</strong> CEFC, USSC and Oxford Economics all converge on ~1.3-1.4 GW operating IT load at end-2025. Higher figures appear to confuse operating with announced/committed, or IT load with gross site MW.</li>
+<li><strong>Hyperscaler capex announcements are political instruments, not engineering schedules.</strong> Microsoft’s A$5 bn → A$25 bn escalation, AWS’s A$13.2 bn → A$20 bn escalation, and the NEXTDC/OpenAI A$7 bn MoU are all <strong>non-binding intent</strong>. Operating MW lags by years.</li>
+<li><strong>Australian operator positions on demand response are underspecified.</strong> Neither DCA nor any major operator has published a quantitative demand-flexibility commitment. The Mandala report is positive-spillover advocacy, not a flexibility manifesto. ARENA and CSIRO have not published material on data centre demand flexibility comparable to the US EPRI DCFlex programme — this is a real gap.</li>
+<li><strong>The Mortlake Macquarie data centre referenced in the brief could not be verified.</strong> Mortlake (VIC) hosts Origin’s 566 MW gas plant and a 650 MWh BESS but no announced Macquarie hyperscale data centre. The wording in the brief may conflate Macquarie Asset Management (former AirTrunk owner, now ex), Macquarie Data Centres (separate ASX entity, no Mortlake site), and the Origin Mortlake assets.</li>
+<li><strong>The “AirTrunk WA Akaysha BESS” claim could not be verified.</strong> AirTrunk’s published Australian PPAs (with Google/OX2 in NSW) and Akaysha’s published projects (Waratah NSW, Orana NSW, Brinkworth SA, Wurdong QLD, Elaine VIC) do not overlap in WA based on public sources to May 2026.</li>
+<li><strong>The flexibility literature is thin.</strong> Australian academic and consultant work on data centre demand flexibility is materially less developed than US equivalents. The 2024 Climate Council, 2025 CEFC/Baringa, 2025 Mandala/DCA and 2025 Oxford Economics reports are the principal Australian sources; none provides a quantitative flexibility decomposition equivalent to Norris’s Duke work.</li>
+<li><strong>NSW Legislative Council inquiry is mid-flight.</strong> The inquiry report is due 30 September 2026 and could materially shift the political settlement on cost recovery, rezoning and demand-flexibility expectations.</li>
+<li><strong>AEMC final rule on access standards is pending.</strong> The 30 MW threshold and ride-through requirements are draft; final rule expected mid-2026.</li>
+<li><strong>Energy Charter participation by data centre operators is absent.</strong> This is a notable gap given DCA’s positive-spillover positioning — and may evolve in 2026.</li>
+</ol>
+<hr>
+</section>
+<section id="bibliography" class="level2">
+<h2 class="anchored" data-anchor-id="bibliography">10. Bibliography</h2>
+<section id="tier-1-government-regulator-aemo" class="level3">
+<h3 class="anchored" data-anchor-id="tier-1-government-regulator-aemo">Tier 1 — Government, regulator, AEMO</h3>
+<ul>
+<li>Australian Energy Market Operator, <em>2025 Electricity Statement of Opportunities</em> (August 2025). https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/nem_esoo/2025/2025-electricity-statement-of-opportunities.pdf</li>
+<li>AEMO, “AEMO’s updated forecasting methodology targets rapidly growing electricity loads” (2025). https://www.aemo.com.au/newsroom/news-updates/aemos-updated-forecasting-methodology-targets-rapidly-growing-electricity-loads</li>
+<li>AEMO, <em>2025-26 Inputs, Assumptions and Scenarios consultation</em>. https://www.aemo.com.au/energy-systems/major-publications/integrated-system-plan-isp/2026-integrated-system-plan-isp/2025-26-inputs-assumptions-and-scenarios</li>
+<li>Oxford Economics Australia, <em>Data Centre Energy Demand — Final Report</em> prepared for AEMO (July 2025). https://www.aemo.com.au/-/media/files/stakeholder_consultation/consultations/nem-consultations/2024/2025-iasr-scenarios/final-docs/oxford-economics-australia-data-centre-energy-consumption-report.pdf</li>
+<li>Australian Energy Market Commission, “AEMC modernises grid connection rules to accelerate energy transition, manage AI boom” (March 2026). https://www.aemc.gov.au/news-centre/media-releases/aemc-modernises-grid-connection-rules-accelerate-energy-transition-manage-ai-boom</li>
+<li>AEMC, <em>Improving the NEM access standards — Package 2: Draft determination</em> (12 March 2026). https://www.aemc.gov.au/sites/default/files/2026-03/Draft%20determination%20-%20Package%202.pdf</li>
+<li>AEMC, <em>Improving consideration of demand-side factors in the ISP</em>. https://www.aemc.gov.au/rule-changes/improving-consideration-demand-side-factors-isp</li>
+<li>Energy Charter, 2025 Disclosure (December 2025). https://www.theenergycharter.com.au/</li>
+<li>Department of Industry, Science and Resources, “Australia launches National AI Plan…” (December 2025). https://www.industry.gov.au/news/australia-launches-national-ai-plan-capture-opportunities-share-benefits-and-keep-australians-safe</li>
+<li>Joint media release, Bowen / Ayres / Charlton, “An Australian approach to AI: Expectations for data centres that deliver for Australians” (December 2025). https://minister.dcceew.gov.au/bowen/media-releases/joint-media-release-australian-approach-ai-expectations-data-centres-deliver-australians ; https://www.minister.industry.gov.au/ministers/timayres/media-releases/australian-approach-ai-expectations-data-centres-deliver-australians</li>
+<li>DISR, “Memorandum of understanding between the Australian Government and Anthropic on collaboration on AI opportunities” (April 2026). https://www.industry.gov.au/publications/memorandum-understanding-between-australian-government-and-anthropic-collaboration-ai-opportunities</li>
+<li>Infrastructure NSW, <em>Data Centre Consultation Paper</em> (March 2026). https://www.infrastructure.nsw.gov.au/media/qwwpt03m/nsw-data-centre-consultation-paper_wcag.pdf</li>
+<li>NSW Government, “Southern Hemisphere’s biggest data centre gets the green light” (28 November 2025). https://www.nsw.gov.au/ministerial-releases/southern-hemispheres-biggest-data-centre-gets-green-light</li>
+<li>NSW Legislative Council Public Accountability and Works Committee, <em>Inquiry into data centres</em>. https://www.parliament.nsw.gov.au/committees/inquiries/Pages/inquiry-details.aspx?pk=3169</li>
+<li>AER, <em>Ausgrid Contingent Project Application — New Wallumatta STS</em> (31 October 2025). https://www.aer.gov.au/system/files/2025-11/Ausgrid%20-%20Contingent%20Project%20Application%20-%20New%20Wallumatta%20STS%20-%2031%20October%202025.pdf</li>
+<li>Energy Ministers, “Energy and Climate Change Ministerial Council” decisions December 2025, summarised by Clean Energy Council. https://cleanenergycouncil.org.au/news-resources/energy-market-reforms-on-the-horizon-from-ministers-final-meeting-for-2025</li>
+</ul>
+</section>
+<section id="tier-2-industry-advisory-associations" class="level3">
+<h3 class="anchored" data-anchor-id="tier-2-industry-advisory-associations">Tier 2 — Industry, advisory, associations</h3>
+<ul>
+<li>Clean Energy Finance Corporation / Baringa, <em>Getting the balance right: Data centre growth and the energy transition</em> (December 2025). https://www.cefc.com.au/insights/market-reports/data-centre-growth-and-the-energy-transition/ ; full report: https://www.cefc.com.au/media/hs5ner3s/getting-the-balance-right-data-centres-and-the-energy-transition-full-report.pdf ; investment insight: https://www.cefc.com.au/media/4qffpz0x/getting-the-balance-right-data-centres-and-the-energy-transition-investment-insight.pdf ; press release: https://www.cefc.com.au/media/media-release/data-centre-boom-to-reshape-australia-s-energy-future-cefc-baringa-report/</li>
+<li>Mandala Partners for Data Centres Australia, <em>Data Centres as Enabling Infrastructure</em> (November 2025). https://datacentres.org.au/wp-content/uploads/2025/11/2025-11_DCA-Mandala-Data-Centres-as-Enabling-Infrastructure.pdf ; landing: https://datacentres.org.au/data-centres-as-enabling-infrastructure/</li>
+<li>Data Centres Australia, “Response to the Australian Government’s expectations for data centres and AI infrastructure developers” (December 2025). https://datacentres.org.au/response-to-the-australian-governments-expectations-for-data-centres-and-ai-infrastructure-developers/</li>
+<li>Data Centres Australia, “Introducing Data Centres Australia” (November 2025). https://datacentres.org.au/introducing-data-centres-australia/</li>
+<li>Data Centres Australia, Submission No 30 to NSW Legislative Council Inquiry. https://www.parliament.nsw.gov.au/lcdocs/submissions/94922/0030%20Data%20Centres%20Australia.pdf</li>
+<li>Mandala Partners for AirTrunk, <em>Empowering Australia’s Digital Future</em> (October 2024). https://mandalapartners.com/uploads/Empowering-Australia%27s-Digital-Future—Report_October-2024.pdf</li>
+<li>Australian Energy Council, “Data Centres and Energy Demand — What’s Needed?” (June 2024). https://www.energycouncil.com.au/analysis/data-centres-and-energy-demand-what-s-needed/</li>
+<li>Australian Energy Council, “Data centres: A 24hr power source?”. https://www.energycouncil.com.au/analysis/data-centres-a-24hr-power-source/</li>
+<li>Australian Energy Council, “The GHG Protocol: make or break for green data centres?”. https://www.energycouncil.com.au/analysis/the-ghg-protocol-make-or-break-for-green-data-centres/</li>
+<li>Climate Council, “Submission: NSW Inquiry into Data Centres” (2026). https://www.climatecouncil.org.au/resources/submission-nsw-inquiry-into-data-centres/</li>
+<li>Climate Council, “Submission: Infrastructure NSW Data Centres Consultation”. https://www.climatecouncil.org.au/resources/submission-infrastructure-nsw-data-centres-consultation/</li>
+<li>Climate Council, “Seizing the opportunity to do data centres right”. https://www.climatecouncil.org.au/what-does-the-data-centre-boom-mean-for-australias-switch-to-renewables/</li>
+<li>Clean Energy Council (with ETU, ACF, WWF, Smart Energy Council, RE-Alliance, CEF, NCC NSW, EnvVic, QCC, Sunrise Project, Carbon Zero Initiative), “Data centre rush must power itself” joint statement (February 2026). https://cleanenergycouncil.org.au/news-resources/data-centre-rush-must-power-itself-says-industry,-unions-and-environment-groups</li>
+<li>WWF-Australia, joint statement (February 2026). https://wwf.org.au/news/2026/data-centre-rush-must-power-itself-says-industry-unions-and-environment/</li>
+<li>United States Studies Centre, “Powering the cloud: Data centres and the future of Australia’s grid” (March 2026). https://www.ussc.edu.au/powering-the-cloud-data-centres-and-the-future-of-australias-grid</li>
+<li>M3 Property, <em>Specialist Independent Valuation — Data Centre Growth in Australia</em> (November 2025). https://m3property.com.au/static/88f0d39061ca9072f2bf0a5b61dc5c3f/M3-Property-Report-Data-Centre-Growth-in-Australia-November-25.pdf</li>
+<li>Property Council of Australia, “The Data Centres Outlook: Policy, Power &amp; Opportunity” event series. https://www.propertycouncil.com.au/event/the-data-centres-outlook-policy-power-opportunity</li>
+<li>Energy Consumers Australia, <em>Request for EOI — Consumer Impacts of Data Centres</em> (October 2025). https://energyconsumersaustralia.com.au/sites/default/files/2025-10/website-doc-eoi-request-consumer-impacts-data-centres.pdf</li>
+<li>Clayton Utz, “Co-locating batteries with data centres in Australia’s National Electricity Market” (April 2025). https://www.claytonutz.com/insights/2025/april/co-locating-batteries-with-data-centres-in-australias-national-electricity-market</li>
+<li>Clayton Utz, “Wide-ranging inquiry into data centres in NSW…” (February 2026). https://www.claytonutz.com/insights/2026/february/wide-ranging-inquiry-into-data-centres-in-nsw-covers-energy-water-needs-and-much-more</li>
+<li>Ashurst, “NSW Legislative Council inquiry into data centres: submissions close 27 March 2026”. https://www.ashurst.com/en/insights/nsw-legislative-council-inquiry-into-data-centres-submissions-close-27-march-2026/</li>
+<li>HSF Kramer, “National Expectations for the development of data centres and AI infrastructure” (March 2026). https://www.hsfkramer.com/insights/2026-03/national-expectations-for-the-development-of-data-centres-and-ai-infrastructure-have-been-released-what-you-need-to-know</li>
+<li>Dentons, “Powering Australia’s data centre boom: Navigating energy compliance and opportunity” (July 2025). https://www.dentons.com/en/insights/articles/2025/july/3/powering-australias-data-centre-boom</li>
+<li>Watson Farley &amp; Williams, “Data Centres: An International Legal and Regulatory Perspective — Spotlight on Australia”. https://www.wfw.com/articles/data-centres-an-international-legal-and-regulatory-perspective-spotlight-on-australia/</li>
+</ul>
+</section>
+<section id="tier-3-trade-press-project-level-operators" class="level3">
+<h3 class="anchored" data-anchor-id="tier-3-trade-press-project-level-operators">Tier 3 — Trade press, project-level, operators</h3>
+<ul>
+<li>Cyber Daily, “Data centre giants launch new Aussie peak body, Data Centres Australia” (November 2025). https://www.cyberdaily.au/security/12953-thinking-machines-data-centre-giants-launch-new-aussie-peak-body-data-centres-australia</li>
+<li>The Tech Capital, “Data Centres Australia names NEXTDC CEO chair of new peak industry body”. https://thetechcapital.com/data-centres-australia-names-nextdc-ceo-chair-of-new-peak-industry-body/</li>
+<li>AirTrunk, “Completion of AirTrunk Acquisition by Blackstone…” (Sep 2024). https://airtrunk.com/completion-of-airtrunk-acquisition-by-blackstone-marking-new-era-of-growth/</li>
+<li>AirTrunk, “AirTrunk expands Australian platform with a second hyperscale data centre campus in Melbourne” (December 2025). https://airtrunk.com/airtrunk-expands-australian-platform-with-a-second-hyperscale-data-centre-campus-in-melbourne/</li>
+<li>AirTrunk, “Google, AirTrunk and OX2 to add Renewable Energy Capacity in Australia”. https://airtrunk.com/google-airtrunk-and-ox2-to-add-renewable-energy-capacity-in-australia/</li>
+<li>AirTrunk, <em>FY24 Sustainability Report</em>. https://airtrunk.com/wp-content/uploads/2024/10/FY24-Sustainability-Report-by-AirTrunk.pdf</li>
+<li>NEXTDC, ASX release “Contracted Utilisation and Capex Guidance Update” (1 December 2025). https://announcements.asx.com.au/asxpdf/20251201/pdf/06sr3ff6f4q4vv.pdf</li>
+<li>NEXTDC, “Building the next generation of sovereign AI infrastructure in Australia” (December 2025). https://www.nextdc.com/news/building-the-next-generation-of-sovereign-ai-infrastructure-in-australia</li>
+<li>The Urban Developer, “NEXTDC plans $7bn AI campus at Western Sydney site”. https://www.theurbandeveloper.com/articles/eastern-creek-data-centre-550mw-openai-nextdc</li>
+<li>CDC Data Centres, “CDC Data Centres breaks ground on new state-of-the-art data centre development in Marsden Park industrial precinct”. https://cdc.com/resources/news/cdc-data-centres-breaks-ground-on-new-state-of-the-art-data-centre-development-in-marsden-park-industrial-precinct/</li>
+<li>CDC, “CDC welcomes the launch of Data Centres Australia”. https://cdc.com/resources/news/cdc-welcomes-the-launch-of-data-centres-australia-leading-the-way-in-digital-infrastructure/</li>
+<li>Microsoft Australia News Centre, “Microsoft deepens commitment to Australia with A$25 billion investment in AI infrastructure, security, and skills” (April 2026). https://news.microsoft.com/source/asia/features/investing-in-australias-ai-future/</li>
+<li>Microsoft Australia News Centre, “Microsoft and FRV Australia team up to add renewable energy to the grid”. https://news.microsoft.com/en-au/features/microsoft-and-frv-australia-team-up-to-add-renewable-energy-to-the-grid/</li>
+<li>About Amazon, “Amazon will invest AU$20 billion in data center infrastructure in Australia” (2025). https://www.aboutamazon.com/news/aws/amazon-data-center-investment-in-australia</li>
+<li>Energy-Storage.News, “Amazon Australia puts battery storage centre stage as it inks nine PPAs for data centre expansion” (April 2026). https://www.energy-storage.news/amazon-australia-puts-battery-storage-centre-stage-as-it-inks-nine-ppas-for-data-centre-expansion/</li>
+<li>Energy-Storage.News, “How Australia can turn the data centre boom into a grid growth story” (Fluence/Jeff Monday, 2026). https://www.energy-storage.news/how-australia-can-turn-the-data-centre-boom-into-a-grid-growth-story/</li>
+<li>Quinbrook, “Quinbrook closes first 250MW stage of the Supernode storage project at South Pine substation, signs offtake with Origin Energy”. https://www.quinbrook.com/news-insights/quinbrook-closes-first-250mw-stage-of-the-supernode-storage-project-at-south-pine-substation-signs-offtake-with-origin-energy/</li>
+<li>Quinbrook, “Supernode battery completes construction of first stage”. https://www.quinbrook.com/news-insights/quinbrooks-supernode-battery-completes-construction/</li>
+<li>Data Center Dynamics, “Quinbrook to build $1.7 billion data center, 2GWh battery storage in Queensland”. https://www.datacenterdynamics.com/en/news/quinbrook-to-build-17-billion-data-center-2gwh-battery-storage-in-queensland-australia/</li>
+<li>Data Center Dynamics, “Australian energy market operator creates standalone forecast category for data centers”. https://www.datacenterdynamics.com/en/news/australian-energy-market-operator-creates-standalone-forecast-category-for-data-centers/</li>
+<li>Data Center Dynamics, “AirTrunk set to buy planned 1GW data center site in Western Sydney”. https://www.datacenterdynamics.com/en/news/airtrunk-set-to-buy-planned-1gw-data-center-site-in-western-sydney-australia/</li>
+<li>Information Age (ACS), “Concern over Australia’s most power-hungry data centre” (2026). https://ia.acs.org.au/article/2026/concern-over-australia-s-most-power-hungry-data-centre.html</li>
+<li>Information Age, “NSW approves southern hemisphere’s largest data centre” (Nov 2025). https://ia.acs.org.au/article/2025/nsw-approves-southern-hemisphere-s-largest-data-centre.html</li>
+<li>Information Age, “OpenAI, NextDC ink $7b Australian data centre deal” (Dec 2025). https://ia.acs.org.au/article/2025/openai–nextdc-ink–7b-australian-data-centre-deal.html</li>
+<li>Information Age, “Microsoft to invest $25b in Australia by 2029” (April 2026). https://ia.acs.org.au/article/2026/microsoft-to-invest-25b-in-australia-by-2029.html</li>
+<li>Renew Economy, “NSW solar farm to supply Microsoft data centres now fully operational” (October 2025). https://reneweconomy.com.au/nsw-solar-farm-to-supply-microsoft-data-centres-now-fully-operational/</li>
+<li>Renew Economy, “Quinbrook seals record finance deal to build huge Supernode data centre battery”. https://reneweconomy.com.au/quinbrook-seals-record-finance-deal-to-build-huge-supernode-data-centre-battery/</li>
+<li>pv magazine Australia, “Quinbrook closes first stage of 2 GWh Supernode battery project”. https://www.pv-magazine-australia.com/2024/04/12/quinbrook-closes-first-stage-of-2-gwh-supernode-battery-project/</li>
+<li>pv magazine Australia, “Akaysha progresses plans for 1.6 GWh battery in Queensland”. https://www.pv-magazine-australia.com/2024/07/18/akaysha-progresses-plans-for-1-6-gwh-battery-in-queensland/</li>
+<li>PV-Tech, “FRV Australia brings 300MW solar PV power plant with Microsoft PPA to full operation” (October 2025). https://www.pv-tech.org/frv-australia-brings-300mw-solar-pv-power-plant-with-microsoft-ppa-to-full-operation/</li>
+<li>PV-Tech, “Australia industry demands data centres fund own clean power” (February 2026). https://www.pv-tech.org/social-backlash-inevitable-industry-demands-data-centres-stop-freeloading-on-australias-clean-energy/</li>
+<li>WattClarity, “What’s the 2024 ESOO say about Data Centres?” (29 August 2024). https://wattclarity.com.au/articles/2024/08/29aug-esoo-datacentre/</li>
+<li>WattClarity, “AEMC proposed new grid standards for Data Centre connections” (5 April 2026). https://wattclarity.com.au/articles/2026/04/05april-aemc-draft-datacentre/</li>
+<li>Anthropic, “Australian government and Anthropic sign MOU for AI safety and research”. https://www.anthropic.com/news/australia-MOU</li>
+<li>CertifiedStrategic, “Anthropic Australia MOU and the data centre operators”. https://certifiedstrategic.com/insights/anthropic-australia-mou-data-centre-operators</li>
+<li>Urban Digest, “$9B Hyperscale Data Centre Campus Proposed for Kemps Creek” (Mamre Road SSDA detail). https://urbandigest.com.au/ssd-92743706-mamre-road-data-centre-campus/</li>
+<li>Flow Power, “AEMO’s 2025 ESOO recap”. https://flowpower.com.au/aemo-2025-esoo-recap/</li>
+<li>ARN, “Federal government sets AI and data centre standards” (December 2025). https://www.arnnet.com.au/article/4148382/federal-government-sets-ai-and-data-centre-standards.html</li>
+<li>The Energy, “Shielding energy consumers from data centre whiplash”. https://theenergy.co/article/shielding-mums-and-dads-from-data-centre-whiplash</li>
+<li>The Energy, “AEMO doubles data centre demand forecast”. https://theenergy.co/article/aemo-doubles-data-centre-demand-forecast</li>
+<li>BeBeez International, “AirTrunk set to buy planned 1GW data centre site in Western Sydney” (November 2025). https://bebeez.eu/2025/11/11/airtrunk-set-to-buy-planned-1gw-data-center-site-in-western-sydney-australia/</li>
+</ul>
+<hr>
+<p><em>End of research note. The Mamre Road SSDA EIS, the AEMC Package 2 final rule, and the NSW Legislative Council inquiry report (due 30 September 2026) should be obtained directly for any figures or positions intended for publication, since secondary summaries differ in detail. Two specific brief items — the Mortlake Macquarie data centre and the AirTrunk WA Akaysha BESS — could not be verified against public sources to May 2026 and are flagged as such.</em></p>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

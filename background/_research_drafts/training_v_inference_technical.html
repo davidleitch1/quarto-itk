@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch">
+<meta name="dcterms.date" content="2026-05-11">
+
+<title>AI training versus AI inference — the technical foundations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="training_v_inference_technical_files/libs/clipboard/clipboard.min.js"></script>
+<script src="training_v_inference_technical_files/libs/quarto-html/quarto.js"></script>
+<script src="training_v_inference_technical_files/libs/quarto-html/popper.min.js"></script>
+<script src="training_v_inference_technical_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="training_v_inference_technical_files/libs/quarto-html/anchor.min.js"></script>
+<link href="training_v_inference_technical_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="training_v_inference_technical_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="training_v_inference_technical_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="training_v_inference_technical_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="training_v_inference_technical_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<meta name="quarto:status" content="draft">
+
+
+</head>
+
+<body class="fullcontent"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">AI training versus AI inference — the technical foundations</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>David Leitch </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 11, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="purpose-and-scope" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-and-scope">Purpose and scope</h2>
+<p>This is a technical research draft. It maps the workloads, silicon, memory, networking, cooling, utilisation, throughput and lifecycle dynamics that distinguish AI <strong>training</strong> from AI <strong>inference</strong>. It deliberately stops short of economics — a follow-up note will pick up data-centre cost-per-token, depreciation, and the implications for grid load and power purchase agreements.</p>
+<p>The intended reader is an Australian electricity-market analyst with a grasp of dispatch, capacity factors and engineering economics, but not necessarily of GPU architectures. Where a manufacturer’s marketing number departs from real-world performance, that is flagged explicitly.</p>
+<hr>
+</section>
+<section id="workload-definitions" class="level2">
+<h2 class="anchored" data-anchor-id="workload-definitions">1. Workload definitions</h2>
+<section id="training" class="level3">
+<h3 class="anchored" data-anchor-id="training">Training</h3>
+<p><strong>Pre-training</strong> is the dominant compute job. A transformer is initialised with random weights and shown trillions of tokens drawn from web text, code, books and other corpora. Each forward pass produces predictions; each backward pass updates the weights via gradient descent. Training uses an optimiser (Adam or its variants) which itself stores two extra tensors per parameter (first and second moments), so optimiser state typically multiplies the resident memory footprint by ~3-4× the raw parameter count.</p>
+<p>The <strong>Chinchilla scaling law</strong> (Hoffmann et al., DeepMind, 2022) established the compute-optimal ratio: roughly 20 training tokens per parameter [Source: https://arxiv.org/abs/2203.15556]. Frontier labs have pushed well beyond Chinchilla-optimal — Meta’s Llama 3.1 405B was trained on 15.6 trillion tokens (≈38 tokens per parameter), at a cost of roughly 3.8 × 10²⁵ FLOPs on ~16,000 H100 GPUs [Source: https://ar5iv.labs.arxiv.org/html/2407.21783]. Epoch AI documents that frontier-model training compute has doubled roughly every 5.2 months since 2020 [Source: https://epoch.ai/data-insights/compute-trend-post-2010].</p>
+<p><strong>Fine-tuning</strong> adapts a pre-trained model to a narrower task or domain. It uses the same gradient-descent machinery as pre-training but on far smaller datasets — typically thousands to millions of examples — and consumes a tiny fraction (often &lt;1%) of the original pre-training compute.</p>
+<p><strong>RLHF</strong> (reinforcement learning from human feedback) trains a reward model from human-ranked outputs and then uses Proximal Policy Optimization (PPO) or similar to nudge the policy model toward higher-reward behaviour. Modern variants increasingly use <strong>RLVR</strong> (reinforcement learning from verifiable rewards) — the answer is right or wrong, the code compiles or it doesn’t — sidestepping the learned reward model [Source: https://developers.redhat.com/articles/2025/11/04/post-training-methods-language-models].</p>
+<p><strong>Reasoning-model RL training</strong> (OpenAI’s o1/o3, Anthropic’s reasoning Claude models, DeepSeek-R1) is the newest category. The model learns to generate long chains of thought that improve answer quality on hard reasoning tasks. OpenAI’s published o1 charts show performance scaling smoothly with both train-time RL compute and test-time inference compute [Source: https://openai.com/index/learning-to-reason-with-llms/]. RL post-training is now a meaningful and growing share of the total training compute budget [Source: https://rlhfbook.com/].</p>
+</section>
+<section id="inference" class="level3">
+<h3 class="anchored" data-anchor-id="inference">Inference</h3>
+<p>Inference splits into two phases for any transformer LLM:</p>
+<ul>
+<li><p><strong>Prefill (prompt processing)</strong> — the model reads the entire input prompt and produces the first token, populating the attention layers’ key-value (KV) cache as it goes. This phase is one large matrix multiplication per layer; it is <strong>compute-bound</strong> and can be batched effectively across requests [Source: https://towardsdatascience.com/prefill-is-compute-bound-decode-is-memory-bound-why-your-gpu-shouldnt-do-both/].</p></li>
+<li><p><strong>Decode (token generation)</strong> — once prefill is complete, the model emits tokens one at a time. Each new token requires reading the entire model weights and the entire KV cache from memory; the actual arithmetic per token is small. This phase is <strong>memory-bandwidth-bound</strong>. A single user request leaves most of the GPU’s compute idle waiting for memory [Source: https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/].</p></li>
+</ul>
+</section>
+<section id="why-reasoning-models-blur-the-line" class="level3">
+<h3 class="anchored" data-anchor-id="why-reasoning-models-blur-the-line">Why reasoning models blur the line</h3>
+<p>Reasoning models such as o1, o3 and DeepSeek-R1 are <em>served</em> as inference workloads, but each query generates 10–100× more output tokens than a non-reasoning model because the model is “thinking out loud” through hidden chains of thought before answering [Source: https://magazine.sebastianraschka.com/p/state-of-llm-reasoning-and-inference-scaling]. Each of those tokens costs the same memory-bound decode flops as any other inference token. A single reasoning-model query that takes 90 seconds and outputs 50,000 tokens occupies a GPU for roughly the same wall-clock as a small fine-tuning job, and on a graph of GPU-seconds-per-query the reasoning-model bar starts to look like training rather than chat.</p>
+</section>
+<section id="todays-training-inference-compute-split" class="level3">
+<h3 class="anchored" data-anchor-id="todays-training-inference-compute-split">Today’s training-inference compute split</h3>
+<p>Disclosed numbers are sparse and the most-cited estimate is from Epoch AI, working from leaked OpenAI cost data: in calendar 2024, <strong>only ~30% of OpenAI’s compute spending went to inference</strong>; the remaining 70% went to training, research experiments and amortised R&amp;D [Source: https://epoch.ai/data-insights/openai-compute-spend]. Epoch’s gradient-updates piece notes that inference share is rising as user traffic and reasoning-model token volumes grow, with industry analysts projecting inference could claim ~75% of total AI compute by 2030 [Source: https://magazine.sebastianraschka.com/p/state-of-llm-reasoning-and-inference-scaling]. SemiAnalysis (paywalled) has emphasised that the value of token end-demand is rising rapidly and that inference is now the dominant area of focus for hardware vendors, even as training compute also continues to grow [Source: https://newsletter.semianalysis.com/p/ai-value-capture-the-shift-to-model — paywalled].</p>
+<hr>
+</section>
+</section>
+<section id="the-hardware" class="level2">
+<h2 class="anchored" data-anchor-id="the-hardware">2. The hardware</h2>
+<p>For each chip family below, I note where it primarily sits on the training-versus-inference spectrum, and the published headline specifications. Where a vendor quotes sparse FP4 or sparse FP8, I have stated the dense number — sparse compute relies on a 2:4 sparsity pattern that is rarely realised in production for general LLMs and inflates apparent generational uplift.</p>
+<section id="nvidia-data-centre-gpu-lineage" class="level3">
+<h3 class="anchored" data-anchor-id="nvidia-data-centre-gpu-lineage">Nvidia data centre GPU lineage</h3>
+<p><strong>H100 (Hopper, 2022)</strong> — the workhorse of the 2023-2024 training boom. SXM5 variant: 80 GB HBM3, 3.35 TB/s memory bandwidth, ~989 TFLOPS BF16 dense, ~1,979 TFLOPS FP8 dense (3,958 TFLOPS marketed with structured sparsity) [Source: https://www.megware.com/fileadmin/user_upload/LandingPage%20NVIDIA/nvidia-h100-datasheet.pdf]. 700 W TDP. This is the chip that trained GPT-4, Llama 3, Claude 3 and DeepSeek-V3.</p>
+<p><strong>H200 (Hopper refresh, late 2024)</strong> — same GH100 die as H100, same compute, but the memory subsystem was rebuilt around HBM3e. Capacity rose from 80 GB to 141 GB; bandwidth from 3.35 TB/s to 4.8 TB/s [Source: https://www.nvidia.com/en-us/data-center/h200/]. Because inference decode is memory-bound, the H200 delivers materially better tokens-per-second-per-GPU than H100 on the same model with no compute change. CoreWeave reported 33,000 tokens/sec on Llama 2 70B for H200, ~40% above their H100 instance result [Source: https://www.coreweave.com/blog/coreweave-delivers-breakthrough-ai-performance-with-nvidia-gb200-and-h200-gpus-in-mlperf-inference-v5-0]. <strong>Primarily inference-skewed</strong>, though it trains too.</p>
+<p><strong>B200 / B100 (Blackwell, late 2024 / early 2025)</strong> — a new architecture using two reticle-sized dies stitched by Nvidia’s NV-HBI interface (10 TB/s die-to-die). 192 GB HBM3e per GPU, 8 TB/s memory bandwidth, native FP4 tensor cores, ~9 PFLOPS sparse FP4 (~4.5 PFLOPS dense FP4), ~2.25 PFLOPS dense FP8 [Source: https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/]. 1,000 W TDP for B200 (1,200 W for the GB200 superchip combining a B200 pair with a Grace CPU).</p>
+<p><strong>GB200 NVL72 (rack-scale, 2025)</strong> — 72 Blackwell GPUs and 36 Grace CPUs in a single liquid-cooled rack, all connected via NVLink Switch into one logical 72-GPU domain with 130 TB/s aggregate NVLink bandwidth and 13.4 TB unified GPU memory. Rated 1.44 exaFLOPs sparse FP4 (≈720 PFLOPs dense FP4) and ~120 kW per rack [Source: https://www.nvidia.com/en-us/data-center/gb200-nvl72/; https://www.theregister.com/2024/03/21/nvidia_dgx_gb200_nvk72/]. <strong>Training and large-model inference</strong>: the rack-scale NVLink domain is what makes a 1-trillion-parameter MoE servable at low latency.</p>
+<p><strong>B300 / Blackwell Ultra (announced GTC 2025, shipping 2H 2025)</strong> — 288 GB HBM3e in 12-high stacks, 8 TB/s, ~15 PFLOPS dense FP4 (~50% lift over B200), 1,400 W TDP, 208 billion transistors [Source: https://www.tomshardware.com/pc-components/gpus/nvidia-announces-blackwell-ultra-b300-1-5x-faster-than-b200-with-288gb-hbm3e-and-15-pflops-dense-fp4]. Marketed explicitly for reasoning-model inference. The GB300 NVL72 rack delivers ~1.5× GB200 NVL72 [Source: https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/].</p>
+<p><strong>Vera Rubin (R100 GPU + Vera CPU, announced GTC 2025/2026)</strong> — Nvidia’s next architecture, first detailed at GTC Washington 2025, then expanded at GTC 2026. 288 GB HBM4 per GPU at ~22 TB/s (vs Blackwell’s 8 TB/s); ~50 PFLOPS sparse FP4 (~25 PFLOPS dense FP4), ~16 PFLOPS dense FP8; NVLink 6 at 3.6 TB/s per GPU; 88-core Arm-based Vera CPU [Source: https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform; https://en.wikipedia.org/wiki/Rubin_(microarchitecture)]. <strong>Pre-shipping at the time of writing — early-access H2 2026, broad availability 2027</strong>. Treat the marketing claim of “5× Blackwell inference at 10× lower cost per token” as roadmap, not delivered.</p>
+</section>
+<section id="amd-challenger-lineage" class="level3">
+<h3 class="anchored" data-anchor-id="amd-challenger-lineage">AMD challenger lineage</h3>
+<p><strong>MI300X (CDNA 3, 2024)</strong> — 192 GB HBM3, 5.3 TB/s, 750 W. Larger memory than H100 made it attractive for serving large models on a single GPU, though the software stack (ROCm) lagged Nvidia’s CUDA [Source: https://www.amd.com/en/products/accelerators/instinct/mi300.html].</p>
+<p><strong>MI325X (late 2024 / 2025)</strong> — same compute as MI300X, but HBM3e raises capacity to 256 GB and bandwidth to 6 TB/s [Source: https://slyd.com/hardware/amd-instinct]. Mid-cycle refresh, similar positioning.</p>
+<p><strong>MI355X / MI350 series (CDNA 4, mid-2025)</strong> — 288 GB HBM3e, 8 TB/s, 1,400 W, native FP6/FP4, claimed &gt;20 PFLOPS at low precision. AMD claims 4× the AI compute per chip versus MI300X and 35× inference uplift through architecture and software combined [Source: https://www.amd.com/en/products/accelerators/instinct/mi350.html; https://www.tomshardware.com/pc-components/gpus/amd-announces-mi350x-and-mi355x-ai-gpus-claims-up-to-4x-generational-gain-up-to-35x-faster-inference-performance]. <strong>Both training and inference</strong>, with inference the primary near-term target given software gap.</p>
+</section>
+<section id="hyperscaler-in-house-silicon" class="level3">
+<h3 class="anchored" data-anchor-id="hyperscaler-in-house-silicon">Hyperscaler in-house silicon</h3>
+<p><strong>AWS Trainium2</strong> (GA late 2024, re:Invent 2024) — 1.3 PFLOPS dense FP8 / 5.2 PFLOPS sparse FP8 per chip, 96 GB HBM, 2.9 TB/s. A Trn2 instance bundles 16 chips for 20.8 PFLOPS FP8; the Trn2 UltraServer scales to 64 chips connected over NeuronLink for 83.2 PFLOPS [Source: https://aws.amazon.com/blogs/aws/amazon-ec2-trn2-instances-and-trn2-ultraservers-for-aiml-training-and-inference-is-now-available/]. AWS and Anthropic’s “Project Rainier” puts hundreds of thousands of Trainium2 chips into a single training cluster, claimed to deliver 5× the exaFLOPS of Anthropic’s prior generation training run [Source: https://www.theregister.com/2025/07/04/project_rainier_deep_dive/].</p>
+<p><strong>AWS Trainium3</strong> (announced re:Invent 2024, GA late 2025) — first 3 nm AWS AI chip, 2.52 PFLOPS dense FP8 per chip, 144 GB HBM3e, 4.9 TB/s. Trn3 UltraServer scales to 144 chips for 362 FP8 PFLOPS [Source: https://techcrunch.com/2024/12/03/aws-trainium2-chips-for-building-llms-are-now-generally-available-with-trainium3-coming-in-late-2025/; https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-ec2-trn3-ultraservers/]. <strong>Inferentia2</strong> continues as the dedicated inference part for older workloads.</p>
+<p><strong>Google TPU</strong>: v5p (training-class, 8,960-chip pods), v5e (cost-efficient inference variant). <strong>Trillium (TPU v6e, GA 2024)</strong> delivers 4.7× the peak compute per chip versus v5e with doubled HBM and ICI bandwidth, scales to 256 chips per pod [Source: https://cloud.google.com/blog/products/compute/trillium-sixth-generation-tpu-is-in-preview]. <strong>Ironwood (TPU v7, announced Google Cloud Next April 2025)</strong> delivers ~4.6 PFLOPS FP8 per chip and scales to either 256-chip or 9,216-chip clusters [Source: https://introl.com/blog/google-tpu-architecture-complete-guide-7-generations]. Google has gone furthest among hyperscalers in differentiating “training” from “inference” SKUs (v5p vs v5e/v6e), although the Ironwood generation pitches both.</p>
+<p><strong>Microsoft Maia 100</strong> (deployed 2024) — 64 GB HBM2E, 1.8 TB/s, ~3 dense POPS at 6-bit, 0.8 PFLOPS BF16, 700 W TDP, TSMC N5 [Source: https://hc2024.hotchips.org/assets/program/conference/day2/81_HC2024.Microsoft.Xu.Ramakrishnan.final.v2.pdf]. <strong>Maia 200 (codename “Braga”)</strong> announced January 2026 — TSMC 3 nm, 216 GB HBM3e, 7 TB/s, native FP8/FP4, &gt;10 PFLOPS FP4, &gt;5 PFLOPS FP8, 750 W [Source: https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/; https://www.tomshardware.com/pc-components/cpus/microsoft-introduces-newest-in-house-ai-chip-maia-200-is-faster-than-other-bespoke-nvidia-competitors-built-on-tsmc-3nm-with-216gb-of-hbm3e]. Mass production was delayed from 2025 to 2026; Microsoft markets Maia 200 explicitly as inference-first.</p>
+<p><strong>Meta MTIA</strong>: v1 (TSMC 7 nm, 25 W, 102 TOPS INT8) and v2 (TSMC 5 nm, 90 W, 354 TOPS INT8 / 177 TFLOPS FP16, 256 MB on-chip SRAM, 2.7 TB/s on-chip bandwidth) [Source: https://ai.meta.com/blog/meta-training-inference-accelerator-AI-MTIA/; https://www.nextplatform.com/2024/04/10/with-mtia-v2-chip-meta-can-do-ai-training-as-well-as-inference/]. Both generations are inference-only in production; Meta uses MTIA for ranking/recommendation and is prototyping software for a future training chip.</p>
+</section>
+<section id="specialty-inference-accelerators" class="level3">
+<h3 class="anchored" data-anchor-id="specialty-inference-accelerators">Specialty inference accelerators</h3>
+<p><strong>Groq LPU</strong> — bakes model weights into on-chip SRAM (orders of magnitude faster access than HBM) and uses a deterministic, compiler-scheduled execution model. Pure inference accelerator. Strong on time-to-first-token; weak on memory capacity (running Llama 70B requires hundreds of LPUs to assemble enough SRAM) [Source: https://intuitionlabs.ai/articles/cerebras-vs-sambanova-vs-groq-ai-chips].</p>
+<p><strong>Cerebras WSE-3</strong> — a single 46,255 mm² silicon wafer with 4 trillion transistors, 900,000 cores and 44 GB on-chip SRAM. The wafer-scale design eliminates inter-chip communication for any model that fits, delivering ~969 tokens/sec on Llama 3.1 405B [Source: https://www.cerebras.ai/blog/llama-405b-inference]. Used for both training and ultra-high-throughput inference but has tiny installed base relative to Nvidia.</p>
+<p><strong>SambaNova RDA / SN40L</strong> — Reconfigurable Dataflow Architecture; the compiler maps neural-network layers onto a spatial array of compute/memory tiles. Three-tier memory hierarchy (on-chip SRAM, HBM, DRAM) supports very large models on small numbers of chips. SambaNova claims ~16 SN40L chips can serve Llama 70B, against hundreds of LPUs [Source: https://sambanova.ai/blog/sn40l-chip-best-inference-solution].</p>
+<p><strong>Tenstorrent (Wormhole, Blackhole)</strong> — RISC-V-based, ethernet-native, fully open-source software stack (TT-Metalium, TT-Forge). Wormhole: 80 Tensix+ cores, 12 nm, 328 TOPS FP8, 336 GB/s GDDR6. Blackhole: 140 Tensix++ cores, 6 nm, 745 TFLOPS FP8 (peak, single die), 512 GB/s GDDR6, 16 RISC-V CPU cores per chip [Source: https://tenstorrent.com/en/hardware/wormhole; https://tenstorrent.com/en/hardware/blackhole]. Targets the open-stack inference market; modest production volumes to date.</p>
+</section>
+<section id="cpus-in-the-ai-data-centre" class="level3">
+<h3 class="anchored" data-anchor-id="cpus-in-the-ai-data-centre">CPUs in the AI data centre</h3>
+<p>CPUs are not direct competitors to GPUs/accelerators for transformer training or large-model inference — the arithmetic intensity and parallelism gap is too large. They remain essential for orchestration, embedding lookups, RAG retrieval, lightweight inference (small models, classical ML), and as host processors driving GPU servers. Intel Xeon 6 “Granite Rapids” reaches 128 P-cores per socket with AMX matrix extensions; AMD EPYC 9005 “Turin” reaches 192 cores per socket [Source: https://www.tomshardware.com/pc-components/cpus/intel-launches-granite-rapids-xeon-6900p-series-with-120-cores-matches-amd-epycs-core-counts-for-the-first-time-since-2017]. Intel’s AMX gives Granite Rapids a useful AI-inference boost on small/mid models embedded in databases and applications; for serving frontier LLMs at scale these CPUs are not a substitute for accelerators.</p>
+<hr>
+</section>
+</section>
+<section id="memory-and-networking" class="level2">
+<h2 class="anchored" data-anchor-id="memory-and-networking">3. Memory and networking</h2>
+<section id="hbm-capacity-bandwidth-and-the-memory-wall" class="level3">
+<h3 class="anchored" data-anchor-id="hbm-capacity-bandwidth-and-the-memory-wall">HBM — capacity, bandwidth, and the memory wall</h3>
+<p>High Bandwidth Memory is stacked DRAM with a wide (1,024-bit for HBM3/HBM3e, 2,048-bit for HBM4) interface to the GPU/accelerator die. Each stack today provides:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">HBM generation</th>
+<th style="text-align: right;">Capacity per stack</th>
+<th style="text-align: right;">Bandwidth per stack</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">HBM3</td>
+<td style="text-align: right;">16-24 GB</td>
+<td style="text-align: right;">~0.8 TB/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HBM3e</td>
+<td style="text-align: right;">24-36 GB (8H-12H)</td>
+<td style="text-align: right;">1.2-1.33 TB/s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HBM4</td>
+<td style="text-align: right;">up to 64 GB (16H)</td>
+<td style="text-align: right;">2.0-3.3 TB/s</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: https://introl.com/blog/hbm-evolution-hbm3-hbm3e-hbm4-memory-ai-gpu-2025; https://blogs.sw.siemens.com/semiconductor-packaging/2026/04/24/hbm3e-hbm4-ic-design-guide/</em></p>
+<p><strong>HBM capacity per GPU SKU at a glance:</strong></p>
+<p><strong>HBM capacity by data centre GPU</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">GPU</th>
+<th style="text-align: left;">HBM type</th>
+<th style="text-align: right;">Capacity</th>
+<th style="text-align: right;">Bandwidth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Nvidia H100 SXM</td>
+<td style="text-align: left;">HBM3</td>
+<td style="text-align: right;">80 GB</td>
+<td style="text-align: right;">3.35 TB/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nvidia H200</td>
+<td style="text-align: left;">HBM3e</td>
+<td style="text-align: right;">141 GB</td>
+<td style="text-align: right;">4.8 TB/s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nvidia B200</td>
+<td style="text-align: left;">HBM3e</td>
+<td style="text-align: right;">192 GB</td>
+<td style="text-align: right;">8.0 TB/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nvidia B300</td>
+<td style="text-align: left;">HBM3e</td>
+<td style="text-align: right;">288 GB</td>
+<td style="text-align: right;">8.0 TB/s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nvidia R100 (Rubin)</td>
+<td style="text-align: left;">HBM4</td>
+<td style="text-align: right;">288 GB</td>
+<td style="text-align: right;">22 TB/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AMD MI300X</td>
+<td style="text-align: left;">HBM3</td>
+<td style="text-align: right;">192 GB</td>
+<td style="text-align: right;">5.3 TB/s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AMD MI325X</td>
+<td style="text-align: left;">HBM3e</td>
+<td style="text-align: right;">256 GB</td>
+<td style="text-align: right;">6.0 TB/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AMD MI355X</td>
+<td style="text-align: left;">HBM3e</td>
+<td style="text-align: right;">288 GB</td>
+<td style="text-align: right;">8.0 TB/s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AWS Trainium2</td>
+<td style="text-align: left;">HBM</td>
+<td style="text-align: right;">96 GB</td>
+<td style="text-align: right;">2.9 TB/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AWS Trainium3</td>
+<td style="text-align: left;">HBM3e</td>
+<td style="text-align: right;">144 GB</td>
+<td style="text-align: right;">4.9 TB/s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Microsoft Maia 200</td>
+<td style="text-align: left;">HBM3e</td>
+<td style="text-align: right;">216 GB</td>
+<td style="text-align: right;">7.0 TB/s</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: vendor data sheets cited in section 2.</em></p>
+<p>The pattern is unambiguous: each generation is buying memory capacity and bandwidth roughly as aggressively as compute. The reason is the <strong>memory wall</strong> — peak compute has grown faster than memory bandwidth for several generations, and inference decode is bandwidth-bound. For each output token, the GPU must read the entire model weights and the entire attention KV cache from HBM; tokens-per-second is therefore close to <strong>(memory bandwidth) ÷ (bytes read per token)</strong>. A B200 with 8 TB/s bandwidth running a 70 B parameter model at FP8 (~70 GB resident) caps out at ~115 tokens/sec per GPU stream; with FP4 quantisation the cap roughly doubles [Source: https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/].</p>
+</section>
+<section id="nvlink-and-intra-node-fabric" class="level3">
+<h3 class="anchored" data-anchor-id="nvlink-and-intra-node-fabric">NVLink and intra-node fabric</h3>
+<p>Nvidia’s NVLink is a coherent GPU-to-GPU link inside a server or rack:</p>
+<p><strong>NVLink bandwidth by generation</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Generation</th>
+<th style="text-align: left;">GPU</th>
+<th style="text-align: right;">Per-GPU bandwidth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NVLink 3 (V100)</td>
+<td style="text-align: left;">V100</td>
+<td style="text-align: right;">300 GB/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NVLink 3 (A100)</td>
+<td style="text-align: left;">A100</td>
+<td style="text-align: right;">600 GB/s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVLink 4 (H100)</td>
+<td style="text-align: left;">H100</td>
+<td style="text-align: right;">900 GB/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NVLink 5 (B200)</td>
+<td style="text-align: left;">B200</td>
+<td style="text-align: right;">1.8 TB/s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVLink 6 (R100)</td>
+<td style="text-align: left;">R100 (Rubin)</td>
+<td style="text-align: right;">3.6 TB/s</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: https://introl.com/blog/nvlink-scale-up-networking-gpu-interconnect-infrastructure-2025; https://en.wikipedia.org/wiki/NVLink</em></p>
+<p>The <strong>NVLink Switch</strong> chip (5th-generation in the GB200 NVL72) creates a non-blocking 130 TB/s fabric across 72 GPUs in one rack. From the model’s perspective the rack behaves as one logical accelerator with 13.4 TB unified HBM. This is what makes serving a multi-trillion-parameter MoE feasible at low latency, and it is what training a frontier model across an NVL72 node looks like in practice.</p>
+</section>
+<section id="inter-node-networking-infiniband-vs-ethernet" class="level3">
+<h3 class="anchored" data-anchor-id="inter-node-networking-infiniband-vs-ethernet">Inter-node networking — InfiniBand vs Ethernet</h3>
+<p>Within a data hall, training clusters need a back-end network that connects every GPU to every other GPU at near-line-rate. InfiniBand NDR 400 Gb has historically dominated (Mellanox, now Nvidia networking). Ethernet has been catching up via RoCE (RDMA over Converged Ethernet) and Nvidia’s <strong>Spectrum-X</strong>, which ports adaptive routing and congestion control from InfiniBand onto Ethernet silicon (Spectrum-4 switch + BlueField-3 SuperNIC).</p>
+<p>Real-world numbers from NCCL all-reduce on 8×H100 SXM: InfiniBand NDR 400 G achieves ~350 GB/s effective bus bandwidth; the same cluster on 400 GbE RoCEv2 achieves 270-290 GB/s [Source: https://www.spheron.network/blog/gpu-networking-infiniband-roce-spectrum-x-guide/]. Meta has stated they tuned both fabrics to deliver equivalent training performance and that their largest models were trained on RoCE [Source: https://www.spheron.network/blog/gpu-networking-infiniband-roce-spectrum-x-guide/].</p>
+</section>
+<section id="why-training-needs-the-fabric-and-inference-largely-doesnt" class="level3">
+<h3 class="anchored" data-anchor-id="why-training-needs-the-fabric-and-inference-largely-doesnt">Why training needs the fabric and inference largely doesn’t</h3>
+<p>Training is fundamentally a synchronous distributed algorithm. After every micro-batch, every GPU’s gradients must be <strong>all-reduced</strong> with every other GPU’s so the next forward pass uses consistent weights. AllReduce is bandwidth- and latency-sensitive; the slowest GPU and the slowest link gates the whole cluster. This is why training fabric matters and why fabric tuning is a discipline of its own.</p>
+<p>Inference does not need any of this. Each user request is independent; a 70 B model can be served by a single 8-GPU server (or one B200), and serving 10,000 simultaneous users is a horizontal-scale problem solved by load-balancing requests across nodes. Inter-node bandwidth requirements for inference are modest compared with training. The exception is very large MoE inference, where the model itself spans many GPUs and expert-parallel all-to-all communication becomes a hot spot — DeepSeek-V3 inference at 671 B parameters uses 32 redundant experts in prefill and runs all-to-all over 8×400 Gb InfiniBand NICs at &gt;40 GB/s [Source: https://arxiv.org/pdf/2412.19437].</p>
+<hr>
+</section>
+</section>
+<section id="power-density-and-cooling" class="level2">
+<h2 class="anchored" data-anchor-id="power-density-and-cooling">4. Power density and cooling</h2>
+<p>The single biggest physical change in the data centre over the 2024-2026 period is rack power density.</p>
+<p><strong>Rack power density by class</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Workload</th>
+<th style="text-align: right;">Rack density</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Traditional CPU hyperscale</td>
+<td style="text-align: right;">5-15 kW</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">H100 air-cooled (8-GPU server)</td>
+<td style="text-align: right;">up to ~40 kW</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GB200 NVL72 training</td>
+<td style="text-align: right;">120-130 kW</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Inference cluster (mixed GPUs)</td>
+<td style="text-align: right;">30-60 kW</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Frontier 2026-27 (Rubin and beyond)</td>
+<td style="text-align: right;">250-900 kW (projected)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Sources: https://introl.com/blog/high-density-racks-100kw-ai-data-center-ocp-2025; https://www.theregister.com/2024/03/21/nvidia_dgx_gb200_nvk72/; https://www.fluence.network/blog/designing-ai-gpu-workloads/.</em></p>
+<p>ASHRAE’s direct-to-chip cooling recommendation kicks in above 20 kW per rack — every serious AI training deployment in 2025 crossed that threshold [Source: https://www.tomshardware.com/pc-components/cooling/the-data-center-cooling-state-of-play-2025-liquid-cooling-is-on-the-rise-thermal-density-demands-skyrocket-in-ai-data-centers-and-tsmc-leads-with-direct-to-silicon-solutions]. The GB200 NVL72 ships only as a liquid-cooled rack: coolant enters at 25 °C at ~2 L/sec and exits ~20 °C warmer [Source: https://tonecooling.com/nvidia-gb200-nvl72-cooling-requirements/]. Air cooling tops out somewhere in the 40-60 kW range with aggressive design; 130 kW is 5-15× beyond that ceiling, hence direct-to-chip liquid is now the default for training-class racks. Two-phase immersion is in trial deployments but has not displaced direct-to-chip as the production standard.</p>
+<p>The downstream implications for data-centre engineering are substantial — chilled-water plants instead of CRAH units, structural changes to support liquid manifold and rack weight, redesigned power distribution to push 415 V three-phase into each rack — and they are why a 1 GW “AI factory” is not a 10× scale-up of a hyperscale data centre but a different building entirely. Those implications are economic rather than technical and belong in the follow-up note.</p>
+<hr>
+</section>
+<section id="capacity-utilisation-profiles" class="level2">
+<h2 class="anchored" data-anchor-id="capacity-utilisation-profiles">5. Capacity utilisation profiles</h2>
+<section id="training-utilisation" class="level3">
+<h3 class="anchored" data-anchor-id="training-utilisation">Training utilisation</h3>
+<p>Frontier training jobs run at high effective utilisation. Meta’s Llama 3 paper documents that the 16K-H100 training cluster achieved <strong>90% effective training time</strong> despite roughly one interruption per day, with <strong>38-43% Model FLOPS Utilization (MFU)</strong> for the BF16 workload [Source: https://ar5iv.labs.arxiv.org/html/2407.21783]. Of those two numbers:</p>
+<ul>
+<li><strong>Effective training time</strong> (≈90%) is what looks “baseload” to the grid — the cluster is drawing power continuously while it trains.</li>
+<li><strong>MFU</strong> (≈40%) is the share of the GPU’s theoretical peak FLOPS actually realised in arithmetic — the rest is lost to memory stalls, communication overhead, pipeline bubbles and so on.</li>
+</ul>
+<p>Both are honest numbers. For grid-load purposes, the relevant figure is effective training time: a frontier training cluster looks like a constant load of 70-90% of its rated power draw for weeks at a time.</p>
+</section>
+<section id="inference-utilisation" class="level3">
+<h3 class="anchored" data-anchor-id="inference-utilisation">Inference utilisation</h3>
+<p>Inference clusters are diurnal and bursty. McKinsey reports inference racks run at 30-150 kW with utilisation that varies heavily by hour of day; typical industry estimates put average utilisation in the 30-50% range against installed peak [Source: https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-next-big-shifts-in-ai-workloads-and-hyperscaler-strategies]. Enterprise estimates from VentureBeat report many fleets running at &lt;40%, with some &lt;10% [Source: https://venturebeat.com/infrastructure/5-gpu-utilization-the-401-billion-ai-infrastructure-problem-enterprises-cant-keep-ignoring]. Hyperscaler utilisation is materially higher than enterprise but still well below training-class utilisation.</p>
+</section>
+<section id="reasoning-models-change-the-picture" class="level3">
+<h3 class="anchored" data-anchor-id="reasoning-models-change-the-picture">Reasoning models change the picture</h3>
+<p>A reasoning model query that runs for 90 seconds and emits 50,000 tokens occupies a GPU at near-100% memory-bandwidth utilisation for that whole time. A campus serving heavy reasoning-model traffic looks more “training-like” in its load profile than a campus serving classical chat completions. The blurring is not yet clean enough to support a sharp claim, but the direction of travel is from peaky inference toward smoother, more sustained load — which in electricity terms means inference workloads are starting to look more like baseload than mid-merit.</p>
+<hr>
+</section>
+</section>
+<section id="token-throughput-the-technical-layer" class="level2">
+<h2 class="anchored" data-anchor-id="token-throughput-the-technical-layer">6. Token throughput — the technical layer</h2>
+<section id="prefill-versus-decode" class="level3">
+<h3 class="anchored" data-anchor-id="prefill-versus-decode">Prefill versus decode</h3>
+<p>Prefill processes the entire input prompt in parallel — one big matmul per layer — and is <strong>compute-bound</strong>. A 10,000-token prompt prefills on an H100 in roughly 200-400 ms [Source: https://www.morphllm.com/llm-inference]. Prefill batches well: throwing more concurrent requests at a GPU during prefill scales roughly linearly until compute saturates.</p>
+<p>Decode is the per-token generation phase and is <strong>memory-bandwidth-bound</strong>. Per GPU, decode runs at roughly 30-150 tokens/sec for typical 7-70 B parameter models, depending on quantisation and batching [Source: https://www.morphllm.com/llm-inference]. Concurrency helps but with diminishing returns: each additional request adds a copy of the KV cache.</p>
+</section>
+<section id="tokens-per-second-published-benchmarks" class="level3">
+<h3 class="anchored" data-anchor-id="tokens-per-second-published-benchmarks">Tokens-per-second — published benchmarks</h3>
+<p>Llama 3.1 405B is a useful reference point because it cannot fit on a single 8×H100 80 GB node at BF16 — it needs 8×H200 or quantisation to FP8/FP4. Documented throughput numbers:</p>
+<ul>
+<li><strong>8×H100 (BF16/FP16)</strong>: 405B does not fit; FP8 quantised, GPU clusters typically struggle to exceed 10-15 tokens/sec [Source: https://docs.valdi.ai/llms/performance/gpu/H100/llama3.1-inference-testing/].</li>
+<li><strong>8×H200</strong>: 1.5× higher throughput than tensor-parallel on H100, NVLink-Switch enabled [Source: https://developer.nvidia.com/blog/boosting-llama-3-1-405b-throughput-by-another-1-5x-on-nvidia-h200-tensor-core-gpus-and-nvlink-switch/].</li>
+<li><strong>GB200 NVL72</strong>: ~3.4× per-GPU performance of 8×H200 on Llama 3.1 405B [Source: https://developer.nvidia.com/blog/nvidia-blackwell-delivers-massive-performance-leaps-in-mlperf-inference-v5-0/].</li>
+<li><strong>Cerebras WSE-3</strong>: ~969 tokens/sec on Llama 3.1 405B [Source: https://www.cerebras.ai/blog/llama-405b-inference].</li>
+<li><strong>TensorRT-LLM on H100, 100 concurrent requests, Llama 70B-class</strong>: ~2,780 output tokens/sec total throughput [Source: https://www.morphllm.com/llm-inference].</li>
+</ul>
+<p>These are not directly comparable: some are per-GPU, some are aggregate, some are at low concurrency, some at high. The general lesson is that hardware generation, model fit (does it fit?), quantisation and serving stack all matter at least as much as raw chip TFLOPS.</p>
+</section>
+<section id="quantisation" class="level3">
+<h3 class="anchored" data-anchor-id="quantisation">Quantisation</h3>
+<p>The training default is BF16 (two bytes per number). Modern training has moved aggressively to FP8 (Hopper and Blackwell support; AWS Trainium2/3 native; AMD MI355X native). FP4 is <strong>inference-only</strong> in production today — Blackwell ships native NVFP4 tensor cores and is the first widely-deployed FP4 accelerator [Source: https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/]. NVFP4 quantisation typically loses ≤1% accuracy on standard benchmarks against FP8, while delivering ~1.32× throughput and a 1.8× memory footprint reduction [Source: https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/; https://www.spheron.network/blog/fp4-quantization-blackwell-gpu-cost/]. NVidia’s headline “5× Blackwell vs Hopper” generational claim relies in part on comparing FP4 (Blackwell) with FP8 (Hopper); on like-for-like FP8 the uplift is closer to 2.5×.</p>
+</section>
+<section id="kv-cache-and-concurrency" class="level3">
+<h3 class="anchored" data-anchor-id="kv-cache-and-concurrency">KV cache and concurrency</h3>
+<p>The KV cache is the per-request scratchpad of attention keys and values. It scales linearly with sequence length and batch size:</p>
+<ul>
+<li>Llama 3 70 B at 8K context: ~320 KB KV cache per token, ~2.56 GB per request.</li>
+<li>32 concurrent requests at 8K context = ~82 GB — more than an A100 80 GB GPU [Source: https://mbrenndoerfer.com/writing/kv-cache-memory-calculation-llm-inference-gpu].</li>
+</ul>
+<p>The KV cache is therefore the practical limit on concurrency in inference serving. Optimisations stack: Grouped Query Attention (GQA) reduces cache size 8×; FP8 or NVFP4 KV-cache quantisation gives another 2-4×; PagedAttention (used by vLLM) eliminates 60-80% fragmentation waste. Combined, these enable 10-30× more concurrent users on the same hardware versus a naive baseline [Source: https://docs.vllm.ai/en/stable/configuration/optimization/].</p>
+</section>
+<section id="optimisation-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="optimisation-techniques">Optimisation techniques</h3>
+<p><strong>Speculative decoding</strong> (and its variants EAGLE, MEDUSA) uses a small “draft” model to propose multiple tokens which the large model verifies in a single forward pass. If most drafts are accepted, throughput rises 2-3× with no quality loss [Source: https://blog.premai.io/speculative-decoding-2-3x-faster-llm-inference-2026/]. EAGLE-3 reaches ~80% draft acceptance, MEDUSA ~60%.</p>
+<p><strong>Serving frameworks</strong>: vLLM (open source, broad model coverage, PagedAttention origin), TensorRT-LLM (Nvidia, lowest latency, hardest to deploy), SGLang (open source, strong on MoE and long context). Production benchmarks at 100 concurrent requests on H100 show TensorRT-LLM ~2,780 output tok/sec, SGLang ~2,460, vLLM ~2,400 [Source: https://www.spheron.network/blog/vllm-vs-tensorrt-llm-vs-sglang-benchmarks/].</p>
+<p><strong>Prefill-decode disaggregation</strong> (Meta, NVIDIA Dynamo) physically separates the compute-bound prefill phase onto one set of GPUs and the memory-bound decode phase onto another, raising goodput because each set runs at its own bottleneck rather than averaging over both [Source: https://jarvislabs.ai/blog/llm-optimization-disaggregated-prefill-decode].</p>
+<hr>
+</section>
+</section>
+<section id="hardware-lifecycle-and-trickle-down" class="level2">
+<h2 class="anchored" data-anchor-id="hardware-lifecycle-and-trickle-down">7. Hardware lifecycle and trickle-down</h2>
+<p>When the next chip generation offers 2-3× the training throughput per dollar of capex and per kWh, the older chip becomes uneconomic for <strong>training</strong> the next frontier model — but it remains useful for <strong>inference</strong> of older or smaller models, fine-tuning, batch jobs and research workloads. This is the trickle-down dynamic.</p>
+<section id="the-h100-is-the-worked-example" class="level3">
+<h3 class="anchored" data-anchor-id="the-h100-is-the-worked-example">The H100 is the worked example</h3>
+<p>Cloud H100 on-demand prices have fallen 64-75% from their 2023 peak, now in the US$1.50-4.00/hour range [Source: https://www.thundercompute.com/blog/nvidia-a100-vs-h100]. Blackwell B200 delivers ~2.5-3× H100 training throughput, so a hyperscaler training a new frontier model in 2026 will allocate Blackwell to that job. The H100 fleet that trained GPT-4, Claude 3 and Llama 3 in 2023-24 is now serving inference for those same models, plus smaller models, plus batch workloads. The A100 fleet from 2020-22 is still serving — it delivers 80-90% of an H100’s value for memory-bound inference at 70% of H100 cost.</p>
+</section>
+<section id="useful-life-accounting" class="level3">
+<h3 class="anchored" data-anchor-id="useful-life-accounting">Useful-life accounting</h3>
+<p>The trickle-down dynamic supports the recent move by hyperscalers to extend the useful-life assumption for AI servers from 4-5 years to 6 years for depreciation purposes:</p>
+<ul>
+<li><strong>Microsoft, Google, Meta</strong> all extended useful life to ~6 years in SEC filings during 2023-2024. Meta’s 2025 disclosure expects a <strong>US$2.9 billion reduction in 2025 depreciation expense</strong> from the change [Source: https://finance.yahoo.com/news/meta-accounting-move-ai-servers-124059775.html]. Google’s earlier extension delivered ~US$3.4 billion of 2023 depreciation reduction [Source: https://www.datacenterdynamics.com/en/news/google-increases-server-life-to-six-years-will-save-billions-of-dollars/].</li>
+<li><strong>Amazon (AWS)</strong> went the other way in February 2025: shortened useful life for a subset of servers and networking equipment from 6 years back to 5 years, citing “the increased pace of technology development, particularly in the area of artificial intelligence and machine learning”. The change took a US$700 m hit to operating income [Source: https://deepquarry.substack.com/p/amazon-revises-server-lifespan-amid].</li>
+</ul>
+<p>The two positions are not as inconsistent as they look. Hyperscalers can extend useful life if they have a credible second life for the hardware as inference fleet — Meta, Google, Microsoft all serve substantial inference traffic on older silicon. Amazon’s rationale highlights the opposite risk: that AI silicon depreciates faster than CPU servers because the next chip is meaningfully better and pricing pressure on older inference is real. The accounting choice is an explicit bet on whether the trickle-down is durable. Critics (cited by The Cube, MBI Deep Dives) argue the 6-year assumption flatters earnings and that real economic life is closer to 3-4 years [Source: https://thecuberesearch.com/298-breaking-analysis-resetting-gpu-depreciation-why-ai-factories-bend-but-dont-break-useful-life-assumptions/].</p>
+<p>The economics of all this — what depreciation schedule is defensible, what the second-hand market for H100s clears at, how to model cost-per-token over the chip’s full life — is the subject of the follow-up note.</p>
+<hr>
+</section>
+</section>
+<section id="the-line-is-blurring" class="level2">
+<h2 class="anchored" data-anchor-id="the-line-is-blurring">8. The line is blurring</h2>
+<p>Three technical developments are blurring what was, two years ago, a clean training-versus-inference distinction.</p>
+<p><strong>Mixture-of-experts inference.</strong> A dense 671 B parameter model is impractical to serve at low latency. DeepSeek-V3 has 671 B total parameters but only 37 B activated per token via top-8 expert selection from 256 experts per layer, plus a shared expert and Multi-head Latent Attention [Source: https://arxiv.org/pdf/2412.19437]. This collapses the per-token compute by ~18× while preserving the parameter capacity, but introduces all-to-all expert-routing communication that looks more like training fabric requirements than classical inference. MoE architectures move inference closer to training in network and memory profile.</p>
+<p><strong>Reasoning models.</strong> Per the discussion in section 5, a reasoning-model query consumes 10-100× more tokens than a chat-model query and runs the GPU near saturation for tens of seconds. Test-time compute scaling (more thinking tokens → better answers) is now a published axis of model improvement — OpenAI’s o1 chart shows accuracy scaling smoothly with both train-time RL compute and test-time inference compute [Source: https://openai.com/index/learning-to-reason-with-llms/]. From an electricity-load perspective, heavy reasoning-model traffic on a campus shifts the load shape from peaky-diurnal toward sustained-flat.</p>
+<p><strong>Speculative decoding and serving advances</strong> can shift effective tokens-per-second by 2-3× without changing the underlying hardware. EAGLE-3 and similar techniques are now production defaults in vLLM, SGLang and TensorRT-LLM [Source: https://github.com/SafeAILab/EAGLE]. The same physical hardware delivers materially different effective throughput depending on the serving stack and the workload mix.</p>
+<p><strong>The same physical hardware now serves both.</strong> A B200 deployed in a GB200 NVL72 can train a frontier model on Monday and serve trillion-parameter MoE inference on Tuesday. The workload mix on a campus may shift hour-by-hour. This makes static “training capacity” vs “inference capacity” classifications increasingly suspect — the relevant unit of analysis is the campus and its workload schedule.</p>
+<hr>
+</section>
+<section id="caveats-and-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="caveats-and-limitations">Caveats and limitations</h2>
+<ul>
+<li><strong>Marketing peak FLOPS overstate deployed performance.</strong> A B200’s “9 PFLOPS FP4” is sparse, with 2:4 structured sparsity rarely realised in production. Dense FP4 is roughly half. Real-world MFU for training is 30-50%; sustained inference throughput is typically 30-60% of marketing peak. Where a quoted number is sparse or marketing-peak, I have flagged it.</li>
+<li><strong>Pre-shipping product is roadmap.</strong> Vera Rubin / R100 is announced for early-access H2 2026 with broad availability in 2027. Maia 200 is announced for 2026 production. Trainium3 UltraServers reached general availability in late 2025. Treat any specifications for not-yet-shipped product as vendor claims.</li>
+<li><strong>Inference utilisation numbers are estimated, not disclosed.</strong> Hyperscalers do not publish GPU utilisation for inference fleets. The 30-50% range cited above is industry estimate (VentureBeat, McKinsey, GPU-cloud operator commentary), not operator disclosure. Training-cluster utilisation (Meta’s 90% effective training time / 38-43% MFU on Llama 3) is one of very few public numbers from a frontier training run.</li>
+<li><strong>The 30% inference / 70% training compute split is OpenAI 2024.</strong> Epoch AI’s number is from leaked OpenAI cost data and does not necessarily generalise to Anthropic, Google or Meta. Anthropic’s compute spend is heavier on training than inference at this stage; Meta’s inference workload is much larger because it serves billions of recommender-system inferences per day on top of LLM workloads.</li>
+<li><strong>SemiAnalysis citations are paywalled.</strong> Where I cite SemiAnalysis pieces, the URL and headline are public but the substantive numbers and interpretation are behind paywall. Treat their compute-split and workload-mix estimates as well-informed industry analysis rather than primary disclosure.</li>
+<li><strong>Word “genuine” deliberately avoided</strong> in line with house style; where I have wanted to assert that a chip lives up to its marketing, I have used “delivered” or “demonstrated” or stated the benchmarked number directly.</li>
+</ul>
+<hr>
+</section>
+<section id="bibliography" class="level2">
+<h2 class="anchored" data-anchor-id="bibliography">Bibliography</h2>
+<section id="primary-sources-vendor-specifications-technical-papers-mlperf" class="level3">
+<h3 class="anchored" data-anchor-id="primary-sources-vendor-specifications-technical-papers-mlperf">Primary sources — vendor specifications, technical papers, MLPerf</h3>
+<ul>
+<li>Hoffmann J et al.&nbsp;(DeepMind). “Training Compute-Optimal Large Language Models” (Chinchilla paper). arXiv 2203.15556, 2022. https://arxiv.org/abs/2203.15556</li>
+<li>Llama Team, Meta AI. “The Llama 3 Herd of Models”. arXiv 2407.21783, 2024. https://ar5iv.labs.arxiv.org/html/2407.21783</li>
+<li>DeepSeek-AI. “DeepSeek-V3 Technical Report”. arXiv 2412.19437, 2024. https://arxiv.org/pdf/2412.19437</li>
+<li>Microsoft (Sherry Xu et al.). “Inside Maia 100”, Hot Chips 2024. https://hc2024.hotchips.org/assets/program/conference/day2/81_HC2024.Microsoft.Xu.Ramakrishnan.final.v2.pdf</li>
+<li>NVIDIA. “H100 Tensor Core GPU Datasheet”. https://www.megware.com/fileadmin/user_upload/LandingPage%20NVIDIA/nvidia-h100-datasheet.pdf</li>
+<li>NVIDIA. “H200 GPU product page”. https://www.nvidia.com/en-us/data-center/h200/</li>
+<li>NVIDIA. “GB200 NVL72 product page”. https://www.nvidia.com/en-us/data-center/gb200-nvl72/</li>
+<li>NVIDIA. “Blackwell architecture page”. https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/</li>
+<li>NVIDIA Newsroom. “NVIDIA Vera Rubin Opens Agentic AI Frontier”, GTC 2025. https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform</li>
+<li>NVIDIA Developer Blog. “Inside NVIDIA Blackwell Ultra: The Chip Powering the AI Factory Era”. https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/</li>
+<li>NVIDIA Developer Blog. “Mastering LLM Techniques: Inference Optimization”. https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/</li>
+<li>NVIDIA Developer Blog. “Introducing NVFP4 for Efficient and Accurate Low-Precision Inference”. https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/</li>
+<li>NVIDIA Developer Blog. “Boosting Llama 3.1 405B Throughput by Another 1.5x on NVIDIA H200”. https://developer.nvidia.com/blog/boosting-llama-3-1-405b-throughput-by-another-1-5x-on-nvidia-h200-tensor-core-gpus-and-nvlink-switch/</li>
+<li>NVIDIA Developer Blog. “NVIDIA Blackwell Delivers Massive Performance Leaps in MLPerf Inference v5.0”. https://developer.nvidia.com/blog/nvidia-blackwell-delivers-massive-performance-leaps-in-mlperf-inference-v5-0/</li>
+<li>AMD. “Instinct MI300 Series Accelerators”. https://www.amd.com/en/products/accelerators/instinct/mi300.html</li>
+<li>AMD. “Instinct MI350 Series GPUs”. https://www.amd.com/en/products/accelerators/instinct/mi350.html</li>
+<li>AWS. “Amazon EC2 Trn2 Instances and Trn2 UltraServers” (re:Invent 2024). https://aws.amazon.com/blogs/aws/amazon-ec2-trn2-instances-and-trn2-ultraservers-for-aiml-training-and-inference-is-now-available/</li>
+<li>AWS. “Trainium3 UltraServers GA” (Dec 2025). https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-ec2-trn3-ultraservers/</li>
+<li>Google Cloud Blog. “Trillium TPU is GA”. https://cloud.google.com/blog/products/compute/trillium-tpu-is-ga</li>
+<li>Microsoft Blog. “Maia 200: The AI accelerator built for inference” (Jan 2026). https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/</li>
+<li>Meta AI. “Our next generation Meta Training and Inference Accelerator” (MTIA v2). https://ai.meta.com/blog/next-generation-meta-training-inference-accelerator-AI-MTIA/</li>
+<li>Tenstorrent. “Wormhole” and “Blackhole” product pages. https://tenstorrent.com/en/hardware/wormhole ; https://tenstorrent.com/en/hardware/blackhole</li>
+<li>MLCommons. “MLPerf Inference v5.0 results” (April 2025). https://mlcommons.org/2025/04/mlperf-inference-v5-0-results/</li>
+<li>Cerebras. “Llama 3.1 405B at 969 tokens/s”. https://www.cerebras.ai/blog/llama-405b-inference</li>
+</ul>
+</section>
+<section id="tier-2-analysis-benchmarks-deep-dives" class="level3">
+<h3 class="anchored" data-anchor-id="tier-2-analysis-benchmarks-deep-dives">Tier 2 — analysis, benchmarks, deep dives</h3>
+<ul>
+<li>Epoch AI. “Most of OpenAI’s 2024 compute went to experiments”. https://epoch.ai/data-insights/openai-compute-spend</li>
+<li>Epoch AI. “Trends in Artificial Intelligence”. https://epoch.ai/trends</li>
+<li>Epoch AI. “How persistent is the inference cost burden?”. https://epoch.ai/gradient-updates/how-persistent-is-the-inference-cost-burden</li>
+<li>SemiAnalysis (paywalled). “AI Value Capture - The Shift to Model Labs”. https://newsletter.semianalysis.com/p/ai-value-capture-the-shift-to-model</li>
+<li>SemiAnalysis (paywalled). “100,000 H100 Clusters”. https://newsletter.semianalysis.com/p/100000-h100-clusters-power-network</li>
+<li>SemiAnalysis (paywalled). “AWS Trainium3 Deep Dive”. https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential</li>
+<li>SemiAnalysis (paywalled). “NVIDIA GTC 2025 — Built for Reasoning, Vera Rubin, Kyber, CPO, Dynamo Inference”. https://newsletter.semianalysis.com/p/nvidia-gtc-2025-built-for-reasoning-vera-rubin-kyber-cpo-dynamo-inference-jensen-math-feynman</li>
+<li>The Next Platform. “With MTIA v2 Chip, Meta Can Do AI Inference, But Not Training”. https://www.nextplatform.com/2024/04/10/with-mtia-v2-chip-meta-can-do-ai-training-as-well-as-inference/</li>
+<li>The Register. “A closer look at Nvidia’s 120kW DGX GB200 NVL72 rack system”. https://www.theregister.com/2024/03/21/nvidia_dgx_gb200_nvk72/</li>
+<li>The Register. “Amazon Project Rainier: AI supercomputer for Anthropic”. https://www.theregister.com/2025/07/04/project_rainier_deep_dive/</li>
+<li>Tom’s Hardware. “Nvidia announces Blackwell Ultra B300”. https://www.tomshardware.com/pc-components/gpus/nvidia-announces-blackwell-ultra-b300-1-5x-faster-than-b200-with-288gb-hbm3e-and-15-pflops-dense-fp4</li>
+<li>Tom’s Hardware. “AMD announces MI350X and MI355X AI GPUs”. https://www.tomshardware.com/pc-components/gpus/amd-announces-mi350x-and-mi355x-ai-gpus-claims-up-to-4x-generational-gain-up-to-35x-faster-inference-performance</li>
+<li>Tom’s Hardware. “Microsoft Maia 200 introduction”. https://www.tomshardware.com/pc-components/cpus/microsoft-introduces-newest-in-house-ai-chip-maia-200-is-faster-than-other-bespoke-nvidia-competitors-built-on-tsmc-3nm-with-216gb-of-hbm3e</li>
+<li>Tom’s Hardware. “Data center cooling state of play 2025”. https://www.tomshardware.com/pc-components/cooling/the-data-center-cooling-state-of-play-2025-liquid-cooling-is-on-the-rise-thermal-density-demands-skyrocket-in-ai-data-centers-and-tsmc-leads-with-direct-to-silicon-solutions</li>
+<li>HPCwire. “MLPerf v5.0 Reflects the Shift Toward Reasoning in AI Inference”. https://www.hpcwire.com/2025/04/02/mlperf-v5-0-reflects-the-shift-toward-reasoning-in-ai-inference/</li>
+<li>McKinsey. “The next big shifts in AI workloads and hyperscaler strategies”. https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-next-big-shifts-in-ai-workloads-and-hyperscaler-strategies</li>
+<li>DataCenterDynamics. “Microsoft delays production of Maia 200”. https://www.datacenterdynamics.com/en/news/microsoft-delays-production-of-maia-100-ai-chip-to-2026-report/</li>
+<li>DataCenterDynamics. “Google increases server life to six years”. https://www.datacenterdynamics.com/en/news/google-increases-server-life-to-six-years-will-save-billions-of-dollars/</li>
+<li>Yahoo Finance / Bloomberg. “Meta Accounting Move on AI Servers to Boost Profit This Year”. https://finance.yahoo.com/news/meta-accounting-move-ai-servers-124059775.html</li>
+<li>DeepQuarry. “Amazon revises server lifespan amid AI shift”. https://deepquarry.substack.com/p/amazon-revises-server-lifespan-amid</li>
+</ul>
+</section>
+<section id="tier-3-supporting-trade-press-secondary-sources" class="level3">
+<h3 class="anchored" data-anchor-id="tier-3-supporting-trade-press-secondary-sources">Tier 3 — supporting trade press, secondary sources</h3>
+<ul>
+<li>Introl Blog. “HBM evolution: from HBM3 to HBM4 and the AI memory war”. https://introl.com/blog/hbm-evolution-hbm3-hbm3e-hbm4-memory-ai-gpu-2025</li>
+<li>Introl Blog. “NVLink and scale-up networking”. https://introl.com/blog/nvlink-scale-up-networking-gpu-interconnect-infrastructure-2025</li>
+<li>Introl Blog. “Google TPU Architecture: 7 Generations Explained”. https://introl.com/blog/google-tpu-architecture-complete-guide-7-generations</li>
+<li>Introl Blog. “High-Density Racks: 100kW+ Designs”. https://introl.com/blog/high-density-racks-100kw-ai-data-center-ocp-2025</li>
+<li>Spheron. “GPU Networking for AI Clusters: InfiniBand vs RoCE vs Spectrum-X Decision Guide”. https://www.spheron.network/blog/gpu-networking-infiniband-roce-spectrum-x-guide/</li>
+<li>Spheron. “vLLM vs TensorRT-LLM vs SGLang: H100 Benchmarks”. https://www.spheron.network/blog/vllm-vs-tensorrt-llm-vs-sglang-benchmarks/</li>
+<li>Spheron. “FP4 Quantization on Blackwell GPUs”. https://www.spheron.network/blog/fp4-quantization-blackwell-gpu-cost/</li>
+<li>Morph LLM. “LLM Inference: Prefill, Decode, KV Cache &amp; Cost Guide (2026)”. https://www.morphllm.com/llm-inference</li>
+<li>IntuitionLabs. “Cerebras vs SambaNova vs Groq: AI Chip Comparison (2025)”. https://intuitionlabs.ai/articles/cerebras-vs-sambanova-vs-groq-ai-chips</li>
+<li>Brenndoerfer. “KV Cache Memory: Calculating GPU Requirements for LLM Inference”. https://mbrenndoerfer.com/writing/kv-cache-memory-calculation-llm-inference-gpu</li>
+<li>VentureBeat. “5% GPU utilization: The $401 billion AI infrastructure problem”. https://venturebeat.com/infrastructure/5-gpu-utilization-the-401-billion-ai-infrastructure-problem-enterprises-cant-keep-ignoring</li>
+<li>Sebastian Raschka. “The State of LLM Reasoning Model Inference”. https://magazine.sebastianraschka.com/p/state-of-llm-reasoning-and-inference-scaling</li>
+<li>OpenAI. “Learning to reason with LLMs” (o1 announcement). https://openai.com/index/learning-to-reason-with-llms/</li>
+<li>Nathan Lambert. “RLHF Book”. https://rlhfbook.com/</li>
+<li>Hao AI Lab. “Throughput is Not All You Need: Maximizing Goodput in LLM Serving using Prefill-Decode Disaggregation”. https://haoailab.com/blogs/distserve/</li>
+<li>Towards Data Science. “Prefill Is Compute-Bound. Decode Is Memory-Bound”. https://towardsdatascience.com/prefill-is-compute-bound-decode-is-memory-bound-why-your-gpu-shouldnt-do-both/</li>
+<li>The Cube. “Resetting GPU depreciation”. https://thecuberesearch.com/298-breaking-analysis-resetting-gpu-depreciation-why-ai-factories-bend-but-dont-break-useful-life-assumptions/</li>
+<li>TechCrunch. “AWS Trainium2 chips for building LLMs are now generally available”. https://techcrunch.com/2024/12/03/aws-trainium2-chips-for-building-llms-are-now-generally-available-with-trainium3-coming-in-late-2025/</li>
+<li>Tonecooling. “NVIDIA GB200 NVL72 Cooling Requirements”. https://tonecooling.com/nvidia-gb200-nvl72-cooling-requirements/</li>
+<li>ThunderCompute. “NVIDIA A100 vs H100 for AI Training and Inference (May 2026)”. https://www.thundercompute.com/blog/nvidia-a100-vs-h100</li>
+<li>Premai. “Speculative Decoding 2-3x Faster LLM Inference (2026)”. https://blog.premai.io/speculative-decoding-2-3x-faster-llm-inference-2026/</li>
+<li>SafeAI Lab (EAGLE GitHub). https://github.com/SafeAILab/EAGLE</li>
+<li>Wikipedia. “Rubin (microarchitecture)”. https://en.wikipedia.org/wiki/Rubin_(microarchitecture)</li>
+<li>Wikipedia. “NVLink”. https://en.wikipedia.org/wiki/NVLink</li>
+<li>Red Hat Developer. “Post-training methods for language models” (Nov 2025). https://developers.redhat.com/articles/2025/11/04/post-training-methods-language-models</li>
+<li>Fluence. “Designing GPU Clusters, Memory &amp; Scaling for AI Workloads (2026)”. https://www.fluence.network/blog/designing-ai-gpu-workloads/</li>
+<li>vLLM documentation. “Optimization and Tuning”. https://docs.vllm.ai/en/stable/configuration/optimization/</li>
+<li>Jarvis Labs. “Disaggregated Prefill-Decode: The Architecture Behind Meta’s LLM Serving”. https://jarvislabs.ai/blog/llm-optimization-disaggregated-prefill-decode</li>
+<li>VALDI Docs. “H100 Performance — Llama 3.1 inference testing”. https://docs.valdi.ai/llms/performance/gpu/H100/llama3.1-inference-testing/</li>
+<li>CoreWeave. “Breakthrough AI performance with NVIDIA GB200 and H200 GPUs in MLPerf Inference v5.0”. https://www.coreweave.com/blog/coreweave-delivers-breakthrough-ai-performance-with-nvidia-gb200-and-h200-gpus-in-mlperf-inference-v5-0</li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

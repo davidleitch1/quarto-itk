@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>datacentre_opex</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="datacentre_opex_files/libs/clipboard/clipboard.min.js"></script>
+<script src="datacentre_opex_files/libs/quarto-html/quarto.js"></script>
+<script src="datacentre_opex_files/libs/quarto-html/popper.min.js"></script>
+<script src="datacentre_opex_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="datacentre_opex_files/libs/quarto-html/anchor.min.js"></script>
+<link href="datacentre_opex_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="datacentre_opex_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="datacentre_opex_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="datacentre_opex_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="datacentre_opex_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="data-centre-operating-cost-structures-traditional-cloud-versus-ai" class="level1">
+<h1>Data Centre Operating Cost Structures: Traditional Cloud versus AI</h1>
+<p><em>Research draft, May 2026 — input to a forthcoming piece on the economics of AI data centres.</em></p>
+<section id="purpose-and-thesis" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-and-thesis">Purpose and thesis</h2>
+<p>This note tests a working thesis:</p>
+<blockquote class="blockquote">
+<p>Traditional cloud computing data centres have cost structures where fixed costs and people costs are at least as important as energy costs. As we move into AI data centres (training or inference) and capacity utilisation rises, energy costs become increasingly dominant.</p>
+</blockquote>
+<p>The thesis is largely supported by published data, but with three important qualifications:</p>
+<ol type="1">
+<li>The shift is driven by <strong>utilisation</strong> more than by anything intrinsically “AI” — the same physics applies to any workload that runs the IT load near nameplate.</li>
+<li><strong>GPU depreciation</strong> (capex amortisation) still dominates total cluster cost; on a <em>cash operating cost</em> basis, electricity becomes the largest line item once depreciation is excluded.</li>
+<li>Australian energy share is structurally higher than US energy share at any given utilisation, because wholesale and retail power is more expensive.</li>
+</ol>
+<p>Throughout, OpEx means <strong>cash operating cost</strong> (electricity, staff, maintenance, consumables, software, lease, insurance). CapEx amortisation is treated separately. TCO is OpEx + amortised CapEx.</p>
+<hr>
+</section>
+<section id="published-opex-breakdowns-traditional-cloud-and-colocation" class="level2">
+<h2 class="anchored" data-anchor-id="published-opex-breakdowns-traditional-cloud-and-colocation">1. Published OpEx breakdowns — traditional cloud and colocation</h2>
+<section id="categories-of-facility-opex" class="level3">
+<h3 class="anchored" data-anchor-id="categories-of-facility-opex">1.1 Categories of facility OpEx</h3>
+<p>For a wholesale colocation or hyperscaler-owned facility, published breakdowns identify roughly the same line items, even if the percentages differ:</p>
+<ul>
+<li>Energy / electricity (IT load + cooling + lighting + losses)</li>
+<li>People / staff (ops, maintenance, security, management)</li>
+<li>Maintenance and consumables (filters, parts, vendor contracts)</li>
+<li>Connectivity / network (peering, transit, dark fibre)</li>
+<li>Land / lease / property tax</li>
+<li>Insurance and regulatory compliance</li>
+<li>Software / DCIM / monitoring tools</li>
+<li>Water and sewerage (small but rising with evaporative cooling)</li>
+</ul>
+<p>The Uptime Institute Global Data Center Survey 2025 — the most widely cited industry survey, n=879 in the 2024 edition and a comparable sample in 2025 — reports that cost is the single largest concern for operators, driven by <em>inflation, labour shortages and energy prices</em> in roughly that order of importance [Source: https://uptimeinstitute.com/resources/research-and-reports/uptime-institute-global-data-center-survey-results-2025]. Industry-weighted average PUE has been stuck near 1.54-1.56 for six consecutive years across the broader fleet [Source: https://uptimeinstitute.com/uptime_assets/7425ec68d479c5d78a743df94a79b114ed9f9c73f13b6460949d2b8e73373209-GA-2024-07-uptime-institute-global-data-center-survey-results-2024.pdf]. This matters because PUE is the multiplier between IT load and total facility energy bill.</p>
+</section>
+<section id="opex-composition-traditional-facility" class="level3">
+<h3 class="anchored" data-anchor-id="opex-composition-traditional-facility">1.2 OpEx composition — traditional facility</h3>
+<p>Published industry breakdowns (Thunder Said Energy, alpha-matica, network installer industry guides, MCIM benchmarks) converge on a similar picture for a <em>facility OpEx</em> lens — that is, what it costs the operator to run the building, before the tenant’s IT spend:</p>
+<p><strong>Table 1: Indicative OpEx mix for a traditional hyperscale or wholesale colocation facility (% of facility cash OpEx, ~50-60% utilisation)</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category</th>
+<th style="text-align: right;">Low</th>
+<th style="text-align: right;">Central</th>
+<th style="text-align: right;">High</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Electricity (IT + cooling + losses)</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">45%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Maintenance and consumables</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">35%</td>
+<td style="text-align: right;">45%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Staff and security</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">22%</td>
+<td style="text-align: right;">30%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Software, monitoring, IT tools</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">8%</td>
+<td style="text-align: right;">12%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Property, insurance, compliance</td>
+<td style="text-align: right;">3%</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Thunder Said Energy “Data centres: the economics” [https://thundersaidenergy.com/downloads/data-centers-the-economics/]; alpha-matica deconstruction of data centre cost structure [https://www.alpha-matica.com/post/deconstructing-the-data-center-a-look-at-the-cost-structure-1]; The Network Installers data centre operating costs guide 2026 [https://thenetworkinstallers.com/blog/data-center-operating-costs/]; Uptime Institute Survey 2024/2025.</em></p>
+<p>Two published anchor points are worth quoting verbatim. Thunder Said Energy: “opex costs are dominated by maintenance (c40%), electricity (c15-25%), labour, water, G&amp;A and other” [Source: https://thundersaidenergy.com/downloads/data-centers-the-economics/]. The Network Installers benchmark, in contrast, places energy at “40-60% of total operational costs” with labour at 20-25% and hardware/maintenance at 40-50% — but that is arithmetic over 100% because their “hardware” line includes amortised IT refresh, not a pure cash OpEx view [Source: https://thenetworkinstallers.com/blog/data-center-operating-costs/]. The reconciliation is the OpEx-vs-TCO confusion warned about earlier.</p>
+</section>
+<section id="opex-per-mw-per-year" class="level3">
+<h3 class="anchored" data-anchor-id="opex-per-mw-per-year">1.3 OpEx per MW per year</h3>
+<p>Industry benchmarks give a wide range:</p>
+<ul>
+<li>MCIM and network industry benchmarks: <strong>US$800-2,000/kW/year</strong> ($0.8M–$2.0M per MW/year) for facility OpEx at typical Tier III–IV operation [Source: https://mcim24x7.com/resources/successful-capex-opex-strategies/].</li>
+<li>A 100 MW hyperscale facility running at 50–70% utilisation in a US$0.07-0.10/kWh power market: <strong>US$40–60M of annual electricity</strong> plus US$10–25M of maintenance plus US$5–10M of staff [Source: https://www.alpha-matica.com/post/deconstructing-the-data-center-a-look-at-the-cost-structure-1].</li>
+</ul>
+<p>The right way to read this: at typical 2024-25 utilisation and US wholesale prices, facility cash OpEx for a hyperscale data centre is in the order of <strong>US$1.0–1.5M per MW per year</strong>, of which electricity is the single largest line item but rarely above 40-45% in temperate-climate, well-managed facilities.</p>
+</section>
+<section id="critical-distinction-facility-opex-versus-compute-opex" class="level3">
+<h3 class="anchored" data-anchor-id="critical-distinction-facility-opex-versus-compute-opex">1.4 Critical distinction — facility OpEx versus compute OpEx</h3>
+<p>For a <em>colocation</em> deployment, the colocation provider runs the facility and the tenant runs the compute:</p>
+<ul>
+<li><strong>The colocation provider’s OpEx</strong> is the building, with electricity passed through “+E” (metered and recharged at cost) [Source: https://horizoniq.com/blog/colocation-pricing-guide/]. The provider’s <em>gross</em> OpEx includes energy, but their <em>net</em> OpEx (after passthroughs) is dominated by maintenance, staff, and lease — energy almost disappears from the provider’s economics because it is a pure passthrough.</li>
+<li><strong>The tenant’s OpEx</strong> is colocation rent (US$184–$215/kW/month wholesale in primary markets H2 2025, per CBRE) plus pass-through energy plus their own IT staff [Source: https://www.cbre.com/insights/reports/north-america-data-center-trends-h1-2025; https://www.aitooldiscovery.com/ai-infra/colocation-data-center-explained]. For the tenant, pass-through energy <em>is</em> the variable line item that scales with utilisation, but rent is fixed.</li>
+<li><strong>For a self-built hyperscaler</strong> (Microsoft, Meta, Google, AWS owning their own halls), all of these collapse into a single internal cost stack. NextDC’s Australian disclosures explicitly separate “power passthrough revenue” from base recurring revenue for this reason [Source: https://nextdc.com/hubfs/ASX%20Announcements/Annual%20Report%20FY25.pdf].</li>
+</ul>
+<p>A fair generalisation: in an owner-operator model, energy is 25-40% of facility cash OpEx at typical cloud utilisation. In a colocation tenant model, the <em>cash bill</em> the tenant writes looks much more energy-heavy at high utilisation because rent (the largest fixed component) is paid as kW reservation, not per kWh.</p>
+<hr>
+</section>
+</section>
+<section id="published-opex-breakdowns-ai-data-centres" class="level2">
+<h2 class="anchored" data-anchor-id="published-opex-breakdowns-ai-data-centres">2. Published OpEx breakdowns — AI data centres</h2>
+<p>Published OpEx breakdowns for purpose-built AI data centres are sparser than for traditional cloud, but a handful of credible decompositions exist.</p>
+<section id="semianalysis-meta-h100-cluster-tco" class="level3">
+<h3 class="anchored" data-anchor-id="semianalysis-meta-h100-cluster-tco">2.1 SemiAnalysis / Meta H100 cluster TCO</h3>
+<p>The most-cited public number is the SemiAnalysis decomposition of Meta’s 24,576-GPU H100 cluster (later mirrored in PyTorch-to-Atoms write-up):</p>
+<p><strong>Table 2: Meta 24k H100 cluster — 4-year TCO breakdown</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 63%">
+<col style="width: 24%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Component</th>
+<th style="text-align: right;">Share of TCO</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">H100 GPUs</td>
+<td style="text-align: right;">~46%</td>
+<td style="text-align: left;">65.8% of CapEx × 70.7% CapEx share</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">InfiniBand networking, CPU, storage</td>
+<td style="text-align: right;">~24%</td>
+<td style="text-align: left;">Remaining CapEx</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Colocation (rent)</td>
+<td style="text-align: right;">~20%</td>
+<td style="text-align: left;">OpEx, fixed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Electricity</td>
+<td style="text-align: right;">~9%</td>
+<td style="text-align: left;">OpEx, variable with utilisation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Other OpEx</td>
+<td style="text-align: right;">~1%</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>CapEx subtotal</strong></td>
+<td style="text-align: right;"><strong>~71%</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>OpEx subtotal</strong></td>
+<td style="text-align: right;"><strong>~29%</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: PyTorchToAtoms decomposition of SemiAnalysis Meta cluster TCO [https://pytorchtoatoms.substack.com/p/metas-24k-h100-cluster-capextco-and]. Cluster: 24,576 H100 SXM5 GPUs, 39-40 MW total facility load, 90% electricity utilisation rate assumed.</em></p>
+<p>Inside the OpEx-only (~$435M over four years) split, electricity is <strong>~32%</strong> of OpEx and colocation rent is the remaining ~68%. That is, of the <em>cash operating cost</em> of running an AI training cluster, roughly one-third is the electricity bill and two-thirds is colocation rent — a mostly-fixed pseudo-rent for space, cooling capability, redundant power feed, and security. Per-GPU TCO works out to <strong>US$1.49/H100-hour</strong> (excluding cost of capital), with <strong>US$0.16/hour attributable to electricity</strong> — about 11% of headline GPU-hour cost [Source: https://pytorchtoatoms.substack.com/p/metas-24k-h100-cluster-capextco-and].</p>
+<p>The 90% utilisation assumption is critical and is consistent with published descriptions of what a training run actually looks like: a synchronous workload that pushes the GPUs near saturation continuously for weeks at a time.</p>
+</section>
+<section id="semianalysis-ai-datacenter-energy-dilemma-facility-energy-intensity" class="level3">
+<h3 class="anchored" data-anchor-id="semianalysis-ai-datacenter-energy-dilemma-facility-energy-intensity">2.2 SemiAnalysis AI Datacenter Energy Dilemma — facility energy intensity</h3>
+<p>For a cluster with 20,480 GPUs at 80% utilisation and PUE 1.25, SemiAnalysis estimates <strong>~US$20.7M annual electricity cost</strong> at a US average tariff of <strong>$0.083/kWh</strong> [Source: https://newsletter.semianalysis.com/p/ai-datacenter-energy-dilemma-race]. Per-GPU power, including overheads, is ~1.39 kW — so the cluster runs at ~28 MW continuous. That implies an electricity cost of roughly <strong>US$0.74M per MW per year</strong> at US wholesale-ish prices.</p>
+<p>For comparison, the same cluster in Singapore (US$0.23/kWh) would cost ~US$57M/year for the same energy — a 2.8x multiplier from location alone [Source: https://newsletter.semianalysis.com/p/ai-datacenter-energy-dilemma-race].</p>
+</section>
+<section id="inference-clusters" class="level3">
+<h3 class="anchored" data-anchor-id="inference-clusters">2.3 Inference clusters</h3>
+<p>Inference economics have been mapped at ratio-form rather than absolute-form in most public sources. Two public decompositions stand out:</p>
+<ul>
+<li><p><strong>Martin Alderson’s reverse-engineered H100 inference cost analysis</strong>: at $2/H100/hour blended cost and a 72-H100 cluster running 9 model instances with batch-32 concurrency, the <em>raw compute</em> cost is “~$0.003 per million input tokens, ~$3.08 per million output tokens” with implied gross margins on API pricing of 80-95% [Source: https://martinalderson.com/posts/are-openai-and-anthropic-really-losing-money-on-inference/]. Alderson does not separately decompose electricity within that $2/H100-hour, but using SemiAnalysis-style assumptions (electricity at ~$0.16-0.25/H100-hour at US wholesale) implies electricity is ~8-12% of the inference cluster’s <em>all-in</em> hourly cost, with the rest being depreciation and colocation.</p></li>
+<li><p><strong>Spheron / Introl inference cost guides</strong>: place per-H100 cloud rental at $2.85-3.50/hour with operational overhead “approximately $2-7 per hour” added for cooling, facilities and maintenance [Source: https://introl.com/blog/inference-unit-economics-true-cost-per-million-tokens-guide]. In the higher-overhead scenario (rare-earth power markets, complex liquid cooling), electricity-driven OpEx can lift the all-in to $5-10/H100-hour.</p></li>
+</ul>
+<p>The crucial difference between inference and training is <strong>utilisation</strong>, not architecture. NVIDIA’s own perspective piece on inference cluster economics quantifies the punishment: “a cluster running at 40% utilisation produces twice the effective cost per token compared to the same cluster at 80% utilisation, regardless of the hardware platform” [Source: https://perspectives.nvidia.com/utilization-rates-inference-cluster-economics-hardware/]. Real-world inference deployments run at much lower utilisation than training: published examples include a deployment with average GPU utilisation of 22% (idle 7pm-8am and weekends), and the GPT-4 training run on 25,000 A100s where average utilisation was reported at 32-36% [Source: https://www.spheron.network/blog/ai-inference-cost-economics-2026/].</p>
+</section>
+<section id="liquid-cooling-and-pue" class="level3">
+<h3 class="anchored" data-anchor-id="liquid-cooling-and-pue">2.4 Liquid cooling and PUE</h3>
+<p>AI training facilities are pushing PUE down hard via direct-to-chip and immersion cooling:</p>
+<ul>
+<li>Direct-to-chip liquid cooling (DLC): <strong>PUE 1.10-1.20</strong> versus 1.55-1.67 air [Source: https://www.kad8.com/server/data-center-liquid-cooling-for-ai-workloads-2026/].</li>
+<li>Immersion cooling: <strong>PUE 1.03-1.08</strong> at 64-rack scale [Source: https://www.kad8.com/server/data-center-liquid-cooling-for-ai-workloads-2026/].</li>
+<li>AirTrunk’s Australian campuses report annual operating PUE targets of <strong>1.23-1.28</strong> with design PUE as low as 1.15 [Source: https://airtrunk.com/sustainability/clean-energy/].</li>
+<li>OpenAI’s Stargate Abilene campus runs zero-water-evaporation closed-loop liquid cooling on every NVIDIA GB200 rack [Source: https://intuitionlabs.ai/articles/openai-stargate-datacenter-details].</li>
+</ul>
+<p>Why this matters for the OpEx mix: at a given IT load, dropping PUE from 1.5 to 1.2 cuts the <em>cooling-attributable</em> electricity by about 60%, which trims the total electricity bill by ~20%. That is a non-trivial efficiency gain but does not change the qualitative thesis — at 90% utilisation, electricity is still the dominant variable cost.</p>
+</section>
+<section id="people-intensity" class="level3">
+<h3 class="anchored" data-anchor-id="people-intensity">2.5 People intensity</h3>
+<p>This is where AI facilities differ most starkly from traditional colocation:</p>
+<p><strong>Table 3: Indicative staffing benchmarks (FTE per MW of operating capacity)</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Facility type</th>
+<th style="text-align: right;">FTE per MW</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mid colocation (3-5 MW, multi-tenant)</td>
+<td style="text-align: right;">~6-12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Large enterprise / Tier III-IV (20-40 MW)</td>
+<td style="text-align: right;">~1.0-1.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hyperscale cloud campus (&gt;100 MW)</td>
+<td style="text-align: right;">~0.4-1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Highly automated hyperscale (&gt;100 MW)</td>
+<td style="text-align: right;">~0.2-0.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AI training campus (Stargate-class, GW-scale)</td>
+<td style="text-align: right;">&lt;0.2 (estimated)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Broadstaff Global data centre staffing benchmarks [https://broadstaffglobal.com/data-center-staffing-levels-how-many-people-does-a-facility-need]; The Fix data centre staffing 2026 guide [https://blog.thefix.it.com/how-many-employees-are-needed-to-run-a-data-center-2026-guide/]; Uptime Institute people challenge forecast 2021-2025 [https://intelligence.uptimeinstitute.com/resource/people-challenge-global-data-center-staffing-forecast-2021-2025]. AI campus row is an estimate based on published descriptions of single-tenant, single-workload facilities; we are not aware of a published AI-campus FTE/MW disclosure.</em></p>
+<p>A 100 MW AI training campus at 0.2 FTE/MW employs ~20 people; the same 100 MW spread across colocation halls supporting 50 enterprise customers might employ 200-400 people. The labour OpEx differential at typical AU/US fully-loaded wages of A$120-180k per FTE is the difference between ~A$3M/year and ~A$50M/year in staff cost — a meaningful contributor to why AI-dedicated facilities have a more energy-skewed OpEx mix.</p>
+<hr>
+</section>
+</section>
+<section id="the-utilisation-energy-share-relationship-worked-example" class="level2">
+<h2 class="anchored" data-anchor-id="the-utilisation-energy-share-relationship-worked-example">3. The utilisation-energy share relationship: worked example</h2>
+<p>This is where the thesis lives or dies. Take a 100 MW IT-load data centre with PUE 1.3 (mid-range modern), in a US wholesale market paying <strong>US$80/MWh</strong> all-in retail (commercial tariff including transmission, capacity, demand charges).</p>
+<p>Fixed and quasi-fixed annual OpEx, regardless of utilisation:</p>
+<ul>
+<li>Staff (60 FTE @ US$130k loaded): <strong>US$7.8M</strong></li>
+<li>Maintenance contracts, consumables, parts: <strong>US$15M</strong> (US$150k/MW)</li>
+<li>Software, DCIM, security tools: <strong>US$4M</strong></li>
+<li>Insurance, property tax, compliance: <strong>US$3M</strong></li>
+<li>Connectivity (peering, transit minimum commits): <strong>US$2M</strong></li>
+<li><strong>Fixed OpEx subtotal: ~US$32M/year</strong></li>
+</ul>
+<p>(Land/lease excluded — assumed owner-operator. For a colo tenant, add ~US$220M/year at ~US$185/kW/month.)</p>
+<p>Variable OpEx scales with utilisation: energy = utilisation × 100 MW × 8760 h × 1.3 PUE × $80/MWh.</p>
+<p><strong>Table 4: 100 MW US owner-operated facility — OpEx by utilisation (PUE 1.3, US$80/MWh all-in)</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 60%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Utilisation</th>
+<th style="text-align: right;">30%</th>
+<th style="text-align: right;">60%</th>
+<th style="text-align: right;">90%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IT energy (MWh/yr)</td>
+<td style="text-align: right;">262,800</td>
+<td style="text-align: right;">525,600</td>
+<td style="text-align: right;">788,400</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total facility energy (PUE 1.3)</td>
+<td style="text-align: right;">341,640</td>
+<td style="text-align: right;">683,280</td>
+<td style="text-align: right;">1,024,920</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Annual energy cost (US$M)</td>
+<td style="text-align: right;">$27.3</td>
+<td style="text-align: right;">$54.7</td>
+<td style="text-align: right;"><span class="math inline">\(82.0 |
+| Fixed OpEx (US\)</span>M)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Energy as % of OpEx</strong></td>
+<td style="text-align: right;"><strong>46%</strong></td>
+<td style="text-align: right;"><strong>63%</strong></td>
+<td style="text-align: right;"><strong>72%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: author’s calculation; benchmarks from Thunder Said Energy and alpha-matica for fixed-OpEx categories.</em></p>
+<p>The thesis holds quantitatively. At 30% utilisation (representative of typical underutilised cloud or sporadic inference), energy is ~46% of OpEx — meaningful but not dominant. At 90% utilisation (steady-state training), energy is ~72% — clearly dominant. The crossover from “fixed-cost-dominated” to “energy-dominated” happens around 30-40% utilisation in a US$80/MWh environment.</p>
+<section id="same-example-at-australian-prices" class="level3">
+<h3 class="anchored" data-anchor-id="same-example-at-australian-prices">3.1 Same example at Australian prices</h3>
+<p>Repeat with Australian retail commercial pricing — say <strong>A$140/MWh</strong> all-in (this is reasonable for a NextDC- or AirTrunk-scale customer in NSW or QLD pulling firmed retail; spot wholesale averaged A$76/MWh in NSW and A$63/MWh in QLD in November 2025 [Source: https://leadingedgeenergy.com.au/news/electricity-market-review-latest/], but firmed retail with network charges roughly doubles that). Convert fixed OpEx to AUD at 1 USD = 1.55 AUD: ~A$50M/year fixed.</p>
+<p><strong>Table 5: 100 MW Australian owner-operated facility — OpEx by utilisation (PUE 1.3, A$140/MWh all-in)</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 60%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Utilisation</th>
+<th style="text-align: right;">30%</th>
+<th style="text-align: right;">60%</th>
+<th style="text-align: right;">90%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Total facility energy (MWh/yr)</td>
+<td style="text-align: right;">341,640</td>
+<td style="text-align: right;">683,280</td>
+<td style="text-align: right;">1,024,920</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Annual energy cost (A$M)</td>
+<td style="text-align: right;">$47.8</td>
+<td style="text-align: right;">$95.7</td>
+<td style="text-align: right;"><span class="math inline">\(143.5 |
+| Fixed OpEx (A\)</span>M)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Energy as % of OpEx</strong></td>
+<td style="text-align: right;"><strong>49%</strong></td>
+<td style="text-align: right;"><strong>66%</strong></td>
+<td style="text-align: right;"><strong>74%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: author’s calculation; AEMO/AER NEM wholesale price data for FY25-26 underpinning A$140/MWh firm retail assumption.</em></p>
+<p>The Australian numbers are qualitatively similar to the US case at the higher utilisation end because energy share is driven by the <em>ratio</em> of energy cost to fixed cost, not the absolute level. But the <strong>dollar OpEx is ~70% higher</strong> in absolute terms — a much bigger absolute exposure to electricity price.</p>
+</section>
+<section id="sensitivity-moving-pue-and-electricity-price" class="level3">
+<h3 class="anchored" data-anchor-id="sensitivity-moving-pue-and-electricity-price">3.2 Sensitivity — moving PUE and electricity price</h3>
+<p><strong>Table 6: Energy as % of facility OpEx, 100 MW at 60% utilisation, sensitivity</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">US$/MWh ↓ / PUE →</th>
+<th style="text-align: right;">1.1</th>
+<th style="text-align: right;">1.3</th>
+<th style="text-align: right;">1.5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">$50</td>
+<td style="text-align: right;">45%</td>
+<td style="text-align: right;">49%</td>
+<td style="text-align: right;">53%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">$80</td>
+<td style="text-align: right;">59%</td>
+<td style="text-align: right;">63%</td>
+<td style="text-align: right;">66%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">$120</td>
+<td style="text-align: right;">69%</td>
+<td style="text-align: right;">72%</td>
+<td style="text-align: right;">74%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: author’s calculation, fixed OpEx at US$32M/year held constant.</em></p>
+<p>Two takeaways: PUE matters less than commonly assumed when energy is already dominant (~5pp impact across a wide PUE range). Electricity price matters a lot — moving from US$50/MWh (Quincy WA, hydro) to US$120/MWh (NYISO, ConEd commercial) shifts energy share by ~25pp at the same utilisation.</p>
+<hr>
+</section>
+</section>
+<section id="people-intensity-traditional-vs-ai" class="level2">
+<h2 class="anchored" data-anchor-id="people-intensity-traditional-vs-ai">4. People intensity: traditional vs AI</h2>
+<p>The Uptime Institute survey finds that operators continue to report staffing pressures — North America and Europe report difficulty filling junior operator roles; women remain ~10% or less of operations staff in 80% of respondents [Source: https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2024.GlobalDataCenterSurvey.Report.pdf].</p>
+<p>In dollar terms, staff is a meaningful but rarely dominant line:</p>
+<ul>
+<li>A 12 MW facility employing 20 FTE at fully-loaded US$120k = <strong>US$2.4M/year</strong>, ~5-8% of facility OpEx.</li>
+<li>A 40 MW facility employing 45 FTE at US$120k = <strong>US$5.4M/year</strong>, similar share.</li>
+<li>A 100 MW hyperscale at 0.4 FTE/MW (40 FTE) = <strong>US$4.8M/year</strong>, ~5% of OpEx at typical utilisation.</li>
+<li>A 100 MW AI training campus at 0.2 FTE/MW (20 FTE) = <strong>US$2.4M/year</strong>, ~2-3% of OpEx.</li>
+</ul>
+<p>[Source: https://broadstaffglobal.com/data-center-staffing-levels-how-many-people-does-a-facility-need; https://blog.thefix.it.com/how-many-employees-are-needed-to-run-a-data-center-2026-guide/]</p>
+<p>The <em>qualitative</em> importance of staff (talent shortages, certifications, 24/7 cover) is substantial; the <em>cost</em> importance is a single-digit share even in colocation. The thesis should be refined: it is not that “people costs are at least as important as energy costs” in absolute dollar terms — they typically aren’t, even in traditional cloud. It is that <strong>fixed costs collectively</strong> (staff + maintenance + software + tax + insurance) are at least as important as energy in low-utilisation environments.</p>
+<hr>
+</section>
+<section id="australian-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="australian-comparison">5. Australian comparison</h2>
+<section id="nextdc-fy25-the-only-listed-co-disclosure-available" class="level3">
+<h3 class="anchored" data-anchor-id="nextdc-fy25-the-only-listed-co-disclosure-available">5.1 NextDC FY25 — the only listed-co disclosure available</h3>
+<p>NextDC reported FY25 net revenue of <strong>A$350.2M</strong> (+14% YoY) and underlying EBITDA of <strong>A$216.7M</strong> (+6%), on billing utilisation of <strong>110.9 MW</strong> at year-end and contracted utilisation of <strong>244.8 MW</strong> (+42% pro-forma) [Source: https://www.proactiveinvestors.com/companies/news/1077497/nextdc-rallies-17-on-fy25-results-and-upbeat-ai-driven-outlook-1077497.html; https://nextdc.com/hubfs/ASX%20Announcements/Annual%20Report%20FY25.pdf]. Net revenue is <em>gross revenue less direct costs</em>, where “direct costs” are predominantly customer power passthrough and a small cost-of-sales tail.</p>
+<p>NextDC’s commentary on FY25 direct costs is informative: “Direct costs fell in FY25, reflecting the benefit of lower contracted energy prices compared with FY24.” Facility cost growth was attributed to “higher facility staff costs from new data centre openings, expanded capacity and investments in physical security &amp; systems, increased water and sewerage expenses aligned with customer consumption growth, higher maintenance costs due to significant increase in built and operating capacity to meet demand, and increased property costs reflecting land banks, new site acquisitions, and land revaluations” [Source: https://nextdc.com/hubfs/ASX%20Announcements/Annual%20Report%20FY25.pdf]. The list is a textbook traditional-colo OpEx mix: staff, security, water, maintenance, property — energy is conspicuously <em>not</em> in the list, because it’s a passthrough.</p>
+<p>A back-of-envelope: gross revenue ≈ A$350M net + A$200-300M power passthrough ≈ A$550-650M; with billing of ~111 MW that’s ~A$5-6M revenue per operating MW — consistent with reported wholesale colocation rates pushing past A$220/kW/month in Sydney’s core zones [Source: per Australian colo market commentary].</p>
+</section>
+<section id="airtrunk" class="level3">
+<h3 class="anchored" data-anchor-id="airtrunk">5.2 AirTrunk</h3>
+<p>AirTrunk operates &gt;2.6 GW across six markets; Australian operating capacity (SYD1+SYD2+SYD3+MEL1+MEL2) will exceed <strong>1.2 GW</strong> when fully built [Source: https://airtrunk.com/airtrunk-expands-australian-platform-with-a-second-hyperscale-data-centre-campus-in-melbourne/]. AirTrunk’s FY24 sustainability report puts annual operating PUE on a downward path toward a <strong>1.23-1.28 target</strong> with design PUE of 1.15 — best-in-region [Source: https://airtrunk.com/sustainability/clean-energy/]. AirTrunk does not break out OpEx by category in its sustainability reports; financial statements are not public following the September 2024 sale to Blackstone.</p>
+</section>
+<section id="the-australian-energy-share-premium" class="level3">
+<h3 class="anchored" data-anchor-id="the-australian-energy-share-premium">5.3 The Australian energy share premium</h3>
+<p>The CBRE H2 2025 colocation pricing data shows Sydney core zone wholesale rates pushing past <strong>US$150/kW/month</strong> (~A$232/kW/month) — high but still below Silicon Valley ($230-270) and similar to Northern Virginia [Source: https://www.cbre.com/insights/reports/north-america-data-center-trends-h1-2025; https://www.aitooldiscovery.com/ai-infra/colocation-data-center-explained]. So <em>colocation rent</em> is in the same ballpark globally.</p>
+<p>What differs is the <strong>electricity cost per MWh</strong> that flows through to the tenant. With NSW/QLD firmed retail commercial supply running roughly A$120-160/MWh against US Tier-1 markets at US$60-100/MWh (~A$95-155/MWh), Australian energy share at any given utilisation is <strong>~30-50% higher</strong> than the US equivalent in absolute dollar terms — which is what makes the Australian operating economics of an AI cluster particularly sensitive to PPA pricing.</p>
+<hr>
+</section>
+</section>
+<section id="implications-for-the-economics-of-ai-data-centres" class="level2">
+<h2 class="anchored" data-anchor-id="implications-for-the-economics-of-ai-data-centres">6. Implications for the economics of AI data centres</h2>
+<p>If the thesis is right — and the worked examples support it at 30/60/90% utilisation — there are a small number of consequential downstream implications for the planned economics piece:</p>
+<ol type="1">
+<li><p><strong>For training clusters at 80-95% utilisation, energy is the dominant cash operating cost.</strong> A 100 MW training campus running 90% utilisation in a US$80/MWh market is spending ~US$80M/year on electricity against ~US$30M/year on everything else combined. At Australian prices this is ~A$140M against ~A$50M.</p></li>
+<li><p><strong>PPA pricing matters more for AI than for cloud.</strong> A 10% improvement in $/MWh contracted price improves training-cluster cash margin by ~7% directly. The same improvement for a 30%-utilised cloud facility moves margin by only ~3-4%. That is why hyperscalers are willing to pay massive premia (e.g.&nbsp;Microsoft’s Three Mile Island deal, Stargate’s onsite gas) to lock in firm, low-priced power.</p></li>
+<li><p><strong>Inference utilisation variability is itself a cost-structure problem.</strong> A frontier inference cluster oscillating between 20% utilisation overnight and 90% utilisation during peak hours faces the worst of both worlds — it pays for fixed cost continuously but only earns revenue when utilised. NVIDIA’s own analysis shows the cost-per-token doubles at 40% utilisation versus 80% [Source: https://perspectives.nvidia.com/utilization-rates-inference-cluster-economics-hardware/]. This is the economic argument for batching, multi-tenant inference, and time-shifting workloads to track cheap power.</p></li>
+<li><p><strong>Per-token sensitivity to electricity price.</strong> Using the SemiAnalysis Meta-cluster numbers as anchor (US$0.16/H100-hour electricity), a Hopper-class GPU producing ~500-1000 output tokens/sec at saturation generates ~1.8-3.6M tokens/hour, putting electricity at roughly <strong>US$0.04-0.09 per million output tokens</strong> at US wholesale prices. Anthropic and OpenAI publicly charge US$3-25 per million output tokens [Source: https://www.finout.io/blog/openai-vs-anthropic-api-pricing-comparison]. Electricity is therefore on the order of <strong>0.2-3% of revenue per token</strong> at API list prices — but a much larger share of <em>cost</em>, which is why inference gross margin expansion correlates so tightly with model efficiency improvements (Blackwell’s claimed ~35x lower cost per million tokens vs Hopper [Source: https://blogs.nvidia.com/blog/lowest-token-cost-ai-factories/]).</p></li>
+<li><p><strong>GPU depreciation remains the elephant.</strong> The Meta cluster TCO is <strong>71% CapEx amortisation, 29% OpEx</strong>, of which two-thirds of OpEx is rent. Electricity is “only” ~9% of TCO. So while energy is the dominant <em>operating</em> cost at high utilisation, it is still well behind GPU depreciation in any total-cost framing. The thesis is correctly framed as about <em>cash operating cost</em>, not total cost of operating.</p></li>
+</ol>
+<hr>
+</section>
+<section id="caveats" class="level2">
+<h2 class="anchored" data-anchor-id="caveats">7. Caveats</h2>
+<ul>
+<li><strong>OpEx-versus-TCO confusion is endemic in industry sources.</strong> Many “energy is X% of cost” claims silently lump in amortised IT refresh; most of those should be read as TCO statements, not OpEx statements.</li>
+<li><strong>Wholesale-versus-retail distinction matters.</strong> A US$50/MWh wholesale price typically becomes US$70-100/MWh delivered after T&amp;D, capacity, demand charges, and retailer margin. AU NEM prices behave similarly. We have used delivered/retail throughout the worked examples.</li>
+<li><strong>PUE is a deceptive simplification.</strong> Real-world AI facilities can show PUE drift up under partial load (cooling systems lose efficiency below design point). The 1.10-1.20 numbers cited are <em>design</em> PUE; published <em>operating</em> PUE for the same facility class typically runs 1.20-1.35.</li>
+<li><strong>Tenant-versus-operator perspective produces different OpEx mixes.</strong> The same physical kWh shows up as passthrough revenue for the colo provider, as cost-of-goods for the tenant, and as “energy” in industry survey aggregates — hence apparent contradictions across sources.</li>
+<li><strong>GPU depreciation is the elephant in the room for AI.</strong> The thesis is about <em>cash operating cost</em>; total cost of operating an AI cluster is still dominated by GPU CapEx amortisation over a 4-6 year life. This note treats that as out-of-scope.</li>
+<li><strong>Australian disclosures are thin.</strong> NextDC is the only ASX-listed pure-play; AirTrunk and CDC publish sustainability metrics but not OpEx breakdowns. The numbers in section 5 are necessarily inferred from rate cards, sustainability reports, and the comparable US data.</li>
+</ul>
+<section id="what-david-would-need-to-commission-to-fill-the-gaps" class="level3">
+<h3 class="anchored" data-anchor-id="what-david-would-need-to-commission-to-fill-the-gaps">What David would need to commission to fill the gaps</h3>
+<ul>
+<li>A bottom-up OpEx model for an Australian 50-100 MW AI campus benchmarked against AirTrunk rate cards and AEMO retail tariff data (estimated ~3 weeks of analyst time).</li>
+<li>Direct discussion with a colo operator (NextDC, CDC, AirTrunk) under NDA on per-MW cost of power passthrough and net energy share for AI tenants — feasible if a research-relationship NDA can be set up.</li>
+<li>SemiAnalysis institutional subscription to access their AI Cloud TCO Model with explicit Australian electricity price scenarios (US$30k+/year list, but high-quality data for a one-off piece could be obtained via per-report purchase).</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="bibliography" class="level2">
+<h2 class="anchored" data-anchor-id="bibliography">8. Bibliography</h2>
+<section id="industry-surveys-and-authoritative-sources" class="level3">
+<h3 class="anchored" data-anchor-id="industry-surveys-and-authoritative-sources">Industry surveys and authoritative sources</h3>
+<ul>
+<li>Uptime Institute, <em>Global Data Center Survey 2025</em>. https://uptimeinstitute.com/resources/research-and-reports/uptime-institute-global-data-center-survey-results-2025</li>
+<li>Uptime Institute, <em>Global Data Center Survey 2024</em>. https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2024.GlobalDataCenterSurvey.Report.pdf</li>
+<li>Uptime Institute, <em>People Challenge: Global Data Center Staffing Forecast 2021-2025</em>. https://intelligence.uptimeinstitute.com/resource/people-challenge-global-data-center-staffing-forecast-2021-2025</li>
+<li>Lawrence Berkeley National Laboratory, <em>2024 United States Data Center Energy Usage Report</em> (Dec 2024). https://eta.lbl.gov/publications/2024-lbnl-data-center-energy-usage-report</li>
+<li>US DOE press release on LBNL 2024 report. https://www.energy.gov/articles/doe-releases-new-report-evaluating-increase-electricity-demand-data-centers</li>
+<li>IEA, <em>Energy and AI</em> (2025). https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai</li>
+<li>CBRE, <em>North America Data Center Trends H1 2025</em>. https://www.cbre.com/insights/reports/north-america-data-center-trends-h1-2025</li>
+<li>CBRE, <em>North America Data Center Trends H2 2025</em>. https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025</li>
+<li>JLL, <em>2026 Global Data Center Outlook</em>. https://www.jll.com/en-us/insights/market-outlook/data-center-outlook</li>
+<li>JLL, <em>North America Data Center Report Year-end 2025</em>. https://www.jll.com/en-us/insights/market-dynamics/north-america-data-centers</li>
+<li>Cushman &amp; Wakefield, <em>US Data Center Development Cost Guide</em>. https://www.cushmanwakefield.com/en/united-states/insights/data-center-development-cost-guide</li>
+</ul>
+</section>
+<section id="ai-cluster-tco-and-energy" class="level3">
+<h3 class="anchored" data-anchor-id="ai-cluster-tco-and-energy">AI cluster TCO and energy</h3>
+<ul>
+<li>SemiAnalysis (via PyTorchToAtoms), <em>Meta’s 24k H100 Cluster CapEx/TCO and BoM Analysis</em>. https://pytorchtoatoms.substack.com/p/metas-24k-h100-cluster-capextco-and</li>
+<li>SemiAnalysis, <em>AI Datacenter Energy Dilemma — Race for AI Datacenter Space</em>. https://newsletter.semianalysis.com/p/ai-datacenter-energy-dilemma-race</li>
+<li>SemiAnalysis, <em>AI Cloud TCO Model</em>. https://newsletter.semianalysis.com/p/ai-cloud-tco-model</li>
+<li>SemiAnalysis, <em>How Much Do GPU Clusters Really Cost?</em> https://newsletter.semianalysis.com/p/how-much-do-gpu-clusters-really-cost</li>
+<li>SemiAnalysis, <em>H100 vs GB200 NVL72 Training Benchmarks — Power, TCO, and Reliability</em>. https://newsletter.semianalysis.com/p/h100-vs-gb200-nvl72-training-benchmarks</li>
+<li>Aschenbrenner, L., <em>Situational Awareness — Racing to the Trillion-Dollar Cluster</em>. https://situational-awareness.ai/racing-to-the-trillion-dollar-cluster/</li>
+<li>NVIDIA Perspectives, <em>How Utilization Drives AI Inference ROI</em>. https://perspectives.nvidia.com/utilization-rates-inference-cluster-economics-hardware/</li>
+<li>NVIDIA blog, <em>Rethinking AI TCO: Why Cost per Token Is the Only Metric That Matters</em>. https://blogs.nvidia.com/blog/lowest-token-cost-ai-factories/</li>
+<li>Alderson, M., <em>Are OpenAI and Anthropic Really Losing Money on Inference?</em> https://martinalderson.com/posts/are-openai-and-anthropic-really-losing-money-on-inference/</li>
+<li>Introl, <em>Inference Unit Economics: The True Cost Per Million Tokens</em>. https://introl.com/blog/inference-unit-economics-true-cost-per-million-tokens-guide</li>
+<li>Introl, <em>Power Purchase Agreements (PPAs) for AI Data Centers</em>. https://introl.com/blog/power-purchase-agreements-ai-data-centers-renewable-energy-strategies</li>
+<li>Spheron, <em>AI Inference Cost Economics in 2026: GPU FinOps Playbook</em>. https://www.spheron.network/blog/ai-inference-cost-economics-2026/</li>
+</ul>
+</section>
+<section id="industry-cost-decompositions" class="level3">
+<h3 class="anchored" data-anchor-id="industry-cost-decompositions">Industry cost decompositions</h3>
+<ul>
+<li>Thunder Said Energy, <em>Data centres: the economics</em>. https://thundersaidenergy.com/downloads/data-centers-the-economics/</li>
+<li>alpha-matica, <em>Deconstructing the Data Center: A Look at the Cost Structure</em>. https://www.alpha-matica.com/post/deconstructing-the-data-center-a-look-at-the-cost-structure-1</li>
+<li>The Network Installers, <em>Data Center Operating Costs: Complete Guide (2026)</em>. https://thenetworkinstallers.com/blog/data-center-operating-costs/</li>
+<li>MCIM, <em>5 CapEx &amp; OpEx Strategies For Data Center Cost Reduction</em>. https://mcim24x7.com/resources/successful-capex-opex-strategies/</li>
+<li>BroadStaff Global, <em>Data Center Staffing Levels: How Many People Does a Facility Need?</em> https://broadstaffglobal.com/data-center-staffing-levels-how-many-people-does-a-facility-need</li>
+<li>The Fix, <em>How Many Employees Are Needed to Run a Data Center? (2026 Guide)</em>. https://blog.thefix.it.com/how-many-employees-are-needed-to-run-a-data-center-2026-guide/</li>
+<li>AI Tool Discovery, <em>Colocation Data Center Costs: $196/kW and Rising in 2026</em>. https://www.aitooldiscovery.com/ai-infra/colocation-data-center-explained</li>
+<li>HorizonIQ, <em>Colocation Pricing Guide: Power, Space and Key Questions to Ask Your Provider</em>. https://www.horizoniq.com/blog/colocation-pricing-guide/</li>
+</ul>
+</section>
+<section id="cooling-pue-and-infrastructure" class="level3">
+<h3 class="anchored" data-anchor-id="cooling-pue-and-infrastructure">Cooling, PUE, and infrastructure</h3>
+<ul>
+<li>KAD8, <em>Data Center Liquid Cooling for AI Workloads (2026)</em>. https://www.kad8.com/server/data-center-liquid-cooling-for-ai-workloads-2026/</li>
+<li>IntuitionLabs, <em>OpenAI’s Stargate Project: A Guide to the AI Infrastructure</em>. https://intuitionlabs.ai/articles/openai-stargate-datacenter-details</li>
+</ul>
+</section>
+<section id="hyperscaler-self-disclosure" class="level3">
+<h3 class="anchored" data-anchor-id="hyperscaler-self-disclosure">Hyperscaler self-disclosure</h3>
+<ul>
+<li>Microsoft, <em>2024 Environmental Sustainability Report</em>. https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Microsoft-2024-Environmental-Sustainability-Report.pdf</li>
+<li>Microsoft, <em>2025 Environmental Sustainability Report</em>. https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2025-Microsoft-Environmental-Sustainability-Report.pdf</li>
+<li>DCD, <em>Meta data center electricity consumption hits 14,975 GWh</em>. https://www.datacenterdynamics.com/en/news/meta-data-center-electricity-consumption-hits-14975gwh-leased-data-center-use-nearly-doubles/</li>
+</ul>
+</section>
+<section id="australian-sources" class="level3">
+<h3 class="anchored" data-anchor-id="australian-sources">Australian sources</h3>
+<ul>
+<li>NextDC, <em>FY25 Annual Report and Appendix 4E</em> (Aug 2025). https://nextdc.com/hubfs/ASX%20Announcements/Annual%20Report%20FY25.pdf</li>
+<li>NextDC, <em>FY25 Full Year Results Presentation</em>. https://www.nextdc.com/hubfs/ASX%20Announcements/FY25%20Full%20Year%20Results%20Presentation.pdf</li>
+<li>ProactiveInvestors, <em>NextDC rallies 17% on FY25 results and upbeat AI-driven outlook</em>. https://www.proactiveinvestors.com/companies/news/1077497/nextdc-rallies-17-on-fy25-results-and-upbeat-ai-driven-outlook-1077497.html</li>
+<li>AirTrunk, <em>Clean Energy</em>. https://airtrunk.com/sustainability/clean-energy/</li>
+<li>AirTrunk, <em>FY24 Sustainability Report</em>. https://airtrunk.com/wp-content/uploads/2024/10/FY24-Sustainability-Report-by-AirTrunk.pdf</li>
+<li>AirTrunk, <em>Australian platform expansion announcements</em> (2025). https://airtrunk.com/airtrunk-expands-australian-platform-with-a-second-hyperscale-data-centre-campus-in-melbourne/</li>
+<li>Leading Edge Energy, <em>November 2025 Electricity Market Rates Review</em> (NEM wholesale prices). https://leadingedgeenergy.com.au/news/electricity-market-review-latest/</li>
+<li>AEMO, <em>NEM Data Dashboard</em>. https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/data-nem/data-dashboard-nem</li>
+</ul>
+</section>
+<section id="utilisation-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="utilisation-analysis">Utilisation analysis</h3>
+<ul>
+<li>powerpolicy.net, <em>The Puzzle of Low Data Center Utilization Rates</em>. https://www.powerpolicy.net/p/the-puzzle-of-low-data-center-utilization</li>
+<li>aixenergy.io, <em>Managing Data Center Uncertainty Part III — The Utilization Paradox</em>. https://www.aixenergy.io/managing-data-center-uncertainty-part-iii-the-utilization-paradox-scarcity-and-waste-inside-ai-infrastructure/</li>
+<li>arxiv:2509.07218, <em>Electricity Demand and Grid Impacts of AI Data Centers</em>. https://arxiv.org/html/2509.07218v2</li>
+</ul>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

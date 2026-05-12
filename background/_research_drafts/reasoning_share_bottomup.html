@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch">
+<meta name="dcterms.date" content="2026-05-11">
+
+<title>What share of LLM inference compute is reasoning? A bottom-up estimate</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="reasoning_share_bottomup_files/libs/clipboard/clipboard.min.js"></script>
+<script src="reasoning_share_bottomup_files/libs/quarto-html/quarto.js"></script>
+<script src="reasoning_share_bottomup_files/libs/quarto-html/popper.min.js"></script>
+<script src="reasoning_share_bottomup_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="reasoning_share_bottomup_files/libs/quarto-html/anchor.min.js"></script>
+<link href="reasoning_share_bottomup_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="reasoning_share_bottomup_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="reasoning_share_bottomup_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="reasoning_share_bottomup_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="reasoning_share_bottomup_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<meta name="quarto:status" content="draft">
+
+
+</head>
+
+<body class="fullcontent"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">What share of LLM inference compute is reasoning? A bottom-up estimate</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>David Leitch </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 11, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="purpose-and-scope" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-and-scope">Purpose and scope</h2>
+<p>The metric this note tries to pin down is the <strong>share of total LLM inference compute consumed by reasoning-mode queries</strong> — Claude with extended thinking, GPT-5/5.5 medium-and-above effort, Gemini 2.5 Pro thinking, DeepSeek-R1, Grok thinking modes — versus non-reasoning queries (short chat completions, autocomplete, classification, embeddings, simple tool calls).</p>
+<p>This is <strong>compute share</strong>, not query-count share. A reasoning query typically generates 5,000-50,000 internal “thinking” tokens before its visible answer. A chat query outputs ~150 tokens. Each thinking token costs the same memory-bound decode flops as any other output token [Source: https://magazine.sebastianraschka.com/p/state-of-llm-reasoning-and-inference-scaling]. So a single reasoning answer can consume 30-300× the GPU-seconds of a single chat answer, before accounting for the fact that reasoning queries also tend to run on the largest, most expensive model variants.</p>
+<p>The question matters for a power-system analyst because reasoning workloads are the part of the inference stack whose unit token volume is growing fastest, the part where per-query revenue is highest, and the part most likely to be served from the latest-generation accelerators with the highest power density. If reasoning is already the majority of inference flops, then the marginal new data centre is being built primarily to think out loud — and the marginal kWh follows that decision.</p>
+<hr>
+</section>
+<section id="published-estimates-and-anchor-points" class="level2">
+<h2 class="anchored" data-anchor-id="published-estimates-and-anchor-points">1. Published estimates and anchor points</h2>
+<p>There is no single authoritative public number for the reasoning share of inference compute. The closest thing is OpenRouter’s <em>State of AI 2025</em> token study, which is the only large-scale dataset of real production routing across many providers.</p>
+<p><strong>OpenRouter State of AI (Nov 2025).</strong> Across more than 100 trillion tokens of routed inference over ~13 months, the share of tokens routed to <strong>reasoning-optimised models</strong> rose from a “negligible slice” in early Q1 2025 to <strong>&gt;50% by late Q4 2025</strong> [Source: https://openrouter.ai/state-of-ai]. This is a token-share number, not a compute-share number, but for OpenRouter’s mix of mostly serious developer / coding workloads it is the cleanest anchor available. Programming-category traffic on the same platform grew from ~11% to &gt;50% of tokens over 2025; average completion length tripled from ~150 to ~400 tokens, and average sequence length more than tripled.</p>
+<p><strong>Google.</strong> Google disclosed processing 480T tokens/month at I/O in May 2025, 980T/month by July 2025, and ~1,300T/month (1.3 quadrillion) by October 2025 [Source: https://tomtunguz.com/is-token-consumption-slowing-down/]. Growth of ~250T/month between May and July decelerated to ~107T/month between July and October, suggesting Google’s volume now exceeds 1.5 quadrillion/month in May 2026 if linear growth continued. Google does not split reasoning from non-reasoning, but the bulk of Search AI Overviews traffic is short-form chat, while Gemini Deep Research and Gemini 2.5 Pro thinking are long-form reasoning.</p>
+<p><strong>Microsoft Foundry.</strong> Processed &gt;100T tokens in calendar Q3 2025, up 5× year-on-year [Source: https://tomtunguz.com/trillion-token-race/]. Microsoft has not split reasoning vs non-reasoning publicly.</p>
+<p><strong>Anthropic.</strong> Run-rate revenue $14B in February 2026, $30B in April 2026 [Source: https://www.businessofapps.com/data/claude-statistics/]. Claude Code at $2.5B run-rate in February 2026. The Anthropic Economic Index reports 36% of Claude.ai web usage is for coding, 44% of API usage falls under “computer and mathematical” categories. A back-of-envelope from $30B revenue at a blended ~$10/M tokens implies ~3 quadrillion billable tokens per year (~250T/month) for Anthropic — though the blended price is highly uncertain because of caching discounts and Haiku-vs-Opus mix [Source: https://platform.claude.com/docs/en/about-claude/pricing].</p>
+<p><strong>Epoch AI.</strong> Reasoning <em>training</em> compute for o1-class models was &lt;10% of GPT-4o pre-training compute, but is growing 10× every 3-5 months [Source: https://epoch.ai/blog/optimally-allocating-compute-between-inference-and-training]. Epoch has not published a reasoning-share-of-inference number.</p>
+<p><strong>Zylos / Gartner.</strong> Inference passed training in cumulative spend in early 2026; agentic workloads consume 5-30× more tokens per task than chatbots; multi-step agent completions cost 100-1,000× a single chat call [Source: https://zylos.ai/research/2026-04-13-inference-economics-ai-agent-compute-markets].</p>
+<p><strong>SemiAnalysis InferenceMAX.</strong> Their benchmark workload definitions code “reasoning workloads” as 1024 input / 8192 output tokens versus chat at 1024/1024 — i.e., a reference reasoning query is 8× the output of a reference chat query at minimum, before extended thinking [Source: https://newsletter.semianalysis.com/p/inferencemax-open-source-inference].</p>
+<p>The OpenRouter “&gt;50% of tokens are reasoning by Q4 2025” anchor is the single most useful number. It is consistent with — though slightly higher than — what a bottom-up segmentation produces, because OpenRouter’s customer base skews developer/coding-heavy.</p>
+<hr>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">2. Methodology</h2>
+<p>I decompose the global LLM inference market into six segments and quantify each with: monthly active users, queries per user per day, average input+output tokens per non-reasoning query, fraction of queries that trigger reasoning mode, and a reasoning intensity multiplier (how much more compute a reasoning query consumes vs a non-reasoning query in that segment).</p>
+<p>For each segment:</p>
+<ul>
+<li><strong>Non-reasoning compute</strong> = MAU × queries/day × 30 × tokens × (1 − reasoning_share)</li>
+<li><strong>Reasoning compute</strong> = MAU × queries/day × 30 × tokens × reasoning_share × intensity_multiplier</li>
+</ul>
+<p>Compute is denominated in <strong>token-equivalents per month</strong>. A token-equivalent is the GPU-second cost of one output token on a representative dense model. This deliberately ignores model-size differences (a Haiku token is cheaper than an Opus token) on the assumption that reasoning queries route to bigger models on average, which the multiplier already captures.</p>
+<p>Per-query token assumptions draw on: - Chat completion length: OpenRouter measured average completion at ~400 tokens by late 2025 (up from 150 a year earlier) [Source: https://openrouter.ai/state-of-ai]. - Reasoning chain-of-thought length: Anthropic minimum thinking budget is 1,024 tokens; recommended starting budget for complex tasks is 16,000+; 4k thinking tokens before a 500-token answer costs ~9× the bare answer [Source: https://platform.claude.com/docs/en/build-with-claude/extended-thinking]. GPT-5 high-reasoning effort uses 23× the tokens of GPT-5 minimal effort; on a published benchmark suite GPT-5 high consumed 82M, o3 50M, Gemini 2.5 Pro 98M, DeepSeek-R1 99M output tokens [Source: https://artificialanalysis.ai/articles/gpt-5-benchmarks-and-analysis]. - Coding agent task length: Claude Code sessions typically consume 10,000-100,000+ tokens per session [Source: https://www.verdent.ai/guides/claude-code-pricing-2026]; one developer’s eight-month total was 10 billion tokens (~40M tokens/day) [Source: https://martinalderson.com/posts/no-it-doesnt-cost-anthropic-5k-per-claude-code-user/].</p>
+<hr>
+</section>
+<section id="segment-by-segment-numbers-may-2026" class="level2">
+<h2 class="anchored" data-anchor-id="segment-by-segment-numbers-may-2026">3. Segment-by-segment numbers (May 2026)</h2>
+<section id="b2c-free-chat-chatgpt-free-claude.ai-free-gemini-app-free-meta-ai-grok-free-deepseek" class="level3">
+<h3 class="anchored" data-anchor-id="b2c-free-chat-chatgpt-free-claude.ai-free-gemini-app-free-meta-ai-grok-free-deepseek">3.1 B2C free chat (ChatGPT free, Claude.ai free, Gemini app free, Meta AI, Grok free, DeepSeek)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Provider</th>
+<th style="text-align: right;">MAU (M)</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ChatGPT (free tier, est. 80% of WAU base)</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: left;"><a href="https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users/">TechCrunch Feb 2026</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gemini app</td>
+<td style="text-align: right;">750</td>
+<td style="text-align: left;"><a href="https://techcrunch.com/2026/02/04/googles-gemini-app-has-surpassed-750m-monthly-active-users/">TechCrunch Feb 2026</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Google AI Overviews</td>
+<td style="text-align: right;">2,000</td>
+<td style="text-align: left;"><a href="https://www.getpanto.ai/blog/google-gemini-statistics">getpanto.ai</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Meta AI (FB/IG/WA)</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: left;"><a href="https://www.demandsage.com/meta-ai-users/">demandsage</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Claude.ai free</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;"><a href="https://www.demandsage.com/claude-ai-statistics/">demandsage</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Grok / X</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: left;">author estimate from X DAU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DeepSeek + Chinese consumer</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: left;"><a href="https://www.demandsage.com/deepseek-statistics/">demandsage</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total free B2C MAU (gross, double-counted)</strong></td>
+<td style="text-align: right;"><strong>~4,900</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>The Google AI Overviews number is the largest single line and the most distorting: each Overview is a single sub-200-token generation triggered by a search, not a conversation. I treat it separately.</p>
+<p><strong>Assumptions for free B2C chat (excluding AI Overviews):</strong> - Effective de-duplicated MAU: 1,500M (heavy overlap; many users use 2-3 assistants) - Queries/active user/day: 4 (industry estimate; ChatGPT public statements imply 3-6) - Tokens/query: 700 input + 400 output = 1,100 - Reasoning share: 5% (free tiers default to non-reasoning models; users have to actively pick reasoning, and free tiers usually rate-limit it heavily) - Reasoning intensity multiplier: 25× (free reasoning is usually capped — DeepSeek R1 free, Gemini 2.5 Flash thinking, ChatGPT free has limited o4-mini access)</p>
+<p>Monthly compute = 1,500M × 4 × 30 × 1,100 × (0.95 + 0.05 × 25) = 198,000T × 2.2 = <strong>436T token-equivalents/month</strong>.</p>
+<p>Of which reasoning = 1,500M × 4 × 30 × 1,100 × 0.05 × 25 = <strong>247T</strong>.</p>
+<p><strong>Google AI Overviews separately:</strong> 2,000M MAU × 30 searches/month × 200 output tokens × ~0% reasoning = <strong>12T tokens/month, ~all non-reasoning.</strong> (AI Overviews use a small Gemini variant and don’t deploy chain-of-thought.)</p>
+</section>
+<section id="b2c-paid-subscriptions-chatgpt-pluspro-claude-promax-gemini-advanced-perplexity-pro-etc." class="level3">
+<h3 class="anchored" data-anchor-id="b2c-paid-subscriptions-chatgpt-pluspro-claude-promax-gemini-advanced-perplexity-pro-etc.">3.2 B2C paid subscriptions (ChatGPT Plus/Pro, Claude Pro/Max, Gemini Advanced, Perplexity Pro, etc.)</h3>
+<p>ChatGPT Plus/Pro/Business subscribers ~50M; Claude Pro/Max ~10M; Gemini Advanced ~30M; Perplexity Pro / others ~15M. Total ~105M paid B2C, with material overlap; net ~80M unique.</p>
+<p><strong>Assumptions:</strong> - MAU: 80M - Queries/active user/day: 15 (paying users use it more) - Tokens/query: 1,000 input + 600 output = 1,600 - Reasoning share: 30% (paid users have access to GPT-5 Thinking, Claude extended thinking, Gemini 2.5 Pro; many use them as defaults for non-trivial questions) - Reasoning intensity multiplier: 35× (paid reasoning runs at higher effort; GPT-5 high uses 23× the tokens of minimal, Claude extended thinking commonly uses 16k+ tokens vs ~600 chat output)</p>
+<p>Monthly compute = 80M × 15 × 30 × 1,600 × (0.70 + 0.30 × 35) = 57,600T × 11.2 = <strong>645T token-equivalents/month</strong>.</p>
+<p>Reasoning component = 80M × 15 × 30 × 1,600 × 0.30 × 35 = <strong>605T</strong>.</p>
+<p>This segment is small in user count (5% of free) but large in compute because of the reasoning multiplier and higher per-user query volume.</p>
+</section>
+<section id="b2b-api-chat-applications-customer-support-content-gen-rag-enterprise-chatbots-openrouter-passthrough" class="level3">
+<h3 class="anchored" data-anchor-id="b2b-api-chat-applications-customer-support-content-gen-rag-enterprise-chatbots-openrouter-passthrough">3.3 B2B API — chat applications (customer support, content gen, RAG, enterprise chatbots, OpenRouter passthrough)</h3>
+<p>Hard to size by user. Easier to size by token volume. Microsoft Foundry processed ~50T tokens/month in mid-2025, growing 5× YoY; that implies ~250T/month by mid-2026 [Source: https://tomtunguz.com/trillion-token-race/]. Anthropic API gross revenue ~$25B run-rate (excluding Claude Code) at ~$8/M blended → ~3,100T/year ÷ 12 = ~260T/month. OpenAI API ex-coding ~similar scale. Google Vertex AI / Gemini API similar. Plus OpenRouter, Together.ai (2T/day open-source = 60T/month), Fireworks, Groq, smaller providers.</p>
+<p><strong>Bottom-up total B2B chat-style API tokens, May 2026: ~1,200T/month.</strong></p>
+<p><strong>Assumptions:</strong> - Token volume: 1,200T/month - Reasoning share within this volume: 25% (enterprise RAG, classification and content generation are mostly non-reasoning; complex query answering, document analysis and tool-augmented enterprise assistants increasingly use reasoning) - Reasoning intensity multiplier: 20× (lower than B2C paid because enterprise budgets cap thinking length aggressively)</p>
+<p>If 1,200T/month is the <em>raw</em> token count (input + visible output, no thinking inflation), and 25% of those queries trigger reasoning at 20× the per-query token cost, the <em>compute-equivalent</em> total is:</p>
+<p>Compute = 1,200T × (0.75 + 0.25 × 20) = 1,200T × 5.75 = <strong>6,900T token-equivalents/month</strong>.</p>
+<p>Wait — that double-counts. The 1,200T already includes the thinking tokens because providers report tokens billed (which include reasoning tokens). So a more honest decomposition:</p>
+<p>Of 1,200T billed tokens, what fraction <em>are</em> reasoning (chain-of-thought) tokens? If 25% of queries are reasoning-mode and reasoning-mode queries average 15× the tokens of a chat query, then reasoning queries account for 0.25 × 15 / (0.75 × 1 + 0.25 × 15) = 83% of billed tokens.</p>
+<p>Reasoning tokens in B2B chat API = 1,200T × 0.83 = <strong>1,000T/month</strong>. Non-reasoning = 200T/month.</p>
+<p>This is the more defensible decomposition, and I will apply it consistently to other token-based segments below.</p>
+</section>
+<section id="b2b-api-agentic-coding-cursor-claude-code-codex-cli-devin-replit-agent-lovable-v0-github-copilot-agent-mode" class="level3">
+<h3 class="anchored" data-anchor-id="b2b-api-agentic-coding-cursor-claude-code-codex-cli-devin-replit-agent-lovable-v0-github-copilot-agent-mode">3.4 B2B API — agentic / coding (Cursor, Claude Code, Codex CLI, Devin, Replit Agent, Lovable, v0, GitHub Copilot agent mode)</h3>
+<p>This is the segment that has exploded.</p>
+<p><strong>Cursor.</strong> $2B ARR Feb 2026 [Source: https://www.bloomberg.com/news/articles/2026-03-02/cursor-recurring-revenue-doubles-in-three-months-to-2-billion]. 7M MAU, 1M DAU, “nearly 1B lines of code/day” generated. At $2B ARR and ~$15/M blended token cost for the Sonnet/Opus mix Cursor mostly resells, that implies ~133T tokens/year ≈ <strong>11T/month</strong> of <em>paid</em> tokens — likely 2-3× higher in raw compute because of cache hits and Cursor’s own subsidisation; call it <strong>30T/month true compute</strong>.</p>
+<p><strong>Claude Code.</strong> $2.5B run-rate Feb 2026 [Source: https://www.businessofapps.com/data/claude-statistics/]; one disclosed user pattern is ~40M tokens/day for a heavy individual. With Anthropic’s reported 90% of users below $30/active-day and median ~$13/day, that’s ~1-3M tokens/active-user/day. If Claude Code has ~500k DAU, that is ~750T tokens/month direct from Claude Code. (Internal Anthropic disclosures suggest Claude Code is a meaningful share of total Anthropic API tokens.) Conservatively: <strong>400T/month</strong>.</p>
+<p><strong>GitHub Copilot, Codex CLI, Devin, Replit, Lovable, v0, smaller agents.</strong> Copilot alone has ~5M paid subscribers; agentic mode has expanded sharply through 2025-26. Estimate <strong>300T/month</strong> combined for non-Anthropic non-Cursor coding agents.</p>
+<p><strong>Total B2B agentic/coding tokens, May 2026: ~750T/month.</strong></p>
+<p><strong>Assumptions:</strong> - Reasoning share within agentic: 80% (every modern coding agent defaults to reasoning models for non-trivial tasks; Cursor’s reasoning-model share is the platform’s largest category per OpenRouter). - These tokens are mostly <em>already</em> reasoning tokens. Of the 750T, ~80% × heavily-reasoning-weighted = <strong>~700T are reasoning tokens, ~50T are non-reasoning</strong> (autocomplete, simple completions, embedding lookups).</p>
+</section>
+<section id="first-party-agentic-deployments-operator-computer-use-deep-research-microsoft-copilot-agent-gemini-agents" class="level3">
+<h3 class="anchored" data-anchor-id="first-party-agentic-deployments-operator-computer-use-deep-research-microsoft-copilot-agent-gemini-agents">3.5 First-party agentic deployments (Operator, Computer Use, Deep Research, Microsoft Copilot agent, Gemini agents)</h3>
+<p>Smaller in volume than 3.4 because consumer agentic adoption is still early, but extremely token-heavy per session.</p>
+<p><strong>Assumptions:</strong> - Active sessions/day globally: ~5M (OpenAI Deep Research, Operator, Anthropic Computer Use, Gemini Deep Research, Microsoft 365 Copilot agent mode) - Tokens/session: 200,000 (multi-step research and computer-use sessions easily hit 100k-500k tokens) - Reasoning share: 90% - Implicit intensity already embedded in token count.</p>
+<p>Monthly tokens = 5M × 30 × 200,000 = <strong>30T/month</strong>. Of which ~27T reasoning, 3T non-reasoning.</p>
+<p>Small compared to coding but growing fastest.</p>
+</section>
+<section id="open-source-on-prem-deployments-llama-deepseek-qwen-mistral-served-by-enterprises-and-via-together.ai-fireworks-groq" class="level3">
+<h3 class="anchored" data-anchor-id="open-source-on-prem-deployments-llama-deepseek-qwen-mistral-served-by-enterprises-and-via-together.ai-fireworks-groq">3.6 Open-source / on-prem deployments (Llama, DeepSeek, Qwen, Mistral served by enterprises and via Together.ai, Fireworks, Groq)</h3>
+<p>Together.ai disclosed 2T tokens/day open-source inference in Sep 2025 = 60T/month [Source: https://tomtunguz.com/trillion-token-race/]. Add Fireworks, Groq, on-prem enterprise vLLM deployments, hyperscaler-served Llama on Bedrock/Vertex/Azure, and self-hosted Qwen/DeepSeek in China. Estimate total: <strong>300T/month</strong> for open-source and on-prem inference.</p>
+<p><strong>Assumptions:</strong> - Reasoning share: 35% (DeepSeek R1 and Qwen reasoning variants are heavily used; Llama reasoning fine-tunes growing) - Of 300T billed/served tokens, applying the same chain-of-thought inflation logic: reasoning tokens ≈ 300 × (0.35 × 15) / (0.65 + 0.35 × 15) = 300 × 0.89 = <strong>267T reasoning, 33T non-reasoning</strong>.</p>
+</section>
+<section id="aggregate-all-six-segments" class="level3">
+<h3 class="anchored" data-anchor-id="aggregate-all-six-segments">3.7 Aggregate (all six segments)</h3>
+<p><strong>Aggregate inference compute, May 2026 (token-equivalents per month)</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 24%">
+<col style="width: 18%">
+<col style="width: 24%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Segment</th>
+<th style="text-align: right;">Total compute (T)</th>
+<th style="text-align: right;">Reasoning (T)</th>
+<th style="text-align: right;">Non-reasoning (T)</th>
+<th style="text-align: right;">Reasoning share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">3.1 Free B2C chat</td>
+<td style="text-align: right;">436</td>
+<td style="text-align: right;">247</td>
+<td style="text-align: right;">189</td>
+<td style="text-align: right;">57%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3.1b AI Overviews</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3.2 Paid B2C</td>
+<td style="text-align: right;">645</td>
+<td style="text-align: right;">605</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">94%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3.3 B2B API chat</td>
+<td style="text-align: right;">1,200</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">83%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3.4 B2B agentic/coding</td>
+<td style="text-align: right;">750</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">93%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3.5 First-party agents</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">90%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3.6 OSS / on-prem</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">267</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">89%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>3,373</strong></td>
+<td style="text-align: right;"><strong>2,846</strong></td>
+<td style="text-align: right;"><strong>527</strong></td>
+<td style="text-align: right;"><strong>84%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Author bottom-up estimate, May 2026. All numbers are token-equivalents per month, defined as the GPU-second cost of one output token on a representative dense reasoning model. Caching, batching, model-size and quantisation effects are not separately modelled.</em></p>
+<p>The segment that drives the answer is <strong>B2C paid subscriptions (3.2)</strong> and <strong>B2B chat API (3.3)</strong> combined — together ~1,800T compute, of which ~1,600T is reasoning. This is intuitive: that’s exactly where users actively choose extended thinking and where reasoning models are the default.</p>
+<hr>
+</section>
+</section>
+<section id="reconciliation-against-the-openrouter-anchor" class="level2">
+<h2 class="anchored" data-anchor-id="reconciliation-against-the-openrouter-anchor">4. Reconciliation against the OpenRouter anchor</h2>
+<p>OpenRouter said &gt;50% of tokens were reasoning by late Q4 2025. My bottom-up answer is 84% by May 2026. The gap has three explanations:</p>
+<ol type="1">
+<li><p><strong>OpenRouter’s number is from Q4 2025, not May 2026.</strong> Reasoning share has clearly continued to grow. If reasoning was 50% in Nov 2025 and reasoning compute is growing ~15-20% per month while non-reasoning grows ~3-4% per month, May 2026 share of 70-85% is plausible.</p></li>
+<li><p><strong>OpenRouter measures <em>billed tokens</em>, not <em>compute-equivalent</em>.</strong> A reasoning token bills the same as a non-reasoning token at the API. But because reasoning queries route to larger models (Opus, Pro, R1) on average, each reasoning token <em>consumes</em> more flops than each chat token routed to Haiku, Flash, or Llama-3.1-8B. If the average reasoning token consumes 1.5-2× the flops of the average non-reasoning token, OpenRouter’s 50% token share corresponds to ~65-70% compute share.</p></li>
+<li><p><strong>My intensity multipliers may be too high.</strong> If I halve the multiplier for paid B2C from 35× to 18×, the 3.2 segment compute halves and total reasoning share falls from 84% to ~75%. Still well above 50%.</p></li>
+</ol>
+<hr>
+</section>
+<section id="sensitivity-analysis-may-2026" class="level2">
+<h2 class="anchored" data-anchor-id="sensitivity-analysis-may-2026">5. Sensitivity analysis (May 2026)</h2>
+<p><strong>What if the key assumptions change ±50%?</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 6%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable changed</th>
+<th style="text-align: right;">Base</th>
+<th style="text-align: right;">Low (–50%)</th>
+<th style="text-align: right;">High (+50%)</th>
+<th style="text-align: left;">Reasoning share at low / base / high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Paid B2C reasoning share</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">45%</td>
+<td style="text-align: left;">79% / 84% / 87%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Paid B2C intensity multiplier</td>
+<td style="text-align: right;">35×</td>
+<td style="text-align: right;">18×</td>
+<td style="text-align: right;">53×</td>
+<td style="text-align: left;">75% / 84% / 87%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B2B chat reasoning share</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">12.5%</td>
+<td style="text-align: right;">37.5%</td>
+<td style="text-align: left;">76% / 84% / 88%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Coding agent token volume</td>
+<td style="text-align: right;">750T</td>
+<td style="text-align: right;">375T</td>
+<td style="text-align: right;">1,125T</td>
+<td style="text-align: left;">83% / 84% / 85%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Free B2C reasoning share</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">2.5%</td>
+<td style="text-align: right;">7.5%</td>
+<td style="text-align: left;">84% / 84% / 84%</td>
+</tr>
+</tbody>
+</table>
+<p>The answer is robust: under any reasonable single-variable swing, reasoning share lands in the <strong>75-88%</strong> band. The single most influential variable is the paid B2C reasoning intensity multiplier; halving it still gives 75%.</p>
+<p>The combination most likely to break the conclusion is <em>simultaneously</em> halving the reasoning multipliers for both 3.2 and 3.3 and assuming much more chat traffic from AI Overviews and Meta AI. Even that pessimistic combination produces ~60% reasoning share — still a clear majority of compute.</p>
+<hr>
+</section>
+<section id="forecast-for-may-2027-and-may-2028" class="level2">
+<h2 class="anchored" data-anchor-id="forecast-for-may-2027-and-may-2028">6. Forecast for May 2027 and May 2028</h2>
+<p><strong>Growth assumptions:</strong></p>
+<ul>
+<li>Reasoning compute grows ~6× over two years (driven by: agentic adoption, longer context, longer thinking budgets, coding tools maturing into design and ops tools). This is consistent with OpenRouter’s observed 0% → 50% reasoning token share in 2025, decelerating but not stopping.</li>
+<li>Non-reasoning compute grows ~2.5× over two years (driven by AI Overviews-style mass deployments, embedding workloads, classification, voice transcription).</li>
+<li>Total compute grows ~5×, in line with hyperscaler capex trajectory ($725B 2026 capex, growing) [Source: https://www.tomshardware.com/tech-industry/big-tech/microsoft-attributed-25-billion-of-its-record-ai-budget-to-memory-chip-costs].</li>
+</ul>
+<p><strong>Forecast inference compute mix</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 20%">
+<col style="width: 24%">
+<col style="width: 29%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Date</th>
+<th style="text-align: right;">Total (Tt-eq/mo)</th>
+<th style="text-align: right;">Reasoning (Tt-eq/mo)</th>
+<th style="text-align: right;">Non-reasoning (Tt-eq/mo)</th>
+<th style="text-align: right;">Reasoning share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">May 2026 (base)</td>
+<td style="text-align: right;">3,373</td>
+<td style="text-align: right;">2,846</td>
+<td style="text-align: right;">527</td>
+<td style="text-align: right;">84%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">May 2027 (forecast)</td>
+<td style="text-align: right;">~9,800</td>
+<td style="text-align: right;">~8,500</td>
+<td style="text-align: right;">~1,300</td>
+<td style="text-align: right;">87%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">May 2028 (forecast)</td>
+<td style="text-align: right;">~17,000</td>
+<td style="text-align: right;">~15,200</td>
+<td style="text-align: right;">~1,800</td>
+<td style="text-align: right;">89%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Author projections. 2027 and 2028 assume agentic/coding doubles each year, paid B2C reasoning grows 70% per year, free B2C non-reasoning grows 50% per year, AI Overviews and embeddings grow 80% per year.</em></p>
+<p>The reasoning share <strong>rises</strong> but at a decelerating rate, because the non-reasoning floor (AI Overviews, embeddings, classification, voice, vision) grows in absolute terms even as it shrinks in share.</p>
+<p>The more interesting number is the absolute scale: total monthly inference compute roughly <strong>5× by 2028</strong> vs May 2026. If today’s hyperscaler buildout is sized for 2026 inference, the 2027-2028 wave needs another 4× as much accelerator capacity, memory and power. This is consistent with the announced capex programmes but tight against grid interconnect timelines.</p>
+<hr>
+</section>
+<section id="final-answer" class="level2">
+<h2 class="anchored" data-anchor-id="final-answer">7. Final answer</h2>
+<p><strong>May 2026: reasoning-mode queries account for ~80% (range 70-90%) of total LLM inference compute.</strong></p>
+<p>The single best point estimate is <strong>84%</strong>. The defensible range is 70-90%. The lower bound (70%) requires both halved reasoning intensity multipliers across all paid segments <em>and</em> substantially more chat traffic than I have assumed; the upper bound (90%) is what you get if reasoning effort levels continue migrating to “high” as defaults and agentic workloads grow faster than coding alone.</p>
+<p><strong>May 2027: ~87%. May 2028: ~89%.</strong> The share keeps rising but at a decelerating rate; the absolute compute behind the share roughly 5× over the same window.</p>
+<p>The economic implication is that effectively <strong>all the marginal data centre being built in 2026-28 is being built to run chains of thought</strong>. Non-reasoning workloads will remain large in user count and in absolute token volume — AI Overviews and embeddings are not going away — but they fit comfortably inside the existing fleet. Every new gigawatt of accelerator power, every new HBM4 stack, every new liquid-cooled rack is funded by, and sized for, reasoning and agentic workloads.</p>
+<p>For a power-system reader: the implication is that AI inference load growth is dominated by a workload (reasoning) whose per-query GPU-seconds is 30-300× the chat baseline and whose per-query <em>value</em> (what the user is willing to pay) is 50-500× the chat baseline. That latter point is what makes the buildout fundable. It is also what makes this load less price-sensitive than typical commercial-and-industrial demand: a $5/MWh swing in wholesale electricity is rounding-error against $5,000-50,000 of revenue per occupied accelerator-hour serving Cursor or Claude Code.</p>
+<hr>
+</section>
+<section id="caveats" class="level2">
+<h2 class="anchored" data-anchor-id="caveats">8. Caveats</h2>
+<ul>
+<li><strong>Token-equivalent is a crude unit.</strong> A reasoning token on Opus consumes ~10× the flops of a chat token on Haiku, and ~3× the flops of a chat token on Sonnet. My intensity multipliers attempt to bake this in but are imprecise.</li>
+<li><strong>Caching distorts billed tokens vs compute tokens.</strong> Anthropic and OpenAI prompt-caching can reduce billed input tokens 80-90% on cached prompts; this is real cost reduction but not a reduction in serving compute (the prefill still happens; the cache lives on GPU memory, occupying expensive VRAM). I have not separately modelled it.</li>
+<li><strong>MAU double-counting.</strong> Many users have ChatGPT Plus <em>and</em> Claude Pro <em>and</em> Gemini Advanced. My de-duplicated paid B2C MAU of 80M may be optimistic; the gross sum of disclosed paid users is ~105M.</li>
+<li><strong>Chinese inference is undermeasured.</strong> DeepSeek, Qwen, Doubao and Wenxin process enormous volumes inside China that are barely visible in Western disclosures. My OSS segment likely understates Chinese on-prem and consumer reasoning-model inference by 30-50%. If Chinese reasoning is 100T/month higher than I have assumed, total reasoning share rises ~1pp.</li>
+<li><strong>The “reasoning” definition is fuzzy.</strong> GPT-5 with reasoning effort “minimal” generates almost no thinking tokens. Claude Sonnet 4.6 without extended thinking enabled does some implicit chain of thought in its visible output. The line between “reasoning model” and “non-reasoning model” is no longer clean — the distinction is increasingly about whether the model is <em>allowed</em> to spend tokens thinking, not what model is loaded.</li>
+<li><strong>Inference compute ≠ inference electricity.</strong> Per-token energy varies 3-5× across hardware generations; H100 vs B200 vs the announced GB300 are very different on watts-per-token. A 5× growth in token-compute does not necessarily mean 5× growth in inference electricity, though it probably means 3-4×.</li>
+</ul>
+<hr>
+</section>
+<section id="bibliography" class="level2">
+<h2 class="anchored" data-anchor-id="bibliography">9. Bibliography</h2>
+<ul>
+<li>OpenRouter, <em>State of AI 2025: 100T Token LLM Usage Study</em>, Nov 2025. https://openrouter.ai/state-of-ai</li>
+<li>TechCrunch, <em>ChatGPT reaches 900M weekly active users</em>, 27 Feb 2026. https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users/</li>
+<li>TechCrunch, <em>Google’s Gemini app has surpassed 750M monthly active users</em>, 4 Feb 2026. https://techcrunch.com/2026/02/04/googles-gemini-app-has-surpassed-750m-monthly-active-users/</li>
+<li>Tom Tunguz, <em>Beyond a Trillion: The Token Race</em>, 2025. https://tomtunguz.com/trillion-token-race/</li>
+<li>Tom Tunguz, <em>Is Token Consumption Growth Slowing Down?</em>, 2025. https://tomtunguz.com/is-token-consumption-slowing-down/</li>
+<li>Bloomberg, <em>Cursor Recurring Revenue Doubles in Three Months to $2 Billion</em>, 2 Mar 2026. https://www.bloomberg.com/news/articles/2026-03-02/cursor-recurring-revenue-doubles-in-three-months-to-2-billion</li>
+<li>Business of Apps, <em>Claude Revenue and Usage Statistics (2026)</em>. https://www.businessofapps.com/data/claude-statistics/</li>
+<li>DemandSage, <em>Claude Statistics 2026</em>. https://www.demandsage.com/claude-ai-statistics/</li>
+<li>DemandSage, <em>DeepSeek AI Statistics 2026</em>. https://www.demandsage.com/deepseek-statistics/</li>
+<li>DemandSage, <em>Meta AI Users Statistics 2026</em>. https://www.demandsage.com/meta-ai-users/</li>
+<li>getpanto.ai, <em>Google Gemini Statistics 2026</em>. https://www.getpanto.ai/blog/google-gemini-statistics</li>
+<li>Verdent, <em>Claude Code Pricing 2026</em>. https://www.verdent.ai/guides/claude-code-pricing-2026</li>
+<li>Martin Alderson, <em>No, it doesn’t cost Anthropic $5k per Claude Code user</em>, 2026. https://martinalderson.com/posts/no-it-doesnt-cost-anthropic-5k-per-claude-code-user/</li>
+<li>Anthropic, <em>Building with extended thinking</em>. https://platform.claude.com/docs/en/build-with-claude/extended-thinking</li>
+<li>Anthropic, <em>Pricing</em>. https://platform.claude.com/docs/en/about-claude/pricing</li>
+<li>Artificial Analysis, <em>GPT-5 Benchmarks and Analysis</em>. https://artificialanalysis.ai/articles/gpt-5-benchmarks-and-analysis</li>
+<li>SemiAnalysis, <em>InferenceMAX: Open Source Inference Benchmarking</em>. https://newsletter.semianalysis.com/p/inferencemax-open-source-inference</li>
+<li>Epoch AI, <em>Optimally allocating compute between inference and training</em>. https://epoch.ai/blog/optimally-allocating-compute-between-inference-and-training</li>
+<li>Sebastian Raschka, <em>State of LLM Reasoning and Inference Scaling</em>. https://magazine.sebastianraschka.com/p/state-of-llm-reasoning-and-inference-scaling</li>
+<li>Zylos Research, <em>Inference Economics: AI Agent Compute Markets in 2026</em>, 13 Apr 2026. https://zylos.ai/research/2026-04-13-inference-economics-ai-agent-compute-markets</li>
+<li>Tom’s Hardware, <em>Big Tech capex hits $725 billion</em>, 2026. https://www.tomshardware.com/tech-industry/big-tech/microsoft-attributed-25-billion-of-its-record-ai-budget-to-memory-chip-costs</li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

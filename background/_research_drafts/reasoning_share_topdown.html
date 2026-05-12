@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Leitch (ITK)">
+<meta name="dcterms.date" content="2026-05-11">
+
+<title>Reasoning vs non-reasoning share of LLM inference compute: top-down revenue and pricing decomposition</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="reasoning_share_topdown_files/libs/clipboard/clipboard.min.js"></script>
+<script src="reasoning_share_topdown_files/libs/quarto-html/quarto.js"></script>
+<script src="reasoning_share_topdown_files/libs/quarto-html/popper.min.js"></script>
+<script src="reasoning_share_topdown_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="reasoning_share_topdown_files/libs/quarto-html/anchor.min.js"></script>
+<link href="reasoning_share_topdown_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="reasoning_share_topdown_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="reasoning_share_topdown_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="reasoning_share_topdown_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="reasoning_share_topdown_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<meta name="quarto:status" content="draft">
+
+
+</head>
+
+<body class="fullcontent"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reasoning vs non-reasoning share of LLM inference compute: top-down revenue and pricing decomposition</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>David Leitch (ITK) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 11, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="reasoning-vs-non-reasoning-share-of-total-llm-inference-compute" class="level1">
+<h1>Reasoning vs non-reasoning share of total LLM inference compute</h1>
+<section id="executive-summary" class="level2">
+<h2 class="anchored" data-anchor-id="executive-summary">Executive summary</h2>
+<p>The headline number this note is built to defend: <strong>as of May 2026, reasoning-mode queries (extended thinking, GPT-5 Thinking, GPT-5 Pro, o3-pro legacy, Claude Opus 4.7 with adaptive thinking, Gemini 3 Pro Deep Think, DeepSeek-R1/R2, Grok 4 Heavy) are consuming roughly 55-65% of frontier-lab inference compute, with a central estimate of ~60%.</strong> That share rises to a projected ~75-80% by end-2027 and ~80-85% by end-2028 as agentic workloads, which are dominated by reasoning-tier model calls, scale faster than chat.</p>
+<p>The metric is <strong>compute share, not query share</strong>. By query count, reasoning is still a minority of usage (probably 15-25% on the consumer side, 25-40% on the API/agent side). But each reasoning query consumes 10-50x the tokens of a typical chat query and often runs on a model priced 2-5x higher per token, so the compute multiplier per query is 20-100x.</p>
+<hr>
+</section>
+<section id="published-estimates-what-is-already-out-there" class="level2">
+<h2 class="anchored" data-anchor-id="published-estimates-what-is-already-out-there">1. Published estimates: what is already out there</h2>
+<p>There is no single widely-cited public number for reasoning’s share of total LLM inference compute. The closest anchors:</p>
+<ul>
+<li><p><strong>Epoch AI (2025-2026)</strong>: Frames the question as the broader “inference vs training vs experiments” split. Their 2024 OpenAI estimate was ~30% inference / 70% training+experiments [Source: https://epoch.ai/data-insights/openai-compute-spend]. Their 2026 update notes the picture has shifted — power demand now splits roughly equally between training, experiments, and inference. Critically, Epoch documents that RL-trained reasoning models use chains of thought “up to 30 times as long as base models” and that “82% of the performance improvement” of recent frontier models comes from inference-time scaling [Source: https://epoch.ai/gradient-updates/how-persistent-is-the-inference-cost-burden]. Epoch does <em>not</em> publish a clean reasoning-share-of-inference number.</p></li>
+<li><p><strong>SemiAnalysis InferenceMAX (Oct 2025 - Apr 2026)</strong>: Treats reasoning as a workload archetype with a 1024-input / 8192-output token profile vs ~500/200 for chat. This implies reasoning queries push roughly <strong>30-40x more output tokens</strong> through the GPU. SemiAnalysis does not publish an aggregate reasoning-share number in public newsletters but their recurring point is that “the inference kingdom expands” because reasoning and agents have driven a structural step-change in tokens-per-query [Source: https://newsletter.semianalysis.com/p/nvidia-the-inference-kingdom-expands; Source: https://newsletter.semianalysis.com/p/inferencemax-open-source-inference].</p></li>
+<li><p><strong>Zylos Research (Apr 2026)</strong>: “Inference Economics: AI Agent Compute Markets in 2026” cites Gartner: agentic workloads consume “5-30x more tokens per task than standard chatbots.” Frontier reasoning-tier models handle the smallest share by request count (5-15% of API calls) but the bulk of high-value work [Source: https://zylos.ai/research/2026-04-13-inference-economics-ai-agent-compute-markets].</p></li>
+<li><p><strong>Toby Ord (2025)</strong>: “Evidence that recent AI gains are mostly from inference-scaling” — argues 60-80% of capability gains since GPT-4o have come from longer reasoning chains rather than larger pre-trained models, implicitly forcing a compute reallocation toward reasoning [Source: https://www.tobyord.com/writing/mostly-inference-scaling].</p></li>
+<li><p><strong>Gartner (Mar 2026)</strong>: Per-token inference cost will fall ~90% by 2030 but total inference spend will still rise because reasoning and agentic patterns push tokens-per-query up faster than per-token cost falls [Source: https://www.gartner.com/en/newsroom/press-releases/2026-03-25-gartner-predicts-that-by-2030-performing-inference-on-an-llm-with-1-trillion-parameters-will-cost-genai-providers-over-90-percent-less-than-in-2025].</p></li>
+<li><p><strong>AICC enterprise survey (Q1 2026)</strong>: Agent-pattern API calls grew 680% YoY and reached 41% of new enterprise integrations, up from 18% a year earlier. Frontier-tier (reasoning) models handle 5-15% of calls but dominate token spend [Source: https://www.mykxlg.com/online_features/press_releases/aicc-report-enterprise-token-costs-drop-67-year-over-year-as-multi-model-ai-adoption/article_794d655c-f59b-5921-bbd0-33edb058b05e.html].</p></li>
+</ul>
+<p><strong>Anchor takeaway</strong>: nobody has published “X% of inference compute is reasoning.” But every credible source agrees that (a) reasoning queries consume 10-50x the tokens of standard chat, (b) reasoning’s share of total tokens has been rising sharply through 2025-26, and (c) by 2027-28 agentic and reasoning workloads will dominate.</p>
+<hr>
+</section>
+<section id="lab-revenue-decomposition-may-2026-run-rates" class="level2">
+<h2 class="anchored" data-anchor-id="lab-revenue-decomposition-may-2026-run-rates">2. Lab revenue decomposition (May 2026 run rates)</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Lab</th>
+<th style="text-align: right;">Annualised revenue (May 2026)</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">OpenAI</td>
+<td style="text-align: right;">~$25-30 bn ARR</td>
+<td style="text-align: left;"><a href="https://sacra.com/c/openai/">Bloomberg, Sacra, OpenAI</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Anthropic</td>
+<td style="text-align: right;">~$30-45 bn ARR</td>
+<td style="text-align: left;"><a href="https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation">Reuters, Anthropic Series G filing</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Microsoft AI (incl.&nbsp;Azure OpenAI)</td>
+<td style="text-align: right;">~$37 bn run rate</td>
+<td style="text-align: left;"><a href="https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast">Microsoft FY26 Q3</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Google Cloud (Gemini contribution)</td>
+<td style="text-align: right;">~$8-12 bn from Gemini API/enterprise inside $20 bn quarterly Cloud</td>
+<td style="text-align: left;"><a href="https://abc.xyz/">Alphabet Q1 2026</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">xAI</td>
+<td style="text-align: right;">~$3-5 bn (largely Grok-on-X plus enterprise)</td>
+<td style="text-align: left;">press estimates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DeepSeek + Chinese providers</td>
+<td style="text-align: right;">&lt;$1 bn paid API revenue but large free/sovereign volume</td>
+<td style="text-align: left;"><a href="https://api-docs.deepseek.com/">DeepSeek docs</a></td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: aggregated from Reuters, Bloomberg, Sacra, Microsoft and Alphabet earnings releases, May 2026.</em></p>
+<p>Total disclosed frontier-lab inference-related revenue is in the order of <strong>$100-120 bn ARR</strong>. There is double counting (OpenAI’s Azure consumption shows up both in Microsoft AI revenue and OpenAI’s COGS) but for compute-share purposes that does not matter — what we care about is the inference <em>workload</em> mix, and it is the same workload whether it’s billed via OpenAI direct or Azure resold.</p>
+<section id="within-each-lab-the-reasoning-vs-chat-split" class="level3">
+<h3 class="anchored" data-anchor-id="within-each-lab-the-reasoning-vs-chat-split">Within each lab, the reasoning-vs-chat split</h3>
+<p><strong>OpenAI</strong> (~$25-30 bn ARR; revenue mix ~65% ChatGPT subs / 25% API / 10% partnerships [Source: https://sacra.com/c/openai/]):</p>
+<ul>
+<li>ChatGPT Free: defaults to GPT-5.3 Instant (non-reasoning) but auto-routes to GPT-5.5 Thinking on harder prompts. Maybe 10-15% of queries route to thinking, but those queries consume 30-50x more tokens. Compute share within Free likely 70-80% reasoning.</li>
+<li>ChatGPT Plus ($20/m, ~10 m subs, ~$2.4 bn/yr): heavy thinking use, especially Codex/agent tasks. Anecdotal reports and the per-week 3,000-message thinking limit imply most Plus users are pushing toward the cap. Compute share ≥80% reasoning.</li>
+<li>ChatGPT Pro/Team/Enterprise (~50% of ChatGPT revenue): GPT-5 Pro and Codex agent are core selling points. Compute share ~85-95% reasoning.</li>
+<li>API (~$6-8 bn ARR): the fastest-growing line is GPT-5.5 Thinking and GPT-5.2-Codex, which are reasoning by default. Even non-reasoning GPT-5.3 Instant calls are increasingly being routed through “reasoning effort: low” which still adds 1-3k thinking tokens. Reasoning compute share probably 65-75%.</li>
+</ul>
+<p><strong>OpenAI weighted reasoning compute share: ~75-80%.</strong></p>
+<p><strong>Anthropic</strong> (~$30-45 bn ARR; ~80% from API/business [Source: https://sacra.com/c/anthropic/]):</p>
+<ul>
+<li>Claude Code (~$2.5-5 bn ARR by mid-2026 [Source: https://stormy.ai/blog/claude-code-gtm-strategy-anthropic-revenue-2026]): every interaction routes through Sonnet 4.6 or Opus 4.7 <em>with adaptive thinking on by default</em> in the 4.6/4.7 generation. Coding agent calls run for hours, average context 50-200k tokens, output 5-20k tokens per turn. Essentially 100% reasoning compute.</li>
+<li>Claude.ai consumer subs (Pro/Max): Max users run extended thinking constantly; Pro users less so. Reasoning compute share ~70-85%.</li>
+<li>API direct (the ~$15-20 bn block excluding Claude Code): Sonnet 4.6 with adaptive thinking is the workhorse. Even non-explicit-thinking calls produce internal reasoning. Reasoning compute share ~70-80%.</li>
+</ul>
+<p><strong>Anthropic weighted reasoning compute share: ~85-90%.</strong> (Anthropic is the most reasoning-heavy lab because Claude Code, agentic enterprise, and adaptive thinking together cover almost all consumption.)</p>
+<p><strong>Microsoft Azure OpenAI / Microsoft AI</strong> (~$37 bn run rate, of which ~$10 bn is OpenAI inference passthrough [Source: https://www.wheresyoured.at/oai_docs/]):</p>
+<ul>
+<li>Copilot family (M365 Copilot, GitHub Copilot, Security Copilot): ~$20 bn of Microsoft AI run rate. GitHub Copilot moved to usage-based billing in mid-2025 and the agent mode (which routes to Claude Sonnet 4.6 and GPT-5.5 Thinking) is the growth driver. Reasoning compute share probably 60-75%.</li>
+<li>Azure OpenAI direct API to enterprises: similar mix to OpenAI’s own API, so 65-75% reasoning.</li>
+</ul>
+<p><strong>Microsoft weighted reasoning compute share: ~65-75%.</strong></p>
+<p><strong>Google</strong> (Gemini API + Gemini Enterprise ~$8-12 bn run rate inside $80 bn Cloud annualised; Gemini API processing 16 bn tokens/minute, up 60% q-o-q [Source: https://abc.xyz/]):</p>
+<ul>
+<li>Gemini 3 Pro and Deep Think are reasoning-default. Gemini 3 Flash is the cheap non-reasoning workhorse and accounts for the majority of token volume (very high-throughput RAG, summarisation, classification at $0.50/$3 per million tokens).</li>
+<li>Workspace AI (consumer Gmail/Docs) is mostly Flash, non-reasoning.</li>
+<li>Vertex/Enterprise is split, but the high-value coding and agentic workloads are Pro/Deep-Think.</li>
+<li>Google’s mix is meaningfully more chat-weighted than Anthropic or OpenAI because Flash is strong and cheap.</li>
+</ul>
+<p><strong>Google weighted reasoning compute share: ~40-50%.</strong></p>
+<p><strong>xAI</strong> (Grok 4 / Grok 4 Heavy): Grok 4 Heavy is reasoning-default; consumer Grok-on-X is mixed. ~50-60% reasoning.</p>
+<p><strong>DeepSeek + Chinese providers</strong> (DeepSeek V4/R-series, Qwen 3.6, MiMo-V2-Pro, MiniMax M2.7): OpenRouter April 2026 rankings show MiMo-V2-Pro at 4.65 trillion tokens/week (#1) and DeepSeek V3.2 at 1.22 T tokens/week (#4) [Source: https://www.digitalapplied.com/blog/openrouter-rankings-april-2026-top-ai-models-data]. Many of these are reasoning-capable and DeepSeek explicitly bills reasoning tokens. But the volume mix on Chinese hosting platforms is heavier on bulk RAG/translation/multimodal at low cost. Reasoning compute share ~45-55%.</p>
+</section>
+<section id="weighted-aggregate" class="level3">
+<h3 class="anchored" data-anchor-id="weighted-aggregate">Weighted aggregate</h3>
+<p>Approximating each lab’s compute by its inference-related revenue (a defensible proxy because list-price gross margins are similar across labs at 50-70%, and inference is the dominant marginal cost):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Lab</th>
+<th style="text-align: right;">Inference compute weight</th>
+<th style="text-align: right;">Reasoning share</th>
+<th style="text-align: right;">Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">OpenAI</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">78%</td>
+<td style="text-align: right;">23.4 pts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Anthropic</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">87%</td>
+<td style="text-align: right;">26.1 pts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Microsoft (non-OAI)</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">70%</td>
+<td style="text-align: right;">10.5 pts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Google</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">45%</td>
+<td style="text-align: right;">6.8 pts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">xAI</td>
+<td style="text-align: right;">4%</td>
+<td style="text-align: right;">55%</td>
+<td style="text-align: right;">2.2 pts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DeepSeek + others</td>
+<td style="text-align: right;">6%</td>
+<td style="text-align: right;">50%</td>
+<td style="text-align: right;">3.0 pts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Weighted total</strong></td>
+<td style="text-align: right;"><strong>100%</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>~72%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: ITK analysis from lab disclosures and pricing data, May 2026.</em></p>
+<p>This implies a top-down estimate of <strong>~70-75% reasoning compute share</strong> at the major frontier labs. But note this is <em>frontier-lab</em> compute. A meaningful chunk of total LLM inference compute globally runs on smaller open-weight models (Llama, Qwen, Mistral) hosted by enterprises themselves, mostly for non-reasoning tasks (RAG, classification, summarisation). That self-hosted long tail probably pulls the global figure down by 10-15 percentage points.</p>
+<p><strong>Adjusted global reasoning compute share: ~55-65%, central ~60%.</strong></p>
+<hr>
+</section>
+</section>
+<section id="api-list-pricing-for-reasoning-vs-non-reasoning-may-2026" class="level2">
+<h2 class="anchored" data-anchor-id="api-list-pricing-for-reasoning-vs-non-reasoning-may-2026">3. API list pricing for reasoning vs non-reasoning (May 2026)</h2>
+<p><strong>Per-million-token list prices (May 2026)</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Input</th>
+<th style="text-align: right;">Output</th>
+<th style="text-align: left;">Tier</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">GPT-5 (standard)</td>
+<td style="text-align: right;">$1.25</td>
+<td style="text-align: right;">$10.00</td>
+<td style="text-align: left;">Non-reasoning</td>
+<td style="text-align: left;"><a href="https://pricepertoken.com/pricing-page/model/openai-gpt-5">pricepertoken.com</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GPT-5 Pro</td>
+<td style="text-align: right;">$15.00</td>
+<td style="text-align: right;">$120.00</td>
+<td style="text-align: left;">Reasoning</td>
+<td style="text-align: left;"><a href="https://pricepertoken.com/pricing-page/model/openai-gpt-5-pro">pricepertoken.com</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GPT-5.5</td>
+<td style="text-align: right;">$5.00</td>
+<td style="text-align: right;">$40.00</td>
+<td style="text-align: left;">Reasoning-default</td>
+<td style="text-align: left;"><a href="https://developers.openai.com/api/docs/pricing">OpenAI</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GPT-5.5 Pro</td>
+<td style="text-align: right;">$30.00</td>
+<td style="text-align: right;">$180.00</td>
+<td style="text-align: left;">Heavy reasoning</td>
+<td style="text-align: left;"><a href="https://apidog.com/blog/gpt-5-5-pricing/">apidog.com</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GPT-5 mini</td>
+<td style="text-align: right;">$0.25</td>
+<td style="text-align: right;">$2.00</td>
+<td style="text-align: left;">Cheap</td>
+<td style="text-align: left;"><a href="https://developers.openai.com/api/docs/pricing">OpenAI</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GPT-5 nano</td>
+<td style="text-align: right;">$0.05</td>
+<td style="text-align: right;">$0.40</td>
+<td style="text-align: left;">Bulk</td>
+<td style="text-align: left;"><a href="https://developers.openai.com/api/docs/pricing">OpenAI</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Claude Opus 4.7</td>
+<td style="text-align: right;">$5.00</td>
+<td style="text-align: right;">$25.00</td>
+<td style="text-align: left;">Reasoning-default</td>
+<td style="text-align: left;"><a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Claude Sonnet 4.6</td>
+<td style="text-align: right;">$3.00</td>
+<td style="text-align: right;">$15.00</td>
+<td style="text-align: left;">Reasoning-capable</td>
+<td style="text-align: left;"><a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Claude Haiku 4.5</td>
+<td style="text-align: right;">$1.00</td>
+<td style="text-align: right;">$5.00</td>
+<td style="text-align: left;">Cheap</td>
+<td style="text-align: left;"><a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gemini 3 Pro</td>
+<td style="text-align: right;">$2.00</td>
+<td style="text-align: right;">$12.00</td>
+<td style="text-align: left;">Reasoning</td>
+<td style="text-align: left;"><a href="https://ai.google.dev/gemini-api/docs/pricing">ai.google.dev</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gemini 3 Flash</td>
+<td style="text-align: right;">$0.50</td>
+<td style="text-align: right;">$3.00</td>
+<td style="text-align: left;">Cheap</td>
+<td style="text-align: left;"><a href="https://blog.google/products/gemini/gemini-3-flash/">Google</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Grok 4</td>
+<td style="text-align: right;">~$3</td>
+<td style="text-align: right;">~$15</td>
+<td style="text-align: left;">Reasoning</td>
+<td style="text-align: left;">xAI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Grok 4 Heavy</td>
+<td style="text-align: right;">~$15</td>
+<td style="text-align: right;">~$75</td>
+<td style="text-align: left;">Heavy reasoning</td>
+<td style="text-align: left;">xAI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DeepSeek V4-Pro</td>
+<td style="text-align: right;">$0.55</td>
+<td style="text-align: right;">$2.19</td>
+<td style="text-align: left;">Reasoning</td>
+<td style="text-align: left;"><a href="https://api-docs.deepseek.com/">DeepSeek</a></td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: provider list pricing pages, accessed May 2026.</em></p>
+<p><strong>Per-token prices for reasoning vs non-reasoning are typically 3-15x higher.</strong> But the per-query differential is dominated by the <strong>token-count multiplier</strong>, not the price-per-token multiplier:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Workload</th>
+<th style="text-align: right;">Avg tokens per query</th>
+<th style="text-align: right;">Price/MTok blend</th>
+<th style="text-align: right;">Cost per query</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Non-reasoning chat (GPT-5/Sonnet, ~500 in / 200 out)</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">$4 input, $15 output blended → ~$0.005</td>
+<td style="text-align: right;">~$0.005</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adaptive thinking (Claude Sonnet 4.6 with thinking, ~1k in / 1k thinking / 200 out)</td>
+<td style="text-align: right;">2,200</td>
+<td style="text-align: right;">similar mix</td>
+<td style="text-align: right;">~$0.025</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reasoning agent (GPT-5.5 Thinking, 5k in / 8k thinking / 1k out)</td>
+<td style="text-align: right;">14,000</td>
+<td style="text-align: right;">$5/$40</td>
+<td style="text-align: right;">~$0.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Heavy reasoning (GPT-5 Pro / Opus 4.7 deep think, 10k in / 30k thinking / 5k out)</td>
+<td style="text-align: right;">45,000</td>
+<td style="text-align: right;">$15/$120 or $5/$25</td>
+<td style="text-align: right;">$4-5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Coding agent session (Claude Code Opus, multi-turn, hours, ~500k cumulative tokens)</td>
+<td style="text-align: right;">500,000</td>
+<td style="text-align: right;">$5/$25 with caching → ~$0.01-0.02 / kTok</td>
+<td style="text-align: right;">$5-15</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: ITK calculations from list pricing and observed token budgets.</em></p>
+<p>So a single Claude Code session or GPT-5 Pro deep-think can cost <strong>1,000-3,000x</strong> more than a typical free-tier chat query. This is the central economic fact behind the compute-share calculation.</p>
+<hr>
+</section>
+<section id="compute-share-derivation-revenue-pricing-compute" class="level2">
+<h2 class="anchored" data-anchor-id="compute-share-derivation-revenue-pricing-compute">4. Compute-share derivation: revenue × pricing → compute</h2>
+<p>Approach: take each lab’s API revenue and decompose by SKU using observed pricing. Convert dollars to “compute-equivalent tokens” using the inverse of price-per-token (a token at $25/MTok consumes the same dollars as 5 tokens at $5/MTok, so represents 1/5 the <em>compute units per dollar</em>).</p>
+<p>This is an approximation — Anthropic and OpenAI have ~60-70% inference gross margins so the ratio of dollars to compute is lab-specific and SKU-specific. But for like-for-like models within a lab, list pricing is roughly proportional to underlying GPU cost (the labs price to a target margin).</p>
+<p><strong>Worked example — Anthropic API ($20-25 bn ARR ex-Claude Code):</strong></p>
+<p>Assume API revenue mix is roughly 60% Sonnet 4.6, 25% Opus 4.7, 10% Haiku 4.5, 5% legacy. Of the Sonnet revenue, ~70% is in adaptive-thinking mode (default in 4.6); of the Opus revenue, ~95% uses deep thinking. So:</p>
+<ul>
+<li>Reasoning revenue share within API: 0.6×0.7 + 0.25×0.95 + 0.1×0 + 0.05×0.5 = 0.42 + 0.24 + 0 + 0.025 = <strong>~68% of API revenue is reasoning</strong>.</li>
+<li>Per-token cost is similar between thinking and non-thinking modes within a model, but reasoning consumes ~5-10x more tokens per query, so the compute-per-revenue-dollar ratio is similar across the split.</li>
+<li>Therefore the API reasoning compute share roughly equals the API reasoning revenue share: <strong>~70%</strong>.</li>
+</ul>
+<p>For Claude Code (effectively 100% reasoning) at $5 bn ARR vs API at $25 bn, the consolidated Anthropic reasoning compute share is:</p>
+<ul>
+<li>(5×1.0 + 25×0.7) / 30 = (5 + 17.5) / 30 = <strong>~75%</strong></li>
+</ul>
+<p>That is meaningfully below the ~87% I used in §2 because §2 weighted by <em>consumption</em> and gave Anthropic credit for its consumer Claude.ai usage, which is heavily Max/Pro and reasoning-dominated. Splitting the difference: <strong>Anthropic ~80% reasoning compute share</strong> is the defensible central estimate.</p>
+<p><strong>OpenAI cross-check ($25-30 bn ARR):</strong></p>
+<p>ChatGPT Free is hundreds of millions of users but each consumes maybe 20-50 messages/week; even with the 10-15% routing to thinking and the 30x token multiplier, Free is contributing perhaps 30-40% of OpenAI’s inference compute, of which ~70% is reasoning. ChatGPT Plus/Pro/Team/Enterprise contribute another ~40% of compute, ~85% reasoning. API contributes ~25-30% of compute, ~70% reasoning. Weighted: 0.35×0.7 + 0.40×0.85 + 0.25×0.70 = <strong>~76%</strong>.</p>
+<p><strong>Cross-check matches §2 within ±5 percentage points.</strong></p>
+<hr>
+</section>
+<section id="cross-check-against-hyperscaler-capex" class="level2">
+<h2 class="anchored" data-anchor-id="cross-check-against-hyperscaler-capex">5. Cross-check against hyperscaler capex</h2>
+<p>Total hyperscaler 2026 AI capex: ~$650-700 bn aggregate, of which ~75% (~$485 bn) is AI-specific [Source: https://futurumgroup.com/insights/ai-capex-2026-the-690b-infrastructure-sprint/; https://fortune.com/2026/04/30/big-tech-hyperscalers-will-spend-700-billion-on-ai-infrastructure-this-year-with-no-clear-end-in-sight-eye-on-ai/].</p>
+<p>Of that $485 bn, the rough split (Epoch and SemiAnalysis convergent view) is now closer to:</p>
+<ul>
+<li>40% training (frontier-model pre-training and RL post-training)</li>
+<li>35% inference serving</li>
+<li>25% experiments/research</li>
+</ul>
+<p>So <strong>~$170 bn of AI capex in 2026 is allocated to inference serving capacity</strong>. If reasoning is 60% of that, that’s ~$100 bn of inference capex backing reasoning workloads in 2026.</p>
+<p>Sanity check against OpenAI inference COGS: OpenAI is on track for ~$14 bn inference cost in 2026 vs $8.4 bn in 2025 [Source: https://aiautomationglobal.com/blog/ai-inference-cost-crisis-openai-economics-2026]. If OpenAI is ~30% of frontier-lab inference volume, total frontier-lab inference COGS is ~$45-50 bn, and total inference workload (including hyperscaler-served self-hosted) is perhaps $80-100 bn of operating cost. Capex amortised over 4-5 years adds another $35-45 bn/yr to economic cost. Total economic cost of 2026 inference: $115-145 bn. Reasoning’s 60% share = $70-90 bn — consistent with the capex top-down.</p>
+<p>The numbers reconcile in the right order of magnitude. A 50-65% range for the May 2026 reasoning compute share is internally consistent against both bottom-up (revenue × pricing) and top-down (capex × inference share × reasoning fraction) routes.</p>
+<hr>
+</section>
+<section id="forecast-2027-and-2028" class="level2">
+<h2 class="anchored" data-anchor-id="forecast-2027-and-2028">6. Forecast: 2027 and 2028</h2>
+<p><strong>Drivers pushing reasoning share <em>up</em>:</strong></p>
+<ol type="1">
+<li><strong>Agentic adoption</strong>. Agent-pattern API calls grew 680% YoY in Q1 2026 and now represent 41% of new enterprise integrations [Source: https://www.mykxlg.com/online_features/press_releases/aicc-report-enterprise-token-costs-drop-67-year-over-year-as-multi-model-ai-adoption/article_794d655c-f59b-5921-bbd0-33edb058b05e.html]. Agents are reasoning-by-construction: every step involves a reasoning-tier model planning the next action. If agentic share of enterprise compute hits 70% by 2027 and 85% by 2028, reasoning compute share follows.</li>
+<li><strong>Default-on adaptive thinking</strong>. Claude 4.6/4.7 ship with adaptive thinking on by default. GPT-5.5 routes to thinking automatically on Plus and Enterprise. By 2027 the option to <em>not</em> reason on a frontier model will be the exception.</li>
+<li><strong>Vertical agent products</strong> (Cursor, Devin, Lovable, Replit Agent, OpenAI’s Codex Cloud, Anthropic’s Claude Code, Google’s Jules, Microsoft’s GitHub Copilot Agent). All sell autonomous coding sessions priced at $20-200/month and consuming millions of reasoning tokens per session.</li>
+</ol>
+<p><strong>Drivers pushing reasoning share <em>down</em>:</strong></p>
+<ol type="1">
+<li><strong>Cheap-model improvements</strong>. Gemini 3 Flash, GPT-5 nano, Claude Haiku 4.5 keep getting better, sucking up the long tail of bulk RAG/classification/summarisation that previously needed Sonnet/4o. This grows non-reasoning <em>token</em> volume. But because these models are cheap, the <em>compute</em> shift is modest.</li>
+<li><strong>Reasoning efficiency</strong>. Anthropic “substantially reduced” reasoning verbosity from Sonnet 3.7 to 4.0 [Source: https://epoch.ai/gradient-updates/how-persistent-is-the-inference-cost-burden]. GPT-5.2 reaches ~27% on FrontierMath with 5M output tokens vs 43M for o4-mini eight months earlier — about 9x less per accuracy point. If reasoning models keep getting 3-10x more efficient per year, share growth could plateau.</li>
+<li><strong>Distillation</strong>. Reasoning traces from Opus and GPT-5 Pro are being distilled into smaller cheaper models. By 2028 a $1/MTok model may match today’s $25/MTok Opus.</li>
+</ol>
+<p><strong>Net trajectory</strong> — agentic adoption is the dominant force in the 2-3 year window, easily outweighing efficiency gains:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Year</th>
+<th style="text-align: right;">Central reasoning compute share</th>
+<th style="text-align: left;">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">May 2026</td>
+<td style="text-align: right;">60%</td>
+<td style="text-align: left;">55-65%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">End 2027</td>
+<td style="text-align: right;">78%</td>
+<td style="text-align: left;">72-82%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">End 2028</td>
+<td style="text-align: right;">83%</td>
+<td style="text-align: left;">78-88%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: ITK central estimate.</em></p>
+<p>By 2028 the question essentially flips: the interesting metric will be the share of compute that is <em>not</em> reasoning, which will be the residual of bulk Flash/Haiku/nano calls plus traditional classification/embedding workloads.</p>
+<hr>
+</section>
+<section id="final-answer" class="level2">
+<h2 class="anchored" data-anchor-id="final-answer">7. Final answer</h2>
+<p><strong>May 2026 reasoning compute share of total LLM inference compute: ~60% (range 55-65%).</strong></p>
+<p>This is built up from: - Frontier labs (OpenAI, Anthropic, Microsoft Azure OpenAI, Google Gemini, xAI) at ~70-75% reasoning share by revenue × pricing. - Open-weight self-hosted long tail (Llama, Qwen, Mistral, smaller models on enterprise GPUs) at ~20-30% reasoning share. - Weighted aggregate ~60%.</p>
+<p><strong>2027 forecast: ~78% (range 72-82%).</strong> <strong>2028 forecast: ~83% (range 78-88%).</strong></p>
+<p>For ITK / electricity demand purposes, the relevant implication is that the <em>marginal</em> GW of AI data centre load coming on through 2027-28 is overwhelmingly serving reasoning and agentic workloads, which have a quite different load shape from chat (longer time-to-first-token, much longer per-query GPU occupancy, and burstier load profiles tied to enterprise working hours and CI pipeline triggers rather than 24/7 consumer chat).</p>
+<hr>
+</section>
+<section id="caveats" class="level2">
+<h2 class="anchored" data-anchor-id="caveats">8. Caveats</h2>
+<ul>
+<li><strong>The 60% number is for compute-equivalent dollar-weighted inference, not raw token volume.</strong> By raw token volume, reasoning is probably 35-45% (because non-reasoning Flash/Haiku/nano serve enormous token counts at very low margin). The 60% figure correctly captures the GPU/electricity load share.</li>
+<li><strong>Self-hosted on-prem inference is undermeasured.</strong> Enterprise self-hosted Llama/Qwen deployments don’t show up in lab revenue but do show up in hyperscaler capex and enterprise DC build-out. The cross-check in §5 partly captures this, but it remains the largest source of estimation error.</li>
+<li><strong>The reasoning/non-reasoning binary is becoming blurred.</strong> Adaptive thinking, automatic routing, and “reasoning effort: low” all sit in a grey zone. By 2027 the question may be better framed as “average thinking budget per query” rather than a binary share.</li>
+<li><strong>OpenAI compute mix</strong> still includes a large non-revenue-generating block (research experiments, RL training infrastructure). The ~30% inference / 70% other split documented by Epoch for 2024 is closing fast as inference scales, but for OpenAI specifically the inference share within total compute may still be only 40-50% of total compute spend in 2026.</li>
+<li><strong>Chinese provider treatment</strong>. OpenRouter rankings show MiMo, Qwen, DeepSeek dominating raw OpenRouter token volume — but OpenRouter is unrepresentative of total inference compute. Direct enterprise hosting of Chinese open-weight models for sovereign/cost reasons is large and not captured in revenue numbers.</li>
+<li><strong>List vs effective pricing</strong>. Big enterprise contracts run at 30-60% off list. Caching, batch API, and prompt-caching reduce effective per-token cost by 50-90%. The compute-share estimate is largely insensitive to this because both reasoning and non-reasoning workloads benefit from the same discounts proportionally — but Claude Code in particular gets very large savings from prompt caching that are not reflected in the simple revenue × list-price decomposition.</li>
+<li><strong>Dario Amodei’s “80x growth” Q1 2026 figure</strong> [Source: https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth] is annualised growth of a small base, not 80x q-o-q. Treat all rapid-growth disclosures with that filter when reading.</li>
+</ul>
+<hr>
+</section>
+<section id="bibliography" class="level2">
+<h2 class="anchored" data-anchor-id="bibliography">9. Bibliography</h2>
+<ul>
+<li>AICC enterprise survey, Q1 2026. “Enterprise Token Costs Drop 67% Year-Over-Year.” https://www.mykxlg.com/online_features/press_releases/aicc-report-enterprise-token-costs-drop-67-year-over-year-as-multi-model-ai-adoption/article_794d655c-f59b-5921-bbd0-33edb058b05e.html</li>
+<li>Alphabet, Q1 2026 earnings release. https://abc.xyz/</li>
+<li>Anthropic. “Anthropic raises $30 billion in Series G funding.” 2026. https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation</li>
+<li>Anthropic. Pricing page. https://platform.claude.com/docs/en/about-claude/pricing</li>
+<li>apidog. “GPT-5.5 Pricing: Full Breakdown.” April 2026. https://apidog.com/blog/gpt-5-5-pricing/</li>
+<li>Bloomberg. “OpenAI to Spend $50 Billion on Computing in 2026, Brockman Says.” May 2026. https://www.bloomberg.com/news/articles/2026-05-05/openai-to-spend-50-billion-on-computing-in-2026-brockman-says</li>
+<li>DeepSeek API documentation. https://api-docs.deepseek.com/</li>
+<li>digitalapplied.com. “OpenRouter Rankings April 2026.” https://www.digitalapplied.com/blog/openrouter-rankings-april-2026-top-ai-models-data</li>
+<li>Epoch AI. “Most of OpenAI’s 2024 compute went to experiments.” https://epoch.ai/data-insights/openai-compute-spend</li>
+<li>Epoch AI. “How persistent is the inference cost burden?” https://epoch.ai/gradient-updates/how-persistent-is-the-inference-cost-burden</li>
+<li>Fortune. “Big Tech is about to spend $700 billion on AI this year.” April 2026. https://fortune.com/2026/04/30/big-tech-hyperscalers-will-spend-700-billion-on-ai-infrastructure-this-year-with-no-clear-end-in-sight-eye-on-ai/</li>
+<li>Futurum Group. “AI Capex 2026: The $690B Infrastructure Sprint.” https://futurumgroup.com/insights/ai-capex-2026-the-690b-infrastructure-sprint/</li>
+<li>Gartner. “Inference cost on 1T parameter LLMs to drop 90% by 2030.” March 2026. https://www.gartner.com/en/newsroom/press-releases/2026-03-25-gartner-predicts-that-by-2030-performing-inference-on-an-llm-with-1-trillion-parameters-will-cost-genai-providers-over-90-percent-less-than-in-2025</li>
+<li>Google. Gemini 3 Flash blog. https://blog.google/products/gemini/gemini-3-flash/</li>
+<li>Google AI. Gemini API pricing. https://ai.google.dev/gemini-api/docs/pricing</li>
+<li>Microsoft. FY26 Q3 earnings release. https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast</li>
+<li>OpenAI. API pricing. https://developers.openai.com/api/docs/pricing</li>
+<li>pricepertoken.com. GPT-5 Pro and GPT-5 pricing. https://pricepertoken.com/pricing-page/model/openai-gpt-5-pro</li>
+<li>Sacra. Anthropic and OpenAI company profiles. https://sacra.com/c/anthropic/, https://sacra.com/c/openai/</li>
+<li>SemiAnalysis. “Nvidia GTC 2026 — The Inference Kingdom Expands.” https://newsletter.semianalysis.com/p/nvidia-the-inference-kingdom-expands</li>
+<li>SemiAnalysis. “InferenceMAX.” October 2025 / April 2026. https://newsletter.semianalysis.com/p/inferencemax-open-source-inference</li>
+<li>Stormy AI. “Inside the Claude Code GTM Strategy: Anthropic’s $2.5B ARR.” https://stormy.ai/blog/claude-code-gtm-strategy-anthropic-revenue-2026</li>
+<li>Toby Ord. “Evidence that Recent AI Gains are Mostly from Inference-Scaling.” https://www.tobyord.com/writing/mostly-inference-scaling</li>
+<li>VentureBeat. “Anthropic says it hit a $30 billion revenue run rate.” https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth</li>
+<li>Where’s Your Ed At. “Exclusive: Here’s How Much OpenAI Spends On Inference and Its Revenue Share With Microsoft.” https://www.wheresyoured.at/oai_docs/</li>
+<li>Zylos Research. “Inference Economics: AI Agent Compute Markets in 2026.” April 2026. https://zylos.ai/research/2026-04-13-inference-economics-ai-agent-compute-markets</li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

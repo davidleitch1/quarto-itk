@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>handoff_2026-05-12_australian_session</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="_handoff_2026-05-12_australian_session_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_handoff_2026-05-12_australian_session_files/libs/quarto-html/quarto.js"></script>
+<script src="_handoff_2026-05-12_australian_session_files/libs/quarto-html/popper.min.js"></script>
+<script src="_handoff_2026-05-12_australian_session_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_handoff_2026-05-12_australian_session_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_handoff_2026-05-12_australian_session_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_handoff_2026-05-12_australian_session_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_handoff_2026-05-12_australian_session_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_handoff_2026-05-12_australian_session_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_handoff_2026-05-12_australian_session_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="handoff-data-centres-research-thread-end-of-session-2026-05-12" class="level1">
+<h1>Handoff: data centres research thread, end of session 2026-05-12</h1>
+<p>For the next session focused on Australian data centres specifically. Read this first.</p>
+<hr>
+<section id="whats-already-built" class="level2">
+<h2 class="anchored" data-anchor-id="whats-already-built">What’s already built</h2>
+<p>Six published background notes in <code>background/</code>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 40%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">File</th>
+<th style="text-align: left;">What it covers</th>
+<th style="text-align: left;">Headline numbers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>data_centres_usa.md</code></td>
+<td style="text-align: left;">Operating fleet, construction pipeline, demand, fuel sources</td>
+<td style="text-align: left;">~50 GW operating IT load (FERC 2025); 22-26 GW physically under construction; 17 GW in named mega-campuses; 500-700 TWh by 2030 (12-17% of US electricity); ~74% gas in effective fuel mix</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>data_centres_community.md</code></td>
+<td style="text-align: left;">Local opposition cases, political dimensions</td>
+<td style="text-align: left;">VA voter comfort fell 69% → 35% (WaPo-Schar School Mar 2026); PJM 833% capacity-auction jump; FERC PJM co-location order Dec 2025; “must power itself” coalition Feb 2026 in Australia</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>data_centres_industry_response.md</code></td>
+<td style="text-align: left;">Flexibility, DR, BTM batteries, US vs AU</td>
+<td style="text-align: left;">Norris/Duke 76 GW headroom @ 0.25% curtailment; AWS Apr 2026 9 PPAs in AU (8 with co-located BESS); AEMC Package 2 draft 30 MW threshold; Quinbrook Supernode 780 MW / 3 GWh BESS</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>training_v_inference.md</code></td>
+<td style="text-align: left;">Hardware lineage, utilisation, lifecycle</td>
+<td style="text-align: left;">Llama 3 16K-H100 cluster: 90% effective time, 38-43% MFU; Meta H100 cluster TCO: 71% CapEx / 29% OpEx; depreciation life debate (5-yr central)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>token_memory.md</code></td>
+<td style="text-align: left;">Decode bandwidth math</td>
+<td style="text-align: left;">tokens/sec ≈ HBM bandwidth ÷ bytes per token; B200 at 8 TB/s on 70B FP8 → ~115 tok/sec/stream; the memory wall explained</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>datacentre_opex.md</code></td>
+<td style="text-align: left;">OpEx structures, US-vs-AU competitiveness</td>
+<td style="text-align: left;">Energy share rises 46% → 73% as utilisation goes 30% → 90%; AU PPA + BESS at US$115/MWh-IT competitive with ERCOT West, cheaper than PJM Dominion (US$178); fixed costs sub-linear at scale (~3.5× for 5× MW); water + depreciation context added</td>
+</tr>
+</tbody>
+</table>
+<p>Underlying research drafts (10+) in <code>background/_research_drafts/</code>. Five summary PNGs in <code>aemo_spot/pngs/</code>.</p>
+</section>
+<section id="the-users-evolving-framework-what-they-care-about" class="level2">
+<h2 class="anchored" data-anchor-id="the-users-evolving-framework-what-they-care-about">The user’s evolving framework (what they care about)</h2>
+<p>David has been building toward an article (or set of articles) on the <strong>competitiveness of Australian data centres</strong> for AI build-out. The framework that’s emerged:</p>
+<ol type="1">
+<li><strong>At AI training utilisation (~90%), energy is the dominant cash OpEx</strong> — 73% at 100 MW US, 80%+ at hyperscale.</li>
+<li><strong>The right structural play in Australia is renewable PPA + facility-contracted BESS</strong> — not firmed retail. Delivers ~A$95-110/MWh effective vs A$140 for firmed retail. The BESS does double duty: PPA firming + FCAS revenue + facility ride-through.</li>
+<li><strong>Australia is competitive against PJM Dominion</strong> (where most US construction is concentrated) and roughly even with ERCOT West Texas. Only beaten by Quincy WA hydro.</li>
+<li><strong>The competitive Australian site needs</strong>:
+<ul>
+<li>Transmission interconnection (the AEMC Package 2 final rule, due mid-2026, matters)</li>
+<li>PPA + BESS structure (AWS doing this; smaller operators not yet)</li>
+<li>Avoidance of any future PJM-style capacity-cost socialisation</li>
+</ul></li>
+<li><strong>Limits on the thesis</strong>: GPU depreciation dwarfs OpEx at ~5× cash OpEx, so AU advantage on energy is material for operating margin but small against TCO; talent pool and scale are real constraints; and Australia can’t match Quincy hydro economics.</li>
+</ol>
+</section>
+<section id="whats-explicitly-open-pending" class="level2">
+<h2 class="anchored" data-anchor-id="whats-explicitly-open-pending">What’s explicitly open / pending</h2>
+<p>The user has flagged these as future work — pick up in priority order:</p>
+<ol type="1">
+<li><strong>Transmission and network charges in detail</strong> — David said “I will get to the transmission and other bits later” when reviewing the per-region electricity price work. The AEMC Package 2 rule (final mid-2026), TUOS/DUOS structures, connection charges, contingent project applications (Wallumatta STS, Macquarie Park substation transformer), AER decisions on incremental connection. This is the next chunk to research.</li>
+<li><strong>The economics piece on training v inference</strong> — repeatedly flagged in the Caveats and closing pointers of <code>training_v_inference.md</code>, <code>token_memory.md</code>, <code>datacentre_opex.md</code>. Will combine: the energy share trajectory, the bandwidth math, the workload split, the reasoning compute share, and the per-region pricing into a unified per-token economics analysis. The OpEx work has set up most of the inputs.</li>
+<li><strong>Australian regional / state breakdown</strong> — currently treats NEM as one. NSW vs VIC vs QLD vs WA(SWIS) have different price profiles, different network charges, different state policy. Worth disaggregating.</li>
+<li><strong>Macquarie Park substation upgrade story</strong> — Wallumatta STS contingent project (AER application Oct 2025), third Macquarie Park transformer commissioned Dec 2025. Could be a useful illustrative case for “what does it cost to add a GW of data centre capacity to existing transmission”.</li>
+<li><strong>NextDC + OpenAI S7 deep dive</strong> — A$7bn, 550 MW Eastern Creek, Stargate Australia. Major recent commit, partly disclosed; could use a focused project-level note.</li>
+<li><strong>AirTrunk competitive position post-Blackstone</strong> — AirTrunk is the largest AU operator (~1.2 GW + when SYD3/MEL2 fully built), now Blackstone-owned, no longer publicly listed. Their PPA portfolio and competitive positioning is partly opaque.</li>
+</ol>
+</section>
+<section id="workflow-patterns-that-have-worked" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-patterns-that-have-worked">Workflow patterns that have worked</h2>
+<p>Captured in <code>feedback_research_workflow.md</code> (memory) but worth restating for project continuity:</p>
+<ul>
+<li><strong>Delegate research to 2-3 parallel general-purpose agents</strong>, each with one slice of the topic. Brief them with explicit Tier 1 / Tier 2 / Tier 3 source-quality requirements, what NOT to do, and what to flag as advocacy vs primary.</li>
+<li><strong>Drafts land in <code>background/_research_drafts/&lt;slug&gt;.md</code></strong>, then synthesise into <code>background/&lt;topic&gt;.md</code>.</li>
+<li><strong>For contested questions</strong>, two independent methodologies via two parallel agents, then reconcile (the reasoning compute share work is the model — bottom-up 84% vs top-down 60% reconciled to 70-75%).</li>
+<li><strong>Push back on weak figures</strong> before synthesising — Meta Altoona “1,400 MW IT load” was the canonical case where I pushed back and it turned out to be a master-plan envelope, not energised IT.</li>
+<li><strong>House conventions</strong>: Australian English in body prose (“centre”, “behaviour”); proper-noun terms keep US spelling (“Crane Clean Energy Center”); never use the word “genuine”/“genuinely”; escape standalone $ outside tables (<code>\$</code>); table style is bold title above, plain markdown table, italic source below.</li>
+</ul>
+</section>
+<section id="png-charts-produced" class="level2">
+<h2 class="anchored" data-anchor-id="png-charts-produced">PNG charts produced</h2>
+<p>In <code>aemo_spot/pngs/</code>:</p>
+<ul>
+<li><code>dc_fleet_at_a_glance.png</code> — operating fleet headline numbers (300 DPI)</li>
+<li><code>dc_power_source.png</code> — financing 4-bucket split (47% generic grid)</li>
+<li><code>dc_power_fuel.png</code> — effective fuel mix (74% gas)</li>
+<li><code>dc_top_projects.png</code> — project × tenant matrix + state bar (with stacked Named/Incremental for state breakdown)</li>
+<li><code>dc_capex_per_gw.png</code> — waterfall of cost build-up</li>
+<li><code>reasoning_models_lineage.png</code> — six-lab table of reasoning architecture</li>
+<li><code>reasoning_compute_share.png</code> — bottom-up vs top-down vs reconciled estimates</li>
+<li><code>us_opex_by_utilisation.png</code> — variable energy vs fixed costs at 30/60/90% utilisation, with depreciation memo</li>
+</ul>
+<p>If user asks for charts, generation scripts in <code>/tmp/</code> (don’t survive — reconstruct in chat from existing chart code conventions).</p>
+</section>
+<section id="things-to-flag-at-start-of-next-session" class="level2">
+<h2 class="anchored" data-anchor-id="things-to-flag-at-start-of-next-session">Things to flag at start of next session</h2>
+<ul>
+<li>Confirm with David which of the open items above is the priority (transmission/network is most-explicitly-flagged but the per-token economics piece is also pending and largely set up).</li>
+<li>Check whether the SemiAnalysis Gmail email he mentioned has been imported (we discussed AppleScript or MCP Gmail; he was going to “manage that separately”). Could be substantial source material if so.</li>
+<li>The Wisconsin PSC May 2026 ruling (data centres bear full cost of new generation) is a precedent worth tracking — Australia equivalent would be major.</li>
+<li>The user is a Claude Code Max subscriber and a heavy user of extended thinking; that informed his observation that “the industry is heavily shifting toward inference [reasoning] models”. The reasoning-share research started from his lived experience as a power user.</li>
+</ul>
+</section>
+<section id="calibration-notes-for-the-next-session" class="level2">
+<h2 class="anchored" data-anchor-id="calibration-notes-for-the-next-session">Calibration notes for the next session</h2>
+<ul>
+<li>David has deep NEM expertise; do not over-explain NEM mechanics. Do explain US/global where unfamiliar.</li>
+<li>He pushes back well on weak numbers and methodological shortcuts (he caught the FX-flat conversion of fixed OpEx; the PJM-vs-NEM electricity price discussion). Lean toward exposing methodology rather than presenting numbers as black-box.</li>
+<li>He prefers fewer, sharper tables and bullet lists over long prose. Two-column comparison tables work well.</li>
+<li>He’s tolerant of length when the work justifies it but allergic to padding.</li>
+<li>He likes the parallel-agents-then-reconcile pattern when the question is genuinely contested.</li>
+</ul>
+<hr>
+<p><em>End of handoff. Read this, then read <code>data_centres_usa.md</code> for the operating-fleet picture if context is needed, then <code>datacentre_opex.md</code> §6 for the competitiveness frame the user is building toward.</em></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
