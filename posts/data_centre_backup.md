@@ -116,7 +116,7 @@ Australian hyperscale sites typically clock 10-25 genset hours per year, mostly 
 
 As I mentioned in my last note data centres in Sydney are concentrated around TransGrid's Sydney West terminal and in Melbourne around Deer Park. It's excellent that Renewmap shows this in a map together with the transmission connections — a fantastic piece of software (@fig-sydney-west-map). You can ride your pushbike on a loop in the area and never know the data centres are there. Just off screen is the Sydney Southern Ring exit corridor.
 
-![Sydney West data centre cluster map](../media/image-20260513143207590.png){#fig-sydney-west-map, Source:Renewmap.com.au}
+![Sydney West data centre cluster map. , Source:Renewmap.com.au](../media/image-20260513143207590.png){#fig-sydney-west-map}
 
 By and large the data centres are spread out around the 132 kV lines that come out of the Sydney West terminal station. Naturally the terminal station has N-1 redundancy but just as clearly if the centre itself went offline it would be a problem and 800 MW of diesel would start running. Initially the on-site UPS battery picks up the load. The diesel gensets start within about 10 seconds, but the UPS battery is sized for 5-10 minutes to allow for re-tries, load transfer and any genset that fails to fire on first attempt.
 
