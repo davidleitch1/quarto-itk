@@ -5,11 +5,6 @@ date: 2026-05-13
 draft: true
 categories: ["Demand", "Generation"]
 lightbox: true
-format:
-  html:
-    include-after-body:
-      - "../comment_load.html"
-  docx: default
 ---
 
 ## Why this note
