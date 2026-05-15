@@ -1,5 +1,28 @@
 /* css styles */
 
+/* Subscribe CTA appended to every post via comment_load.html */
+.itk-subscribe-cta {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: #F2F0E5;
+  border-left: 4px solid #24837B;
+  border-radius: 2px;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.itk-subscribe-cta p {
+  margin: 0;
+}
+.itk-subscribe-cta a {
+  color: #24837B;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.itk-subscribe-cta a:hover {
+  text-decoration: underline;
+}
+
 /* Homepage two-column layout */
 .homepage-layout {
   display: flex;
