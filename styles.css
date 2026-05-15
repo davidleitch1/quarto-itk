@@ -23,6 +23,147 @@
   text-decoration: underline;
 }
 
+/* ============================================================
+   Subscribe page (mailchimp.qmd)
+   ============================================================ */
+
+.subscribe-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.subscribe-option {
+  background: #F2F0E5;
+  border-left: 4px solid #24837B;
+  border-radius: 2px;
+  padding: 1rem 1.25rem;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.subscribe-option h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05em;
+  color: #100F0F;
+}
+
+.subscribe-option p:first-of-type em {
+  color: #6F6E69;
+  font-style: normal;
+  font-size: 0.9em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.subscribe-option ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.subscribe-option ul li {
+  margin: 0.15rem 0;
+}
+
+/* Mailchimp embed overrides */
+.subscribe-form-wrapper {
+  max-width: 540px;
+  margin: 1rem 0 2rem;
+}
+
+#mc_embed_signup {
+  background: #FFFCF0 !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+#mc_embed_signup h2 {
+  display: none;
+}
+
+#mc_embed_signup .mc-field-group {
+  padding-bottom: 0.6rem !important;
+}
+
+#mc_embed_signup .mc-field-group label {
+  font-weight: 500;
+  color: #100F0F;
+}
+
+#mc_embed_signup input[type="email"],
+#mc_embed_signup input[type="text"] {
+  border: 1px solid #B7B5AC !important;
+  border-radius: 3px !important;
+  padding: 0.4rem 0.5rem !important;
+  background: #FFFCF0 !important;
+  color: #100F0F !important;
+}
+
+#mc_embed_signup input[type="email"]:focus,
+#mc_embed_signup input[type="text"]:focus {
+  outline: none !important;
+  border-color: #24837B !important;
+  box-shadow: 0 0 0 2px rgba(36, 131, 123, 0.15);
+}
+
+#mc_embed_signup .input-group ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.4rem 0 0;
+}
+
+#mc_embed_signup .input-group li {
+  margin: 0.25rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+#mc_embed_signup .input-group label {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+#mc_embed_signup input.button {
+  background: #24837B !important;
+  border: none !important;
+  color: #FFFCF0 !important;
+  font-weight: 600 !important;
+  border-radius: 3px !important;
+  padding: 0.5rem 1.25rem !important;
+  height: auto !important;
+  cursor: pointer;
+}
+
+#mc_embed_signup input.button:hover {
+  background: #3AA99F !important;
+}
+
+#mc_embed_signup .asterisk {
+  color: #AF3029;
+}
+
+/* Privacy / footer note under form */
+.subscribe-footer {
+  font-size: 0.9em;
+  color: #6F6E69;
+  border-top: 1px solid #E8E4D9;
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+.subscribe-footer p {
+  margin-bottom: 0.5rem;
+}
+
+.subscribe-footer em {
+  color: #100F0F;
+  font-style: normal;
+  font-weight: 500;
+}
+
 /* Homepage two-column layout */
 .homepage-layout {
   display: flex;

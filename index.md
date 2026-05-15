@@ -20,6 +20,34 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### 15 May
+
+Two major notes this week on data centres. Key insight was around the cost of data centre level 4 uptime requirement and the various diesel generator capex, opex, diesel storage requirements. Improved my understanding heaps.
+
+Secondly added back the Isso comments section on all posts and add as subscribe button in the margin on each post.
+
+Thirdly decided that the lunchtime and evening emails I get on an automated basis should be made available to people that subscribe and also offered beta iPhone dashboard access. i'm going to promote that via an email next week.
+
+Fourthly clearly up some minor bugs in the iPhone app and added a summary compared to last year view for a region and time period.
+
+
+
+:::
+
+::: {.homepage-widgets}
+<iframe src="https://spot_prices.itkservices2.com/display_spot"
+        title="Spot Prices Display"
+        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
+</iframe>
+<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
+        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
+</iframe>
+
+![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
+:::
+
+::::
+
 ### 8 May
 
 Iphone dashboard app and running. Feedback has been positive from the beta testers. Could not have been done by me without Claude Code, equally it's about the 5 th iteration of a dashboard I started five years ago. In anyevent very happy with it.
@@ -47,22 +75,6 @@ Also its not that clear that gas companies are making so much money.
 ![](./media/aplng_reserves_production_wells_costs.png)
 
 
-
-:::
-
-::: {.homepage-widgets}
-<iframe src="https://spot_prices.itkservices2.com/display_spot"
-        title="Spot Prices Display"
-        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
-</iframe>
-<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
-        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
-</iframe>
-
-![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
-:::
-
-::::
 
 ### 5 May
 

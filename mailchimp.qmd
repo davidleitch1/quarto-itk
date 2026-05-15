@@ -1,11 +1,103 @@
 ---
-title: ""
+title: "Subscribe to ITK Research"
+description: "Email lists covering long-form research, daily NEM market snapshots, and a closed iOS dashboard beta."
 comments: false
 format:
   html:
-    page-layout: custom
-
+    page-layout: article
 ---
-<div class="page-layout-custom" style="height:88vh">
-<iframe src="https://eepurl.com/gtDkjX" title="signup" height=100% width=100% ></iframe> 
+
+Tick any combination. One-click unsubscribe in every email.
+
+::: {.subscribe-options}
+
+::: {.subscribe-option}
+### Weekly research articles
+*1–2 per week*
+
+Long-form NEM notes: data centres, coal closures, battery revenue, international comparisons. Same as the [Articles page](posts.html), in your inbox.
+:::
+
+::: {.subscribe-option}
+### Midday NEM snapshot
+*Daily, 12:00 Sydney*
+
+- Spot VWAP vs 7-day and last-year
+- Coal offline
+- Wind, last 8h vs 7-day
+- STTM gas prices
+:::
+
+::: {.subscribe-option}
+### Evening peak report
+*Daily, ~19:00 Sydney*
+
+- Peak prices vs 7-day and last-year
+- Coal offline
+- Battery fleet SOC vs yesterday and a week ago
+- STTM gas
+- Predispatch, next 24h
+:::
+
+::: {.subscribe-option}
+### Beta iOS dashboard app
+*Waitlist — limited spots*
+
+Closed iPhone beta: real-time NEM prices, generation, outages, battery SOC. Via TestFlight; we contact selected applicants. Ticking this box joins the waitlist, not the beta.
+:::
+
+:::
+
+::: {.subscribe-form-wrapper}
+
+```{=html}
+<link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+<div id="mc_embed_signup">
+    <form action="https://itkservices.us20.list-manage.com/subscribe/post?u=12833f5117af80753136459c3&amp;id=7745127a22&amp;f_id=00fc1feaf0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate>
+        <div id="mc_embed_signup_scroll">
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+                <label for="mce-EMAIL">Email address <span class="asterisk">*</span></label>
+                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
+            </div>
+            <div class="mc-field-group">
+                <label for="mce-FNAME">First name</label>
+                <input type="text" name="FNAME" class="text" id="mce-FNAME" value="">
+            </div>
+            <div class="mc-field-group">
+                <label for="mce-LNAME">Last name</label>
+                <input type="text" name="LNAME" class="text" id="mce-LNAME" value="">
+            </div>
+            <div class="mc-field-group input-group">
+                <strong>Subscriptions</strong>
+                <ul>
+                    <li><input type="checkbox" name="group[295258][1]" id="mce-group295258-0" value=""><label for="mce-group295258-0">Weekly research articles</label></li>
+                    <li><input type="checkbox" name="group[295258][2]" id="mce-group295258-1" value=""><label for="mce-group295258-1">Midday NEM snapshot</label></li>
+                    <li><input type="checkbox" name="group[295258][32]" id="mce-group295258-2" value=""><label for="mce-group295258-2">Evening peak report</label></li>
+                    <li><input type="checkbox" name="group[295258][64]" id="mce-group295258-3" value=""><label for="mce-group295258-3">Beta iOS dashboard app (limited spots — we'll contact you)</label></li>
+                </ul>
+            </div>
+            <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_12833f5117af80753136459c3_7745127a22" tabindex="-1" value="">
+            </div>
+            <div class="optionalParent">
+                <div class="clear foot">
+                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
+```
+
+:::
+
+::: {.subscribe-footer}
+Already subscribed? Use **"update your preferences"** in any ITK email to add lists.
+
+Your email stays with ITK Services. Unsubscribe one-click from any email.
+:::
