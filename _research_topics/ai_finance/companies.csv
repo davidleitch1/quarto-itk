@@ -1,0 +1,58 @@
+company,layer,sub_segment,listing_status,ticker,country,mkt_cap_usd_bn,debt_usd_bn,leased_usd_bn,ev_usd_bn,total_revenue_2026e_consensus_bn,total_revenue_2026e_itk_bn,ai_revenue_2026e_consensus_bn,ai_revenue_2026e_itk_bn,performance_3m_pct,performance_12m_pct,source,notes
+Nvidia,chip,GPU_accelerator,listed,NASDAQ:NVDA,USA,5457.4,11.4,,5424.1,372.5,372.5,,285.0,21.8,66.4,Yahoo Finance 2026-05-16,DC ~$285bn CY2026e; $100bn staged equity into OpenAI
+AMD,chip,GPU_accelerator,listed,NASDAQ:AMD,USA,691.5,3.9,,683.1,49.3,49.3,,11.0,108.8,262.0,Yahoo Finance 2026-05-16,MI300/MI400 Instinct; $90bn warrants from xAI deal
+Broadcom,chip,custom_silicon,listed,NASDAQ:AVGO,USA,2013.1,66.1,,2065.0,104.3,104.3,,40.0,28.1,87.5,Yahoo Finance 2026-05-16,Custom AI accelerators for hyperscalers; $350bn OpenAI commit (Tunguz)
+TSMC,chip,foundry,listed,NYSE:TSM,Taiwan,1814.9,31.4,,1743.1,159.0,159.0,,97.0,11.3,110.8,Yahoo Finance 2026-05-16 via 2330.TW (mc/debt/EV); revenue $159bn from TSMC Q1 2026 call 16-Apr-2026 (>30% USD FY26 growth on $122.4bn FY25 base); AI = HPC 61% × $159bn ≈ $97bn,Foundry for Nvidia/AMD/Broadcom; binding capacity constraint per Stratechery
+SK Hynix,chip,HBM_memory,listed,KRX:000660,South Korea,929.7,13.9,,898.1,239.1,239.1,,17.0,103.8,812.5,Yahoo Finance 2026-05-16,Leading HBM3E/HBM4 supplier
+Samsung Electronics,chip,HBM_memory_foundry,listed,KRX:005930,South Korea,1278.9,20.3,,1205.4,480.1,480.1,,10.0,42.7,380.4,Yahoo Finance 2026-05-16,HBM + foundry; trailing SK Hynix in HBM4
+Micron Technology,chip,HBM_memory,listed,NASDAQ:MU,USA,817.2,10.8,,813.4,109.3,109.3,,7.0,81.3,641.2,Yahoo Finance 2026-05-16,HBM supplier (third of the big-3)
+Marvell Technology,chip,custom_silicon,listed,NASDAQ:MRVL,USA,154.9,4.8,,156.8,10.8,10.8,,5.0,124.0,178.2,Yahoo Finance 2026-05-16,DC custom silicon + AEC ramp
+Astera Labs,chip,networking_silicon,listed,NASDAQ:ALAB,USA,39.9,0.0,,38.7,1.5,1.5,,1.4,88.1,156.9,Yahoo Finance 2026-05-16,Aries retimers; AI DC networking; $1.4bn run-rate
+Intel,chip,GPU_accelerator,listed,NASDAQ:INTC,USA,546.7,45.0,,572.5,58.6,58.6,,1.0,135.5,402.2,Yahoo Finance 2026-05-16,Gaudi accelerators; lagging Nvidia structurally
+Microsoft,infra,hyperscaler,listed,NASDAQ:MSFT,USA,3134.2,125.4,166.0,3181.4,329.5,329.5,,50.0,6.6,-6.6,Yahoo Finance 2026-05-16  |  leased: ITK est. Moodys Feb 2026 Big-5 OBS $662bn split by 2026 capex share (190/760); supersedes Hyperion-only figure,Azure; $37bn AI run-rate Q3 FY26; restructured OpenAI deal Apr 2026
+Alphabet,infra,hyperscaler,listed,NASDAQ:GOOGL,USA,4807.2,95.9,161.0,4776.4,486.7,486.7,,38.0,31.5,139.6,Yahoo Finance 2026-05-16  |  leased: ITK est. Moodys Feb 2026 Big-5 OBS $662bn split by 2026 capex share (185/760); supersedes Hyperion-only figure,GCP +63% YoY Q1 2026; owns DeepMind; $20bn equity in Anthropic
+Amazon,infra,hyperscaler,listed,NASDAQ:AMZN,USA,2841.4,235.5,174.0,2933.8,822.5,822.5,,28.0,31.3,28.5,Yahoo Finance 2026-05-16  |  leased: ITK est. Moodys Feb 2026 Big-5 OBS $662bn split by 2026 capex share (200/760); supersedes Hyperion-only figure,AWS Q1 2026 +28%; FCF –95%; $25bn equity in Anthropic
+Meta Platforms,infra,hyperscaler,listed,NASDAQ:META,USA,1559.2,86.8,118.0,1564.8,253.0,253.0,,0.0,-3.8,-3.8,Yahoo Finance 2026-05-16  |  leased: ITK est. Moodys Feb 2026 Big-5 OBS $662bn split by 2026 capex share (135/760); supersedes Hyperion-only figure,Buyer not seller of compute; Hyperion SPV $27.3bn off-balance-sheet
+Oracle,infra,hyperscaler,listed,NYSE:ORCL,USA,554.9,162.2,44.0,683.5,67.2,67.2,,18.0,25.8,21.4,Yahoo Finance 2026-05-16  |  leased: ITK est. Moodys Feb 2026 Big-5 OBS $662bn split by 2026 capex share (50/760); supersedes Hyperion-only figure,OCI; Stargate $300bn OpenAI contract; TTM FCF –$24.7bn; Baa2 rating
+CoreWeave,infra,neocloud,listed,NASDAQ:CRWV,USA,58.5,35.1,,91.4,12.7,12.7,,12.5,17.9,33.6,Yahoo Finance 2026-05-16,IPO Mar 2025; concentrated Meta + OpenAI exposure (~$64bn inflow commits)
+Nebius Group,infra,neocloud,listed,NASDAQ:NBIS,Netherlands,55.8,9.5,,56.5,3.4,3.4,,3.0,125.5,489.3,Yahoo Finance 2026-05-16,Spun out of Yandex; AI infra build-out in EU + US
+Crusoe Energy,infra,neocloud,unlisted,,USA,,,,,,,,,,,,Stargate facility builder (Abilene TX); rumored IPO consideration
+Lambda,infra,neocloud,unlisted,,USA,,,,,,,,,,,,Cloud GPU rental; mid-market enterprise focus
+Together AI,infra,neocloud,unlisted,,USA,,,,,,,,,,,,Inference + training cloud; open-model focus
+Voltage Park,infra,neocloud,unlisted,,USA,,,,,,,,,,,,Boutique GPU cloud (Cohere et al.)
+Equinix,infra,dc_reit,listed,NASDAQ:EQIX,USA,104.5,23.3,,126.5,10.2,10.2,,5.0,11.9,23.8,Yahoo Finance 2026-05-16,Largest interconnection REIT; AI-related colocation expansion
+Digital Realty,infra,dc_reit,listed,NYSE:DLR,USA,67.4,19.5,,86.0,6.8,6.8,,3.0,5.5,14.1,Yahoo Finance 2026-05-16,Hyperscale colocation; portfolio mix shifting AI-ward
+Vantage Data Centers,infra,dc_developer,unlisted,,USA,,,,,,,,,,,,DigitalBridge-owned; hyperscale DC developer
+QTS Realty,infra,dc_developer,unlisted,,USA,,,,,,,,,,,,Blackstone-owned since 2021; aggressive AI DC build
+CyrusOne,infra,dc_developer,unlisted,,USA,,,,,,,,,,,,KKR + GIP-owned since 2022
+Dell Technologies,infra,ai_server_oem,listed,NYSE:DELL,USA,157.3,32.3,,177.0,141.9,141.9,,50.0,109.1,115.1,Yahoo Finance 2026-05-16,$5bn xAI Colossus contract; AI servers ~$30bn 2026e
+Super Micro Computer,infra,ai_server_oem,listed,NASDAQ:SMCI,USA,18.7,9.2,,26.5,40.0,40.0,,40.0,3.1,-32.7,Yahoo Finance 2026-05-16,Half of Colossus 1 racks; ~$30bn AI server 2026e
+Hewlett Packard Enterprise,infra,ai_server_oem,listed,NYSE:HPE,USA,43.9,21.7,,60.8,40.8,40.8,,5.0,51.6,91.2,Yahoo Finance 2026-05-16,AI server line; smaller share than Dell/Supermicro
+Lenovo Group,infra,ai_server_oem,listed,HKEX:0992,Hong Kong,19.7,0.6,,19.8,80.4,80.4,,6.0,34.3,32.1,Yahoo Finance 2026-05-16,AI server line; China + global
+OpenAI,labs,frontier_lab,pending,,USA,,,,,,55.0,,55.0,,,,~$25bn ARR Apr 2026; 27-Apr-2026 restructure cleared path; 2026 listing expected
+Anthropic,labs,frontier_lab,pending,,USA,350.0,,,,,60.0,,60.0,,,Apr 2026 Google round post-money (sources.md),$30bn (Info) / $44bn (SemiAnalysis) ARR May 2026; $350bn post-money; 2026 listing expected
+Mistral AI,labs,frontier_lab,unlisted,,France,,,,,,1.0,,1.0,,,,European frontier lab; targeting $1bn ARR
+Cohere,labs,frontier_lab,unlisted,,Canada,,,,,,0.3,,0.3,,,,Enterprise AI focus; rumored IPO eventually
+DeepSeek,labs,frontier_lab,unlisted,,China,,,,,,0.1,,0.1,,,,Open-weight frontier; R1 release upended pricing Jan 2025
+Stability AI,labs,frontier_lab,unlisted,,UK,,,,,,0.1,,0.1,,,,Image gen pioneer; financial distress through 2024
+Black Forest Labs,labs,frontier_lab,unlisted,,Germany,,,,,,0.1,,0.1,,,,Image gen (Flux); Stability alumni
+SpaceX,labs,frontier_lab_parent,pending,,USA,1500.0,,5.4,,,25.0,,2.0,,,"2026 IPO target, pre-IPO (sources.md)  |  leased: contracts.csv Valor Compute Infra LP $5.4bn xAI Colossus 2 GPU triple-net lease (Jan 2026)",2026 IPO target ~$1.5trn; absorbed xAI Feb 2026 for $250bn stock; includes Colossus 1+2
+Databricks,products,data_ai_platform,pending,,USA,62.0,,,,,7.0,,7.0,,,Dec 2024 funding round,Long-rumored IPO; data + AI platform; high-single-digit $bn ARR
+Salesforce,products,enterprise_saas,listed,NYSE:CRM,USA,141.9,17.7,,168.3,46.1,46.1,,2.5,-5.6,-40.0,Yahoo Finance 2026-05-16,Einstein + Agentforce; AI as upsell layer
+ServiceNow,products,enterprise_saas,listed,NYSE:NOW,USA,98.0,2.4,,95.3,16.2,16.2,,1.5,-10.2,-54.3,Yahoo Finance 2026-05-16,Now Assist; 88% agent-pilot failure rate per Gartner
+Adobe,products,enterprise_saas,listed,NASDAQ:ADBE,USA,100.1,6.7,,99.9,26.1,26.1,,7.0,-4.9,-40.6,Yahoo Finance 2026-05-16,Firefly + Acrobat AI
+Workday,products,enterprise_saas,listed,NASDAQ:WDAY,USA,31.2,3.8,,30.5,10.7,10.7,,1.5,-12.7,-54.2,Yahoo Finance 2026-05-16,HCM / Finance + AI add-ons
+Anysphere (Cursor),products,ai_native_dev,unlisted,,USA,,,,,,2.5,,2.5,,,,ARR $1bn→$2bn in three months early 2026
+Glean,products,ai_native_enterprise_search,unlisted,,USA,,,,,,0.2,,0.2,,,,Enterprise AI search
+Harvey,products,ai_native_legal,unlisted,,USA,,,,,,0.1,,0.1,,,,Legal AI; OpenAI strategic partnership
+Cresta,products,ai_native_cs,unlisted,,USA,,,,,,0.1,,0.1,,,,Contact-centre AI
+Sierra,products,ai_native_cs,unlisted,,USA,,,,,,0.15,,0.15,,,,Bret Taylor's customer-service AI
+Decagon,products,ai_native_cs,unlisted,,USA,,,,,,0.05,,0.05,,,,Customer-service AI
+Hebbia,products,ai_native_research,unlisted,,USA,,,,,,0.05,,0.05,,,,AI research/analyst tool
+Perplexity,products,ai_native_search,unlisted,,USA,,,,,,0.15,,0.15,,,,AI-native search; $5-9bn valuation
+Blue Owl Capital,financier,alt_asset_mgr,listed,NYSE:OWL,USA,14.7,4.4,,14.2,2.9,2.9,,,-18.3,-48.0,Yahoo Finance 2026-05-16,80% of Meta Hyperion SPV ($27.3bn); ~11% of ~$250bn AUM in one AI DC deal
+Apollo Global Management,financier,alt_asset_mgr,listed,NYSE:APO,USA,78.0,40.0,,97.1,5.5,5.5,,,8.6,-4.8,Yahoo Finance 2026-05-16,Hyperion bonds + Broadcom $35bn + Valor SPV $3.5bn; ~$60-70bn AI on $700bn AUM
+Blackstone,financier,alt_asset_mgr,listed,NYSE:BX,USA,144.1,15.4,,118.5,15.0,15.0,,,-9.4,-16.7,Yahoo Finance 2026-05-16,$150bn digital infra commitment on $1.1trn AUM (~14% over multi-yr)
+PIF,financier,sovereign_wealth,unlisted,,Saudi Arabia,,,,,,,,,,,,Humain $3bn into xAI; Saudi Humain–Nvidia JV for up to 600k Blackwell
+QIA,financier,sovereign_wealth,unlisted,,Qatar,,,,,,,,,,,,xAI Series C and Series E participation
+MGX,financier,sovereign_wealth,unlisted,,UAE,,,,,,,,,,,,Multiple AI rounds; AI-focused fund

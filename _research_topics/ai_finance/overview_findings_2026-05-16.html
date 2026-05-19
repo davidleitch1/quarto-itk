@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>overview_findings_2026-05-16</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="overview_findings_2026-05-16_files/libs/clipboard/clipboard.min.js"></script>
+<script src="overview_findings_2026-05-16_files/libs/quarto-html/quarto.js"></script>
+<script src="overview_findings_2026-05-16_files/libs/quarto-html/popper.min.js"></script>
+<script src="overview_findings_2026-05-16_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="overview_findings_2026-05-16_files/libs/quarto-html/anchor.min.js"></script>
+<link href="overview_findings_2026-05-16_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="overview_findings_2026-05-16_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="overview_findings_2026-05-16_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="overview_findings_2026-05-16_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="overview_findings_2026-05-16_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="ai-sector-top-down-findings-2026-05-16" class="level1">
+<h1>AI sector — top-down findings, 2026-05-16</h1>
+<p>Synthesis of research published 16 February to 16 May 2026, organised around the value-chain framing in <code>README.md</code>. Citations point to entries in <code>sources.md</code>. Numbers cross-checked across at least two sources where possible; single-source claims are flagged.</p>
+<section id="executive-summary" class="level2">
+<h2 class="anchored" data-anchor-id="executive-summary">Executive summary</h2>
+<p>The AI sector in May 2026 sits at an inflection where the bull case (compute demand exceeds supply at every hyperscaler; model-lab revenue is compounding above 10× per year; chip ASPs are rising not falling) is fundamentally true, and the bear case (free cash flow has collapsed at four of five hyperscalers; ~$1trn of off-balance-sheet obligations sit outside GAAP debt; ~94% of operating cash flow now goes to capex; the model labs financing 60-90% of that revenue back to the cloud providers are themselves loss-making) is also fundamentally true. The reconciling fact — which both bulls and bears agree on — is that the system runs on contractual web rather than on cash. Microsoft, Alphabet, Amazon, Meta and Oracle’s combined 2026 capex guidance now totals roughly $800bn ([Economist, 13 May]; [Morgan Stanley]) and analysts already extrapolate &gt;$1trn in 2027 ([CNBC, 30 April]; [Morgan Stanley, 4 May]). The customer for that capex is, in cash terms, mostly other hyperscalers and their captive model labs. Whether this resolves as a productivity miracle or a credit event depends on enterprise willingness to pay for AI output — and the most concrete McKinsey survey work to date ([McKinsey 2026 State of AI]) says 94% of adopters report no significant value from gen-AI deployments. The next 12-24 months will resolve that gap one way or the other.</p>
+</section>
+<section id="the-capex-cashflow-picture" class="level2">
+<h2 class="anchored" data-anchor-id="the-capex-cashflow-picture">The capex / cashflow picture</h2>
+<section id="aggregate-numbers-calendar-2026-guidance-post-q1-prints" class="level3">
+<h3 class="anchored" data-anchor-id="aggregate-numbers-calendar-2026-guidance-post-q1-prints">Aggregate numbers (calendar 2026 guidance, post Q1 prints)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Issuer</th>
+<th style="text-align: right;">2026 capex</th>
+<th style="text-align: right;">YoY</th>
+<th style="text-align: left;">Operating-cash-flow context</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Microsoft</td>
+<td style="text-align: right;">~$190bn</td>
+<td style="text-align: right;">+24%</td>
+<td style="text-align: left;">Q3 FY26 capex $31.9bn, GM 67.6% (narrowest since 2022)</td>
+</tr>
+<tr class="even">
+<td>Alphabet</td>
+<td style="text-align: right;">$180-190bn (raised from $175-185bn)</td>
+<td style="text-align: right;">low single digits</td>
+<td style="text-align: left;">Q1 capex $35.7bn; CFO flags 2027 “significantly higher”</td>
+</tr>
+<tr class="odd">
+<td>Amazon</td>
+<td style="text-align: right;">~$200bn</td>
+<td style="text-align: right;">+1%</td>
+<td style="text-align: left;">Q1 capex $44.2bn (+77%); FCF –95% to $1.2bn</td>
+</tr>
+<tr class="even">
+<td>Meta</td>
+<td style="text-align: right;">$125-145bn (raised from $115-135bn)</td>
+<td style="text-align: right;">+8%</td>
+<td style="text-align: left;">Quarterly FCF still positive ~$12bn</td>
+</tr>
+<tr class="odd">
+<td>Oracle</td>
+<td style="text-align: right;">$50bn FY26 (2× original)</td>
+<td style="text-align: right;">~ +140%</td>
+<td style="text-align: left;">TTM FCF –$24.7bn; net debt ~$90bn</td>
+</tr>
+<tr class="even">
+<td><strong>Total (US Big Five)</strong></td>
+<td style="text-align: right;"><strong>~$800bn</strong></td>
+<td style="text-align: right;"><strong>~80% YoY</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><em>Sources: company press releases; [Tom’s Hardware, 30 April]; [Economist, 13 May]; [Om Malik, 30 April]; [Fortune, 10 March on Oracle].</em></p>
+<p>If you add the major Chinese platforms — Alibaba $53bn (3-year), ByteDance $30bn 2026 (+25% YoY), Tencent/Baidu/Huawei plus the China-state-fund DeepSeek participation — TrendForce’s nine-issuer aggregate sits around $830bn ([Morgan Stanley Institute, 2026]; [Recode China AI]). Note the China numbers are smaller than US in $ terms but rising faster off a lower base.</p>
+</section>
+<section id="the-cashflow-gap" class="level3">
+<h3 class="anchored" data-anchor-id="the-cashflow-gap">The cashflow gap</h3>
+<p>The compelling Q1 2026 datapoint: Amazon’s free cash flow fell 95% to $1.2bn while AWS revenue grew 28% to $37.6bn ([Amazon Q1]; [Next Web, 29 April]). Microsoft’s gross margin slipped to 67.6%, the narrowest since 2022, on data-centre depreciation; Bank of America calculates hyperscaler capex now consumes ~94% of operating cash flow after dividends and buybacks ([cited via Fortune], [TheStreet]). Oracle is the visible extreme: trailing-12-month FCF –$24.7bn. The Economist’s chart ([Kamikaze capex, 13 May]) shows the cashflow gap opening in 2024 and widening through 2025 and Q1 2026 — at the same time as operating profits keep rising. Two firms — Amazon and Alphabet — also booked unusually large non-cash gains from marking up their stakes in Anthropic ($16.8bn for Amazon, ~$36.8bn for Alphabet); without those marks, reported NI growth in Q1 looks meaningfully weaker ([Om Malik]).</p>
+</section>
+<section id="buybacks-and-dividends" class="level3">
+<h3 class="anchored" data-anchor-id="buybacks-and-dividends">Buybacks and dividends</h3>
+<p>The Economist’s observation that “buybacks collapsed” in Q1 ([Kamikaze capex]) is testable: aggregate Big-Five share buybacks fell sharply quarter-on-quarter while debt issuance accelerated. The reading: capital allocation has shifted from returning cash to capex and to maintaining cash buffers ahead of further debt raises.</p>
+</section>
+</section>
+<section id="revenue-what-the-model-makers-and-product-sellers-actually-pull-in" class="level2">
+<h2 class="anchored" data-anchor-id="revenue-what-the-model-makers-and-product-sellers-actually-pull-in">Revenue — what the model-makers and product-sellers actually pull in</h2>
+<section id="frontier-lab-revenue" class="level3">
+<h3 class="anchored" data-anchor-id="frontier-lab-revenue">Frontier-lab revenue</h3>
+<ul>
+<li><strong>OpenAI</strong>: ~$25bn ARR as of April 2026 ([The Information via Morningstar]). Internal forecast: $14bn loss in 2026 on ~$13bn revenue; cash burn ~$27bn in 2026 and ~$63bn in 2027 ([Yahoo Finance reporting on internal projections]; [Ed Zitron]). Own forecast does not see positive cash flow until 2030. Revenue mix ~50% ChatGPT, ~20% API, ~20% other.</li>
+<li><strong>Anthropic</strong>: $30bn ARR in April 2026 (from $14bn in February — implying 2.1× in two months) ([The Information]; [SaaStr]; [Epoch AI]). SemiAnalysis puts a higher number — $44bn — in its May piece ([SemiAnalysis, AI Value Capture]), which may be a later definitional run-rate or simply mid-May acceleration; flagged for follow-up. Anthropic’s customer mix is ~80% enterprise vs OpenAI’s ~50% consumer ([SaaStr]). SemiAnalysis claims inference-stack gross margins moved from 38% to 70%+ over the period; if true, that’s a structural shift in the unit economics of model-as-a-product.</li>
+<li><strong>Contested</strong>: OpenAI’s CRO Denise Dresser in an internal 13 April memo claimed Anthropic’s $30bn figure is overstated by ~$8bn under net-revenue conventions ([leaked memo via The Information]). Both companies’ numbers are unaudited.</li>
+</ul>
+</section>
+<section id="hyperscaler-ai-revenue" class="level3">
+<h3 class="anchored" data-anchor-id="hyperscaler-ai-revenue">Hyperscaler AI revenue</h3>
+<p>Microsoft disclosed $37bn annualised AI revenue at its Q3 FY26 print (+123% YoY); Azure constant-currency growth 40% above Street ~37-39% ([Microsoft FY26 Q3]). Google Cloud grew 63% to $20.0bn with backlog of $460bn; Pichai stated they were “compute-constrained in the near term — cloud revenue would have been higher if we could meet demand” ([Alphabet Q1]; [Tunguz, 29 April]). AWS grew 28% with RPO of $364bn excluding a fresh $100bn OpenAI commitment ([Amazon Q1]).</p>
+<p>A pattern visible in Q1: cloud growth rates inversely correlate with operating scale, but the smallest of the three (Google Cloud) is now adding revenue at the fastest absolute rate per dollar of capex. The Tunguz framing ([29 April]) is that the hyperscaler owning the model layer (Google with Gemini) is growing fastest, which would suggest vertical-integration premium. Microsoft’s looser hold on OpenAI post-April-27 restructure (see below) tests that hypothesis.</p>
+</section>
+<section id="chip-tier-revenue" class="level3">
+<h3 class="anchored" data-anchor-id="chip-tier-revenue">Chip-tier revenue</h3>
+<p>Nvidia Q1 FY26 (calendar Q1 2025) revenue $44.1bn (+69%), Data Center $39.1bn (+73%) ([Nvidia 8-K]). At GTC March 2026, Huang lifted the combined Blackwell + Rubin commercial pipeline forecast to $1trn through 2027; Blackwell systems are sold out through mid-2026 ([Stratechery, TSMC Risk]; [Phemex]). ASP per Blackwell Ultra system: ~$40k. TSMC 2026 revenue guidance: +30% YoY in USD; HPC (incl.&nbsp;AI) is 61% of revenue; 2026 capex $52-56bn (top of range) with 70-80% on advanced nodes ([TSMC Q1 print, 16 April]; [Tom’s Hardware]).</p>
+<p>The Economist’s observation that Broadcom + Micron + Nvidia + Sandisk account for ~25% of forecast S&amp;P 500 profit growth in 2026 ([Kamikaze capex]) is the cleanest single statistic for “the hyperscalers’ capex is someone else’s free cash flow.” Of those four, only TSMC’s capex actually expands the productive capacity of the system in physical terms — the rest are operational profits flowing to chip designers and memory suppliers.</p>
+</section>
+<section id="enterprise-demand-reality-check" class="level3">
+<h3 class="anchored" data-anchor-id="enterprise-demand-reality-check">Enterprise demand reality check</h3>
+<p>McKinsey’s State of AI 2026 finds ~89% of enterprises have at least one AI deployment but 94% report no significant value yet ([McKinsey, Where AI will create value]). Only 1% describe their AI rollout as “mature.” Gartner: 88% of agent pilots fail to graduate to production; 40%+ of agentic projects at risk of cancellation by 2027 ([Gartner, 26 Aug 2025 release; 15 Jan 2026 spend release]). 72% of enterprises have at least one AI workload in production; only 31% have an agent in production. These numbers describe a market that is buying, but only a sliver of which has built repeatable ROI. Gartner pegs 2026 worldwide AI spending at $2.5trn — but the bulk of that is hardware and IT services rather than software ARR flowing to model-makers.</p>
+</section>
+</section>
+<section id="the-contractual-web-deals-to-know" class="level2">
+<h2 class="anchored" data-anchor-id="the-contractual-web-deals-to-know">The contractual web — deals to know</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Counterparties</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Microsoft ↔︎ OpenAI (restructure)</td>
+<td style="text-align: left;">Revenue share capped; IP license to 2032 (non-exclusive); revenue share to 2030</td>
+<td style="text-align: left;">through 2032</td>
+<td style="text-align: left;">27 Apr 2026</td>
+<td style="text-align: left;">AGI clause removed; OpenAI free to sell via any cloud; Microsoft retains royalty stream</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OpenAI ↔︎ Oracle (Stargate)</td>
+<td style="text-align: left;">$300bn / 5 years (begins 2027); 4.5GW; 2m+ Blackwell</td>
+<td style="text-align: left;">2027-2032</td>
+<td style="text-align: left;">confirmed 2026</td>
+<td style="text-align: left;">Doubles prior $30bn/yr to $60bn/yr; central to Oracle thesis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anthropic ↔︎ Amazon</td>
+<td style="text-align: left;">$25bn AWS invest; $100bn Anthropic spend on AWS over 10y; 5GW Trainium</td>
+<td style="text-align: left;">10y</td>
+<td style="text-align: left;">20 Apr 2026</td>
+<td style="text-align: left;">Trainium 2/3 capacity; Anthropic compute diversification leg 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Anthropic ↔︎ Google</td>
+<td style="text-align: left;">$10bn upfront + up to $30bn milestone; 5GW TPU; $350bn post-money</td>
+<td style="text-align: left;">multi-year</td>
+<td style="text-align: left;">24 Apr 2026</td>
+<td style="text-align: left;">Anthropic compute diversification leg 2; total pledged equity ~$65bn, 10GW reserved capacity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nvidia → OpenAI</td>
+<td style="text-align: left;">$30bn equity</td>
+<td style="text-align: left;">one-off</td>
+<td style="text-align: left;">Feb 2026</td>
+<td style="text-align: left;">Largest single Nvidia equity bet in AI; total Nvidia AI equity deployment $40bn YTD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Meta ↔︎ CoreWeave</td>
+<td style="text-align: left;">$14.2bn original + $21bn expansion (through 2032)</td>
+<td style="text-align: left;">to 2032</td>
+<td style="text-align: left;">2026</td>
+<td style="text-align: left;">Largest neocloud single-customer concentration</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OpenAI ↔︎ CoreWeave</td>
+<td style="text-align: left;">$22.4bn cumulative</td>
+<td style="text-align: left;">multi-year</td>
+<td style="text-align: left;">2026</td>
+<td style="text-align: left;">Plus $6.5bn expansion announced</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Amazon → OpenAI</td>
+<td style="text-align: left;">$100bn fresh commitment + $38bn existing</td>
+<td style="text-align: left;">multi-year</td>
+<td style="text-align: left;">Q1 2026</td>
+<td style="text-align: left;">Disclosed alongside AWS Q1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Meta + Blue Owl (Hyperion SPV)</td>
+<td style="text-align: left;">$27.3bn 144A bonds (A+, T+225, 2049 maturity)</td>
+<td style="text-align: left;">2049</td>
+<td style="text-align: left;">Oct 2025</td>
+<td style="text-align: left;">Template for off-balance-sheet AI DC financing</td>
+</tr>
+</tbody>
+</table>
+<p>OpenAI’s total disclosed/leaked vendor commitments 2025-2035 aggregate ~$1.15trn across seven vendors ([Tunguz]). For context, that’s roughly the entire 2026 hyperscaler capex from one customer’s commitment stack, spread over a decade. The model labs are sitting at the centre of contracts that, in aggregate, exceed their own foreseeable cash generation by an order of magnitude. The hyperscalers funding them are then borrowing in the bond market to fulfil their side of those contracts. This is what the Economist labels “Kamikaze capex.”</p>
+</section>
+<section id="financing-structures-coming-under-scrutiny" class="level2">
+<h2 class="anchored" data-anchor-id="financing-structures-coming-under-scrutiny">Financing structures coming under scrutiny</h2>
+<section id="bond-issuance" class="level3">
+<h3 class="anchored" data-anchor-id="bond-issuance">Bond issuance</h3>
+<p>Big Five raised $260bn from bond markets since start-2025, ~25% of all listed US non-financial issuance ([Economist, 13 May]). Nearly a third of 2026 issuance is in non-USD currencies; Alphabet will soon issue its first yen-denominated bonds. Headline single deals: Oracle $18bn (Sept 2025), Meta $30bn (Oct 2025 — largest non-M&amp;A high-grade single deal in IG history), Alphabet $17.5bn (Nov 2025), Amazon $15bn, Alphabet 100-year bond (Feb 2026 — first tech century bond in decades) ([Fortune, 7 March]). BofA forecast: $175bn in hyperscaler bond issuance in 2026, &gt;6× the $28bn historical average ([Tunguz, 29 April]). Reuters / underwriter consensus: total US IG corporate supply $2.46trn 2026 (+11.8%). Aa2/Aa3 issuers paid 10-15bp premium over existing curves; Oracle (Baa2) is two notches above junk and pays a larger spread.</p>
+</section>
+<section id="off-balance-sheet-leases-the-moodys-piece" class="level3">
+<h3 class="anchored" data-anchor-id="off-balance-sheet-leases-the-moodys-piece">Off-balance-sheet leases (the Moody’s piece)</h3>
+<p>Top-five US hyperscalers carry $662bn in not-yet-commenced data-centre lease commitments off-balance-sheet under GAAP ([Moody’s, Feb 2026]; [Fortune, 25 Feb]; [Bisnow]; [DCD]). Total undiscounted future lease obligations $969bn. The $662bn is 113% of these firms’ adjusted reported debt. The Economist’s $820bn figure ([Kamikaze capex]) appears to be the higher uncommenced figure plus inflation through May, which is consistent. The structural reason for the off-balance-sheet treatment: equipment with 4-6 year useful life forces short initial lease terms, which fall below GAAP’s threshold for liability recognition, with hyperscalers absorbing residual-value risk via RVGs ([DCD]; [Bisnow]). Investors looking only at GAAP debt see roughly half the actual contractual obligation.</p>
+</section>
+<section id="spv-financing-the-meta-louisiana-template" class="level3">
+<h3 class="anchored" data-anchor-id="spv-financing-the-meta-louisiana-template">SPV financing — the Meta Louisiana template</h3>
+<p>Meta’s Hyperion campus financed via Beignet Investor SPV: Blue Owl owns 80% and controls the board, Meta 20%. $27.3bn of 144A bonds issued October 2025, A+ rated by S&amp;P, priced at T+225bp, 2049 maturity, fully amortising. Buyers include PIMCO and BlackRock ([Global Data Center Hub]; [DCD, Oct 2025]; [Vinod Kothari Consultants]). The structure achieves what Oracle’s CFO called “uncoupling capex from cashflow” — Meta gets a data centre, Blue Owl and bondholders carry the financing risk, Meta’s GAAP balance sheet shows none of the debt. The Economist explicitly cites this deal as the largest single corporate bond in history and flags Oracle’s intention to do similar engineering ([Kamikaze capex]).</p>
+</section>
+<section id="private-credit-involvement" class="level3">
+<h3 class="anchored" data-anchor-id="private-credit-involvement">Private-credit involvement</h3>
+<p>Apollo, Blackstone and KKR are the structural counterparties to most of these off-balance-sheet deals. Bloomberg flagged a forming $35bn Apollo+Blackstone financing for Broadcom on 8 May. Apollo’s house view (per its public commentary): $5trn+ of expected data centre capex would need $1.5-2trn of annual AI revenue by 2030 vs $40-60bn today — i.e.&nbsp;they are aware of the gap and pricing for it. Blackstone is committed to $150bn of digital infrastructure investment over coming years.</p>
+</section>
+<section id="circular-financing-critique" class="level3">
+<h3 class="anchored" data-anchor-id="circular-financing-critique">Circular financing critique</h3>
+<p>Bloomberg’s “AI Circular Deals” graphic ([Bloomberg, 2026]) traces the flows: Microsoft invests $13bn in OpenAI → OpenAI spends most of that on Azure; Nvidia invests $30bn in OpenAI → OpenAI commits to buy Nvidia chips via Oracle’s Stargate; Amazon invests $25bn in Anthropic → Anthropic commits $100bn to AWS; Google invests up to $40bn in Anthropic → Anthropic commits 5GW of TPU. EU competition staff flagged this in March 2026. Dario Amodei’s defence ([cited via Yahoo Finance]): “One player has capital and has an interest, because they’re selling the chips, and the other player is pretty confident they’ll have the revenue at the right time, but they don’t have $50bn at hand.” Bull-case framing: this is just how you finance a capital-intensive infrastructure transition before the demand-side cashflows arrive. Bear-case framing: it mirrors the vendor-financing patterns of telecom equipment makers in 1999-2000, where Lucent and Nortel booked revenue from CLECs they were simultaneously lending money to, and the contract chain collapsed when one link defaulted.</p>
+</section>
+<section id="margin-cost-trends-in-the-model-layer" class="level3">
+<h3 class="anchored" data-anchor-id="margin-cost-trends-in-the-model-layer">Margin / cost trends in the model layer</h3>
+<p>Token prices have been declining ~200× per year by some measures in 2024-26 (GPT-4-equivalent inference from $20/Mt in late 2022 to ~$0.40/Mt today). Anthropic cut Opus pricing 67% from $15/$75 (Opus 4.1) to $5/$25 (Opus 4.6) in Feb 2026. SemiAnalysis claims effective blended cost at Opus 4.7 is $0.99/Mt due to high cache hit rates, with inference gross margins for Anthropic rising from 38% to &gt;70% over the period. If those two facts are simultaneously true, the model layer is on a Moore’s-law-like cost-down curve while also expanding margins — which means the unit economics are improving fast enough that the customer-side demand growth (10-30× over 15 months at Anthropic) is being met without proportional capex growth at the model lab itself. The capex sits with the cloud provider. That’s why hyperscaler vertical integration in the model layer (Microsoft, Google) is so contested.</p>
+</section>
+</section>
+<section id="where-consensus-is-and-where-its-cracking" class="level2">
+<h2 class="anchored" data-anchor-id="where-consensus-is-and-where-its-cracking">Where consensus is — and where it’s cracking</h2>
+<section id="consensus" class="level3">
+<h3 class="anchored" data-anchor-id="consensus">Consensus</h3>
+<ul>
+<li>Demand for AI compute exceeds supply at every hyperscaler. All four Q1 callers said it explicitly ([Stratechery, Agents Over Bubbles]; [Tunguz, 29 April]). This is not in dispute.</li>
+<li>Token consumption and frontier-lab ARR are growing 10×+ per year. Anthropic’s $1bn → $30bn in 15 months is the cleanest single datapoint ([Epoch AI]).</li>
+<li>TSMC is the binding physical constraint on the overall buildout pace. N3 utilisation &gt;100% expected H2 2026; N2 fully booked ([SemiAnalysis]; [Stratechery, TSMC Risk]).</li>
+<li>Power/grid is the binding physical constraint on the data-centre side. Hyperscalers are moving from PPAs to direct generation investment to bypass interconnect queues ([Fortune, 18 March]; [IEA]).</li>
+<li>Big Five hyperscalers will dominate IG corporate bond issuance in 2026, on a scale comparable to the Big Six banks ([Reuters]).</li>
+</ul>
+</section>
+<section id="where-consensus-is-cracking" class="level3">
+<h3 class="anchored" data-anchor-id="where-consensus-is-cracking">Where consensus is cracking</h3>
+<ul>
+<li><strong>Returns on capex.</strong> Goldman: maintaining historical RoIC needs &gt;$1trn annual profit run-rate vs $450bn consensus ([Goldman, Tracking Trillions]). Sequoia: $600bn revenue gap (vs $200bn 12 months ago) ([Sequoia, $600B Question, updated 2026]). Bears (Howard Marks, Ed Zitron, Sequoia) argue this is unsustainable; bulls (a16z’s Appenzeller, Jefferies, Wells Fargo) argue $5trn IT spend amortises this easily.</li>
+<li><strong>Quality of revenue.</strong> Is the AI revenue real (distributed productive enterprise demand) or circular (hyperscalers funding labs that buy back compute)? OM Malik: “a meaningful portion of the AI revenue and AI investment gains are flowing in a circle.” EU competition staff has flagged ([March 2026]). Goldman acknowledges this ([Tracking Trillions]).</li>
+<li><strong>Whether to trust GAAP.</strong> Moody’s $662bn off-balance-sheet figure plus the rising tide of SPV bonds means the visible debt understates the obligation by ~50%. The Economist makes this central to its critique ([Kamikaze capex]). Credit analysts (CreditSights, Janus Henderson) increasingly adjust for it. Equity analysts often don’t.</li>
+<li><strong>Whether the labs reach cashflow positive.</strong> OpenAI’s own forecast: 2030 (which assumes flat capex commitments after 2028 — unlikely given Stargate ramp). Anthropic’s improving inference margins are the clearest counter-evidence that the math can work — but its compute spend is committed via Amazon/Google not on its own balance sheet, so the question reduces to whether those clouds make their money back from Anthropic’s growth.</li>
+<li><strong>Microsoft vs Google for the integration premium.</strong> Post-27 April restructure, OpenAI is no longer exclusive to Azure. Google’s Cloud growth at 63% (with own model Gemini) outpaces Azure’s 40% (with hosted OpenAI). If the integration premium thesis is right, Google should keep widening that gap.</li>
+</ul>
+</section>
+<section id="bull-case-framing-synthesised" class="level3">
+<h3 class="anchored" data-anchor-id="bull-case-framing-synthesised">Bull-case framing (synthesised)</h3>
+<p>Demand for compute exceeds supply at every hyperscaler. Token-per-minute throughput at Gemini grew 60% QoQ in Q1. Agents (Claude 4.5/Opus 4.7, GPT-5.4, Gemini-2.5-Pro) multiply compute demand because one human supervises many agent runs ([Stratechery]). Enterprise willingness to pay is rising even if value capture is uneven. Frontier-lab gross margins are expanding even as headline token prices fall. Capex looks vertiginous but $5trn of global IT spend can amortise it. Mag-7 trade at ~23× forward earnings — not stretched on metrics that ignore capex, stretched if you penalise the unrecognised obligations. ([a16z]; [Bernstein]; [Wells Fargo]; [Jefferies]; [Stratechery].)</p>
+</section>
+<section id="bear-case-framing-synthesised" class="level3">
+<h3 class="anchored" data-anchor-id="bear-case-framing-synthesised">Bear-case framing (synthesised)</h3>
+<p>Free cash flow has collapsed at four of five hyperscalers. Capex is 94% of operating cash flow. Goldman’s math says reaching ~$1trn aggregate profit run-rate is needed to justify the deployed capital; consensus has $450bn. $662bn of lease obligations sit off the balance sheet; SPV bonds are extending that further. The model labs being funded by the hyperscalers are not cash-positive and don’t expect to be for years; OpenAI’s own forecast says 2030. Token prices are falling 200× per year while ASPs of training/inference hardware are rising. Nvidia’s $40bn YTD equity into customers is vendor financing in another costume. The enterprise demand surveys (McKinsey 94% no-value, Gartner 88% pilot-failure) do not support the scale of the build. Telecom 1999-2000 had all the same features and ended with $300bn+ of impairments. ([Goldman]; [Sequoia]; [Morgan Stanley bubble note]; [Howard Marks via TheStreet]; [Ed Zitron]; [Economist].)</p>
+</section>
+</section>
+<section id="open-questions-for-follow-up-research" class="level2">
+<h2 class="anchored" data-anchor-id="open-questions-for-follow-up-research">Open questions for follow-up research</h2>
+<ol type="1">
+<li><strong>Anthropic ARR reconciliation.</strong> SemiAnalysis says $44bn in mid-May; The Information/Epoch say $30bn in April. Definitional? Or May acceleration? Drives the whole model-lab valuation question.</li>
+<li><strong>What share of hyperscaler AI revenue is circular?</strong> A first-principles estimate would tag revenue from OpenAI, Anthropic, xAI, Cohere, Mistral and partner-equity stakes as circular, vs revenue from non-stake’d third-party enterprises. The Bloomberg graphic gestures at this but doesn’t quantify it.</li>
+<li><strong>The Oracle balance sheet.</strong> $50bn FY26 capex, –$25bn TTM FCF, ~$90bn net debt, Baa2 rating, $300bn OpenAI contract anchoring the FY28+ revenue line. What’s the credit rating sensitivity? When does Stargate revenue actually start being recognised?</li>
+<li><strong>Moody’s $662bn breakdown by issuer.</strong> The aggregate is in the public report. Per-firm is less clear. Where does each of Microsoft/Alphabet/Amazon/Meta/Oracle sit in the $662bn?</li>
+<li><strong>What’s the asset life mark-down risk?</strong> Microsoft disclosed $37.5bn of one quarter’s capex went to “short-lived” assets (GPUs, 5y depreciation) — well below traditional DC infra (30y). If Blackwell-class GPUs are obsoleted faster than the 5y schedule (because Rubin or AMD MI400X is better), there’s an impairment risk that doesn’t show in the bond covenants.</li>
+<li><strong>Where does the bond-market debt actually sit on issuance dates vs SPV-bond commitments?</strong> Need to triangulate the $260bn Big-Five 2025-26 IG issuance with the $662bn off-balance-sheet plus the Hyperion-style $27bn private-credit deals — the totality is the real “AI debt stack.”</li>
+<li><strong>China-side capex with US dollar comparability.</strong> ByteDance $30bn, Alibaba $53bn over 3y — is this comparable in compute-output terms to US hyperscaler capex, or is it inflated by US export-control workarounds raising effective per-chip cost?</li>
+<li><strong>Enterprise per-seat economics.</strong> Microsoft 365 Copilot, Google Workspace Gemini, Anthropic Claude Enterprise — what are the actual adoption / churn / pricing trends inside large enterprises? McKinsey’s 94%-no-value survey suggests something is broken; Gartner’s $2.5trn TAM suggests revenue is somewhere. Where?</li>
+<li><strong>Power-side bottleneck cost.</strong> IEA says +15% p.a. data-centre power. What’s the all-in $/MWh that hyperscalers actually pay in 2026 vs 2024, accounting for direct-investment-in-generation now happening? This connects directly to the user’s existing electricity-market expertise.</li>
+<li><strong>The 2027-28 capex trajectory.</strong> Alphabet CFO said 2027 capex “significantly higher” than 2026. Microsoft hasn’t given 2027 numbers. Morgan Stanley’s $1.1trn 2027 forecast: how is that distributed across the Big Five, and at what point do the credit ratings start moving?</li>
+</ol>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
