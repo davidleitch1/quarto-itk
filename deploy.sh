@@ -61,8 +61,9 @@ else
     echo "=== Incremental render ==="
     RENDERED_LISTINGS=""
 
-    # Render changed content files
-    for f in $(echo "$ALL_CHANGED" | grep -E '\.(md|qmd)$'); do
+    # Render changed content files (line-based read so filenames with spaces survive)
+    while IFS= read -r f; do
+        [ -n "$f" ] || continue
         [ -f "$f" ] || continue
 
         # Skip listing pages (we handle them below)
@@ -74,7 +75,7 @@ else
 
         echo "  Rendering: $f"
         quarto render "$f"
-    done
+    done <<< "$(echo "$ALL_CHANGED" | grep -E '\.(md|qmd)$')"
 
     # Re-render listing pages whose content directories were touched
     for dir in ${(k)LISTING_PAGES}; do
