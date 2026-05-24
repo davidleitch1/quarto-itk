@@ -20,7 +20,25 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-### 15 May
+### May 25
+
+Not sure where the time went. The last week has been devoted to the question that has consumed me for years, namely given the current spot pricing market, what will electricity prices be  in a post coal world in the NEM. To answer this question, and ostensibly to provide year by year spot price forecasts we developed Vertex. That is my ex colleague Paul Bandarian build a half hourly dispatch model using a linear program and our own bid bands that dispatched available supply on a half hourly basis using our demand, modified from AEMO, and AEMO's own 13 weather year forecasts. 
+
+However having a dispatch model that solves for the spot price is only part of the problem. The second part is providing the capacity for Vertex to dispatch.
+
+Traditionally this would be done via a capacity expansion model. As demand grows or existing supply shrinks the most economic unit of capacity is added.
+
+ITK takes a different approach. We solved, using an LRMC approach for the efficienct post coal fleet in 2046 and then developed a supply curve that would end up with that 2045 supply and earn ROI along the way.
+
+It hasn't been an easy journey and at times has felt like both a fool's errand and chasing a pot of gold at the end of the rainbow. There is always a nagging question when dealing with such a complex set of inputs as to whether the model, or rather the human  in charge, me at this point, is up to the task. I couldn't have conceptualised or designed Vertex. Paul Bandarian did that over two years. Not a trivial task, the input files, the efficiency required and the problem specification for the HIGHs open source solver. 
+
+As currently specified my expectation is that spot prices in a post coal world, using high wind generation capex (\$3.5m/MW real) and assuming a large data centre demand will be broadly around \$100/MWh. The capacity mix will still have around 45 GW wind, 50 GW solar and around 40 GW of batteries and LDES together with little bits of gas. 
+
+Not uncommonly in  modelling loads and loads of work is required to demonstrate  with i dotting and t crossing an answer that a skilled and knowledgeable modeller could tell you on the basis of a "back of the envelope" calculation.
+
+Perhaps I'm still getting ahead of myself.
+
+### 5 May
 
 Two major notes this week on data centres. Key insight was around the cost of data centre level 4 uptime requirement and the various diesel generator capex, opex, diesel storage requirements. Improved my understanding heaps.
 
