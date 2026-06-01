@@ -1,0 +1,1376 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-width: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignObject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left-width: 0.25em; border-left-style: solid; border-left-color: rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<style type='text/css'  id="style-theme_css">/**
+ * Flexoki Light Theme for Typora
+ * Based on Flexoki color palette by Steph Ango (https://stephango.com/flexoki)
+ *
+ * A warm, inky color scheme inspired by analog inks and paper
+ * Designed for reading and writing on digital screens
+ */
+
+:root {
+  /* ============================================ */
+  /* FLEXOKI COLOR PALETTE - LIGHT MODE         */
+  /* ============================================ */
+
+  /* Base Colors */
+  --flexoki-black: #100F0F;
+  --flexoki-paper: #FFFCF0;
+  --flexoki-50: #F2F0E5;
+  --flexoki-100: #E6E4D9;
+  --flexoki-150: #DAD8CE;
+  --flexoki-200: #CECDC3;
+  --flexoki-300: #B7B5AC;
+  --flexoki-600: #6F6E69;
+  --flexoki-700: #575653;
+  --flexoki-800: #403E3C;
+  --flexoki-850: #343331;
+  --flexoki-900: #282726;
+  --flexoki-950: #1C1B1A;
+
+  /* Accent Colors - Light Mode uses 600 variants */
+  --flexoki-red: #AF3029;
+  --flexoki-orange: #BC5215;
+  --flexoki-yellow: #AD8301;
+  --flexoki-green: #66800B;
+  --flexoki-cyan: #24837B;
+  --flexoki-blue: #205EA6;
+  --flexoki-purple: #5E409D;
+  --flexoki-magenta: #A02F6F;
+
+  /* Secondary Accent Colors (400 variants for highlights) */
+  --flexoki-red-light: #D14D41;
+  --flexoki-orange-light: #DA702C;
+  --flexoki-yellow-light: #D0A215;
+  --flexoki-green-light: #879A39;
+  --flexoki-cyan-light: #3AA99F;
+  --flexoki-blue-light: #4385BE;
+  --flexoki-purple-light: #8B7EC8;
+  --flexoki-magenta-light: #CE5D97;
+
+  /* ============================================ */
+  /* TYPORA THEME VARIABLES                      */
+  /* ============================================ */
+
+  /* Background Colors */
+  --bg-color: var(--flexoki-paper);
+  --bg-color1: var(--flexoki-paper);
+  --bg-color2: var(--flexoki-50);
+  --bg-color3: var(--flexoki-100);
+  --bg-color4: var(--flexoki-850);
+  --bg-color5: var(--flexoki-50);
+
+  /* Text Colors */
+  --text-color: var(--flexoki-black);
+  --text-color1: var(--flexoki-black);
+  --text-color2: var(--flexoki-600);
+  --text-color3: var(--flexoki-300);
+  --text-color4: var(--flexoki-paper);
+  --text-color5: var(--flexoki-600);
+
+  /* UI Colors */
+  --link-color: var(--flexoki-cyan);
+  --primary-color: var(--flexoki-cyan);
+  --primary-btn-border-color: var(--flexoki-200);
+  --primary-btn-text-color: var(--flexoki-black);
+
+  /* Border Colors */
+  --window-border: 1px solid var(--flexoki-100);
+  --table-border-color: var(--flexoki-200);
+  --table-thead-color: transparent;
+  --table-bg-color: transparent;
+  --table-bg-darker-color: transparent;
+
+  /* Hover Colors */
+  --hover-bg-color1: var(--flexoki-100);
+  --hover-bg-color2: var(--flexoki-150);
+  --hover-bg-color3: var(--flexoki-200);
+  --hover-text-color: var(--flexoki-black);
+
+  /* Active Colors */
+  --active-color: var(--flexoki-200);
+  --active-file-bg-color: var(--flexoki-100);
+  --active-file-text-color: var(--flexoki-black);
+  --active-file-border-color: var(--flexoki-cyan);
+
+  /* Input Colors */
+  --input-color: var(--flexoki-paper);
+  --select-color: var(--flexoki-100);
+  --button-color: var(--flexoki-100);
+
+  /* Divider Colors */
+  --menu-divider-color: var(--flexoki-200);
+  --node-border: var(--flexoki-200);
+  --node-fill: var(--flexoki-50);
+
+  /* Scrollbar Colors */
+  --scrollbar-thumb-color: var(--flexoki-300);
+  --scrollbar-track-color: transparent;
+
+  /* Sidebar Colors */
+  --side-bar-bg-color: var(--flexoki-50);
+  --control-text-color: var(--flexoki-black);
+  --control-text-hover-color: var(--flexoki-black);
+  --item-hover-bg-color: var(--flexoki-100);
+  --item-hover-text-color: var(--flexoki-black);
+
+  /* Focus Colors */
+  --focus-color: var(--flexoki-cyan);
+  --focus-ring-color: var(--flexoki-cyan-light);
+  --blur-text-color: var(--flexoki-300);
+
+  /* Code Block Colors */
+  --code-bg-color: var(--flexoki-50);
+  --code-red-color: var(--flexoki-red);
+  --code-orange-color: var(--flexoki-orange);
+  --code-yellow-color: var(--flexoki-yellow);
+  --code-green-color: var(--flexoki-green);
+  --code-cyan-color: var(--flexoki-cyan);
+  --code-blue-color: var(--flexoki-blue);
+  --code-purple-color: var(--flexoki-purple);
+  --code-magenta-color: var(--flexoki-magenta);
+  --code-grey-color: var(--flexoki-300);
+  --code-select-bg-color: var(--flexoki-200);
+  --code-cursor-color: var(--flexoki-cyan);
+
+  /* Selection Colors */
+  --select-text-bg-color: var(--flexoki-200);
+  --search-select-bg-color: var(--flexoki-yellow-light);
+
+  /* Misc Colors */
+  --rawblock-edit-panel-bd: var(--flexoki-50);
+  --theme-select-color: var(--flexoki-cyan-light);
+
+  /* ============================================ */
+  /* TYPOGRAPHY                                  */
+  /* ============================================ */
+
+  --sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "system-ui", sans-serif;
+  --monospace: "JetBrainsMono Nerd Font", "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+}
+
+/* ============================================ */
+/* BASE STYLES                                 */
+/* ============================================ */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--sans-serif);
+  color: var(--text-color1);
+  background: var(--bg-color1);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#write {
+  max-width: 860px;
+  padding: 40px 60px;
+  font-size: 1rem;
+  color: var(--text-color1);
+  line-height: 1.7;
+}
+
+/* ============================================ */
+/* TEXT SELECTION                              */
+/* ============================================ */
+
+::selection {
+  background-color: var(--select-text-bg-color);
+}
+
+.in-text-selection {
+  background-color: var(--select-text-bg-color);
+}
+
+/* ============================================ */
+/* HEADINGS                                    */
+/* ============================================ */
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--flexoki-black);
+  font-family: var(--sans-serif);
+}
+
+#write h1 {
+  font-size: 2.25rem;
+  margin-top: 2rem;
+  padding-bottom: 0.3rem;
+}
+
+#write h2 {
+  font-size: 1.875rem;
+  margin-top: 1.75rem;
+}
+
+#write h3 {
+  font-size: 1.5rem;
+}
+
+#write h4 {
+  font-size: 1.25rem;
+}
+
+#write h5 {
+  font-size: 1.125rem;
+}
+
+#write h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ============================================ */
+/* PARAGRAPHS                                  */
+/* ============================================ */
+
+#write p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ============================================ */
+/* LINKS                                       */
+/* ============================================ */
+
+#write a:not([role="menuitem"]) {
+  color: var(--link-color);
+  text-decoration: underline;
+  transition: all 0.2s ease;
+}
+
+#write a:not([role="menuitem"]):hover {
+  color: var(--flexoki-cyan-light);
+  text-decoration: underline;
+}
+
+/* ============================================ */
+/* EMPHASIS AND STRONG                         */
+/* ============================================ */
+
+#write strong {
+  font-weight: 700;
+  color: var(--text-color1);
+}
+
+#write em {
+  font-style: italic;
+  color: var(--text-color1);
+}
+
+/* ============================================ */
+/* LISTS                                       */
+/* ============================================ */
+
+#write ul,
+#write ol {
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#write ul li,
+#write ol li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+#write ul li::marker {
+  color: var(--flexoki-300);
+}
+
+#write ol li::marker {
+  color: var(--flexoki-300);
+  font-weight: 600;
+}
+
+/* ==================== Task Lists / Checkboxes ==================== */
+/* Use native accent-color for all checkboxes (settings, UI panels, etc.) */
+input[type="checkbox"] {
+  accent-color: var(--flexoki-cyan);
+}
+
+/* Task list items - remove default list style */
+#write li.task-list-item,
+#write li.md-task-list-item {
+  list-style: none;
+  position: relative;
+  padding-left: 1.8rem;
+  margin: 0.35rem 0;
+}
+
+/* Task list paragraph - inline display */
+#write li.task-list-item > p,
+#write li.md-task-list-item > p {
+  display: inline;
+  margin: 0;
+}
+
+/* Custom styling for task list checkboxes in document */
+#write li.task-list-item > input[type="checkbox"],
+#write li.md-task-list-item > input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1.1em;
+  height: 1.1em;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+  border: 2px solid var(--flexoki-black);
+  background: transparent;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* Checked state with SVG checkmark */
+#write li.task-list-item > input[type="checkbox"]:checked,
+#write li.md-task-list-item > input[type="checkbox"]:checked {
+  background-color: var(--flexoki-cyan);
+  border-color: var(--flexoki-cyan);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%23FFFCF0' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Strikethrough for completed tasks */
+.md-task-list-item.task-list-done {
+  text-decoration: line-through;
+  color: var(--flexoki-600);
+  opacity: 0.7;
+}
+
+/* ============================================ */
+/* BLOCKQUOTES                                 */
+/* ============================================ */
+
+#write blockquote {
+  margin: 0.25rem 0;
+  padding: 0.25rem 1rem;
+  border-left: 2px solid var(--flexoki-cyan);
+  background-color: transparent;
+  color: var(--text-color1);
+}
+
+#write blockquote p {
+  margin: 0.5rem 0;
+}
+
+#write blockquote blockquote {
+  padding-right: 0;
+}
+
+/* ============================================ */
+/* HORIZONTAL RULE                             */
+/* ============================================ */
+
+#write hr {
+  height: 2px;
+  margin: 2rem 0;
+  background-color: var(--flexoki-200);
+  border: 0;
+  border-radius: 1px;
+}
+
+/* ============================================ */
+/* CODE - INLINE                               */
+/* ============================================ */
+
+#write code {
+  font-family: var(--monospace);
+  font-size: 0.9em;
+  padding: 2px 6px;
+  margin: 0 2px;
+  background-color: var(--code-bg-color);
+  color: var(--flexoki-black);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(16, 15, 15, 0.06);
+}
+
+/* ============================================ */
+/* CODE - BLOCKS                               */
+/* ============================================ */
+
+#write .md-fences,
+#write .md-fences:active {
+  font-family: var(--monospace);
+  font-size: 0.9rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: var(--code-bg-color);
+  color: var(--flexoki-black);
+  border: 1px solid var(--flexoki-100);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(16, 15, 15, 0.08);
+  line-height: 1.5;
+}
+
+.md-fences .code-tooltip {
+  background-color: var(--bg-color5);
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+
+.CodeMirror-lines {
+  padding-left: 4px;
+}
+
+.CodeMirror,
+.CodeMirror-code {
+  color: var(--flexoki-black);
+}
+
+/* Code Selection */
+.CodeMirror-selected,
+.CodeMirror-selectedtext {
+  background: var(--code-select-bg-color) !important;
+}
+
+/* Code Cursor */
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 2px solid var(--code-cursor-color);
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+  border-left: 2px solid var(--code-cursor-color);
+}
+
+.CodeMirror-gutters {
+  border-right: none;
+  background-color: transparent;
+}
+
+/* ============================================ */
+/* SYNTAX HIGHLIGHTING - CODE BLOCKS           */
+/* ============================================ */
+
+/* Keywords (green) - per Flexoki guidelines */
+.cm-s-inner .cm-keyword,
+.cm-s-typora-default .cm-keyword {
+  color: var(--code-green-color) !important;
+}
+
+/* Strings (cyan) */
+.cm-s-inner .cm-string,
+.cm-s-typora-default .cm-string {
+  color: var(--code-cyan-color) !important;
+}
+
+/* Functions (orange) */
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-attribute {
+  color: var(--code-orange-color) !important;
+}
+
+/* Numbers (purple) */
+.cm-s-inner .cm-number,
+.cm-s-typora-default .cm-number {
+  color: var(--code-purple-color) !important;
+}
+
+/* Comments (gray) */
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment,
+.cm-s-typora-default .cm-comment {
+  color: var(--code-grey-color) !important;
+  font-style: italic;
+}
+
+/* Variables (blue) */
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-property,
+.cm-s-typora-default .cm-property {
+  color: var(--code-blue-color) !important;
+}
+
+/* Operators and punctuation (muted text - tx-2) */
+.cm-s-inner .cm-operator {
+  color: var(--flexoki-600) !important;
+}
+
+/* Tags (red) */
+.cm-s-inner .cm-tag {
+  color: var(--code-red-color) !important;
+}
+
+/* Constants/Atoms (yellow) */
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+  color: var(--code-yellow-color) !important;
+}
+
+/* Brackets */
+.cm-s-inner .cm-bracket {
+  color: var(--text-color1) !important;
+}
+
+/* Built-ins */
+.cm-s-inner .cm-builtin {
+  color: var(--code-cyan-color) !important;
+}
+
+/* Meta */
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+  color: var(--code-orange-color) !important;
+}
+
+/* Headers in code */
+.cm-s-inner .cm-header,
+.cm-s-typora-default .cm-header {
+  color: var(--code-blue-color) !important;
+  font-weight: 700;
+}
+
+/* Links in code */
+.cm-s-inner .cm-link,
+.cm-s-typora-default .cm-link {
+  color: var(--code-blue-color) !important;
+}
+
+/* Variable-2 and Variable-3 */
+.cm-s-inner .cm-variable-2 {
+  color: var(--code-yellow-color) !important;
+}
+
+.cm-s-inner .cm-variable-3 {
+  color: var(--code-purple-color) !important;
+}
+
+/* Active line in source mode */
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background: var(--hover-bg-color1);
+}
+
+/* Markdown specific in source mode */
+.cm-s-typora-default .cm-strong,
+.cm-s-typora-default .cm-em,
+.cm-s-typora-default .cm-del {
+  color: var(--code-orange-color) !important;
+}
+
+.cm-s-typora-default .cm-code {
+  color: var(--code-purple-color) !important;
+}
+
+.cm-s-typora-default .cm-quote {
+  color: var(--code-green-color) !important;
+}
+
+/* String-2 (alternative strings) */
+.cm-s-inner .cm-string-2 {
+  color: var(--code-cyan-color) !important;
+}
+
+/* Quote in code */
+.cm-s-inner .cm-quote {
+  color: var(--code-green-color) !important;
+}
+
+/* HR in markdown source */
+.cm-s-inner .cm-hr {
+  color: var(--flexoki-200) !important;
+}
+
+/* Positive/Negative (diff) */
+.cm-s-inner .cm-positive {
+  color: var(--code-green-color) !important;
+}
+
+.cm-s-inner .cm-negative {
+  color: var(--code-red-color) !important;
+}
+
+/* Formatting task (markdown checkboxes) */
+.cm-formatting-task {
+  color: var(--flexoki-cyan) !important;
+}
+
+/* Import/Export/Include statements (red - per Flexoki official spec) */
+.cm-s-inner .cm-import,
+.cm-s-inner .cm-include,
+.cm-s-typora-default .cm-import,
+.cm-s-typora-default .cm-include {
+  color: var(--code-red-color) !important;
+}
+
+/* Booleans (magenta - per Flexoki official spec) */
+.cm-s-inner .cm-boolean,
+.cm-s-typora-default .cm-boolean {
+  color: var(--code-magenta-color) !important;
+}
+
+/* ============================================ */
+/* TABLES                                      */
+/* ============================================ */
+
+#write table {
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.md-table-fig,
+.md-table-fig:active {
+  margin: 1.5rem 0;
+}
+
+#write table thead {
+  background-color: transparent;
+}
+
+#write table thead tr th {
+  font-weight: 700;
+  color: var(--text-color1);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--table-border-color);
+}
+
+#write table tbody tr {
+  border-top: 1px solid var(--table-border-color);
+}
+
+#write table tbody tr:nth-child(2n) {
+  background-color: transparent;
+}
+
+#write table tbody tr:nth-child(2n + 1) {
+  background-color: transparent;
+}
+
+#write table tbody tr td {
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--table-border-color);
+  text-align: left;
+}
+
+#write table tr th:first-child,
+#write table tr td:first-child {
+  border-left-width: 0;
+}
+
+#write table tr th:last-child,
+#write table tr td:last-child {
+  border-right-width: 0;
+}
+
+/* Table Edit Panel */
+.ty-table-edit {
+  background-color: var(--bg-color3);
+  border: 0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(16, 15, 15, 0.12);
+}
+
+.ty-table-edit button {
+  background-color: transparent;
+  color: var(--text-color2);
+  border: 0;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.ty-table-edit button:hover {
+  background-color: var(--hover-bg-color2);
+  color: var(--hover-text-color);
+}
+
+/* ============================================ */
+/* IMAGES                                      */
+/* ============================================ */
+
+#write img {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(16, 15, 15, 0.1);
+}
+
+.md-image > .md-meta {
+  border: 0;
+  padding: 4px 0;
+  font-size: 0.875rem;
+  color: var(--text-color2);
+}
+
+/* ============================================ */
+/* FOOTNOTES                                   */
+/* ============================================ */
+
+sup.md-footnote {
+  color: var(--flexoki-cyan);
+  background-color: transparent;
+  padding: 0 2px;
+}
+
+/* ============================================ */
+/* SIDEBAR                                     */
+/* ============================================ */
+
+#typora-sidebar {
+  background-color: var(--side-bar-bg-color);
+  border-right: 1px solid var(--flexoki-100);
+  box-shadow: 2px 0 8px rgba(16, 15, 15, 0.04);
+}
+
+.sidebar-menu {
+  color: var(--control-text-color);
+}
+
+/* File Items */
+.file-list-item {
+  border-bottom: 0;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.file-list-item:hover {
+  background-color: var(--item-hover-bg-color);
+  border-left-color: var(--flexoki-cyan-light);
+}
+
+.file-list-item.active {
+  background-color: var(--active-file-bg-color);
+  border-left-color: var(--active-file-border-color);
+  color: var(--active-file-text-color);
+}
+
+.file-list-item-file-ext-part {
+  opacity: 0.7;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  border-top: 1px solid var(--menu-divider-color);
+  box-shadow: 0 -2px 8px rgba(16, 15, 15, 0.04);
+}
+
+/* ============================================ */
+/* SEARCH PANEL                                */
+/* ============================================ */
+
+#md-searchpanel {
+  background-color: var(--side-bar-bg-color);
+  border: 1px solid var(--flexoki-100);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(16, 15, 15, 0.15);
+}
+
+#md-searchpanel input {
+  background-color: var(--input-color);
+  border: 1px solid var(--flexoki-200);
+  border-radius: 4px;
+  color: var(--text-color1);
+}
+
+#md-searchpanel input:focus {
+  outline: none;
+  border-color: var(--focus-color);
+  box-shadow: 0 0 0 3px var(--flexoki-blue-light);
+  opacity: 0.2;
+}
+
+#md-searchpanel .btn:hover {
+  background-color: var(--hover-bg-color1);
+  color: var(--hover-text-color);
+}
+
+.md-search-hit {
+  background-color: var(--search-select-bg-color);
+  border-radius: 2px;
+}
+
+.md-search-select {
+  border: 2px solid var(--flexoki-cyan);
+  border-radius: 2px;
+}
+
+/* ============================================ */
+/* FOOTER                                      */
+/* ============================================ */
+
+footer.ty-footer {
+  border-top: 1px solid var(--menu-divider-color);
+  background-color: var(--side-bar-bg-color);
+  box-shadow: 0 -1px 4px rgba(16, 15, 15, 0.04);
+}
+
+.footer-item {
+  color: var(--text-color2);
+  transition: all 0.2s ease;
+}
+
+.footer-item:hover {
+  background-color: var(--hover-bg-color1);
+  color: var(--hover-text-color);
+}
+
+/* ============================================ */
+/* BUTTONS AND INPUTS                          */
+/* ============================================ */
+
+button,
+.btn {
+  border: 0;
+  background-color: var(--button-color);
+  color: var(--text-color1);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(16, 15, 15, 0.08);
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--hover-bg-color2);
+  box-shadow: 0 2px 6px rgba(16, 15, 15, 0.12);
+}
+
+input,
+select {
+  background-color: var(--input-color);
+  border: 1px solid var(--flexoki-200);
+  border-radius: 4px;
+  color: var(--text-color1);
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--focus-color);
+  box-shadow: 0 0 0 3px rgba(32, 94, 166, 0.1);
+}
+
+/* ============================================ */
+/* SCROLLBAR                                   */
+/* ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--flexoki-600);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+
+/* ============================================ */
+/* FOCUS MODE                                  */
+/* ============================================ */
+
+.on-focus-mode #write > :not(.md-focus):not(.md-focus-container) {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.on-focus-mode #write .md-focus,
+.on-focus-mode #write .md-focus-container {
+  opacity: 1;
+}
+
+.on-focus-mode #write img,
+.on-focus-mode #write svg {
+  opacity: 0.7;
+}
+
+/* ============================================ */
+/* SOURCE CODE MODE                            */
+/* ============================================ */
+
+.typora-sourceview-on #toggle-sourceview-btn {
+  background-color: var(--active-file-bg-color);
+}
+
+#typora-source {
+  font-family: var(--monospace);
+  background-color: var(--bg-color1);
+  color: var(--text-color1);
+}
+
+#typora-source .CodeMirror-lines {
+  max-width: 860px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+/* ============================================ */
+/* TOOLTIPS                                    */
+/* ============================================ */
+
+#ty-tooltip {
+  background-color: var(--flexoki-850);
+  color: var(--flexoki-paper);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 8px rgba(16, 15, 15, 0.2);
+}
+
+/* ============================================ */
+/* CONTEXT MENU                                */
+/* ============================================ */
+
+.dropdown-menu {
+  background-color: var(--bg-color2);
+  border: 1px solid var(--flexoki-100);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(16, 15, 15, 0.15);
+}
+
+.dropdown-menu .divider {
+  border-top: 1px solid var(--menu-divider-color);
+}
+
+.dropdown-menu > li > a {
+  color: var(--text-color1);
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: var(--hover-bg-color1);
+  color: var(--hover-text-color);
+}
+
+/* ============================================ */
+/* MODALS AND DIALOGS                          */
+/* ============================================ */
+
+.modal-content {
+  background-color: var(--bg-color1);
+  border: 1px solid var(--flexoki-100);
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(16, 15, 15, 0.2);
+}
+
+.modal-backdrop {
+  background-color: var(--flexoki-black);
+  opacity: 0.3 !important;
+}
+
+/* ============================================ */
+/* PRINT STYLES                                */
+/* ============================================ */
+
+@media print {
+  html,
+  body,
+  #write {
+    background: white;
+    color: black;
+  }
+
+  #write {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  #write h1,
+  #write h2,
+  #write h3,
+  #write h4,
+  #write h5,
+  #write h6 {
+    color: black;
+    page-break-after: avoid;
+  }
+
+  #write p,
+  #write blockquote,
+  #write table {
+    page-break-inside: avoid;
+  }
+
+  #write img {
+    box-shadow: none;
+  }
+
+  #write a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  #write code,
+  #write .md-fences {
+    background-color: #f5f5f5;
+    box-shadow: none;
+  }
+
+  /* Remove UI elements */
+  .typora-export * {
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+/* ============================================ */
+/* MERMAID DIAGRAMS                            */
+/* ============================================ */
+
+.md-diagram-panel-preview {
+  background-color: var(--bg-color1);
+}
+
+/* Mermaid Flowchart */
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon {
+  fill: var(--bg-color2);
+  stroke: var(--flexoki-cyan);
+  stroke-width: 2px;
+}
+
+.edgePath .path {
+  stroke: var(--flexoki-600);
+  stroke-width: 2px;
+}
+
+.label {
+  color: var(--text-color1);
+}
+
+/* ============================================ */
+/* MISC FIXES AND ADJUSTMENTS                  */
+/* ============================================ */
+
+/* Remove outline on focus for specific elements */
+.md-toc:focus .md-toc-content {
+  outline: none;
+}
+
+/* TOC */
+.md-toc {
+  background-color: var(--bg-color5);
+  border: 1px solid var(--flexoki-100);
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(16, 15, 15, 0.08);
+}
+
+.md-toc-item {
+  color: var(--text-color1);
+}
+
+.md-toc-item:hover {
+  color: var(--flexoki-cyan);
+  text-decoration: none;
+}
+
+/* YAML Front Matter */
+pre.md-meta-block {
+  background-color: var(--code-bg-color);
+  border: 1px solid var(--flexoki-100);
+  border-radius: 4px;
+  padding: 1rem;
+  font-family: var(--monospace);
+  font-size: 0.875rem;
+  color: var(--text-color2);
+  box-shadow: 0 1px 3px rgba(16, 15, 15, 0.08);
+}
+
+/* Megamenu */
+.megamenu-content,
+.megamenu-opened header {
+  background: var(--bg-color1);
+}
+
+.megamenu-menu {
+  background-color: var(--side-bar-bg-color);
+  border-right: 1px solid var(--flexoki-100);
+}
+
+/* Preferences Panel */
+.window-header {
+  background-color: var(--side-bar-bg-color);
+  border-bottom: 1px solid var(--menu-divider-color);
+}
+
+.sidebar {
+  background-color: var(--side-bar-bg-color) !important;
+  border-right: 1px solid var(--flexoki-100);
+}
+
+.nav-group-item {
+  color: var(--text-color1) !important;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-group-item:hover,
+.nav-group-item.active {
+  background-color: var(--hover-bg-color1) !important;
+  color: var(--hover-text-color) !important;
+}
+</style>
+<style type='text/css'  id="style-base_user_css">```
+<style>
+    /* initialise the counter */
+    body { counter-reset: figureCounter; }
+    /* increment the counter for every instance of a figure even if it doesn't have a caption */
+    figure { counter-increment: figureCounter; }
+    /* prepend the counter to the figcaption content */
+    figure figcaption:before {
+        content: "Fig " counter(figureCounter) ": "
+    }
+</style>
+```</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<style type='text/css'  id="style-mac-print"> @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}</style>
+
+<title>&quot;EV Charging Infrastructure in Australia: State of Play and Best Practice&quot;</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=' first-line-indent'><h2 id='executive-summary'><span>Executive summary</span></h2><p><span>Australia&#39;s public EV charging network is among the weakest in the developed world relative to its EV fleet. At roughly 45 EVs per public charger, Australia trails the IEA benchmark of 10:1 by a factor of five and is 9x worse than the Netherlands. The network is growing at 20% per year from a low base, but deployment patterns --- isolated single chargers, 50 kW legacy hardware, and inconsistent grid connections --- fall short of international best practice.</span></p><p><span>This report surveys the state of EV charging for passenger cars and trucks separately, covering charger deployment, optimal site design, charging speed, technology, suppliers, and the grid infrastructure that underpins it all. The research draws on IEA, ICCT, and EAFO data, Australian industry reporting, and regulatory frameworks in the EU, US, UK, and China.</span></p><hr /><h1 id='part-1-passenger-vehicles'><span>Part 1: Passenger Vehicles</span></h1><h2 id='1-current-state-of-public-charger-deployment'><span>1. Current state of public charger deployment</span></h2><p><span>Australia has over 5,000 public EV charging sites. The Electric Vehicle Council counted 1,272 DC fast-charging locations (25 kW+) with 3,436 DC plugs by mid-2025, a 20% increase year-on-year. The remaining sites are AC Level 2 destination chargers (7--22 kW) at shopping centres, hotels, and kerbside locations. By early 2026, DC fast-charge sites had grown to approximately 1,310 locations with over 4,100 plugs [@evinfranews-1272-sites-2025; @cleantechnica-chargers-multiply-2026].</span></p><p><span>NSW leads with 357 DC locations, followed by Victoria with 311. Coverage thins outside major corridors. Essential Energy launched a &quot;Plug and Play&quot; kerbside charging program in late 2025 to connect 1,000 public chargers to existing power poles in regional and remote NSW [@essential-energy-kerbside-2025].</span></p><p><span>: Major Australian Charging Networks (early 2026) {#tbl-networks}</span></p><figure class='table-figure'><table><thead><tr><th><span>Network</span></th><th><span>Sites (approx.)</span></th><th><span>Notes</span></th></tr></thead><tbody><tr><td><span>Chargefox / AMS (NRMA, RACV, RACQ, RAC, RAA, RACT)</span></td><td><span>~950</span></td><td><span>Largest combined; mix of 50 kW and 350 kW</span></td></tr><tr><td><span>Exploren</span></td><td><span>~403 locations</span></td><td><span>AU/NZ; AC and DC</span></td></tr><tr><td><span>Evie Networks</span></td><td><span>~325 DC sites</span></td><td><span>Largest dedicated DC fast-charge network</span></td></tr><tr><td><span>Tesla Supercharger</span></td><td><span>~148 sites, ~1,000 bays</span></td><td><span>Two-thirds open to non-Tesla via CCS2</span></td></tr><tr><td><span>Jolt</span></td><td><span>~98 sites</span></td><td><span>Ad-funded free charging</span></td></tr><tr><td><span>AmpCharge (Ampol)</span></td><td><span>~90 DC sites</span></td><td><span>Co-located with Ampol fuel stations</span></td></tr><tr><td><span>bp pulse</span></td><td><span>~70 sites</span></td><td><span>Expanding via bp retail network</span></td></tr></tbody></table></figure><p><span>: Source: Zecar (2025), Evee (2026), EV Infrastructure News (2026) [@evee-state-of-charge-2026]</span></p><h2 id='2-chargers-per-ev-australia-vs-the-world'><span>2. Chargers per EV: Australia vs the world</span></h2><p><span>Australia had approximately 454,000 registered EVs at end-2025 and roughly 5,000 public charging sites (8,000--9,000 plugs). That yields roughly one plug per 50 EVs --- 5x worse than the IEA benchmark of one per 10 [@carsales-charger-ratio-2025; @iea-gevo-2025].</span></p><p><span>: EVs per Public Charger by Country {#tbl-ratio}</span></p><figure class='table-figure'><table><thead><tr><th><span>Country</span></th><th><span>EVs per public charger</span></th><th><span>Notes</span></th></tr></thead><tbody><tr><td><span>South Korea</span></td><td><span>~2</span></td><td><span>201,000 public chargers for 357,000 plug-in cars</span></td></tr><tr><td><span>Netherlands</span></td><td><span>~5--9</span></td><td><span>180,000+ public charge points; densest in Europe</span></td></tr><tr><td><span>China</span></td><td><span>~10</span></td><td><span>12.5 million public chargers by end-2025</span></td></tr><tr><td><span>Germany</span></td><td><span>~19</span></td><td><span>160,000 public charge points</span></td></tr><tr><td><span>Norway</span></td><td><span>~25</span></td><td><span>High EV penetration; home charging reduces public need</span></td></tr><tr><td><span>UK</span></td><td><span>~23</span></td><td><span>87,000+ public devices; rising ratio signals lag</span></td></tr><tr><td><span>USA</span></td><td><span>~32</span></td><td><span>Wide state-level variation (9 to 47)</span></td></tr><tr><td><strong><span>Australia</span></strong></td><td><strong><span>~45</span></strong></td><td><span>Among the worst in the developed world</span></td></tr></tbody></table></figure><p><span>: Source: IEA Global EV Outlook 2025 and 2026 [@iea-gevo-2025; @iea-gevo-2026], EAFO [@eafo-ev-charger-ratio-2025], Statranker [@statranker-chargers-per-ev-2025]</span></p><p><span>The IEA has shifted emphasis from charger counts to installed public charging capacity per EV, recommending at least 2 kW per electric LDV. The ICCT notes that appropriate ratios depend on home-charging access: markets where most owners charge at home (Norway, USA) can sustain higher vehicle-to-charger ratios than markets with high apartment dwelling (South Korea, Netherlands) where public charging substitutes.</span></p><p><span>Deloitte estimates Australia needs 27,500 new public chargers by 2033, requiring eight new installations per day [@carsales-charger-ratio-2025].</span></p><h2 id='3-clusters-vs-isolated-chargers'><span>3. Clusters vs isolated chargers</span></h2><p><span>International practice has shifted toward multi-stall charging hubs. The evidence is consistent across utilisation, economics, reliability, and user experience.</span></p><p><strong><span>Utilisation.</span></strong><span> Tesla Supercharger stations average 15.1 ports per site; non-Tesla US DCFC stations average 3.8. Higher port counts reduce the probability that all stalls are occupied. US average DCFC utilisation sits around 12--16% nationally [@stable-auto-utilisation-2025].</span></p><p><strong><span>Grid connection efficiency.</span></strong><span> A 6-stall hub shares one high-voltage connection. Dynamic load management distributes power across stalls. The per-stall grid connection cost falls by 30--50% in a hub configuration versus isolated chargers.</span></p><p><strong><span>Reliability.</span></strong><span> Single-charger sites have a binary failure mode. Multi-stall hubs degrade gracefully. The US NEVI standard requires 97% average annual uptime per port, which is easier to achieve across a hub [@nevi-standards-2023].</span></p><p><strong><span>User experience.</span></strong><span> A hub with 6--12 stalls reduces wait anxiety. Hubs justify co-locating amenities (food, restrooms, retail). The Seed &amp; Greet hub in Hilden, Germany --- 114 charging stations with bakery-cafe and vertical greenhouse --- was named best EV hub in the world in 2024 [@seed-greet-hilden-2024].</span></p><p><strong><span>International models:</span></strong></p><ul><li><p><strong><span>US (NEVI):</span></strong><span> minimum 4 x 150 kW DC fast chargers per site. Total station power at least 600 kW. Sites within one mile of designated EV corridors and no more than 50 miles apart [@nevi-standards-2023].</span></p></li><li><p><strong><span>EU (AFIR):</span></strong><span> DC fast-charging pools every 60 km on TEN-T core network. Minimum 400 kW total site capacity by end-2025 [@afir-regulation-2023].</span></p></li><li><p><strong><span>China:</span></strong><span> highway service areas have 98% charger coverage. Sites routinely have 10--20+ stalls. BYD deploying 4,000 stations with 1 MW chargers [@electrek-china-charging-2025].</span></p></li></ul><p><strong><span>Implication for Australia:</span></strong><span> many Australian sites still have one or two chargers. A minimum 4-stall standard for new public DCFC deployments (similar to NEVI) would improve economics, experience, and reliability. Government-funded sites should mandate minimum stall counts.</span></p><h2 id='4-charging-speed-forward-looking-baseline'><span>4. Charging speed: forward-looking baseline</span></h2><p><span>Australia&#39;s early DC network was built around 50 kW chargers. At 50 kW, a 60 kWh battery takes roughly 50--60 minutes for a 10--80% charge. This is inadequate for current vehicles and user expectations.</span></p><p><span>: Peak DC Charging Acceptance by Vehicle (2025--2026) {#tbl-speeds}</span></p><figure class='table-figure'><table><thead><tr><th><span>Vehicle</span></th><th><span>Peak DC (kW)</span></th><th><span>10--80% time (min)</span></th></tr></thead><tbody><tr><td><span>Tesla Model Y</span></td><td><span>250</span></td><td><span>~30</span></td></tr><tr><td><span>Hyundai Ioniq 5 (2025+)</span></td><td><span>233--240</span></td><td><span>~18</span></td></tr><tr><td><span>Kia EV6</span></td><td><span>240</span></td><td><span>~18</span></td></tr><tr><td><span>Kia EV9 (99.8 kWh)</span></td><td><span>210</span></td><td><span>~24</span></td></tr><tr><td><span>BYD Seal</span></td><td><span>150</span></td><td><span>~30</span></td></tr><tr><td><span>BYD Atto 3</span></td><td><span>80</span></td><td><span>~45</span></td></tr></tbody></table></figure><p><span>: Source: InsideEVs [@insideevs-fastest-charging-2026], Recurrent Auto (2026)</span></p><p><span>The modal peak acceptance for new EVs sold in Australia sits around 150--250 kW. 800V architecture vehicles (Ioniq 5/6, EV6/9, Porsche Taycan) sustain high charge rates across a wider state-of-charge window.</span></p><p><strong><span>Recommended baseline for new deployments (2026--2030):</span></strong></p><ul><li><p><strong><span>150 kW minimum</span></strong><span> for any new public DCFC deployment. This aligns with NEVI&#39;s federal minimum and the practical needs of the current vehicle fleet.</span></p></li><li><p><strong><span>350 kW</span></strong><span> for highway corridor and high-traffic sites. 800V vehicles can use 200--350 kW, and the incremental cost over 150 kW is modest relative to total site cost (grid connection, civil works, land). Charger hardware is a 10--15 year asset; vehicles sold in 2028--2030 will routinely accept 300--400 kW.</span></p></li></ul><p><span>Deploying 50 kW chargers in 2026 is indefensible for any publicly funded site.</span></p><h2 id='5-technology-and-suppliers-cars'><span>5. Technology and suppliers (cars)</span></h2><h3 id='charging-standards'><span>Charging standards</span></h3><p><strong><span>CCS2</span></strong><span> (Combined Charging System Type 2) is the settled DC standard for Australia. Every CCS2-equipped vehicle also accepts Type 2 AC. CHAdeMO is declining; no new models sold in Australia use it. NACS (Tesla&#39;s North American standard) is irrelevant to Australia&#39;s three-phase grid. Chinese-manufactured vehicles (BYD, MG, GWM, Zeekr) are exported with CCS2 sockets, not GB/T.</span></p><h3 id='major-manufacturers'><span>Major manufacturers</span></h3><p><span>: Charger Manufacturers in the Australian Market {#tbl-manufacturers}</span></p><figure class='table-figure'><table><thead><tr><th><span>Manufacturer</span></th><th><span>HQ</span></th><th><span>Key products</span></th><th><span>Australian presence</span></th></tr></thead><tbody><tr><td><span>ABB E-mobility</span></td><td><span>Switzerland</span></td><td><span>Terra 360 (360 kW), Terra HP (175--350 kW)</span></td><td><span>Supplies multiple networks; 400,000+ chargers globally</span></td></tr><tr><td><span>Tritium (now Exicom)</span></td><td><span>Australia (Brisbane R&amp;D)</span></td><td><span>PKM150, PKM350</span></td><td><span>Acquired by Exicom for US</span><span>$</span><span>37M, Oct 2024</span></td></tr><tr><td><span>Kempower</span></td><td><span>Finland</span></td><td><span>S-Series satellite (600 kW), Mega Satellite Flex (1.2 MW)</span></td><td><span>Ampol partnership; WA highway corridor</span></td></tr><tr><td><span>Delta Electronics</span></td><td><span>Taiwan</span></td><td><span>City 150/200, Ultra Fast 400</span></td><td><span>Supplies several networks; 1 MW MCS announced</span></td></tr><tr><td><span>BYD</span></td><td><span>China</span></td><td><span>Flash Charger (1,500 kW output, BESS-integrated)</span></td><td><span>Australia rollout from October 2026</span></td></tr><tr><td><span>Tesla</span></td><td><span>USA</span></td><td><span>Supercharger V3/V4 (250--350 kW)</span></td><td><span>148 sites, ~1,000 bays; two-thirds open to non-Tesla</span></td></tr></tbody></table></figure><p><span>: Source: Kempower [@kempower-ampol-2025], Exicom [@exicom-tritium-2024], Zecar [@zecar-byd-flash-2026], Evee [@evee-state-of-charge-2026]</span></p><p><span>Tritium&#39;s acquisition by India&#39;s Exicom in October 2024 ended the Brisbane company&#39;s independent run. The Brisbane R&amp;D centre continues under Exicom ownership [@exicom-tritium-2024].</span></p><h3 id='technology-trends'><span>Technology trends</span></h3><p><strong><span>Liquid-cooled cables.</span></strong><span> Required above 200 kW. All current-generation 150 kW+ chargers use them. MCS connectors handle over 1,000 A with liquid cooling.</span></p><p><strong><span>Plug-and-Charge (ISO 15118).</span></strong><span> Automatic authentication when the cable is connected; no app or RFID card needed. EU AFIR mandates ISO 15118 from 2026. Australian adoption remains limited.</span></p><p><strong><span>Dynamic power sharing.</span></strong><span> Kempower&#39;s satellite architecture shares a central power unit across up to 8 dispensers. ABB&#39;s Terra 360 splits 360 kW across four outlets. Reduces grid connection sizing by 30--50%.</span></p><p><strong><span>Battery-integrated chargers.</span></strong><span> BYD&#39;s Flash Charging delivers 1,500 kW output via on-site BESS, sidestepping grid constraints. Volvo Energy&#39;s PU500 (450--540 kWh battery, 240 kW charger) targets depots [@zecar-byd-flash-2026].</span></p><p><strong><span>Vehicle-to-Grid (V2G).</span></strong><span> Four CEC-approved pathways for bidirectional charging in Australia. Wallbox Quasar 2 (11.5 kW bidirectional DC) and RedEarth (22 kW three-phase) are available. BYD is running a warranty-backed V2G trial with Amber Electric.</span></p><p><strong><span>800V vehicle architectures.</span></strong><span> Hyundai/Kia E-GMP, Porsche, BYD, Zeekr platforms are transitioning from premium to mass-market default, enabling faster sustained charge rates.</span></p><h3 id='reliability'><span>Reliability</span></h3><p><span>A UQ/UWA study found that while Australian networks report 95--98% &quot;uptime&quot; (charger connected to network), the successful-charge rate for drivers is 75--83% [@uq-charger-reliability-2025]. The gap comes from failed handshakes, payment failures, damaged cables, and ICEd bays. Federal-funded chargers must meet a 98% reliability target, but no national mandatory reporting regime exists.</span></p><h3 id='capital-costs'><span>Capital costs</span></h3><p><span>: Indicative Charger Equipment Costs (AUD, 2025--2026) {#tbl-costs-cars}</span></p><figure class='table-figure'><table><thead><tr><th><span>Category</span></th><th><span>Power</span></th><th><span>Equipment cost</span></th></tr></thead><tbody><tr><td><span>AC Level 2 wallbox</span></td><td><span>7--22 kW</span></td><td><span>$1,500--5,000</span></td></tr><tr><td><span>DC fast charger</span></td><td><span>50 kW</span></td><td><span>$30,000--50,000</span></td></tr><tr><td><span>DC fast charger</span></td><td><span>150 kW</span></td><td><span>$80,000--120,000</span></td></tr><tr><td><span>DC fast charger</span></td><td><span>350 kW</span></td><td><span>$150,000--300,000</span></td></tr><tr><td><span>Bidirectional (V2G)</span></td><td><span>11--22 kW</span></td><td><span>$10,000--15,000</span></td></tr></tbody></table></figure><p><span>: Source: Quality Energy (2025), Gridly (2026), industry estimates</span></p><p><span>Installation adds </span><span>$</span><span>5,000--50,000 per site. A 4-stall 150 kW site in metropolitan Australia costs </span><span>$</span><span>500,000--800,000 fully installed.</span></p><hr /><h1 id='part-2-trucks-and-heavy-vehicles'><span>Part 2: Trucks and Heavy Vehicles</span></h1><h2 id='6-current-state-of-electric-trucks-in-australia'><span>6. Current state of electric trucks in Australia</span></h2><p><span>Electric trucks remain nascent in Australia, but the range of available models has expanded since 2024.</span></p><p><strong><span>Volvo</span></strong><span> leads with approximately 100 zero-emission trucks on Australian roads. The FH Electric (44t rated, 490 kW, 540 kWh, ~300 km range) and FM Electric are imported now and will be manufactured at Volvo&#39;s Wacol plant in Brisbane from late 2027 --- the third global factory to build Volvo electric trucks [@electrek-linfox-2025].</span></p><p><strong><span>Scania</span></strong><span> offers the 25P (295 kW motor, up to 300 kWh, ~250 km range). </span><strong><span>Fuso eCanter</span></strong><span> second-generation (mid-2025) now offers a 14-model lineup. </span><strong><span>Mercedes-Benz eActros</span></strong><span> operates through Centurion&#39;s Perth fleet and an Australia Post Melbourne trial.</span></p><p><strong><span>Tesla Semi</span></strong><span> confirmed specifications: 822 kWh battery (Long Range), 800 km range, 1.2 MW Megacharger capability. US deliveries commenced in 2026; no Australian date announced [@electrek-tesla-semi-specs-2026].</span></p><h3 id='fleet-deployments'><span>Fleet deployments</span></h3><p><span>: Major Electric Truck Fleet Deployments in Australia {#tbl-truck-fleets}</span></p><figure class='table-figure'><table><thead><tr><th><span>Operator</span></th><th><span>Vehicles</span></th><th><span>Detail</span></th></tr></thead><tbody><tr><td><span>Linfox</span></td><td><span>30 Volvo FH/FM on order + 4 operating</span></td><td><span>Largest Australian electric truck order; delivery from early 2027</span></td></tr><tr><td><span>Woolworths</span></td><td><span>~62 Foton T5</span></td><td><span>Last-mile delivery; targeting 100% of 1,200-vehicle fleet by 2030</span></td></tr><tr><td><span>Centurion</span></td><td><span>30 Mercedes-Benz eActros</span></td><td><span>Off-grid depot, Perth: 4.4 MW solar + 10.3 MWh BESS</span></td></tr><tr><td><span>Australia Post</span></td><td><span>1 eActros + 36 electric vans</span></td><td><span>Melbourne trial from October 2025</span></td></tr></tbody></table></figure><p><span>: Source: Electrek [@electrek-linfox-2025], The Driven [@thedriven-centurion-2025], Fleet HV News (2025)</span></p><p><span>The Australian electric truck market was valued at USD 17.1 million in 2024, projected to reach USD 133 million by 2033 (25.6% CAGR) [@imarc-electric-trucks-2025]. Mass adoption of heavy-duty electric trucks is expected from 2028--2030 for metropolitan distribution, with long-haul following in the early 2030s.</span></p><h2 id='7-truck-charging-requirements-vs-cars'><span>7. Truck charging requirements vs cars</span></h2><p><span>Battery sizes differ by an order of magnitude:</span></p><p><span>: Battery Capacity and Range by Vehicle Type {#tbl-battery-sizes}</span></p><figure class='table-figure'><table><thead><tr><th><span>Vehicle type</span></th><th><span>Battery capacity</span></th><th><span>Range</span></th></tr></thead><tbody><tr><td><span>Passenger car</span></td><td><span>60--100 kWh</span></td><td><span>400--600 km</span></td></tr><tr><td><span>Light-duty truck (Fuso eCanter, Foton T5)</span></td><td><span>80--140 kWh</span></td><td><span>200--300 km</span></td></tr><tr><td><span>Medium-duty rigid (Volvo FE, Scania 25P)</span></td><td><span>300--540 kWh</span></td><td><span>250--450 km</span></td></tr><tr><td><span>Heavy-duty prime mover (Volvo FH, Tesla Semi)</span></td><td><span>540--822 kWh</span></td><td><span>300--800 km</span></td></tr></tbody></table></figure><p><span>: Source: Scania Group (2025), Electrek [@electrek-tesla-semi-specs-2026], manufacturer specifications</span></p><p><strong><span>Charging time constraints:</span></strong></p><ul><li><p><span>At 350 kW (current CCS2 maximum): a 520 kWh battery charges 20--80% in approximately 65 minutes --- too slow for a single rest break.</span></p></li><li><p><span>At 1.2 MW (MCS): the same battery recovers ~60% in approximately 30 minutes, fitting within a rest break.</span></p></li><li><p><span>At depot overnight (50--150 kW): 4--10 hours, fitting within an 8-hour depot window using lower-cost hardware.</span></p></li></ul><p><span>About 70% of heavy-duty trucks drive less than 500 km per day. For these duty cycles, depot charging overnight at 50--150 kW is sufficient and cost-optimal. En-route high-power charging is needed for long-haul operations exceeding single-charge range and multi-shift operations.</span></p><h2 id='8-megawatt-charging-system-mcs'><span>8. Megawatt Charging System (MCS)</span></h2><p><span>The MCS standard has reached commercial maturity in 2026:</span></p><ul><li><p><strong><span>IEC 63379</span></strong><span> (connector and pin assignment): v1.0 published February 2026</span></p></li><li><p><strong><span>SAE J3271</span></strong><span> (North American variant): published March 2025</span></p></li><li><p><strong><span>Maximum power:</span></strong><span> 3.75 MW (1,250 V DC at 3,000 A); initial commercial implementations at 1.0--1.2 MW</span></p></li></ul><p><span>Kempower deployed the first public MCS charging session in Sweden (August 2025) and California (March 2026). The new </span><strong><span>Mega Satellite Flex</span></strong><span> supports both CCS (up to 560 kW) and MCS (up to 1.2 MW) from a single unit, on sale from July 2026 [@electrek-kempower-mega-2026; @charin-mcs-2026].</span></p><p><span>ABB demonstrated megawatt charging on a MAN eTruck. Tesla&#39;s proprietary Megacharger (1.2 MW) network has 66 US locations announced. Delta Electronics confirmed 1 MW hardware for Australia within 12 months.</span></p><p><strong><span>Interim solution:</span></strong><span> CCS2 at 150--400 kW. This is what NewVolt (Australia) and most European truck charging networks deploy. Adequate for metro distribution but marginal for long-haul.</span></p><h2 id='9-charging-models-for-trucks'><span>9. Charging models for trucks</span></h2><p><span>International experience points to a three-tier model:</span></p><p><strong><span>Tier 1 --- Depot charging</span></strong><span> (overnight, 50--150 kW). The primary model for most fleets. Trucks charge at lower-cost hardware during 8-hour windows. Centurion&#39;s Perth depot demonstrates the extreme case: 30 trucks charged entirely by 4.4 MW solar + 10.3 MWh BESS, fully off-grid [@thedriven-centurion-2025].</span></p><p><strong><span>Tier 2 --- Logistics precinct hubs</span></strong><span> (400 kW--1.2 MW). NewVolt is building Australia&#39;s first shared-use truck charging network: 14 locations in Melbourne, Sydney, and Brisbane with 400 kW per bay (dual CCS2). ARENA committed </span><span>$</span><span>25.3 million in co-funding. First bays operational late 2026 [@electrive-newvolt-2026].</span></p><p><strong><span>Tier 3 --- Highway corridor hubs</span></strong><span> (1--3 MW per site). The EU mandates truck charging every 60 km on TEN-T core network with minimum 350 kW per connector and 1,400 kW minimum site capacity [@afir-regulation-2023]. Australia has no equivalent corridor mandate. The Hume Highway (Sydney--Melbourne, 880 km, ~4,800 trucks/day) is the first corridor targeted by NewVolt. New Energy Transport is developing a Wilton site (10 x 400 kW) [@thedriven-net-wilton-2026].</span></p><h3 id='clusters-vs-isolated-trucks'><span>Clusters vs isolated (trucks)</span></h3><p><span>The case for clusters is stronger for trucks than for cars:</span></p><ul><li><p><span>Grid connection costs dominate truck charging economics; sharing a single MV connection across 10--20 bays is cost-effective.</span></p></li><li><p><span>Truck operators need predictable availability; a multi-bay hub with 24/7 operation reduces scheduling risk.</span></p></li><li><p><span>Co-locating with logistics precincts captures fleet density --- most truck kilometres originate from a small number of freight nodes.</span></p></li></ul><h2 id='10-technology-and-suppliers-trucks'><span>10. Technology and suppliers (trucks)</span></h2><p><strong><span>Kempower</span></strong><span> leads in distributed depot architecture. The satellite system (central power unit + up to 8 dispensers) suits truck depots. The Mega Satellite Flex bridges the CCS-to-MCS transition [@kempower-mcs-2026].</span></p><p><strong><span>ABB</span></strong><span> supplies Terra HP (175--350 kW) and Pantograph Down systems for bus depots. MCS prototype demonstrated.</span></p><p><strong><span>Siemens (Heliox)</span></strong><span> leads in pantograph-based bus and truck charging (acquired Heliox 2023).</span></p><p><strong><span>Tritium/Exicom</span></strong><span> continues the Tritium-designed range under new ownership.</span></p><p><strong><span>Pantograph charging</span></strong><span> automates the connection --- relevant for depots where drivers should not handle heavy MCS cables. Governed by the OppCharge industry interface; in pilot phase for trucks.</span></p><p><strong><span>Depot management software</span></strong><span> allocates power across vehicles by departure time, SOC, and tariff window. Key platforms: ChargePilot (The Mobility House), Synop, Ampcontrol, ChargePoint Fleet.</span></p><h2 id='11-australian-policy-gaps-for-trucks'><span>11. Australian policy gaps for trucks</span></h2><p><span>Australia lacks three policy instruments driving truck electrification internationally:</span></p><ol start='' ><li><p><strong><span>No heavy vehicle CO~2~ standard.</span></strong><span> The EU mandates 45% fleet-average CO~2~ reduction for new trucks by 2030 and 90% by 2040. Australia&#39;s regulations remain at Euro V equivalent.</span></p></li><li><p><strong><span>No corridor charging mandate.</span></strong><span> The EU requires truck charging every 60--100 km on major corridors. Australia relies on voluntary commercial investment.</span></p></li><li><p><strong><span>No purchase incentives for heavy vehicles.</span></strong><span> No federal zero-emission truck subsidy equivalent to the US IRA&#39;s </span><span>$</span><span>40,000 commercial clean vehicle credit. NSW expanded its fleet incentive to include some truck categories [@nsw-ev-strategy-2026].</span></p></li></ol><hr /><h1 id='part-3-grid-infrastructure'><span>Part 3: Grid Infrastructure</span></h1><h2 id='12-power-requirements-by-site-type'><span>12. Power requirements by site type</span></h2><p><span>: Grid Power Demand by Charging Site Configuration {#tbl-power-demand}</span></p><figure class='table-figure'><table><thead><tr><th><span>Site configuration</span></th><th><span>Approximate grid demand</span></th></tr></thead><tbody><tr><td><span>1 x 50 kW DC</span></td><td><span>60 kVA</span></td></tr><tr><td><span>4 x 150 kW (NEVI minimum)</span></td><td><span>700 kVA</span></td></tr><tr><td><span>4 x 350 kW</span></td><td><span>1.6 MVA</span></td></tr><tr><td><span>8 x 350 kW (large highway hub)</span></td><td><span>3.2 MVA</span></td></tr><tr><td><span>12 x 350 kW (major hub)</span></td><td><span>4.8 MVA</span></td></tr><tr><td><span>20 trucks at 50 kW (managed depot)</span></td><td><span>1 MW</span></td></tr><tr><td><span>10 trucks at 350 kW (public hub)</span></td><td><span>3.5 MW</span></td></tr><tr><td><span>10 trucks at 1.2 MW (MCS hub)</span></td><td><span>12 MW</span></td></tr></tbody></table></figure><p><span>: Source: Kempower, industry estimates</span></p><p><span>A 4-stall 350 kW site at 1.6 MW exceeds the capacity of any standard suburban distribution transformer (200--500 kVA). A truck depot with 10--20 MCS chargers needs 10--20 MW --- equivalent to a small industrial substation.</span></p><h2 id='13-grid-connection-the-binding-constraint'><span>13. Grid connection: the binding constraint</span></h2><p><span>Grid connections are the largest barrier to charging network expansion. In April 2026, fifteen organisations --- including Tesla, AGL, EnergyAustralia, the Clean Energy Council, and Jolt --- issued a joint statement calling out slow, costly, and unpredictable connections as the primary bottleneck. The EVC notes that DNSP monopolies control approximately 90% of the costs facing the EV charging market [@thedriven-grid-barriers-2026].</span></p><p><strong><span>Connection timeframes:</span></strong><span> 6--24 months for sites above 500 kW. For sites requiring substation augmentation, lead times stretch beyond two years.</span></p><p><strong><span>Metro vs regional:</span></strong><span> In metropolitan areas, existing feeders often have spare capacity for sub-500 kW sites (</span><span>$</span><span>50,000--200,000, 3--6 months). In regional areas, feeders are long, lightly loaded, and often single-wire earth return (SWER). A 150 kW charger at a regional highway stop may require 5--20 km of feeder reinforcement.</span></p><p><strong><span>Tariff disparities:</span></strong><span> At a 500 kVA site consuming 100 MWh/year, annual network charges range from </span><span>$</span><span>9,000 (Endeavour Energy) to </span><span>$</span><span>70,000 (Ausgrid) --- a 7:1 ratio [@evc-ausgrid-submission-2022].</span></p><h2 id='14-solutions-to-grid-constraints'><span>14. Solutions to grid constraints</span></h2><h3 id='battery-buffered-charging'><span>Battery-buffered charging</span></h3><p><span>A BESS charges from the grid slowly and discharges to EVs at peak rates. A site can operate 1.4 MW of chargers on a 200 kW grid connection. Kempower has partnered with Polarium to integrate LFP BESS with DC fast chargers [@kempower-polarium-bess-2025]. The US DOE documents deployments where 200 kW grid supports 600 kW+ charger capacity [@nrel-battery-buffered-2024].</span></p><p><span>Cost trade-off: a 1 MWh BESS adds </span><span>$</span><span>500,000--800,000 to site capital but may avoid </span><span>$</span><span>1--2 million in grid augmentation and reduce demand charges by 40--70%.</span></p><p><span>BYD&#39;s Flash Charging system takes this further: 1,500 kW output via on-site BESS, entirely decoupling charger power from grid connection capacity [@zecar-byd-flash-2026].</span></p><h3 id='on-site-solar--storage'><span>On-site solar + storage</span></h3><p><span>A 100 kW rooftop array generates 400--500 kWh/day in Australian conditions, offsetting 15--25% of a busy 6-stall site&#39;s daily throughput. Combined solar-plus-storage can reduce peak demand charges by 40--70%. Centurion&#39;s Perth truck depot demonstrates full off-grid viability: 4.4 MW solar + 10.3 MWh BESS for 30 trucks [@thedriven-centurion-2025].</span></p><h3 id='smart-charging--load-management'><span>Smart charging / load management</span></h3><p><span>For depots with 10+ chargers, load management distributes available power across plugs, prioritises vehicles by departure time, and shifts load to off-peak tariffs. A 50-vehicle fleet needing 2 MW of aggregate energy can operate on a 500 kW connection by staggering overnight charging across an 8-hour window, cutting demand charges by up to 75%.</span></p><h3 id='grid-augmentation-who-pays'><span>Grid augmentation: who pays?</span></h3><p><span>Under current AER rules, the connecting customer pays for dedicated assets and contributes to shared network augmentation where the cost-revenue test shows a shortfall [@aer-connection-guidelines-2023]. Industry is calling for &quot;make ready&quot; obligations where DNSPs proactively build capacity to anticipated charging locations and socialise costs across the tariff base.</span></p><p><span>Three competing AEMC rule changes are in progress: Energy Networks Australia proposes DNSP-led charging infrastructure as a regulated service; Nexa Advisory proposes reinforcing ring-fencing to keep DNSPs out of the competitive market; DCCEEW proposes amendments to facilitate Commonwealth-funded rollout [@aemc-dnsp-ev-charging-2026].</span></p><h2 id='15-cost-estimates-by-site-size'><span>15. Cost estimates by site size</span></h2><p><span>: Infrastructure Cost Estimates (excludes charger hardware) {#tbl-infra-costs}</span></p><figure class='table-figure'><table><thead><tr><th><span>Site class</span></th><th><span>Capacity</span></th><th><span>Connection type</span></th><th><span>Estimated cost</span></th><th><span>Timeframe</span></th></tr></thead><tbody><tr><td><span>Small</span></td><td><span>50--100 kW</span></td><td><span>LV, existing transformer</span></td><td><span>$20,000--$80,000</span></td><td><span>1--3 months</span></td></tr><tr><td><span>Medium</span></td><td><span>500 kW--1 MW</span></td><td><span>New 1 MVA transformer</span></td><td><span>$150,000--$500,000</span></td><td><span>3--9 months</span></td></tr><tr><td><span>Large</span></td><td><span>2--5 MW</span></td><td><span>11 kV kiosk substation</span></td><td><span>$500,000--$2,000,000</span></td><td><span>6--18 months</span></td></tr><tr><td><span>Very large</span></td><td><span>10--20 MW (truck depot)</span></td><td><span>Dedicated 11/22 kV feeder or 66 kV sub</span></td><td><span>$2,000,000--$10,000,000+</span></td><td><span>12--36 months</span></td></tr></tbody></table></figure><p><span>: Source: Western Power [@western-power-ev-fleet-2026], AER [@aer-connection-guidelines-2023], industry estimates</span></p><p><span>For regional sites where feeder augmentation is required, the customer capital contribution can exceed all other components combined. Western Power&#39;s published rate of </span><span>$</span><span>496/kVA implies a 3 MW connection in Perth costs approximately </span><span>$</span><span>1.5 million in capacity charges alone.</span></p><hr /><h1 id='part-4-best-practice-and-policy'><span>Part 4: Best Practice and Policy</span></h1><h2 id='16-international-frameworks-australia-should-learn-from'><span>16. International frameworks Australia should learn from</span></h2><h3 id='eu-----afir'><span>EU --- AFIR</span></h3><p><span>The most prescriptive framework globally. DC fast-charging pools every 60 km on motorways; minimum 150 kW per connector; contactless payment mandatory; truck charging every 60 km on TEN-T core. Australia&#39;s 150 km highway target interval is less ambitious [@afir-regulation-2023].</span></p><h3 id='us-----nevi'><span>US --- NEVI</span></h3><p><span>$</span><span>5 billion program. Minimum 4 x 150 kW per site, 97% annual uptime per port with defined measurement methodology, OCPP 2.0.1 mandatory [@nevi-standards-2023]. The 97% uptime requirement with enforcement teeth is the standout. Australia&#39;s Minimum Operating Standards lack equivalent penalties [@dcceew-min-operating-standards-2024].</span></p><h3 id='uk'><span>UK</span></h3><p><span>Ofgem&#39;s ED3 framework allows anticipatory investment in network capacity ahead of confirmed EV demand. The companion &quot;build and flex&quot; strategy requires maximising existing capacity through smart charging and BESS before building new assets [@ofgem-ed3-2026].</span></p><h3 id='california'><span>California</span></h3><p><span>The benchmark for utility-led infrastructure. Assembly Bill 841 directs utilities to install electrical infrastructure to the charger pad at no cost (&quot;utility-side make-ready&quot;). A </span><span>$</span><span>1 billion transportation electrification program: 70% for medium- and heavy-duty, 30% for light-duty at apartments [@cpuc-te-programs-2025].</span></p><h3 id='germany-----deutschlandnetz'><span>Germany --- Deutschlandnetz</span></h3><p><span>Rather than subsidising individual operators, the government tendered 1,100 locations for HPC infrastructure with binding construction obligations --- a shift from subsidy to tendered deployment [@nationale-leitstelle-deutschlandnetz-2025].</span></p><h3 id='china'><span>China</span></h3><p><span>Treats charging as industrial policy. The 2025 Three-Year Action Plan targets 28 million chargers and 300 GW of public capacity by 2027. State-owned grid corporations build dedicated feeders and substations for large hubs, socialising costs across the customer base [@peoples-daily-china-charging-2025; @electrek-china-charging-2025].</span></p><h3 id='building-code-mandates'><span>Building code mandates</span></h3><p><span>The EU EPBD IV requires one charger per 2 parking spaces in new office buildings and pre-cabling of 50% of spaces in existing large car parks. California&#39;s CalGreen Code requires 100% EV-ready parking in new multifamily dwellings. </span><strong><span>Australia has no national building code requirement for EV charging in new buildings.</span></strong><span> This is a gap.</span></p><h2 id='17-australias-current-policy-landscape'><span>17. Australia&#39;s current policy landscape</span></h2><p><span>: Federal EV Charging Policy {#tbl-federal-policy}</span></p><figure class='table-figure'><table><thead><tr><th><span>Policy</span></th><th><span>Status</span></th></tr></thead><tbody><tr><td><span>National EV Strategy</span></td><td><span>Released 2023; review underway 2026</span></td></tr><tr><td><span>Driving the Nation Fund (</span><span>$</span><span>500M)</span></td><td><span>$</span><span>266M allocated via ARENA</span></td></tr><tr><td><span>DRIVEN grants (</span><span>$</span><span>20M)</span></td><td><span>Opened late 2025 for public charger co-funding</span></td></tr><tr><td><span>NVES</span></td><td><span>In force from 2025; drives uptake, not infrastructure</span></td></tr><tr><td><span>Minimum Operating Standards</span></td><td><span>Published; lack enforcement penalties</span></td></tr><tr><td><span>CEFC</span></td><td><span>$</span><span>50M in EV fleet financing</span></td></tr></tbody></table></figure><p><span>: Source: DCCEEW [@dcceew-nev-strategy-2023], ARENA</span></p><p><strong><span>State-by-state:</span></strong><span> NSW leads with a </span><span>$</span><span>100 million EV strategy including heavy vehicles [@nsw-ev-strategy-2026]. Victoria has shifted from subsidies to regulatory reform [@zecar-victoria-regulatory-2026]. Queensland hosts Volvo&#39;s Wacol electric truck factory from 2027. SA and WA have limited incentives remaining.</span></p><h2 id='18-summary-of-gaps-and-recommendations'><span>18. Summary of gaps and recommendations</span></h2><ol start='' ><li><p><strong><span>Charger-to-EV ratio.</span></strong><span> Australia&#39;s ~45:1 ratio is 5x worse than the IEA benchmark. Meeting 10:1 requires sustained deployment of 8+ chargers per day through 2033.</span></p></li><li><p><strong><span>Mandate clusters.</span></strong><span> Government-funded sites should require a minimum of 4 DC fast-charging stalls (matching US NEVI). Isolated single-charger deployments waste capital and deliver poor user experience.</span></p></li><li><p><strong><span>Set a speed floor.</span></strong><span> 150 kW minimum for any new publicly funded DC charger. 350 kW for highway and high-traffic sites. Ban 50 kW deployments from public funding.</span></p></li><li><p><strong><span>Fix grid connections.</span></strong><span> Standardise DNSP connection processes and timelines (target: 3 months for sub-1 MW, 6 months for 1--5 MW). Adopt &quot;make ready&quot; obligations or anticipatory investment frameworks.</span></p></li><li><p><strong><span>Battery-buffered by default.</span></strong><span> For grid-constrained sites, BESS-integrated charging (Kempower/Polarium, BYD Flash Charging) should be the default architecture, not a workaround.</span></p></li><li><p><strong><span>Building code mandates.</span></strong><span> Require EV-ready parking in all new residential and commercial construction, following EU EPBD and California CalGreen precedent.</span></p></li><li><p><strong><span>Truck-specific policy.</span></strong><span> Legislate heavy vehicle CO~2~ standards. Mandate corridor charging on major freight routes. Establish a federal zero-emission truck purchase incentive.</span></p></li><li><p><strong><span>Enforce uptime.</span></strong><span> Adopt a measurable uptime standard (97% per port, monthly measurement) with penalties for persistent non-compliance, following the NEVI model.</span></p></li><li><p><strong><span>Payment interoperability.</span></strong><span> Mandate contactless card payment at all public DC chargers (no app required), consistent with EU AFIR.</span></p></li></ol><hr /><h2 id='references'><span>References</span></h2></div></div>
+</body>
+</html>
