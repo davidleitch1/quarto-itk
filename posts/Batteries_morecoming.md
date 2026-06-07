@@ -13,7 +13,7 @@ format:
   docx: default
 ---
 
-## Batteries and wind are crushing evening peak prices — more pain to come
+## Batteries and wind are crushing coal gen revenues — more pain to come
 
 This note serves to make two points:
 
