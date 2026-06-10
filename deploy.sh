@@ -3,15 +3,21 @@
 # Incremental Quarto render + Netlify deploy
 #
 # Usage: ./deploy.sh "Your commit message"
-#    or: ./deploy.sh --full "message"   (force full render)
+#    or: ./deploy.sh --full "message"       (force full render of the whole site)
+#    or: ./deploy.sh --listings "message"   (force listing/feed + index refresh,
+#                                            even with a clean git tree)
 
 set -e
 cd "$(dirname "$0")"
 
 # --- Parse args ---
 FULL_RENDER=false
+LISTINGS_FORCE=false
 if [ "$1" = "--full" ]; then
     FULL_RENDER=true
+    shift
+elif [ "$1" = "--listings" ]; then
+    LISTINGS_FORCE=true
     shift
 fi
 
@@ -41,8 +47,12 @@ UNTRACKED=$(git ls-files --others --exclude-standard 2>/dev/null)
 ALL_CHANGED=$(echo -e "$CHANGED\n$STAGED\n$UNTRACKED" | sort -u | grep -v '^$')
 
 if [ -z "$ALL_CHANGED" ]; then
-    echo "No changes detected. Nothing to render or deploy."
-    exit 0
+    if $FULL_RENDER || $LISTINGS_FORCE; then
+        echo "No git changes detected, but proceeding because of flag."
+    else
+        echo "No changes detected. Nothing to render or deploy."
+        exit 0
+    fi
 fi
 
 echo "Changed files:"
@@ -77,19 +87,17 @@ else
         quarto render "$f"
     done <<< "$(echo "$ALL_CHANGED" | grep -E '\.(md|qmd)$')"
 
-    # Re-render listing pages whose content directories were touched
-    for dir in ${(k)LISTING_PAGES}; do
-        if echo "$ALL_CHANGED" | grep -q "^${dir}/"; then
-            echo "  Rendering listing: ${LISTING_PAGES[$dir]} (${dir}/ changed)"
-            quarto render "${LISTING_PAGES[$dir]}"
-        fi
+    # Always re-render the listing pages + index so the listings AND the RSS feed
+    # never go stale. Each is only a few seconds — far cheaper than a full render —
+    # and rendering posts.qmd is what regenerates posts.xml (clean_feed.py runs as
+    # the post-render hook). This removes any dependency on git change-detection
+    # catching a posts/ change, which was the cause of the feed not updating.
+    for lp in ${(v)LISTING_PAGES}; do
+        echo "  Rendering listing: $lp"
+        quarto render "$lp"
     done
-
-    # Re-render index.md if posts changed (front page references recent posts)
-    if echo "$ALL_CHANGED" | grep -q "^posts/"; then
-        echo "  Rendering: index.md (posts changed)"
-        quarto render index.md 2>/dev/null || true
-    fi
+    echo "  Rendering: index.md"
+    quarto render index.md 2>/dev/null || true
 
     echo ""
     echo "=== Incremental render complete ==="
@@ -106,7 +114,7 @@ T_GIT=$SECONDS
 echo ""
 echo "Committing and pushing to git..."
 git add .
-git commit -m "$MESSAGE"
+git commit -m "$MESSAGE" || echo "  (nothing new to commit)"
 git push
 
 # --- Timing summary ---

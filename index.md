@@ -20,6 +20,18 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### June 9
+
+Heading off for two weeks in China. Follow along if I can make the technology work (VPN vi Holafly, text and GitHub integration via Working Copy and  maybe IAwriter. Probably I would be better with Facebook, even in China). En route noting all the new batteries coming on stream and the ongoing new wind needed.
+
+But perhaps most pleasing was a podcast with Josef Tadich Director for Energy, Tesla covering all the South East Asian business including China. 
+
+![IMG_1951](../../../../Containers/com.apple.Photos/Data/tmp/TemporaryItems/ShareKit-Exports/A32123BC-0FD8-4DCC-9B74-747360B5EFF8/DE6045E6-236D-4F4C-9264-284C7BCDE1FB/IMG_1951.png)
+
+
+
+
+
 ### May 25
 
 Not sure where the time went. The last week has been devoted to the question that has consumed me for years, namely given the current spot pricing market, what will electricity prices be  in a post coal world in the NEM. To answer this question, and ostensibly to provide year by year spot price forecasts we developed Vertex. That is my ex colleague Paul Bandarian build a half hourly dispatch model using a linear program and our own bid bands that dispatched available supply on a half hourly basis using our demand, modified from AEMO, and AEMO's own 13 weather year forecasts. 
