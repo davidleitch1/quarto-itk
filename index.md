@@ -22,13 +22,13 @@ window.onload = function() {
 
 ### June 9
 
-Heading off for two weeks in China. Follow along if I can make the technology work (VPN vi Holafly, text and GitHub integration via Working Copy and  maybe IAwriter. Probably I would be better with Facebook, even in China). En route noting all the new batteries coming on stream and the ongoing new wind needed.
+Heading off for two weeks in [China](https://china26.pages.dev). Follow along if I can make the technology work (VPN vi Holafly, text and GitHub integration via Working Copy and  maybe IAwriter. Probably I would be better with Facebook, even in China). En route noting all the new batteries coming on stream and the ongoing new wind needed.
 
 But perhaps most pleasing was a podcast with Josef Tadich Director for Energy, Tesla covering all the South East Asian business including China. 
 
-![IMG_1951](../../../../Containers/com.apple.Photos/Data/tmp/TemporaryItems/ShareKit-Exports/A32123BC-0FD8-4DCC-9B74-747360B5EFF8/DE6045E6-236D-4F4C-9264-284C7BCDE1FB/IMG_1951.png)
 
 
+![IMG_1951-0982300](./media/IMG_1951-0982300.png)
 
 
 
