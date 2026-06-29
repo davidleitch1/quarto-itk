@@ -119,7 +119,7 @@ So China's strategy to deal with the performance drawbacks is to use smaller pac
 
 **At the cathode-material level, NMC is actually the better fast-charger.** 
 
-**But the cathode usually isn't the constraint — the graphite anode is.** Fast-charge risk is dominated by lithium plating on the anode (same graphite in both chemistries) and by heat. This is where LFP's advantages live, and none of them are about ionic transport:
+**But the cathode usually isn't the constraint — the graphite anode is.** Fast-charge risk is dominated by lithium plating on the anode (same graphite in both chemistries) and by heat. 
 
 - *Thermal headroom.* LFP's thermal-runaway onset is ~270 °C vs ~210 °C for NMC, so you can push more current and tolerate more pack heating with a smaller safety penalty.
 - *Degradation tolerance.* LFP shrugs off the cycle-life hit that fast charging inflicts. CATL's 3rd-gen Shenxing claims retention above 90% after 1,000 ultra-fast charge cycles.
@@ -127,9 +127,9 @@ So China's strategy to deal with the performance drawbacks is to use smaller pac
 
 At CATL's April 2026 Tech Day, the 3rd-gen Shenxing LFP hit an equivalent 10C and peak 15C rate — 10–80% SoC in 3 min 44 s, 10–98% in 6 min 27 s, achieved via the industry's lowest internal resistance at 0.25 milliohms, roughly half the typical figure. BYD's Blade 2.0 does 10–70% in 5 minutes.
 
-NMC's charging limitation was never fundamental, it was a thermal/cost-management problem, and throwing the same cell engineering at it closes the gap. At that *same* 2026 event, CATL's 3rd-gen Qilin NMC matched Shenxing's charging speed — 10C-equivalent charging, 3,000 kW peak discharge, 1,000 km+ range, and 280 Wh/kg, a product the coverage notes BYD has no equivalent to. 
+NMC's charging limitation was never fundamental. At that *same* 2026 event, CATL's 3rd-gen Qilin NMC matched Shenxing's charging speed — 10C-equivalent charging, 3,000 kW peak discharge, 1,000 km+ range, and 280 Wh/kg, a product the coverage notes BYD has no equivalent to. 
 
-The strategic framing CATL itself gave is the useful one here: LFP is nearing its theoretical energy-density ceiling, so its roadmap is pivoting to extreme fast charging as the differentiator, while NMC keeps energy density as its leadership metric. Fast charging is becoming LFP's headline selling point precisely *because* it can't win on density
+The strategic framing CATL itself gave is the useful one here: LFP is nearing its theoretical energy-density ceiling, so its roadmap is pivoting to extreme fast charging as the differentiator, while NMC keeps energy density as its leadership metric. Fast charging is becoming LFP's headline selling point precisely *because* it can't win on density but its so much cheaper its becoming dominant.
 
 As it happens I spent more time than most delegates looking at the CATL stand at the trade show. This photo shows an extract from a model CATL presented of the volume of the Qilin pack compared to LFP and NMC
 
