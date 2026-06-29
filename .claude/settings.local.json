@@ -11,7 +11,10 @@
       "WebFetch(domain:www.cpc.ncep.noaa.gov)",
       "WebFetch(domain:dribbble.com)",
       "Bash(pandoc:*)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(sort -u -t';')",
+      "Bash(xargs -I{} echo \"highest figure number: {}\")",
+      "Bash(./deploy.sh \"Fix figure numbering in diesel policy post \\(blank line before two images\\)\")"
     ],
     "deny": [],
     "ask": []

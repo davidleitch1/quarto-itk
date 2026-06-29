@@ -59,6 +59,8 @@ China is also very active in the mining sector. Here are a couple of photos from
 
 
 
+
+
 ![Electric mining equipment at the XCMG factory. Source: Author photo, Jun 2026](../media/image-20260629120505459.png){#fig-xcmg-mining-2}
 
 XCMG in partnership with BYD makes their battery packs on site. I did not personally visit the electric road truck section of XCMG on this tour — it was either trucks or mining equipment, and the mining equipment makes more spectacular photos. But I was told that the truck division's annual capacity is 70,000 per year and it's sold out. Electric mining equipment is 30% (smaller) to 100% (larger equipment) more expensive than diesel right now. I suspect there are many reasons for this, one of which is that the division is still in its infancy and costs will come down. For instance the electric motors are custom designed and much lower volume than an electric car motor.
@@ -66,7 +68,8 @@ XCMG in partnership with BYD makes their battery packs on site. I did not person
 The mining equipment division is only about 10% electric this year but it will be a lot more over the next couple of years. There are good reasons for this, Chinese domestic residential and commercial construction is in a decade long recession. Mining is not and XCMG also has 50% exports.
 
 Regarding lighter electric here is a photo from the BYD electric truck factory.
-![Electric trucks at the BYD factory Source: Author photo, Jun 2026](../media/image-20260629120850578.png){#fig-byd-truck-1}
+
+![Electric trucks at the BYD factory. Source: Author photo, Jun 2026](../media/image-20260629120850578.png){#fig-byd-truck-1}
 
 Note the battery on the back of the middle truck in this photo.  I did a poor job of photography at BYD. Cabin interiors were very, very basic compared to a modern Chinese electric car. 
 
@@ -141,6 +144,7 @@ BYD has taken the fast charging to an extreme with its up to or even over 1 MW f
 Part of the answer was the exact opposite to what I would have assumed, so I had to have a long session with Claude to discuss things.
 
 First let's look at the two photos which show the dispenser and the cabinets. Not very good photos but by now that's what you come to expect.
+
 ![BYD flash charger dispenser. Source: Author photo, Jun 2026](../media/image-20260629143253219.png){#fig-byd-charger-dispenser}
 
 ![BYD flash charger cabinets. Source: Author photo, Jun 2026](../media/image-20260629143326299.png){#fig-byd-charger-cabinets}
