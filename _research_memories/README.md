@@ -38,3 +38,4 @@ This directory begins with `_` so Quarto will skip it during the website build. 
 | File | Topic | Period |
 |:-----|:------|:-------|
 | `data_centre_backup_2026.md` | Data centre backup architecture: diesel, batteries, OCGT, transmission cost allocation | 2026-05 |
+| `diesel_oil_imports_2026.md` | Australian diesel use & oil imports: consumption data sources, electrification scorecard, Fortescue, coal-intensity signal | 2026-03/04 |
