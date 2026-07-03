@@ -20,6 +20,22 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### July 3
+
+The China trip was excellent and I covered both the professional and personal side in the [China](https://china26.pages.dev). blog.
+
+Back in Australia there were a couple of days of very high prices in South Australia. What this revealed is that the battery trading algos are not very smart refusing to recharge at \$300 overnight and there fore letting prices go up to \$20k the next day with no ability to take advantage. That said its not clear how much recharging would have impacted overnight prices as supply was very tight.
+
+There are more learnings from this process but the bottom line for me is that South Australia is a  small market easily impacted by local events, in this case a local wind drought and the loss of the inter state connector. In the next year the fix will clearly be the energisation of Project EnergyConnect but longer term it shows that even more storage is going to be needed across the NEM.,
+
+Meantime we are now running into the local NEM problem that was always going to occur and that I have written about. Namely that the requirement is to build new supply so that old supply can close. In the period where both are running prices will inevitably be low as there is surplus capacity. The Government on behalf of consumers simply has to pick up the slack via both PPAs for new capacity and support for old capacity. Elements of both exist but its being done on a secretive case by case basis.
+
+Overall the warm start to Winter and the batteries, including for sure the residential batteries are continuing to keep prices down and thereby suppressing investment signals. Evening peak prices are down on average across the NEM by more than \$100/MWh
+
+
+
+![](./media/image-20260703102553990.png)
+
 ### June 9
 
 Heading off for two weeks in [China](https://china26.pages.dev). Follow along if I can make the technology work (VPN vi Holafly, text and GitHub integration via Working Copy and  maybe IAwriter. Probably I would be better with Facebook, even in China). En route noting all the new batteries coming on stream and the ongoing new wind needed.
