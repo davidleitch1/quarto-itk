@@ -20,6 +20,46 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### July 4
+
+As many know Claude Fable is now available and for me it has introductory pricing through to July 7. So I decided to give it a spin by doing some bids analysis. We downloaded about 230 m 5 minute bids and Fable analysed them. Then we ran some experiments to see how consistent the bid bands in the ITK pricing model were compared with both recent history and trends. A key question for me is how bid bands are likely to evolve as coal exists.
+
+Here I just show some .pngs that Fable produced. If you read Simon Willison's weblog as religiously as me the term cognitive debt will be familiar. Working in investment banking with people smarter than me I have always had cognitive debt. Fable has moved it up to the next level. 
+
+The ITK LP price forecasting model is a fairly complex beast, built by Paul Bandarian. Since Paul and I parted ways I've been trying to maintain the model and even move it forward. The main way to do this was by remodelling the capacity forecast. Solving for LRMC at 2045 when coal is assumed to have exited and then working backwards.
+
+Within that broad framework bids and bid quantities can be expected to change. Fable appears to understand that and has designed "gateway" tests that are at my limit of short term understanding. Nor am I convinced that at some deeper level it doesn't make the same mistakes that  AI always makes. But it's clear, very clear, its thinking is next level, well beyond what Claude Opus 4.8 can deliver. And Opus is pretty powerful itself.
+
+![2c_price_change_freq](./media/2c_price_change_freq.png)
+
+![2d_band_rank_share](./media/2d_band_rank_share.png)
+
+
+
+![2d_coal_low_tod_heatmap](./media/2d_coal_low_tod_heatmap.png)
+
+![2d_coal_low_tod_heatmap](./media/2d_coal_low_tod_heatmap-3145849.png)
+
+
+
+
+
+:::
+
+::: {.homepage-widgets}
+<iframe src="https://spot_prices.itkservices2.com/display_spot"
+        title="Spot Prices Display"
+        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
+</iframe>
+<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
+        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
+</iframe>
+
+![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
+:::
+
+::::
+
 ### July 3
 
 The China trip was excellent and I covered both the professional and personal side in the [China](https://china26.pages.dev). blog.
@@ -75,24 +115,6 @@ Secondly added back the Isso comments section on all posts and add as subscribe 
 Thirdly decided that the lunchtime and evening emails I get on an automated basis should be made available to people that subscribe and also offered beta iPhone dashboard access. i'm going to promote that via an email next week.
 
 Fourthly clearly up some minor bugs in the iPhone app and added a summary compared to last year view for a region and time period.
-
-
-
-:::
-
-::: {.homepage-widgets}
-<iframe src="https://spot_prices.itkservices2.com/display_spot"
-        title="Spot Prices Display"
-        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
-</iframe>
-<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
-        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
-</iframe>
-
-![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
-:::
-
-::::
 
 ### 8 May
 
