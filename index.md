@@ -38,7 +38,7 @@ Within that broad framework bids and bid quantities can be expected to change. F
 
 ![2d_coal_low_tod_heatmap](./media/2d_coal_low_tod_heatmap.png)
 
-![2d_coal_low_tod_heatmap](./media/2d_coal_low_tod_heatmap-3145849.png)
+![seasonal_index](./media/seasonal_index.png)
 
 
 
