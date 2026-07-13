@@ -1,5 +1,10 @@
 project:
   type: website
+  render:
+    - "**/*.qmd"
+    - "**/*.md"
+    - "!data_centres/"
+    - "!background/climate_wind_resource.md"
   post-render:
     - scripts/clean_feed.py
   resources:
@@ -100,6 +105,8 @@ format:
     reference-doc: reference.docx
     tbl-cap-location: bottom
     prefer-html: false
+    filters:
+      - scripts/docx-media.lua
 
 
 

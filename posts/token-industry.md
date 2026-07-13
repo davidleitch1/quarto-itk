@@ -17,7 +17,7 @@ format:
 
 GPUs are expected to be basically sold out for at least a couple more years. How long tight supply remains depends in part on how fast token demand grows. It's not going to keep growing 5x–10x every year; even three more years at anything like that rate would be fortunate. 
 
-My conclusion, set out in Table 5 below, can be read as: supply growth crosses demand growth during 2027, firmly by 2028; until then GPU prices hold, after which older-generation prices revert toward cash operating cost. If the table holds, that is. 
+My conclusion, set out in Table 5 below, can be read as: supply growth converges with demand growth around 2028, from a wider shortfall than most commentary assumes; until then GPU prices hold, after which older-generation prices revert toward cash operating cost. If the table holds, that is. 
 
 When supply catches up with demand, as it eventually will, it's likely that there will be, at least temporarily, a period of oversupply which will impact data centre economics.
 
@@ -73,7 +73,7 @@ Because tokens and revenue are different things. The only published measurement 
 
 The increase in token supply per year is a function of the number of GPUs a foundry (mostly TSMC) can produce per year, multiplied by the increase in the processing power of the GPU. In 2026 there is also a one-off doubling of Blackwell-class GPU processing power driven by a software change. The software change is to use lower-precision numbers and for each "cluster" of numbers to provide a small cluster correction factor. 
 
-My estimates suggest that GPU marginal supply can just about keep up with growth in demand for the next couple of years. 
+My estimates suggest GPU supply growth falls well short of demand growth through 2027, with the two converging around 2028 — the market stays tight until then. 
 
 I present some tables prepared with the help of AI. Of course the responsibility is mine.
 
@@ -160,18 +160,24 @@ And finally the comparison of supply and demand:
 
 **Table 5 — Capacity growth versus demand growth (×/yr)**
 
-|                                |   2025 |     2026 |    2027e |    2028e |
-| :----------------------------- | -----: | -------: | -------: | -------: |
-| Hardware fleet growth (Epoch)  |   ~3.3 |     ~3.3 |     ~3.0 |     ~2.5 |
-| + FP4 / serving-software wedge |   ~1.5 |     ~1.4 |    ~1.15 |    ~1.05 |
-| **Effective capacity growth**  | **~5** | **~4.5** | **~3.4** | **~2.6** |
-| **Measured demand growth**     | **~7** |   **~7** |   **~4** | **~2.5** |
+|                                      |   2025 |     2026 |    2027e |    2028e |
+| :----------------------------------- | -----: | -------: | -------: | -------: |
+| Token-weighted capacity stock growth |   ~2.7 |     ~2.6 |     ~2.3 |     ~2.0 |
+| + residual FP4-migration wedge       |  ~1.15 |     ~1.1 |    ~1.05 |    ~1.02 |
+| **Effective capacity growth**        | **~3** | **~2.9** | **~2.5** | **~2.2** |
+| **Measured demand growth**           | **~7** |   **~7** |   **~4** | **~2.5** |
 
-*Source: ITK synthesis (estimate). Hardware growth from Epoch (measured/estimate); FP4/software wedge is ITK estimate of the one-off precision migration plus recurring serving-stack gains (measured meters + method reconciliation, decelerating).*
+*Source: ITK bottom-up build (Tables 1–3, token-weighted stock; FP4 is already credited in the per-chip throughputs, so only the migration of installed FP8 fleets appears as a separate wedge). Cross-check: Epoch's fleet series annualises to ~2.3x/yr on a FLOP basis over 2024–26, consistent once the Blackwell mix shift is added. On these numbers the market is shorter for longer, and the growth rates converge during 2028.*
 
 Wafer capacity grows about 20% a year. Despite some geographic diversification, final packaging will mostly stay in Taiwan through 2030. Within that capacity, AI GPUs take an ever greater share, and each processor generation produces more tokens per chip.
 
 ![Foundry capacity outlook. Source: TSMC disclosures; ITK](../media/foundry_capacity.png){#fig-foundry}
+
+### Chip construction — more than you need to know
+
+Fabrication only produces individual dies on a wafer — bare rectangles of silicon with microscopic connection points. Something has to wire those dies to each other and to the outside world. For ordinary chips that "packaging" step is trivial and was historically outsourced to cheap back-end assemblers. AI chips broke that model, because of the memory-bandwidth problem: a B200 needs to talk to its eight HBM stacks over thousands of parallel connections at enormous speed, and no ordinary circuit board can carry wiring that fine. The silicon interposer is the answer — effectively a chip whose only job is to be the wiring between other chips, with traces nearly as fine as the dies themselves. That's why advanced packaging migrated from low-tech assembly shops back into TSMC's own plants: the precision now rivals front-end fabrication.
+
+So the thing Nvidia sells as "a GPU" is really a small silicon circuit board — two compute dies plus eight memory stacks assembled on an interposer — and the assembly step inherits both supply chains (logic wafers and HBM) plus its own capacity constraint. That's why CoWoS, not wafers, was the industry bottleneck through 2023–25, and why the geographic point on @fig-foundry carries weight: a wafer fabbed in Arizona still flies to Taiwan to be married to its memory.
 
 ## Processor pricing trends
 
@@ -198,12 +204,6 @@ undisclosed GPU count. Contract values are ceilings that can include storage and
 from disclosed MW at ~2.1kW/GPU; the 100%-utilisation basis overstates realised rates for every deal equally.*
 
 But per token, wholesale buyers pay a fraction of what spot renters pay. When new-chip supply catches up, the H100 cannot compete at \$2.80 against a GB300 at \$2.40 that produces several times the tokens — old-generation rates must then fall toward cash operating cost, while the contracted wholesale tier is largely unaffected. 
-
-### Chip construction — more than you need to know
-
-Fabrication only produces individual dies on a wafer — bare rectangles of silicon with microscopic connection points. Something has to wire those dies to each other and to the outside world. For ordinary chips that "packaging" step is trivial and was historically outsourced to cheap back-end assemblers. AI chips broke that model, because of the memory-bandwidth problem: a B200 needs to talk to its eight HBM stacks over thousands of parallel connections at enormous speed, and no ordinary circuit board can carry wiring that fine. The silicon interposer is the answer — effectively a chip whose only job is to be the wiring between other chips, with traces nearly as fine as the dies themselves. That's why advanced packaging migrated from low-tech assembly shops back into TSMC's own plants: the precision now rivals front-end fabrication.
-
-So the thing Nvidia sells as "a GPU" is really a small silicon circuit board — two compute dies plus eight memory stacks assembled on an interposer — and the assembly step inherits both supply chains (logic wafers and HBM) plus its own capacity constraint. That's why CoWoS, not wafers, was the industry bottleneck through 2023–25, and why the geographic point on @fig-foundry carries weight: a wafer fabbed in Arizona still flies to Taiwan to be married to its memory.
 
 ## AI data centre finance
 
