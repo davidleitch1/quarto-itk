@@ -19,3 +19,9 @@ quarto-*.tar.gz
 
 # Local Netlify folder
 .netlify
+
+# Private research workspaces — not for the public repo or site
+data_centres/
+background/_research_drafts/
+background/climate_wind_resource.md
+background/climate_wind_references.bib
