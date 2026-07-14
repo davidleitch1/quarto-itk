@@ -207,6 +207,8 @@ But per token, wholesale buyers pay a fraction of what spot renters pay. When ne
 
 ## AI data centre finance
 
+A deal announced in early July illustrates how the market now prices the two layers of a datacentre separately. Anthropic signed a 20-year lease with TeraWulf for a purpose-built ~401MW campus in Kentucky — about \$19bn of contracted revenue, which works out to ~\$2.4bn/GW-yr, roughly one-fifth of the compute-contract rates in Table 6. The difference is the product: TeraWulf supplies only the building, power and cooling; Anthropic brings its own chips. The shell layer earns an infrastructure annuity — 20 years, financeable at infrastructure spreads — while the chip layer above it never contracts beyond five or six. Note also who the tenant is: the largest non-hyperscaler compute buyer chose to lease the shell and own the silicon rather than rent bundled compute from a CoreWeave-type provider. When the customer is big enough, the compute-rental layer gets disintermediated. Everything that follows is about the operators who live in that middle layer.
+
 ### CoreWeave as the exemplar
 
 As far as I can see the basic CoreWeave model, for which they held a specific presentation, is a 5–6 year deal with a highly rated AI model provider — Meta in this case.

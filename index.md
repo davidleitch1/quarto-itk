@@ -20,6 +20,32 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+## July 15
+
+Taking advantage of another half price week for Fable I went to work on the datacentre industry, not so much the electricity side, as the overall economics, reviewing the outlook for GPU pricing and the financing of data centres, where the risk and return lies. Keen followers of this site, if there are any, will note that I've been stepping up coverage of the data centre industry. So far the social issues, the transmission congestion in Australia, the impact on load shape and the implications of the diesel genset backup have come under the microscope. 
+
+Next up is a serious review of orbital data centres. Once again the initial insight is the same as for terrestrial data centres. 90% of the coverage is about the energy cost but in the bigger scheme it's a minor part of costs. Investors should really focus on chip supply and demand and depreciation.
+
+![](./media/orbital_lifecycle_cost.png)
+
+
+
+:::
+
+::: {.homepage-widgets}
+<iframe src="https://spot_prices.itkservices2.com/display_spot"
+        title="Spot Prices Display"
+        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
+</iframe>
+<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
+        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
+</iframe>
+
+![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
+:::
+
+::::
+
 ### July 4
 
 As many know Claude Fable is now available and for me it has introductory pricing through to July 7. So I decided to give it a spin by doing some bids analysis. We downloaded about 230 m 5 minute bids and Fable analysed them. Then we ran some experiments to see how consistent the bid bands in the ITK pricing model were compared with both recent history and trends. A key question for me is how bid bands are likely to evolve as coal exists.
@@ -41,24 +67,6 @@ Within that broad framework bids and bid quantities can be expected to change. F
 ![seasonal_index](./media/seasonal_index.png)
 
 
-
-
-
-:::
-
-::: {.homepage-widgets}
-<iframe src="https://spot_prices.itkservices2.com/display_spot"
-        title="Spot Prices Display"
-        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
-</iframe>
-<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
-        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
-</iframe>
-
-![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
-:::
-
-::::
 
 ### July 3
 
