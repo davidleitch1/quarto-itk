@@ -20,7 +20,13 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
-## July 15
+### July 16
+
+My initial analysis  on orbital data centres concept, technology and economic is almost complete but in the meantime Claude and I have been reviewing the SpaceX initiations from 4 major brokers. In my opinion the research teams (20 named analysts and 390 pages between the 4 brokers) cannot, simply cannot have done much due diligence. In the 390 pages about 20 in total represented analysis of the space data centres, yet they implicitly made them worth about US\$1 trillion of value. Thats for a product that hasn't \$1 of revenue, with clear technical i(heat dissipation) issues and with an incredible execution task. Never mind the accompanying fab factory with its truly laughable claim of producing chips at much lower cost than competitors.  It's funny; when Musk was getting Tesla started seriously,  short sellers were everywhere. Incumbents would kill him or so it went. He proved them wrong. Now everyone has joined the cheer squad. Talk about whiplash.
+
+![bank_ai_value_vs_peers](./media/bank_ai_value_vs_peers.png)
+
+### July 15
 
 Taking advantage of another half price week for Fable I went to work on the datacentre industry, not so much the electricity side, as the overall economics, reviewing the outlook for GPU pricing and the financing of data centres, where the risk and return lies. Keen followers of this site, if there are any, will note that I've been stepping up coverage of the data centre industry. So far the social issues, the transmission congestion in Australia, the impact on load shape and the implications of the diesel genset backup have come under the microscope. 
 
