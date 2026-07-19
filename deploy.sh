@@ -59,6 +59,10 @@ echo "Changed files:"
 echo "$ALL_CHANGED" | sed 's/^/  /'
 echo ""
 
+# --- Refresh white-canvas docx variants (incremental; needed before render
+#     so docx-media.lua finds variants for any new cream-canvas charts) ---
+python3 scripts/make_docx_media.py
+
 # --- Decide: full or incremental render ---
 T_RENDER=$SECONDS
 if $FULL_RENDER; then
