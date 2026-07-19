@@ -44,7 +44,7 @@ GLOBAL_PATTERN='_quarto\.yml|styles\.css|flexoki-light\.scss|_metadata\.yml|apa\
 CHANGED=$(git diff --name-only HEAD 2>/dev/null)
 STAGED=$(git diff --name-only --cached 2>/dev/null)
 UNTRACKED=$(git ls-files --others --exclude-standard 2>/dev/null)
-ALL_CHANGED=$(echo -e "$CHANGED\n$STAGED\n$UNTRACKED" | sort -u | grep -v '^$')
+ALL_CHANGED=$(echo -e "$CHANGED\n$STAGED\n$UNTRACKED" | sort -u | grep -v '^$' || true)
 
 if [ -z "$ALL_CHANGED" ]; then
     if $FULL_RENDER || $LISTINGS_FORCE; then
