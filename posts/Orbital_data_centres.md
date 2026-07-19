@@ -13,9 +13,9 @@ format:
   docx: default
 ---
 
-## SpaceX AI valuations, failure to launch
+## SpaceX AI valuations - abundant optimism
 
-In this note I build a first pass cashflow model of orbital data centres as proposed by SpaceX. It finds they are unlikely to have a positive NPV: even with generous discounts the model needs an achieved price of about US$11.30 per watt-year against roughly US$8.50 achievable. I tested a wide range of sensitivities in coming to that conclusion. The note includes an explainer and a glossary for this new business.
+In this note I build a first pass cashflow model of orbital data centres as proposed by SpaceX. It finds they are unlikely to have a positive NPV: even with generous discounts the model needs an achieved price of about US$11.30 per watt-year against roughly US$8.50 achievable. I tested a wide range of sensitivities in coming to that conclusion. The note includes an explainer and a glossary for this new business. It could be a winner, but it's one where demand for AI continues to grow incredibly fast, improvements in space technology happen at an unlikely pace, and the apparent revenue disadvantages of orbital data centres disappear. 
 
 As part of the process I also considered the value of SpaceX's AI business in the context of [how four leading investment banks have valued it](https://itkservices3.com/background/bank_ai_valuation.html). I backed out an estimate of the value the banks assign to the terrestrial business to derive the implied value they attribute to the orbital business.
 
@@ -128,9 +128,9 @@ The figure bridges from the banks' revenue assumption to what the observable mar
 
 
 
-Before the problems, the strongest version of the case deserves a fair statement. The concept is technically achievable: nothing in it breaches physics, a startup has already run an Nvidia H100 in orbit, and radiation testing has substantially cleared the chips. At the right-sized scale of my model — roughly 10 GW from one set of ground infrastructure — the supply-side objections largely dissolve: one or two launch pads, about 300 flights a year, one air-separation plant, and silicon demand within industry capability. SpaceX's execution record also deserves respect: Starlink went from nothing to ~10,700 working satellites and cut launch costs by ~85%, against near-universal scepticism at the outset. And there is a coherent world in which the economics work: if terrestrial compute scarcity persists into the 2030s — because chips, memory and grid connections stay short — capacity prices hold near today's levels rather than normalising, and if interactive-grade service can be proven from orbit, my own model produces returns above a market cost of capital in that corner.
+The concept is technically achievable: nothing in it breaches physics, a startup has already run an Nvidia H100 in orbit, and radiation testing has substantially cleared the chips. At the right-sized scale of my model — roughly 10 GW from one set of ground infrastructure — the supply-side objections largely dissolve: one or two launch pads, about 300 flights a year, one air-separation plant, and silicon demand within industry capability. SpaceX's execution record also deserves respect: Starlink went from nothing to ~10,700 working satellites and cut launch costs by ~85%, against near-universal scepticism at the outset. And there is a world in which the economics work: if terrestrial compute scarcity persists into the 2030s — because chips, memory and grid connections stay short — capacity prices hold near today's levels rather than normalising, and interactive-grade service can be proven from orbit then above WACC can be earned
 
-That is the bet, stated plainly: not on physics, but on a decade of scarcity pricing plus near-flawless engineering delivery on a first-of-a-kind machine. On my capacity modelling the scarcity world is about one scenario in three — possible, not absurd — and the disagreement with the banks is properly about revenue quality and price persistence, not feasibility.
+That is the bet  not on physics, but on a decade of scarcity pricing plus near-flawless engineering delivery on a first-of-a-kind machine. On my capacity modelling the scarcity world is about one scenario in three.
 
 ## The problems, ranked
 
