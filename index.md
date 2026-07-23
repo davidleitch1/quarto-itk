@@ -20,6 +20,42 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### July 23
+
+Anthropic is the only profitable AI provider and charges a large premium compared to OpenAI.
+
+Anthropic costs about US$2.75 per bench mark task and OpenAI $1.04, Kimi K3 about $0.94 but is a bit less capable and the even less capable SpaceX(Grok) is down at $0.31.
+
+Despite the pricing gap Anthropics revenue run rate has grown to $60bn (although I treat run rates cautiously as the capitalise very short term data)
+
+The price premium over the lower capability models is easy enough to understand but the price premium over OpenAI needs further analysis and the reasons are speculative.
+
+The profitability per MW of capacity depends on the split between inference and training. Under USA GAAP training is expensed as incurred.
+
+Very little actual profitability or cashflow data is available.
+
+However based on what is available and using SemiAnalysis notes that assume 60% of Anthropic MWs are devoted to training its earns US$25m/inference MW compared to some thing like $6m inference MW for OpenAI. It's not just the pricing issue for OpenAI but their initial low margin consumer focus that kills the revenue line. But I dont really care about that. What interests me is the like for like price gap, the Apple v Windows comparison. 
+
+Claude Code is a product moat distinct from the model: over $2.5B run-rate on its own, ~7% of global GitHub commits, doubled since January.
+
+Workflow entrenchment. 500% net dollar retention; customers spending >$1M/yr up ~42× in two years. Some of this is delivered value; some is the softer lock-in of prompts, integrations and habits tuned to one model's idioms. Public data cannot separate the two.
+
+Trust and procurement. Enterprise buyers of judgment work cannot cheaply verify output; they buy reputation. Its seems clear though that Anthropic can hold its users despite the price premium. This is evidence that price is not the main factor in model choice. Equally that value pricing is effective.
+
+The best available discriminator is behavioural: on OpenRouter — a neutral exchange where switching models is one line of code — Claude holds paid share at the full price handicap.
+
+![model_outcome_cost](./media/model_outcome_cost.png)
+
+![flagship_tier_table](./media/flagship_tier_table.png)
+
+
+
+![lab_revenue_per_mw](./media/lab_revenue_per_mw.png)
+
+
+
+
+
 ### July 16
 
 My initial analysis  on orbital data centres concept, technology and economic is almost complete but in the meantime Claude and I have been reviewing the SpaceX initiations from 4 major brokers. In my opinion the research teams (20 named analysts and 390 pages between the 4 brokers) cannot, simply cannot have done much due diligence. In the 390 pages about 20 in total represented analysis of the space data centres, yet they implicitly made them worth about US\$1 trillion of value. Thats for a product that hasn't \$1 of revenue, with clear technical i(heat dissipation) issues and with an incredible execution task. Never mind the accompanying fab factory with its truly laughable claim of producing chips at much lower cost than competitors.  It's funny; when Musk was getting Tesla started seriously,  short sellers were everywhere. Incumbents would kill him or so it went. He proved them wrong. Now everyone has joined the cheer squad. Talk about whiplash.
