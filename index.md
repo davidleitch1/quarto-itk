@@ -20,6 +20,32 @@ window.onload = function() {
 
 ::: {.homepage-content}
 
+### July 24
+
+Found the time today to create a new energy related commodities dashboard, accessible from the Dashboards menu of the site. Its fairly basic just now, a page of commodities and you click on one to get a blown optionally smoothed view
+
+![](./media/image-20260724182840396.png)
+
+![](./media/image-20260724182917455.png)
+
+
+
+:::
+
+::: {.homepage-widgets}
+<iframe src="https://spot_prices.itkservices2.com/display_spot"
+        title="Spot Prices Display"
+        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
+</iframe>
+<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
+        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
+</iframe>
+
+![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
+:::
+
+::::
+
 ### July 23
 
 Anthropic is the only profitable AI provider and charges a large premium compared to OpenAI.
@@ -71,22 +97,6 @@ Next up is a serious review of orbital data centres. Once again the initial insi
 ![](./media/orbital_lifecycle_cost.png)
 
 
-
-:::
-
-::: {.homepage-widgets}
-<iframe src="https://spot_prices.itkservices2.com/display_spot"
-        title="Spot Prices Display"
-        style="height: 600px; width: 100%; border:none; background-color: #FFFCF0;">
-</iframe>
-<iframe src='https://gauge.itkservices2.com' frameborder='0' scrolling='no'
-        style='height: 390px; width: 100%; border: none; background-color: #FFFCF0; overflow: hidden;'>
-</iframe>
-
-![](media/Oceanheat.png){style="width: 100%; display: block; margin-top: 1em;"}
-:::
-
-::::
 
 ### July 4
 
