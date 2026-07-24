@@ -30,8 +30,10 @@ website:
           href: IEA.html
         - text: "NEM-ITK ↗"
           href: https://nemgen.itkservices2.com
+        - text: "Commodities ↗"
+          href: https://commodities.itkservices2.com
         - text: "AEMO demand fcst"
-          href: forecast.html 
+          href: forecast.html
       - text: "Articles"
         file: posts.qmd
       - text: "more"
